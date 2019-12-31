@@ -12,7 +12,7 @@
         <!--Menu View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="MenuViewController" id="BYZ-38-t0r" customClass="MenuViewController" customModule="_2P" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" id="BYZ-38-t0r" customClass="MenuViewController" customModule="_2Zapisok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -238,9 +238,9 @@
         <!--Game View Controller-->
         <scene sceneID="htV-Cj-exN">
             <objects>
-                <viewController storyboardIdentifier="GameViewController" id="eWN-dy-LtQ" customClass="GameViewController" customModule="_2P" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" modalPresentationStyle="fullScreen" id="eWN-dy-LtQ" customClass="GameViewController" customModule="_2Zapisok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X6E-lC-Dwt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qiR-zy-wtm">
@@ -381,7 +381,7 @@
                                 <color key="backgroundColor" red="0.11370677500963211" green="0.18647542595863342" blue="0.26843786239624023" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5RA-VD-4uv">
-                                <rect key="frame" x="0.0" y="235" width="414" height="607"/>
+                                <rect key="frame" x="0.0" y="235" width="414" height="661"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OMC-By-aPU">
@@ -457,9 +457,9 @@
         <!--Detail Note View Controller-->
         <scene sceneID="H4B-aa-7hh">
             <objects>
-                <viewController storyboardIdentifier="DetailNoteViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="dr5-Qz-mDp" customClass="DetailNoteViewController" customModule="_2P" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailNoteViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="dr5-Qz-mDp" customClass="DetailNoteViewController" customModule="_2Zapisok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r5V-VL-X5w">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WmB-DC-eHp">
@@ -568,7 +568,7 @@
         <!--Game Rules View Controller-->
         <scene sceneID="X5C-ao-DrK">
             <objects>
-                <viewController storyboardIdentifier="GameRulesViewController" id="Ztw-AV-HBY" customClass="GameRulesViewController" customModule="_2P" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameRulesViewController" id="Ztw-AV-HBY" customClass="GameRulesViewController" customModule="_2Zapisok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4fb-hK-WwG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -591,9 +591,9 @@
         <!--Purchase View Controller-->
         <scene sceneID="zy6-Ci-b6p">
             <objects>
-                <viewController storyboardIdentifier="PurchaseViewController" id="pnU-Yk-xom" customClass="PurchaseViewController" customModule="_2P" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PurchaseViewController" modalPresentationStyle="fullScreen" id="pnU-Yk-xom" customClass="PurchaseViewController" customModule="_2Zapisok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jK0-PL-uGW" customClass="Pur">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="SwQ-DO-hA6"/>
@@ -607,7 +607,7 @@
         <!--Settings View Controller-->
         <scene sceneID="yKx-ym-kpP">
             <objects>
-                <viewController storyboardIdentifier="SettingsViewController" id="aXs-pi-1VK" customClass="SettingsViewController" customModule="_2P" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="aXs-pi-1VK" customClass="SettingsViewController" customModule="_2Zapisok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f3O-Nx-UQ9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -623,46 +623,103 @@
         <!--City List View Controller-->
         <scene sceneID="a0C-Rb-KB3">
             <objects>
-                <viewController storyboardIdentifier="CityListViewController" id="5Ky-Lj-uam" customClass="CityListViewController" customModule="_2P" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CityListViewController" id="5Ky-Lj-uam" customClass="CityListViewController" customModule="_2Zapisok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LHJ-Ev-g0b">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l3r-vr-iyy">
-                                <rect key="frame" x="16" y="181" width="378" height="598"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l3r-vr-iyy">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="847"/>
+                                <color key="backgroundColor" red="0.93333333333333335" green="0.93725490196078431" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="i7d-oY-YaN">
-                                    <size key="itemSize" width="144" height="133"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="itemSize" width="175" height="185"/>
+                                    <size key="headerReferenceSize" width="0.0" height="330"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="A6Z-gU-CWm">
-                                        <rect key="frame" x="0.0" y="0.0" width="172" height="149"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="A6Z-gU-CWm" customClass="CityCollectionCell" customModule="_2Zapisok" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="340" width="175" height="185"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="172" height="149"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="175" height="185"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
-                                        <size key="customSize" width="172" height="149"/>
+                                        <size key="customSize" width="175" height="185"/>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="CityHeaderReusableView" id="a14-Di-aPQ" customClass="CityHeaderReusableView" customModule="_2Zapisok" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="330"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUS-7d-UfJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="325"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mechet-kul-sharif" translatesAutoresizingMaskIntoConstraints="NO" id="57K-lD-yXU">
+                                                    <rect key="frame" x="137" y="99" width="140" height="140"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Выбор города" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DP9-bl-xck">
+                                                    <rect key="frame" x="73" y="52" width="268" height="39"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="30"/>
+                                                    <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iIm-RP-eDE">
+                                                    <rect key="frame" x="179" y="253" width="57" height="2"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.82745098039215681" green="0.83921568627450982" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="текущий выбранный город" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tni-jo-AnG">
+                                                    <rect key="frame" x="87" y="296" width="240" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                                    <color key="textColor" red="0.72549019607843135" green="0.74901960784313726" blue="0.7803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Нижний Новгород" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0o-B2-dan">
+                                                    <rect key="frame" x="73" y="263" width="268" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mm8-YW-4Tu">
+                                                    <rect key="frame" x="8" y="56" width="25" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" image="back-2"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="KUS-7d-UfJ" secondAttribute="trailing" id="6rr-Ez-IQt"/>
+                                        <constraint firstItem="KUS-7d-UfJ" firstAttribute="leading" secondItem="a14-Di-aPQ" secondAttribute="leading" id="R8o-1k-Rdh"/>
+                                        <constraint firstAttribute="bottom" secondItem="KUS-7d-UfJ" secondAttribute="bottom" constant="5" id="gSF-LE-MWx"/>
+                                        <constraint firstItem="KUS-7d-UfJ" firstAttribute="top" secondItem="a14-Di-aPQ" secondAttribute="top" id="vn3-Vg-bax"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="cityImage" destination="57K-lD-yXU" id="iR6-s5-B1J"/>
+                                        <outlet property="cityName" destination="v0o-B2-dan" id="cPx-gI-MNb"/>
+                                        <outlet property="mainView" destination="KUS-7d-UfJ" id="E3i-Zz-Ip0"/>
+                                    </connections>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="5Ky-Lj-uam" id="t5l-jv-DFR"/>
                                     <outlet property="delegate" destination="5Ky-Lj-uam" id="cjY-bQ-DQo"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="list" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tee-ro-I4N">
-                                <rect key="frame" x="103" y="102" width="200" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.93333333333333335" green="0.93725490196078431" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="l3r-vr-iyy" firstAttribute="leading" secondItem="Gtn-78-UYP" secondAttribute="leading" id="2ir-Uc-2cb"/>
+                            <constraint firstItem="Gtn-78-UYP" firstAttribute="bottom" secondItem="l3r-vr-iyy" secondAttribute="bottom" constant="15" id="2vU-up-cTw"/>
+                            <constraint firstItem="l3r-vr-iyy" firstAttribute="top" secondItem="LHJ-Ev-g0b" secondAttribute="top" id="5tG-g5-Pjq"/>
+                            <constraint firstItem="Gtn-78-UYP" firstAttribute="trailing" secondItem="l3r-vr-iyy" secondAttribute="trailing" id="tx8-FP-PCc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Gtn-78-UYP"/>
                     </view>
                     <connections>
@@ -676,7 +733,7 @@
         <!--Auth View Controller-->
         <scene sceneID="MkO-vN-HMa">
             <objects>
-                <viewController storyboardIdentifier="AuthViewController" id="tRm-lP-XtH" customClass="AuthViewController" customModule="_2P" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthViewController" id="tRm-lP-XtH" customClass="AuthViewController" customModule="_2Zapisok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TfX-U4-m6O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -777,7 +834,7 @@
         <!--Onboarding View Controller-->
         <scene sceneID="fzp-vJ-rsn">
             <objects>
-                <viewController storyboardIdentifier="OnboardingViewController" id="HSN-K4-UDo" customClass="OnboardingViewController" customModule="_2P" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingViewController" id="HSN-K4-UDo" customClass="OnboardingViewController" customModule="_2Zapisok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Cd-gy-34k">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -792,7 +849,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="OnboardingCollectionViewCell" reuseIdentifier="OnboardingCollectionViewCell" id="o5i-5I-iN3" customClass="OnboardingCollectionViewCell" customModule="_2P" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="OnboardingCollectionViewCell" reuseIdentifier="OnboardingCollectionViewCell" id="o5i-5I-iN3" customClass="OnboardingCollectionViewCell" customModule="_2Zapisok" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="18.5" width="409" height="658"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LOh-6Q-LIg">
@@ -919,8 +976,10 @@
         <image name="Tonight" width="247" height="247"/>
         <image name="achievement" width="128" height="128"/>
         <image name="back" width="128" height="128"/>
+        <image name="back-2" width="128" height="128"/>
         <image name="checked" width="128" height="128"/>
         <image name="cityscape" width="256" height="256"/>
+        <image name="mechet-kul-sharif" width="780" height="519"/>
         <image name="nn" width="900" height="552"/>
         <image name="paper" width="256" height="256"/>
         <image name="pie-chart" width="128" height="128"/>

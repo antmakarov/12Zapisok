@@ -17,6 +17,7 @@ class PreferencesManager {
     static let shared = PreferencesManager()
 
     private let userDefaults: UserDefaults
+    public var updateCityIdHandler: ((Int) -> Void)?
 
     init() {
         userDefaults = UserDefaults.standard
@@ -34,6 +35,7 @@ class PreferencesManager {
     var currentCityId: Int? {
         set {
             Logger.info(msg: "Set new city - id \(newValue!)")
+            updateCityIdHandler?(newValue!)
             userDefaults.set(newValue, forKey: generateKey(#function))
             userDefaults.synchronize()
         }

@@ -28,15 +28,15 @@ class DetailNoteViewController: UIViewController {
         titleNoteLabel.text = viewModel.note.name
         describLabel.text = viewModel.note.description
         
-        if viewModel.note.isOpen {
-            statusImage.image = UIImage(named: "checked")
-            placeLabel.text = "Какая-то улица из записки"
-            timeFindedLabel.text = "Открыта сегодня в 10:31"
-        } else {
-            statusImage.image = UIImage(named: "cancel")
-            placeLabel.text = "Место неизвестно"
-            timeFindedLabel.text = "Найди как можно скорее"
-        }
+//        if viewModel.note.isOpen {
+//            statusImage.image = UIImage(named: "checked")
+//            placeLabel.text = "Какая-то улица из записки"
+//            timeFindedLabel.text = "Открыта сегодня в 10:31"
+//        } else {
+//            statusImage.image = UIImage(named: "cancel")
+//            placeLabel.text = "Место неизвестно"
+//            timeFindedLabel.text = "Найди как можно скорее"
+//        }
     }
     
     @IBAction func openMap(_ sender: Any) {

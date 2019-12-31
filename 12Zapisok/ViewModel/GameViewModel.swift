@@ -22,25 +22,41 @@ protocol GameViewModelProtocol {
 
 class GameViewModel: CollectionViewGameViewModel {
 
+    private let preferencesManager: PreferencesManager
+    private let databaseStorage: StorageManager
+    private let networkManager: NetworkManagerProtocol
+    private var currentCity: City?
+    
     private var dataUpdateHandler: (() -> Void)?
-    var dataFetcher: NotesFetchProtocol!
-    var city: City?
     
     private var selectedIndexPath: IndexPath?
     
-    init(typeFetcher: TypeFetcher = .network) {
-        
-        switch typeFetcher {
-        case .network:
-            dataFetcher = NetworkManager()
-            
-        case .storage:
-            dataFetcher = NetworkManager()
-        }
+    convenience init() {
+        self.init(preferencesManager: PreferencesManager.shared, databaseStorage: StorageManager.shared, networkManager: NetworkManager.shared)
+    }
+    
+    init(typeFetcher: TypeFetcher = .network, preferencesManager: PreferencesManager, databaseStorage: StorageManager, networkManager: NetworkManagerProtocol) {
+        self.preferencesManager = preferencesManager
+        self.databaseStorage = databaseStorage
+        self.networkManager = networkManager
     }
     
     //  MARK: CollectionViewGameViewModel
     
+    private func loadNotes() {
+        networkManager.getNoteList { result in
+            switch result {
+            case .success(let notes):
+                Logger.debug(msg: notes)
+            
+            case .error(let error):
+                Logger.error(msg: error.localizedDescription)
+            }
+        }
+        networkManager.getNoteList { notes in
+        
+        }
+    }
     func numberOfCards() -> Int {
         return 0 //city?.notes.count ?? 0
     }
@@ -63,7 +79,7 @@ class GameViewModel: CollectionViewGameViewModel {
 
 extension GameViewModel: GameViewModelProtocol {
     func nameCity() -> String {
-        return city?.name ?? ""
+        return currentCity?.name ?? ""
     }
     
     func openNotes() -> Int {

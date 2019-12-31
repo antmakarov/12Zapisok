@@ -11,33 +11,13 @@ import Alamofire
 import ObjectMapper
 import RealmSwift
 
-protocol Networking {
-    func request(path: String, params: [String: String], completion: @escaping (Data?, Error?) -> Void)
+protocol NetworkManagerProtocol {
+    func getUserToken(completion: @escaping (String?) -> ())
+    func getCityList(completion: @escaping ((Result<[City], Error>) -> ()))
+    func getNoteList(completion: @escaping ((Result<[Note], Error>) -> ()))
 }
 
-class NetworkManager: NotesFetchProtocol {
-    func fetchNotes(completion: ([Note]?) -> ()) {
-        
-    }
-    
-    public func fetchUsers() {
-        let url = URL(string: "https://reqres.in/api/users/2")!
-        
-        Alamofire.request(url)
-
-            .validate(statusCode: 200..<300)
-            .responseJSON { response in
-                switch response.result {
-                case .success(let users):
-                    print(users)
-                    
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
-        }
-    }
-    
-    
+class NetworkManager: NetworkManagerProtocol {
     
     static let shared = NetworkManager()
     private var session = Alamofire.SessionManager(configuration: .default)
@@ -52,15 +32,19 @@ class NetworkManager: NotesFetchProtocol {
         session = Alamofire.SessionManager(configuration: configuration)
     }
     
-    func getCityList(completion: @escaping (([City]?) -> ())) {
+    func getCityList(completion: @escaping ((Result<[City], Error>) -> ())) {
         fetchArrayOf(type: City.self) { completion($0) }
     }
+
+    func getNoteList(completion: @escaping ((Result<[Note], Error>) -> ())) {
+        fetchArrayOf(type: Note.self) { completion($0) }
+    }
     
-    private func fetchObject<T: Object>(type: T.Type, completion: @escaping (T?) -> ())  where T:Mappable, T:Endpoint {
+    private func fetchObject<T: Object>(type: T.Type, completion: @escaping ((Result<T, Error>)) -> ())  where T:Mappable, T:Endpoint {
         
         let requestURL = baseUrl + type.url()
-        Logger.error(msg: requestURL)
-        
+        Logger.info(msg: requestURL)
+
         Alamofire.request(requestURL, encoding: JSONEncoding.default, headers: tokenHeader)
         .validate(statusCode: 200..<300)
         .responseJSON { response in
@@ -69,21 +53,21 @@ class NetworkManager: NotesFetchProtocol {
             case .success(let value):
                 Logger.info(msg: value)
                 if let response = Mapper<T>().map(JSONObject: value) {
-                    completion(response)
+                    completion(.success(response))
                 } else {
-                    completion(nil)
+                    completion(.error(NetworkError.parsingError))
                 }
             case .failure(let error):
                 Logger.error(msg: error.localizedDescription)
-                completion(nil)
+                completion(.error(error))
             }
         }
     }
     
-    private func fetchArrayOf<T: Object>(type: T.Type, completion: @escaping ([T]?) -> ())  where T:Mappable, T:Endpoint {
+    private func fetchArrayOf<T: Object>(type: T.Type, completion: @escaping ((Result<[T], Error>)) -> ())  where T:Mappable, T:Endpoint {
         
         let requestURL = baseUrl + type.url()
-        Logger.error(msg: requestURL)
+        Logger.info(msg: requestURL)
         
         Alamofire.request(requestURL, encoding: JSONEncoding.default, headers: tokenHeader)
         .validate(statusCode: 200..<300)
@@ -93,13 +77,13 @@ class NetworkManager: NotesFetchProtocol {
             case .success(let value):
                 Logger.info(msg: value)
                 if let response = Mapper<T>().mapArray(JSONObject: value) {
-                    completion(response)
+                    completion(.success(response))
                 } else {
-                    completion(nil)
+                    completion(.error(NetworkError.parsingError))
                 }
             case .failure(let error):
                 Logger.error(msg: error.localizedDescription)
-                completion(nil)
+                completion(.error(error))
             }
         }
     }

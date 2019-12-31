@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		771E2CCB23AE009100553D58 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771E2CCA23AE009100553D58 /* AuthViewController.swift */; };
 		7741375623B9EC4100AD8A71 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7741375523B9EC4100AD8A71 /* MenuViewModel.swift */; };
+		77688CD923BA20AE00697408 /* CityHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77688CD723BA20AE00697408 /* CityHeaderReusableView.swift */; };
 		77B120C5238C53BC001B2301 /* PreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120C4238C53BC001B2301 /* PreferencesManager.swift */; };
 		77B120C7238C547E001B2301 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120C6238C547E001B2301 /* Logger.swift */; };
 		77B120CC238C606B001B2301 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120CB238C606B001B2301 /* LocationManager.swift */; };
@@ -37,7 +38,6 @@
 		8D32F35322D3398700ABC228 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F35222D3398700ABC228 /* City.swift */; };
 		8D32F35722D33CE000ABC228 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F35622D33CE000ABC228 /* Note.swift */; };
 		8D32F35922D34B8E00ABC228 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F35822D34B8E00ABC228 /* GameViewModel.swift */; };
-		8D32F35B22D3504E00ABC228 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F35A22D3504E00ABC228 /* DataFetcher.swift */; };
 		8D32F36022D3588500ABC228 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F35F22D3588500ABC228 /* NetworkManager.swift */; };
 		8D32F36222D3589000ABC228 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F36122D3589000ABC228 /* StorageManager.swift */; };
 		8D32F36722D366B000ABC228 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F36622D366B000ABC228 /* API.swift */; };
@@ -64,6 +64,7 @@
 		526AD8A7641C95E0C7D7C7D6 /* Pods_12Zapisok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_12Zapisok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		771E2CCA23AE009100553D58 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		7741375523B9EC4100AD8A71 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		77688CD723BA20AE00697408 /* CityHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityHeaderReusableView.swift; sourceTree = "<group>"; };
 		77B120C4238C53BC001B2301 /* PreferencesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesManager.swift; sourceTree = "<group>"; };
 		77B120C6238C547E001B2301 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		77B120CB238C606B001B2301 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -94,7 +95,6 @@
 		8D32F35222D3398700ABC228 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		8D32F35622D33CE000ABC228 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		8D32F35822D34B8E00ABC228 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
-		8D32F35A22D3504E00ABC228 /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
 		8D32F35F22D3588500ABC228 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8D32F36122D3589000ABC228 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		8D32F36622D366B000ABC228 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -225,7 +225,6 @@
 		8D32F35D22D3576D00ABC228 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				8D32F35A22D3504E00ABC228 /* DataFetcher.swift */,
 				8D32F37622D738FA00ABC228 /* CollectionViewGameViewModel.swift */,
 				8D32F37822D7394500ABC228 /* CollectionGameCellViewModel.swift */,
 				8D32F37A22D739F300ABC228 /* DetailNoteViewModelProtocol.swift */,
@@ -272,6 +271,7 @@
 				77B120E6239CF2AC001B2301 /* OnboardingCollectionViewCell.swift */,
 				77BDB39C23B2B41500820E5B /* CityCollectionCell.swift */,
 				77BDB39D23B2B41500820E5B /* CityCollectionCell.xib */,
+				77688CD723BA20AE00697408 /* CityHeaderReusableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -395,6 +395,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-12Zapisok/Pods-12Zapisok-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
@@ -402,6 +403,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
@@ -435,6 +437,7 @@
 				8D32F37122D71EF400ABC228 /* PurchaseViewController.swift in Sources */,
 				7741375623B9EC4100AD8A71 /* MenuViewModel.swift in Sources */,
 				8D32F36B22D71E5A00ABC228 /* GameViewController.swift in Sources */,
+				77688CD923BA20AE00697408 /* CityHeaderReusableView.swift in Sources */,
 				8D32F37322D71F0500ABC228 /* SettingsViewController.swift in Sources */,
 				77BDB39E23B2B41600820E5B /* CityCollectionCell.swift in Sources */,
 				77B120E7239CF2AC001B2301 /* OnboardingCollectionViewCell.swift in Sources */,
@@ -444,7 +447,6 @@
 				8D32F37F22D73C5E00ABC228 /* DetailNoteViewModel.swift in Sources */,
 				8D32F37522D7241E00ABC228 /* CustomCollectionViewFlowLayout.swift in Sources */,
 				8D32F36D22D71E6400ABC228 /* MapViewController.swift in Sources */,
-				8D32F35B22D3504E00ABC228 /* DataFetcher.swift in Sources */,
 				8D32F34122D3302D00ABC228 /* AppDelegate.swift in Sources */,
 				8D8EA3DB22D771DC00EA2F01 /* DetailNoteViewController.swift in Sources */,
 				8D32F38322D73E4500ABC228 /* NoteCollectionCell.swift in Sources */,

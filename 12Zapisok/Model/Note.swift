@@ -7,27 +7,43 @@
 //
 
 import Foundation
+import RealmSwift
+
+import RealmSwift
+import ObjectMapper
 import CoreLocation
 
-struct Note: Equatable, Codable {
-    var id: Int
-    var name: String
-    var description: String
-    var image: String
+class Note: Object, Mappable, Endpoint {
     
-    var point: Point
-    var isOpen: Bool
-    var timeFinded: String?
-}
+    @objc dynamic var id = 0
+    @objc dynamic var name = ""
+    @objc dynamic var noteDescription = ""
+    @objc dynamic var imageUrl = ""
+    @objc dynamic var location: Location? = nil
+    @objc dynamic var hint = ""
+    @objc dynamic var category = ""
+    @objc dynamic var cityID = 0
 
-struct Point: Equatable, Codable {
-    
-    static func == (lhs: Point, rhs: Point) -> Bool {
-        return lhs.latitude == rhs.latitude && lhs.longitude == rhs.longitude
+    required convenience init?(map: Map) {
+        self.init()
     }
     
-    // http://138.68.102.85:9050/notes
-    var latitude: Float
-    var longitude: Float
-    //var location: CLLocationCoordinate2D? = nil
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    func mapping(map: Map) {
+        id              <- map["id"]
+        name            <- map["name"]
+        noteDescription <- map["description"]
+        imageUrl        <- map["image_url"]
+        location        <- map["point"]
+        hint            <- map["hint"]
+        category        <- map["category"]
+        cityID          <- map["city"]
+    }
+    
+    static func url() -> String {
+        return "/notes"
+    }
 }

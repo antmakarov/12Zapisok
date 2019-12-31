@@ -65,7 +65,7 @@ class StorageManager {
     }
     
     func getObjects<T: Object>(_ type: T.Type) -> [T]? {
-        if let objs = try? Realm().objects(type).map{ $0 } {
+        if let objs = try? Realm().objects(type).map{ $0 }, !objs.isEmpty {
             return Array(objs)
         }
        

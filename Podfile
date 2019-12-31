@@ -8,6 +8,7 @@ target '12Zapisok' do
   pod 'Alamofire'
   pod 'ObjectMapper'
   pod 'RealmSwift'
+  pod 'Kingfisher'
   
   # Pods for 12Zapisok
 

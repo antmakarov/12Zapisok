@@ -15,7 +15,7 @@ enum CollectionDisplay {
 
 class GridCollectionViewFlowLayout: UICollectionViewFlowLayout {
 
-    var display : CollectionDisplay = .grid(columns: 3)
+    var display: CollectionDisplay = .grid(columns: 3)
     private var cellSpacing: CGFloat = 10
     private let righLeftInsets: CGFloat = 10 * 2
     

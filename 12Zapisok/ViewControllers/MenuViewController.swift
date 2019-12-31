@@ -29,6 +29,26 @@ class MenuViewController: UIViewController, Storyboarded {
         prepareUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let viewModel = viewModel {
+            cityNameLabel.text = viewModel.getCurrentCityName()
+            
+            if let url = URL(string: viewModel.getCurrentImage()) {
+                cityImage.kf.indicatorType = .activity
+                cityImage.kf.setImage(
+                    with: url,
+                    placeholder: UIImage(named: "cityPlaceholder"),
+                    options: [
+                        .scaleFactor(UIScreen.main.scale),
+                        .transition(.fade(0.5)),
+                        .cacheOriginalImage
+                ])
+            }
+        }
+    }
+    
     @IBAction func chooseCity(_ sender: Any) {
         coordinator?.openCityList()
     }
@@ -40,10 +60,6 @@ class MenuViewController: UIViewController, Storyboarded {
                    $0.layer.shadowRadius = Constants.shadowRadius
                    $0.layer.shadowColor = Constants.shadowColor
                }
-        
-        if let viewModel = viewModel {
-            cityNameLabel.text = viewModel.getCityName()
-        }
     }
 }
 

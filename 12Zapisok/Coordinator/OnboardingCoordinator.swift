@@ -32,9 +32,6 @@ class OnboardingCoordinator: BaseCoordinator {
         let vm = OnboardingViewModel()
         vm.coordinatorDelegate = self
         vc.viewModel = vm
-
-        //vc.hidesBottomBarWhenPushed = true
-        //navigationController.navigationBar.isTranslucent = false
         navigationController.pushViewController(vc, animated: true)
     }
     
@@ -42,7 +39,6 @@ class OnboardingCoordinator: BaseCoordinator {
         navigationController.popViewController(animated: true)
         delegate?.didFinish(from: self)
     }
-
 }
 
 extension OnboardingCoordinator: OnboardingViewModelCoordinatorDelegate {
@@ -62,7 +58,6 @@ extension OnboardingCoordinator: OnboardingViewModelCoordinatorDelegate {
     func didFinish(returnValue: String) {
         finish()
     }
-
 }
 
 protocol OnboardingCoordinatorDelegate: class {

@@ -8,22 +8,13 @@
 
 import Foundation
 
-public enum HTTPMethod: String {
-    case get    = "GET"
-    case post   = "POST"
-    case put    = "PUT"
-    case delete = "DELETE"
+enum Result<Value, Error: Swift.Error> {
+    case success(Value)
+    case error(Error)
 }
 
-protocol EndPoint {
-    var baseURL: URL { get }
-    var path: String { get }
-    var httpMethod: HTTPMethod { get }
-}
-
-enum ServerPaths: String {
-    case login = "login"
-    case register = "register"
-    case loadNotes = "load_notes"
-    // . . .
+enum NetworkError: Error {
+    case badURL
+    case parsingError
+    case emptyResponse
 }

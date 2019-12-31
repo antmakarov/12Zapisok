@@ -25,14 +25,14 @@ class NoteCollectionCell: BaseCardCell {
             guard let viewModel = viewModel else { return }
             headerLabel.text = "Записка #\(viewModel.note.id)"
             
-            if viewModel.note.isOpen {
-                imageView.image = UIImage(named: "1")
-                statusLabel.text = "Открыта сегодня в 11:45"
-            } else {
-                imageView.image = UIImage(named: "2")
-                statusLabel.text = "Не открыта"
-                statusLabel.alpha = 0.6
-            }
+//            if viewModel.note.isOpen {
+//                imageView.image = UIImage(named: "1")
+//                statusLabel.text = "Открыта сегодня в 11:45"
+//            } else {
+//                imageView.image = UIImage(named: "2")
+//                statusLabel.text = "Не открыта"
+//                statusLabel.alpha = 0.6
+//            }
         }
     }
 }
