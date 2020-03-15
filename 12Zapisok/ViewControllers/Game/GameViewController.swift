@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+class GameViewController: BaseViewController {
     
     @IBOutlet weak var headerNotesView: UIView!
     @IBOutlet weak var notesCollectionView: UICollectionView!
@@ -22,8 +22,9 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        viewModel = GameViewModel()
         
-        viewModel?.setDataUpdateHandler { [weak self] in
+        viewModel?.setUpdateHandler { [weak self] in
             guard let strongSelf = self else {
                 return
             }
@@ -31,8 +32,6 @@ class GameViewController: UIViewController {
             strongSelf.notesCollectionView.reloadData()
         }
         
-        viewModel = GameViewModel()
-
         notesCollectionView.collectionViewLayout = GridCollectionViewFlowLayout(display: .grid(columns: 2))
         
         notesCollectionView.register(UINib(nibName: "NoteCollectionCell", bundle: nil), forCellWithReuseIdentifier: "cell")

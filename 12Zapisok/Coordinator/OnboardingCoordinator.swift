@@ -8,58 +8,59 @@
 
 import UIKit
 
+enum OnboardingRoute: Route {
+    case auth
+    case cityList(completion: ((City) -> Void)?)
+    case finishOnboarding
+}
+
+protocol OnboardingCoordinatorDelegate: class {
+    func didFinishOnboarding(from coordinator: OnboardingCoordinator)
+}
+
 protocol OnboardingViewModelCoordinatorDelegate: class {
-    func didFinish(returnValue: String)
-    func didTapAuth()
-    func didTapCityList(completion: ((City) -> Void)?)
+    func prepareRouting(for route: OnboardingRoute)
 }
 
 class OnboardingCoordinator: BaseCoordinator {
         
-    var navigationController: UINavigationController
+    var rootViewController: UINavigationController
     weak var delegate: OnboardingCoordinatorDelegate?
 
     init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+        rootViewController = navigationController
     }
 
     override func start() {
-        goToOnboardingVC()
-    }
-    
-    func goToOnboardingVC() {
         let vc = OnboardingViewController.instantiate()
         let vm = OnboardingViewModel()
         vm.coordinatorDelegate = self
         vc.viewModel = vm
-        navigationController.pushViewController(vc, animated: true)
+        rootViewController.pushViewController(vc, animated: true)
     }
     
     override func finish() {
-        navigationController.popViewController(animated: true)
-        delegate?.didFinish(from: self)
+        rootViewController.popViewController(animated: true)
+        delegate?.didFinishOnboarding(from: self)
     }
 }
 
 extension OnboardingCoordinator: OnboardingViewModelCoordinatorDelegate {
-
-    func didTapAuth() {
-        let vc = AuthViewController.instantiate()
-        navigationController.pushViewController(vc, animated: true)
+    
+    func prepareRouting(for route: OnboardingRoute) {
+        switch route {
+        case .auth:
+            let vc = AuthViewController.instantiate()
+            rootViewController.pushViewController(vc, animated: true)
+            
+        case .cityList(let completion):
+            let vc = CityListViewController()
+            vc.viewModel = CityListViewModel()
+            vc.chooseCompletion = completion
+            rootViewController.pushViewController(vc, animated: true)
+            
+        case .finishOnboarding:
+            finish()
+        }
     }
-
-    func didTapCityList(completion: ((City) -> Void)?) {
-        let vc = CityListViewController.instantiate()
-        vc.viewModel = CityListViewModel()
-        vc.chooseCompletion = completion
-        navigationController.pushViewController(vc, animated: true)
-    }
-
-    func didFinish(returnValue: String) {
-        finish()
-    }
-}
-
-protocol OnboardingCoordinatorDelegate: class {
-    func didFinish(from coordinator: OnboardingCoordinator)
 }

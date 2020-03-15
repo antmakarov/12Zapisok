@@ -8,6 +8,23 @@
 
 import UIKit
 
+// MARK: Class Name Identifier
+
+public protocol ClassNameProtocol {
+    static var className: String { get }
+}
+
+public extension ClassNameProtocol {
+    static var className: String {
+        return String(describing: self)
+    }
+}
+
+extension UIViewController: ClassNameProtocol { }
+extension UIView: ClassNameProtocol { }
+
+// MARK: Custom UI
+
 extension UIView {
    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
         let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))

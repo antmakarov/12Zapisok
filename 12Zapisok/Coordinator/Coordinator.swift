@@ -8,49 +8,53 @@
 
 import UIKit
 
-class BaseCoordinator {
+//MARK: Base Root Coordinator
+
+public class BaseCoordinator {
 
     private var childCoordinators: [BaseCoordinator] = []
-
-    func start() {
+    
+    //MARK: Public override methods
+    
+    public func start() {
         preconditionFailure("This method needs to be overriden by concrete subclass.")
     }
 
-    func finish() {
+    public func finish() {
         preconditionFailure("This method needs to be overriden by concrete subclass.")
     }
 
-    func addChildCoordinator(_ coordinator: BaseCoordinator) {
+    public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // no-op
+    }
+    
+    //MARK: Final methods
+
+    final func addChildCoordinator(_ coordinator: BaseCoordinator) {
         childCoordinators.append(coordinator)
     }
 
-    func removeChildCoordinator(_ coordinator: BaseCoordinator) {
-        if let index = childCoordinators.firstIndex(of: coordinator) {
-            childCoordinators.remove(at: index)
-        } else {
-            print("Couldn't remove coordinator: \(coordinator). It's not a child coordinator.")
+    final func removeChildCoordinator(_ coordinator: BaseCoordinator) {
+        guard let index = childCoordinators.firstIndex(of: coordinator) else {
+            Logger.error(msg: "Couldn't remove coordinator: \(coordinator). It's not a child coordinator.")
+            return
         }
+        childCoordinators.remove(at: index)
     }
 
-    func removeAllChildCoordinatorsWith<T>(type: T.Type) {
+    final func removeAllChildCoordinatorsWith<T>(type: T.Type) {
         childCoordinators = childCoordinators.filter { $0 is T  == false }
     }
 
-    func removeAllChildCoordinators() {
+    final func removeAllChildCoordinators() {
         childCoordinators.removeAll()
     }
-
 }
+
+//MARK: BaseCoordinator Equatable
 
 extension BaseCoordinator: Equatable {
-
-    static func == (lhs: BaseCoordinator, rhs: BaseCoordinator) -> Bool {
+    public static func == (lhs: BaseCoordinator, rhs: BaseCoordinator) -> Bool {
         return lhs === rhs
     }
-
-}
-
-protocol Coordinator {
-    var navigationController: UINavigationController { get set }
-    func start()
 }

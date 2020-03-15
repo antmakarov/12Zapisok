@@ -14,10 +14,12 @@ import RealmSwift
 protocol NetworkManagerProtocol {
     func getUserToken(completion: @escaping (String?) -> ())
     func getCityList(completion: @escaping ((Result<[City], Error>) -> ()))
-    func getNoteList(completion: @escaping ((Result<[Note], Error>) -> ()))
+    func getNoteList(parameters: Parameters, completion: @escaping ((Result<[Note], Error>) -> ()))
 }
 
 class NetworkManager: NetworkManagerProtocol {
+    
+    typealias Parameters = [String: Any]
     
     static let shared = NetworkManager()
     private var session = Alamofire.SessionManager(configuration: .default)
@@ -36,8 +38,8 @@ class NetworkManager: NetworkManagerProtocol {
         fetchArrayOf(type: City.self) { completion($0) }
     }
 
-    func getNoteList(completion: @escaping ((Result<[Note], Error>) -> ())) {
-        fetchArrayOf(type: Note.self) { completion($0) }
+    func getNoteList(parameters: Parameters, completion: @escaping ((Result<[Note], Error>) -> ())) {
+        fetchArrayOf(type: Note.self, parameters) { completion($0) }
     }
     
     private func fetchObject<T: Object>(type: T.Type, completion: @escaping ((Result<T, Error>)) -> ())  where T:Mappable, T:Endpoint {
@@ -64,12 +66,12 @@ class NetworkManager: NetworkManagerProtocol {
         }
     }
     
-    private func fetchArrayOf<T: Object>(type: T.Type, completion: @escaping ((Result<[T], Error>)) -> ())  where T:Mappable, T:Endpoint {
+    private func fetchArrayOf<T: Object>(type: T.Type, _ parameters: Parameters? = nil, completion: @escaping ((Result<[T], Error>)) -> ())  where T:Mappable, T:Endpoint {
         
         let requestURL = baseUrl + type.url()
         Logger.info(msg: requestURL)
         
-        Alamofire.request(requestURL, encoding: JSONEncoding.default, headers: tokenHeader)
+        Alamofire.request(requestURL, parameters: parameters, encoding: URLEncoding.queryString, headers: tokenHeader)
         .validate(statusCode: 200..<300)
         .responseJSON { response in
             

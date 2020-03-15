@@ -77,7 +77,7 @@ extension CityListViewModel: CityListViewModelProtocol {
         return cities.first { $0.id == preferencesManager.currentCityId }?.name ?? ""
     }
     
-    func getCurrentImage() -> String {
+    func getCurrentCityImage() -> String {
         return cities.first { $0.id == preferencesManager.currentCityId }?.imageUrl ?? ""
     }
 }

@@ -68,15 +68,15 @@ extension OnboardingViewModel: OnboardingViewModelProtocol {
         case .city:
             if let city = cityName {
                 return OnboardingStepViewModel(title: city, details: "Правильно ли мы определили Ваш город?", image: "", actionTitle: "Выбрать город") { completion in
-                    self.coordinatorDelegate?.didTapCityList { city in
+                    self.coordinatorDelegate?.prepareRouting(for: .cityList(completion: { city in
                         print(city)
-                    }
+                    }))
                 }
             } else {
                 return OnboardingStepViewModel(title: "Выберете Ваш город", details: "Мы заметили, что Вы запретили геолокацию, в этом случае выберите город из списка для начала игры", image: "", actionTitle: "Выбрать город", isHideSkip: true) { completion in
-                    self.coordinatorDelegate?.didTapCityList { city in
+                    self.coordinatorDelegate?.prepareRouting(for: .cityList(completion: { city in
                         print(city)
-                    }
+                    }))
                 }
             }
 
@@ -93,7 +93,6 @@ extension OnboardingViewModel: OnboardingViewModelProtocol {
     }
     
     func didTapSkip() {
-        coordinatorDelegate?.didFinish(returnValue: "")
+        coordinatorDelegate?.prepareRouting(for: .finishOnboarding)
     }
-    
 }

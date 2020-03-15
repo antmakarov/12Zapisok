@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="_2Zapisok" customModuleProvider="target">
+            <connections>
+                <outlet property="cityImage" destination="Fz5-Zf-xHA" id="ZJf-kn-khI"/>
+                <outlet property="cityNameLabel" destination="Tnx-fN-Mai" id="FnS-R6-Sac"/>
+                <outlet property="view" destination="g5h-Je-UTg" id="uXa-S4-hGy"/>
+                <outletCollection property="circleMenuImages" destination="VZy-H9-hOK" collectionClass="NSMutableArray" id="uBw-6S-JFa"/>
+                <outletCollection property="circleMenuImages" destination="GUm-zH-cqv" collectionClass="NSMutableArray" id="yVt-0L-AVR"/>
+                <outletCollection property="circleMenuImages" destination="bAA-uo-ipF" collectionClass="NSMutableArray" id="lmk-nJ-djV"/>
+                <outletCollection property="circleMenuImages" destination="DPn-Fm-fxM" collectionClass="NSMutableArray" id="a2A-6e-WiS"/>
+                <outletCollection property="menuItemViews" destination="k0J-Kf-toj" collectionClass="NSMutableArray" id="cWT-tM-dZt"/>
+                <outletCollection property="menuItemViews" destination="S08-QM-D6o" collectionClass="NSMutableArray" id="fHE-pT-Q11"/>
+                <outletCollection property="menuItemViews" destination="ffS-rK-VAg" collectionClass="NSMutableArray" id="dlh-YN-fgS"/>
+                <outletCollection property="menuItemViews" destination="Qw7-PT-l0d" collectionClass="NSMutableArray" id="gvw-A8-Hm9"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="g5h-Je-UTg">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="ncc-MY-RPh">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="455"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nn" translatesAutoresizingMaskIntoConstraints="NO" id="Fz5-Zf-xHA">
+                    <rect key="frame" x="20" y="103" width="374" height="341"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k0J-Kf-toj">
+                    <rect key="frame" x="0.0" y="472" width="207" height="207"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Scooter" translatesAutoresizingMaskIntoConstraints="NO" id="VZy-H9-hOK">
+                            <rect key="frame" x="31" y="31" width="145" height="145"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="route-2" translatesAutoresizingMaskIntoConstraints="NO" id="MGb-P0-Vxt">
+                            <rect key="frame" x="60" y="61" width="87" height="84"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRq-3K-UHQ">
+                            <rect key="frame" x="60" y="178" width="87" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                            <state key="normal" title="Играть">
+                                <color key="titleColor" red="0.23137254900000001" green="0.3411764706" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="VZy-H9-hOK" firstAttribute="centerX" secondItem="k0J-Kf-toj" secondAttribute="centerX" id="5AC-7g-Seu"/>
+                        <constraint firstItem="VZy-H9-hOK" firstAttribute="leading" secondItem="k0J-Kf-toj" secondAttribute="leading" constant="31" id="Fjx-vA-H1P"/>
+                        <constraint firstItem="VZy-H9-hOK" firstAttribute="top" secondItem="k0J-Kf-toj" secondAttribute="top" constant="31" id="VsW-LZ-NA2"/>
+                        <constraint firstItem="VZy-H9-hOK" firstAttribute="centerY" secondItem="k0J-Kf-toj" secondAttribute="centerY" id="p6I-Ns-f6e"/>
+                    </constraints>
+                </view>
+                <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S08-QM-D6o">
+                    <rect key="frame" x="207" y="472" width="207" height="207"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Orange Coral" translatesAutoresizingMaskIntoConstraints="NO" id="GUm-zH-cqv">
+                            <rect key="frame" x="31" y="31" width="145" height="145"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cityscape" translatesAutoresizingMaskIntoConstraints="NO" id="mhc-AW-ELP">
+                            <rect key="frame" x="61" y="61" width="85" height="85"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9aS-si-uGl">
+                            <rect key="frame" x="34" y="178" width="138" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                            <state key="normal" title="Сменить город">
+                                <color key="titleColor" red="0.20392156859999999" green="0.2666666667" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffS-rK-VAg">
+                    <rect key="frame" x="0.0" y="679" width="207" height="207"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2me-cO-bE8">
+                            <rect key="frame" x="59" y="178" width="85" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                            <state key="normal" title="Правила">
+                                <color key="titleColor" red="0.20392156859999999" green="0.2666666667" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Celestial" translatesAutoresizingMaskIntoConstraints="NO" id="bAA-uo-ipF">
+                            <rect key="frame" x="31" y="31" width="145" height="145"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="paper" translatesAutoresizingMaskIntoConstraints="NO" id="TV1-lP-YAs">
+                            <rect key="frame" x="61" y="61" width="85" height="85"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ffS-rK-VAg" secondAttribute="height" multiplier="1:1" id="C4p-tn-8K2"/>
+                    </constraints>
+                </view>
+                <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qw7-PT-l0d">
+                    <rect key="frame" x="207" y="679" width="207" height="207"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tonight" translatesAutoresizingMaskIntoConstraints="NO" id="DPn-Fm-fxM">
+                            <rect key="frame" x="31" y="31" width="145" height="145"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="treasure-2" translatesAutoresizingMaskIntoConstraints="NO" id="f0R-eO-5zk">
+                            <rect key="frame" x="60" y="61" width="86" height="84"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6n-cU-eJF">
+                            <rect key="frame" x="66" y="178" width="75" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                            <state key="normal" title="Покупки">
+                                <color key="titleColor" red="0.20392156859999999" green="0.2666666667" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aQv-tE-1eK">
+                    <rect key="frame" x="0.0" y="430" width="414" height="65"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAX-E5-yR8">
+                            <rect key="frame" x="61" y="8" width="46" height="47"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="tintColor" red="1" green="0.42647484959999998" blue="0.1181829006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                            <state key="normal" image="pie-chart"/>
+                            <connections>
+                                <action selector="openStatistics:" destination="-1" eventType="touchUpInside" id="9L8-fo-jnW"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKW-T6-Xj7">
+                            <rect key="frame" x="184" y="8" width="46" height="47"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="tintColor" red="0.20392156859999999" green="0.2666666667" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                            <state key="normal" image="achievement"/>
+                            <connections>
+                                <action selector="openLeaderBoard:" destination="-1" eventType="touchUpInside" id="34U-Av-QzQ"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CWi-Fh-UOw">
+                            <rect key="frame" x="0.0" y="58" width="414" height="1"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3b-X4-rB0">
+                            <rect key="frame" x="327" y="9" width="46" height="46"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="tintColor" red="0.45355463130000001" green="0.45355463130000001" blue="0.45355463130000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                            <state key="normal" image="settings-2"/>
+                            <connections>
+                                <action selector="openSettings:" destination="-1" eventType="touchUpInside" id="Ldq-dk-CZB"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qwd-jX-omq">
+                    <rect key="frame" x="20" y="44" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="warning"/>
+                    <connections>
+                        <action selector="showCityInfo:" destination="-1" eventType="touchUpInside" id="NZ5-xs-IUA"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Нижний Новгород" textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tnx-fN-Mai">
+                    <rect key="frame" x="79" y="40" width="256" height="61"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xx-RA-Z0r">
+                    <rect key="frame" x="354" y="44" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="placeholder-1"/>
+                    <connections>
+                        <action selector="openMap:" destination="-1" eventType="touchUpInside" id="erU-zf-KoL"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="ffS-rK-VAg" firstAttribute="top" secondItem="S08-QM-D6o" secondAttribute="bottom" id="0V5-fz-Y2o"/>
+                <constraint firstItem="ffS-rK-VAg" firstAttribute="width" secondItem="duI-yJ-lPa" secondAttribute="width" multiplier="0.5" id="0bh-6g-NyT"/>
+                <constraint firstItem="k0J-Kf-toj" firstAttribute="leading" secondItem="g5h-Je-UTg" secondAttribute="leading" id="8Y5-wS-P8E"/>
+                <constraint firstItem="Qw7-PT-l0d" firstAttribute="width" secondItem="ffS-rK-VAg" secondAttribute="width" id="9h8-Ra-fpC"/>
+                <constraint firstItem="k0J-Kf-toj" firstAttribute="width" secondItem="ffS-rK-VAg" secondAttribute="width" id="9o1-N1-V2t"/>
+                <constraint firstItem="S08-QM-D6o" firstAttribute="width" secondItem="ffS-rK-VAg" secondAttribute="width" id="B6U-hs-Iac"/>
+                <constraint firstItem="ffS-rK-VAg" firstAttribute="leading" secondItem="g5h-Je-UTg" secondAttribute="leading" id="BRf-zW-p2o"/>
+                <constraint firstAttribute="bottom" secondItem="ffS-rK-VAg" secondAttribute="bottom" constant="10" id="NVz-dw-YbR"/>
+                <constraint firstItem="Qw7-PT-l0d" firstAttribute="trailing" secondItem="duI-yJ-lPa" secondAttribute="trailing" id="Oun-uI-lq1"/>
+                <constraint firstItem="Qw7-PT-l0d" firstAttribute="height" secondItem="ffS-rK-VAg" secondAttribute="height" id="abp-SJ-3Gh"/>
+                <constraint firstItem="duI-yJ-lPa" firstAttribute="trailing" secondItem="S08-QM-D6o" secondAttribute="trailing" id="hkw-cO-N0s"/>
+                <constraint firstItem="ffS-rK-VAg" firstAttribute="top" secondItem="k0J-Kf-toj" secondAttribute="bottom" id="iqU-8N-AG7"/>
+                <constraint firstItem="S08-QM-D6o" firstAttribute="height" secondItem="ffS-rK-VAg" secondAttribute="height" id="t33-wB-shs"/>
+                <constraint firstAttribute="bottom" secondItem="Qw7-PT-l0d" secondAttribute="bottom" constant="10" id="xA1-zM-X5L"/>
+                <constraint firstItem="k0J-Kf-toj" firstAttribute="height" secondItem="ffS-rK-VAg" secondAttribute="height" id="zds-1t-ut8"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="duI-yJ-lPa"/>
+            <point key="canvasLocation" x="-9" y="1511"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Celestial" width="247" height="247"/>
+        <image name="Orange Coral" width="247" height="247"/>
+        <image name="Rectangle" width="368" height="102"/>
+        <image name="Scooter" width="247" height="247"/>
+        <image name="Tonight" width="247" height="247"/>
+        <image name="achievement" width="128" height="128"/>
+        <image name="cityscape" width="256" height="256"/>
+        <image name="nn" width="900" height="552"/>
+        <image name="paper" width="256" height="256"/>
+        <image name="pie-chart" width="128" height="128"/>
+        <image name="placeholder-1" width="64" height="64"/>
+        <image name="route-2" width="256" height="256"/>
+        <image name="settings-2" width="128" height="128"/>
+        <image name="treasure-2" width="256" height="256"/>
+        <image name="warning" width="64" height="64"/>
+    </resources>
+</document>

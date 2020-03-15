@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DetailViewModel: DetailNoteViewModelProtocol {
+class DetailNoteViewModel: DetailNoteViewModelProtocol {
     
     internal var note: Note
     

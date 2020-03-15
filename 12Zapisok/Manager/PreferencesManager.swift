@@ -23,6 +23,10 @@ class PreferencesManager {
         userDefaults = UserDefaults.standard
     }
     
+    var isSuccessAuth: Bool {
+        return userToken != nil && currentCityId != nil
+    }
+    
     var userToken: String? {
         set {
             Logger.info(msg: "Set new user token - \(newValue!)")

@@ -18,9 +18,9 @@ class Note: Object, Mappable, Endpoint {
     @objc dynamic var id = 0
     @objc dynamic var name = ""
     @objc dynamic var noteDescription = ""
-    @objc dynamic var imageUrl = ""
     @objc dynamic var location: Location? = nil
     @objc dynamic var hint = ""
+    @objc dynamic var statistic: String? = nil
     @objc dynamic var category = ""
     @objc dynamic var cityID = 0
 
@@ -36,11 +36,10 @@ class Note: Object, Mappable, Endpoint {
         id              <- map["id"]
         name            <- map["name"]
         noteDescription <- map["description"]
-        imageUrl        <- map["image_url"]
         location        <- map["point"]
         hint            <- map["hint"]
         category        <- map["category"]
-        cityID          <- map["city"]
+        cityID          <- map["town_id"]
     }
     
     static func url() -> String {

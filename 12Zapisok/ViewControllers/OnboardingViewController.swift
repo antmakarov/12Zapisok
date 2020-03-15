@@ -10,7 +10,6 @@ import UIKit
 
 class OnboardingViewController: UIViewController, Storyboarded {
     
-    weak var coordinator: MainCoordinator?
     var viewModel: OnboardingViewModelProtocol?
     
     @IBOutlet weak var collectionView: UICollectionView!

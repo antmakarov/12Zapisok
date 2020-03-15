@@ -10,8 +10,15 @@ import UIKit
 
 class AppCoordinator: BaseCoordinator {
     
-    // MARK: - Properties
+    // MARK: Properties
+    
     private let window: UIWindow?
+    private let preferencesManager: PreferencesManager
+
+    private enum ApplicationFlow {
+        case onboarding
+        case home
+    }
     
     private lazy var rootViewController: UINavigationController = {
         let nc = UINavigationController()
@@ -23,6 +30,7 @@ class AppCoordinator: BaseCoordinator {
 
     init(window: UIWindow?) {
         self.window = window
+        self.preferencesManager = PreferencesManager()
     }
     
     override func start() {
@@ -33,32 +41,36 @@ class AppCoordinator: BaseCoordinator {
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()
 
-        goToOnboardingOrLoader()
+        startApplicationFlow()
     }
     
-    func goToOnboardingOrLoader() {
-        switchToOnboardingCoordinator()
-    }
+    // MARK: Private star methods
 
-    private func switchToHomeScreen() {
-        let homeCoordinator = MainCoordinator(navigationController: rootViewController)
-        //homeCoordinator.delegate = self
-        self.addChildCoordinator(homeCoordinator)
-        homeCoordinator.start()
+    fileprivate func startApplicationFlow() {
+        changeApplicatonFlow(preferencesManager.isSuccessAuth ? .home : .onboarding)
     }
     
-    private func switchToOnboardingCoordinator() {
-        let onboardingCoordinator = OnboardingCoordinator(navigationController: rootViewController)
-        onboardingCoordinator.delegate = self
-        addChildCoordinator(onboardingCoordinator)
-        onboardingCoordinator.start()
+    private func changeApplicatonFlow(_ flow: ApplicationFlow) {
+        let coordinator: BaseCoordinator
+        
+        switch flow {
+        case .onboarding:
+            coordinator = OnboardingCoordinator(navigationController: rootViewController)
+            (coordinator as? OnboardingCoordinator)?.delegate = self
+            
+        case .home:
+            coordinator = HomeCoordinator(navigationController: rootViewController)
+        }
+        
+        addChildCoordinator(coordinator)
+        coordinator.start()
     }
 }
 
 extension AppCoordinator: OnboardingCoordinatorDelegate {
-    func didFinish(from coordinator: OnboardingCoordinator) {
+    func didFinishOnboarding(from coordinator: OnboardingCoordinator) {
         rootViewController.dismiss(animated: true, completion: nil)
         removeChildCoordinator(coordinator)
-        switchToHomeScreen()
+        changeApplicatonFlow(.home)
     }
 }
