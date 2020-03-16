@@ -1,5 +1,5 @@
 //
-//  OnboardingCollectionViewCell.swift
+//  OnboardingCell.swift
 //  12Zapisok
 //
 //  Created by Anton Makarov on 08.12.2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OnboardingCollectionViewCell: UICollectionViewCell {
+class OnboardingCell: UICollectionViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailsLabel: UILabel!

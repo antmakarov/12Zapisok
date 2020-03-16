@@ -10,24 +10,40 @@ import UIKit
 
 class OnboardingViewController: UIViewController, Storyboarded {
     
+    private enum Constants {
+        static let edgeInset: CGFloat = 10.0
+        static let collectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+    }
+    
     var viewModel: OnboardingViewModelProtocol?
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
-        view.backgroundColor = .white
         super.viewDidLoad()
         
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
-        layout.itemSize = CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+        setupCollectionLayout()
+        collectionView.register(cellType: OnboardingCell.self)
+    }
+    
+    private func setupCollectionLayout() {
+        
+        let itemWidth = collectionView.frame.width
+        let itemHeight = collectionView.frame.height - Constants.edgeInset * 2
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = Constants.collectionInset
+        layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         layout.scrollDirection = .horizontal
-        collectionView!.collectionViewLayout = layout
+        
+        collectionView.collectionViewLayout = layout
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        print("viewDidAppear")
+    private func scrollTo(nextStep: Int) {
+        let indexPath = IndexPath(item: nextStep, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
 }
 
@@ -39,17 +55,14 @@ extension OnboardingViewController: UICollectionViewDataSource, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let viewModel = viewModel, let item = OnbordingItem(rawValue: indexPath.row) else {
-            fatalError("No viewModel for onboarding")
+            fatalError("No ViewModel for Onboarding")
         }
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OnboardingCollectionViewCell", for: indexPath) as! OnboardingCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(with: OnboardingCell.self, for: indexPath)
         cell.configure(with: viewModel.onboardingItem(type: item), actionCompletion: { result in
-            print(indexPath.row)
-            let indexPath = IndexPath(item: indexPath.row + 1, section: 0)
-            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            self.scrollTo(nextStep: indexPath.row + 1)
         }) {
-            let indexPath = IndexPath(item: indexPath.row + 1, section: 0)
-            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            self.scrollTo(nextStep: indexPath.row + 1)
         }
 
         return cell

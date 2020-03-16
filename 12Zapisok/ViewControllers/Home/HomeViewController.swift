@@ -91,7 +91,7 @@ extension HomeViewController {
     }
     
     @IBAction func openLeaderBoard(_ sender: Any) {
-        
+        viewModel?.routeTo(.showLeaders)
     }
     
     @objc func tapMenuItem(sender: UITapGestureRecognizer) {

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		771E2CCB23AE009100553D58 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771E2CCA23AE009100553D58 /* AuthViewController.swift */; };
 		7741375623B9EC4100AD8A71 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7741375523B9EC4100AD8A71 /* HomeViewModel.swift */; };
 		77688CD923BA20AE00697408 /* CityHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77688CD723BA20AE00697408 /* CityHeaderReusableView.swift */; };
 		7790B453241CF5CA0046EFA5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790B452241CF5CA0046EFA5 /* BaseViewController.swift */; };
@@ -17,6 +16,23 @@
 		7790B45D241EACA10046EFA5 /* CityHeaderReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B45C241EACA10046EFA5 /* CityHeaderReusableView.xib */; };
 		7790B45F241EBBC90046EFA5 /* Extensions+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790B45E241EBBC90046EFA5 /* Extensions+UITableView.swift */; };
 		7790B461241EBBE60046EFA5 /* Extensions+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790B460241EBBE60046EFA5 /* Extensions+UICollectionView.swift */; };
+		7790B465241ECEB10046EFA5 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B464241ECEB10046EFA5 /* GameViewController.xib */; };
+		7790B469241FA3CF0046EFA5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790B467241FA3CF0046EFA5 /* LoginViewController.swift */; };
+		7790B46A241FA3CF0046EFA5 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B468241FA3CF0046EFA5 /* LoginViewController.xib */; };
+		7790B471241FA42A0046EFA5 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790B46F241FA42A0046EFA5 /* RegistrationViewController.swift */; };
+		7790B472241FA42A0046EFA5 /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B470241FA42A0046EFA5 /* RegistrationViewController.xib */; };
+		7790B474241FA44F0046EFA5 /* Extentions+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790B473241FA44F0046EFA5 /* Extentions+Storyboard.swift */; };
+		7790B478241FA5E10046EFA5 /* GameRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790B476241FA5E10046EFA5 /* GameRulesViewController.swift */; };
+		7790B479241FA5E10046EFA5 /* GameRulesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B477241FA5E10046EFA5 /* GameRulesViewController.xib */; };
+		7790B47D241FA6050046EFA5 /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790B47B241FA6050046EFA5 /* PurchaseViewController.swift */; };
+		7790B47E241FA6050046EFA5 /* PurchaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B47C241FA6050046EFA5 /* PurchaseViewController.xib */; };
+		7790B484241FA66B0046EFA5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790B482241FA66B0046EFA5 /* SettingsViewController.swift */; };
+		7790B485241FA66B0046EFA5 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B483241FA66B0046EFA5 /* SettingsViewController.xib */; };
+		7790B488241FA6990046EFA5 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B487241FA6990046EFA5 /* OnboardingViewController.xib */; };
+		7790B48B241FA6FF0046EFA5 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B48A241FA6FF0046EFA5 /* MapViewController.xib */; };
+		7790B48D241FAC370046EFA5 /* OnboardingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B48C241FAC370046EFA5 /* OnboardingCell.xib */; };
+		7790B490241FBEB80046EFA5 /* GameFooterReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790B48E241FBEB80046EFA5 /* GameFooterReusableView.swift */; };
+		7790B491241FBEB80046EFA5 /* GameFooterReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B48F241FBEB80046EFA5 /* GameFooterReusableView.xib */; };
 		77B120C5238C53BC001B2301 /* PreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120C4238C53BC001B2301 /* PreferencesManager.swift */; };
 		77B120C7238C547E001B2301 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120C6238C547E001B2301 /* Logger.swift */; };
 		77B120CC238C606B001B2301 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120CB238C606B001B2301 /* LocationManager.swift */; };
@@ -25,13 +41,12 @@
 		77B120D2238DC545001B2301 /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120D1238DC545001B2301 /* Extensions+UIView.swift */; };
 		77B120D4239C475B001B2301 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120D3239C475B001B2301 /* OnboardingViewController.swift */; };
 		77B120D6239C4C40001B2301 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120D5239C4C40001B2301 /* Coordinator.swift */; };
-		77B120D8239C4C70001B2301 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120D7239C4C70001B2301 /* Storyboarded.swift */; };
 		77B120DA239C4CD9001B2301 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120D9239C4CD9001B2301 /* HomeCoordinator.swift */; };
 		77B120DF239C5F8F001B2301 /* CityListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120DE239C5F8F001B2301 /* CityListViewModel.swift */; };
 		77B120E1239CDA3B001B2301 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120E0239CDA3B001B2301 /* OnboardingCoordinator.swift */; };
 		77B120E3239CDCE1001B2301 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120E2239CDCE1001B2301 /* OnboardingViewModel.swift */; };
 		77B120E5239CDE2B001B2301 /* OnboardingStepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120E4239CDE2B001B2301 /* OnboardingStepViewModel.swift */; };
-		77B120E7239CF2AC001B2301 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120E6239CF2AC001B2301 /* OnboardingCollectionViewCell.swift */; };
+		77B120E7239CF2AC001B2301 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120E6239CF2AC001B2301 /* OnboardingCell.swift */; };
 		77B120E9239CF561001B2301 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120E8239CF561001B2301 /* AppCoordinator.swift */; };
 		77BDB39E23B2B41600820E5B /* CityCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BDB39C23B2B41500820E5B /* CityCollectionCell.swift */; };
 		77BDB39F23B2B41600820E5B /* CityCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77BDB39D23B2B41500820E5B /* CityCollectionCell.xib */; };
@@ -39,7 +54,6 @@
 		77BDB3A323B3E99300820E5B /* CityDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77BDB3A123B3E99300820E5B /* CityDetailsViewController.xib */; };
 		8D32F34122D3302D00ABC228 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F34022D3302D00ABC228 /* AppDelegate.swift */; };
 		8D32F34322D3302D00ABC228 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F34222D3302D00ABC228 /* HomeViewController.swift */; };
-		8D32F34622D3302D00ABC228 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D32F34422D3302D00ABC228 /* Main.storyboard */; };
 		8D32F34822D3302F00ABC228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D32F34722D3302F00ABC228 /* Assets.xcassets */; };
 		8D32F34B22D3302F00ABC228 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D32F34922D3302F00ABC228 /* LaunchScreen.storyboard */; };
 		8D32F35322D3398700ABC228 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F35222D3398700ABC228 /* City.swift */; };
@@ -51,9 +65,6 @@
 		8D32F36922D49DD600ABC228 /* CityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F36822D49DD500ABC228 /* CityListViewController.swift */; };
 		8D32F36B22D71E5A00ABC228 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F36A22D71E5A00ABC228 /* GameViewController.swift */; };
 		8D32F36D22D71E6400ABC228 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F36C22D71E6300ABC228 /* MapViewController.swift */; };
-		8D32F36F22D71EBB00ABC228 /* GameRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F36E22D71EBB00ABC228 /* GameRulesViewController.swift */; };
-		8D32F37122D71EF400ABC228 /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F37022D71EF400ABC228 /* PurchaseViewController.swift */; };
-		8D32F37322D71F0500ABC228 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F37222D71F0500ABC228 /* SettingsViewController.swift */; };
 		8D32F37522D7241E00ABC228 /* CustomCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F37422D7241E00ABC228 /* CustomCollectionViewFlowLayout.swift */; };
 		8D32F37722D738FA00ABC228 /* CollectionViewGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F37622D738FA00ABC228 /* CollectionViewGameViewModel.swift */; };
 		8D32F37922D7394500ABC228 /* CollectionGameCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F37822D7394500ABC228 /* CollectionGameCellViewModel.swift */; };
@@ -69,7 +80,6 @@
 
 /* Begin PBXFileReference section */
 		526AD8A7641C95E0C7D7C7D6 /* Pods_12Zapisok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_12Zapisok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		771E2CCA23AE009100553D58 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		7741375523B9EC4100AD8A71 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		77688CD723BA20AE00697408 /* CityHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityHeaderReusableView.swift; sourceTree = "<group>"; };
 		7790B452241CF5CA0046EFA5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +89,23 @@
 		7790B45C241EACA10046EFA5 /* CityHeaderReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityHeaderReusableView.xib; sourceTree = "<group>"; };
 		7790B45E241EBBC90046EFA5 /* Extensions+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UITableView.swift"; sourceTree = "<group>"; };
 		7790B460241EBBE60046EFA5 /* Extensions+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UICollectionView.swift"; sourceTree = "<group>"; };
+		7790B464241ECEB10046EFA5 /* GameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
+		7790B467241FA3CF0046EFA5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7790B468241FA3CF0046EFA5 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		7790B46F241FA42A0046EFA5 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		7790B470241FA42A0046EFA5 /* RegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
+		7790B473241FA44F0046EFA5 /* Extentions+Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extentions+Storyboard.swift"; sourceTree = "<group>"; };
+		7790B476241FA5E10046EFA5 /* GameRulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRulesViewController.swift; sourceTree = "<group>"; };
+		7790B477241FA5E10046EFA5 /* GameRulesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameRulesViewController.xib; sourceTree = "<group>"; };
+		7790B47B241FA6050046EFA5 /* PurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
+		7790B47C241FA6050046EFA5 /* PurchaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseViewController.xib; sourceTree = "<group>"; };
+		7790B482241FA66B0046EFA5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		7790B483241FA66B0046EFA5 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		7790B487241FA6990046EFA5 /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
+		7790B48A241FA6FF0046EFA5 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		7790B48C241FAC370046EFA5 /* OnboardingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCell.xib; sourceTree = "<group>"; };
+		7790B48E241FBEB80046EFA5 /* GameFooterReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFooterReusableView.swift; sourceTree = "<group>"; };
+		7790B48F241FBEB80046EFA5 /* GameFooterReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameFooterReusableView.xib; sourceTree = "<group>"; };
 		77B120C4238C53BC001B2301 /* PreferencesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesManager.swift; sourceTree = "<group>"; };
 		77B120C6238C547E001B2301 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		77B120CB238C606B001B2301 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -87,13 +114,12 @@
 		77B120D1238DC545001B2301 /* Extensions+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
 		77B120D3239C475B001B2301 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		77B120D5239C4C40001B2301 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		77B120D7239C4C70001B2301 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		77B120D9239C4CD9001B2301 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		77B120DE239C5F8F001B2301 /* CityListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListViewModel.swift; sourceTree = "<group>"; };
 		77B120E0239CDA3B001B2301 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		77B120E2239CDCE1001B2301 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		77B120E4239CDE2B001B2301 /* OnboardingStepViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStepViewModel.swift; sourceTree = "<group>"; };
-		77B120E6239CF2AC001B2301 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		77B120E6239CF2AC001B2301 /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
 		77B120E8239CF561001B2301 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		77BDB39C23B2B41500820E5B /* CityCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCollectionCell.swift; sourceTree = "<group>"; };
 		77BDB39D23B2B41500820E5B /* CityCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCollectionCell.xib; sourceTree = "<group>"; };
@@ -102,7 +128,6 @@
 		8D32F33D22D3302D00ABC228 /* 12Zapisok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 12Zapisok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D32F34022D3302D00ABC228 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D32F34222D3302D00ABC228 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		8D32F34522D3302D00ABC228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D32F34722D3302F00ABC228 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D32F34A22D3302F00ABC228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D32F34C22D3302F00ABC228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -115,9 +140,6 @@
 		8D32F36822D49DD500ABC228 /* CityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListViewController.swift; sourceTree = "<group>"; };
 		8D32F36A22D71E5A00ABC228 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		8D32F36C22D71E6300ABC228 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		8D32F36E22D71EBB00ABC228 /* GameRulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRulesViewController.swift; sourceTree = "<group>"; };
-		8D32F37022D71EF400ABC228 /* PurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
-		8D32F37222D71F0500ABC228 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8D32F37422D7241E00ABC228 /* CustomCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		8D32F37622D738FA00ABC228 /* CollectionViewGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewGameViewModel.swift; sourceTree = "<group>"; };
 		8D32F37822D7394500ABC228 /* CollectionGameCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionGameCellViewModel.swift; sourceTree = "<group>"; };
@@ -158,44 +180,124 @@
 				77B120D1238DC545001B2301 /* Extensions+UIView.swift */,
 				7790B45E241EBBC90046EFA5 /* Extensions+UITableView.swift */,
 				7790B460241EBBE60046EFA5 /* Extensions+UICollectionView.swift */,
+				7790B473241FA44F0046EFA5 /* Extentions+Storyboard.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		7790B456241E9A2E0046EFA5 /* HomeViewController */ = {
+		7790B456241E9A2E0046EFA5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				8D32F34222D3302D00ABC228 /* HomeViewController.swift */,
 				7790B457241E9A500046EFA5 /* HomeViewController.xib */,
 			);
-			path = HomeViewController;
+			path = Home;
 			sourceTree = "<group>";
 		};
-		7790B459241EA09D0046EFA5 /* CityListViewController */ = {
+		7790B459241EA09D0046EFA5 /* CityList */ = {
 			isa = PBXGroup;
 			children = (
 				8D32F36822D49DD500ABC228 /* CityListViewController.swift */,
 				7790B45A241EA0B60046EFA5 /* CityListViewController.xib */,
 			);
-			path = CityListViewController;
+			path = CityList;
+			sourceTree = "<group>";
+		};
+		7790B466241FA3B80046EFA5 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				7790B46E241FA4000046EFA5 /* Registration */,
+				7790B46B241FA3DA0046EFA5 /* Login */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		7790B46B241FA3DA0046EFA5 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7790B467241FA3CF0046EFA5 /* LoginViewController.swift */,
+				7790B468241FA3CF0046EFA5 /* LoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		7790B46E241FA4000046EFA5 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				7790B46F241FA42A0046EFA5 /* RegistrationViewController.swift */,
+				7790B470241FA42A0046EFA5 /* RegistrationViewController.xib */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		7790B475241FA5AA0046EFA5 /* GameRules */ = {
+			isa = PBXGroup;
+			children = (
+				7790B476241FA5E10046EFA5 /* GameRulesViewController.swift */,
+				7790B477241FA5E10046EFA5 /* GameRulesViewController.xib */,
+			);
+			path = GameRules;
+			sourceTree = "<group>";
+		};
+		7790B47A241FA5F70046EFA5 /* Purchase */ = {
+			isa = PBXGroup;
+			children = (
+				7790B47B241FA6050046EFA5 /* PurchaseViewController.swift */,
+				7790B47C241FA6050046EFA5 /* PurchaseViewController.xib */,
+			);
+			path = Purchase;
+			sourceTree = "<group>";
+		};
+		7790B47F241FA62A0046EFA5 /* CityDetails */ = {
+			isa = PBXGroup;
+			children = (
+				77BDB3A023B3E99300820E5B /* CityDetailsViewController.swift */,
+				77BDB3A123B3E99300820E5B /* CityDetailsViewController.xib */,
+			);
+			path = CityDetails;
+			sourceTree = "<group>";
+		};
+		7790B481241FA65D0046EFA5 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				7790B482241FA66B0046EFA5 /* SettingsViewController.swift */,
+				7790B483241FA66B0046EFA5 /* SettingsViewController.xib */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		7790B486241FA6800046EFA5 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				77B120D3239C475B001B2301 /* OnboardingViewController.swift */,
+				7790B487241FA6990046EFA5 /* OnboardingViewController.xib */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		7790B489241FA6E80046EFA5 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				8D32F36C22D71E6300ABC228 /* MapViewController.swift */,
+				7790B48A241FA6FF0046EFA5 /* MapViewController.xib */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		77B120CA238C5F5B001B2301 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				7790B452241CF5CA0046EFA5 /* BaseViewController.swift */,
-				77B120D7239C4C70001B2301 /* Storyboarded.swift */,
+				7790B486241FA6800046EFA5 /* Onboarding */,
+				7790B466241FA3B80046EFA5 /* Auth */,
+				7790B456241E9A2E0046EFA5 /* Home */,
 				8D32F38522D7439F00ABC228 /* Game */,
-				7790B456241E9A2E0046EFA5 /* HomeViewController */,
-				7790B459241EA09D0046EFA5 /* CityListViewController */,
-				77BDB3A023B3E99300820E5B /* CityDetailsViewController.swift */,
-				77BDB3A123B3E99300820E5B /* CityDetailsViewController.xib */,
-				8D32F36C22D71E6300ABC228 /* MapViewController.swift */,
-				8D32F36E22D71EBB00ABC228 /* GameRulesViewController.swift */,
-				8D32F37022D71EF400ABC228 /* PurchaseViewController.swift */,
-				8D32F37222D71F0500ABC228 /* SettingsViewController.swift */,
-				77B120D3239C475B001B2301 /* OnboardingViewController.swift */,
-				771E2CCA23AE009100553D58 /* AuthViewController.swift */,
+				7790B459241EA09D0046EFA5 /* CityList */,
+				7790B489241FA6E80046EFA5 /* Map */,
+				7790B475241FA5AA0046EFA5 /* GameRules */,
+				7790B47A241FA5F70046EFA5 /* Purchase */,
+				7790B47F241FA62A0046EFA5 /* CityDetails */,
+				7790B481241FA65D0046EFA5 /* Settings */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -242,7 +344,6 @@
 				8D32F36322D3594600ABC228 /* Manager */,
 				7741375723B9F54E00AD8A71 /* Extensions */,
 				8D32F34722D3302F00ABC228 /* Assets.xcassets */,
-				8D32F34422D3302D00ABC228 /* Main.storyboard */,
 				8D32F34922D3302F00ABC228 /* LaunchScreen.storyboard */,
 				8D32F34C22D3302F00ABC228 /* Info.plist */,
 			);
@@ -299,16 +400,19 @@
 		8D32F38422D73E4B00ABC228 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8D8EA3D822D75F8D00EA2F01 /* BaseCell.swift */,
 				8D32F38022D73E1400ABC228 /* NoteCollectionCell.xib */,
 				8D32F38222D73E4500ABC228 /* NoteCollectionCell.swift */,
-				8D8EA3D822D75F8D00EA2F01 /* BaseCell.swift */,
 				77B120CD238DC0D7001B2301 /* CurrentNoteView.xib */,
 				77B120CF238DC450001B2301 /* NotesHeader.xib */,
-				77B120E6239CF2AC001B2301 /* OnboardingCollectionViewCell.swift */,
+				77B120E6239CF2AC001B2301 /* OnboardingCell.swift */,
+				7790B48C241FAC370046EFA5 /* OnboardingCell.xib */,
 				77BDB39C23B2B41500820E5B /* CityCollectionCell.swift */,
 				77BDB39D23B2B41500820E5B /* CityCollectionCell.xib */,
 				77688CD723BA20AE00697408 /* CityHeaderReusableView.swift */,
 				7790B45C241EACA10046EFA5 /* CityHeaderReusableView.xib */,
+				7790B48E241FBEB80046EFA5 /* GameFooterReusableView.swift */,
+				7790B48F241FBEB80046EFA5 /* GameFooterReusableView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -319,6 +423,7 @@
 				8D32F36A22D71E5A00ABC228 /* GameViewController.swift */,
 				8D8EA3DA22D771DC00EA2F01 /* DetailNoteViewController.swift */,
 				8D32F37422D7241E00ABC228 /* CustomCollectionViewFlowLayout.swift */,
+				7790B464241ECEB10046EFA5 /* GameViewController.xib */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -397,12 +502,21 @@
 				8D32F38122D73E1400ABC228 /* NoteCollectionCell.xib in Resources */,
 				8D32F34822D3302F00ABC228 /* Assets.xcassets in Resources */,
 				77BDB3A323B3E99300820E5B /* CityDetailsViewController.xib in Resources */,
+				7790B488241FA6990046EFA5 /* OnboardingViewController.xib in Resources */,
+				7790B48B241FA6FF0046EFA5 /* MapViewController.xib in Resources */,
+				7790B47E241FA6050046EFA5 /* PurchaseViewController.xib in Resources */,
+				7790B472241FA42A0046EFA5 /* RegistrationViewController.xib in Resources */,
 				7790B45D241EACA10046EFA5 /* CityHeaderReusableView.xib in Resources */,
-				8D32F34622D3302D00ABC228 /* Main.storyboard in Resources */,
+				7790B485241FA66B0046EFA5 /* SettingsViewController.xib in Resources */,
 				77B120CE238DC0D7001B2301 /* CurrentNoteView.xib in Resources */,
+				7790B465241ECEB10046EFA5 /* GameViewController.xib in Resources */,
+				7790B46A241FA3CF0046EFA5 /* LoginViewController.xib in Resources */,
 				77BDB39F23B2B41600820E5B /* CityCollectionCell.xib in Resources */,
 				7790B458241E9A500046EFA5 /* HomeViewController.xib in Resources */,
+				7790B48D241FAC370046EFA5 /* OnboardingCell.xib in Resources */,
 				7790B45B241EA0B60046EFA5 /* CityListViewController.xib in Resources */,
+				7790B491241FBEB80046EFA5 /* GameFooterReusableView.xib in Resources */,
+				7790B479241FA5E10046EFA5 /* GameRulesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,38 +584,40 @@
 				8D8EA3D922D75F8D00EA2F01 /* BaseCell.swift in Sources */,
 				77BDB3A223B3E99300820E5B /* CityDetailsViewController.swift in Sources */,
 				77B120C5238C53BC001B2301 /* PreferencesManager.swift in Sources */,
-				8D32F36F22D71EBB00ABC228 /* GameRulesViewController.swift in Sources */,
 				8D32F36922D49DD600ABC228 /* CityListViewController.swift in Sources */,
+				7790B478241FA5E10046EFA5 /* GameRulesViewController.swift in Sources */,
 				8D32F34322D3302D00ABC228 /* HomeViewController.swift in Sources */,
 				7790B455241DAAB90046EFA5 /* Route.swift in Sources */,
+				7790B490241FBEB80046EFA5 /* GameFooterReusableView.swift in Sources */,
 				7790B461241EBBE60046EFA5 /* Extensions+UICollectionView.swift in Sources */,
 				77B120C7238C547E001B2301 /* Logger.swift in Sources */,
-				8D32F37122D71EF400ABC228 /* PurchaseViewController.swift in Sources */,
+				7790B47D241FA6050046EFA5 /* PurchaseViewController.swift in Sources */,
 				7790B45F241EBBC90046EFA5 /* Extensions+UITableView.swift in Sources */,
 				7790B453241CF5CA0046EFA5 /* BaseViewController.swift in Sources */,
 				7741375623B9EC4100AD8A71 /* HomeViewModel.swift in Sources */,
 				8D32F36B22D71E5A00ABC228 /* GameViewController.swift in Sources */,
 				77688CD923BA20AE00697408 /* CityHeaderReusableView.swift in Sources */,
-				8D32F37322D71F0500ABC228 /* SettingsViewController.swift in Sources */,
+				7790B484241FA66B0046EFA5 /* SettingsViewController.swift in Sources */,
 				77BDB39E23B2B41600820E5B /* CityCollectionCell.swift in Sources */,
-				77B120E7239CF2AC001B2301 /* OnboardingCollectionViewCell.swift in Sources */,
+				77B120E7239CF2AC001B2301 /* OnboardingCell.swift in Sources */,
 				77B120D4239C475B001B2301 /* OnboardingViewController.swift in Sources */,
 				8D32F36022D3588500ABC228 /* NetworkManager.swift in Sources */,
 				77B120D2238DC545001B2301 /* Extensions+UIView.swift in Sources */,
 				8D32F37F22D73C5E00ABC228 /* DetailNoteViewModel.swift in Sources */,
 				8D32F37522D7241E00ABC228 /* CustomCollectionViewFlowLayout.swift in Sources */,
 				8D32F36D22D71E6400ABC228 /* MapViewController.swift in Sources */,
+				7790B474241FA44F0046EFA5 /* Extentions+Storyboard.swift in Sources */,
 				8D32F34122D3302D00ABC228 /* AppDelegate.swift in Sources */,
 				8D8EA3DB22D771DC00EA2F01 /* DetailNoteViewController.swift in Sources */,
 				8D32F38322D73E4500ABC228 /* NoteCollectionCell.swift in Sources */,
-				77B120D8239C4C70001B2301 /* Storyboarded.swift in Sources */,
 				77B120DA239C4CD9001B2301 /* HomeCoordinator.swift in Sources */,
 				77B120DF239C5F8F001B2301 /* CityListViewModel.swift in Sources */,
 				8D32F35322D3398700ABC228 /* City.swift in Sources */,
 				8D32F36222D3589000ABC228 /* StorageManager.swift in Sources */,
 				77B120CC238C606B001B2301 /* LocationManager.swift in Sources */,
+				7790B469241FA3CF0046EFA5 /* LoginViewController.swift in Sources */,
 				8D32F37B22D739F300ABC228 /* DetailNoteViewModelProtocol.swift in Sources */,
-				771E2CCB23AE009100553D58 /* AuthViewController.swift in Sources */,
+				7790B471241FA42A0046EFA5 /* RegistrationViewController.swift in Sources */,
 				77B120E9239CF561001B2301 /* AppCoordinator.swift in Sources */,
 				8D32F37922D7394500ABC228 /* CollectionGameCellViewModel.swift in Sources */,
 				8D32F36722D366B000ABC228 /* API.swift in Sources */,
@@ -512,14 +628,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8D32F34422D3302D00ABC228 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8D32F34522D3302D00ABC228 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8D32F34922D3302F00ABC228 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

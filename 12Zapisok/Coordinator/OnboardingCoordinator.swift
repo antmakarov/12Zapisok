@@ -32,7 +32,7 @@ class OnboardingCoordinator: BaseCoordinator {
     }
 
     override func start() {
-        let vc = OnboardingViewController.instantiate()
+        let vc = OnboardingViewController()
         let vm = OnboardingViewModel()
         vm.coordinatorDelegate = self
         vc.viewModel = vm
@@ -50,7 +50,7 @@ extension OnboardingCoordinator: OnboardingViewModelCoordinatorDelegate {
     func prepareRouting(for route: OnboardingRoute) {
         switch route {
         case .auth:
-            let vc = AuthViewController.instantiate()
+            let vc = LoginViewController()
             rootViewController.pushViewController(vc, animated: true)
             
         case .cityList(let completion):

@@ -34,7 +34,8 @@ class GameViewController: BaseViewController {
         
         notesCollectionView.collectionViewLayout = GridCollectionViewFlowLayout(display: .grid(columns: 2))
         
-        notesCollectionView.register(UINib(nibName: "NoteCollectionCell", bundle: nil), forCellWithReuseIdentifier: "cell")
+        notesCollectionView.register(cellType: NoteCollectionCell.self) 
+        notesCollectionView.register(reusableViewType: GameFooterReusableView.self, ofKind: UICollectionView.elementKindSectionFooter)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -56,12 +57,12 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell: NoteCollectionCell = notesCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! NoteCollectionCell
-        
-        guard let viewModel = viewModel else { return UICollectionViewCell() }
-        
+        guard let viewModel = viewModel else {
+            fatalError("Not installed View Model")
+        }
+
         let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
-        
+        let cell = notesCollectionView.dequeueReusableCell(with: NoteCollectionCell.self, for: indexPath)
         cell.viewModel = cellViewModel
         
         return cell
@@ -78,9 +79,11 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         switch kind {
         case UICollectionView.elementKindSectionFooter:
-            return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "footer", for: indexPath)
+            
+            return collectionView.dequeueReusableView(with: GameFooterReusableView.self, for: indexPath, ofKind: kind)
+            
         default:
-            assert(false, "Unexpected element kind")
+            assert(false, "Invalid element type")
         }
     }
     
