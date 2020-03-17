@@ -1,5 +1,5 @@
 //
-//  CollectionGameCellViewModel.swift
+//  DetailNoteViewModelProtocol.swift
 //  12Zapisok
 //
 //  Created by A.Makarov on 11/07/2019.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol CollectionGameCellViewModel: class {
+protocol DetailNoteViewModeling {
     var note: Note { get }
 }

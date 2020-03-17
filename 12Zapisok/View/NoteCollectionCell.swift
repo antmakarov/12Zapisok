@@ -20,10 +20,10 @@ class NoteCollectionCell: BaseCardCell {
         createCard(backView: backView)
     }
     
-    weak var viewModel: CollectionGameCellViewModel? {
+    var viewModel: NoteCollectionCellViewModeling? {
         willSet(viewModel) {
             guard let viewModel = viewModel else { return }
-            headerLabel.text = "Записка #\(viewModel.note.id)"
+           // headerLabel.text = "Записка #\(viewModel.note.id)"
             
 //            if viewModel.note.isOpen {
 //                imageView.image = UIImage(named: "1")

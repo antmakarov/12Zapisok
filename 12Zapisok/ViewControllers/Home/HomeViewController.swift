@@ -22,7 +22,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet private var circleMenuImages: [UIImageView]!
     @IBOutlet private var menuItemViews: [UIView]!
     
-    public var viewModel: HomeViewModelProtocol?
+    public var viewModel: HomeViewModeling?
     
     override func viewDidLoad() {
         super.viewDidLoad()

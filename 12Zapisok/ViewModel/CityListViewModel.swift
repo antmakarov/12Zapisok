@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol CityListViewModelProtocol: CurrentCityProtocol {
+protocol CityListViewModeling: CurrentCityProtocol {
     func getNumberOfCities() -> Int
     func cityAt(index: Int) -> City
     func setUpdateHandler(_ handler: (() -> Void)?)
@@ -22,13 +22,13 @@ class CityListViewModel {
 
     private let preferencesManager: PreferencesManager
     private let databaseStorage: StorageManager
-    private let networkManager: NetworkManagerProtocol
+    private let networkManager: NetworkManaging
     
     convenience init() {
         self.init(preferencesManager: PreferencesManager.shared, databaseStorage: StorageManager.shared, networkManager: NetworkManager.shared)
     }
     
-    init(preferencesManager: PreferencesManager, databaseStorage: StorageManager, networkManager: NetworkManagerProtocol) {
+    init(preferencesManager: PreferencesManager, databaseStorage: StorageManager, networkManager: NetworkManaging) {
         self.preferencesManager = preferencesManager
         self.databaseStorage = databaseStorage
         self.networkManager = networkManager
@@ -56,7 +56,7 @@ class CityListViewModel {
     }
 }
 
-extension CityListViewModel: CityListViewModelProtocol {
+extension CityListViewModel: CityListViewModeling {
     func setUpdateHandler(_ handler: (() -> Void)?) {
         updateHandler = handler
     }

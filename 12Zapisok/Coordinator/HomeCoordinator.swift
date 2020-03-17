@@ -22,14 +22,15 @@ enum HomeRoute: String, Route {
 
 protocol HomeViewModelCoordinatorDelegate: class {
     func prepareRouting(for route: HomeRoute)
+    func dismiss()
 }
 
 class HomeCoordinator: BaseCoordinator {
     
-    var rootViewController: UINavigationController
+    var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
-        rootViewController = navigationController
+        self.navigationController = navigationController
     }
 
     override func start() {
@@ -37,7 +38,11 @@ class HomeCoordinator: BaseCoordinator {
         let vm = HomeViewModel()
         vm.coordinatorDelegate = self
         vc.viewModel = vm
-        rootViewController.pushViewController(vc, animated: false)
+        navigationController.pushViewController(vc, animated: false)
+    }
+    
+    override func dismiss() {
+        navigationController.popViewController(animated: true)
     }
 }
 
@@ -48,7 +53,7 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
         case .showGame:
             let vc = GameViewController()
             vc.viewModel = GameViewModel()
-            rootViewController.pushViewController(vc, animated: true)
+            navigationController.pushViewController(vc, animated: true)
 
         case .showPurchase:
             print()
@@ -59,7 +64,7 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
         case .showCityList:
             let vc = CityListViewController()
             vc.viewModel = CityListViewModel()
-            rootViewController.pushViewController(vc, animated: true)
+            navigationController.pushViewController(vc, animated: true)
 
         case .showSettings:
             print()

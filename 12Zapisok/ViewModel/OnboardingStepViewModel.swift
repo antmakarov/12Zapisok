@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol OnboardingStepViewModelProtocol {
+protocol OnboardingStepViewModeling {
     func title() -> String
     func details() -> String
     func image() -> String
@@ -36,7 +36,7 @@ class OnboardingStepViewModel {
     }
 }
 
-extension OnboardingStepViewModel: OnboardingStepViewModelProtocol {
+extension OnboardingStepViewModel: OnboardingStepViewModeling {
     func title() -> String {
         return stepTitle
     }

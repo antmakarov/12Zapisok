@@ -8,11 +8,11 @@
 
 import Foundation
 
-class GameCellViewModel: CollectionGameCellViewModel {
-    
-    internal var note: Note
-    
-    init(note: Note) {
-        self.note = note
-    }
-}
+//class GameCellViewModel: NoteCollectionCellViewModel {
+//    
+//    internal var note: Note
+//    
+//    init(note: Note) {
+//        self.note = note
+//    }
+//}

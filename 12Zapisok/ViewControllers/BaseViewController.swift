@@ -8,9 +8,13 @@
 
 import UIKit
 
-class BaseViewController: UIViewController, Storyboarded {
+class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    @IBAction func backButtonPressed() {
+        navigationController?.popViewController(animated: true)
     }
 }

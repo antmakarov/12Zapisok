@@ -13,9 +13,10 @@ protocol CurrentCityProtocol {
     func getCurrentCityImage() -> String
 }
 
-protocol HomeViewModelProtocol: CurrentCityProtocol {
+protocol HomeViewModeling: CurrentCityProtocol {
     func getCurrentCityScore() -> Int
     func routeTo(_ route: HomeRoute)
+    func dismiss()
 }
 
 class HomeViewModel {
@@ -24,14 +25,14 @@ class HomeViewModel {
 
     private let preferencesManager: PreferencesManager
     private let databaseStorage: StorageManager
-    private let networkManager: NetworkManagerProtocol
+    private let networkManager: NetworkManaging
     private var currentCity: City?
     
     convenience init() {
         self.init(preferencesManager: PreferencesManager.shared, databaseStorage: StorageManager.shared, networkManager: NetworkManager.shared)
     }
     
-    init(preferencesManager: PreferencesManager, databaseStorage: StorageManager, networkManager: NetworkManagerProtocol) {
+    init(preferencesManager: PreferencesManager, databaseStorage: StorageManager, networkManager: NetworkManaging) {
         self.preferencesManager = preferencesManager
         self.databaseStorage = databaseStorage
         self.networkManager = networkManager
@@ -58,7 +59,7 @@ class HomeViewModel {
     }
 }
 
-extension HomeViewModel: HomeViewModelProtocol {
+extension HomeViewModel: HomeViewModeling {
     func getCurrentCityName() -> String {
         return currentCity?.name ?? ""
     }
@@ -73,5 +74,9 @@ extension HomeViewModel: HomeViewModelProtocol {
     
     func routeTo(_ route: HomeRoute) {
         coordinatorDelegate?.prepareRouting(for: route)
+    }
+    
+    func dismiss() {
+        coordinatorDelegate?.dismiss()
     }
 }

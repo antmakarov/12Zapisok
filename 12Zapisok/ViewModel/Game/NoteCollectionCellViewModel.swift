@@ -1,5 +1,5 @@
 //
-//  DetailNoteViewModel.swift
+//  NoteCollectionCellViewModel.swift
 //  12Zapisok
 //
 //  Created by A.Makarov on 11/07/2019.
@@ -8,11 +8,14 @@
 
 import Foundation
 
-class DetailNoteViewModel: DetailNoteViewModeling {
+protocol NoteCollectionCellViewModeling {
     
-    internal var note: Note
+}
+
+class NoteCollectionCellViewModel {
     
     init(note: Note) {
-        self.note = note
+        
     }
 }
+

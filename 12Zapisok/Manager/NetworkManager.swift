@@ -11,13 +11,13 @@ import Alamofire
 import ObjectMapper
 import RealmSwift
 
-protocol NetworkManagerProtocol {
+protocol NetworkManaging {
     func getUserToken(completion: @escaping (String?) -> ())
     func getCityList(completion: @escaping ((Result<[City], Error>) -> ()))
     func getNoteList(parameters: Parameters, completion: @escaping ((Result<[Note], Error>) -> ()))
 }
 
-class NetworkManager: NetworkManagerProtocol {
+class NetworkManager: NetworkManaging {
     
     typealias Parameters = [String: Any]
     

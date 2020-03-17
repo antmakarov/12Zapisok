@@ -23,9 +23,9 @@ public class BaseCoordinator {
     public func finish() {
         preconditionFailure("This method needs to be overriden by concrete subclass.")
     }
-
-    public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // no-op
+    
+    public func dismiss() {
+        preconditionFailure("This method needs to be overriden by concrete subclass.")
     }
     
     //MARK: Final methods

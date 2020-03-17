@@ -15,8 +15,8 @@ enum OnbordingItem: Int, CaseIterable {
     case auth
 }
 
-protocol OnboardingViewModelProtocol: class {
-    func onboardingItem(type: OnbordingItem) -> OnboardingStepViewModelProtocol
+protocol OnboardingViewModeling: class {
+    func onboardingItem(type: OnbordingItem) -> OnboardingStepViewModeling
     func onboardingItems() -> Int
     func didTapSkip()
 }
@@ -24,15 +24,15 @@ protocol OnboardingViewModelProtocol: class {
 class OnboardingViewModel {
     
     weak var coordinatorDelegate: OnboardingViewModelCoordinatorDelegate?
-    private var onboardingSteps: [OnboardingStepViewModelProtocol] = []
-    private let locationManager: LocationManagerProtocol
+    private var onboardingSteps: [OnboardingStepViewModeling] = []
+    private let locationManager: LocationManaging
     private var cityName: String?
 
     convenience init() {
         self.init(locationManager: LocationManager.shared)
     }
     
-    init(locationManager: LocationManagerProtocol) {
+    init(locationManager: LocationManaging) {
         self.locationManager = locationManager
     }
     
@@ -41,9 +41,9 @@ class OnboardingViewModel {
     }
 }
 
-extension OnboardingViewModel: OnboardingViewModelProtocol {
+extension OnboardingViewModel: OnboardingViewModeling {
     
-    func onboardingItem(type: OnbordingItem) -> OnboardingStepViewModelProtocol {
+    func onboardingItem(type: OnbordingItem) -> OnboardingStepViewModeling {
         
         switch type {
         case .details:

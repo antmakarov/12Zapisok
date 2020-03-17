@@ -13,46 +13,30 @@ class GameViewController: BaseViewController {
     @IBOutlet weak var headerNotesView: UIView!
     @IBOutlet weak var notesCollectionView: UICollectionView!
     
-    var viewModel: GameViewModel?
-    
-    override func viewDidLayoutSubviews() {
-        headerNotesView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 16.0)
+    var viewModel: GameViewModeling? {
+        didSet {
+            viewModel?.setUpdateHandler { [weak self] in
+                self?.notesCollectionView.reloadData()
+            }
+        }
     }
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        viewModel = GameViewModel()
-        
-        viewModel?.setUpdateHandler { [weak self] in
-            guard let strongSelf = self else {
-                return
-            }
-            
-            strongSelf.notesCollectionView.reloadData()
-        }
-        
+        headerNotesView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 16.0)
+
         notesCollectionView.collectionViewLayout = GridCollectionViewFlowLayout(display: .grid(columns: 2))
-        
         notesCollectionView.register(cellType: NoteCollectionCell.self) 
         notesCollectionView.register(reusableViewType: GameFooterReusableView.self, ofKind: UICollectionView.elementKindSectionFooter)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let identifier = segue.identifier, let viewModel = viewModel else { return }
-        
-        if identifier == "detailSegue" {
-            if let dvc = segue.destination as? DetailNoteViewController {
-                dvc.viewModel = viewModel.viewModelForSelectedNote()
-            }
-        }
-    }
 }
 
-extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+//MARK: UICollectionViewDataSource
+
+extension GameViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel?.numberOfCards() ?? 0
+        return viewModel?.numberOfNotes() ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -61,18 +45,11 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
             fatalError("Not installed View Model")
         }
 
-        let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
+        let cellViewModel = viewModel.note(at: indexPath.row)
         let cell = notesCollectionView.dequeueReusableCell(with: NoteCollectionCell.self, for: indexPath)
-        cell.viewModel = cellViewModel
+        //cell.viewModel = cellViewModel
         
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let viewModel = viewModel else { return }
-        viewModel.selectNote(atIndexPath: indexPath)
-        
-        performSegue(withIdentifier: "detailSegue", sender: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -85,6 +62,20 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
         default:
             assert(false, "Invalid element type")
         }
+    }
+}
+
+//MARK: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
+
+extension GameViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard let viewModel = viewModel else {
+            fatalError("Not installed View Model")
+        }
+        
+        //viewModel.selectNote(atIndexPath: indexPath)
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {

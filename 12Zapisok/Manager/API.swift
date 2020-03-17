@@ -18,3 +18,8 @@ enum NetworkError: Error {
     case parsingError
     case emptyResponse
 }
+
+enum TypeFetcher {
+    case network
+    case storage
+}

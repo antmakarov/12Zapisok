@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-protocol LocationManagerProtocol {
+protocol LocationManaging {
     func requestAuthorization(completion: @escaping (Bool) -> Void)
     func requestCurrentLocation(completion: @escaping (CLLocationCoordinate2D?) -> Void)
 }
@@ -28,7 +28,7 @@ class LocationManager: NSObject {
     }
 }
 
-extension LocationManager: LocationManagerProtocol {
+extension LocationManager: LocationManaging {
     func requestAuthorization(completion: @escaping (Bool) -> Void) {
         if (CLLocationManager.authorizationStatus() == .notDetermined) {
             completionAuth = completion
@@ -53,7 +53,6 @@ extension LocationManager: LocationManagerProtocol {
 extension LocationManager: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        print(status)
         completionAuth?(isServiceEnabled())
     }
     

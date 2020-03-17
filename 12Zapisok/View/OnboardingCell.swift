@@ -16,7 +16,7 @@ class OnboardingCell: UICollectionViewCell {
     @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
-    private var viewModel: OnboardingStepViewModelProtocol?
+    private var viewModel: OnboardingStepViewModeling?
     private var actionCompletion: ((Bool) -> Void)?
     private var skipCompletion: (() -> Void)?
     
@@ -28,7 +28,7 @@ class OnboardingCell: UICollectionViewCell {
         actionButton.layer.shadowColor = UIColor.black.cgColor
     }
     
-    public func configure(with viewModel: OnboardingStepViewModelProtocol, actionCompletion: @escaping (Bool) -> Void, skipCompletion: @escaping () -> Void) {
+    public func configure(with viewModel: OnboardingStepViewModeling, actionCompletion: @escaping (Bool) -> Void, skipCompletion: @escaping () -> Void) {
         
         self.viewModel = viewModel
         self.actionCompletion = actionCompletion

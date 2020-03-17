@@ -10,18 +10,18 @@ import UIKit
 
 // MARK: Class Name Identifier
 
-public protocol ClassNameProtocol {
+public protocol ClassName {
     static var className: String { get }
 }
 
-public extension ClassNameProtocol {
+public extension ClassName {
     static var className: String {
         return String(describing: self)
     }
 }
 
-extension UIViewController: ClassNameProtocol { }
-extension UIView: ClassNameProtocol { }
+extension UIViewController: ClassName { }
+extension UIView: ClassName { }
 
 // MARK: Custom UI
 

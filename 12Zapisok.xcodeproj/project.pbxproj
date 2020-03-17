@@ -66,8 +66,7 @@
 		8D32F36B22D71E5A00ABC228 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F36A22D71E5A00ABC228 /* GameViewController.swift */; };
 		8D32F36D22D71E6400ABC228 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F36C22D71E6300ABC228 /* MapViewController.swift */; };
 		8D32F37522D7241E00ABC228 /* CustomCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F37422D7241E00ABC228 /* CustomCollectionViewFlowLayout.swift */; };
-		8D32F37722D738FA00ABC228 /* CollectionViewGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F37622D738FA00ABC228 /* CollectionViewGameViewModel.swift */; };
-		8D32F37922D7394500ABC228 /* CollectionGameCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F37822D7394500ABC228 /* CollectionGameCellViewModel.swift */; };
+		8D32F37922D7394500ABC228 /* NoteCollectionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F37822D7394500ABC228 /* NoteCollectionCellViewModel.swift */; };
 		8D32F37B22D739F300ABC228 /* DetailNoteViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F37A22D739F300ABC228 /* DetailNoteViewModelProtocol.swift */; };
 		8D32F37D22D73BDD00ABC228 /* GameCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F37C22D73BDD00ABC228 /* GameCellViewModel.swift */; };
 		8D32F37F22D73C5E00ABC228 /* DetailNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F37E22D73C5E00ABC228 /* DetailNoteViewModel.swift */; };
@@ -141,8 +140,7 @@
 		8D32F36A22D71E5A00ABC228 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		8D32F36C22D71E6300ABC228 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8D32F37422D7241E00ABC228 /* CustomCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
-		8D32F37622D738FA00ABC228 /* CollectionViewGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewGameViewModel.swift; sourceTree = "<group>"; };
-		8D32F37822D7394500ABC228 /* CollectionGameCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionGameCellViewModel.swift; sourceTree = "<group>"; };
+		8D32F37822D7394500ABC228 /* NoteCollectionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionCellViewModel.swift; sourceTree = "<group>"; };
 		8D32F37A22D739F300ABC228 /* DetailNoteViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteViewModelProtocol.swift; sourceTree = "<group>"; };
 		8D32F37C22D73BDD00ABC228 /* GameCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCellViewModel.swift; sourceTree = "<group>"; };
 		8D32F37E22D73C5E00ABC228 /* DetailNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteViewModel.swift; sourceTree = "<group>"; };
@@ -359,21 +357,20 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		8D32F35D22D3576D00ABC228 /* GameProtocols */ = {
+		8D32F35D22D3576D00ABC228 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				8D32F37622D738FA00ABC228 /* CollectionViewGameViewModel.swift */,
-				8D32F37822D7394500ABC228 /* CollectionGameCellViewModel.swift */,
+				8D32F35822D34B8E00ABC228 /* GameViewModel.swift */,
+				8D32F37822D7394500ABC228 /* NoteCollectionCellViewModel.swift */,
 				8D32F37A22D739F300ABC228 /* DetailNoteViewModelProtocol.swift */,
 			);
-			path = GameProtocols;
+			path = Game;
 			sourceTree = "<group>";
 		};
 		8D32F35E22D3577400ABC228 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				8D32F35D22D3576D00ABC228 /* GameProtocols */,
-				8D32F35822D34B8E00ABC228 /* GameViewModel.swift */,
+				8D32F35D22D3576D00ABC228 /* Game */,
 				7741375523B9EC4100AD8A71 /* HomeViewModel.swift */,
 				8D32F37C22D73BDD00ABC228 /* GameCellViewModel.swift */,
 				8D32F37E22D73C5E00ABC228 /* DetailNoteViewModel.swift */,
@@ -575,7 +572,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D32F37D22D73BDD00ABC228 /* GameCellViewModel.swift in Sources */,
-				8D32F37722D738FA00ABC228 /* CollectionViewGameViewModel.swift in Sources */,
 				77B120D6239C4C40001B2301 /* Coordinator.swift in Sources */,
 				77B120E5239CDE2B001B2301 /* OnboardingStepViewModel.swift in Sources */,
 				8D32F35922D34B8E00ABC228 /* GameViewModel.swift in Sources */,
@@ -619,7 +615,7 @@
 				8D32F37B22D739F300ABC228 /* DetailNoteViewModelProtocol.swift in Sources */,
 				7790B471241FA42A0046EFA5 /* RegistrationViewController.swift in Sources */,
 				77B120E9239CF561001B2301 /* AppCoordinator.swift in Sources */,
-				8D32F37922D7394500ABC228 /* CollectionGameCellViewModel.swift in Sources */,
+				8D32F37922D7394500ABC228 /* NoteCollectionCellViewModel.swift in Sources */,
 				8D32F36722D366B000ABC228 /* API.swift in Sources */,
 				77B120E1239CDA3B001B2301 /* OnboardingCoordinator.swift in Sources */,
 			);
@@ -767,7 +763,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "A.Makarov.-2P";
+				PRODUCT_BUNDLE_IDENTIFIER = A.Makarov.12Zapisok;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -786,7 +782,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "A.Makarov.-2P";
+				PRODUCT_BUNDLE_IDENTIFIER = A.Makarov.12Zapisok;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

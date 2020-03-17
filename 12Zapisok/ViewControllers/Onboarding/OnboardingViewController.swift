@@ -15,7 +15,7 @@ class OnboardingViewController: UIViewController, Storyboarded {
         static let collectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
     }
     
-    var viewModel: OnboardingViewModelProtocol?
+    var viewModel: OnboardingViewModeling?
     
     @IBOutlet weak var collectionView: UICollectionView!
     

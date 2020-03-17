@@ -10,7 +10,7 @@ import UIKit
 
 class DetailNoteViewController: UIViewController {
 
-    var viewModel: DetailNoteViewModelProtocol?
+    var viewModel: DetailNoteViewModeling?
     
     @IBOutlet weak var numberNoteLabel: UILabel!
     @IBOutlet weak var titleNoteLabel: UILabel!

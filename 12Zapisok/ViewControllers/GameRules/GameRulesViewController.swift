@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameRulesViewController: UIViewController {
+class GameRulesViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +16,7 @@ class GameRulesViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    //@IBAction func didPressBack
     /*
     // MARK: - Navigation
 

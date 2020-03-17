@@ -8,33 +8,29 @@
 
 import Foundation
 
-enum TypeFetcher {
-    case network
-    case storage
-}
-
-protocol GameViewModelProtocol {
-    func nameCity() -> String
-    func noteAt(index: Int) -> DetailNoteViewModelProtocol?
+protocol GameViewModeling {
+    func cityName() -> String
+    func note(at index: Int) -> NoteCollectionCellViewModel?
+    func numberOfNotes() -> Int
     func setUpdateHandler(_ handler: (() -> Void)?)
 }
 
-class GameViewModel: CollectionViewGameViewModel {
+class GameViewModel {
 
     private let preferencesManager: PreferencesManager
     private let databaseStorage: StorageManager
-    private let networkManager: NetworkManagerProtocol
-    private var currentCity: City?
-    private var noteViewModels = [DetailNoteViewModelProtocol]()
-    private var dataUpdateHandler: (() -> Void)?
+    private let networkManager: NetworkManaging
     
+    private var currentCity: City?
+    private var noteViewModels = [NoteCollectionCellViewModel]()
+    private var dataUpdateHandler: (() -> Void)?
     private var selectedIndexPath: IndexPath?
     
     convenience init() {
         self.init(preferencesManager: PreferencesManager.shared, databaseStorage: StorageManager.shared, networkManager: NetworkManager.shared)
     }
     
-    init(typeFetcher: TypeFetcher = .network, preferencesManager: PreferencesManager, databaseStorage: StorageManager, networkManager: NetworkManagerProtocol) {
+    init(typeFetcher: TypeFetcher = .network, preferencesManager: PreferencesManager, databaseStorage: StorageManager, networkManager: NetworkManaging) {
         self.preferencesManager = preferencesManager
         self.databaseStorage = databaseStorage
         self.networkManager = networkManager
@@ -51,9 +47,7 @@ class GameViewModel: CollectionViewGameViewModel {
         networkManager.getNoteList(parameters: ["town_id": cityID]) { [weak self] result in
             switch result {
             case .success(let notes):
-                notes.forEach {
-                    self?.noteViewModels.append(DetailNoteViewModel(note: $0))
-                }
+                self?.noteViewModels = notes.map { NoteCollectionCellViewModel(note: $0) }
                 self?.dataUpdateHandler?()
             
             case .error(let error):
@@ -62,16 +56,12 @@ class GameViewModel: CollectionViewGameViewModel {
         }
     }
     
-    func numberOfCards() -> Int {
-        return noteViewModels.count
-    }
-    
-    func cellViewModel(forIndexPath indexPath: IndexPath) -> CollectionGameCellViewModel? {
+    func cellViewModel(for selectedNote: IndexPath) -> NoteCollectionCellViewModel? {
         //let note = city?.notes[indexPath.row]
         return nil //GameCellViewModel(note: note!)
     }
     
-    func viewModelForSelectedNote() -> DetailNoteViewModelProtocol? {
+    func viewModelForSelectedNote() -> DetailNoteViewModeling? {
         guard let selectedIndexPath = selectedIndexPath else { return nil }
         return nil //DetailViewModel(note: city!.notes[selectedIndexPath.row])
     }
@@ -82,13 +72,17 @@ class GameViewModel: CollectionViewGameViewModel {
     
 }
 
-extension GameViewModel: GameViewModelProtocol {
-    func nameCity() -> String {
+extension GameViewModel: GameViewModeling {
+    public func cityName() -> String {
         return currentCity?.name ?? ""
     }
 
-    func noteAt(index: Int) -> DetailNoteViewModelProtocol? {
+    public func note(at index: Int) -> NoteCollectionCellViewModel? {
         return noteViewModels[index]
+    }
+    
+    public func numberOfNotes() -> Int {
+        return noteViewModels.count
     }
     
     public func setUpdateHandler(_ handler: (() -> Void)?) {

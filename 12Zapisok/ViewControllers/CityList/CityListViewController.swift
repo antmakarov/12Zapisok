@@ -13,7 +13,7 @@ class CityListViewController: BaseViewController {
     @IBOutlet weak var citiesCollectionView: UICollectionView!
     
     var chooseCompletion: ((City) -> Void)?
-    var viewModel: CityListViewModelProtocol? {
+    var viewModel: CityListViewModeling? {
         didSet {
             viewModel?.setUpdateHandler {
                 self.citiesCollectionView.reloadData()
