@@ -20,7 +20,7 @@ class Note: Object, Mappable, Endpoint {
     @objc dynamic var noteDescription = ""
     @objc dynamic var location: Location? = nil
     @objc dynamic var hint = ""
-    @objc dynamic var statistic: String? = nil
+    @objc dynamic var statistics: Statistics? = nil
     @objc dynamic var category = ""
     @objc dynamic var cityID = 0
 
@@ -38,11 +38,27 @@ class Note: Object, Mappable, Endpoint {
         noteDescription <- map["description"]
         location        <- map["point"]
         hint            <- map["hint"]
+        statistics      <- map["statistic"]
         category        <- map["category"]
         cityID          <- map["town_id"]
     }
     
     static func url() -> String {
         return "/notes"
+    }
+}
+
+class Statistics: Object, Mappable {
+    
+    @objc dynamic var isOpen: Bool = false
+    @objc dynamic var isComplete: Bool = false
+    
+    required convenience init?(map: Map) {
+        self.init()
+    }
+    
+    func mapping(map: Map) {
+        isOpen      <- map["is_open"]
+        isComplete  <- map["is_complete"]
     }
 }

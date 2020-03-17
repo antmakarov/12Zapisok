@@ -8,69 +8,69 @@
 
 import UIKit
 
+//MARK: Launch Instructor
+
+fileprivate enum ApplicationFlow {
+    case main
+    case onboarding
+    
+    static func choose(_ isSuccessAuth: Bool) -> ApplicationFlow {
+        return isSuccessAuth ? .main : .onboarding
+    }
+}
+
+//MARK: Start apllication flow coordinator
+
 class AppCoordinator: BaseCoordinator {
     
     // MARK: Properties
     
     private let window: UIWindow?
     private let preferencesManager: PreferencesManager
-
-    private enum ApplicationFlow {
-        case onboarding
-        case home
-    }
     
     private lazy var rootViewController: UINavigationController = {
         let nc = UINavigationController()
         nc.navigationBar.isTranslucent = false
         nc.isNavigationBarHidden = true
-
         return nc
     }()
 
     init(window: UIWindow?) {
         self.window = window
         self.preferencesManager = PreferencesManager()
+
+        super.init()
+        self.window?.rootViewController = rootViewController
+        self.window?.makeKeyAndVisible()
     }
     
     override func start() {
-        guard let window = window else {
-            return
-        }
-
-        window.rootViewController = rootViewController
-        window.makeKeyAndVisible()
-
-        startApplicationFlow()
-    }
-    
-    // MARK: Private star methods
-
-    fileprivate func startApplicationFlow() {
-        changeApplicatonFlow(preferencesManager.isSuccessAuth ? .home : .onboarding)
-    }
-    
-    private func changeApplicatonFlow(_ flow: ApplicationFlow) {
-        let coordinator: BaseCoordinator
-        
-        switch flow {
+        switch ApplicationFlow.choose(preferencesManager.isSuccessAuth) {
         case .onboarding:
-            coordinator = OnboardingCoordinator(navigationController: rootViewController)
-            (coordinator as? OnboardingCoordinator)?.delegate = self
-            
-        case .home:
-            coordinator = HomeCoordinator(navigationController: rootViewController)
+            runOnboardingFlow()
+        
+        case .main:
+            runHomeFlow()
+        }
+    }
+    
+    // MARK: Private run flow methods
+    
+    fileprivate func runOnboardingFlow() {
+        let coordinator = OnboardingCoordinator(navigationController: rootViewController)
+        coordinator.finishFlow = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.removeChildCoordinator(coordinator)
+            strongSelf.runHomeFlow()
         }
         
         addChildCoordinator(coordinator)
         coordinator.start()
     }
-}
-
-extension AppCoordinator: OnboardingCoordinatorDelegate {
-    func didFinishOnboarding(from coordinator: OnboardingCoordinator) {
-        rootViewController.dismiss(animated: true, completion: nil)
-        removeChildCoordinator(coordinator)
-        changeApplicatonFlow(.home)
+    
+    fileprivate func runHomeFlow() {
+        let coordinator = HomeCoordinator(navigationController: rootViewController)
+        addChildCoordinator(coordinator)
+        coordinator.start()
     }
 }

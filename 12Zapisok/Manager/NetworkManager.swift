@@ -71,7 +71,7 @@ class NetworkManager: NetworkManaging {
         let requestURL = baseUrl + type.url()
         Logger.info(msg: requestURL)
         
-        Alamofire.request(requestURL, parameters: parameters, encoding: URLEncoding.queryString, headers: tokenHeader)
+        Alamofire.request(requestURL, parameters: parameters, encoding: URLEncoding.default, headers: tokenHeader)
         .validate(statusCode: 200..<300)
         .responseJSON { response in
             

@@ -8,8 +8,8 @@
 
 import UIKit
 
-enum HomeRoute: String, Route {
-    case showGame
+enum HomeRoute: Route {
+    case showGame(cityName: String?)
     case showPurchase
     case showRules
     case showCityList
@@ -22,13 +22,12 @@ enum HomeRoute: String, Route {
 
 protocol HomeViewModelCoordinatorDelegate: class {
     func prepareRouting(for route: HomeRoute)
-    func dismiss()
 }
 
 class HomeCoordinator: BaseCoordinator {
     
     var navigationController: UINavigationController
-    
+
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
@@ -40,10 +39,6 @@ class HomeCoordinator: BaseCoordinator {
         vc.viewModel = vm
         navigationController.pushViewController(vc, animated: false)
     }
-    
-    override func dismiss() {
-        navigationController.popViewController(animated: true)
-    }
 }
 
 extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
@@ -51,10 +46,10 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
         
         switch route {
         case .showGame:
-            let vc = GameViewController()
-            vc.viewModel = GameViewModel()
-            navigationController.pushViewController(vc, animated: true)
-
+            let gameCoordinator = GameCoordinator(navigationController: navigationController)
+            addChildCoordinator(gameCoordinator)
+            gameCoordinator.start()
+            
         case .showPurchase:
             print()
             

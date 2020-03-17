@@ -45,9 +45,9 @@ extension GameViewController: UICollectionViewDataSource {
             fatalError("Not installed View Model")
         }
 
-        let cellViewModel = viewModel.note(at: indexPath.row)
+        let noteViewModel = viewModel.noteCell(at: indexPath.row)
         let cell = notesCollectionView.dequeueReusableCell(with: NoteCollectionCell.self, for: indexPath)
-        //cell.viewModel = cellViewModel
+        cell.configure(viewModel: noteViewModel)
         
         return cell
     }
@@ -68,14 +68,13 @@ extension GameViewController: UICollectionViewDataSource {
 //MARK: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
 
 extension GameViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         guard let viewModel = viewModel else {
             fatalError("Not installed View Model")
         }
         
-        //viewModel.selectNote(atIndexPath: indexPath)
-        
+        _ = viewModel.noteDetails(at: indexPath.row)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {

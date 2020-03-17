@@ -16,7 +16,6 @@ protocol CurrentCityProtocol {
 protocol HomeViewModeling: CurrentCityProtocol {
     func getCurrentCityScore() -> Int
     func routeTo(_ route: HomeRoute)
-    func dismiss()
 }
 
 class HomeViewModel {
@@ -51,7 +50,9 @@ class HomeViewModel {
     }
     
     private func getUserToken() {
-        if preferencesManager.userToken == nil {
+        if let token = preferencesManager.userToken {
+            Logger.info(msg: "App Token: " + token)
+        } else {
             networkManager.getUserToken { [weak self] token in
                 self?.preferencesManager.userToken = token
             }
@@ -74,9 +75,5 @@ extension HomeViewModel: HomeViewModeling {
     
     func routeTo(_ route: HomeRoute) {
         coordinatorDelegate?.prepareRouting(for: route)
-    }
-    
-    func dismiss() {
-        coordinatorDelegate?.dismiss()
     }
 }

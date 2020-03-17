@@ -102,7 +102,7 @@ extension HomeViewController {
         
         switch tag {
         case 1:
-            viewModel?.routeTo(.showGame)
+            viewModel?.routeTo(.showGame(cityName: viewModel?.getCurrentCityName()) )
             
         case 2:
             viewModel?.routeTo(.showCityList)

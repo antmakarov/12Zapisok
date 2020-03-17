@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailNoteViewController: UIViewController {
+class DetailNoteViewController: BaseViewController {
 
     var viewModel: DetailNoteViewModeling?
     
@@ -24,9 +24,9 @@ class DetailNoteViewController: UIViewController {
 
         guard let viewModel = viewModel else { return }
         
-        numberNoteLabel.text = "Записка #\(viewModel.note.id)"
-        titleNoteLabel.text = viewModel.note.name
-        describLabel.text = viewModel.note.description
+        numberNoteLabel.text = "Записка #\(viewModel.id)"
+        //titleNoteLabel.text = viewModel.name
+        //describLabel.text = viewModel.description
         
 //        if viewModel.note.isOpen {
 //            statusImage.image = UIImage(named: "checked")

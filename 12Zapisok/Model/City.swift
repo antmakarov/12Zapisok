@@ -51,8 +51,8 @@ class Location: Object, Mappable {
     @objc dynamic var lon = 0.0
     
     required convenience init?(map: Map) {
-           self.init()
-       }
+        self.init()
+    }
     
     func mapping(map: Map) {
         lat <- map["lat"]

@@ -14,10 +14,6 @@ enum OnboardingRoute: Route {
     case finishOnboarding
 }
 
-protocol OnboardingCoordinatorDelegate: class {
-    func didFinishOnboarding(from coordinator: OnboardingCoordinator)
-}
-
 protocol OnboardingViewModelCoordinatorDelegate: class {
     func prepareRouting(for route: OnboardingRoute)
 }
@@ -25,7 +21,6 @@ protocol OnboardingViewModelCoordinatorDelegate: class {
 class OnboardingCoordinator: BaseCoordinator {
         
     var rootViewController: UINavigationController
-    weak var delegate: OnboardingCoordinatorDelegate?
 
     init(navigationController: UINavigationController) {
         rootViewController = navigationController
@@ -37,11 +32,6 @@ class OnboardingCoordinator: BaseCoordinator {
         vm.coordinatorDelegate = self
         vc.viewModel = vm
         rootViewController.pushViewController(vc, animated: true)
-    }
-    
-    override func finish() {
-        rootViewController.popViewController(animated: true)
-        delegate?.didFinishOnboarding(from: self)
     }
 }
 
@@ -60,7 +50,7 @@ extension OnboardingCoordinator: OnboardingViewModelCoordinatorDelegate {
             rootViewController.pushViewController(vc, animated: true)
             
         case .finishOnboarding:
-            finish()
+            finishFlow?()
         }
     }
 }
