@@ -1,5 +1,5 @@
 //
-//  Coordinator.swift
+//  BaseCoordinator.swift
 //  12Zapisok
 //
 //  Created by Anton Makarov on 08.12.2019.
@@ -10,36 +10,25 @@ import UIKit
 
 //MARK: Base Root Coordinator
 
-public class BaseCoordinator {
+public class BaseCoordinator: Coordinator {
 
-    private var childCoordinators: [BaseCoordinator] = []
-    var isCompleted: (() -> ())?
+    internal var childCoordinators: [Coordinator] = []
+    var finishFlow: (() -> Void)?
+
     //MARK: Public override methods
     
     public func start() {
         preconditionFailure("This method needs to be overriden by concrete subclass.")
     }
-
-    public func finish() {
-        preconditionFailure("This method needs to be overriden by concrete subclass.")
-    }
-    
-    public func dismiss() {
-        preconditionFailure("This method needs to be overriden by concrete subclass.")
-    }
     
     //MARK: Final methods
 
-    final func addChildCoordinator(_ coordinator: BaseCoordinator) {
+    final func addChildCoordinator(_ coordinator: Coordinator) {
         childCoordinators.append(coordinator)
     }
 
-    final func removeChildCoordinator(_ coordinator: BaseCoordinator) {
-        guard let index = childCoordinators.firstIndex(of: coordinator) else {
-            Logger.error(msg: "Couldn't remove coordinator: \(coordinator). It's not a child coordinator.")
-            return
-        }
-        childCoordinators.remove(at: index)
+    final func removeChildCoordinator(_ coordinator: Coordinator) {
+        childCoordinators = childCoordinators.filter { $0 !== coordinator }
     }
 
     final func removeAllChildCoordinatorsWith<T>(type: T.Type) {
@@ -58,7 +47,3 @@ extension BaseCoordinator: Equatable {
         return lhs === rhs
     }
 }
-
-//protocol BackToFirstViewControllerDelegate: class {
-//    func navigateBackToFirstPage(newOrderCoordinator: SecondCoordinator)
-//}
