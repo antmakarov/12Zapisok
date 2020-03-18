@@ -22,10 +22,14 @@ protocol OnboardingViewModeling: class {
 }
 
 class OnboardingViewModel {
-    
-    weak var coordinatorDelegate: OnboardingViewModelCoordinatorDelegate?
-    private var onboardingSteps: [OnboardingStepViewModeling] = []
+            
+    //MARK: Managers
     private let locationManager: LocationManaging
+    
+    //MARK: Coordinator delegate & Private property
+    weak var coordinatorDelegate: OnboardingViewModelCoordinatorDelegate?
+
+    private var onboardingSteps: [OnboardingStepViewModeling] = []
     private var cityName: String?
 
     convenience init() {
@@ -43,7 +47,7 @@ class OnboardingViewModel {
 
 extension OnboardingViewModel: OnboardingViewModeling {
     
-    func onboardingItem(type: OnbordingItem) -> OnboardingStepViewModeling {
+    public func onboardingItem(type: OnbordingItem) -> OnboardingStepViewModeling {
         
         switch type {
         case .details:
@@ -88,11 +92,11 @@ extension OnboardingViewModel: OnboardingViewModeling {
         }
     }
     
-    func onboardingItems() -> Int {
+    public func onboardingItems() -> Int {
         return OnbordingItem.allCases.count
     }
     
-    func didTapSkip() {
+    public func didTapSkip() {
         coordinatorDelegate?.prepareRouting(for: .finishOnboarding)
     }
 }

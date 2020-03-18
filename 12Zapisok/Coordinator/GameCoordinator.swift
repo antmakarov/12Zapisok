@@ -8,16 +8,13 @@
 
 import UIKit
 
-protocol GameViewModelCoordinatorDelegate: class {
-    func prepareRouting(for route: HomeRoute)
+protocol GameViewModelCoordinatorDelegate: PreviousCoordinator {
     func showGameNote(noteVM: DetailNoteViewModeling)
-    func dismiss()
 }
 
 class GameCoordinator: BaseCoordinator {
     
     let navigationController: UINavigationController
-    //let noteViewModel: DetailNoteViewModeling
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -25,7 +22,22 @@ class GameCoordinator: BaseCoordinator {
     
     override func start() {
         let vc = GameViewController()
-        vc.viewModel = GameViewModel(cityName: "cityName")
+        let vm = GameViewModel(cityName: "cityName")
+        vm.coordinatorDelegate = self
+        vc.viewModel = vm
         navigationController.pushViewController(vc, animated: true)
     }
+}
+
+extension GameCoordinator: GameViewModelCoordinatorDelegate {
+    
+    func showGameNote(noteVM: DetailNoteViewModeling) {
+        let gameNote = DetailNoteViewController()
+        gameNote.viewModel = noteVM
+        navigationController.pushViewController(gameNote, animated: true)
+    }
+        
+    func navigateToPrevious() {
+         finishFlow?()
+     }
 }

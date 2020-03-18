@@ -11,6 +11,12 @@ import MapKit
 
 class MapViewController: UIViewController {
     
+    var viewModel: MapViewModeling? {
+        didSet {
+
+        }
+    }
+    
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {

@@ -46,7 +46,7 @@
                             <inset key="imageEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
                             <state key="normal" image="back"/>
                             <connections>
-                                <action selector="backButtonPressed" destination="-1" eventType="touchUpInside" id="ReC-ch-INo"/>
+                                <action selector="backButtonPressed" destination="-1" eventType="touchUpInside" id="6jX-Bk-w0Y"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7H7-qZ-hhY">

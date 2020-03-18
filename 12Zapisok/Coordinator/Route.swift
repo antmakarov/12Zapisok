@@ -9,3 +9,7 @@
 import Foundation
 
 public protocol Route {}
+
+protocol PreviousCoordinator: class {
+    func navigateToPrevious()
+}

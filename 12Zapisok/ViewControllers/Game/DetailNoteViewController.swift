@@ -24,7 +24,7 @@ class DetailNoteViewController: BaseViewController {
 
         guard let viewModel = viewModel else { return }
         
-        numberNoteLabel.text = "Записка #\(viewModel.id)"
+       // numberNoteLabel.text = "Записка #\(viewModel.id)"
         //titleNoteLabel.text = viewModel.name
         //describLabel.text = viewModel.description
         

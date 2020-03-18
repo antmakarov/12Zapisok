@@ -11,19 +11,22 @@ import Foundation
 protocol GameViewModeling {
     func cityName() -> String
     func noteCell(at index: Int) -> NoteCollectionCellViewModel
-    func noteDetails(at index: Int) -> DetailNoteViewModeling
+    func selectNoteDetails(at index: Int)
     func numberOfNotes() -> Int
     func setUpdateHandler(_ handler: (() -> Void)?)
+    func finishFlow()
 }
 
 class GameViewModel {
 
-    weak var coordinatorDelegate: GameViewModelCoordinatorDelegate?
-
+    //MARK: Managers
     private let preferencesManager: PreferencesManager
     private let databaseStorage: StorageManager
     private let networkManager: NetworkManaging
     
+    //MARK: Coordinator delegate & Private property
+    weak var coordinatorDelegate: GameViewModelCoordinatorDelegate?
+
     private var currentCityName: String?
     private var gameNotes = [Note]()
     private var dataUpdateHandler: (() -> Void)?
@@ -68,8 +71,8 @@ extension GameViewModel: GameViewModeling {
         return NoteCollectionCellViewModel(note: gameNotes[index])
     }
     
-    public func noteDetails(at index: Int) -> DetailNoteViewModeling {
-        return DetailNoteViewModel(note: gameNotes[index])
+    public func selectNoteDetails(at index: Int) {
+        coordinatorDelegate?.showGameNote(noteVM: DetailNoteViewModel(note: gameNotes[index]))
     }
     
     public func numberOfNotes() -> Int {
@@ -78,5 +81,9 @@ extension GameViewModel: GameViewModeling {
     
     public func setUpdateHandler(_ handler: (() -> Void)?) {
         dataUpdateHandler = handler
+    }
+    
+    public func finishFlow() {
+        coordinatorDelegate?.navigateToPrevious()
     }
 }

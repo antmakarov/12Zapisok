@@ -29,6 +29,10 @@ class GameViewController: BaseViewController {
         notesCollectionView.register(cellType: NoteCollectionCell.self) 
         notesCollectionView.register(reusableViewType: GameFooterReusableView.self, ofKind: UICollectionView.elementKindSectionFooter)
     }
+    
+    @IBAction func backButtonPressed() {
+        viewModel?.finishFlow()
+    }
 }
 
 //MARK: UICollectionViewDataSource
@@ -73,8 +77,7 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDelegate
         guard let viewModel = viewModel else {
             fatalError("Not installed View Model")
         }
-        
-        _ = viewModel.noteDetails(at: indexPath.row)
+        viewModel.selectNoteDetails(at: indexPath.row)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {

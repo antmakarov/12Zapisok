@@ -39,22 +39,35 @@ class HomeCoordinator: BaseCoordinator {
         vc.viewModel = vm
         navigationController.pushViewController(vc, animated: false)
     }
+    
+    private func dismissViewControlelr() {
+        
+    }
 }
 
 extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
+    
     func prepareRouting(for route: HomeRoute) {
-        
         switch route {
         case .showGame:
             let gameCoordinator = GameCoordinator(navigationController: navigationController)
+            gameCoordinator.finishFlow = { [weak self] in
+                self?.removeChildCoordinator(gameCoordinator)
+                self?.navigationController.popViewController(animated: true)
+            }
+            
             addChildCoordinator(gameCoordinator)
             gameCoordinator.start()
             
         case .showPurchase:
-            print()
-            
+            let vc = PurchaseViewController()
+            vc.viewModel = PurchaseViewModel()
+            navigationController.pushViewController(vc, animated: true)
+
         case .showRules:
-            print()
+            let vc = GameRulesViewController()
+            vc.viewModel = GameRulesViewModel()
+            navigationController.pushViewController(vc, animated: true)
             
         case .showCityList:
             let vc = CityListViewController()
@@ -62,19 +75,28 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
             navigationController.pushViewController(vc, animated: true)
 
         case .showSettings:
-            print()
+            let vc = SettingsViewController()
+            vc.viewModel = SettingsViewModel()
+            navigationController.pushViewController(vc, animated: false)
             
         case .showLeaders:
-            print()
+            let vc = LeaderboardViewController()
+            vc.viewModel = LeaderboardViewModel()
+            navigationController.pushViewController(vc, animated: true)
             
         case .showStatistics:
-            print()
+            let vc = StatisticsViewController()
+            vc.viewModel = StatisticsViewModel()
+            navigationController.pushViewController(vc, animated: true)
             
         case .showCityInfo:
-            print()
+            let vc = CityInfoViewController()
+            navigationController.pushViewController(vc, animated: true)
             
         case .showMap:
-            print()
+            let vc = MapViewController()
+            vc.viewModel = MapViewModel()
+            navigationController.pushViewController(vc, animated: true)
         }
     }
 }

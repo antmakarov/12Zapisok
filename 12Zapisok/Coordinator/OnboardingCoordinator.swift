@@ -20,10 +20,10 @@ protocol OnboardingViewModelCoordinatorDelegate: class {
 
 class OnboardingCoordinator: BaseCoordinator {
         
-    var rootViewController: UINavigationController
+    var navigationController: UINavigationController
 
     init(navigationController: UINavigationController) {
-        rootViewController = navigationController
+        self.navigationController = navigationController
     }
 
     override func start() {
@@ -31,7 +31,7 @@ class OnboardingCoordinator: BaseCoordinator {
         let vm = OnboardingViewModel()
         vm.coordinatorDelegate = self
         vc.viewModel = vm
-        rootViewController.pushViewController(vc, animated: true)
+        navigationController.pushViewController(vc, animated: true)
     }
 }
 
@@ -41,13 +41,13 @@ extension OnboardingCoordinator: OnboardingViewModelCoordinatorDelegate {
         switch route {
         case .auth:
             let vc = LoginViewController()
-            rootViewController.pushViewController(vc, animated: true)
+            navigationController.pushViewController(vc, animated: true)
             
         case .cityList(let completion):
             let vc = CityListViewController()
             vc.viewModel = CityListViewModel()
             vc.chooseCompletion = completion
-            rootViewController.pushViewController(vc, animated: true)
+            navigationController.pushViewController(vc, animated: true)
             
         case .finishOnboarding:
             finishFlow?()
