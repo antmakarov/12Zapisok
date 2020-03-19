@@ -9,11 +9,11 @@
 import Foundation
 
 protocol MapViewModeling: class {
-    var closeButtonPressed: (() -> Void)? { get set }
+    var routeTo: ((MapRouter) -> Void)? { get set }
 }
 
 class MapViewModel {
-    public var closeButtonPressed: (() -> Void)?
+    public var routeTo: ((MapRouter) -> Void)?
 
 }
 

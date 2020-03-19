@@ -39,11 +39,15 @@ class GameNoteViewController: BaseViewController {
 //        }
     }
     
-    @IBAction func openMap(_ sender: Any) {
-        
+    @IBAction func openPurchase(_ sender: Any) {
+        viewModel?.routeTo?(.purchase)
     }
     
-    @IBAction func closeModalView(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+    @IBAction func openMap(_ sender: Any) {
+        viewModel?.routeTo?(.map)
+    }
+    
+    @IBAction func closeView(_ sender: Any) {
+        viewModel?.routeTo?(.back)
     }
 }

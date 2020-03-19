@@ -13,11 +13,13 @@ protocol GameNoteViewModeling {
     var title: String { get }
     var imgUrl: String { get }
     var isOpen: Bool { get }
+    var routeTo: ((GameRouter) -> Void)? { get set }
 }
 
 class GameNoteViewModel {
     
     private let note: Note
+    public var routeTo: ((GameRouter) -> Void)?
     
     init(note: Note) {
         self.note = note

@@ -30,8 +30,12 @@ class GameViewController: BaseViewController {
         notesCollectionView.register(reusableViewType: GameFooterReusableView.self, ofKind: UICollectionView.elementKindSectionFooter)
     }
     
+    @IBAction func openMap() {
+        viewModel?.routeTo?(.map)
+    }
+    
     @IBAction func backButtonPressed() {
-        viewModel?.finishFlow()
+        viewModel?.routeTo?(.back)
     }
 }
 

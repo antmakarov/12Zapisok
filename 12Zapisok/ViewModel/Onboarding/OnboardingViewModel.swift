@@ -18,7 +18,8 @@ enum OnbordingItem: Int, CaseIterable {
 protocol OnboardingViewModeling: class {
     func onboardingItem(type: OnbordingItem) -> OnboardingStepViewModeling
     func onboardingItems() -> Int
-    func didTapSkip()
+
+    var routeTo: ((OnboardingRoute) -> Void)? { get set }
 }
 
 class OnboardingViewModel {
@@ -26,12 +27,12 @@ class OnboardingViewModel {
     //MARK: Managers
     private let locationManager: LocationManaging
     
-    //MARK: Coordinator delegate & Private property
-    weak var coordinatorDelegate: OnboardingViewModelCoordinatorDelegate?
-
+    //MARK: Private / Public variables
     private var onboardingSteps: [OnboardingStepViewModeling] = []
     private var cityName: String?
-
+    
+    public var routeTo: ((OnboardingRoute) -> Void)?
+    
     convenience init() {
         self.init(locationManager: LocationManager.shared)
     }
@@ -72,13 +73,13 @@ extension OnboardingViewModel: OnboardingViewModeling {
         case .city:
             if let city = cityName {
                 return OnboardingStepViewModel(title: city, details: "Правильно ли мы определили Ваш город?", image: "", actionTitle: "Выбрать город") { completion in
-                    self.coordinatorDelegate?.prepareRouting(for: .cityList(completion: { city in
+                    self.routeTo?(.cityList(completion: { city in
                         print(city)
                     }))
                 }
             } else {
                 return OnboardingStepViewModel(title: "Выберете Ваш город", details: "Мы заметили, что Вы запретили геолокацию, в этом случае выберите город из списка для начала игры", image: "", actionTitle: "Выбрать город", isHideSkip: true) { completion in
-                    self.coordinatorDelegate?.prepareRouting(for: .cityList(completion: { city in
+                    self.routeTo?(.cityList(completion: { city in
                         print(city)
                     }))
                 }
@@ -87,16 +88,12 @@ extension OnboardingViewModel: OnboardingViewModeling {
             
         case .auth:
             return OnboardingStepViewModel(title: "Ведите прогресс", details: "Авторизируйтесь для сохранения прогресса и участия в общем рейтиге игроков", image: "", actionTitle: "Войти") { completion in
-                self.didTapSkip()
+                self.routeTo?(.back)
             }            
         }
     }
     
     public func onboardingItems() -> Int {
         return OnbordingItem.allCases.count
-    }
-    
-    public func didTapSkip() {
-        coordinatorDelegate?.prepareRouting(for: .finishOnboarding)
     }
 }

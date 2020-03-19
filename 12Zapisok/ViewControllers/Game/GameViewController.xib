@@ -57,6 +57,9 @@
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" image="placeholder"/>
+                            <connections>
+                                <action selector="openMap" destination="-1" eventType="touchUpInside" id="XiL-mq-NNy"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нижний Новгород" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vl-k6-h3K">
                             <rect key="frame" x="16" y="123" width="382" height="40"/>

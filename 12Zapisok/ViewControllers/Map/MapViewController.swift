@@ -38,6 +38,10 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func closeButtonPressed() {
-        viewModel?.closeButtonPressed?()
+        viewModel?.routeTo?(.back)
+    }
+    
+    @IBAction func goToPurchase() {
+        viewModel?.routeTo?(.purchase)
     }
 }

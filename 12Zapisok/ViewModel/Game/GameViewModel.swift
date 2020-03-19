@@ -14,7 +14,8 @@ protocol GameViewModeling {
     func selectNoteDetails(at index: Int)
     func numberOfNotes() -> Int
     func setUpdateHandler(_ handler: (() -> Void)?)
-    func finishFlow()
+    
+    var routeTo: ((GameRouter) -> Void)? { get set }
 }
 
 class GameViewModel {
@@ -24,13 +25,13 @@ class GameViewModel {
     private let databaseStorage: StorageManager
     private let networkManager: NetworkManaging
     
-    //MARK: Coordinator delegate & Private property
-    weak var coordinatorDelegate: GameViewModelCoordinatorDelegate?
-
+    //MARK: Private / Public variables
     private var currentCityName: String?
     private var gameNotes = [Note]()
     private var dataUpdateHandler: (() -> Void)?
     
+    public var routeTo: ((GameRouter) -> Void)?
+
     convenience init(cityName: String?) {
         self.init(cityName: cityName, preferencesManager: PreferencesManager.shared, databaseStorage: StorageManager.shared, networkManager: NetworkManager.shared)
     }
@@ -73,7 +74,7 @@ extension GameViewModel: GameViewModeling {
     
     public func selectNoteDetails(at index: Int) {
         let selectedViewModel = GameNoteViewModel(note: gameNotes[index])
-        coordinatorDelegate?.showGameNote(noteViewModel: selectedViewModel)
+        routeTo?(.note(viewModel: selectedViewModel))
     }
     
     public func numberOfNotes() -> Int {
@@ -82,9 +83,5 @@ extension GameViewModel: GameViewModeling {
     
     public func setUpdateHandler(_ handler: (() -> Void)?) {
         dataUpdateHandler = handler
-    }
-    
-    public func finishFlow() {
-        coordinatorDelegate?.navigateToPrevious()
     }
 }

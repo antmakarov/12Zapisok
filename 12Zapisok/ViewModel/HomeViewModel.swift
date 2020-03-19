@@ -15,18 +15,21 @@ protocol CurrentCityProtocol {
 
 protocol HomeViewModeling: CurrentCityProtocol {
     func getCurrentCityScore() -> Int
-    func routeTo(_ route: HomeRoute)
+    var routeTo: ((HomeRoute) -> Void)? { get set }
 }
 
 class HomeViewModel {
 
-    weak var coordinatorDelegate: HomeViewModelCoordinatorDelegate?
-
+    //MARK: Managers
     private let preferencesManager: PreferencesManager
     private let databaseStorage: StorageManager
     private let networkManager: NetworkManaging
+    
+    //MARK: Private / Public variables
     private var currentCity: City?
     
+    public var routeTo: ((HomeRoute) -> Void)?
+
     convenience init() {
         self.init(preferencesManager: PreferencesManager.shared, databaseStorage: StorageManager.shared, networkManager: NetworkManager.shared)
     }
@@ -71,9 +74,5 @@ extension HomeViewModel: HomeViewModeling {
     
     func getCurrentCityScore() -> Int {
         return 5
-    }
-    
-    func routeTo(_ route: HomeRoute) {
-        coordinatorDelegate?.prepareRouting(for: route)
     }
 }

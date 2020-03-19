@@ -75,23 +75,23 @@ class HomeViewController: BaseViewController {
 extension HomeViewController {
     
     @IBAction func openMap(_ sender: Any) {
-        viewModel?.routeTo(.showMap)
+        viewModel?.routeTo?(.showMap)
     }
     
     @IBAction func showCityInfo(_ sender: Any) {
-        viewModel?.routeTo(.showCityInfo)
+        viewModel?.routeTo?(.showCityInfo)
     }
     
     @IBAction func openStatistics(_ sender: Any) {
-        viewModel?.routeTo(.showStatistics)
+        viewModel?.routeTo?(.showStatistics)
     }
     
     @IBAction func openSettings(_ sender: Any) {
-        viewModel?.routeTo(.showSettings)
+        viewModel?.routeTo?(.showSettings)
     }
     
     @IBAction func openLeaderBoard(_ sender: Any) {
-        viewModel?.routeTo(.showLeaders)
+        viewModel?.routeTo?(.showLeaders)
     }
     
     @objc func tapMenuItem(sender: UITapGestureRecognizer) {
@@ -102,16 +102,16 @@ extension HomeViewController {
         
         switch tag {
         case 1:
-            viewModel?.routeTo(.showGame(cityName: viewModel?.getCurrentCityName()) )
+            viewModel?.routeTo?(.showGame(cityName: viewModel?.getCurrentCityName()) )
             
         case 2:
-            viewModel?.routeTo(.showCityList)
+            viewModel?.routeTo?(.showCityList)
             
         case 3:
-            viewModel?.routeTo(.showRules)
+            viewModel?.routeTo?(.showRules)
             
         case 4:
-            viewModel?.routeTo(.showPurchase)
+            viewModel?.routeTo?(.showPurchase)
             
         default:
             Logger.info(msg: "Missing tag action")

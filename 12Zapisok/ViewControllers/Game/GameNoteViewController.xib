@@ -35,7 +35,7 @@
                                 <color key="titleColor" red="0.29955461150000001" green="0.3321303934" blue="0.29174302499999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </state>
                             <connections>
-                                <action selector="closeModalView:" destination="-1" eventType="touchUpInside" id="Cc2-pI-fS6"/>
+                                <action selector="closeView:" destination="-1" eventType="touchUpInside" id="cm0-Aj-9x5"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MrO-FC-0qU">
@@ -86,6 +86,14 @@
                             <rect key="frame" x="22" y="218" width="33" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ga6-OJ-9AY">
+                            <rect key="frame" x="97" y="263" width="61" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Покупки"/>
+                            <connections>
+                                <action selector="openPurchase:" destination="-1" eventType="touchUpInside" id="vEE-MN-kP9"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <userDefinedRuntimeAttributes>
@@ -97,7 +105,7 @@
             </subviews>
             <color key="backgroundColor" white="0.39011665239999999" alpha="0.53074165240000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="cRO-cy-BPT"/>
-            <point key="canvasLocation" x="132" y="91"/>
+            <point key="canvasLocation" x="131.8840579710145" y="90.401785714285708"/>
         </view>
     </objects>
     <resources>

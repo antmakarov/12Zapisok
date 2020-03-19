@@ -21,7 +21,11 @@ class CityInfoViewController: UIViewController {
         
     }
     
+    @IBAction func openMap() {
+        viewModel?.routeTo?(.map)
+    }
+    
     @IBAction func closeButtonPressed() {
-        viewModel?.closeButtonPressed?()
+        viewModel?.routeTo?(.back)
     }
 }

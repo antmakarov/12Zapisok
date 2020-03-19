@@ -29,11 +29,17 @@
                     <rect key="frame" x="20" y="44" width="61" height="36"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Назад"/>
+                    <connections>
+                        <action selector="closeButtonPressed" destination="-1" eventType="touchUpInside" id="a7F-Qh-sCD"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppy-kF-wfz">
                     <rect key="frame" x="29" y="156" width="42" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Карта"/>
+                    <connections>
+                        <action selector="openMap" destination="-1" eventType="touchUpInside" id="2bM-4a-d1R"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

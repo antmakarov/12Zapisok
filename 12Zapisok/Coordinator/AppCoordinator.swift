@@ -56,7 +56,7 @@ class AppCoordinator: BaseCoordinator {
     
     // MARK: Private run flow methods
     
-    fileprivate func runOnboardingFlow() {
+    private func runOnboardingFlow() {
         let coordinator = OnboardingCoordinator(navigationController: rootViewController)
         coordinator.finishFlow = { [weak self] in
             guard let strongSelf = self else { return }
@@ -68,7 +68,7 @@ class AppCoordinator: BaseCoordinator {
         coordinator.start()
     }
     
-    fileprivate func runHomeFlow() {
+    private func runHomeFlow() {
         let coordinator = HomeCoordinator(navigationController: rootViewController)
         addChildCoordinator(coordinator)
         coordinator.start()

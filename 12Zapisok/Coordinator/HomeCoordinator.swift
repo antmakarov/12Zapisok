@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum HomeRoute: Route {
+enum HomeRoute {
     case showGame(cityName: String?)
     case showPurchase
     case showRules
@@ -20,13 +20,9 @@ enum HomeRoute: Route {
     case showCityInfo
 }
 
-protocol HomeViewModelCoordinatorDelegate: class {
-    func prepareRouting(for route: HomeRoute)
-}
-
 class HomeCoordinator: BaseCoordinator {
     
-    var navigationController: UINavigationController
+    private var navigationController: UINavigationController
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -35,20 +31,15 @@ class HomeCoordinator: BaseCoordinator {
     override func start() {
         let vc = HomeViewController()
         let vm = HomeViewModel()
-        vm.coordinatorDelegate = self
+        vm.routeTo = { [weak self] route in
+            self?.manageRoute(route)
+        }
         vc.viewModel = vm
         navigationController.pushViewController(vc, animated: false)
     }
     
-    private func dismissViewControlelr() {
-        
-    }
-}
-
-extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
-    
     //TODO: Replace this to some BuilderViewController
-    func prepareRouting(for route: HomeRoute) {
+    private func manageRoute(_ route: HomeRoute) {
         switch route {
         case .showGame:
             let gameCoordinator = GameCoordinator(navigationController: navigationController)
@@ -94,7 +85,7 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
                 self?.navigationController.popViewController(animated: true)
             }
             vc.viewModel = vm
-            navigationController.pushViewController(vc, animated: false)
+            navigationController.pushViewController(vc, animated: true)
             
         case .showLeaders:
             let vc = LeaderboardViewController()
@@ -117,20 +108,26 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
         case .showCityInfo:
             let vc = CityInfoViewController()
             let vm = CityInfoViewModel()
-            vm.closeButtonPressed = { [weak self] in
-                self?.navigationController.popViewController(animated: true)
+            vm.routeTo = { [weak self] route in
+                switch route {
+                case .map:
+                    self?.manageRoute(.showMap)
+
+                case .back:
+                    self?.navigationController.popViewController(animated: true)
+                }
             }
             vc.viewModel = vm
             navigationController.pushViewController(vc, animated: true)
             
         case .showMap:
-            let vc = MapViewController()
-            let vm = MapViewModel()
-            vm.closeButtonPressed = { [weak self] in
+            let mapCoordinator = MapCoordinator(navigationController: navigationController)
+            mapCoordinator.finishFlow = { [weak self] in
+                self?.removeChildCoordinator(mapCoordinator)
                 self?.navigationController.popViewController(animated: true)
             }
-            vc.viewModel = vm
-            navigationController.pushViewController(vc, animated: true)
+            addChildCoordinator(mapCoordinator)
+            mapCoordinator.start()
         }
     }
 }

@@ -8,19 +8,15 @@
 
 import UIKit
 
-enum OnboardingRoute: Route {
+enum OnboardingRoute {
     case auth
     case cityList(completion: ((City) -> Void)?)
-    case finishOnboarding
-}
-
-protocol OnboardingViewModelCoordinatorDelegate: class {
-    func prepareRouting(for route: OnboardingRoute)
+    case back
 }
 
 class OnboardingCoordinator: BaseCoordinator {
         
-    var navigationController: UINavigationController
+    private var navigationController: UINavigationController
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -29,15 +25,14 @@ class OnboardingCoordinator: BaseCoordinator {
     override func start() {
         let vc = OnboardingViewController()
         let vm = OnboardingViewModel()
-        vm.coordinatorDelegate = self
+        vm.routeTo = { [weak self] route in
+            self?.manageRoute(route)
+        }
         vc.viewModel = vm
         navigationController.pushViewController(vc, animated: true)
     }
-}
 
-extension OnboardingCoordinator: OnboardingViewModelCoordinatorDelegate {
-    
-    func prepareRouting(for route: OnboardingRoute) {
+    private func manageRoute(_ route: OnboardingRoute) {
         switch route {
         case .auth:
             let vc = LoginViewController()
@@ -49,7 +44,7 @@ extension OnboardingCoordinator: OnboardingViewModelCoordinatorDelegate {
             vc.chooseCompletion = completion
             navigationController.pushViewController(vc, animated: true)
             
-        case .finishOnboarding:
+        case .back:
             finishFlow?()
         }
     }

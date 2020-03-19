@@ -7,13 +7,18 @@
 //
 
 import Foundation
- 
+
+enum CityInfoRoute {
+    case map
+    case back
+}
+
 protocol CityInfoViewModeling {
-    var closeButtonPressed: (() -> Void)? { get set }
+    var routeTo: ((CityInfoRoute) -> Void)? { get set }
 }
 
 class CityInfoViewModel {
-    var closeButtonPressed: (() -> Void)? 
+    var routeTo: ((CityInfoRoute) -> Void)?
 
 }
 
