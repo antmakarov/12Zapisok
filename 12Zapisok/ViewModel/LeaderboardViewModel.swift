@@ -9,11 +9,12 @@
 import Foundation
 
 protocol LeaderboardViewModeling: class {
-    
+    var closeButtonPressed: (() -> Void)? { get set }
 }
 
 class LeaderboardViewModel {
-    
+    public var closeButtonPressed: (() -> Void)?
+
 }
 
 extension LeaderboardViewModel: LeaderboardViewModeling {

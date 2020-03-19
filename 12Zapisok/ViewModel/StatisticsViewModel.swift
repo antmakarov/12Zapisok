@@ -9,11 +9,12 @@
 import Foundation
 
 protocol StatisticsViewModeling: class {
-    
+    var closeButtonPressed: (() -> Void)? { get set }
 }
 
 class StatisticsViewModel {
-    
+    public var closeButtonPressed: (() -> Void)?
+
 }
 
 extension StatisticsViewModel: StatisticsViewModeling {

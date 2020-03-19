@@ -72,7 +72,8 @@ extension GameViewModel: GameViewModeling {
     }
     
     public func selectNoteDetails(at index: Int) {
-        coordinatorDelegate?.showGameNote(noteVM: DetailNoteViewModel(note: gameNotes[index]))
+        let selectedViewModel = GameNoteViewModel(note: gameNotes[index])
+        coordinatorDelegate?.showGameNote(noteViewModel: selectedViewModel)
     }
     
     public func numberOfNotes() -> Int {

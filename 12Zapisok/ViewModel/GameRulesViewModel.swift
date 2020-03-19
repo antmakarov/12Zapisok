@@ -9,11 +9,11 @@
 import Foundation
 
 protocol GameRulesViewModeling: class {
-    
+    var closeButtonPressed: (() -> Void)? { get set }
 }
 
 class GameRulesViewModel {
-    
+    public var closeButtonPressed: (() -> Void)? 
 }
 
 extension GameRulesViewModel: GameRulesViewModeling {

@@ -9,11 +9,12 @@
 import Foundation
 
 protocol PurchaseViewModeling: class {
-    
+    var closeButtonPressed: (() -> Void)? { get set }
 }
 
 class PurchaseViewModel {
-    
+    public var closeButtonPressed: (() -> Void)?
+
 }
 
 extension PurchaseViewModel: PurchaseViewModeling {

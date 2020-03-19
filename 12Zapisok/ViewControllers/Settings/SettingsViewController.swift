@@ -20,4 +20,8 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
 
     }
+    
+    @IBAction func closeButtonPressed() {
+        viewModel?.closeButtonPressed?()
+    }
 }

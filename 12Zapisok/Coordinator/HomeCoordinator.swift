@@ -47,6 +47,7 @@ class HomeCoordinator: BaseCoordinator {
 
 extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
     
+    //TODO: Replace this to some BuilderViewController
     func prepareRouting(for route: HomeRoute) {
         switch route {
         case .showGame:
@@ -61,41 +62,74 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
             
         case .showPurchase:
             let vc = PurchaseViewController()
-            vc.viewModel = PurchaseViewModel()
+            let vm = PurchaseViewModel()
+            vm.closeButtonPressed = { [weak self] in
+                self?.navigationController.popViewController(animated: true)
+            }
+            vc.viewModel = vm
             navigationController.pushViewController(vc, animated: true)
 
         case .showRules:
             let vc = GameRulesViewController()
-            vc.viewModel = GameRulesViewModel()
+            let vm = GameRulesViewModel()
+            vm.closeButtonPressed = { [weak self] in
+                self?.navigationController.popViewController(animated: true)
+            }
+            vc.viewModel = vm
             navigationController.pushViewController(vc, animated: true)
             
         case .showCityList:
             let vc = CityListViewController()
-            vc.viewModel = CityListViewModel()
+            let vm = CityListViewModel()
+            vm.closeButtonPressed = { [weak self] in
+                self?.navigationController.popViewController(animated: true)
+            }
+            vc.viewModel = vm
             navigationController.pushViewController(vc, animated: true)
 
         case .showSettings:
             let vc = SettingsViewController()
-            vc.viewModel = SettingsViewModel()
+            let vm = SettingsViewModel()
+            vm.closeButtonPressed = { [weak self] in
+                self?.navigationController.popViewController(animated: true)
+            }
+            vc.viewModel = vm
             navigationController.pushViewController(vc, animated: false)
             
         case .showLeaders:
             let vc = LeaderboardViewController()
-            vc.viewModel = LeaderboardViewModel()
+            let vm = LeaderboardViewModel()
+            vm.closeButtonPressed = { [weak self] in
+                self?.navigationController.popViewController(animated: true)
+            }
+            vc.viewModel = vm
             navigationController.pushViewController(vc, animated: true)
             
         case .showStatistics:
             let vc = StatisticsViewController()
-            vc.viewModel = StatisticsViewModel()
+            let vm = StatisticsViewModel()
+            vm.closeButtonPressed = { [weak self] in
+                self?.navigationController.popViewController(animated: true)
+            }
+            vc.viewModel = vm
             navigationController.pushViewController(vc, animated: true)
             
         case .showCityInfo:
             let vc = CityInfoViewController()
+            let vm = CityInfoViewModel()
+            vm.closeButtonPressed = { [weak self] in
+                self?.navigationController.popViewController(animated: true)
+            }
+            vc.viewModel = vm
             navigationController.pushViewController(vc, animated: true)
             
         case .showMap:
             let vc = MapViewController()
-            vc.viewModel = MapViewModel()
+            let vm = MapViewModel()
+            vm.closeButtonPressed = { [weak self] in
+                self?.navigationController.popViewController(animated: true)
+            }
+            vc.viewModel = vm
             navigationController.pushViewController(vc, animated: true)
         }
     }

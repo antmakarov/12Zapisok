@@ -9,7 +9,7 @@
 import UIKit
 
 protocol GameViewModelCoordinatorDelegate: PreviousCoordinator {
-    func showGameNote(noteVM: DetailNoteViewModeling)
+    func showGameNote(noteViewModel: GameNoteViewModeling)
 }
 
 class GameCoordinator: BaseCoordinator {
@@ -31,9 +31,9 @@ class GameCoordinator: BaseCoordinator {
 
 extension GameCoordinator: GameViewModelCoordinatorDelegate {
     
-    func showGameNote(noteVM: DetailNoteViewModeling) {
-        let gameNote = DetailNoteViewController()
-        gameNote.viewModel = noteVM
+    func showGameNote(noteViewModel: GameNoteViewModeling) {
+        let gameNote = GameNoteViewController()
+        gameNote.viewModel = noteViewModel
         navigationController.pushViewController(gameNote, animated: true)
     }
         

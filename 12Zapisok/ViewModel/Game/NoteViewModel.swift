@@ -1,5 +1,5 @@
 //
-//  DetailNoteViewModel.swift
+//  GameNoteViewModel.swift
 //  12Zapisok
 //
 //  Created by A.Makarov on 11/07/2019.
@@ -8,14 +8,14 @@
 
 import Foundation
 
-protocol DetailNoteViewModeling {
+protocol GameNoteViewModeling {
     var id: Int { get }
     var title: String { get }
     var imgUrl: String { get }
     var isOpen: Bool { get }
 }
 
-class DetailNoteViewModel {
+class GameNoteViewModel {
     
     private let note: Note
     
@@ -24,7 +24,7 @@ class DetailNoteViewModel {
     }
 }
 
-extension DetailNoteViewModel: DetailNoteViewModeling {
+extension GameNoteViewModel: GameNoteViewModeling {
     var title: String {
         return note.name
     }

@@ -9,11 +9,12 @@
 import Foundation
 
 protocol MapViewModeling: class {
-    
+    var closeButtonPressed: (() -> Void)? { get set }
 }
 
 class MapViewModel {
-    
+    public var closeButtonPressed: (() -> Void)?
+
 }
 
 extension MapViewModel: MapViewModeling {

@@ -20,4 +20,8 @@ class LeaderboardViewController: UIViewController {
         super.viewDidLoad()
 
     }
+    
+    @IBAction func closeButtonPressed() {
+        viewModel?.closeButtonPressed?()
+    }
 }

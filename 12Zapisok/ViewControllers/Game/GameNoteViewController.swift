@@ -1,5 +1,5 @@
 //
-//  DetailNoteViewController.swift
+//  GameNoteViewController.swift
 //  12Zapisok
 //
 //  Created by A.Makarov on 11/07/2019.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class DetailNoteViewController: BaseViewController {
+class GameNoteViewController: BaseViewController {
 
-    var viewModel: DetailNoteViewModeling?
+    var viewModel: GameNoteViewModeling?
     
     @IBOutlet weak var numberNoteLabel: UILabel!
     @IBOutlet weak var titleNoteLabel: UILabel!

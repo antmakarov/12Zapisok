@@ -9,11 +9,12 @@
 import Foundation
 
 protocol SettingsViewModeling: class {
-    
+    var closeButtonPressed: (() -> Void)? { get set }
 }
 
 class SettingsViewModel {
-    
+    public var closeButtonPressed: (() -> Void)?
+
 }
 
 extension SettingsViewModel: SettingsViewModeling {

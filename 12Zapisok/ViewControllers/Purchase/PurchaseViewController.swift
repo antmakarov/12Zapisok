@@ -20,4 +20,8 @@ class PurchaseViewController: UIViewController {
         super.viewDidLoad()
 
     }
+    
+    @IBAction func closeButtonPressed() {
+        viewModel?.closeButtonPressed?()
+    }
 }

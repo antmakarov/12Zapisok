@@ -8,7 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CityDetailsViewController" customModule="_2Zapisok" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameNoteViewController" customModule="_2Zapisok" customModuleProvider="target">
+            <connections>
+                <outlet property="describLabel" destination="jf2-yp-feD" id="A03-X6-9SV"/>
+                <outlet property="numberNoteLabel" destination="3qm-uy-1uh" id="bPo-5c-EUH"/>
+                <outlet property="statusImage" destination="Ce4-Nv-3zr" id="RME-cS-ifa"/>
+                <outlet property="timeFindedLabel" destination="KVJ-Nc-HEX" id="V91-8c-62x"/>
+                <outlet property="titleNoteLabel" destination="Uzj-Cy-Zbi" id="2Yk-oC-1Ck"/>
+                <outlet property="view" destination="ymy-pH-ASK" id="11W-RU-HHm"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="ymy-pH-ASK">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -25,12 +34,18 @@
                             <state key="normal" title="Закрыть">
                                 <color key="titleColor" red="0.29955461150000001" green="0.3321303934" blue="0.29174302499999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </state>
+                            <connections>
+                                <action selector="closeModalView:" destination="-1" eventType="touchUpInside" id="Cc2-pI-fS6"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MrO-FC-0qU">
                             <rect key="frame" x="167" y="263" width="115" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                             <state key="normal" title="Открыть карту"/>
+                            <connections>
+                                <action selector="openMap:" destination="-1" eventType="touchUpInside" id="RTh-If-xsy"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Записка #6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qm-uy-1uh">
                             <rect key="frame" x="92" y="11" width="111" height="24"/>

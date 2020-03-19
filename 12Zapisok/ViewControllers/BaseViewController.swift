@@ -9,7 +9,9 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-
+        
+    //final let viewModel: HomeBaseViewModel? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

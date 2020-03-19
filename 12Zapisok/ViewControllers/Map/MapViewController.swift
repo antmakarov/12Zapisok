@@ -36,4 +36,8 @@ class MapViewController: UIViewController {
                                                   latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         mapView.setRegion(coordinateRegion, animated: true)
     }
+    
+    @IBAction func closeButtonPressed() {
+        viewModel?.closeButtonPressed?()
+    }
 }

@@ -20,4 +20,8 @@ class GameRulesViewController: BaseViewController {
         super.viewDidLoad()
 
     }
+    
+    @IBAction func closeButtonPressed() {
+        viewModel?.closeButtonPressed?()
+    }
 }
