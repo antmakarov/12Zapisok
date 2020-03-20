@@ -33,9 +33,6 @@ class MapCoordinator: BaseCoordinator {
     
     private func manageRoute(_ route: MapRouter) {
         switch route {
-        case .back:
-            finishFlow?()
-            
         case .purchase:
             let vc = PurchaseViewController()
             let vm = PurchaseViewModel()
@@ -44,6 +41,9 @@ class MapCoordinator: BaseCoordinator {
             }
             vc.viewModel = vm
             navigationController.pushViewController(vc, animated: true)
+            
+        case .back:
+            finishFlow?()
         }
     }
 }

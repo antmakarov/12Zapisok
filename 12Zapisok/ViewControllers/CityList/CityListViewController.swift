@@ -11,6 +11,7 @@ import UIKit
 class CityListViewController: BaseViewController {
 
     @IBOutlet weak var citiesCollectionView: UICollectionView!
+    @IBOutlet weak var backButton: UIButton!
     
     var chooseCompletion: ((City) -> Void)?
     var viewModel: CityListViewModeling? {
@@ -25,6 +26,15 @@ class CityListViewController: BaseViewController {
         super.viewDidLoad()
         citiesCollectionView.register(reusableViewType: CityHeaderReusableView.self)
         citiesCollectionView.register(cellType: CityCollectionCell.self)
+        setupUI()
+    }
+    
+    @IBAction func backButtonPressed() {
+        viewModel?.closeButtonPressed?()
+    }
+    
+    private func setupUI() {
+        backButton.isHidden = viewModel?.isOnboarding ?? false
     }
 }
 

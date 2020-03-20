@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CityListViewController" customModule="_2Zapisok" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="OtO-nE-jw3" id="IHN-jP-h3n"/>
                 <outlet property="citiesCollectionView" destination="iax-XB-pqm" id="vv9-oW-5Bl"/>
                 <outlet property="view" destination="icp-xM-CgH" id="Iuz-6h-6r2"/>
             </connections>
@@ -44,6 +45,14 @@
                         <outlet property="delegate" destination="-1" id="02F-Tu-1LX"/>
                     </connections>
                 </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OtO-nE-jw3">
+                    <rect key="frame" x="9" y="50" width="60" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Закрыть"/>
+                    <connections>
+                        <action selector="backButtonPressed" destination="-1" eventType="touchUpInside" id="UAT-i1-ar3"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.93333333330000001" green="0.93725490199999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>

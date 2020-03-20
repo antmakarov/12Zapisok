@@ -71,7 +71,7 @@ class HomeCoordinator: BaseCoordinator {
             
         case .showCityList:
             let vc = CityListViewController()
-            let vm = CityListViewModel()
+            let vm = CityListViewModel(isOnboarding: false)
             vm.closeButtonPressed = { [weak self] in
                 self?.navigationController.popViewController(animated: true)
             }

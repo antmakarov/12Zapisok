@@ -34,11 +34,7 @@ class GameCoordinator: BaseCoordinator {
     }
     
     func manageRoute(_ route: GameRouter) {
-        
         switch route {
-        case .back:
-            finishFlow?()
-            
         case .map:
             let mapCoordinator = MapCoordinator(navigationController: navigationController)
             mapCoordinator.finishFlow = { [weak self] in
@@ -53,9 +49,6 @@ class GameCoordinator: BaseCoordinator {
             viewController.viewModel = viewModel
             viewModel.routeTo = { [weak self] route in
                 switch route {
-                case .note:
-                    break
-                    
                 case .map:
                     self?.manageRoute(.map)
                     
@@ -64,6 +57,9 @@ class GameCoordinator: BaseCoordinator {
                     
                 case .back:
                     self?.navigationController.popViewController(animated: true)
+                    
+                case .note:
+                    break
                 }
             }
             navigationController.pushViewController(viewController, animated: true)
@@ -76,6 +72,9 @@ class GameCoordinator: BaseCoordinator {
             }
             viewController.viewModel = viewModel
             navigationController.pushViewController(viewController, animated: true)
+            
+        case .back:
+            finishFlow?()
         }
     }
 }

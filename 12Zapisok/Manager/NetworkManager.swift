@@ -24,8 +24,7 @@ class NetworkManager: NetworkManaging {
     static let shared = NetworkManager()
     private var session = Alamofire.SessionManager(configuration: .default)
     private let baseUrl = "http://138.68.102.85:9050"
-    private let tokenHeader = ["Authorization": "JWT " + "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6N30.ulAb9HRDksOFrkrApi51oJgVR-qmJZD6O2rYHZCqLPA"]
-    
+        
     init() {
         let configuration = URLSessionConfiguration.default
         configuration.httpAdditionalHeaders = SessionManager.defaultHTTPHeaders
@@ -42,12 +41,29 @@ class NetworkManager: NetworkManaging {
         fetchArrayOf(type: Note.self, parameters) { completion($0) }
     }
     
+    func getUserToken(completion: @escaping (String?) -> ()) {
+        Alamofire.request(self.baseUrl + "/generate_token", method: .post, encoding: JSONEncoding.default)
+        .validate(statusCode: 200..<300)
+        .responseJSON { response in
+            switch response.result {
+            case .success(let result):
+                let response = result as! NSDictionary
+                let userToken = response.object(forKey: "token") as? String
+                completion(userToken)
+            
+            case .failure(let error):
+                Logger.error(msg: "Unable to get user token - \(error)")
+                completion(nil)
+            }
+        }
+    }
+    
     private func fetchObject<T: Object>(type: T.Type, completion: @escaping ((Result<T, Error>)) -> ())  where T:Mappable, T:Endpoint {
         
         let requestURL = baseUrl + type.url()
         Logger.info(msg: requestURL)
 
-        Alamofire.request(requestURL, encoding: JSONEncoding.default, headers: tokenHeader)
+        Alamofire.request(requestURL, encoding: JSONEncoding.default, headers: tokenHeader())
         .validate(statusCode: 200..<300)
         .responseJSON { response in
             
@@ -71,7 +87,7 @@ class NetworkManager: NetworkManaging {
         let requestURL = baseUrl + type.url()
         Logger.info(msg: requestURL)
         
-        Alamofire.request(requestURL, parameters: parameters, encoding: URLEncoding.default, headers: tokenHeader)
+        Alamofire.request(requestURL, parameters: parameters, encoding: URLEncoding.default, headers: tokenHeader())
         .validate(statusCode: 200..<300)
         .responseJSON { response in
             
@@ -90,20 +106,8 @@ class NetworkManager: NetworkManaging {
         }
     }
     
-    func getUserToken(completion: @escaping (String?) -> ()) {
-        Alamofire.request(self.baseUrl + "/generate_token", method: .post, encoding: JSONEncoding.default)
-        .validate(statusCode: 200..<300)
-        .responseJSON { response in
-            switch response.result {
-            case .success(let result):
-                let response = result as! NSDictionary
-                let userToken = response.object(forKey: "token") as? String
-                completion(userToken)
-            
-            case .failure(let error):
-                Logger.error(msg: "Unable to get user token - \(error)")
-                completion(nil)
-            }
-        }
+    private func tokenHeader() -> [String: String] {
+        let token = PreferencesManager.shared.userToken
+        return ["Authorization": "JWT " + (token ?? "")]
     }
 }

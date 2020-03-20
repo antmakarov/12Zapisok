@@ -13,28 +13,33 @@ protocol CityListViewModeling: CurrentCityProtocol {
     func cityAt(index: Int) -> City
     func setUpdateHandler(_ handler: (() -> Void)?)
     func saveCurrentCuty(city: City)
-   
+    
+    var isOnboarding: Bool { get }
     var closeButtonPressed: (() -> Void)? { get set }
 }
 
 class CityListViewModel {
     
-    private var cities = [City]()
-    private var updateHandler: (() -> Void)?
-    public var closeButtonPressed: (() -> Void)?
-
     private let preferencesManager: PreferencesManager
     private let databaseStorage: StorageManager
     private let networkManager: NetworkManaging
     
-    convenience init() {
-        self.init(preferencesManager: PreferencesManager.shared, databaseStorage: StorageManager.shared, networkManager: NetworkManager.shared)
+    private var cities = [City]()
+    private var updateHandler: (() -> Void)?
+    
+    public var isOnboarding: Bool
+    public var closeButtonPressed: (() -> Void)?
+    
+    convenience init(isOnboarding: Bool) {
+        self.init(isOnboarding: isOnboarding, preferencesManager: PreferencesManager.shared, databaseStorage: StorageManager.shared, networkManager: NetworkManager.shared)
     }
     
-    init(preferencesManager: PreferencesManager, databaseStorage: StorageManager, networkManager: NetworkManaging) {
+    init(isOnboarding: Bool, preferencesManager: PreferencesManager, databaseStorage: StorageManager, networkManager: NetworkManaging) {
         self.preferencesManager = preferencesManager
         self.databaseStorage = databaseStorage
         self.networkManager = networkManager
+        self.isOnboarding = isOnboarding
+        
         fetchCities()
     }
 

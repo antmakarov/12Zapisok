@@ -40,7 +40,7 @@ class OnboardingCoordinator: BaseCoordinator {
             
         case .cityList(let completion):
             let vc = CityListViewController()
-            vc.viewModel = CityListViewModel()
+            vc.viewModel = CityListViewModel(isOnboarding: true)
             vc.chooseCompletion = completion
             navigationController.pushViewController(vc, animated: true)
             
