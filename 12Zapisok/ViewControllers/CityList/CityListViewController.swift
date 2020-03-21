@@ -90,7 +90,7 @@ extension CityListViewController: UICollectionViewDelegate {
            }
            
            let selectedCity = viewModel.cityAt(index: indexPath.row)
-           viewModel.saveCurrentCuty(city: selectedCity)
+           viewModel.saveCurrentCity(at: indexPath.row)
            chooseCompletion?(selectedCity)
            
            navigationController?.popViewController(animated: true)

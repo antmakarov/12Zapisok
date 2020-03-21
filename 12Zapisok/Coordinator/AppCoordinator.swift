@@ -14,8 +14,8 @@ fileprivate enum ApplicationFlow {
     case main
     case onboarding
     
-    static func choose(_ isSuccessAuth: Bool) -> ApplicationFlow {
-        return isSuccessAuth ? .main : .onboarding
+    init(_ isSuccessAuth: Bool) {
+        self = isSuccessAuth ? .main : .onboarding
     }
 }
 
@@ -23,11 +23,12 @@ fileprivate enum ApplicationFlow {
 
 class AppCoordinator: BaseCoordinator {
     
-    // MARK: Properties
+    // MARK: Properties, Managers
     
     private let window: UIWindow?
-    private let preferencesManager: PreferencesManager
-    
+    private let networkManager: NetworkManaging
+    private let userPreferences: PreferencesManager
+
     private lazy var rootViewController: UINavigationController = {
         let nc = UINavigationController()
         nc.navigationBar.isTranslucent = false
@@ -37,7 +38,8 @@ class AppCoordinator: BaseCoordinator {
 
     init(window: UIWindow?) {
         self.window = window
-        self.preferencesManager = PreferencesManager()
+        self.networkManager = NetworkManager.shared
+        self.userPreferences = PreferencesManager()
 
         super.init()
         self.window?.rootViewController = rootViewController
@@ -45,7 +47,9 @@ class AppCoordinator: BaseCoordinator {
     }
     
     override func start() {
-        switch ApplicationFlow.choose(preferencesManager.isSuccessAuth) {
+        networkManager.updateTokenIfNeeded(isForced: false)
+        
+        switch ApplicationFlow(userPreferences.isSuccessAuth) {
         case .onboarding:
             runOnboardingFlow()
         

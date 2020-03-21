@@ -12,7 +12,7 @@ protocol CityListViewModeling: CurrentCityProtocol {
     func getNumberOfCities() -> Int
     func cityAt(index: Int) -> City
     func setUpdateHandler(_ handler: (() -> Void)?)
-    func saveCurrentCuty(city: City)
+    func saveCurrentCity(at index: Int)
     
     var isOnboarding: Bool { get }
     var closeButtonPressed: (() -> Void)? { get set }
@@ -65,27 +65,28 @@ class CityListViewModel {
 }
 
 extension CityListViewModel: CityListViewModeling {
-    func setUpdateHandler(_ handler: (() -> Void)?) {
+    public func setUpdateHandler(_ handler: (() -> Void)?) {
         updateHandler = handler
     }
     
-    func getNumberOfCities() -> Int {
+    public func getNumberOfCities() -> Int {
         return cities.count
     }
     
-    func cityAt(index: Int) -> City {
+    public func cityAt(index: Int) -> City {
         return cities[index]
     }
     
-    func saveCurrentCuty(city: City) {
-        preferencesManager.currentCityId = city.id
+    public func saveCurrentCity(at index: Int) {
+        let selectedCity = cityAt(index: index)
+        preferencesManager.currentCityId = selectedCity.id
     }
     
-    func getCurrentCityName() -> String {
+    public func getCurrentCityName() -> String {
         return cities.first { $0.id == preferencesManager.currentCityId }?.name ?? ""
     }
     
-    func getCurrentCityImage() -> String {
+    public func getCurrentCityImage() -> String {
         return cities.first { $0.id == preferencesManager.currentCityId }?.imageUrl ?? ""
     }
 }

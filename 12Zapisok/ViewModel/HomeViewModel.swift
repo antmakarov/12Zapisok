@@ -39,7 +39,6 @@ class HomeViewModel {
         self.databaseStorage = databaseStorage
         self.networkManager = networkManager
         loadCurrentCity()
-        getUserToken()
         
         preferencesManager.updateCityIdHandler = { [weak self] id in
             self?.currentCity = self?.databaseStorage.getObjectByID(City.self, id: id)
@@ -49,16 +48,6 @@ class HomeViewModel {
     private func loadCurrentCity() {
         if let cityID = preferencesManager.currentCityId {
             currentCity = databaseStorage.getObjectByID(City.self, id: cityID)
-        }
-    }
-    
-    private func getUserToken() {
-        if let token = preferencesManager.userToken {
-            Logger.info(msg: "App Token: " + token)
-        } else {
-            networkManager.getUserToken { [weak self] token in
-                self?.preferencesManager.userToken = token
-            }
         }
     }
 }
