@@ -23,15 +23,14 @@ class NetworkManager: NetworkManaging {
     
     static let shared = NetworkManager()
     private let userPreferences: PreferencesManager
-    private var session = Alamofire.SessionManager(configuration: .default)
+    private var session = Alamofire.Session(configuration: .default)
     private let baseUrl = "http://138.68.102.85:9050"
         
     init() {
         let configuration = URLSessionConfiguration.default
-        configuration.httpAdditionalHeaders = SessionManager.defaultHTTPHeaders
         configuration.timeoutIntervalForRequest = 5
         configuration.timeoutIntervalForResource = 5
-        session = Alamofire.SessionManager(configuration: configuration)
+        session = Session(configuration: configuration)
         userPreferences = PreferencesManager.shared
     }
     
@@ -58,7 +57,7 @@ class NetworkManager: NetworkManaging {
         let requestURL = baseUrl + type.url()
         Logger.info(msg: requestURL)
 
-        Alamofire.request(requestURL, encoding: JSONEncoding.default, headers: tokenHeader())
+        AF.request(requestURL, encoding: JSONEncoding.default, headers: configureHeaders())
         .validate(statusCode: 200..<300)
         .responseJSON { response in
             
@@ -82,7 +81,7 @@ class NetworkManager: NetworkManaging {
         let requestURL = baseUrl + type.url()
         Logger.info(msg: requestURL)
         
-        Alamofire.request(requestURL, parameters: parameters, encoding: URLEncoding.default, headers: tokenHeader())
+        AF.request(requestURL, parameters: parameters, encoding: URLEncoding.default, headers: configureHeaders())
         .validate(statusCode: 200..<300)
         .responseJSON { response in
             
@@ -102,7 +101,7 @@ class NetworkManager: NetworkManaging {
     }
     
     private func getUserToken(completion: @escaping (String?) -> ()) {
-        Alamofire.request(self.baseUrl + "/generate_token", method: .post, encoding: JSONEncoding.default)
+        AF.request(self.baseUrl + "/generate_token", method: .post, encoding: JSONEncoding.default)
         .validate(statusCode: 200..<300)
         .responseJSON { response in
             switch response.result {
@@ -118,8 +117,18 @@ class NetworkManager: NetworkManaging {
         }
     }
     
-    private func tokenHeader() -> [String: String] {
-        let token = userPreferences.userToken
-        return ["Authorization": "JWT " + (token ?? "")]
+    private func configureHeaders() -> HTTPHeaders {
+        var headers = HTTPHeaders()
+        
+        // 1. Token
+        headers.add(tokenHeader())
+        
+        return headers
+    }
+    
+    private func tokenHeader() -> HTTPHeader {
+        let name = "Authorization"
+        let value = "JWT " + (userPreferences.userToken ?? "")
+        return HTTPHeader(name: name, value: value)
     }
 }
