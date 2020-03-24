@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameViewController" customModule="_2Zapisok" customModuleProvider="target">
             <connections>
+                <outlet property="cityNameLabel" destination="2vl-k6-h3K" id="zTK-Jl-R4w"/>
                 <outlet property="headerNotesView" destination="BAD-u5-2Wo" id="ac8-D8-NKX"/>
                 <outlet property="notesCollectionView" destination="fCy-ki-AYH" id="HgO-F0-HtH"/>
                 <outlet property="view" destination="4Wj-Gg-xXq" id="ko0-bN-cfW"/>

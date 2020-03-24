@@ -11,9 +11,12 @@ import Foundation
 protocol GameNoteViewModeling {
     var id: Int { get }
     var title: String { get }
+    var description: String { get }
     var imgUrl: String { get }
     var isOpen: Bool { get }
     var routeTo: ((GameRouter) -> Void)? { get set }
+    
+    func openNote(completion: @escaping ((Bool) -> Void))
 }
 
 class GameNoteViewModel {
@@ -21,22 +24,39 @@ class GameNoteViewModel {
     private let note: Note
     public var routeTo: ((GameRouter) -> Void)?
     
-    init(note: Note) {
+    private var networkManager: NetworkManaging
+    
+    convenience init(note: Note) {
+        self.init(note: note, networkManager: NetworkManager.shared)
+    }
+    
+    init(note: Note, networkManager: NetworkManaging) {
         self.note = note
+        self.networkManager = networkManager
     }
 }
 
 extension GameNoteViewModel: GameNoteViewModeling {
+    func openNote(completion: @escaping ((Bool) -> Void)) {
+        networkManager.openNote(id: note.id) { result in
+            completion(result)
+        }
+    }
+    
     var title: String {
         return note.name
     }
     
+    var description: String {
+        return note.description
+    }
+    
     var imgUrl: String {
-        return ""
+        return note.imageUrl
     }
     
     var isOpen: Bool {
-        return .random()
+        return note.statistics?.isOpen ?? false
     }
     
     public var id: Int {

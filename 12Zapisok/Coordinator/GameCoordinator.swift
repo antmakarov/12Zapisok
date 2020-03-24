@@ -18,14 +18,16 @@ enum GameRouter {
 class GameCoordinator: BaseCoordinator {
     
     private let navigationController: UINavigationController
+    private var cityName: String
     
-    init(navigationController: UINavigationController) {
+    init(cityName: String, navigationController: UINavigationController) {
+        self.cityName = cityName
         self.navigationController = navigationController
     }
     
     override func start() {
         let vc = GameViewController()
-        let vm = GameViewModel(cityName: "cityName")
+        let vm = GameViewModel(cityName: cityName)
         vm.routeTo = { [weak self] route in
             self?.manageRoute(route)
         }

@@ -10,8 +10,9 @@ import UIKit
 
 class GameViewController: BaseViewController {
     
-    @IBOutlet weak var headerNotesView: UIView!
-    @IBOutlet weak var notesCollectionView: UICollectionView!
+    @IBOutlet private weak var cityNameLabel: UILabel!
+    @IBOutlet private weak var headerNotesView: UIView!
+    @IBOutlet private weak var notesCollectionView: UICollectionView!
     
     var viewModel: GameViewModeling? {
         didSet {
@@ -28,6 +29,8 @@ class GameViewController: BaseViewController {
         notesCollectionView.collectionViewLayout = GridCollectionViewFlowLayout(display: .grid(columns: 2))
         notesCollectionView.register(cellType: NoteCollectionCell.self) 
         notesCollectionView.register(reusableViewType: GameFooterReusableView.self, ofKind: UICollectionView.elementKindSectionFooter)
+        
+        cityNameLabel.text = viewModel?.cityName()
     }
     
     @IBAction func openMap() {

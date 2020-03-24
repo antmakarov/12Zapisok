@@ -54,7 +54,7 @@ class CityListViewModel {
             switch result {
             case .success(let cities):
                 self.cities = cities
-                self.cities.forEach { try! self.databaseStorage.storeObject($0) }
+                self.cities.forEach { try? self.databaseStorage.storeObject($0) }
                 self.updateHandler?()
                 
             case .error(let error):

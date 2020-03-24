@@ -8,6 +8,11 @@
 
 import Foundation
 
+public enum Endpoints: String {
+    case openNote = "/notes/%d/open"
+    case newToken = "/generate_token"
+}
+
 enum Result<Value, Error: Swift.Error> {
     case success(Value)
     case error(Error)

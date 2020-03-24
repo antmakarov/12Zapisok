@@ -12,6 +12,9 @@
             <connections>
                 <outlet property="describLabel" destination="jf2-yp-feD" id="A03-X6-9SV"/>
                 <outlet property="numberNoteLabel" destination="3qm-uy-1uh" id="bPo-5c-EUH"/>
+                <outlet property="openNoteButton" destination="N6i-Dz-NbV" id="5FV-xt-9SZ"/>
+                <outlet property="placeLabel" destination="wQN-jh-leL" id="Bih-5y-ls2"/>
+                <outlet property="purchaseButton" destination="ga6-OJ-9AY" id="HYJ-qU-9wZ"/>
                 <outlet property="statusImage" destination="Ce4-Nv-3zr" id="RME-cS-ifa"/>
                 <outlet property="timeFindedLabel" destination="KVJ-Nc-HEX" id="V91-8c-62x"/>
                 <outlet property="titleNoteLabel" destination="Uzj-Cy-Zbi" id="2Yk-oC-1Ck"/>
@@ -28,7 +31,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8L-eN-XED">
-                            <rect key="frame" x="20" y="263" width="66" height="32"/>
+                            <rect key="frame" x="8" y="8" width="66" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                             <state key="normal" title="Закрыть">
@@ -39,10 +42,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MrO-FC-0qU">
-                            <rect key="frame" x="167" y="263" width="115" height="32"/>
+                            <rect key="frame" x="244" y="9" width="46" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                            <state key="normal" title="Открыть карту"/>
+                            <state key="normal" title="Карта"/>
                             <connections>
                                 <action selector="openMap:" destination="-1" eventType="touchUpInside" id="RTh-If-xsy"/>
                             </connections>
@@ -62,7 +65,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Название" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzj-Cy-Zbi">
-                            <rect key="frame" x="8" y="43" width="274" height="34"/>
+                            <rect key="frame" x="12" y="43" width="274" height="34"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                             <nil key="textColor"/>
@@ -86,8 +89,16 @@
                             <rect key="frame" x="22" y="218" width="33" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6i-Dz-NbV">
+                            <rect key="frame" x="208" y="263" width="78" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Проверить"/>
+                            <connections>
+                                <action selector="openNote:" destination="-1" eventType="touchUpInside" id="Zs3-sS-ofW"/>
+                            </connections>
+                        </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ga6-OJ-9AY">
-                            <rect key="frame" x="97" y="263" width="61" height="30"/>
+                            <rect key="frame" x="22" y="263" width="61" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Покупки"/>
                             <connections>

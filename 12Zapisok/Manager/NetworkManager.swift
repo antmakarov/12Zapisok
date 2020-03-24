@@ -14,6 +14,7 @@ import RealmSwift
 protocol NetworkManaging {
     func getCityList(completion: @escaping ((Result<[City], Error>) -> ()))
     func getNoteList(parameters: Parameters, completion: @escaping ((Result<[Note], Error>) -> ()))
+    func openNote(id: Int, completion: @escaping ((Bool) -> ()))
     func updateTokenIfNeeded(isForced: Bool)
 }
 
@@ -41,6 +42,26 @@ class NetworkManager: NetworkManaging {
     public func getNoteList(parameters: Parameters, completion: @escaping ((Result<[Note], Error>) -> ())) {
         fetchArrayOf(type: Note.self, parameters) { completion($0) }
     }
+    
+    public func openNote(id: Int, completion: @escaping ((Bool) -> ())) {
+        let url = baseUrl + String(format: Endpoints.openNote.rawValue, id)
+        AF.request(url, method: .post, encoding: JSONEncoding.default, headers: configureHeaders())
+        .validate(statusCode: 200..<300)
+        .responseJSON { response in
+            switch response.result {
+            case .success(let result):
+                let response = result as! NSDictionary
+                let status = response.object(forKey: "success") as? Bool
+                completion(status!)
+            
+            case .failure(let error):
+                Logger.error(msg: "Unable to get user token - \(error)")
+                completion(false)
+            }
+        }
+    }
+
+    //MARK: Private methods
     
     public func updateTokenIfNeeded(isForced: Bool) {
         if userPreferences.userToken == nil || isForced {
@@ -101,7 +122,7 @@ class NetworkManager: NetworkManaging {
     }
     
     private func getUserToken(completion: @escaping (String?) -> ()) {
-        AF.request(self.baseUrl + "/generate_token", method: .post, encoding: JSONEncoding.default)
+        AF.request(baseUrl + Endpoints.newToken.rawValue, method: .post, encoding: JSONEncoding.default)
         .validate(statusCode: 200..<300)
         .responseJSON { response in
             switch response.result {

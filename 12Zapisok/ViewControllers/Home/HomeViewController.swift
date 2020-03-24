@@ -41,18 +41,7 @@ class HomeViewController: BaseViewController {
         }
         
         cityNameLabel.text = viewModel.getCurrentCityName()
-        
-        if let url = URL(string: viewModel.getCurrentCityImage()) {
-            cityImage.kf.indicatorType = .activity
-            cityImage.kf.setImage(
-                with: url,
-                placeholder: UIImage(named: "cityPlaceholder"),
-                options: [
-                    .scaleFactor(UIScreen.main.scale),
-                    .transition(.fade(0.5)),
-                    .cacheOriginalImage
-            ])
-        }
+        cityImage.setupImage(url: viewModel.getCurrentCityImage(), placeholder: .city)
     }
     
     private func prepareUI() {
@@ -102,7 +91,7 @@ extension HomeViewController {
         
         switch tag {
         case 1:
-            viewModel?.routeTo?(.showGame(cityName: viewModel?.getCurrentCityName()) )
+            viewModel?.routeTo?(.showGame(cityName: viewModel?.getCurrentCityName() ?? .empty) )
             
         case 2:
             viewModel?.routeTo?(.showCityList)

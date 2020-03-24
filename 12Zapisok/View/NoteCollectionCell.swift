@@ -24,7 +24,7 @@ class NoteCollectionCell: BaseCardCell {
         headerLabel.text = "Записка #\(viewModel.id)"
         
         if viewModel.isOpen {
-            imageView.image = UIImage(named: "1")
+            imageView.setupImage(url: viewModel.imgUrl, placeholder: .note)
             statusLabel.text = "Открыта сегодня в 11:45"
         } else {
             imageView.image = UIImage(named: "2")

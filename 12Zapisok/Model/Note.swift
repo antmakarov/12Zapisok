@@ -22,6 +22,7 @@ class Note: Object, Mappable, Endpoint {
     @objc dynamic var hint = ""
     @objc dynamic var statistics: Statistics? = nil
     @objc dynamic var category = ""
+    @objc dynamic var imageUrl = ""
     @objc dynamic var cityID = 0
 
     required convenience init?(map: Map) {
@@ -40,6 +41,7 @@ class Note: Object, Mappable, Endpoint {
         hint            <- map["hint"]
         statistics      <- map["statistic"]
         category        <- map["category"]
+        imageUrl        <- map["image_url"]
         cityID          <- map["town_id"]
     }
     

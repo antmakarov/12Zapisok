@@ -9,7 +9,8 @@
 import UIKit
 
 enum HomeRoute {
-    case showGame(cityName: String?)
+    //TODO: Change one name to extended information
+    case showGame(cityName: String)
     case showPurchase
     case showRules
     case showCityList
@@ -41,8 +42,8 @@ class HomeCoordinator: BaseCoordinator {
     //TODO: Replace this to some BuilderViewController
     private func manageRoute(_ route: HomeRoute) {
         switch route {
-        case .showGame:
-            let gameCoordinator = GameCoordinator(navigationController: navigationController)
+        case .showGame(let cityName):
+            let gameCoordinator = GameCoordinator(cityName: cityName, navigationController: navigationController)
             gameCoordinator.finishFlow = { [weak self] in
                 self?.removeChildCoordinator(gameCoordinator)
                 self?.navigationController.popViewController(animated: true)

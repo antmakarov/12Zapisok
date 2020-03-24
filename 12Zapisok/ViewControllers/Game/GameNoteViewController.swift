@@ -19,24 +19,35 @@ class GameNoteViewController: BaseViewController {
     @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var timeFindedLabel: UILabel!
     
+    @IBOutlet weak var openNoteButton: UIButton!
+    @IBOutlet weak var purchaseButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         guard let viewModel = viewModel else { return }
         
-       // numberNoteLabel.text = "Записка #\(viewModel.id)"
-        //titleNoteLabel.text = viewModel.name
-        //describLabel.text = viewModel.description
+        numberNoteLabel.text = "Записка #\(viewModel.id)"
+        titleNoteLabel.text = viewModel.title
+        describLabel.text = viewModel.description
         
-//        if viewModel.note.isOpen {
-//            statusImage.image = UIImage(named: "checked")
-//            placeLabel.text = "Какая-то улица из записки"
-//            timeFindedLabel.text = "Открыта сегодня в 10:31"
-//        } else {
-//            statusImage.image = UIImage(named: "cancel")
-//            placeLabel.text = "Место неизвестно"
-//            timeFindedLabel.text = "Найди как можно скорее"
-//        }
+        if viewModel.isOpen {
+            openNoteButton.isHidden = true
+            purchaseButton.isHidden = true
+            statusImage.image = UIImage(named: "checked")
+            placeLabel.text = "Какая-то улица из записки"
+            timeFindedLabel.text = "Открыта сегодня в 10:31"
+        } else {
+            statusImage.image = UIImage(named: "cancel")
+            placeLabel.text = "Место неизвестно"
+            timeFindedLabel.text = "Найди как можно скорее"
+        }
+    }
+    
+    @IBAction func openNote(_ sender: Any) {
+        viewModel?.openNote(completion: { result in
+            print(result)
+        })
     }
     
     @IBAction func openPurchase(_ sender: Any) {

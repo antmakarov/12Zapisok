@@ -25,8 +25,8 @@ class NoteCollectionCellViewModel: NoteCollectionCellViewModeling {
     init(note: Note) {
         id = note.id
         title = note.name
-        imgUrl = ""
-        isOpen = .random() // note.statistics?.isOpen ?? false
+        imgUrl = note.imageUrl
+        isOpen = note.statistics?.isOpen ?? false
     }
 }
 
