@@ -31,23 +31,12 @@ class CityCollectionCell: UICollectionViewCell {
         nameLabel.text = name
         
         cityImageView.layer.cornerRadius = 6.0
-        
+        cityImageView.setupImage(url: url, placeholder: .city)
+
         mainVIew.layer.cornerRadius = 6.0
         mainVIew.layer.shadowOpacity = Constants.shadowOpacity
         mainVIew.layer.shadowOffset = Constants.shadowOffset
         mainVIew.layer.shadowRadius = Constants.shadowRadius
         mainVIew.layer.shadowColor = Constants.shadowColor
-        
-        if let url = URL(string: url) {
-            cityImageView.kf.indicatorType = .activity
-            cityImageView.kf.setImage(
-                with: url,
-                placeholder: UIImage(named: "cityPlaceholder"),
-                options: [
-                    .scaleFactor(UIScreen.main.scale),
-                    .transition(.fade(0.5)),
-                    .cacheOriginalImage
-            ])
-        }
     }
 }

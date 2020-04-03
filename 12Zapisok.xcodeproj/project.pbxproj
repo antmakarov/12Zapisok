@@ -33,6 +33,7 @@
 		7790B48D241FAC370046EFA5 /* OnboardingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B48C241FAC370046EFA5 /* OnboardingCell.xib */; };
 		7790B490241FBEB80046EFA5 /* GameFooterReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790B48E241FBEB80046EFA5 /* GameFooterReusableView.swift */; };
 		7790B491241FBEB80046EFA5 /* GameFooterReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B48F241FBEB80046EFA5 /* GameFooterReusableView.xib */; };
+		77A18F012433756F0027E456 /* Extensions+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A18F002433756F0027E456 /* Extensions+UIViewController.swift */; };
 		77B120C5238C53BC001B2301 /* PreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120C4238C53BC001B2301 /* PreferencesManager.swift */; };
 		77B120C7238C547E001B2301 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120C6238C547E001B2301 /* Logger.swift */; };
 		77B120CC238C606B001B2301 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120CB238C606B001B2301 /* LocationManager.swift */; };
@@ -119,6 +120,7 @@
 		7790B48C241FAC370046EFA5 /* OnboardingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCell.xib; sourceTree = "<group>"; };
 		7790B48E241FBEB80046EFA5 /* GameFooterReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFooterReusableView.swift; sourceTree = "<group>"; };
 		7790B48F241FBEB80046EFA5 /* GameFooterReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameFooterReusableView.xib; sourceTree = "<group>"; };
+		77A18F002433756F0027E456 /* Extensions+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewController.swift"; sourceTree = "<group>"; };
 		77B120C4238C53BC001B2301 /* PreferencesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesManager.swift; sourceTree = "<group>"; };
 		77B120C6238C547E001B2301 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		77B120CB238C606B001B2301 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				7790B473241FA44F0046EFA5 /* Extentions+Storyboard.swift */,
 				77F80DB324214B44005ED8C0 /* Extensions+String.swift */,
 				774413BF242A9F2F001FBD83 /* Extensions+UIImageView.swift */,
+				77A18F002433756F0027E456 /* Extensions+UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -682,6 +685,7 @@
 				77F80DCF24220873005ED8C0 /* LeaderboardViewModel.swift in Sources */,
 				8D32F36222D3589000ABC228 /* StorageManager.swift in Sources */,
 				77B120CC238C606B001B2301 /* LocationManager.swift in Sources */,
+				77A18F012433756F0027E456 /* Extensions+UIViewController.swift in Sources */,
 				7790B469241FA3CF0046EFA5 /* LoginViewController.swift in Sources */,
 				7790B471241FA42A0046EFA5 /* RegistrationViewController.swift in Sources */,
 				77B120E9239CF561001B2301 /* AppCoordinator.swift in Sources */,

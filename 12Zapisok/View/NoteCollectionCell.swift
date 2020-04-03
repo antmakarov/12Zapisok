@@ -23,10 +23,16 @@ class NoteCollectionCell: BaseCardCell {
     func configure(viewModel: NoteCollectionCellViewModeling) {
         headerLabel.text = "Записка #\(viewModel.id)"
         
-        if viewModel.isOpen {
+        switch viewModel.state {
+        case .open:
             imageView.setupImage(url: viewModel.imgUrl, placeholder: .note)
             statusLabel.text = "Открыта сегодня в 11:45"
-        } else {
+            
+        case .progress:
+            imageView.image = UIImage(named: "1")
+            statusLabel.text = "В процессе"
+            
+        case .close:
             imageView.image = UIImage(named: "2")
             statusLabel.text = "Не открыта"
             statusLabel.alpha = 0.6

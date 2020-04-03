@@ -12,7 +12,7 @@ protocol NoteCollectionCellViewModeling {
     var id: Int { get }
     var title: String { get }
     var imgUrl: String { get }
-    var isOpen: Bool { get }
+    var state: NoteState { get }
 }
 
 class NoteCollectionCellViewModel: NoteCollectionCellViewModeling {
@@ -20,13 +20,18 @@ class NoteCollectionCellViewModel: NoteCollectionCellViewModeling {
     var id: Int
     var title: String
     var imgUrl: String
-    var isOpen: Bool
+    var state: NoteState
     
     init(note: Note) {
         id = note.id
         title = note.name
         imgUrl = note.imageUrl
-        isOpen = note.statistics?.isOpen ?? false
+        
+        if let statistics = note.statistics {
+            state = statistics.isComplete ? .open : .progress
+        } else {
+            state = .close
+        }
     }
 }
 

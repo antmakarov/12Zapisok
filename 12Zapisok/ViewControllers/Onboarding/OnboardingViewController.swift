@@ -8,6 +8,12 @@
 
 import UIKit
 
+enum OnboardingAction {
+    case done
+    case denied
+    case skip
+}
+
 class OnboardingViewController: UIViewController, Storyboarded {
     
     private enum Constants {
@@ -59,12 +65,10 @@ extension OnboardingViewController: UICollectionViewDataSource, UICollectionView
         }
         
         let cell = collectionView.dequeueReusableCell(with: OnboardingCell.self, for: indexPath)
-        cell.configure(with: viewModel.onboardingItem(type: item), actionCompletion: { result in
+        cell.configure(with: viewModel.onboardingItem(type: item), actionCompletion: { 
             self.scrollTo(nextStep: indexPath.row + 1)
-        }) {
-            self.scrollTo(nextStep: indexPath.row + 1)
-        }
-
+        })
+        
         return cell
     }
 }

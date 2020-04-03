@@ -9,7 +9,7 @@
 import UIKit
 
 class GameNoteViewController: BaseViewController {
-
+    
     var viewModel: GameNoteViewModeling?
     
     @IBOutlet weak var numberNoteLabel: UILabel!
@@ -24,20 +24,30 @@ class GameNoteViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupUI()
+    }
+    
+    private func setupUI() {
         guard let viewModel = viewModel else { return }
         
         numberNoteLabel.text = "Записка #\(viewModel.id)"
         titleNoteLabel.text = viewModel.title
         describLabel.text = viewModel.description
         
-        if viewModel.isOpen {
+        switch viewModel.state {
+        case .open:
             openNoteButton.isHidden = true
             purchaseButton.isHidden = true
             statusImage.image = UIImage(named: "checked")
             placeLabel.text = "Какая-то улица из записки"
             timeFindedLabel.text = "Открыта сегодня в 10:31"
-        } else {
+            
+        case .progress:
+            statusImage.image = UIImage(named: "cancel")
+            placeLabel.text = "Место неизвестно"
+            timeFindedLabel.text = "Найди как можно скорее"
+            
+        case .close:
             statusImage.image = UIImage(named: "cancel")
             placeLabel.text = "Место неизвестно"
             timeFindedLabel.text = "Найди как можно скорее"

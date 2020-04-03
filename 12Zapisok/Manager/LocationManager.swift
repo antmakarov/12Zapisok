@@ -9,9 +9,26 @@
 import Foundation
 import CoreLocation
 
+public struct MapPoint {
+    var latitude: Double
+    var longitude: Double
+    
+    var coordinate: CLLocation {
+        return CLLocation(latitude: latitude, longitude: longitude)
+    }
+    
+    init(coordinate: CLLocationCoordinate2D?) {
+        latitude = coordinate?.latitude ?? 0
+        longitude = coordinate?.longitude ?? 0
+    }
+}
+
 protocol LocationManaging {
+    var currentPosition: CLLocation { get }
+
     func requestAuthorization(completion: @escaping (Bool) -> Void)
-    func requestCurrentLocation(completion: @escaping (CLLocationCoordinate2D?) -> Void)
+    func requestCurrentLocation(completion: @escaping (MapPoint?) -> Void)
+    func distanceFromPoint(_ point: CLLocation) -> Double
 }
 
 class LocationManager: NSObject {
@@ -20,11 +37,17 @@ class LocationManager: NSObject {
     
     private let locationManager = CLLocationManager()
     private var completionAuth: ((Bool) -> Void)?
-    private var completionLocation: ((CLLocationCoordinate2D?) -> Void)?
-    
+    private var completionLocation: ((MapPoint?) -> Void)?
+    private var location = CLLocation()
+
     override init() {
         super.init()
         locationManager.delegate = self
+    }
+    
+    func startLocation() {
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.startUpdatingLocation()
     }
 }
 
@@ -33,18 +56,26 @@ extension LocationManager: LocationManaging {
         if (CLLocationManager.authorizationStatus() == .notDetermined) {
             completionAuth = completion
             locationManager.requestWhenInUseAuthorization()
-           // completion(true)
         } else {
-            completion(isServiceEnabled())
+            completion(isLocationEnabled())
         }
     }
     
-    func requestCurrentLocation(completion: @escaping (CLLocationCoordinate2D?) -> Void) {
+    func requestCurrentLocation(completion: @escaping (MapPoint?) -> Void) {
         completionLocation = completion
         locationManager.requestLocation()
     }
     
-    func isServiceEnabled() -> Bool {
+    public var currentPosition: CLLocation {
+        return location
+    }
+    
+    public func distanceFromPoint(_ point: CLLocation) -> Double {
+        let distanceInMeters = point.distance(from: currentPosition)
+        return distanceInMeters
+    }
+    
+    func isLocationEnabled() -> Bool {
         return CLLocationManager.authorizationStatus() ==  .authorizedWhenInUse ||
             CLLocationManager.authorizationStatus() == .authorizedAlways
     }
@@ -53,7 +84,7 @@ extension LocationManager: LocationManaging {
 extension LocationManager: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        completionAuth?(isServiceEnabled())
+        completionAuth?(isLocationEnabled())
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -61,6 +92,9 @@ extension LocationManager: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        completionLocation?(locations.last?.coordinate)
+        if let lastCoordinate = locations.last?.coordinate {
+            location = CLLocation(latitude: lastCoordinate.latitude, longitude: lastCoordinate.longitude)
+        }
+        completionLocation?(MapPoint(coordinate: locations.last?.coordinate))
     }
 }

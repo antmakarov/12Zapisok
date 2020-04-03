@@ -24,7 +24,7 @@ class PreferencesManager {
     }
     
     var isSuccessAuth: Bool {
-        return userToken != nil && currentCityId != nil
+        return userToken != nil && currentCityId != 0
     }
     
     var userToken: String? {

@@ -7,13 +7,21 @@
 //
 
 import Foundation
+import CoreLocation
+
+enum NoteState {
+    case open
+    case progress
+    case close
+}
 
 protocol GameNoteViewModeling {
     var id: Int { get }
     var title: String { get }
     var description: String { get }
     var imgUrl: String { get }
-    var isOpen: Bool { get }
+    var state: NoteState { get }
+    var location: Location? { get }
     var routeTo: ((GameRouter) -> Void)? { get set }
     
     func openNote(completion: @escaping ((Bool) -> Void))
@@ -25,22 +33,33 @@ class GameNoteViewModel {
     public var routeTo: ((GameRouter) -> Void)?
     
     private var networkManager: NetworkManaging
+    private var locationManager: LocationManaging
     
     convenience init(note: Note) {
-        self.init(note: note, networkManager: NetworkManager.shared)
+        self.init(note: note, networkManager: NetworkManager.shared, locationManager: LocationManager.shared)
     }
     
-    init(note: Note, networkManager: NetworkManaging) {
+    init(note: Note, networkManager: NetworkManaging, locationManager: LocationManaging) {
         self.note = note
         self.networkManager = networkManager
+        self.locationManager = locationManager
+    }
+    
+    private func checkPosition(location: Location?) {
+        if let location = location {
+            print(locationManager.distanceFromPoint(CLLocation(latitude: location.lat, longitude: location.lon)))
+        }
+        
+//        networkManager.openNote(id: note.id) { result in
+//            completion(result)
+//        }
     }
 }
 
 extension GameNoteViewModel: GameNoteViewModeling {
     func openNote(completion: @escaping ((Bool) -> Void)) {
-        networkManager.openNote(id: note.id) { result in
-            completion(result)
-        }
+        checkPosition(location: note.location)
+        completion(true)
     }
     
     var title: String {
@@ -48,15 +67,23 @@ extension GameNoteViewModel: GameNoteViewModeling {
     }
     
     var description: String {
-        return note.description
+        return note.noteDescription
     }
     
     var imgUrl: String {
         return note.imageUrl
     }
     
-    var isOpen: Bool {
-        return note.statistics?.isOpen ?? false
+    var location: Location? {
+        return note.location
+    }
+    
+    var state: NoteState {
+        guard let statistics = note.statistics else {
+            return .close
+        }
+        
+        return statistics.isComplete ? .open : .progress
     }
     
     public var id: Int {
