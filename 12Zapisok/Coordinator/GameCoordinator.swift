@@ -52,20 +52,24 @@ class GameCoordinator: BaseCoordinator {
             viewModel.routeTo = { [weak self] route in
                 switch route {
                 case .map:
+                    self?.navigationController.viewControllers.last?.modalEffect(action: .dismiss)
+
                     self?.manageRoute(.map)
                     
                 case .purchase:
                     self?.manageRoute(.purchase)
                     
                 case .back:
-                    self?.navigationController.popViewController(animated: true)
+                    self?.navigationController.viewControllers.last?.modalEffect(action: .dismiss)
+                    //self?.navigationController.popViewController(animated: true)
                     
                 case .note:
                     break
                 }
             }
-            navigationController.pushViewController(viewController, animated: true)
-        
+           
+            navigationController.viewControllers.last?.modalEffect(action: .present, viewController)
+                    
         case .purchase:
             let viewController = PurchaseViewController()
             let viewModel = PurchaseViewModel()
