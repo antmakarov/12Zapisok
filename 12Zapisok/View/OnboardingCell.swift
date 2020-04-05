@@ -10,7 +10,18 @@ import UIKit
 
 class OnboardingCell: UICollectionViewCell {
     
+    private enum Constants {
+        static let buttonRadius: CGFloat = 12.0
+        static let shadowOffset: CGSize = CGSize(width: 2, height: 2)
+        static let shadowRadius: CGFloat = 5.0
+        static let shadowOpacity: Float = 0.18
+        
+        static let yesTitle = "Да"
+        static let noTitle = "Нет"
+    }
+    
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var detailsLabel: UILabel!
     @IBOutlet weak var actionButton: UIButton!
     @IBOutlet weak var deniedButton: UIButton!
@@ -21,12 +32,17 @@ class OnboardingCell: UICollectionViewCell {
     private var actionCompletion: (() -> Void)?
     
     override func awakeFromNib() {
-        actionButton.layer.cornerRadius = 12
-        actionButton.layer.shadowOpacity = 0.18
-        actionButton.layer.shadowOffset = CGSize(width: 2, height: 2)
-        actionButton.layer.shadowRadius = 5
-        actionButton.layer.shadowColor = UIColor.black.cgColor
-        deniedButton.isHidden = true
+        prepareButton(actionButton)
+        prepareButton(deniedButton, isHidden: true)
+    }
+    
+    private func prepareButton(_ button: UIButton, isHidden: Bool = false) {
+        button.layer.cornerRadius = Constants.buttonRadius
+        button.layer.shadowOffset = Constants.shadowOffset
+        button.layer.shadowRadius = Constants.shadowRadius
+        button.layer.shadowOpacity = Constants.shadowOpacity
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.isHidden = isHidden
     }
     
     public func configure(with viewModel: OnboardingStepViewModeling, actionCompletion: @escaping () -> Void) {
@@ -36,12 +52,13 @@ class OnboardingCell: UICollectionViewCell {
 
         if viewModel.isNeedAnswerButtons() {
             deniedButton.isHidden = false
-            actionButton.setTitle("Да", for: .normal)
-            deniedButton.setTitle("Нет", for: .normal)
+            actionButton.setTitle(Constants.yesTitle)
+            deniedButton.setTitle(Constants.noTitle)
         } else {
             actionButton.setTitle(viewModel.actionTitle(), for: .normal)
         }
         
+        cellImage.image = UIImage(named: viewModel.image())
         titleLabel.text = viewModel.title()
         detailsLabel.text = viewModel.details()
         skipButton.isHidden = viewModel.isHideSkipButton()

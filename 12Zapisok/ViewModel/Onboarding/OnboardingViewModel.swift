@@ -25,6 +25,40 @@ protocol OnboardingViewModeling: class {
 
 class OnboardingViewModel {
     
+    private enum Constants {
+        enum Details {
+            static let title = "Вернитесь в детство"
+            static let details = "Сыграйте в увлекательную игру, где Вам предстоит собрать 12 записок спрятанных в Вашем городе"
+            static let action = "Далее"
+            static let image = "childhood"
+        }
+        
+        enum Location {
+            static let title = "Доступ к геолокации"
+            static let details = "Позволит точнее определить Ваше местоположение и облегчит игру"
+            static let action = "Разрешить"
+            static let image = "requestLocation"
+        }
+        
+        enum City {
+            static let details = "Правильно ли мы определили Ваш город?"
+            static let image = "guessCity"
+        }
+        
+        enum CityList {
+            static let title = "Выберете Ваш город"
+            static let details = "Мы заметили, что Вы запретили геолокацию, в этом случае выберите город из списка для начала игры"
+            static let action = "Выбрать город"
+            static let image = "cityList"
+        }
+        
+        enum Auth {
+            static let title = "Ведите прогресс"
+            static let details = "Авторизируйтесь для сохранения прогресса и участия в общем рейтиге игроков"
+            static let action = "Войти"
+            static let image = "auth"
+        }
+    }
     //MARK: Managers
     private let locationManager: LocationManaging
     private let networkManager: NetworkManaging
@@ -46,11 +80,9 @@ class OnboardingViewModel {
         self.networkManager = networkManager
         self.preferencesManager = preferencesManager
         
-        loadCities()
-    }
-    
-    private func requestLocationAuthorization(completion: @escaping (Bool) -> Void) {
-        completion(true)
+        DispatchQueue.global().asyncAfter(deadline: .now() + 1.0) {
+            self.loadCities()
+        }
     }
     
     private func loadCities() {
@@ -66,28 +98,22 @@ class OnboardingViewModel {
         }
     }
     
-    private func calculateNearCity(coordinates: MapPoint?) -> Double {
-        var id = 0
-        if let avaibleCities = cities?.filter({ city in
-            locationManager.distanceFromPoint(CLLocation(latitude: city.location!.lat, longitude: city.location!.lon)) != 0 }) {
-            let sortedPlaces = avaibleCities.sorted(by: { city1, city2  in
+    private func calculateNearCity(coordinates: MapPoint?) -> Int? {
+        
+        let avaibleCities = cities?.filter({ city in
+            locationManager.distanceFromCoordinates(city.location!.lat, city.location!.lon) != 0 })
+        
+        let sortedPlaces = avaibleCities?.sorted(by: { city1, city2  in
                 if let c1 = city1.location, let c2 = city2.location  {
-                    let distance1 = locationManager.distanceFromPoint(CLLocation(latitude: c1.lat, longitude: c1.lon))
-                    let distance2 = locationManager.distanceFromPoint(CLLocation(latitude: c2.lat, longitude: c2.lon))
+                    let distance1 = locationManager.distanceFromCoordinates(c1.lat, c1.lon)
+                    let distance2 = locationManager.distanceFromCoordinates(c2.lat, c2.lon)
                     
                     return distance1 < distance2
                 }
-                
                 return false
             })
             
-            if let cityID = sortedPlaces.first?.id {
-                id = cityID
-                preferencesManager.currentCityId = cityID
-            }
-        }
-        
-        return Double(id)
+        return sortedPlaces?.first?.id
     }
 }
 
@@ -97,13 +123,13 @@ extension OnboardingViewModel: OnboardingViewModeling {
         
         switch type {
         case .details:
-            return OnboardingStepViewModel(title: "Вернитесь в детство", details: "Сыграйте в увлекательную игру, где Вам предстоит собрать 12 записок спрятанных в Вашем городе", image: "", actionTitle: "Далее", isHideSkip: true) { _, completion in
+            return OnboardingStepViewModel(title: Constants.Details.title, details: Constants.Details.details, image: Constants.Details.image, actionTitle:  Constants.Details.action, isHideSkip: true) { _, completion in
                 completion?()
             }
             
         case .location:
-            return OnboardingStepViewModel(title: "Доступ к геолокации", details: "Позволит точнее определить Ваше местоположение и облегчит игру", image: "", actionTitle: "Разрешить") { type, completion in
-                if type != .skip  {
+            return OnboardingStepViewModel(title: Constants.Location.title, details: Constants.Location.details, image: Constants.Location.image, actionTitle: Constants.Location.action) { type, completion in
+                if type == .skip  {
                     completion?()
                 }
                 
@@ -112,9 +138,8 @@ extension OnboardingViewModel: OnboardingViewModeling {
                         completion?()
                     } else {
                         self.locationManager.requestCurrentLocation { location in
-                            let r = self.calculateNearCity(coordinates: location)
-                            print(r)
-                            self.cityName = Int(r)
+                            let nearCityId = self.calculateNearCity(coordinates: location)
+                            self.cityName = nearCityId
                             completion?()
                         }
                     }
@@ -123,29 +148,28 @@ extension OnboardingViewModel: OnboardingViewModeling {
             
         case .city:
             if let city = cityName, let name = cities?.first(where: { $0.id == city }) {
-                return OnboardingStepViewModel(title: name.name, details: "Правильно ли мы определили Ваш город?", image: .empty, actionTitle: .empty, isHideSkip: true, isNeedAnswer: true) { type, completion in
+                return OnboardingStepViewModel(title: name.name, details: Constants.City.details, image: Constants.City.image, actionTitle: .empty, isHideSkip: true, isNeedAnswer: true) { type, completion in
                     switch type {
                     case .done:
+                        self.preferencesManager.currentCityId = self.cityName
                         completion?()
                         
                     case .denied, .skip:
                         self.routeTo?(.cityList(completion: { city in
-                            print(city)
                             completion?()
                         }))
                     }
                 }
             } else {
-                return OnboardingStepViewModel(title: "Выберете Ваш город", details: "Мы заметили, что Вы запретили геолокацию, в этом случае выберите город из списка для начала игры", image: "", actionTitle: "Выбрать город", isHideSkip: true) { _, completion in
+                return OnboardingStepViewModel(title: Constants.CityList.title, details: Constants.CityList.details, image: Constants.CityList.image, actionTitle: Constants.CityList.action, isHideSkip: true) { _, completion in
                     self.routeTo?(.cityList(completion: { city in
-                        print(city)
                         completion?()
                     }))
                 }
             }
             
         case .auth:
-            return OnboardingStepViewModel(title: "Ведите прогресс", details: "Авторизируйтесь для сохранения прогресса и участия в общем рейтиге игроков", image: "", actionTitle: "Войти") { _, completion in
+            return OnboardingStepViewModel(title: Constants.Auth.title, details: Constants.Auth.details, image: Constants.Auth.image, actionTitle: Constants.Auth.action) { _, completion in
                 self.routeTo?(.back)
             }            
         }

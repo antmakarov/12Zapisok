@@ -114,6 +114,7 @@
             <size key="customSize" width="409" height="658"/>
             <connections>
                 <outlet property="actionButton" destination="hmX-fk-2Zu" id="4eL-sW-NPw"/>
+                <outlet property="cellImage" destination="Cxl-C8-6Cj" id="nem-L2-jgr"/>
                 <outlet property="deniedButton" destination="CkU-iH-bfK" id="pzi-a8-BjY"/>
                 <outlet property="detailsLabel" destination="E3z-wU-eDz" id="LSZ-zR-Tt9"/>
                 <outlet property="loadingIndicator" destination="si9-bg-5oB" id="YUt-pu-o5w"/>

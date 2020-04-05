@@ -28,6 +28,8 @@ protocol LocationManaging {
 
     func requestAuthorization(completion: @escaping (Bool) -> Void)
     func requestCurrentLocation(completion: @escaping (MapPoint?) -> Void)
+    
+    func distanceFromCoordinates(_ latitude: Double, _ longitude: Double) -> Double
     func distanceFromPoint(_ point: CLLocation) -> Double
 }
 
@@ -70,6 +72,10 @@ extension LocationManager: LocationManaging {
         return location
     }
     
+    public func distanceFromCoordinates(_ latitude: Double, _ longitude: Double) -> Double {
+        return distanceFromPoint(CLLocation(latitude: latitude, longitude: longitude))
+    }
+
     public func distanceFromPoint(_ point: CLLocation) -> Double {
         let distanceInMeters = point.distance(from: currentPosition)
         return distanceInMeters
