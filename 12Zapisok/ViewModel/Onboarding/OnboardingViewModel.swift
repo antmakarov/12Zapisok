@@ -28,7 +28,8 @@ class OnboardingViewModel {
     //MARK: Managers
     private let locationManager: LocationManaging
     private let networkManager: NetworkManaging
-    
+    private let preferencesManager: PreferencesManager
+
     //MARK: Private / Public variables
     private var onboardingSteps: [OnboardingStepViewModeling] = []
     private var cityName: Int?
@@ -37,12 +38,14 @@ class OnboardingViewModel {
     public var routeTo: ((OnboardingRoute) -> Void)?
     
     convenience init() {
-        self.init(locationManager: LocationManager.shared, networkManager: NetworkManager.shared)
+        self.init(locationManager: LocationManager.shared, networkManager: NetworkManager.shared, preferencesManager: PreferencesManager.shared)
     }
     
-    init(locationManager: LocationManaging, networkManager: NetworkManaging) {
+    init(locationManager: LocationManaging, networkManager: NetworkManaging, preferencesManager: PreferencesManager) {
         self.locationManager = locationManager
         self.networkManager = networkManager
+        self.preferencesManager = preferencesManager
+        
         loadCities()
     }
     
@@ -78,7 +81,10 @@ class OnboardingViewModel {
                 return false
             })
             
-            id = sortedPlaces.first?.id ?? 0
+            if let cityID = sortedPlaces.first?.id {
+                id = cityID
+                preferencesManager.currentCityId = cityID
+            }
         }
         
         return Double(id)
@@ -97,9 +103,8 @@ extension OnboardingViewModel: OnboardingViewModeling {
             
         case .location:
             return OnboardingStepViewModel(title: "Доступ к геолокации", details: "Позволит точнее определить Ваше местоположение и облегчит игру", image: "", actionTitle: "Разрешить") { type, completion in
-                guard type != .skip else {
+                if type != .skip  {
                     completion?()
-                    return
                 }
                 
                 self.locationManager.requestAuthorization { result in

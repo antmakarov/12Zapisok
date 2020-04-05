@@ -25,8 +25,8 @@ class OnboardingCoordinator: BaseCoordinator {
     override func start() {
         let vc = OnboardingViewController()
         let vm = OnboardingViewModel()
-        vm.routeTo = { [weak self] route in
-            self?.manageRoute(route)
+        vm.routeTo = { route in
+            self.manageRoute(route)
         }
         vc.viewModel = vm
         navigationController.pushViewController(vc, animated: true)
