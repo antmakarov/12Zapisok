@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -15,28 +15,65 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Лидеры" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VtX-pl-ux2">
-                    <rect key="frame" x="166" y="62" width="63" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIR-zj-jAn">
-                    <rect key="frame" x="0.0" y="54" width="61" height="36"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Назад"/>
-                    <connections>
-                        <action selector="closeButtonPressed" destination="-1" eventType="touchUpInside" id="pio-Xf-mdN"/>
-                    </connections>
-                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m1z-Qc-BFN">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appBackground" translatesAutoresizingMaskIntoConstraints="NO" id="wpt-U8-zqK">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXb-DA-4GD">
+                            <rect key="frame" x="16" y="21" width="28" height="28"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="pXb-DA-4GD" secondAttribute="height" id="PgY-PV-7Bg"/>
+                                <constraint firstAttribute="width" constant="28" id="tBu-kL-mia"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                            <state key="normal" image="close"/>
+                            <connections>
+                                <action selector="closeButtonPressed" destination="-1" eventType="touchUpInside" id="LSs-kz-ziW"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Лидеры" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oC8-ZH-QFp">
+                            <rect key="frame" x="125.5" y="9.5" width="124" height="51"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="ABb-w7-lUg"/>
+                                <constraint firstAttribute="height" constant="51" id="PS4-2e-zK5"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="wpt-U8-zqK" firstAttribute="leading" secondItem="m1z-Qc-BFN" secondAttribute="leading" id="D7u-3Y-tbL"/>
+                        <constraint firstAttribute="bottom" secondItem="wpt-U8-zqK" secondAttribute="bottom" id="EVA-Ut-glg"/>
+                        <constraint firstAttribute="trailing" secondItem="wpt-U8-zqK" secondAttribute="trailing" id="T9C-bP-HOo"/>
+                        <constraint firstItem="wpt-U8-zqK" firstAttribute="top" secondItem="m1z-Qc-BFN" secondAttribute="top" id="UOV-Al-OfF"/>
+                        <constraint firstItem="oC8-ZH-QFp" firstAttribute="centerY" secondItem="wpt-U8-zqK" secondAttribute="centerY" id="Vxd-hD-bqK"/>
+                        <constraint firstAttribute="height" constant="70" id="dhB-WA-Dva"/>
+                        <constraint firstItem="pXb-DA-4GD" firstAttribute="centerY" secondItem="oC8-ZH-QFp" secondAttribute="centerY" id="htm-XP-Nl2"/>
+                        <constraint firstItem="pXb-DA-4GD" firstAttribute="leading" secondItem="m1z-Qc-BFN" secondAttribute="leading" constant="16" id="nyf-2C-VbX"/>
+                        <constraint firstItem="oC8-ZH-QFp" firstAttribute="centerX" secondItem="wpt-U8-zqK" secondAttribute="centerX" id="sqP-y0-BqK"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="m1z-Qc-BFN" secondAttribute="trailing" id="6Hs-zZ-5TS"/>
+                <constraint firstItem="m1z-Qc-BFN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="RcE-Bt-X4l"/>
+                <constraint firstItem="m1z-Qc-BFN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mGa-vi-ADH"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="F25-DD-FMT"/>
             <point key="canvasLocation" x="139" y="98"/>
         </view>
     </objects>
+    <resources>
+        <image name="appBackground" width="375" height="476"/>
+        <image name="close" width="64" height="64"/>
+    </resources>
 </document>

@@ -39,6 +39,11 @@ class HomeCoordinator: BaseCoordinator {
         navigationController.pushViewController(vc, animated: false)
     }
     
+    private func presentModally(_ viewController: UIViewController) {
+        viewController.modalPresentationStyle = .automatic
+        navigationController.present(viewController, animated: true, completion: nil)
+    }
+    
     //TODO: Replace this to some BuilderViewController
     private func manageRoute(_ route: HomeRoute) {
         switch route {
@@ -56,19 +61,19 @@ class HomeCoordinator: BaseCoordinator {
             let vc = PurchaseViewController()
             let vm = PurchaseViewModel()
             vm.closeButtonPressed = { [weak self] in
-                self?.navigationController.popViewController(animated: true)
+                self?.navigationController.dismiss(animated: true)
             }
             vc.viewModel = vm
-            navigationController.pushViewController(vc, animated: true)
+            presentModally(vc)
 
         case .showRules:
             let vc = GameRulesViewController()
             let vm = GameRulesViewModel()
             vm.closeButtonPressed = { [weak self] in
-                self?.navigationController.popViewController(animated: true)
+                self?.navigationController.dismiss(animated: true)
             }
             vc.viewModel = vm
-            navigationController.pushViewController(vc, animated: true)
+            presentModally(vc)
             
         case .showCityList:
             let vc = CityListViewController()
@@ -83,28 +88,28 @@ class HomeCoordinator: BaseCoordinator {
             let vc = SettingsViewController()
             let vm = SettingsViewModel()
             vm.closeButtonPressed = { [weak self] in
-                self?.navigationController.popViewController(animated: true)
+                self?.navigationController.dismiss(animated: true)
             }
             vc.viewModel = vm
-            navigationController.pushViewController(vc, animated: true)
+            presentModally(vc)
             
         case .showLeaders:
             let vc = LeaderboardViewController()
             let vm = LeaderboardViewModel()
             vm.closeButtonPressed = { [weak self] in
-                self?.navigationController.popViewController(animated: true)
+                self?.navigationController.dismiss(animated: true)
             }
             vc.viewModel = vm
-            navigationController.pushViewController(vc, animated: true)
+            presentModally(vc)
             
         case .showStatistics:
             let vc = StatisticsViewController()
             let vm = StatisticsViewModel()
             vm.closeButtonPressed = { [weak self] in
-                self?.navigationController.popViewController(animated: true)
+                self?.navigationController.dismiss(animated: true)
             }
             vc.viewModel = vm
-            navigationController.pushViewController(vc, animated: true)
+            presentModally(vc)
             
         case .showCityInfo:
             let vc = CityInfoViewController()
@@ -112,14 +117,16 @@ class HomeCoordinator: BaseCoordinator {
             vm.routeTo = { [weak self] route in
                 switch route {
                 case .map:
-                    self?.manageRoute(.showMap)
-
+                    self?.navigationController.dismiss(animated: true) {
+                        self?.manageRoute(.showMap)
+                    }
+                    
                 case .back:
-                    self?.navigationController.popViewController(animated: true)
+                    self?.navigationController.dismiss(animated: true)
                 }
             }
             vc.viewModel = vm
-            navigationController.pushViewController(vc, animated: true)
+            presentModally(vc)
             
         case .showMap:
             let mapCoordinator = MapCoordinator(navigationController: navigationController)

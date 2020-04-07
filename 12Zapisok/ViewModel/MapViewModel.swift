@@ -7,16 +7,47 @@
 //
 
 import Foundation
+import CoreLocation
 
 protocol MapViewModeling: class {
     var routeTo: ((MapRouter) -> Void)? { get set }
+    
+    func myPosition(completion: @escaping (CLLocation?) -> Void)
+    func cityCenter() -> CLLocation
 }
 
 class MapViewModel {
+    
     public var routeTo: ((MapRouter) -> Void)?
-
+    
+    //MARK: Managers
+    private let locationManager: LocationManaging
+    private let preferencesManager: PreferencesManager
+    private let storageManager = StorageManager.shared
+        
+    convenience init() {
+        self.init(locationManager: LocationManager.shared, networkManager: NetworkManager.shared, preferencesManager: PreferencesManager.shared)
+    }
+    
+    init(locationManager: LocationManaging, networkManager: NetworkManaging, preferencesManager: PreferencesManager) {
+        self.locationManager = locationManager
+        self.preferencesManager = preferencesManager
+    }
 }
 
 extension MapViewModel: MapViewModeling {
+  
+    public func myPosition(completion: @escaping (CLLocation?) -> Void) {
+        locationManager.requestCurrentLocation(completion: { ponit in
+            completion(ponit?.coordinate)
+        })
+    }
     
+    public func cityCenter() -> CLLocation {
+        if let cityID = preferencesManager.currentCityId, let currentLocation = storageManager.getObjectByID(City.self, id: cityID)?.location {
+            return CLLocation(latitude: currentLocation.lat, longitude: currentLocation.lon)
+        }
+        
+        return locationManager.currentPosition
+    }
 }

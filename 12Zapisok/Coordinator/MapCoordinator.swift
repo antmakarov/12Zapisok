@@ -37,10 +37,11 @@ class MapCoordinator: BaseCoordinator {
             let vc = PurchaseViewController()
             let vm = PurchaseViewModel()
             vm.closeButtonPressed = { [weak self] in
-                self?.navigationController.popViewController(animated: true)
+                self?.navigationController.dismiss(animated: true)
             }
             vc.viewModel = vm
-            navigationController.pushViewController(vc, animated: true)
+            vc.modalPresentationStyle = .automatic
+            navigationController.present(vc, animated: true, completion: nil)
             
         case .back:
             finishFlow?()

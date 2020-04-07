@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapViewController" customModule="_2Zapisok" customModuleProvider="target">
             <connections>
                 <outlet property="mapView" destination="lH0-Z4-Dye" id="HTb-Vn-qeI"/>
+                <outlet property="noteButton" destination="gh4-fP-niG" id="iNl-jO-Fcl"/>
                 <outlet property="view" destination="Co1-B3-flm" id="UMd-9B-84i"/>
             </connections>
         </placeholder>
@@ -19,62 +20,118 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lH0-Z4-Dye">
-                    <rect key="frame" x="0.0" y="149" width="414" height="747"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </mapView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyR-zF-qzu">
-                    <rect key="frame" x="313" y="337" width="57" height="65"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <state key="normal" title="Я"/>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5h-bC-fCU">
-                    <rect key="frame" x="313" y="444" width="57" height="65"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <state key="normal" title="Город"/>
-                </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="RWw-RH-iyF">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RQ8-Wz-9VQ">
-                    <rect key="frame" x="305" y="553" width="77" height="76"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQQ-Bt-5BB">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="120.5"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Zza-dJ-WcG">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="120.5"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ln4-wX-KVz">
+                            <rect key="frame" x="16" y="49" width="38" height="38"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="38" id="JWp-ym-8De"/>
+                                <constraint firstAttribute="height" constant="38" id="Sai-uh-Q4V"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Назад" image="back"/>
+                            <connections>
+                                <action selector="closeButtonPressed" destination="-1" eventType="touchUpInside" id="Zdh-50-msm"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Карта" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32y-SY-t3Q">
+                            <rect key="frame" x="145" y="42.5" width="124" height="51"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="aZs-F7-gfx"/>
+                                <constraint firstAttribute="height" constant="51" id="fDQ-Q4-FeJ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wl-I5-OsW">
+                            <rect key="frame" x="360" y="49" width="38" height="38"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="38" id="Ch4-ML-SHu"/>
+                                <constraint firstAttribute="width" constant="38" id="voX-sw-raR"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" image="purchaseMap"/>
+                            <connections>
+                                <action selector="goToPurchase" destination="-1" eventType="touchUpInside" id="oMi-uC-TUY"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Zza-dJ-WcG" secondAttribute="bottom" id="ASM-xC-yck"/>
+                        <constraint firstItem="Zza-dJ-WcG" firstAttribute="top" secondItem="dQQ-Bt-5BB" secondAttribute="top" id="BS0-jz-xoo"/>
+                        <constraint firstItem="32y-SY-t3Q" firstAttribute="centerX" secondItem="Zza-dJ-WcG" secondAttribute="centerX" id="Gwp-fK-EgB"/>
+                        <constraint firstAttribute="trailing" secondItem="2wl-I5-OsW" secondAttribute="trailing" constant="16" id="YSj-nG-TBM"/>
+                        <constraint firstAttribute="trailing" secondItem="Zza-dJ-WcG" secondAttribute="trailing" id="aKv-Ax-zVZ"/>
+                        <constraint firstItem="2wl-I5-OsW" firstAttribute="centerY" secondItem="32y-SY-t3Q" secondAttribute="centerY" id="eoA-eY-QX6"/>
+                        <constraint firstItem="Ln4-wX-KVz" firstAttribute="leading" secondItem="dQQ-Bt-5BB" secondAttribute="leading" constant="16" id="h7N-yG-2ak"/>
+                        <constraint firstAttribute="bottom" secondItem="32y-SY-t3Q" secondAttribute="bottom" constant="27" id="vjI-8b-3xB"/>
+                        <constraint firstItem="Zza-dJ-WcG" firstAttribute="leading" secondItem="dQQ-Bt-5BB" secondAttribute="leading" id="xlD-Wg-noY"/>
+                        <constraint firstItem="Ln4-wX-KVz" firstAttribute="centerY" secondItem="32y-SY-t3Q" secondAttribute="centerY" id="zO6-Pi-Kmp"/>
+                    </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gh4-fP-niG">
-                    <rect key="frame" x="312" y="221" width="59" height="65"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <state key="normal" title="Записка"/>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3G-t0-FyX">
-                    <rect key="frame" x="341" y="100" width="61" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Покупки">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="goToPurchase" destination="-1" eventType="touchUpInside" id="Lai-h0-WlE"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVP-gS-W68">
-                    <rect key="frame" x="10" y="94" width="61" height="36"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Назад"/>
-                    <connections>
-                        <action selector="closeButtonPressed" destination="-1" eventType="touchUpInside" id="gli-eB-Wml"/>
-                    </connections>
-                </button>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lH0-Z4-Dye">
+                    <rect key="frame" x="0.0" y="120.5" width="414" height="775.5"/>
+                </mapView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="chV-v1-PWk">
+                    <rect key="frame" x="354" y="136.5" width="44" height="224"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gh4-fP-niG">
+                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" image="targetMap"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyR-zF-qzu">
+                            <rect key="frame" x="0.0" y="90" width="44" height="44"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="FQo-cg-GqT"/>
+                                <constraint firstAttribute="width" constant="44" id="eTe-n1-vfm"/>
+                            </constraints>
+                            <state key="normal" image="myPin"/>
+                            <connections>
+                                <action selector="showMyPosition" destination="-1" eventType="touchUpInside" id="cJ7-DA-8X2"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5h-bC-fCU">
+                            <rect key="frame" x="0.0" y="180" width="44" height="44"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" image="cityPin"/>
+                            <connections>
+                                <action selector="showCityCenter" destination="-1" eventType="touchUpInside" id="cwG-6W-41H"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="lF6-Tg-s5i" firstAttribute="trailing" secondItem="chV-v1-PWk" secondAttribute="trailing" constant="16" id="EqR-5k-TpX"/>
+                <constraint firstAttribute="bottom" secondItem="lH0-Z4-Dye" secondAttribute="bottom" id="Stn-G2-nqQ"/>
+                <constraint firstItem="lH0-Z4-Dye" firstAttribute="top" secondItem="dQQ-Bt-5BB" secondAttribute="bottom" id="Y1M-lM-kcH"/>
+                <constraint firstItem="dQQ-Bt-5BB" firstAttribute="leading" secondItem="lF6-Tg-s5i" secondAttribute="leading" id="e38-Fd-GRR"/>
+                <constraint firstItem="lH0-Z4-Dye" firstAttribute="trailing" secondItem="lF6-Tg-s5i" secondAttribute="trailing" id="g1y-rd-svO"/>
+                <constraint firstAttribute="trailing" secondItem="dQQ-Bt-5BB" secondAttribute="trailing" id="iWB-9u-2Va"/>
+                <constraint firstItem="dQQ-Bt-5BB" firstAttribute="top" secondItem="Co1-B3-flm" secondAttribute="top" id="nRp-Bx-4Sy"/>
+                <constraint firstItem="dQQ-Bt-5BB" firstAttribute="height" secondItem="lF6-Tg-s5i" secondAttribute="height" multiplier="0.147482" id="o53-Yj-llc"/>
+                <constraint firstItem="chV-v1-PWk" firstAttribute="top" secondItem="dQQ-Bt-5BB" secondAttribute="bottom" constant="16" id="sbf-e2-zlV"/>
+                <constraint firstItem="lH0-Z4-Dye" firstAttribute="leading" secondItem="lF6-Tg-s5i" secondAttribute="leading" id="tsi-aM-fSf"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="lF6-Tg-s5i"/>
             <point key="canvasLocation" x="142" y="104"/>
         </view>
     </objects>
     <resources>
-        <image name="Rectangle" width="368" height="102"/>
+        <image name="appBackground" width="375" height="476"/>
+        <image name="back" width="128" height="128"/>
+        <image name="cityPin" width="128" height="128"/>
+        <image name="myPin" width="128" height="128"/>
+        <image name="purchaseMap" width="128" height="128"/>
+        <image name="targetMap" width="128" height="128"/>
     </resources>
 </document>

@@ -74,10 +74,11 @@ class GameCoordinator: BaseCoordinator {
             let viewController = PurchaseViewController()
             let viewModel = PurchaseViewModel()
             viewModel.closeButtonPressed = { [weak self] in
-                self?.navigationController.popViewController(animated: true)
+                self?.navigationController.dismiss(animated: true)
             }
             viewController.viewModel = viewModel
-            navigationController.pushViewController(viewController, animated: true)
+            viewController.modalPresentationStyle = .automatic
+            navigationController.present(viewController, animated: true, completion: nil)
             
         case .back:
             finishFlow?()

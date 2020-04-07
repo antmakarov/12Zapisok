@@ -11,16 +11,15 @@ import MapKit
 
 class MapViewController: UIViewController {
     
-    var viewModel: MapViewModeling? {
-        didSet {
-
-        }
-    }
+    var viewModel: MapViewModeling?
     
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet private weak var mapView: MKMapView!
+    @IBOutlet private weak var noteButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        noteButton.isHidden = true
         
         if let cityID = PreferencesManager.shared.currentCityId {
             let currentCity = StorageManager.shared.getObjectByID(City.self, id: cityID)
@@ -35,6 +34,22 @@ class MapViewController: UIViewController {
         let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
                                                   latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         mapView.setRegion(coordinateRegion, animated: true)
+    }
+    
+    @IBAction func showMyPosition() {
+        if let viewModel = viewModel {
+            viewModel.myPosition { location in
+                if let location = location {
+                    self.centerMapOnLocation(location: location)
+                }
+            }
+        }
+    }
+    
+    @IBAction func showCityCenter() {
+        if let viewModel = viewModel {
+            centerMapOnLocation(location: viewModel.cityCenter())
+        }
     }
     
     @IBAction func closeButtonPressed() {

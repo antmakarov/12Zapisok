@@ -19,6 +19,7 @@ class HomeViewController: BaseViewController {
     
     @IBOutlet private weak var cityNameLabel: UILabel!
     @IBOutlet private weak var cityImage: UIImageView!
+    @IBOutlet private weak var middleActionsView: UIView!
     @IBOutlet private var circleMenuImages: [UIImageView]!
     @IBOutlet private var menuItemViews: [UIView]!
     
@@ -42,9 +43,12 @@ class HomeViewController: BaseViewController {
         
         cityNameLabel.text = viewModel.getCurrentCityName()
         cityImage.setupImage(url: viewModel.getCurrentCityImage(), placeholder: .city)
+        cityImage.layer.borderWidth = 1.0
+        cityImage.layer.borderColor = UIColor.white.cgColor
     }
     
     private func prepareUI() {
+        middleActionsView.roundCorners(corners: [.topLeft, .topRight], radius: 25)
         menuItemViews.forEach {
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapMenuItem(sender:)))
             $0.addGestureRecognizer(tapGesture)

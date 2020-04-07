@@ -16,8 +16,8 @@ enum CollectionDisplay {
 class GridCollectionViewFlowLayout: UICollectionViewFlowLayout {
 
     var display: CollectionDisplay = .grid(columns: 3)
-    private var cellSpacing: CGFloat = 10
-    private let righLeftInsets: CGFloat = 10 * 2
+    private var cellSpacing: CGFloat = 20
+    private let righLeftInsets: CGFloat = 20 * 2
     
     convenience init(display: CollectionDisplay) {
         self.init()
@@ -31,7 +31,7 @@ class GridCollectionViewFlowLayout: UICollectionViewFlowLayout {
         minimumLineSpacing = cellSpacing
         
         scrollDirection = .vertical
-        sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+        sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 10, right: 20)
 
         itemSize = CGSize(width: itemWidth(), height: itemHeight())
         print(itemSize)
@@ -53,7 +53,7 @@ class GridCollectionViewFlowLayout: UICollectionViewFlowLayout {
     func itemHeight() -> CGFloat {
         switch display {
         case .grid:
-            return 150
+            return 172
             
         case .list:
             return 150

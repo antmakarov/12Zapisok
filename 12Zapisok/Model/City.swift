@@ -22,7 +22,7 @@ class City: Object, Mappable, Endpoint {
     @objc dynamic var name = ""
     @objc dynamic var imageUrl = ""
     @objc dynamic var cityDescription = ""
-    @objc dynamic var location: Location? = nil
+    @objc dynamic var location: Location?
     
     required convenience init?(map: Map) {
         self.init()

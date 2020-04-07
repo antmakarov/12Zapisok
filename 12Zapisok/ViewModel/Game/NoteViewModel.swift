@@ -45,21 +45,25 @@ class GameNoteViewModel {
         self.locationManager = locationManager
     }
     
-    private func checkPosition(location: Location?) {
+    private func checkPosition(location: Location?) -> Bool {
         if let location = location {
-            print(locationManager.distanceFromPoint(CLLocation(latitude: location.lat, longitude: location.lon)))
+            let distance = locationManager.distanceFromCoordinates(location.lat, location.lon)
+            return distance < 100
         }
         
-//        networkManager.openNote(id: note.id) { result in
-//            completion(result)
-//        }
+        return false
     }
 }
 
 extension GameNoteViewModel: GameNoteViewModeling {
     func openNote(completion: @escaping ((Bool) -> Void)) {
-        checkPosition(location: note.location)
-        completion(true)
+        if checkPosition(location: note.location) {
+            networkManager.openNote(id: note.id) { result in
+                completion(result)
+            }
+        } else {
+            completion(false)
+        }
     }
     
     var title: String {

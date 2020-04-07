@@ -24,7 +24,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BAD-u5-2Wo">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="225"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="qC6-9R-CuI">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appBackground" translatesAutoresizingMaskIntoConstraints="NO" id="qC6-9R-CuI">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="225"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 записок" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPd-K3-Pag">
@@ -220,7 +220,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Rectangle" width="368" height="102"/>
+        <image name="appBackground" width="375" height="476"/>
         <image name="back" width="128" height="128"/>
         <image name="placeholder" width="128" height="128"/>
     </resources>

@@ -22,18 +22,19 @@ class NoteCollectionCell: BaseCardCell {
     
     func configure(viewModel: NoteCollectionCellViewModeling) {
         headerLabel.text = "Записка #\(viewModel.id)"
-        
+        //backView.addGradient(colors: [UIColor(hex: 0x7EDD51).cgColor, UIColor(hex: 0x1EDDA4).cgColor])
+
         switch viewModel.state {
         case .open:
             imageView.setupImage(url: viewModel.imgUrl, placeholder: .note)
             statusLabel.text = "Открыта сегодня в 11:45"
             
         case .progress:
-            imageView.image = UIImage(named: "1")
+            imageView.image = UIImage(named: "inProgressPlaceholder")
             statusLabel.text = "В процессе"
             
         case .close:
-            imageView.image = UIImage(named: "2")
+            imageView.image = UIImage(named: "unavailablePlaceholder")
             statusLabel.text = "Не открыта"
             statusLabel.alpha = 0.6
         }

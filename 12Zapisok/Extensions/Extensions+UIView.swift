@@ -39,4 +39,13 @@ extension UIView {
         layer.shadowRadius = 5.0
         layer.shadowColor = UIColor.black.cgColor
     }
+    
+    func addGradient(colors: [CGColor]) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = bounds
+        gradientLayer.colors = colors
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        layer.insertSublayer(gradientLayer, at: 0)
+    }
 }

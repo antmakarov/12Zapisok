@@ -18,7 +18,6 @@ class GameRulesViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     @IBAction func closeButtonPressed() {

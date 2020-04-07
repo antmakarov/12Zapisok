@@ -59,15 +59,17 @@ class OnboardingViewModel {
             static let image = "auth"
         }
     }
+    
     //MARK: Managers
     private let locationManager: LocationManaging
     private let networkManager: NetworkManaging
     private let preferencesManager: PreferencesManager
+    private let databaseStorage = StorageManager.shared
 
     //MARK: Private / Public variables
     private var onboardingSteps: [OnboardingStepViewModeling] = []
     private var cityName: Int?
-    private var cities: [City]?
+    private var cities = [City]()
     
     public var routeTo: ((OnboardingRoute) -> Void)?
     
@@ -91,6 +93,7 @@ class OnboardingViewModel {
                 
             case .success(let cities):
                 self.cities = cities
+                self.cities.forEach { try? self.databaseStorage.storeObject($0) }
                 
             case .error(let error):
                 Logger.error(msg: error.localizedDescription)
@@ -100,20 +103,21 @@ class OnboardingViewModel {
     
     private func calculateNearCity(coordinates: MapPoint?) -> Int? {
         
-        let avaibleCities = cities?.filter({ city in
-            locationManager.distanceFromCoordinates(city.location!.lat, city.location!.lon) != 0 })
+        let avaibleCities = cities.filter({ city in
+            if let location = city.location {
+                return locationManager.distanceFromCoordinates(location.lat, location.lon) != 0
+            }
+            return false
+        })
         
-        let sortedPlaces = avaibleCities?.sorted(by: { city1, city2  in
-                if let c1 = city1.location, let c2 = city2.location  {
-                    let distance1 = locationManager.distanceFromCoordinates(c1.lat, c1.lon)
-                    let distance2 = locationManager.distanceFromCoordinates(c2.lat, c2.lon)
-                    
-                    return distance1 < distance2
-                }
+        let sortedPlaces = avaibleCities.sorted(by: {
+            guard let loc1 = $0.location, let loc2 = $1.location else {
                 return false
-            })
+            }
+            return locationManager.distanceFromCoordinates(loc1.lat, loc1.lon) < locationManager.distanceFromCoordinates(loc2.lat, loc2.lon)
+        })
             
-        return sortedPlaces?.first?.id
+        return sortedPlaces.first?.id
     }
 }
 
@@ -147,11 +151,11 @@ extension OnboardingViewModel: OnboardingViewModeling {
             }
             
         case .city:
-            if let city = cityName, let name = cities?.first(where: { $0.id == city }) {
+            if let city = cityName, let name = cities.first(where: { $0.id == city }) {
                 return OnboardingStepViewModel(title: name.name, details: Constants.City.details, image: Constants.City.image, actionTitle: .empty, isHideSkip: true, isNeedAnswer: true) { type, completion in
                     switch type {
                     case .done:
-                        self.preferencesManager.currentCityId = self.cityName
+                        self.preferencesManager.currentCityId = city
                         completion?()
                         
                     case .denied, .skip:
