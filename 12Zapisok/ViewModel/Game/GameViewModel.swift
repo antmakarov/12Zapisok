@@ -36,7 +36,7 @@ class GameViewModel {
         self.init(cityName: cityName, preferencesManager: PreferencesManager.shared, databaseStorage: StorageManager.shared, networkManager: NetworkManager.shared)
     }
     
-    init(cityName: String?, typeFetcher: TypeFetcher = .network, preferencesManager: PreferencesManager, databaseStorage: StorageManager, networkManager: NetworkManaging) {
+    init(cityName: String?, preferencesManager: PreferencesManager, databaseStorage: StorageManager, networkManager: NetworkManaging) {
         self.preferencesManager = preferencesManager
         self.databaseStorage = databaseStorage
         self.networkManager = networkManager
@@ -58,6 +58,11 @@ class GameViewModel {
             
             case .error(let error):
                 Logger.error(msg: error.localizedDescription)
+                if let notes = self?.databaseStorage.getObjects(Note.self) {
+                    Logger.error(msg: "Loaded from Realm Storage")
+                    self?.gameNotes = notes
+                    self?.dataUpdateHandler?()
+                }
             }
         }
     }

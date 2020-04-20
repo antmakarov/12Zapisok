@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameRulesViewController" customModule="_2Zapisok" customModuleProvider="target">
             <connections>
+                <outlet property="rulesTableView" destination="BKc-GZ-94Z" id="JSh-DY-sf3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -61,12 +61,23 @@
                         <constraint firstItem="BRv-HD-G2u" firstAttribute="centerY" secondItem="ZqC-B9-urE" secondAttribute="centerY" id="pG3-Bf-NSt"/>
                     </constraints>
                 </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BKc-GZ-94Z">
+                    <rect key="frame" x="40" y="90" width="295" height="577"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Ef6-ar-c6X"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="l4s-3k-S9I" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Tje-8v-a3f"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="l4s-3k-S9I" secondAttribute="trailing" id="Xgd-BV-GZF"/>
                 <constraint firstItem="l4s-3k-S9I" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Z1e-0i-Yct"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="BKc-GZ-94Z" secondAttribute="bottom" id="cjf-Js-BHd"/>
+                <constraint firstItem="BKc-GZ-94Z" firstAttribute="top" secondItem="l4s-3k-S9I" secondAttribute="bottom" constant="20" id="j8j-yH-7pG"/>
+                <constraint firstItem="BKc-GZ-94Z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="v7I-AQ-mux"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BKc-GZ-94Z" secondAttribute="trailing" constant="40" id="vvi-Fg-6se"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="140.57971014492756" y="97.767857142857139"/>
