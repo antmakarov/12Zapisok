@@ -10,24 +10,24 @@ import UIKit
 
 class CityHeaderReusableView: UICollectionReusableView {
 
-    @IBOutlet weak var cityImage: UIImageView!
-    @IBOutlet weak var cityName: UILabel!
-    @IBOutlet weak var mainView: UIView!
+    private enum Constants {
+        static let borderWidth: CGFloat = 3.0
+        static let borderColor: UIColor = .mauve
+    }
+    
+    @IBOutlet private weak var cityImage: UIImageView!
+    @IBOutlet private weak var cityName: UILabel!
+    @IBOutlet private weak var mainView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        cityImage.addShadow()
-        cityImage.layer.cornerRadius = cityImage.frame.height / 2
-        mainView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 25.0)
-        mainView.addShadow()
+        cityImage.rounded()
+        cityImage.addBorder(width: Constants.borderWidth, color: Constants.borderColor)
     }
     
     public func configure(name: String, imageUrl: String) {
         cityName.text = name
-        
-        if let url = URL(string: imageUrl) {
-            cityImage.kf.setImage(with: url)
-        }
+        cityImage.setupImage(url: imageUrl, placeholder: .city)
     }
 }

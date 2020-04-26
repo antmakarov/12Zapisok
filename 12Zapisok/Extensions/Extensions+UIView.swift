@@ -26,6 +26,11 @@ extension UIView: ClassName { }
 // MARK: Custom UI
 
 extension UIView {
+    
+    func rounded(cornerRadius: CGFloat? = nil) {
+        layer.cornerRadius = cornerRadius ?? (frame.height / 2)
+    }
+    
    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
         let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask = CAShapeLayer()
@@ -33,7 +38,12 @@ extension UIView {
         layer.mask = mask
     }
     
-    func addShadow() {
+    func addShadow(opacity: Float = 1.0, offset: CGSize = .zero, radius: CGFloat, color: UIColor = .black) {
+        layer.shadowOpacity = opacity
+        layer.shadowOffset = offset
+        layer.shadowRadius = radius
+        layer.shadowColor = color.cgColor
+        
         layer.shadowOpacity = 0.5
         layer.shadowOffset = .zero
         layer.shadowRadius = 5.0
@@ -47,5 +57,10 @@ extension UIView {
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)
         gradientLayer.endPoint = CGPoint(x: 1, y: 1)
         layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+    func addBorder(width: CGFloat, color: UIColor) {
+        layer.borderWidth = width
+        layer.borderColor = color.cgColor
     }
 }

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 class CityCollectionCell: UICollectionViewCell {
 
@@ -15,7 +14,7 @@ class CityCollectionCell: UICollectionViewCell {
         static let shadowOpacity: Float = 0.2
         static let shadowOffset = CGSize(width: 1, height: 1)
         static let shadowRadius: CGFloat = 3
-        static let shadowColor = UIColor.black.cgColor
+        static let shadowColor: UIColor = .black
     }
     
     @IBOutlet weak var cityImageView: UIImageView!
@@ -30,13 +29,13 @@ class CityCollectionCell: UICollectionViewCell {
     func configure(name: String, url: String, score: Int) {
         nameLabel.text = name
         
-        cityImageView.layer.cornerRadius = 6.0
+        cityImageView.rounded(cornerRadius: 6.0)
         cityImageView.setupImage(url: url, placeholder: .city)
 
-        mainVIew.layer.cornerRadius = 6.0
-        mainVIew.layer.shadowOpacity = Constants.shadowOpacity
-        mainVIew.layer.shadowOffset = Constants.shadowOffset
-        mainVIew.layer.shadowRadius = Constants.shadowRadius
-        mainVIew.layer.shadowColor = Constants.shadowColor
+        mainVIew.rounded(cornerRadius: 6.0)
+        mainVIew.addShadow(opacity: Constants.shadowOpacity,
+                           offset: Constants.shadowOffset,
+                           radius: Constants.shadowRadius,
+                           color: Constants.shadowColor)
     }
 }

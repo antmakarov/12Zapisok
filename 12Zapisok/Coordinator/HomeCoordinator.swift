@@ -79,10 +79,10 @@ class HomeCoordinator: BaseCoordinator {
             let vc = CityListViewController()
             let vm = CityListViewModel(isOnboarding: false)
             vm.closeButtonPressed = { [weak self] in
-                self?.navigationController.popViewController(animated: true)
+                self?.navigationController.dismiss(animated: true)
             }
             vc.viewModel = vm
-            navigationController.pushViewController(vc, animated: true)
+            presentModally(vc)
 
         case .showSettings:
             let vc = SettingsViewController()

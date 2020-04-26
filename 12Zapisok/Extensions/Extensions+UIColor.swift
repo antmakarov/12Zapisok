@@ -10,6 +10,10 @@ import UIKit
 
 extension UIColor {
     
+    var mauve: UIColor {
+        return UIColor(hex: 0x6E5D95)
+    }
+        
     convenience init(red: Int, green: Int, blue: Int, a: CGFloat = 1.0) {
         self.init(
             red: CGFloat(red) / 255.0,

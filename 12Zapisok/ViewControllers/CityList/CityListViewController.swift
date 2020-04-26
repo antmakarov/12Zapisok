@@ -10,8 +10,18 @@ import UIKit
 
 class CityListViewController: BaseViewController {
 
+    private enum Constants {
+        static let changeTitle = "Сменить город"
+        static let chooseTitle = "Выбрать город"
+        
+        static let cellHeight: CGFloat = 190.0
+        static let cellSpacing: CGFloat = 30.0
+        static let collectionHeaderHeight: CGFloat = 260.0
+    }
+    
     @IBOutlet weak var citiesCollectionView: UICollectionView!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
     
     var chooseCompletion: ((City) -> Void)?
     var viewModel: CityListViewModeling? {
@@ -34,7 +44,15 @@ class CityListViewController: BaseViewController {
     }
     
     private func setupUI() {
-        backButton.isHidden = viewModel?.isOnboarding ?? false
+        if let viewModel = viewModel {
+            if viewModel.isOnboarding {
+                backButton.isHidden = true
+                titleLabel.text = Constants.chooseTitle
+            } else {
+                backButton.isHidden = false
+                titleLabel.text = Constants.changeTitle
+            }
+        }
     }
 }
 
@@ -70,7 +88,6 @@ extension CityListViewController: UICollectionViewDataSource {
         case UICollectionView.elementKindSectionHeader:
 
             let headerView = collectionView.dequeueReusableView(with: CityHeaderReusableView.self, for: indexPath)
-            headerView.cityName.text = "dd"
             headerView.configure(name: viewModel.getCurrentCityName(), imageUrl: viewModel.getCurrentCityImage())
             return headerView
             
@@ -93,7 +110,7 @@ extension CityListViewController: UICollectionViewDelegate {
            viewModel.saveCurrentCity(at: indexPath.row)
            chooseCompletion?(selectedCity)
            
-           navigationController?.popViewController(animated: true)
+           viewModel.closeButtonPressed?()
        }
 }
 
@@ -102,11 +119,11 @@ extension CityListViewController: UICollectionViewDelegate {
 extension CityListViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (collectionView.frame.width - 30) / 2
-        return CGSize(width: width, height: 190.0)
+        let width = (collectionView.frame.width - Constants.cellSpacing) / 2
+        return CGSize(width: width, height: Constants.cellHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-      return CGSize(width: collectionView.frame.width, height: 330)
+        return CGSize(width: collectionView.frame.width, height: Constants.collectionHeaderHeight)
     }
 }
