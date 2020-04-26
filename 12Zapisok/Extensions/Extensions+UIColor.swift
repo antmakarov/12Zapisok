@@ -10,7 +10,7 @@ import UIKit
 
 extension UIColor {
     
-    var mauve: UIColor {
+    class var mauve: UIColor {
         return UIColor(hex: 0x6E5D95)
     }
         

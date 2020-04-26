@@ -24,19 +24,19 @@ enum HomeRoute {
 class HomeCoordinator: BaseCoordinator {
     
     private var navigationController: UINavigationController
+    private let rootViewModel = HomeViewModel()
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
 
     override func start() {
-        let vc = HomeViewController()
-        let vm = HomeViewModel()
-        vm.routeTo = { [weak self] route in
+        rootViewModel.routeTo = { [weak self] route in
             self?.manageRoute(route)
         }
-        vc.viewModel = vm
-        navigationController.pushViewController(vc, animated: false)
+        let rootViewController = HomeViewController()
+        rootViewController.viewModel = rootViewModel
+        navigationController.pushViewController(rootViewController, animated: false)
     }
     
     private func presentModally(_ viewController: UIViewController) {
@@ -79,6 +79,8 @@ class HomeCoordinator: BaseCoordinator {
             let vc = CityListViewController()
             let vm = CityListViewModel(isOnboarding: false)
             vm.closeButtonPressed = { [weak self] in
+                //TODO: Change to listener binding
+                self?.rootViewModel.updateCityHandler?()
                 self?.navigationController.dismiss(animated: true)
             }
             vc.viewModel = vm

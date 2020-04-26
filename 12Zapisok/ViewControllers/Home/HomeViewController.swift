@@ -23,7 +23,13 @@ class HomeViewController: BaseViewController {
     @IBOutlet private var circleMenuImages: [UIImageView]!
     @IBOutlet private var menuItemViews: [UIView]!
     
-    public var viewModel: HomeViewModeling?
+    public var viewModel: HomeViewModeling? {
+        didSet {
+            viewModel?.updateCityHandler = {
+                self.updateUI()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

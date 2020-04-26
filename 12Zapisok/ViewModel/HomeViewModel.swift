@@ -16,6 +16,7 @@ protocol CurrentCityProtocol {
 protocol HomeViewModeling: CurrentCityProtocol {
     func getCurrentCityScore() -> Int
     var routeTo: ((HomeRoute) -> Void)? { get set }
+    var updateCityHandler: (() -> Void)? { get set }
 }
 
 class HomeViewModel {
@@ -28,6 +29,7 @@ class HomeViewModel {
     //MARK: Private / Public variables
     private var currentCity: City?
     
+    public var updateCityHandler: (() -> Void)?
     public var routeTo: ((HomeRoute) -> Void)?
 
     convenience init() {
@@ -38,6 +40,7 @@ class HomeViewModel {
         self.preferencesManager = preferencesManager
         self.databaseStorage = databaseStorage
         self.networkManager = networkManager
+
         loadCurrentCity()
         
         preferencesManager.updateCityIdHandler = { [weak self] id in
