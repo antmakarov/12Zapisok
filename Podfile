@@ -9,6 +9,7 @@ target '12Zapisok' do
   pod 'ObjectMapper'
   pod 'RealmSwift'
   pod 'Kingfisher'
+  pod 'SwiftEntryKit'
   
   # Pods for 12Zapisok
 

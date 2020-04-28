@@ -18,11 +18,7 @@ class GameRulesViewController: BaseViewController {
                  GameRule(title: "И напоследок", description: "Играть можно: на природе, в офисе, в музее и кафе, по городу, дома.", color: .green)
     ]
     
-    var viewModel: GameRulesViewModeling? {
-        didSet {
-
-        }
-    }
+    var viewModel: GameRulesViewModeling?
     
     override func viewDidLoad() {
         super.viewDidLoad()

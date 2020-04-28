@@ -15,6 +15,12 @@ enum CityInfoRoute {
 
 protocol CityInfoViewModeling {
     var routeTo: ((CityInfoRoute) -> Void)? { get set }
+    func getName() -> String
+    func getImageUrls() -> [String]
+    func getDescription() -> String
+    func getBuildingYear() -> String
+    func getPopulation() -> String
+    func getRegionCode() -> String
 }
 
 class CityInfoViewModel {
@@ -24,4 +30,27 @@ class CityInfoViewModel {
 
 extension CityInfoViewModel: CityInfoViewModeling {
     
+    func getName() -> String {
+        return "Нижний Новгород"
+    }
+    
+    func getImageUrls() -> [String] {
+        return []
+    }
+    
+    func getDescription() -> String {
+        return "Нижний Новгород (в советское время — Горький) является пятым по численности населения городом России, расположен на берегах Оки при впадении в Волгу. Находится на стыке Поволжья и Центральной России, сочетая величие Кремля и камерность центральных районов с размахом старинной волжской ярмарки и промышленных окраин. Нижний — город на удивление многоликий, где вы найдёте памятники самых разных веков, перемежающиеся захватывающими панорамами с высокого волжского берега. Кроме совершенно разноплановой архитектуры в Нижнем Новгороде не один десяток музеев и активная культурная жизнь, не уступающая другим крупным городам России."
+    }
+    
+    func getBuildingYear() -> String {
+        return "1221 г"
+    }
+    
+    func getPopulation() -> String {
+        return "1.25 млн"
+    }
+    
+    func getRegionCode() -> String {
+        "152 RUS"
+    }
 }

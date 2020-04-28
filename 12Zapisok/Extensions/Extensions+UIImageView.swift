@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 enum ImagePlaceholder: String {
     case defaultImg = "PurpleRec"
@@ -18,8 +19,8 @@ extension UIImageView {
     
     func setupImage(url: String, placeholder: ImagePlaceholder = .defaultImg) {
         if let url = URL(string: url) {
-            self.kf.indicatorType = .activity
-            self.kf.setImage(
+            kf.indicatorType = .activity
+            kf.setImage(
                 with: url,
                 placeholder: UIImage(named: "cityPlaceholder"),
                 options: [
