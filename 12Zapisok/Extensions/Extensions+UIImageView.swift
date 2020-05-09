@@ -17,8 +17,8 @@ enum ImagePlaceholder: String {
 
 extension UIImageView {
     
-    func setupImage(url: String, placeholder: ImagePlaceholder = .defaultImg) {
-        if let url = URL(string: url) {
+    func setupImage(url: String?, placeholder: ImagePlaceholder = .defaultImg) {
+        if let stringURL = url, let url = URL(string: stringURL) {
             kf.indicatorType = .activity
             kf.setImage(
                 with: url,

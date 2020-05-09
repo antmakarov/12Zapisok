@@ -32,7 +32,7 @@ class GameRuleCell: UITableViewCell {
         let shapeLayer = CAShapeLayer()
         shapeLayer.strokeColor = titleLabel.textColor.cgColor
         shapeLayer.lineWidth = 1
-        shapeLayer.lineDashPattern = [7, 3] // 7 is the length of dash, 3 is length of the gap.
+        shapeLayer.lineDashPattern = [7, 3]
 
         let path = CGMutablePath()
         path.addLines(between: [p0, p1])

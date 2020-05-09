@@ -24,11 +24,7 @@ class PurchaseViewController: UIViewController {
     @IBOutlet weak var showPinNoteView: UIView!
     @IBOutlet weak var enterAddressView: UIView!
     
-    var viewModel: PurchaseViewModeling? {
-        didSet {
-
-        }
-    }
+    var viewModel: PurchaseViewModeling? 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +37,7 @@ class PurchaseViewController: UIViewController {
     
     private func configure(_ view: UIView, selector: Selector) {
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: selector))
-        view.addShadow()
+        view.addShadow(color: UIColor.black.withAlphaComponent(0.35))
     }
     
     //MARK: Actions

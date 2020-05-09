@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="173" height="155"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hsS-mx-RTF">
-                                <rect key="frame" x="8" y="8" width="157" height="139"/>
+                                <rect key="frame" x="0.0" y="0.0" width="173" height="155"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -29,7 +29,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mechet-kul-sharif" translatesAutoresizingMaskIntoConstraints="NO" id="bDw-yH-wZY">
-                                <rect key="frame" x="8" y="8" width="157" height="139"/>
+                                <rect key="frame" x="0.0" y="0.0" width="173" height="155"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
@@ -37,16 +37,16 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="bDw-yH-wZY" firstAttribute="top" secondItem="d3u-RU-RfQ" secondAttribute="top" constant="8" id="0DO-iS-GRt"/>
+                            <constraint firstItem="bDw-yH-wZY" firstAttribute="top" secondItem="d3u-RU-RfQ" secondAttribute="top" id="0DO-iS-GRt"/>
                             <constraint firstItem="hsS-mx-RTF" firstAttribute="bottom" secondItem="bDw-yH-wZY" secondAttribute="bottom" id="MVg-oH-9dE"/>
                             <constraint firstItem="hsS-mx-RTF" firstAttribute="leading" secondItem="bDw-yH-wZY" secondAttribute="leading" id="TnR-EE-aoX"/>
                             <constraint firstItem="hsS-mx-RTF" firstAttribute="trailing" secondItem="bDw-yH-wZY" secondAttribute="trailing" id="UaF-Ke-7cY"/>
-                            <constraint firstAttribute="bottom" secondItem="bDw-yH-wZY" secondAttribute="bottom" constant="8" id="Vrf-yp-ZyU"/>
-                            <constraint firstItem="bDw-yH-wZY" firstAttribute="leading" secondItem="d3u-RU-RfQ" secondAttribute="leading" constant="8" id="liU-jE-Nkd"/>
+                            <constraint firstAttribute="bottom" secondItem="bDw-yH-wZY" secondAttribute="bottom" id="Vrf-yp-ZyU"/>
+                            <constraint firstItem="bDw-yH-wZY" firstAttribute="leading" secondItem="d3u-RU-RfQ" secondAttribute="leading" id="liU-jE-Nkd"/>
                             <constraint firstItem="hsS-mx-RTF" firstAttribute="top" secondItem="bDw-yH-wZY" secondAttribute="top" id="rOu-Xa-JsM"/>
-                            <constraint firstAttribute="trailing" secondItem="bDw-yH-wZY" secondAttribute="trailing" constant="8" id="wwz-YM-H4E"/>
+                            <constraint firstAttribute="trailing" secondItem="bDw-yH-wZY" secondAttribute="trailing" id="wwz-YM-H4E"/>
                         </constraints>
                     </view>
                 </subviews>

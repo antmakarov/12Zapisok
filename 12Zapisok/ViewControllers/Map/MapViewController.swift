@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import YandexMapKit
 
 class MapViewController: UIViewController {
     

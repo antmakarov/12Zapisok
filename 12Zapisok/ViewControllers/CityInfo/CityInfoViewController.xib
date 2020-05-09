@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="cityDescription" destination="CrQ-av-iaP" id="iKB-yy-JwT"/>
                 <outlet property="cityName" destination="Z9i-oB-Cwj" id="y9f-1N-N1u"/>
+                <outlet property="descriptionBlockView" destination="zxF-8r-JPA" id="IQt-dm-6VL"/>
                 <outlet property="imageCollectionView" destination="cRe-r9-nrG" id="5qP-LW-8fq"/>
                 <outlet property="populationLabel" destination="LWZ-4o-PIx" id="vhg-2N-YQR"/>
                 <outlet property="regionCodeLabel" destination="33l-3g-5jf" id="XqW-6A-7tx"/>
@@ -88,13 +89,13 @@
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="cRe-r9-nrG">
-                    <rect key="frame" x="16" y="78" width="382" height="224"/>
+                    <rect key="frame" x="0.0" y="86" width="414" height="269"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Q4L-AV-9eL">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                     </collectionViewFlowLayout>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="jVB-CP-2PU"/>
@@ -102,22 +103,21 @@
                     </connections>
                 </collectionView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="STO-qg-BUx">
-                    <rect key="frame" x="16" y="318" width="382" height="80.5"/>
+                    <rect key="frame" x="16" y="379" width="382" height="80.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xGV-Sq-ouR">
                             <rect key="frame" x="0.0" y="0.0" width="127.5" height="80.5"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buildYear" translatesAutoresizingMaskIntoConstraints="NO" id="vDt-3w-6DN">
-                                    <rect key="frame" x="44" y="0.0" width="40" height="40"/>
+                                    <rect key="frame" x="43.5" y="0.0" width="40.5" height="40"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="40" id="rLQ-mZ-su4"/>
-                                        <constraint firstAttribute="height" constant="40" id="sYi-b6-m4U"/>
+                                        <constraint firstAttribute="width" secondItem="vDt-3w-6DN" secondAttribute="height" id="v75-8r-JO1"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1221 г" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7g-e0-Rg5">
                                     <rect key="frame" x="38" y="50" width="51.5" height="22.5"/>
                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -135,14 +135,13 @@
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="population" translatesAutoresizingMaskIntoConstraints="NO" id="MxW-c1-Uwr">
                                     <rect key="frame" x="43.5" y="0.0" width="40" height="40"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="40" id="GnD-bb-ehv"/>
-                                        <constraint firstAttribute="height" constant="40" id="Wds-SW-Suw"/>
+                                        <constraint firstAttribute="width" secondItem="MxW-c1-Uwr" secondAttribute="height" id="Dum-1K-YX0"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.25 млн" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWZ-4o-PIx">
                                     <rect key="frame" x="27.5" y="50" width="72" height="22.5"/>
                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -158,16 +157,15 @@
                             <rect key="frame" x="254.5" y="0.0" width="127.5" height="80.5"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="regionCode" translatesAutoresizingMaskIntoConstraints="NO" id="fEx-8v-56Q">
-                                    <rect key="frame" x="44" y="0.0" width="40" height="40"/>
+                                    <rect key="frame" x="43.5" y="0.0" width="40.5" height="40"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="40" id="aFn-nd-QTa"/>
-                                        <constraint firstAttribute="width" constant="40" id="uPP-YL-1kw"/>
+                                        <constraint firstAttribute="width" secondItem="fEx-8v-56Q" secondAttribute="height" multiplier="1:1" id="tJA-my-mo0"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="152 RUS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33l-3g-5jf">
                                     <rect key="frame" x="30" y="50" width="68" height="22.5"/>
                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -180,32 +178,64 @@
                             </constraints>
                         </view>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="fEx-8v-56Q" firstAttribute="height" secondItem="STO-qg-BUx" secondAttribute="height" multiplier="0.5" id="Gsy-xg-SVE"/>
+                        <constraint firstItem="vDt-3w-6DN" firstAttribute="height" secondItem="STO-qg-BUx" secondAttribute="height" multiplier="0.5" id="PdE-Zr-fLV"/>
+                        <constraint firstItem="MxW-c1-Uwr" firstAttribute="height" secondItem="STO-qg-BUx" secondAttribute="height" multiplier="0.5" id="Xx4-c2-0LH"/>
+                    </constraints>
                 </stackView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="CrQ-av-iaP">
-                    <rect key="frame" x="16" y="406.5" width="382" height="473.5"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zxF-8r-JPA">
+                    <rect key="frame" x="0.0" y="475.5" width="414" height="420.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUc-Ol-ekF">
+                            <rect key="frame" x="16" y="12" width="103.5" height="26.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CrQ-av-iaP">
+                            <rect key="frame" x="16" y="42.5" width="382" height="378"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <attributedString key="attributedText">
+                                <fragment>
+                                    <string key="content">Нижний Новгород (в советское время — Горький) является пятым по численности населения городом России, расположен на берегах Оки при впадении в Волгу. Находится на стыке Поволжья и Центральной России, сочетая величие Кремля и камерность центральных районов с размахом старинной волжской ярмарки и промышленных окраин. Нижний — город на удивление многоликий, где вы найдёте памятники самых разных веков, перемежающиеся захватывающими панорамами с высокого волжского берега. Кроме совершенно разноплановой архитектуры в Нижнем Новгороде не один десяток музеев и активная культурная жизнь, не уступающая другим крупным городам России.</string>
+                                    <attributes>
+                                        <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <font key="NSFont" metaFont="system" size="18"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="0.5" lineHeightMultiple="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="CrQ-av-iaP" secondAttribute="bottom" id="Jga-Kq-Vf4"/>
+                        <constraint firstItem="CrQ-av-iaP" firstAttribute="top" secondItem="CUc-Ol-ekF" secondAttribute="bottom" constant="4" id="Lea-1Q-BGz"/>
+                        <constraint firstItem="CUc-Ol-ekF" firstAttribute="leading" secondItem="zxF-8r-JPA" secondAttribute="leading" constant="16" id="WkI-HS-Ay8"/>
+                        <constraint firstItem="CUc-Ol-ekF" firstAttribute="top" secondItem="zxF-8r-JPA" secondAttribute="top" constant="12" id="hDG-EY-zQL"/>
+                        <constraint firstItem="CrQ-av-iaP" firstAttribute="leading" secondItem="zxF-8r-JPA" secondAttribute="leading" constant="16" id="mas-OC-8hm"/>
+                        <constraint firstAttribute="trailing" secondItem="CrQ-av-iaP" secondAttribute="trailing" constant="16" id="uqB-Sa-QB6"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="cRe-r9-nrG" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.25" id="1K4-4N-Q2P"/>
+                <constraint firstItem="cRe-r9-nrG" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.3" id="1K4-4N-Q2P"/>
                 <constraint firstItem="ehq-Jp-YhL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="CN6-L4-2fg"/>
-                <constraint firstAttribute="bottom" secondItem="CrQ-av-iaP" secondAttribute="bottom" constant="16" id="H95-gL-o1l"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cRe-r9-nrG" secondAttribute="trailing" constant="16" id="NML-dW-vYJ"/>
+                <constraint firstItem="zxF-8r-JPA" firstAttribute="top" secondItem="STO-qg-BUx" secondAttribute="bottom" constant="16" id="HCL-0y-WSI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cRe-r9-nrG" secondAttribute="trailing" id="NML-dW-vYJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zxF-8r-JPA" secondAttribute="trailing" id="PcA-BJ-WYJ"/>
                 <constraint firstItem="ehq-Jp-YhL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Zcn-jd-gsw"/>
-                <constraint firstItem="cRe-r9-nrG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="a2c-yU-Rf5"/>
-                <constraint firstItem="CrQ-av-iaP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="fuw-pd-2y0"/>
+                <constraint firstItem="cRe-r9-nrG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="a2c-yU-Rf5"/>
+                <constraint firstItem="zxF-8r-JPA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gmO-I2-7TB"/>
                 <constraint firstItem="ehq-Jp-YhL" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="i6v-P2-o8H"/>
-                <constraint firstItem="CrQ-av-iaP" firstAttribute="top" secondItem="STO-qg-BUx" secondAttribute="bottom" constant="8" id="kPD-Fs-IQb"/>
                 <constraint firstItem="STO-qg-BUx" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.09" id="mLY-f2-Zs0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="STO-qg-BUx" secondAttribute="trailing" constant="16" id="t7a-6P-9i6"/>
-                <constraint firstItem="cRe-r9-nrG" firstAttribute="top" secondItem="ehq-Jp-YhL" secondAttribute="bottom" constant="8" id="u2D-KX-4XR"/>
-                <constraint firstItem="STO-qg-BUx" firstAttribute="top" secondItem="cRe-r9-nrG" secondAttribute="bottom" constant="16" id="u2Y-eg-KJN"/>
-                <constraint firstAttribute="trailing" secondItem="CrQ-av-iaP" secondAttribute="trailing" constant="16" id="vcQ-XO-8Ln"/>
+                <constraint firstItem="cRe-r9-nrG" firstAttribute="top" secondItem="ehq-Jp-YhL" secondAttribute="bottom" constant="16" id="u2D-KX-4XR"/>
+                <constraint firstItem="STO-qg-BUx" firstAttribute="top" secondItem="cRe-r9-nrG" secondAttribute="bottom" constant="24" id="u2Y-eg-KJN"/>
+                <constraint firstAttribute="bottom" secondItem="zxF-8r-JPA" secondAttribute="bottom" id="vqT-Dh-MQa"/>
                 <constraint firstItem="STO-qg-BUx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="wXd-xE-AH4"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7706E0A024594EBE0021DA1E /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7706E09F24594EBE0021DA1E /* Observable.swift */; };
+		7706E0A2246529A00021DA1E /* GameProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7706E0A1246529A00021DA1E /* GameProgressView.swift */; };
 		7741375623B9EC4100AD8A71 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7741375523B9EC4100AD8A71 /* HomeViewModel.swift */; };
 		774413C0242A9F2F001FBD83 /* Extensions+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774413BF242A9F2F001FBD83 /* Extensions+UIImageView.swift */; };
 		775370BD2458CD39006EFF3E /* CityImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775370BB2458CD39006EFF3E /* CityImageCell.swift */; };
 		775370BE2458CD39006EFF3E /* CityImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 775370BC2458CD39006EFF3E /* CityImageCell.xib */; };
+		775370C02458E0DE006EFF3E /* QuantityHintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775370BF2458E0DE006EFF3E /* QuantityHintManager.swift */; };
 		7753C620244CD20F0072A0B5 /* GameRuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7753C61E244CD20F0072A0B5 /* GameRuleCell.swift */; };
 		7753C621244CD20F0072A0B5 /* GameRuleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7753C61F244CD20F0072A0B5 /* GameRuleCell.xib */; };
 		77688CD923BA20AE00697408 /* CityHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77688CD723BA20AE00697408 /* CityHeaderReusableView.swift */; };
@@ -100,10 +103,13 @@
 
 /* Begin PBXFileReference section */
 		526AD8A7641C95E0C7D7C7D6 /* Pods_12Zapisok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_12Zapisok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7706E09F24594EBE0021DA1E /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		7706E0A1246529A00021DA1E /* GameProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProgressView.swift; sourceTree = "<group>"; };
 		7741375523B9EC4100AD8A71 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		774413BF242A9F2F001FBD83 /* Extensions+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIImageView.swift"; sourceTree = "<group>"; };
 		775370BB2458CD39006EFF3E /* CityImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityImageCell.swift; sourceTree = "<group>"; };
 		775370BC2458CD39006EFF3E /* CityImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityImageCell.xib; sourceTree = "<group>"; };
+		775370BF2458E0DE006EFF3E /* QuantityHintManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityHintManager.swift; sourceTree = "<group>"; };
 		7753C61E244CD20F0072A0B5 /* GameRuleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRuleCell.swift; sourceTree = "<group>"; };
 		7753C61F244CD20F0072A0B5 /* GameRuleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameRuleCell.xib; sourceTree = "<group>"; };
 		77688CD723BA20AE00697408 /* CityHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityHeaderReusableView.swift; sourceTree = "<group>"; };
@@ -472,6 +478,8 @@
 				77B120C4238C53BC001B2301 /* PreferencesManager.swift */,
 				77B120C6238C547E001B2301 /* Logger.swift */,
 				77B120CB238C606B001B2301 /* LocationManager.swift */,
+				775370BF2458E0DE006EFF3E /* QuantityHintManager.swift */,
+				7706E09F24594EBE0021DA1E /* Observable.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -496,6 +504,7 @@
 				7753C61F244CD20F0072A0B5 /* GameRuleCell.xib */,
 				775370BB2458CD39006EFF3E /* CityImageCell.swift */,
 				775370BC2458CD39006EFF3E /* CityImageCell.xib */,
+				7706E0A1246529A00021DA1E /* GameProgressView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -533,6 +542,7 @@
 				8D32F33A22D3302D00ABC228 /* Frameworks */,
 				8D32F33B22D3302D00ABC228 /* Resources */,
 				FFD1B9D7F781AD8A5EB0EDE3 /* [CP] Embed Pods Frameworks */,
+				6F774BA30061C1D80BC2EA02 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -612,6 +622,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6F774BA30061C1D80BC2EA02 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-12Zapisok/Pods-12Zapisok-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-12Zapisok/Pods-12Zapisok-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-12Zapisok/Pods-12Zapisok-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		893BBD1E4DBE3FBB0DAEFDFC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -661,6 +688,7 @@
 				8D32F35922D34B8E00ABC228 /* GameViewModel.swift in Sources */,
 				7753C620244CD20F0072A0B5 /* GameRuleCell.swift in Sources */,
 				8D32F35722D33CE000ABC228 /* Note.swift in Sources */,
+				7706E0A2246529A00021DA1E /* GameProgressView.swift in Sources */,
 				77F80DD824232746005ED8C0 /* CityInfoViewModel.swift in Sources */,
 				77B120E3239CDCE1001B2301 /* OnboardingViewModel.swift in Sources */,
 				8D8EA3D922D75F8D00EA2F01 /* BaseCell.swift in Sources */,
@@ -680,6 +708,7 @@
 				7790B453241CF5CA0046EFA5 /* BaseViewController.swift in Sources */,
 				7741375623B9EC4100AD8A71 /* HomeViewModel.swift in Sources */,
 				8D32F36B22D71E5A00ABC228 /* GameViewController.swift in Sources */,
+				7706E0A024594EBE0021DA1E /* Observable.swift in Sources */,
 				77688CD923BA20AE00697408 /* CityHeaderReusableView.swift in Sources */,
 				7790B484241FA66B0046EFA5 /* SettingsViewController.swift in Sources */,
 				77F80DC62421FF97005ED8C0 /* CityInfoViewController.swift in Sources */,
@@ -712,6 +741,7 @@
 				7790B469241FA3CF0046EFA5 /* LoginViewController.swift in Sources */,
 				7790B471241FA42A0046EFA5 /* RegistrationViewController.swift in Sources */,
 				77B120E9239CF561001B2301 /* AppCoordinator.swift in Sources */,
+				775370C02458E0DE006EFF3E /* QuantityHintManager.swift in Sources */,
 				77F93186243B13E9007BC979 /* Extensions+UIColor.swift in Sources */,
 				77F80DB424214B44005ED8C0 /* Extensions+String.swift in Sources */,
 				8D32F37922D7394500ABC228 /* NoteCollectionCellViewModel.swift in Sources */,

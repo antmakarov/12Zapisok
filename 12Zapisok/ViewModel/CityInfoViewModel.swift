@@ -16,7 +16,8 @@ enum CityInfoRoute {
 protocol CityInfoViewModeling {
     var routeTo: ((CityInfoRoute) -> Void)? { get set }
     func getName() -> String
-    func getImageUrls() -> [String]
+    func getImageCount() -> Int
+    func getImageUrl(by index: Int) -> String
     func getDescription() -> String
     func getBuildingYear() -> String
     func getPopulation() -> String
@@ -25,7 +26,7 @@ protocol CityInfoViewModeling {
 
 class CityInfoViewModel {
     var routeTo: ((CityInfoRoute) -> Void)?
-
+    let imageUrls = ["A", "B"]
 }
 
 extension CityInfoViewModel: CityInfoViewModeling {
@@ -34,8 +35,12 @@ extension CityInfoViewModel: CityInfoViewModeling {
         return "Нижний Новгород"
     }
     
-    func getImageUrls() -> [String] {
-        return []
+    func getImageUrl(by index: Int) -> String {
+        return imageUrls[index]
+    }
+    
+    func getImageCount() -> Int {
+        return imageUrls.count
     }
     
     func getDescription() -> String {
@@ -51,6 +56,6 @@ extension CityInfoViewModel: CityInfoViewModeling {
     }
     
     func getRegionCode() -> String {
-        "152 RUS"
+        return "152 RUS"
     }
 }

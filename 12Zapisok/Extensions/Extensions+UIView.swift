@@ -43,11 +43,6 @@ extension UIView {
         layer.shadowOffset = offset
         layer.shadowRadius = radius
         layer.shadowColor = color.cgColor
-        
-        layer.shadowOpacity = 0.5
-        layer.shadowOffset = .zero
-        layer.shadowRadius = 5.0
-        layer.shadowColor = UIColor.black.cgColor
     }
     
     func addGradient(colors: [CGColor]) {

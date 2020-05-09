@@ -11,6 +11,8 @@ target '12Zapisok' do
   pod 'Kingfisher'
   pod 'SwiftEntryKit'
   
+  pod 'YandexMapKit'
+  
   # Pods for 12Zapisok
 
 end
