@@ -16,33 +16,44 @@ struct GameRule {
 
 class GameRuleCell: UITableViewCell {
     
+    private enum Constants {
+        static let lineWidth: CGFloat = 2.0
+        static let pointOffset: CGFloat = 14.0
+        static let pointSize = CGSize(width: 16, height: 16)
+        static let pointName = "Point"
+    }
+    
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
-    @IBOutlet private weak var dottedLayer: UIView!
     
     func configure(rule: GameRule) {
         titleLabel.text = rule.title
         descriptionLabel.text = rule.description
         
         titleLabel.textColor = rule.color
-        drawDottedLine(start: CGPoint(x: 0, y: 0), end: CGPoint(x: 0, y: dottedLayer.frame.height), view: dottedLayer)
+        drawPoint()
     }
     
-    func drawDottedLine(start p0: CGPoint, end p1: CGPoint, view: UIView) {
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.strokeColor = titleLabel.textColor.cgColor
-        shapeLayer.lineWidth = 1
-        shapeLayer.lineDashPattern = [7, 3]
+    func drawPoint() {
+        let xPosition = titleLabel.frame.origin.x - Constants.pointOffset - Constants.pointSize.width
+        let yPosition = titleLabel.frame.origin.y + titleLabel.frame.height / 4
+        let point = CGPoint(x: xPosition, y: yPosition)
 
-        let path = CGMutablePath()
-        path.addLines(between: [p0, p1])
-        shapeLayer.path = path
-        view.layer.addSublayer(shapeLayer)
+        let circlePath = UIBezierPath(ovalIn: CGRect(origin: point, size: Constants.pointSize))
+        let shapeLayer = CAShapeLayer()
+        
+        shapeLayer.path = circlePath.cgPath
+        shapeLayer.fillColor = UIColor.white.cgColor
+        shapeLayer.strokeColor = titleLabel.textColor.cgColor
+        shapeLayer.lineWidth = Constants.lineWidth
+        shapeLayer.name = Constants.pointName
+
+        layer.addSublayer(shapeLayer)
     }
     
     override func prepareForReuse() {
         titleLabel.text?.removeAll()
         descriptionLabel.text?.removeAll()
-        dottedLayer.layer.sublayers = nil
+        layer.sublayers?.removeAll { $0.name == Constants.pointName}
     }
 }

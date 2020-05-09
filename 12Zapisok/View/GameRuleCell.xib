@@ -26,48 +26,25 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="В случае если гражданин проживает у родственника или друзей " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAp-ea-yLP">
-                        <rect key="frame" x="46" y="45" width="258" height="71"/>
+                        <rect key="frame" x="46" y="50" width="258" height="66"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.65151434075342463" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cs9-L2-rpY">
-                        <rect key="frame" x="16" y="16" width="16" height="100"/>
-                        <color key="backgroundColor" red="0.20392156859999999" green="0.2666666667" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="16" id="pv6-Ss-Kqt"/>
-                        </constraints>
-                    </imageView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="by0-fL-gde">
-                        <rect key="frame" x="16" y="16" width="16" height="100"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="16" id="Cmn-kW-anv"/>
-                        </constraints>
-                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="PY2-Ua-YMq" firstAttribute="leading" secondItem="cs9-L2-rpY" secondAttribute="trailing" constant="14" id="2Ci-Fb-W0s"/>
-                    <constraint firstItem="HAp-ea-yLP" firstAttribute="top" secondItem="PY2-Ua-YMq" secondAttribute="bottom" constant="4" id="4sP-mB-Zy7"/>
-                    <constraint firstItem="cs9-L2-rpY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="8vd-cX-qcZ"/>
-                    <constraint firstItem="cs9-L2-rpY" firstAttribute="bottom" secondItem="HAp-ea-yLP" secondAttribute="bottom" id="HN4-hO-brz"/>
-                    <constraint firstItem="PY2-Ua-YMq" firstAttribute="leading" secondItem="by0-fL-gde" secondAttribute="trailing" constant="14" id="LA2-Uw-tCV"/>
-                    <constraint firstItem="by0-fL-gde" firstAttribute="bottom" secondItem="HAp-ea-yLP" secondAttribute="bottom" id="PAd-aL-cDY"/>
+                    <constraint firstItem="HAp-ea-yLP" firstAttribute="top" secondItem="PY2-Ua-YMq" secondAttribute="bottom" constant="9" id="4sP-mB-Zy7"/>
+                    <constraint firstItem="PY2-Ua-YMq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="46" id="6xc-19-Crk"/>
+                    <constraint firstItem="PY2-Ua-YMq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="APS-SZ-fvE"/>
                     <constraint firstAttribute="trailing" secondItem="HAp-ea-yLP" secondAttribute="trailing" constant="16" id="R1M-zt-vfL"/>
                     <constraint firstAttribute="bottom" secondItem="HAp-ea-yLP" secondAttribute="bottom" constant="16" id="am6-p6-m9E"/>
                     <constraint firstItem="HAp-ea-yLP" firstAttribute="leading" secondItem="PY2-Ua-YMq" secondAttribute="leading" id="bht-Eb-icg"/>
-                    <constraint firstItem="by0-fL-gde" firstAttribute="top" secondItem="PY2-Ua-YMq" secondAttribute="top" id="fr0-3O-XfC"/>
                     <constraint firstAttribute="trailing" secondItem="PY2-Ua-YMq" secondAttribute="trailing" constant="16" id="i2K-CY-nU2"/>
-                    <constraint firstItem="by0-fL-gde" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="qxf-Ff-Ckr"/>
-                    <constraint firstItem="cs9-L2-rpY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="rlu-gG-eg3"/>
-                    <constraint firstItem="PY2-Ua-YMq" firstAttribute="top" secondItem="cs9-L2-rpY" secondAttribute="top" id="rvl-rb-ILA"/>
-                    <constraint firstItem="by0-fL-gde" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="wL0-KY-Lwv"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="descriptionLabel" destination="HAp-ea-yLP" id="zhm-7X-FGk"/>
-                <outlet property="dottedLayer" destination="by0-fL-gde" id="lR3-rg-Ole"/>
                 <outlet property="titleLabel" destination="PY2-Ua-YMq" id="MfH-xt-Y3r"/>
             </connections>
             <point key="canvasLocation" x="140.57971014492756" y="131.91964285714286"/>

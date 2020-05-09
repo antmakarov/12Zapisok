@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import YandexMapKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,9 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         appCoordinator = AppCoordinator(window: window)
         appCoordinator?.start()
-        
-        YMKMapKit.setApiKey("Your API key")
-        
+                
         return true
     }
 

@@ -13,7 +13,19 @@ extension UIColor {
     class var mauve: UIColor {
         return UIColor(hex: 0x6E5D95)
     }
-        
+    
+    class var appColor: UIColor {
+        return UIColor(hex: 0x5A6095)
+    }
+    
+    class var orangeColor: UIColor {
+        return UIColor(hex: 0xFF8060)
+    }
+     
+    class var greenColor: UIColor {
+        return UIColor(hex: 0x66DD66)
+    }
+    
     convenience init(red: Int, green: Int, blue: Int, a: CGFloat = 1.0) {
         self.init(
             red: CGFloat(red) / 255.0,
