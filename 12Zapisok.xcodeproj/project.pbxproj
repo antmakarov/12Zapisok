@@ -13,7 +13,7 @@
 		774413C0242A9F2F001FBD83 /* Extensions+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774413BF242A9F2F001FBD83 /* Extensions+UIImageView.swift */; };
 		775370BD2458CD39006EFF3E /* CityImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775370BB2458CD39006EFF3E /* CityImageCell.swift */; };
 		775370BE2458CD39006EFF3E /* CityImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 775370BC2458CD39006EFF3E /* CityImageCell.xib */; };
-		775370C02458E0DE006EFF3E /* QuantityHintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775370BF2458E0DE006EFF3E /* QuantityHintManager.swift */; };
+		775370C02458E0DE006EFF3E /* QuantityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775370BF2458E0DE006EFF3E /* QuantityManager.swift */; };
 		7753C620244CD20F0072A0B5 /* GameRuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7753C61E244CD20F0072A0B5 /* GameRuleCell.swift */; };
 		7753C621244CD20F0072A0B5 /* GameRuleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7753C61F244CD20F0072A0B5 /* GameRuleCell.xib */; };
 		77688CD923BA20AE00697408 /* CityHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77688CD723BA20AE00697408 /* CityHeaderReusableView.swift */; };
@@ -109,7 +109,7 @@
 		774413BF242A9F2F001FBD83 /* Extensions+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIImageView.swift"; sourceTree = "<group>"; };
 		775370BB2458CD39006EFF3E /* CityImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityImageCell.swift; sourceTree = "<group>"; };
 		775370BC2458CD39006EFF3E /* CityImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityImageCell.xib; sourceTree = "<group>"; };
-		775370BF2458E0DE006EFF3E /* QuantityHintManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityHintManager.swift; sourceTree = "<group>"; };
+		775370BF2458E0DE006EFF3E /* QuantityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityManager.swift; sourceTree = "<group>"; };
 		7753C61E244CD20F0072A0B5 /* GameRuleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRuleCell.swift; sourceTree = "<group>"; };
 		7753C61F244CD20F0072A0B5 /* GameRuleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameRuleCell.xib; sourceTree = "<group>"; };
 		77688CD723BA20AE00697408 /* CityHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityHeaderReusableView.swift; sourceTree = "<group>"; };
@@ -478,7 +478,7 @@
 				77B120C4238C53BC001B2301 /* PreferencesManager.swift */,
 				77B120C6238C547E001B2301 /* Logger.swift */,
 				77B120CB238C606B001B2301 /* LocationManager.swift */,
-				775370BF2458E0DE006EFF3E /* QuantityHintManager.swift */,
+				775370BF2458E0DE006EFF3E /* QuantityManager.swift */,
 				7706E09F24594EBE0021DA1E /* Observable.swift */,
 			);
 			path = Manager;
@@ -741,7 +741,7 @@
 				7790B469241FA3CF0046EFA5 /* LoginViewController.swift in Sources */,
 				7790B471241FA42A0046EFA5 /* RegistrationViewController.swift in Sources */,
 				77B120E9239CF561001B2301 /* AppCoordinator.swift in Sources */,
-				775370C02458E0DE006EFF3E /* QuantityHintManager.swift in Sources */,
+				775370C02458E0DE006EFF3E /* QuantityManager.swift in Sources */,
 				77F93186243B13E9007BC979 /* Extensions+UIColor.swift in Sources */,
 				77F80DB424214B44005ED8C0 /* Extensions+String.swift in Sources */,
 				8D32F37922D7394500ABC228 /* NoteCollectionCellViewModel.swift in Sources */,

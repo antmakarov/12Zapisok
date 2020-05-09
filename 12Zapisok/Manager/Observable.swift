@@ -8,10 +8,7 @@
 
 import Foundation
 
-protocol ObserverProtocol {
-    var id: Int { get set }
-    func onValueChanged(_ value: Any?)
-}
+public typealias ObserverSubscriptionToken = Int
 
 class Observable<T> {
     
@@ -29,12 +26,14 @@ class Observable<T> {
         self.value = value
     }
     
-    func addObserver(_ observer: ObserverProtocol, completion: @escaping CompletionHandler) {
-        observers[observer.id] = completion
+    func addObserver(completion: @escaping CompletionHandler) -> ObserverSubscriptionToken {
+        let key = (observers.keys.max() ?? 0) + 1
+        observers[key] = completion
+        return key
     }
     
-    func removeObserver(_ observer: ObserverProtocol) {
-        observers.removeValue(forKey: observer.id)
+    func removeObserver(_ token: ObserverSubscriptionToken) {
+        observers[token] = nil
     }
     
     func notifyObservers(_ observers: [Int: CompletionHandler]) {
