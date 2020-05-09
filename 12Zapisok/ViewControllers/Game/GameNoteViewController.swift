@@ -15,12 +15,14 @@ class GameNoteViewController: BaseViewController {
     @IBOutlet weak var numberNoteLabel: UILabel!
     @IBOutlet weak var titleNoteLabel: UILabel!
     @IBOutlet weak var describLabel: UILabel!
-    @IBOutlet weak var statusImage: UIImageView!
+    @IBOutlet weak var statusHeaderImage: UIImageView!
+    
+    @IBOutlet weak var addressStackView: UIStackView!
     @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var timeFindedLabel: UILabel!
     
+    @IBOutlet weak var hintsStackView: UIStackView!
     @IBOutlet weak var openNoteButton: UIButton!
-    @IBOutlet weak var purchaseButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,18 +39,17 @@ class GameNoteViewController: BaseViewController {
         switch viewModel.state {
         case .open:
             openNoteButton.isHidden = true
-            purchaseButton.isHidden = true
-            statusImage.image = UIImage(named: "checked")
+            statusHeaderImage.image = UIImage(named: "checked")
             placeLabel.text = "Какая-то улица из записки"
             timeFindedLabel.text = "Открыта сегодня в 10:31"
             
         case .progress:
-            statusImage.image = UIImage(named: "cancel")
+            statusHeaderImage.image = UIImage(named: "cancel")
             placeLabel.text = "Место неизвестно"
             timeFindedLabel.text = "Найди как можно скорее"
             
         case .close:
-            statusImage.image = UIImage(named: "cancel")
+            statusHeaderImage.image = UIImage(named: "cancel")
             placeLabel.text = "Место неизвестно"
             timeFindedLabel.text = "Найди как можно скорее"
         }
@@ -58,10 +59,6 @@ class GameNoteViewController: BaseViewController {
         viewModel?.openNote(completion: { result in
             print(result)
         })
-    }
-    
-    @IBAction func openPurchase(_ sender: Any) {
-        viewModel?.routeTo?(.purchase)
     }
     
     @IBAction func openMap(_ sender: Any) {

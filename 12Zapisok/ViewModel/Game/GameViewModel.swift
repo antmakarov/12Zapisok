@@ -42,6 +42,7 @@ class GameViewModel {
         self.networkManager = networkManager
         currentCityName = cityName
         loadNotes()
+        gameNotes = [Note()]
     }
         
     private func loadNotes() {
