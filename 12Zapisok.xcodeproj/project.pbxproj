@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7706E0A024594EBE0021DA1E /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7706E09F24594EBE0021DA1E /* Observable.swift */; };
 		7706E0A2246529A00021DA1E /* GameProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7706E0A1246529A00021DA1E /* GameProgressView.swift */; };
+		7711C7A1246894BA0022EC45 /* Extensions+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7711C7A0246894BA0022EC45 /* Extensions+UIImage.swift */; };
 		7741375623B9EC4100AD8A71 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7741375523B9EC4100AD8A71 /* HomeViewModel.swift */; };
 		774413C0242A9F2F001FBD83 /* Extensions+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774413BF242A9F2F001FBD83 /* Extensions+UIImageView.swift */; };
 		775370BD2458CD39006EFF3E /* CityImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775370BB2458CD39006EFF3E /* CityImageCell.swift */; };
@@ -44,7 +45,6 @@
 		77B120C5238C53BC001B2301 /* PreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120C4238C53BC001B2301 /* PreferencesManager.swift */; };
 		77B120C7238C547E001B2301 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120C6238C547E001B2301 /* Logger.swift */; };
 		77B120CC238C606B001B2301 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120CB238C606B001B2301 /* LocationManager.swift */; };
-		77B120CE238DC0D7001B2301 /* CurrentNoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77B120CD238DC0D7001B2301 /* CurrentNoteView.xib */; };
 		77B120D0238DC450001B2301 /* NotesHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77B120CF238DC450001B2301 /* NotesHeader.xib */; };
 		77B120D2238DC545001B2301 /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120D1238DC545001B2301 /* Extensions+UIView.swift */; };
 		77B120D4239C475B001B2301 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120D3239C475B001B2301 /* OnboardingViewController.swift */; };
@@ -105,6 +105,7 @@
 		526AD8A7641C95E0C7D7C7D6 /* Pods_12Zapisok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_12Zapisok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7706E09F24594EBE0021DA1E /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		7706E0A1246529A00021DA1E /* GameProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProgressView.swift; sourceTree = "<group>"; };
+		7711C7A0246894BA0022EC45 /* Extensions+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIImage.swift"; sourceTree = "<group>"; };
 		7741375523B9EC4100AD8A71 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		774413BF242A9F2F001FBD83 /* Extensions+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIImageView.swift"; sourceTree = "<group>"; };
 		775370BB2458CD39006EFF3E /* CityImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityImageCell.swift; sourceTree = "<group>"; };
@@ -140,7 +141,6 @@
 		77B120C4238C53BC001B2301 /* PreferencesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesManager.swift; sourceTree = "<group>"; };
 		77B120C6238C547E001B2301 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		77B120CB238C606B001B2301 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		77B120CD238DC0D7001B2301 /* CurrentNoteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentNoteView.xib; sourceTree = "<group>"; };
 		77B120CF238DC450001B2301 /* NotesHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesHeader.xib; sourceTree = "<group>"; };
 		77B120D1238DC545001B2301 /* Extensions+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
 		77B120D3239C475B001B2301 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +229,7 @@
 				7790B473241FA44F0046EFA5 /* Extentions+Storyboard.swift */,
 				77F80DB324214B44005ED8C0 /* Extensions+String.swift */,
 				774413BF242A9F2F001FBD83 /* Extensions+UIImageView.swift */,
+				7711C7A0246894BA0022EC45 /* Extensions+UIImage.swift */,
 				77A18F002433756F0027E456 /* Extensions+UIViewController.swift */,
 				77F931832439CF61007BC979 /* Extensions+UIButton.swift */,
 				77F93185243B13E9007BC979 /* Extensions+UIColor.swift */,
@@ -490,7 +491,6 @@
 				8D8EA3D822D75F8D00EA2F01 /* BaseCell.swift */,
 				8D32F38022D73E1400ABC228 /* NoteCollectionCell.xib */,
 				8D32F38222D73E4500ABC228 /* NoteCollectionCell.swift */,
-				77B120CD238DC0D7001B2301 /* CurrentNoteView.xib */,
 				77B120CF238DC450001B2301 /* NotesHeader.xib */,
 				77B120E6239CF2AC001B2301 /* OnboardingCell.swift */,
 				7790B48C241FAC370046EFA5 /* OnboardingCell.xib */,
@@ -606,7 +606,6 @@
 				7790B472241FA42A0046EFA5 /* RegistrationViewController.xib in Resources */,
 				7790B45D241EACA10046EFA5 /* CityHeaderReusableView.xib in Resources */,
 				7790B485241FA66B0046EFA5 /* SettingsViewController.xib in Resources */,
-				77B120CE238DC0D7001B2301 /* CurrentNoteView.xib in Resources */,
 				7790B465241ECEB10046EFA5 /* GameViewController.xib in Resources */,
 				7790B46A241FA3CF0046EFA5 /* LoginViewController.xib in Resources */,
 				77BDB39F23B2B41600820E5B /* CityCollectionCell.xib in Resources */,
@@ -684,6 +683,7 @@
 				77F80DCB24220822005ED8C0 /* PurchaseViewModel.swift in Sources */,
 				77F931842439CF61007BC979 /* Extensions+UIButton.swift in Sources */,
 				77B120D6239C4C40001B2301 /* BaseCoordinator.swift in Sources */,
+				7711C7A1246894BA0022EC45 /* Extensions+UIImage.swift in Sources */,
 				77B120E5239CDE2B001B2301 /* OnboardingStepViewModel.swift in Sources */,
 				8D32F35922D34B8E00ABC228 /* GameViewModel.swift in Sources */,
 				7753C620244CD20F0072A0B5 /* GameRuleCell.swift in Sources */,

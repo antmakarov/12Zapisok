@@ -121,7 +121,7 @@
                         <constraint firstAttribute="width" constant="34" id="k8U-3a-Gyq"/>
                     </constraints>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" image="placeholder-1"/>
+                    <state key="normal" image="placeholder"/>
                     <connections>
                         <action selector="openMap:" destination="-1" eventType="touchUpInside" id="erU-zf-KoL"/>
                     </connections>
@@ -341,7 +341,7 @@
         <image name="nn" width="900" height="552"/>
         <image name="paper" width="256" height="256"/>
         <image name="pie-chart" width="128" height="128"/>
-        <image name="placeholder-1" width="64" height="64"/>
+        <image name="placeholder" width="128" height="128"/>
         <image name="route-2" width="256" height="256"/>
         <image name="settings-2" width="128" height="128"/>
         <image name="treasure-2" width="256" height="256"/>

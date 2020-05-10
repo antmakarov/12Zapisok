@@ -29,7 +29,7 @@ class CityImageCell: UICollectionViewCell {
     }
     
     public func setupImage(imageURL: String?) {
-        imageView.setupImage(url: imageURL, placeholder: .defaultImg)
+        imageView.setupImage(url: imageURL, placeholder: .app)
     }
     
     override func prepareForReuse() {

@@ -9,20 +9,26 @@
 import UIKit
 import Kingfisher
 
-enum ImagePlaceholder: String {
-    case defaultImg = "PurpleRec"
-    case city = "cityPlaceholder"
-    case note = "notePlaceholder"
+enum ImagePlaceholder {
+    case app, city, note
+    
+    var image: UIImage {
+        switch self {
+        case .app: return .appPlaceholder
+        case .city: return .cityPlaceholder
+        case .note: return .notePlaceholder
+        }
+    }
 }
 
 extension UIImageView {
     
-    func setupImage(url: String?, placeholder: ImagePlaceholder = .defaultImg) {
+    func setupImage(url: String?, placeholder: ImagePlaceholder = .app) {
         if let stringURL = url, let url = URL(string: stringURL) {
             kf.indicatorType = .activity
             kf.setImage(
                 with: url,
-                placeholder: UIImage(named: "cityPlaceholder"),
+                placeholder: placeholder.image,
                 options: [
                     .scaleFactor(UIScreen.main.scale),
                     .transition(.fade(0.5)),

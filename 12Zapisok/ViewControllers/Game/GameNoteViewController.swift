@@ -39,17 +39,17 @@ class GameNoteViewController: BaseViewController {
         switch viewModel.state {
         case .open:
             openNoteButton.isHidden = true
-            statusHeaderImage.image = UIImage(named: "checked")
+            statusHeaderImage.image = .successState
             placeLabel.text = "Какая-то улица из записки"
             timeFindedLabel.text = "Открыта сегодня в 10:31"
             
         case .progress:
-            statusHeaderImage.image = UIImage(named: "cancel")
+            statusHeaderImage.image = .progressState
             placeLabel.text = "Место неизвестно"
             timeFindedLabel.text = "Найди как можно скорее"
             
         case .close:
-            statusHeaderImage.image = UIImage(named: "cancel")
+            statusHeaderImage.image = .closeState
             placeLabel.text = "Место неизвестно"
             timeFindedLabel.text = "Найди как можно скорее"
         }
