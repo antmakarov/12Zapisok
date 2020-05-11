@@ -29,11 +29,19 @@ class GameProgresView: UIView {
         configure()
     }
     
-    func fillStack() {
-        for _ in 0..<12 {
+    public func fillStack(opensCount: Int) {
+        for index in 0..<12 {
             let stateView = UIImageView()
             stateView.backgroundColor = .clear
-            stateView.image = UIImage(named: "greenSmallNote")
+            
+            if opensCount < index {
+                stateView.image = UIImage(named: "graySmallNote")
+            } else if opensCount == index {
+                stateView.image = UIImage(named: "orangeSmallNote")
+            } else {
+                stateView.image = UIImage(named: "greenSmallNote")
+            }
+            
             stateView.contentMode = .scaleAspectFit
             
             stateView.translatesAutoresizingMaskIntoConstraints = false
@@ -54,9 +62,6 @@ class GameProgresView: UIView {
             notesStack.bottomAnchor.constraint(equalTo: bottomAnchor),
             notesStack.leadingAnchor.constraint(equalTo: leadingAnchor)
         ])
-        
-        fillStack()
-
     }
 }
 

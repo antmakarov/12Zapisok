@@ -13,6 +13,7 @@ protocol GameViewModeling {
     func noteCell(at index: Int) -> NoteCollectionCellViewModel
     func selectNoteDetails(at index: Int)
     func numberOfNotes() -> Int
+    func numberOfOpensNotes() -> Int
     func setUpdateHandler(_ handler: (() -> Void)?)
     
     var routeTo: ((GameRouter) -> Void)? { get set }
@@ -42,7 +43,17 @@ class GameViewModel {
         self.networkManager = networkManager
         currentCityName = cityName
         loadNotes()
-        gameNotes = [Note()]
+        let fN = Note()
+        fN.name = "Дом Антохи"
+        fN.statistics = Statistics()
+        fN.statistics?.isOpen = true
+        
+        let sN = Note()
+        sN.name = "2-й Корпус"
+        sN.imageUrl = "https://im.vgoroden.ru/mbte4v5xt46k3_1jih87w_w-1200.jpeg"
+        sN.statistics = Statistics()
+        sN.statistics?.isComplete = true
+        gameNotes = [sN, fN, Note(), Note(), Note(), Note(), Note(), Note(), Note(), Note(), Note(), Note()]
     }
         
     private func loadNotes() {
@@ -85,6 +96,10 @@ extension GameViewModel: GameViewModeling {
     
     public func numberOfNotes() -> Int {
         return gameNotes.count
+    }
+    
+    public func numberOfOpensNotes() -> Int {
+        return gameNotes.flatMap { $0.statistics }.filter { $0.isComplete }.count
     }
     
     public func setUpdateHandler(_ handler: (() -> Void)?) {

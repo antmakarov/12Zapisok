@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8D32F33C22D3302D00ABC228"
-               BuildableName = "12Zapisok.app"
+               BuildableName = "12 &#x417;&#x430;&#x43f;&#x438;&#x441;&#x43e;&#x43a;.app"
                BlueprintName = "12Zapisok"
                ReferencedContainer = "container:12Zapisok.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8D32F33C22D3302D00ABC228"
-            BuildableName = "12Zapisok.app"
+            BuildableName = "12 &#x417;&#x430;&#x43f;&#x438;&#x441;&#x43e;&#x43a;.app"
             BlueprintName = "12Zapisok"
             ReferencedContainer = "container:12Zapisok.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8D32F33C22D3302D00ABC228"
-            BuildableName = "12Zapisok.app"
+            BuildableName = "12 &#x417;&#x430;&#x43f;&#x438;&#x441;&#x43e;&#x43a;.app"
             BlueprintName = "12Zapisok"
             ReferencedContainer = "container:12Zapisok.xcodeproj">
          </BuildableReference>

@@ -53,7 +53,7 @@ class GridCollectionViewFlowLayout: UICollectionViewFlowLayout {
     func itemHeight() -> CGFloat {
         switch display {
         case .grid:
-            return 172
+            return UIScreen.main.bounds.height * 0.25
             
         case .list:
             return 150

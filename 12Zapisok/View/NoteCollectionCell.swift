@@ -11,9 +11,11 @@ import UIKit
 class NoteCollectionCell: BaseCardCell {
 
     @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var backImageView: UIImageView!
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var openTimeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,22 +23,39 @@ class NoteCollectionCell: BaseCardCell {
     }
     
     func configure(viewModel: NoteCollectionCellViewModeling) {
+        
         headerLabel.text = "Записка #\(viewModel.id)"
-        //backView.addGradient(colors: [UIColor(hex: 0x7EDD51).cgColor, UIColor(hex: 0x1EDDA4).cgColor])
-
+        
         switch viewModel.state {
         case .open:
+            imageView.rounded(cornerRadius: 8)
             imageView.setupImage(url: viewModel.imgUrl, placeholder: .note)
-            statusLabel.text = "Открыта сегодня в 11:45"
+            backImageView.image = .successBig
+            statusLabel.text = viewModel.title
+            openTimeLabel.text = viewModel.openTime
+            
+            statusLabel.textColor = .white
+            openTimeLabel.textColor = .white
             
         case .progress:
-            imageView.image = UIImage(named: "inProgressPlaceholder")
-            statusLabel.text = "В процессе"
+            imageView.rounded(cornerRadius: 8)
+            imageView.image = .progressIcon
+            backImageView.image = .progressBig
+            statusLabel.text = viewModel.title
+            openTimeLabel.text = "В текущих поисках"
             
+            statusLabel.textColor = .white
+            openTimeLabel.textColor = .white
+
         case .close:
-            imageView.image = UIImage(named: "unavailablePlaceholder")
-            statusLabel.text = "Не открыта"
-            statusLabel.alpha = 0.6
+            imageView.rounded(cornerRadius: 8)
+            imageView.image = .unavailableIcon
+            backImageView.image = .unavailableBig
+            openTimeLabel.isHidden = true
+            statusLabel.text = "Недоступна"
+            statusLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+            headerLabel.textColor = UIColor(hex: 0x252626)
+            statusLabel.textColor = UIColor(hex: 0x252626)
         }
     }
 }

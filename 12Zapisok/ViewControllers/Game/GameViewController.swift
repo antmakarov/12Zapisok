@@ -13,6 +13,8 @@ class GameViewController: BaseViewController {
     @IBOutlet private weak var cityNameLabel: UILabel!
     @IBOutlet private weak var headerNotesView: UIView!
     @IBOutlet private weak var notesCollectionView: UICollectionView!
+    @IBOutlet private weak var backgroundWhiteView: UIView!
+    @IBOutlet private weak var gameProgressView: GameProgresView!
     
     var viewModel: GameViewModeling? {
         didSet {
@@ -24,13 +26,14 @@ class GameViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        headerNotesView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 16.0)
+        backgroundWhiteView.roundCorners(corners: [.topLeft, .topRight], radius: 16.0)
 
         notesCollectionView.collectionViewLayout = GridCollectionViewFlowLayout(display: .grid(columns: 2))
         notesCollectionView.register(cellType: NoteCollectionCell.self) 
-        notesCollectionView.register(reusableViewType: GameFooterReusableView.self, ofKind: UICollectionView.elementKindSectionFooter)
         
         cityNameLabel.text = viewModel?.cityName()
+        
+        gameProgressView.fillStack(opensCount: viewModel?.numberOfOpensNotes() ?? 0)
     }
     
     @IBAction func openMap() {
@@ -62,18 +65,6 @@ extension GameViewController: UICollectionViewDataSource {
         
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
-        switch kind {
-        case UICollectionView.elementKindSectionFooter:
-            
-            return collectionView.dequeueReusableView(with: GameFooterReusableView.self, for: indexPath, ofKind: kind)
-            
-        default:
-            assert(false, "Invalid element type")
-        }
-    }
 }
 
 //MARK: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
@@ -85,9 +76,5 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDelegate
             fatalError("Not installed View Model")
         }
         viewModel.selectNoteDetails(at: indexPath.row)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: notesCollectionView.frame.width, height: 75.0)
     }
 }

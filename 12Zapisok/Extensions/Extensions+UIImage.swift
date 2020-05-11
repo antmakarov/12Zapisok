@@ -22,6 +22,30 @@ extension UIImage {
         return UIImage(named: "CloseState")!
     }
     
+    class var successBig: UIImage {
+        return UIImage(named: "successBig")!
+    }
+    
+    class var progressBig: UIImage {
+        return UIImage(named: "progressBig")!
+    }
+    
+    class var unavailableBig: UIImage {
+        return UIImage(named: "unavailableBig")!
+    }
+    
+    class var stop: UIImage {
+        return UIImage(named: "stop")!
+    }
+    
+    class var unavailableIcon: UIImage {
+        return UIImage(named: "unavailableIcon")!
+    }
+    
+    class var progressIcon: UIImage {
+        return UIImage(named: "progressIcon")!
+    }
+    
     class var appPlaceholder: UIImage {
         return UIImage(named: "appPlaceholder")!
     }
@@ -31,6 +55,6 @@ extension UIImage {
     }
     
     class var notePlaceholder: UIImage {
-        return UIImage(named: "notePlaceholder")!
+        return UIImage(named: "appPlaceholder")!
     }
 }
