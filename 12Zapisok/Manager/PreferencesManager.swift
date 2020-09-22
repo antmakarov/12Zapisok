@@ -24,12 +24,12 @@ class PreferencesManager {
     }
     
     var isSuccessAuth: Bool {
-        return userToken != nil && currentCityId != 0
+        return userToken != nil || currentCityId != 0
     }
     
     var userToken: String? {
         set {
-            Logger.info(msg: "Set new user token - \(newValue!)")
+            Logger.info(msg: "Set new user token - \(newValue ?? .empty)")
             userDefaults.set(newValue, forKey: generateKey(#function))
             userDefaults.synchronize()
         }

@@ -16,11 +16,13 @@ enum NoteState {
 }
 
 protocol GameNoteViewModeling {
-    var id: Int { get }
+    var id: String { get }
     var title: String { get }
     var description: String { get }
     var imgUrl: String { get }
     var state: NoteState { get }
+    var address: String { get }
+    var openTime: String { get }
     var location: Location? { get }
     var routeTo: ((GameRouter) -> Void)? { get set }
     
@@ -90,7 +92,15 @@ extension GameNoteViewModel: GameNoteViewModeling {
         return statistics.isComplete ? .open : .progress
     }
     
-    public var id: Int {
-        return note.id
+    var address: String {
+        return "ул. Максима Горького, 43" //TODO: Add real address
+    }
+    
+    var openTime: String {
+        return "вчера в 21:42" //TODO: Add real time
+    }
+    
+    var id: String {
+        return String(note.id)
     }
 }

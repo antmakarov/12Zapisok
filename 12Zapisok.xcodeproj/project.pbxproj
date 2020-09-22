@@ -11,7 +11,11 @@
 		7706E0A2246529A00021DA1E /* GameProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7706E0A1246529A00021DA1E /* GameProgressView.swift */; };
 		7711C7A1246894BA0022EC45 /* Extensions+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7711C7A0246894BA0022EC45 /* Extensions+UIImage.swift */; };
 		7741375623B9EC4100AD8A71 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7741375523B9EC4100AD8A71 /* HomeViewModel.swift */; };
+		77419FA82469EDF100DA205E /* DistancePointView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77419FA72469EDF100DA205E /* DistancePointView.xib */; };
+		77419FAA2469EDFB00DA205E /* DistancePointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77419FA92469EDFB00DA205E /* DistancePointView.swift */; };
 		774413C0242A9F2F001FBD83 /* Extensions+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774413BF242A9F2F001FBD83 /* Extensions+UIImageView.swift */; };
+		774A574E24B8AEA100A49F5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A574D24B8AEA100A49F5A /* SceneDelegate.swift */; };
+		774A575024B8AF0B00A49F5A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A574F24B8AF0B00A49F5A /* ContentView.swift */; };
 		775370BD2458CD39006EFF3E /* CityImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775370BB2458CD39006EFF3E /* CityImageCell.swift */; };
 		775370BE2458CD39006EFF3E /* CityImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 775370BC2458CD39006EFF3E /* CityImageCell.xib */; };
 		775370C02458E0DE006EFF3E /* QuantityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775370BF2458E0DE006EFF3E /* QuantityManager.swift */; };
@@ -105,7 +109,11 @@
 		7706E0A1246529A00021DA1E /* GameProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProgressView.swift; sourceTree = "<group>"; };
 		7711C7A0246894BA0022EC45 /* Extensions+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIImage.swift"; sourceTree = "<group>"; };
 		7741375523B9EC4100AD8A71 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		77419FA72469EDF100DA205E /* DistancePointView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DistancePointView.xib; sourceTree = "<group>"; };
+		77419FA92469EDFB00DA205E /* DistancePointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistancePointView.swift; sourceTree = "<group>"; };
 		774413BF242A9F2F001FBD83 /* Extensions+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIImageView.swift"; sourceTree = "<group>"; };
+		774A574D24B8AEA100A49F5A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		774A574F24B8AF0B00A49F5A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		775370BB2458CD39006EFF3E /* CityImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityImageCell.swift; sourceTree = "<group>"; };
 		775370BC2458CD39006EFF3E /* CityImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityImageCell.xib; sourceTree = "<group>"; };
 		775370BF2458E0DE006EFF3E /* QuantityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityManager.swift; sourceTree = "<group>"; };
@@ -415,6 +423,8 @@
 			isa = PBXGroup;
 			children = (
 				8D32F34022D3302D00ABC228 /* AppDelegate.swift */,
+				774A574D24B8AEA100A49F5A /* SceneDelegate.swift */,
+				774A574F24B8AF0B00A49F5A /* ContentView.swift */,
 				8D32F35C22D3576300ABC228 /* Model */,
 				8D32F35E22D3577400ABC228 /* ViewModel */,
 				8D32F38422D73E4B00ABC228 /* View */,
@@ -499,6 +509,8 @@
 				775370BB2458CD39006EFF3E /* CityImageCell.swift */,
 				775370BC2458CD39006EFF3E /* CityImageCell.xib */,
 				7706E0A1246529A00021DA1E /* GameProgressView.swift */,
+				77419FA72469EDF100DA205E /* DistancePointView.xib */,
+				77419FA92469EDFB00DA205E /* DistancePointView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -607,6 +619,7 @@
 				7790B48D241FAC370046EFA5 /* OnboardingCell.xib in Resources */,
 				7790B45B241EA0B60046EFA5 /* CityListViewController.xib in Resources */,
 				775370BE2458CD39006EFF3E /* CityImageCell.xib in Resources */,
+				77419FA82469EDF100DA205E /* DistancePointView.xib in Resources */,
 				7790B479241FA5E10046EFA5 /* GameRulesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -680,6 +693,7 @@
 				77B120E5239CDE2B001B2301 /* OnboardingStepViewModel.swift in Sources */,
 				8D32F35922D34B8E00ABC228 /* GameViewModel.swift in Sources */,
 				7753C620244CD20F0072A0B5 /* GameRuleCell.swift in Sources */,
+				774A574E24B8AEA100A49F5A /* SceneDelegate.swift in Sources */,
 				8D32F35722D33CE000ABC228 /* Note.swift in Sources */,
 				7706E0A2246529A00021DA1E /* GameProgressView.swift in Sources */,
 				77F80DD824232746005ED8C0 /* CityInfoViewModel.swift in Sources */,
@@ -689,6 +703,7 @@
 				8D32F36922D49DD600ABC228 /* CityListViewController.swift in Sources */,
 				774413C0242A9F2F001FBD83 /* Extensions+UIImageView.swift in Sources */,
 				7790B478241FA5E10046EFA5 /* GameRulesViewController.swift in Sources */,
+				774A575024B8AF0B00A49F5A /* ContentView.swift in Sources */,
 				77F80DD324220A5A005ED8C0 /* MapViewModel.swift in Sources */,
 				8D32F34322D3302D00ABC228 /* HomeViewController.swift in Sources */,
 				77F80DC924220319005ED8C0 /* GameRulesViewModel.swift in Sources */,
@@ -732,6 +747,7 @@
 				77A18F012433756F0027E456 /* Extensions+UIViewController.swift in Sources */,
 				7790B469241FA3CF0046EFA5 /* LoginViewController.swift in Sources */,
 				7790B471241FA42A0046EFA5 /* RegistrationViewController.swift in Sources */,
+				77419FAA2469EDFB00DA205E /* DistancePointView.swift in Sources */,
 				77B120E9239CF561001B2301 /* AppCoordinator.swift in Sources */,
 				775370C02458E0DE006EFF3E /* QuantityManager.swift in Sources */,
 				77F93186243B13E9007BC979 /* Extensions+UIColor.swift in Sources */,

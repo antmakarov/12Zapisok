@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftEntryKit
 
 class GameViewController: BaseViewController {
     
@@ -26,21 +27,20 @@ class GameViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        backgroundWhiteView.roundCorners(corners: [.topLeft, .topRight], radius: 16.0)
 
         notesCollectionView.collectionViewLayout = GridCollectionViewFlowLayout(display: .grid(columns: 2))
         notesCollectionView.register(cellType: NoteCollectionCell.self) 
         
         cityNameLabel.text = viewModel?.cityName()
-        
         gameProgressView.fillStack(opensCount: viewModel?.numberOfOpensNotes() ?? 0)
+        backgroundWhiteView.roundCorners(corners: [.topLeft, .topRight], radius: 16.0)
     }
     
-    @IBAction func openMap() {
+    @IBAction private func openMap() {
         viewModel?.routeTo?(.map)
     }
     
-    @IBAction func backButtonPressed() {
+    @IBAction private func backButtonPressed() {
         viewModel?.routeTo?(.back)
     }
 }
@@ -75,6 +75,24 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDelegate
         guard let viewModel = viewModel else {
             fatalError("Not installed View Model")
         }
-        viewModel.selectNoteDetails(at: indexPath.row)
+        SwiftEntryKit.display(entry: DistancePointView(), using: attribute())
+
+        //viewModel.selectNoteDetails(at: indexPath.row)
+    }
+    
+    func attribute() -> EKAttributes {
+        var attributes = EKAttributes()
+        attributes.statusBar = .light
+        attributes.position = .center
+        attributes.windowLevel = .normal
+        attributes.displayDuration = .infinity
+        attributes.entryInteraction = .absorbTouches
+        attributes.screenInteraction = .absorbTouches
+        attributes.entranceAnimation = .init(translate: .init(duration: 0.7, spring: .init(damping: 0.7, initialVelocity: 0)), scale: .init(from: 0.7, to: 1, duration: 0.4, spring: .init(damping: 1, initialVelocity: 0)))
+        attributes.scroll = .disabled
+        attributes.hapticFeedbackType = .success
+        attributes.screenBackground = .color(color: .init(UIColor.blue))
+        
+        return attributes
     }
 }

@@ -7,22 +7,31 @@
 //
 
 import UIKit
+import SwiftEntryKit
 
 class GameNoteViewController: BaseViewController {
     
+    private enum Constants {
+        static let noteTitle = "Записка #"
+        static let openText = "Открыта "
+        static let unknownPlace = "Место неизвестно"
+        static let asSoonTime = "Найди как можно скорее"
+    }
+    
     var viewModel: GameNoteViewModeling?
     
-    @IBOutlet weak var numberNoteLabel: UILabel!
-    @IBOutlet weak var titleNoteLabel: UILabel!
-    @IBOutlet weak var describLabel: UILabel!
-    @IBOutlet weak var statusHeaderImage: UIImageView!
+    @IBOutlet private weak var numberNoteLabel: UILabel!
+    @IBOutlet private weak var titleNoteLabel: UILabel!
+    @IBOutlet private weak var describLabel: UILabel!
+    @IBOutlet private weak var statusHeaderImage: UIImageView!
     
-    @IBOutlet weak var addressStackView: UIStackView!
-    @IBOutlet weak var placeLabel: UILabel!
-    @IBOutlet weak var timeFindedLabel: UILabel!
+    @IBOutlet private weak var noteImage: UIImageView!
+    @IBOutlet private weak var addressStackView: UIStackView!
+    @IBOutlet private weak var placeLabel: UILabel!
+    @IBOutlet private weak var timeFindedLabel: UILabel!
     
-    @IBOutlet weak var hintsStackView: UIStackView!
-    @IBOutlet weak var openNoteButton: UIButton!
+    @IBOutlet private weak var hintsStackView: UIStackView!
+    @IBOutlet private weak var openNoteButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,40 +41,57 @@ class GameNoteViewController: BaseViewController {
     private func setupUI() {
         guard let viewModel = viewModel else { return }
         
-        numberNoteLabel.text = "Записка #\(viewModel.id)"
+        numberNoteLabel.text = Constants.noteTitle + viewModel.id
         titleNoteLabel.text = viewModel.title
         describLabel.text = viewModel.description
         
         switch viewModel.state {
         case .open:
+            hintsStackView.isHidden = true
             openNoteButton.isHidden = true
+            addressStackView.isHidden = false
+            
+            noteImage.setupImage(url: viewModel.imgUrl, placeholder: .app)
             statusHeaderImage.image = .successState
-            placeLabel.text = "Какая-то улица из записки"
-            timeFindedLabel.text = "Открыта сегодня в 10:31"
+            
+            placeLabel.text = viewModel.address
+            timeFindedLabel.text = Constants.openText + viewModel.openTime
             
         case .progress:
+            noteImage.image = .progressIcon
             statusHeaderImage.image = .progressState
-            placeLabel.text = "Место неизвестно"
-            timeFindedLabel.text = "Найди как можно скорее"
+            
+            placeLabel.text = Constants.unknownPlace
+            timeFindedLabel.text = Constants.asSoonTime
             
         case .close:
+            hintsStackView.isHidden = true
+            openNoteButton.isHidden = true
+            addressStackView.isHidden = false
+            
+            noteImage.image = .unavailableIcon
             statusHeaderImage.image = .closeState
-            placeLabel.text = "Место неизвестно"
-            timeFindedLabel.text = "Найди как можно скорее"
+            
+            placeLabel.text = Constants.unknownPlace
+            timeFindedLabel.text = Constants.asSoonTime
         }
     }
     
-    @IBAction func openNote(_ sender: Any) {
+    @IBAction private func openNote(_ sender: Any) {
         viewModel?.openNote(completion: { result in
-            print(result)
+            Logger.info(msg: result)
         })
     }
     
-    @IBAction func openMap(_ sender: Any) {
+    @IBAction private func openMap(_ sender: Any) {
         viewModel?.routeTo?(.map)
     }
     
-    @IBAction func closeView(_ sender: Any) {
+    @IBAction func showDistance(_ sender: Any) {
+        SwiftEntryKit.display(entry: DistancePointView(), using: EKAttributes())
+    }
+    
+    @IBAction private func closeView(_ sender: Any) {
         viewModel?.routeTo?(.back)
     }
 }
