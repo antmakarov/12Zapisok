@@ -14,8 +14,6 @@
 		77419FA82469EDF100DA205E /* DistancePointView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77419FA72469EDF100DA205E /* DistancePointView.xib */; };
 		77419FAA2469EDFB00DA205E /* DistancePointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77419FA92469EDFB00DA205E /* DistancePointView.swift */; };
 		774413C0242A9F2F001FBD83 /* Extensions+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774413BF242A9F2F001FBD83 /* Extensions+UIImageView.swift */; };
-		774A574E24B8AEA100A49F5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A574D24B8AEA100A49F5A /* SceneDelegate.swift */; };
-		774A575024B8AF0B00A49F5A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A574F24B8AF0B00A49F5A /* ContentView.swift */; };
 		775370BD2458CD39006EFF3E /* CityImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775370BB2458CD39006EFF3E /* CityImageCell.swift */; };
 		775370BE2458CD39006EFF3E /* CityImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 775370BC2458CD39006EFF3E /* CityImageCell.xib */; };
 		775370C02458E0DE006EFF3E /* QuantityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775370BF2458E0DE006EFF3E /* QuantityManager.swift */; };
@@ -44,6 +42,106 @@
 		7790B48B241FA6FF0046EFA5 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B48A241FA6FF0046EFA5 /* MapViewController.xib */; };
 		7790B48D241FAC370046EFA5 /* OnboardingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B48C241FAC370046EFA5 /* OnboardingCell.xib */; };
 		77A18F012433756F0027E456 /* Extensions+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A18F002433756F0027E456 /* Extensions+UIViewController.swift */; };
+		77B027D9251B041400BC71F8 /* PurchaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DCA24220822005ED8C0 /* PurchaseViewModel.swift */; };
+		77B027DA251B041400BC71F8 /* Extensions+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F931832439CF61007BC979 /* Extensions+UIButton.swift */; };
+		77B027DB251B041400BC71F8 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120D5239C4C40001B2301 /* BaseCoordinator.swift */; };
+		77B027DC251B041400BC71F8 /* Extensions+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7711C7A0246894BA0022EC45 /* Extensions+UIImage.swift */; };
+		77B027DD251B041400BC71F8 /* OnboardingStepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120E4239CDE2B001B2301 /* OnboardingStepViewModel.swift */; };
+		77B027DE251B041400BC71F8 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F35822D34B8E00ABC228 /* GameViewModel.swift */; };
+		77B027DF251B041400BC71F8 /* GameRuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7753C61E244CD20F0072A0B5 /* GameRuleCell.swift */; };
+		77B027E0251B041400BC71F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A574D24B8AEA100A49F5A /* SceneDelegate.swift */; };
+		77B027E1251B041400BC71F8 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F35622D33CE000ABC228 /* Note.swift */; };
+		77B027E2251B041400BC71F8 /* GameProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7706E0A1246529A00021DA1E /* GameProgressView.swift */; };
+		77B027E3251B041400BC71F8 /* CityInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DD724232746005ED8C0 /* CityInfoViewModel.swift */; };
+		77B027E4251B041400BC71F8 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120E2239CDCE1001B2301 /* OnboardingViewModel.swift */; };
+		77B027E5251B041400BC71F8 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8EA3D822D75F8D00EA2F01 /* BaseCell.swift */; };
+		77B027E6251B041400BC71F8 /* PreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120C4238C53BC001B2301 /* PreferencesManager.swift */; };
+		77B027E7251B041400BC71F8 /* CityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F36822D49DD500ABC228 /* CityListViewController.swift */; };
+		77B027E8251B041400BC71F8 /* Extensions+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774413BF242A9F2F001FBD83 /* Extensions+UIImageView.swift */; };
+		77B027E9251B041400BC71F8 /* GameRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790B476241FA5E10046EFA5 /* GameRulesViewController.swift */; };
+		77B027EA251B041400BC71F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A574F24B8AF0B00A49F5A /* ContentView.swift */; };
+		77B027EB251B041400BC71F8 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DD224220A5A005ED8C0 /* MapViewModel.swift */; };
+		77B027EC251B041400BC71F8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F34222D3302D00ABC228 /* HomeViewController.swift */; };
+		77B027ED251B041400BC71F8 /* GameRulesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DC824220318005ED8C0 /* GameRulesViewModel.swift */; };
+		77B027EE251B041400BC71F8 /* CityImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775370BB2458CD39006EFF3E /* CityImageCell.swift */; };
+		77B027EF251B041400BC71F8 /* Extensions+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790B460241EBBE60046EFA5 /* Extensions+UICollectionView.swift */; };
+		77B027F0251B041400BC71F8 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120C6238C547E001B2301 /* Logger.swift */; };
+		77B027F1251B041400BC71F8 /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790B47B241FA6050046EFA5 /* PurchaseViewController.swift */; };
+		77B027F2251B041400BC71F8 /* Extensions+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790B45E241EBBC90046EFA5 /* Extensions+UITableView.swift */; };
+		77B027F3251B041400BC71F8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790B452241CF5CA0046EFA5 /* BaseViewController.swift */; };
+		77B027F4251B041400BC71F8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7741375523B9EC4100AD8A71 /* HomeViewModel.swift */; };
+		77B027F5251B041400BC71F8 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F36A22D71E5A00ABC228 /* GameViewController.swift */; };
+		77B027F6251B041400BC71F8 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7706E09F24594EBE0021DA1E /* Observable.swift */; };
+		77B027F7251B041400BC71F8 /* CityHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77688CD723BA20AE00697408 /* CityHeaderReusableView.swift */; };
+		77B027F8251B041400BC71F8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790B482241FA66B0046EFA5 /* SettingsViewController.swift */; };
+		77B027F9251B041400BC71F8 /* CityInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DC42421FF97005ED8C0 /* CityInfoViewController.swift */; };
+		77B027FA251B041400BC71F8 /* CityCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BDB39C23B2B41500820E5B /* CityCollectionCell.swift */; };
+		77B027FB251B041400BC71F8 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DC02421FF85005ED8C0 /* StatisticsViewController.swift */; };
+		77B027FC251B041400BC71F8 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120E6239CF2AC001B2301 /* OnboardingCell.swift */; };
+		77B027FD251B041400BC71F8 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DD024220890005ED8C0 /* StatisticsViewModel.swift */; };
+		77B027FE251B041400BC71F8 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120D3239C475B001B2301 /* OnboardingViewController.swift */; };
+		77B027FF251B041400BC71F8 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DCC2422084D005ED8C0 /* SettingsViewModel.swift */; };
+		77B02800251B041400BC71F8 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DDB242328DE005ED8C0 /* MapCoordinator.swift */; };
+		77B02801251B041400BC71F8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F35F22D3588500ABC228 /* NetworkManager.swift */; };
+		77B02802251B041400BC71F8 /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120D1238DC545001B2301 /* Extensions+UIView.swift */; };
+		77B02803251B041400BC71F8 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F37E22D73C5E00ABC228 /* NoteViewModel.swift */; };
+		77B02804251B041400BC71F8 /* CustomCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F37422D7241E00ABC228 /* CustomCollectionViewFlowLayout.swift */; };
+		77B02805251B041400BC71F8 /* GameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DB524215596005ED8C0 /* GameCoordinator.swift */; };
+		77B02806251B041400BC71F8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F36C22D71E6300ABC228 /* MapViewController.swift */; };
+		77B02807251B041400BC71F8 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DBC2421FF70005ED8C0 /* LeaderboardViewController.swift */; };
+		77B02808251B041400BC71F8 /* Extentions+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790B473241FA44F0046EFA5 /* Extentions+Storyboard.swift */; };
+		77B0280A251B041400BC71F8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DB724216518005ED8C0 /* Coordinator.swift */; };
+		77B0280B251B041400BC71F8 /* GameNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8EA3DA22D771DC00EA2F01 /* GameNoteViewController.swift */; };
+		77B0280C251B041400BC71F8 /* NoteCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F38222D73E4500ABC228 /* NoteCollectionCell.swift */; };
+		77B0280D251B041400BC71F8 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120D9239C4CD9001B2301 /* HomeCoordinator.swift */; };
+		77B0280E251B041400BC71F8 /* CityListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120DE239C5F8F001B2301 /* CityListViewModel.swift */; };
+		77B0280F251B041400BC71F8 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F35222D3398700ABC228 /* City.swift */; };
+		77B02810251B041400BC71F8 /* LeaderboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DCE24220873005ED8C0 /* LeaderboardViewModel.swift */; };
+		77B02811251B041400BC71F8 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F36122D3589000ABC228 /* StorageManager.swift */; };
+		77B02812251B041400BC71F8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120CB238C606B001B2301 /* LocationManager.swift */; };
+		77B02813251B041400BC71F8 /* Extensions+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A18F002433756F0027E456 /* Extensions+UIViewController.swift */; };
+		77B02814251B041400BC71F8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790B467241FA3CF0046EFA5 /* LoginViewController.swift */; };
+		77B02815251B041400BC71F8 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790B46F241FA42A0046EFA5 /* RegistrationViewController.swift */; };
+		77B02816251B041400BC71F8 /* DistancePointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77419FA92469EDFB00DA205E /* DistancePointView.swift */; };
+		77B02817251B041400BC71F8 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120E8239CF561001B2301 /* AppCoordinator.swift */; };
+		77B02818251B041400BC71F8 /* QuantityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775370BF2458E0DE006EFF3E /* QuantityManager.swift */; };
+		77B02819251B041400BC71F8 /* Extensions+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F93185243B13E9007BC979 /* Extensions+UIColor.swift */; };
+		77B0281A251B041400BC71F8 /* Extensions+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DB324214B44005ED8C0 /* Extensions+String.swift */; };
+		77B0281B251B041400BC71F8 /* NoteCollectionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F37822D7394500ABC228 /* NoteCollectionCellViewModel.swift */; };
+		77B0281C251B041400BC71F8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F36622D366B000ABC228 /* API.swift */; };
+		77B0281D251B041400BC71F8 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120E0239CDA3B001B2301 /* OnboardingCoordinator.swift */; };
+		77B0281F251B041400BC71F8 /* Pods_12Zapisok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526AD8A7641C95E0C7D7C7D6 /* Pods_12Zapisok.framework */; };
+		77B02821251B041400BC71F8 /* CityInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F80DC52421FF97005ED8C0 /* CityInfoViewController.xib */; };
+		77B02822251B041400BC71F8 /* LeaderboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F80DBD2421FF70005ED8C0 /* LeaderboardViewController.xib */; };
+		77B02823251B041400BC71F8 /* NotesHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77B120CF238DC450001B2301 /* NotesHeader.xib */; };
+		77B02824251B041400BC71F8 /* GameRuleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7753C61F244CD20F0072A0B5 /* GameRuleCell.xib */; };
+		77B02825251B041400BC71F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D32F34922D3302F00ABC228 /* LaunchScreen.storyboard */; };
+		77B02826251B041400BC71F8 /* StatisticsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F80DC12421FF85005ED8C0 /* StatisticsViewController.xib */; };
+		77B02827251B041400BC71F8 /* NoteCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D32F38022D73E1400ABC228 /* NoteCollectionCell.xib */; };
+		77B02828251B041400BC71F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D32F34722D3302F00ABC228 /* Assets.xcassets */; };
+		77B02829251B041400BC71F8 /* GameNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77BDB3A123B3E99300820E5B /* GameNoteViewController.xib */; };
+		77B0282A251B041400BC71F8 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B487241FA6990046EFA5 /* OnboardingViewController.xib */; };
+		77B0282B251B041400BC71F8 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B48A241FA6FF0046EFA5 /* MapViewController.xib */; };
+		77B0282C251B041400BC71F8 /* PurchaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B47C241FA6050046EFA5 /* PurchaseViewController.xib */; };
+		77B0282D251B041400BC71F8 /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B470241FA42A0046EFA5 /* RegistrationViewController.xib */; };
+		77B0282E251B041400BC71F8 /* CityHeaderReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B45C241EACA10046EFA5 /* CityHeaderReusableView.xib */; };
+		77B0282F251B041400BC71F8 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B483241FA66B0046EFA5 /* SettingsViewController.xib */; };
+		77B02830251B041400BC71F8 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B464241ECEB10046EFA5 /* GameViewController.xib */; };
+		77B02831251B041400BC71F8 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B468241FA3CF0046EFA5 /* LoginViewController.xib */; };
+		77B02832251B041400BC71F8 /* CityCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77BDB39D23B2B41500820E5B /* CityCollectionCell.xib */; };
+		77B02833251B041400BC71F8 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B457241E9A500046EFA5 /* HomeViewController.xib */; };
+		77B02834251B041400BC71F8 /* OnboardingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B48C241FAC370046EFA5 /* OnboardingCell.xib */; };
+		77B02835251B041400BC71F8 /* CityListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B45A241EA0B60046EFA5 /* CityListViewController.xib */; };
+		77B02836251B041400BC71F8 /* CityImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 775370BC2458CD39006EFF3E /* CityImageCell.xib */; };
+		77B02837251B041400BC71F8 /* DistancePointView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77419FA72469EDF100DA205E /* DistancePointView.xib */; };
+		77B02838251B041400BC71F8 /* GameRulesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B477241FA5E10046EFA5 /* GameRulesViewController.xib */; };
+		77B02844251B0E2100BC71F8 /* SwiftUIAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B02842251B0DDD00BC71F8 /* SwiftUIAppDelegate.swift */; };
+		77B02846251B0FC800BC71F8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B02845251B0FC800BC71F8 /* main.swift */; };
+		77B02847251B102900BC71F8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B02845251B0FC800BC71F8 /* main.swift */; };
+		77B02848251B159200BC71F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F34022D3302D00ABC228 /* AppDelegate.swift */; };
+		77B0284A251B16FB00BC71F8 /* AppTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B02849251B16FB00BC71F8 /* AppTarget.swift */; };
+		77B0284B251B172A00BC71F8 /* AppTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B02849251B16FB00BC71F8 /* AppTarget.swift */; };
+		77B0284C251B173C00BC71F8 /* SwiftUIAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B02842251B0DDD00BC71F8 /* SwiftUIAppDelegate.swift */; };
 		77B120C5238C53BC001B2301 /* PreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120C4238C53BC001B2301 /* PreferencesManager.swift */; };
 		77B120C7238C547E001B2301 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120C6238C547E001B2301 /* Logger.swift */; };
 		77B120CC238C606B001B2301 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120CB238C606B001B2301 /* LocationManager.swift */; };
@@ -142,6 +240,11 @@
 		7790B48A241FA6FF0046EFA5 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		7790B48C241FAC370046EFA5 /* OnboardingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCell.xib; sourceTree = "<group>"; };
 		77A18F002433756F0027E456 /* Extensions+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewController.swift"; sourceTree = "<group>"; };
+		77B0283E251B041400BC71F8 /* 12 Записок SUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "12 Записок SUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77B0283F251B041400BC71F8 /* SwiftUI Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftUI Info.plist"; path = "/Users/antmakar/Projects/Swift : iOs/12Zapisok/SwiftUI Info.plist"; sourceTree = "<absolute>"; };
+		77B02842251B0DDD00BC71F8 /* SwiftUIAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIAppDelegate.swift; sourceTree = "<group>"; };
+		77B02845251B0FC800BC71F8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		77B02849251B16FB00BC71F8 /* AppTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTarget.swift; sourceTree = "<group>"; };
 		77B120C4238C53BC001B2301 /* PreferencesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesManager.swift; sourceTree = "<group>"; };
 		77B120C6238C547E001B2301 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		77B120CB238C606B001B2301 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -205,6 +308,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		77B0281E251B041400BC71F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77B0281F251B041400BC71F8 /* Pods_12Zapisok.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D32F33A22D3302D00ABC228 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -237,6 +348,7 @@
 				77A18F002433756F0027E456 /* Extensions+UIViewController.swift */,
 				77F931832439CF61007BC979 /* Extensions+UIButton.swift */,
 				77F93185243B13E9007BC979 /* Extensions+UIColor.swift */,
+				77B02849251B16FB00BC71F8 /* AppTarget.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -331,6 +443,17 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
+		77B02841251B0DB900BC71F8 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				774A574F24B8AF0B00A49F5A /* ContentView.swift */,
+				77B02842251B0DDD00BC71F8 /* SwiftUIAppDelegate.swift */,
+				77B0283F251B041400BC71F8 /* SwiftUI Info.plist */,
+				774A574D24B8AEA100A49F5A /* SceneDelegate.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
 		77B120CA238C5F5B001B2301 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -415,6 +538,7 @@
 			isa = PBXGroup;
 			children = (
 				8D32F33D22D3302D00ABC228 /* 12 Записок.app */,
+				77B0283E251B041400BC71F8 /* 12 Записок SUI.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -422,9 +546,9 @@
 		8D32F33F22D3302D00ABC228 /* 12Zapisok */ = {
 			isa = PBXGroup;
 			children = (
+				77B02841251B0DB900BC71F8 /* SwiftUI */,
 				8D32F34022D3302D00ABC228 /* AppDelegate.swift */,
-				774A574D24B8AEA100A49F5A /* SceneDelegate.swift */,
-				774A574F24B8AF0B00A49F5A /* ContentView.swift */,
+				77B02845251B0FC800BC71F8 /* main.swift */,
 				8D32F35C22D3576300ABC228 /* Model */,
 				8D32F35E22D3577400ABC228 /* ViewModel */,
 				8D32F38422D73E4B00ABC228 /* View */,
@@ -539,6 +663,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		77B027D6251B041400BC71F8 /* 12Zapisok SwiftUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77B0283B251B041400BC71F8 /* Build configuration list for PBXNativeTarget "12Zapisok SwiftUI" */;
+			buildPhases = (
+				77B027D7251B041400BC71F8 /* [CP] Check Pods Manifest.lock */,
+				77B027D8251B041400BC71F8 /* Sources */,
+				77B0281E251B041400BC71F8 /* Frameworks */,
+				77B02820251B041400BC71F8 /* Resources */,
+				77B02839251B041400BC71F8 /* [CP] Embed Pods Frameworks */,
+				77B0283A251B041400BC71F8 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "12Zapisok SwiftUI";
+			productName = 12P;
+			productReference = 77B0283E251B041400BC71F8 /* 12 Записок SUI.app */;
+			productType = "com.apple.product-type.application";
+		};
 		8D32F33C22D3302D00ABC228 /* 12Zapisok */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D32F34F22D3302F00ABC228 /* Build configuration list for PBXNativeTarget "12Zapisok" */;
@@ -588,11 +732,43 @@
 			projectRoot = "";
 			targets = (
 				8D32F33C22D3302D00ABC228 /* 12Zapisok */,
+				77B027D6251B041400BC71F8 /* 12Zapisok SwiftUI */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		77B02820251B041400BC71F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77B02821251B041400BC71F8 /* CityInfoViewController.xib in Resources */,
+				77B02822251B041400BC71F8 /* LeaderboardViewController.xib in Resources */,
+				77B02823251B041400BC71F8 /* NotesHeader.xib in Resources */,
+				77B02824251B041400BC71F8 /* GameRuleCell.xib in Resources */,
+				77B02825251B041400BC71F8 /* LaunchScreen.storyboard in Resources */,
+				77B02826251B041400BC71F8 /* StatisticsViewController.xib in Resources */,
+				77B02827251B041400BC71F8 /* NoteCollectionCell.xib in Resources */,
+				77B02828251B041400BC71F8 /* Assets.xcassets in Resources */,
+				77B02829251B041400BC71F8 /* GameNoteViewController.xib in Resources */,
+				77B0282A251B041400BC71F8 /* OnboardingViewController.xib in Resources */,
+				77B0282B251B041400BC71F8 /* MapViewController.xib in Resources */,
+				77B0282C251B041400BC71F8 /* PurchaseViewController.xib in Resources */,
+				77B0282D251B041400BC71F8 /* RegistrationViewController.xib in Resources */,
+				77B0282E251B041400BC71F8 /* CityHeaderReusableView.xib in Resources */,
+				77B0282F251B041400BC71F8 /* SettingsViewController.xib in Resources */,
+				77B02830251B041400BC71F8 /* GameViewController.xib in Resources */,
+				77B02831251B041400BC71F8 /* LoginViewController.xib in Resources */,
+				77B02832251B041400BC71F8 /* CityCollectionCell.xib in Resources */,
+				77B02833251B041400BC71F8 /* HomeViewController.xib in Resources */,
+				77B02834251B041400BC71F8 /* OnboardingCell.xib in Resources */,
+				77B02835251B041400BC71F8 /* CityListViewController.xib in Resources */,
+				77B02836251B041400BC71F8 /* CityImageCell.xib in Resources */,
+				77B02837251B041400BC71F8 /* DistancePointView.xib in Resources */,
+				77B02838251B041400BC71F8 /* GameRulesViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D32F33B22D3302D00ABC228 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -628,6 +804,58 @@
 
 /* Begin PBXShellScriptBuildPhase section */
 		6F774BA30061C1D80BC2EA02 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-12Zapisok/Pods-12Zapisok-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-12Zapisok/Pods-12Zapisok-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-12Zapisok/Pods-12Zapisok-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77B027D7251B041400BC71F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-12Zapisok-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77B02839251B041400BC71F8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-12Zapisok/Pods-12Zapisok-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-12Zapisok/Pods-12Zapisok-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-12Zapisok/Pods-12Zapisok-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77B0283A251B041400BC71F8 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -682,18 +910,97 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		77B027D8251B041400BC71F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77B027D9251B041400BC71F8 /* PurchaseViewModel.swift in Sources */,
+				77B027DA251B041400BC71F8 /* Extensions+UIButton.swift in Sources */,
+				77B027DB251B041400BC71F8 /* BaseCoordinator.swift in Sources */,
+				77B027DC251B041400BC71F8 /* Extensions+UIImage.swift in Sources */,
+				77B027DD251B041400BC71F8 /* OnboardingStepViewModel.swift in Sources */,
+				77B027DE251B041400BC71F8 /* GameViewModel.swift in Sources */,
+				77B027DF251B041400BC71F8 /* GameRuleCell.swift in Sources */,
+				77B027E0251B041400BC71F8 /* SceneDelegate.swift in Sources */,
+				77B027E1251B041400BC71F8 /* Note.swift in Sources */,
+				77B027E2251B041400BC71F8 /* GameProgressView.swift in Sources */,
+				77B027E3251B041400BC71F8 /* CityInfoViewModel.swift in Sources */,
+				77B027E4251B041400BC71F8 /* OnboardingViewModel.swift in Sources */,
+				77B027E5251B041400BC71F8 /* BaseCell.swift in Sources */,
+				77B027E6251B041400BC71F8 /* PreferencesManager.swift in Sources */,
+				77B027E7251B041400BC71F8 /* CityListViewController.swift in Sources */,
+				77B027E8251B041400BC71F8 /* Extensions+UIImageView.swift in Sources */,
+				77B027E9251B041400BC71F8 /* GameRulesViewController.swift in Sources */,
+				77B027EA251B041400BC71F8 /* ContentView.swift in Sources */,
+				77B0284B251B172A00BC71F8 /* AppTarget.swift in Sources */,
+				77B027EB251B041400BC71F8 /* MapViewModel.swift in Sources */,
+				77B027EC251B041400BC71F8 /* HomeViewController.swift in Sources */,
+				77B027ED251B041400BC71F8 /* GameRulesViewModel.swift in Sources */,
+				77B027EE251B041400BC71F8 /* CityImageCell.swift in Sources */,
+				77B027EF251B041400BC71F8 /* Extensions+UICollectionView.swift in Sources */,
+				77B027F0251B041400BC71F8 /* Logger.swift in Sources */,
+				77B027F1251B041400BC71F8 /* PurchaseViewController.swift in Sources */,
+				77B027F2251B041400BC71F8 /* Extensions+UITableView.swift in Sources */,
+				77B027F3251B041400BC71F8 /* BaseViewController.swift in Sources */,
+				77B027F4251B041400BC71F8 /* HomeViewModel.swift in Sources */,
+				77B027F5251B041400BC71F8 /* GameViewController.swift in Sources */,
+				77B027F6251B041400BC71F8 /* Observable.swift in Sources */,
+				77B027F7251B041400BC71F8 /* CityHeaderReusableView.swift in Sources */,
+				77B027F8251B041400BC71F8 /* SettingsViewController.swift in Sources */,
+				77B027F9251B041400BC71F8 /* CityInfoViewController.swift in Sources */,
+				77B027FA251B041400BC71F8 /* CityCollectionCell.swift in Sources */,
+				77B027FB251B041400BC71F8 /* StatisticsViewController.swift in Sources */,
+				77B027FC251B041400BC71F8 /* OnboardingCell.swift in Sources */,
+				77B02847251B102900BC71F8 /* main.swift in Sources */,
+				77B027FD251B041400BC71F8 /* StatisticsViewModel.swift in Sources */,
+				77B027FE251B041400BC71F8 /* OnboardingViewController.swift in Sources */,
+				77B027FF251B041400BC71F8 /* SettingsViewModel.swift in Sources */,
+				77B02800251B041400BC71F8 /* MapCoordinator.swift in Sources */,
+				77B02801251B041400BC71F8 /* NetworkManager.swift in Sources */,
+				77B02848251B159200BC71F8 /* AppDelegate.swift in Sources */,
+				77B02802251B041400BC71F8 /* Extensions+UIView.swift in Sources */,
+				77B02803251B041400BC71F8 /* NoteViewModel.swift in Sources */,
+				77B02804251B041400BC71F8 /* CustomCollectionViewFlowLayout.swift in Sources */,
+				77B02805251B041400BC71F8 /* GameCoordinator.swift in Sources */,
+				77B02844251B0E2100BC71F8 /* SwiftUIAppDelegate.swift in Sources */,
+				77B02806251B041400BC71F8 /* MapViewController.swift in Sources */,
+				77B02807251B041400BC71F8 /* LeaderboardViewController.swift in Sources */,
+				77B02808251B041400BC71F8 /* Extentions+Storyboard.swift in Sources */,
+				77B0280A251B041400BC71F8 /* Coordinator.swift in Sources */,
+				77B0280B251B041400BC71F8 /* GameNoteViewController.swift in Sources */,
+				77B0280C251B041400BC71F8 /* NoteCollectionCell.swift in Sources */,
+				77B0280D251B041400BC71F8 /* HomeCoordinator.swift in Sources */,
+				77B0280E251B041400BC71F8 /* CityListViewModel.swift in Sources */,
+				77B0280F251B041400BC71F8 /* City.swift in Sources */,
+				77B02810251B041400BC71F8 /* LeaderboardViewModel.swift in Sources */,
+				77B02811251B041400BC71F8 /* StorageManager.swift in Sources */,
+				77B02812251B041400BC71F8 /* LocationManager.swift in Sources */,
+				77B02813251B041400BC71F8 /* Extensions+UIViewController.swift in Sources */,
+				77B02814251B041400BC71F8 /* LoginViewController.swift in Sources */,
+				77B02815251B041400BC71F8 /* RegistrationViewController.swift in Sources */,
+				77B02816251B041400BC71F8 /* DistancePointView.swift in Sources */,
+				77B02817251B041400BC71F8 /* AppCoordinator.swift in Sources */,
+				77B02818251B041400BC71F8 /* QuantityManager.swift in Sources */,
+				77B02819251B041400BC71F8 /* Extensions+UIColor.swift in Sources */,
+				77B0281A251B041400BC71F8 /* Extensions+String.swift in Sources */,
+				77B0281B251B041400BC71F8 /* NoteCollectionCellViewModel.swift in Sources */,
+				77B0281C251B041400BC71F8 /* API.swift in Sources */,
+				77B0281D251B041400BC71F8 /* OnboardingCoordinator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D32F33922D3302D00ABC228 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				77F80DCB24220822005ED8C0 /* PurchaseViewModel.swift in Sources */,
 				77F931842439CF61007BC979 /* Extensions+UIButton.swift in Sources */,
+				77B02846251B0FC800BC71F8 /* main.swift in Sources */,
 				77B120D6239C4C40001B2301 /* BaseCoordinator.swift in Sources */,
 				7711C7A1246894BA0022EC45 /* Extensions+UIImage.swift in Sources */,
 				77B120E5239CDE2B001B2301 /* OnboardingStepViewModel.swift in Sources */,
 				8D32F35922D34B8E00ABC228 /* GameViewModel.swift in Sources */,
 				7753C620244CD20F0072A0B5 /* GameRuleCell.swift in Sources */,
-				774A574E24B8AEA100A49F5A /* SceneDelegate.swift in Sources */,
 				8D32F35722D33CE000ABC228 /* Note.swift in Sources */,
 				7706E0A2246529A00021DA1E /* GameProgressView.swift in Sources */,
 				77F80DD824232746005ED8C0 /* CityInfoViewModel.swift in Sources */,
@@ -703,7 +1010,6 @@
 				8D32F36922D49DD600ABC228 /* CityListViewController.swift in Sources */,
 				774413C0242A9F2F001FBD83 /* Extensions+UIImageView.swift in Sources */,
 				7790B478241FA5E10046EFA5 /* GameRulesViewController.swift in Sources */,
-				774A575024B8AF0B00A49F5A /* ContentView.swift in Sources */,
 				77F80DD324220A5A005ED8C0 /* MapViewModel.swift in Sources */,
 				8D32F34322D3302D00ABC228 /* HomeViewController.swift in Sources */,
 				77F80DC924220319005ED8C0 /* GameRulesViewModel.swift in Sources */,
@@ -735,6 +1041,7 @@
 				77F80DBE2421FF70005ED8C0 /* LeaderboardViewController.swift in Sources */,
 				7790B474241FA44F0046EFA5 /* Extentions+Storyboard.swift in Sources */,
 				8D32F34122D3302D00ABC228 /* AppDelegate.swift in Sources */,
+				77B0284A251B16FB00BC71F8 /* AppTarget.swift in Sources */,
 				77F80DB824216518005ED8C0 /* Coordinator.swift in Sources */,
 				8D8EA3DB22D771DC00EA2F01 /* GameNoteViewController.swift in Sources */,
 				8D32F38322D73E4500ABC228 /* NoteCollectionCell.swift in Sources */,
@@ -746,6 +1053,7 @@
 				77B120CC238C606B001B2301 /* LocationManager.swift in Sources */,
 				77A18F012433756F0027E456 /* Extensions+UIViewController.swift in Sources */,
 				7790B469241FA3CF0046EFA5 /* LoginViewController.swift in Sources */,
+				77B0284C251B173C00BC71F8 /* SwiftUIAppDelegate.swift in Sources */,
 				7790B471241FA42A0046EFA5 /* RegistrationViewController.swift in Sources */,
 				77419FAA2469EDFB00DA205E /* DistancePointView.swift in Sources */,
 				77B120E9239CF561001B2301 /* AppCoordinator.swift in Sources */,
@@ -772,6 +1080,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		77B0283C251B041400BC71F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0E6F06534B0F6FB3D6C3604 /* Pods-12Zapisok.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RA8RP8Z7ML;
+				INFOPLIST_FILE = "SwiftUI Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = A.Makarov.12Zapisok.SwiftUI;
+				PRODUCT_NAME = "12 Записок SUI";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		77B0283D251B041400BC71F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F90ED95CCE49D888EEE22320 /* Pods-12Zapisok.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RA8RP8Z7ML;
+				INFOPLIST_FILE = "SwiftUI Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = A.Makarov.12Zapisok.SwiftUI;
+				PRODUCT_NAME = "12 Записок SUI";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		8D32F34D22D3302F00ABC228 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -931,6 +1279,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		77B0283B251B041400BC71F8 /* Build configuration list for PBXNativeTarget "12Zapisok SwiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77B0283C251B041400BC71F8 /* Debug */,
+				77B0283D251B041400BC71F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8D32F33822D3302D00ABC228 /* Build configuration list for PBXProject "12Zapisok" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
