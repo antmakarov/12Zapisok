@@ -16,3 +16,19 @@ target '12Zapisok' do
   # Pods for 12Zapisok
 
 end
+
+target '12Zapisok SwiftUI' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  pod 'Alamofire'
+  pod 'ObjectMapper'
+  pod 'RealmSwift'
+  pod 'Kingfisher'
+  pod 'SwiftEntryKit'
+  
+  pod 'YandexMapKit'
+  
+  # Pods for 12Zapisok
+
+end

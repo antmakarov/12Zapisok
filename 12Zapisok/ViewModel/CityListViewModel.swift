@@ -13,7 +13,9 @@ protocol CityListViewModeling: CurrentCityProtocol {
     func cityAt(index: Int) -> City
     func setUpdateHandler(_ handler: (() -> Void)?)
     func saveCurrentCity(at index: Int)
-    
+    func hasChosenCity() -> Bool
+    func fetchCities()
+
     var isOnboarding: Bool { get }
     var closeButtonPressed: (() -> Void)? { get set }
 }
@@ -42,8 +44,11 @@ class CityListViewModel {
         
         fetchCities()
     }
+}
 
-    private func fetchCities() {
+extension CityListViewModel: CityListViewModeling {
+    
+    public func fetchCities() {
         
         if let cities = databaseStorage.getObjects(City.self) {
             self.cities = cities
@@ -59,12 +64,11 @@ class CityListViewModel {
                 
             case .error(let error):
                 Logger.error(msg: error.localizedDescription)
+                self.updateHandler?()
             }
          }
     }
-}
-
-extension CityListViewModel: CityListViewModeling {
+    
     public func setUpdateHandler(_ handler: (() -> Void)?) {
         updateHandler = handler
     }
@@ -77,16 +81,20 @@ extension CityListViewModel: CityListViewModeling {
         return cities[index]
     }
     
+    public func hasChosenCity() -> Bool {
+        return cities.first { $0.id == preferencesManager.currentCityId } != nil
+    }
+    
     public func saveCurrentCity(at index: Int) {
         let selectedCity = cityAt(index: index)
         preferencesManager.currentCityId = selectedCity.id
     }
     
     public func getCurrentCityName() -> String {
-        return cities.first { $0.id == preferencesManager.currentCityId }?.name ?? ""
+        return cities.first { $0.id == preferencesManager.currentCityId }?.name ?? .empty
     }
     
     public func getCurrentCityImage() -> String {
-        return cities.first { $0.id == preferencesManager.currentCityId }?.imageUrl ?? ""
+        return cities.first { $0.id == preferencesManager.currentCityId }?.imageUrl ?? .empty
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6CC2BF2B315274BFA0660600 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		7706E0A024594EBE0021DA1E /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7706E09F24594EBE0021DA1E /* Observable.swift */; };
 		7706E0A2246529A00021DA1E /* GameProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7706E0A1246529A00021DA1E /* GameProgressView.swift */; };
 		7711C7A1246894BA0022EC45 /* Extensions+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7711C7A0246894BA0022EC45 /* Extensions+UIImage.swift */; };
@@ -110,10 +111,8 @@
 		77B0281B251B041400BC71F8 /* NoteCollectionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F37822D7394500ABC228 /* NoteCollectionCellViewModel.swift */; };
 		77B0281C251B041400BC71F8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F36622D366B000ABC228 /* API.swift */; };
 		77B0281D251B041400BC71F8 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120E0239CDA3B001B2301 /* OnboardingCoordinator.swift */; };
-		77B0281F251B041400BC71F8 /* Pods_12Zapisok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526AD8A7641C95E0C7D7C7D6 /* Pods_12Zapisok.framework */; };
 		77B02821251B041400BC71F8 /* CityInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F80DC52421FF97005ED8C0 /* CityInfoViewController.xib */; };
 		77B02822251B041400BC71F8 /* LeaderboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F80DBD2421FF70005ED8C0 /* LeaderboardViewController.xib */; };
-		77B02823251B041400BC71F8 /* NotesHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77B120CF238DC450001B2301 /* NotesHeader.xib */; };
 		77B02824251B041400BC71F8 /* GameRuleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7753C61F244CD20F0072A0B5 /* GameRuleCell.xib */; };
 		77B02825251B041400BC71F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D32F34922D3302F00ABC228 /* LaunchScreen.storyboard */; };
 		77B02826251B041400BC71F8 /* StatisticsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F80DC12421FF85005ED8C0 /* StatisticsViewController.xib */; };
@@ -145,7 +144,6 @@
 		77B120C5238C53BC001B2301 /* PreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120C4238C53BC001B2301 /* PreferencesManager.swift */; };
 		77B120C7238C547E001B2301 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120C6238C547E001B2301 /* Logger.swift */; };
 		77B120CC238C606B001B2301 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120CB238C606B001B2301 /* LocationManager.swift */; };
-		77B120D0238DC450001B2301 /* NotesHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77B120CF238DC450001B2301 /* NotesHeader.xib */; };
 		77B120D2238DC545001B2301 /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120D1238DC545001B2301 /* Extensions+UIView.swift */; };
 		77B120D4239C475B001B2301 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120D3239C475B001B2301 /* OnboardingViewController.swift */; };
 		77B120D6239C4C40001B2301 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120D5239C4C40001B2301 /* BaseCoordinator.swift */; };
@@ -178,6 +176,10 @@
 		77F80DDC242328DE005ED8C0 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DDB242328DE005ED8C0 /* MapCoordinator.swift */; };
 		77F931842439CF61007BC979 /* Extensions+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F931832439CF61007BC979 /* Extensions+UIButton.swift */; };
 		77F93186243B13E9007BC979 /* Extensions+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F93185243B13E9007BC979 /* Extensions+UIColor.swift */; };
+		791E3AF171FF2CC0C723234E /* Pods_12Zapisok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526AD8A7641C95E0C7D7C7D6 /* Pods_12Zapisok.framework */; };
+		8D05BC48252879DC00E08C1A /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D05BC47252879DC00E08C1A /* ErrorView.xib */; };
+		8D05BC4C252879EA00E08C1A /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D05BC4B252879EA00E08C1A /* ErrorView.swift */; };
+		8D05BC5025287CE300E08C1A /* Extensions+UIViewInstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D05BC4F25287CE300E08C1A /* Extensions+UIViewInstant.swift */; };
 		8D32F34122D3302D00ABC228 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F34022D3302D00ABC228 /* AppDelegate.swift */; };
 		8D32F34322D3302D00ABC228 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F34222D3302D00ABC228 /* HomeViewController.swift */; };
 		8D32F34822D3302F00ABC228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D32F34722D3302F00ABC228 /* Assets.xcassets */; };
@@ -198,11 +200,16 @@
 		8D32F38322D73E4500ABC228 /* NoteCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F38222D73E4500ABC228 /* NoteCollectionCell.swift */; };
 		8D8EA3D922D75F8D00EA2F01 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8EA3D822D75F8D00EA2F01 /* BaseCell.swift */; };
 		8D8EA3DB22D771DC00EA2F01 /* GameNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8EA3DA22D771DC00EA2F01 /* GameNoteViewController.swift */; };
+		9CFB55331642CDF8C7C4A49B /* Pods_12Zapisok_SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D144605E118515255BD38 /* Pods_12Zapisok_SwiftUI.framework */; };
 		A3EE442304D2DC80E8688FAF /* Pods_12Zapisok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526AD8A7641C95E0C7D7C7D6 /* Pods_12Zapisok.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24FEF423EADF095EB25BFA3D /* Pods-12Zapisok SwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-12Zapisok SwiftUI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-12Zapisok SwiftUI/Pods-12Zapisok SwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
+		2CD62786122A103C78A46B82 /* Pods-12Zapisok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-12Zapisok.release.xcconfig"; path = "Pods/Target Support Files/Pods-12Zapisok/Pods-12Zapisok.release.xcconfig"; sourceTree = "<group>"; };
+		3A06937D6F220B9DA239B25A /* Pods-12Zapisok SwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-12Zapisok SwiftUI.release.xcconfig"; path = "Pods/Target Support Files/Pods-12Zapisok SwiftUI/Pods-12Zapisok SwiftUI.release.xcconfig"; sourceTree = "<group>"; };
 		526AD8A7641C95E0C7D7C7D6 /* Pods_12Zapisok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_12Zapisok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64C008738962F24F095A0593 /* Pods-12Zapisok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-12Zapisok.debug.xcconfig"; path = "Pods/Target Support Files/Pods-12Zapisok/Pods-12Zapisok.debug.xcconfig"; sourceTree = "<group>"; };
 		7706E09F24594EBE0021DA1E /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		7706E0A1246529A00021DA1E /* GameProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProgressView.swift; sourceTree = "<group>"; };
 		7711C7A0246894BA0022EC45 /* Extensions+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIImage.swift"; sourceTree = "<group>"; };
@@ -248,7 +255,6 @@
 		77B120C4238C53BC001B2301 /* PreferencesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesManager.swift; sourceTree = "<group>"; };
 		77B120C6238C547E001B2301 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		77B120CB238C606B001B2301 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		77B120CF238DC450001B2301 /* NotesHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesHeader.xib; sourceTree = "<group>"; };
 		77B120D1238DC545001B2301 /* Extensions+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
 		77B120D3239C475B001B2301 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		77B120D5239C4C40001B2301 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
@@ -281,6 +287,9 @@
 		77F80DDB242328DE005ED8C0 /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
 		77F931832439CF61007BC979 /* Extensions+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIButton.swift"; sourceTree = "<group>"; };
 		77F93185243B13E9007BC979 /* Extensions+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIColor.swift"; sourceTree = "<group>"; };
+		8D05BC47252879DC00E08C1A /* ErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
+		8D05BC4B252879EA00E08C1A /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		8D05BC4F25287CE300E08C1A /* Extensions+UIViewInstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewInstant.swift"; sourceTree = "<group>"; };
 		8D32F33D22D3302D00ABC228 /* 12 Записок.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "12 Записок.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D32F34022D3302D00ABC228 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D32F34222D3302D00ABC228 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -303,8 +312,7 @@
 		8D32F38222D73E4500ABC228 /* NoteCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionCell.swift; sourceTree = "<group>"; };
 		8D8EA3D822D75F8D00EA2F01 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		8D8EA3DA22D771DC00EA2F01 /* GameNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNoteViewController.swift; sourceTree = "<group>"; };
-		D0E6F06534B0F6FB3D6C3604 /* Pods-12Zapisok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-12Zapisok.debug.xcconfig"; path = "Pods/Target Support Files/Pods-12Zapisok/Pods-12Zapisok.debug.xcconfig"; sourceTree = "<group>"; };
-		F90ED95CCE49D888EEE22320 /* Pods-12Zapisok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-12Zapisok.release.xcconfig"; path = "Pods/Target Support Files/Pods-12Zapisok/Pods-12Zapisok.release.xcconfig"; sourceTree = "<group>"; };
+		951D144605E118515255BD38 /* Pods_12Zapisok_SwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_12Zapisok_SwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,7 +320,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77B0281F251B041400BC71F8 /* Pods_12Zapisok.framework in Frameworks */,
+				9CFB55331642CDF8C7C4A49B /* Pods_12Zapisok_SwiftUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +329,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3EE442304D2DC80E8688FAF /* Pods_12Zapisok.framework in Frameworks */,
+				791E3AF171FF2CC0C723234E /* Pods_12Zapisok.framework in Frameworks */,
+				6CC2BF2B315274BFA0660600 /* (null) in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				526AD8A7641C95E0C7D7C7D6 /* Pods_12Zapisok.framework */,
+				951D144605E118515255BD38 /* Pods_12Zapisok_SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -339,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				77B120D1238DC545001B2301 /* Extensions+UIView.swift */,
+				8D05BC4F25287CE300E08C1A /* Extensions+UIViewInstant.swift */,
 				7790B45E241EBBC90046EFA5 /* Extensions+UITableView.swift */,
 				7790B460241EBBE60046EFA5 /* Extensions+UICollectionView.swift */,
 				7790B473241FA44F0046EFA5 /* Extentions+Storyboard.swift */,
@@ -365,6 +377,7 @@
 		7790B459241EA09D0046EFA5 /* CityList */ = {
 			isa = PBXGroup;
 			children = (
+				8D05BC56252887DE00E08C1A /* Cells */,
 				8D32F36822D49DD500ABC228 /* CityListViewController.swift */,
 				7790B45A241EA0B60046EFA5 /* CityListViewController.xib */,
 			);
@@ -401,6 +414,7 @@
 		7790B475241FA5AA0046EFA5 /* GameRules */ = {
 			isa = PBXGroup;
 			children = (
+				8D05BC5C2528884A00E08C1A /* Cells */,
 				7790B476241FA5E10046EFA5 /* GameRulesViewController.swift */,
 				7790B477241FA5E10046EFA5 /* GameRulesViewController.xib */,
 			);
@@ -428,6 +442,7 @@
 		7790B486241FA6800046EFA5 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				8D05BC5B2528882900E08C1A /* Cells */,
 				77B120D3239C475B001B2301 /* OnboardingViewController.swift */,
 				7790B487241FA6990046EFA5 /* OnboardingViewController.xib */,
 			);
@@ -491,6 +506,7 @@
 		77F80DB92421FF2D005ED8C0 /* CityInfo */ = {
 			isa = PBXGroup;
 			children = (
+				8D05BC5E2528888700E08C1A /* Cells */,
 				77F80DC42421FF97005ED8C0 /* CityInfoViewController.swift */,
 				77F80DC52421FF97005ED8C0 /* CityInfoViewController.xib */,
 			);
@@ -522,6 +538,95 @@
 				77B120E4239CDE2B001B2301 /* OnboardingStepViewModel.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		8D05BC46252879CB00E08C1A /* ErrorView */ = {
+			isa = PBXGroup;
+			children = (
+				8D05BC47252879DC00E08C1A /* ErrorView.xib */,
+				8D05BC4B252879EA00E08C1A /* ErrorView.swift */,
+			);
+			path = ErrorView;
+			sourceTree = "<group>";
+		};
+		8D05BC56252887DE00E08C1A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8D05BC582528880C00E08C1A /* CityCollection */,
+				8D05BC57252887E700E08C1A /* CityHeader */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8D05BC57252887E700E08C1A /* CityHeader */ = {
+			isa = PBXGroup;
+			children = (
+				77688CD723BA20AE00697408 /* CityHeaderReusableView.swift */,
+				7790B45C241EACA10046EFA5 /* CityHeaderReusableView.xib */,
+			);
+			path = CityHeader;
+			sourceTree = "<group>";
+		};
+		8D05BC582528880C00E08C1A /* CityCollection */ = {
+			isa = PBXGroup;
+			children = (
+				77BDB39C23B2B41500820E5B /* CityCollectionCell.swift */,
+				77BDB39D23B2B41500820E5B /* CityCollectionCell.xib */,
+			);
+			path = CityCollection;
+			sourceTree = "<group>";
+		};
+		8D05BC5B2528882900E08C1A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				77B120E6239CF2AC001B2301 /* OnboardingCell.swift */,
+				7790B48C241FAC370046EFA5 /* OnboardingCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8D05BC5C2528884A00E08C1A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7753C61E244CD20F0072A0B5 /* GameRuleCell.swift */,
+				7753C61F244CD20F0072A0B5 /* GameRuleCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8D05BC5D2528885E00E08C1A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8D32F38022D73E1400ABC228 /* NoteCollectionCell.xib */,
+				8D32F38222D73E4500ABC228 /* NoteCollectionCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8D05BC5E2528888700E08C1A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				775370BB2458CD39006EFF3E /* CityImageCell.swift */,
+				775370BC2458CD39006EFF3E /* CityImageCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8D05BC612528893000E08C1A /* DistancePointView */ = {
+			isa = PBXGroup;
+			children = (
+				77419FA72469EDF100DA205E /* DistancePointView.xib */,
+				77419FA92469EDFB00DA205E /* DistancePointView.swift */,
+			);
+			path = DistancePointView;
+			sourceTree = "<group>";
+		};
+		8D05BC622528894400E08C1A /* GameProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				7706E0A1246529A00021DA1E /* GameProgressView.swift */,
+			);
+			path = GameProgressView;
 			sourceTree = "<group>";
 		};
 		8D32F33422D3302D00ABC228 = {
@@ -619,22 +724,9 @@
 			isa = PBXGroup;
 			children = (
 				8D8EA3D822D75F8D00EA2F01 /* BaseCell.swift */,
-				8D32F38022D73E1400ABC228 /* NoteCollectionCell.xib */,
-				8D32F38222D73E4500ABC228 /* NoteCollectionCell.swift */,
-				77B120CF238DC450001B2301 /* NotesHeader.xib */,
-				77B120E6239CF2AC001B2301 /* OnboardingCell.swift */,
-				7790B48C241FAC370046EFA5 /* OnboardingCell.xib */,
-				77BDB39C23B2B41500820E5B /* CityCollectionCell.swift */,
-				77BDB39D23B2B41500820E5B /* CityCollectionCell.xib */,
-				77688CD723BA20AE00697408 /* CityHeaderReusableView.swift */,
-				7790B45C241EACA10046EFA5 /* CityHeaderReusableView.xib */,
-				7753C61E244CD20F0072A0B5 /* GameRuleCell.swift */,
-				7753C61F244CD20F0072A0B5 /* GameRuleCell.xib */,
-				775370BB2458CD39006EFF3E /* CityImageCell.swift */,
-				775370BC2458CD39006EFF3E /* CityImageCell.xib */,
-				7706E0A1246529A00021DA1E /* GameProgressView.swift */,
-				77419FA72469EDF100DA205E /* DistancePointView.xib */,
-				77419FA92469EDFB00DA205E /* DistancePointView.swift */,
+				8D05BC46252879CB00E08C1A /* ErrorView */,
+				8D05BC612528893000E08C1A /* DistancePointView */,
+				8D05BC622528894400E08C1A /* GameProgressView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -642,6 +734,7 @@
 		8D32F38522D7439F00ABC228 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				8D05BC5D2528885E00E08C1A /* Cells */,
 				8D32F36A22D71E5A00ABC228 /* GameViewController.swift */,
 				7790B464241ECEB10046EFA5 /* GameViewController.xib */,
 				8D8EA3DA22D771DC00EA2F01 /* GameNoteViewController.swift */,
@@ -654,8 +747,10 @@
 		CFD2B2E047277D91D36A6B63 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D0E6F06534B0F6FB3D6C3604 /* Pods-12Zapisok.debug.xcconfig */,
-				F90ED95CCE49D888EEE22320 /* Pods-12Zapisok.release.xcconfig */,
+				64C008738962F24F095A0593 /* Pods-12Zapisok.debug.xcconfig */,
+				2CD62786122A103C78A46B82 /* Pods-12Zapisok.release.xcconfig */,
+				24FEF423EADF095EB25BFA3D /* Pods-12Zapisok SwiftUI.debug.xcconfig */,
+				3A06937D6F220B9DA239B25A /* Pods-12Zapisok SwiftUI.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -667,12 +762,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 77B0283B251B041400BC71F8 /* Build configuration list for PBXNativeTarget "12Zapisok SwiftUI" */;
 			buildPhases = (
-				77B027D7251B041400BC71F8 /* [CP] Check Pods Manifest.lock */,
+				7300C9F9A917508494C0AB47 /* [CP] Check Pods Manifest.lock */,
 				77B027D8251B041400BC71F8 /* Sources */,
 				77B0281E251B041400BC71F8 /* Frameworks */,
 				77B02820251B041400BC71F8 /* Resources */,
-				77B02839251B041400BC71F8 /* [CP] Embed Pods Frameworks */,
-				77B0283A251B041400BC71F8 /* [CP] Copy Pods Resources */,
+				AA9AEFE7A4EF62A1D2CE3748 /* [CP] Embed Pods Frameworks */,
+				A00BB3C9DACB6BD69F19DA50 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -744,7 +839,6 @@
 			files = (
 				77B02821251B041400BC71F8 /* CityInfoViewController.xib in Resources */,
 				77B02822251B041400BC71F8 /* LeaderboardViewController.xib in Resources */,
-				77B02823251B041400BC71F8 /* NotesHeader.xib in Resources */,
 				77B02824251B041400BC71F8 /* GameRuleCell.xib in Resources */,
 				77B02825251B041400BC71F8 /* LaunchScreen.storyboard in Resources */,
 				77B02826251B041400BC71F8 /* StatisticsViewController.xib in Resources */,
@@ -775,13 +869,13 @@
 			files = (
 				77F80DC72421FF97005ED8C0 /* CityInfoViewController.xib in Resources */,
 				77F80DBF2421FF70005ED8C0 /* LeaderboardViewController.xib in Resources */,
-				77B120D0238DC450001B2301 /* NotesHeader.xib in Resources */,
 				7753C621244CD20F0072A0B5 /* GameRuleCell.xib in Resources */,
 				8D32F34B22D3302F00ABC228 /* LaunchScreen.storyboard in Resources */,
 				77F80DC32421FF85005ED8C0 /* StatisticsViewController.xib in Resources */,
 				8D32F38122D73E1400ABC228 /* NoteCollectionCell.xib in Resources */,
 				8D32F34822D3302F00ABC228 /* Assets.xcassets in Resources */,
 				77BDB3A323B3E99300820E5B /* GameNoteViewController.xib in Resources */,
+				8D05BC48252879DC00E08C1A /* ErrorView.xib in Resources */,
 				7790B488241FA6990046EFA5 /* OnboardingViewController.xib in Resources */,
 				7790B48B241FA6FF0046EFA5 /* MapViewController.xib in Resources */,
 				7790B47E241FA6050046EFA5 /* PurchaseViewController.xib in Resources */,
@@ -820,56 +914,26 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-12Zapisok/Pods-12Zapisok-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		77B027D7251B041400BC71F8 /* [CP] Check Pods Manifest.lock */ = {
+		7300C9F9A917508494C0AB47 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-12Zapisok-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-12Zapisok SwiftUI-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		77B02839251B041400BC71F8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-12Zapisok/Pods-12Zapisok-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-12Zapisok/Pods-12Zapisok-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-12Zapisok/Pods-12Zapisok-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		77B0283A251B041400BC71F8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-12Zapisok/Pods-12Zapisok-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-12Zapisok/Pods-12Zapisok-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-12Zapisok/Pods-12Zapisok-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		893BBD1E4DBE3FBB0DAEFDFC /* [CP] Check Pods Manifest.lock */ = {
@@ -888,6 +952,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A00BB3C9DACB6BD69F19DA50 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-12Zapisok SwiftUI/Pods-12Zapisok SwiftUI-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-12Zapisok SwiftUI/Pods-12Zapisok SwiftUI-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-12Zapisok SwiftUI/Pods-12Zapisok SwiftUI-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA9AEFE7A4EF62A1D2CE3748 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-12Zapisok SwiftUI/Pods-12Zapisok SwiftUI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-12Zapisok SwiftUI/Pods-12Zapisok SwiftUI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-12Zapisok SwiftUI/Pods-12Zapisok SwiftUI-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FFD1B9D7F781AD8A5EB0EDE3 /* [CP] Embed Pods Frameworks */ = {
@@ -1011,6 +1109,7 @@
 				774413C0242A9F2F001FBD83 /* Extensions+UIImageView.swift in Sources */,
 				7790B478241FA5E10046EFA5 /* GameRulesViewController.swift in Sources */,
 				77F80DD324220A5A005ED8C0 /* MapViewModel.swift in Sources */,
+				8D05BC5025287CE300E08C1A /* Extensions+UIViewInstant.swift in Sources */,
 				8D32F34322D3302D00ABC228 /* HomeViewController.swift in Sources */,
 				77F80DC924220319005ED8C0 /* GameRulesViewModel.swift in Sources */,
 				775370BD2458CD39006EFF3E /* CityImageCell.swift in Sources */,
@@ -1033,6 +1132,7 @@
 				77F80DCD2422084D005ED8C0 /* SettingsViewModel.swift in Sources */,
 				77F80DDC242328DE005ED8C0 /* MapCoordinator.swift in Sources */,
 				8D32F36022D3588500ABC228 /* NetworkManager.swift in Sources */,
+				8D05BC4C252879EA00E08C1A /* ErrorView.swift in Sources */,
 				77B120D2238DC545001B2301 /* Extensions+UIView.swift in Sources */,
 				8D32F37F22D73C5E00ABC228 /* NoteViewModel.swift in Sources */,
 				8D32F37522D7241E00ABC228 /* CustomCollectionViewFlowLayout.swift in Sources */,
@@ -1082,7 +1182,7 @@
 /* Begin XCBuildConfiguration section */
 		77B0283C251B041400BC71F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0E6F06534B0F6FB3D6C3604 /* Pods-12Zapisok.debug.xcconfig */;
+			baseConfigurationReference = 24FEF423EADF095EB25BFA3D /* Pods-12Zapisok SwiftUI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1102,7 +1202,7 @@
 		};
 		77B0283D251B041400BC71F8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F90ED95CCE49D888EEE22320 /* Pods-12Zapisok.release.xcconfig */;
+			baseConfigurationReference = 3A06937D6F220B9DA239B25A /* Pods-12Zapisok SwiftUI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1238,7 +1338,7 @@
 		};
 		8D32F35022D3302F00ABC228 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0E6F06534B0F6FB3D6C3604 /* Pods-12Zapisok.debug.xcconfig */;
+			baseConfigurationReference = 64C008738962F24F095A0593 /* Pods-12Zapisok.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1258,7 +1358,7 @@
 		};
 		8D32F35122D3302F00ABC228 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F90ED95CCE49D888EEE22320 /* Pods-12Zapisok.release.xcconfig */;
+			baseConfigurationReference = 2CD62786122A103C78A46B82 /* Pods-12Zapisok.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

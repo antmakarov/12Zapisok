@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="CityHeaderReusableView" id="GEJ-Jc-nTx" customClass="CityHeaderReusableView" customModule="_2_Записок" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3cy-uM-VsG">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="255"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="requestLocation" translatesAutoresizingMaskIntoConstraints="NO" id="Mdt-oW-yzN">
+                            <rect key="frame" x="137" y="16" width="140" height="140"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Mdt-oW-yzN" secondAttribute="height" multiplier="1:1" id="Nmz-mS-kA5"/>
+                                <constraint firstAttribute="width" constant="140" id="ssg-o0-3b8"/>
+                            </constraints>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1iR-3d-FGj">
+                            <rect key="frame" x="177" y="168" width="60" height="2"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="2" id="JAg-Kn-joE"/>
+                                <constraint firstAttribute="width" constant="60" id="xUd-Uq-VJq"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="re2-PX-ihC">
+                            <rect key="frame" x="53.5" y="178" width="307.5" height="63"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нижний Новгород" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faJ-wh-9Sb">
+                                    <rect key="frame" x="0.0" y="0.0" width="307.5" height="39"/>
+                                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                    <color key="textColor" red="0.43137254901960786" green="0.36470588235294116" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="текущий выбранный город" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77C-cx-x22">
+                                    <rect key="frame" x="77" y="47" width="153" height="16"/>
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                    <color key="textColor" systemColor="systemGrayColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="Mdt-oW-yzN" firstAttribute="centerX" secondItem="3cy-uM-VsG" secondAttribute="centerX" id="D34-6K-5lJ"/>
+                        <constraint firstItem="re2-PX-ihC" firstAttribute="top" secondItem="1iR-3d-FGj" secondAttribute="bottom" constant="8" id="Hyk-VM-xue"/>
+                        <constraint firstItem="1iR-3d-FGj" firstAttribute="top" secondItem="Mdt-oW-yzN" secondAttribute="bottom" constant="12" id="TYZ-BV-bGu"/>
+                        <constraint firstItem="Mdt-oW-yzN" firstAttribute="top" secondItem="3cy-uM-VsG" secondAttribute="top" constant="16" id="Zfs-IH-ohl"/>
+                        <constraint firstItem="1iR-3d-FGj" firstAttribute="centerX" secondItem="Mdt-oW-yzN" secondAttribute="centerX" id="cEE-f1-72P"/>
+                        <constraint firstItem="re2-PX-ihC" firstAttribute="centerX" secondItem="Mdt-oW-yzN" secondAttribute="centerX" id="em9-Uv-Wtq"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="UgN-i6-kbK"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="3cy-uM-VsG" secondAttribute="trailing" id="4xx-KX-lpS"/>
+                <constraint firstItem="3cy-uM-VsG" firstAttribute="leading" secondItem="GEJ-Jc-nTx" secondAttribute="leading" id="KJJ-lC-MJy"/>
+                <constraint firstItem="3cy-uM-VsG" firstAttribute="top" secondItem="GEJ-Jc-nTx" secondAttribute="top" id="Qhg-1c-DCU"/>
+                <constraint firstAttribute="bottom" secondItem="3cy-uM-VsG" secondAttribute="bottom" constant="5" id="bNs-JR-Z2o"/>
+            </constraints>
+            <connections>
+                <outlet property="cityImage" destination="Mdt-oW-yzN" id="TI6-GJ-K0A"/>
+                <outlet property="cityName" destination="faJ-wh-9Sb" id="IWk-EU-HMC"/>
+                <outlet property="descriptionLabel" destination="77C-cx-x22" id="owv-Qz-YE2"/>
+                <outlet property="mainView" destination="3cy-uM-VsG" id="lsV-pV-EB7"/>
+            </connections>
+            <point key="canvasLocation" x="76.811594202898561" y="93.080357142857139"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="requestLocation" width="512" height="512"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

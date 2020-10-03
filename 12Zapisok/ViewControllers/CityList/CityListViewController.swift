@@ -17,17 +17,20 @@ class CityListViewController: BaseViewController {
         static let cellHeight: CGFloat = 190.0
         static let cellSpacing: CGFloat = 30.0
         static let collectionHeaderHeight: CGFloat = 260.0
+        static let collectionSmallHeaderHeight: CGFloat = 210.0
     }
     
-    @IBOutlet weak var citiesCollectionView: UICollectionView!
-    @IBOutlet weak var backButton: UIButton!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet private weak var citiesCollectionView: UICollectionView!
+    @IBOutlet private weak var backButton: UIButton!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var errorView: ErrorView!
     
     var chooseCompletion: ((City) -> Void)?
     var viewModel: CityListViewModeling? {
         didSet {
             viewModel?.setUpdateHandler {
                 self.citiesCollectionView.reloadData()
+                self.errorView.isHidden = self.viewModel?.getNumberOfCities() != 0
             }
         }
     }
@@ -44,6 +47,12 @@ class CityListViewController: BaseViewController {
     }
     
     private func setupUI() {
+        errorView.configureHandler { [weak self] in
+            self?.viewModel?.fetchCities()
+        } back: { [weak self] in
+            self?.viewModel?.closeButtonPressed?()
+        }
+
         if let viewModel = viewModel {
             if viewModel.isOnboarding {
                 backButton.isHidden = true
@@ -124,6 +133,7 @@ extension CityListViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: Constants.collectionHeaderHeight)
+        let height = (viewModel?.hasChosenCity() == true) ? Constants.collectionHeaderHeight : Constants.collectionSmallHeaderHeight
+        return CGSize(width: collectionView.frame.width, height: height)
     }
 }

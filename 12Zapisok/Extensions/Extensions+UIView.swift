@@ -58,4 +58,15 @@ extension UIView {
         layer.borderWidth = width
         layer.borderColor = color.cgColor
     }
+    
+    func constraintToSuperview(left: CGFloat = 0, right: CGFloat = 0, top: CGFloat = 0, bottom: CGFloat = 0) {
+        guard let superview = superview else { return }
+        translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            topAnchor.constraint(equalTo: superview.topAnchor, constant: top),
+            bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: bottom),
+            leftAnchor.constraint(equalTo: superview.leftAnchor, constant: left),
+            rightAnchor.constraint(equalTo: superview.rightAnchor, constant: right)
+        ])
+    }
 }

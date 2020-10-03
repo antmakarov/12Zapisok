@@ -57,11 +57,11 @@ class HomeViewModel {
 
 extension HomeViewModel: HomeViewModeling {
     func getCurrentCityName() -> String {
-        return currentCity?.name ?? ""
+        return currentCity?.name ?? .empty
     }
     
     func getCurrentCityImage() -> String {
-        return currentCity?.imageUrl ?? ""
+        return currentCity?.imageUrl ?? .empty
     }
     
     func getCurrentCityScore() -> Int {

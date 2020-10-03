@@ -149,7 +149,7 @@ class NetworkManager: NetworkManaging {
     
     private func tokenHeader() -> HTTPHeader {
         let name = "Authorization"
-        let value = "JWT " + (userPreferences.userToken ?? "")
+        let value = "JWT " + (userPreferences.userToken ?? .empty)
         return HTTPHeader(name: name, value: value)
     }
 }

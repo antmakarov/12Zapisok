@@ -8,8 +8,6 @@
 
 import Foundation
 import RealmSwift
-
-import RealmSwift
 import ObjectMapper
 import CoreLocation
 

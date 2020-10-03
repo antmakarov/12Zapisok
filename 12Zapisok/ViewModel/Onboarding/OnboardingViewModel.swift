@@ -88,12 +88,12 @@ class OnboardingViewModel {
     }
     
     private func loadCities() {
-        networkManager.getCityList { result in
+        networkManager.getCityList { [weak self] result in
             switch result {
                 
             case .success(let cities):
-                self.cities = cities
-                self.cities.forEach { try? self.databaseStorage.storeObject($0) }
+                self?.cities = cities
+                self?.cities.forEach { try? self?.databaseStorage.storeObject($0) }
                 
             case .error(let error):
                 Logger.error(msg: error.localizedDescription)
@@ -135,15 +135,16 @@ extension OnboardingViewModel: OnboardingViewModeling {
             return OnboardingStepViewModel(title: Constants.Location.title, details: Constants.Location.details, image: Constants.Location.image, actionTitle: Constants.Location.action) { type, completion in
                 if type == .skip  {
                     completion?()
+                    return
                 }
                 
                 self.locationManager.requestAuthorization { result in
                     if !result {
                         completion?()
                     } else {
-                        self.locationManager.requestCurrentLocation { location in
-                            let nearCityId = self.calculateNearCity(coordinates: location)
-                            self.cityName = nearCityId
+                        self.locationManager.requestCurrentLocation { [weak self] location in
+                            let nearCityId = self?.calculateNearCity(coordinates: location)
+                            self?.cityName = nearCityId
                             completion?()
                         }
                     }
@@ -152,29 +153,29 @@ extension OnboardingViewModel: OnboardingViewModeling {
             
         case .city:
             if let city = cityName, let name = cities.first(where: { $0.id == city }) {
-                return OnboardingStepViewModel(title: name.name, details: Constants.City.details, image: Constants.City.image, actionTitle: .empty, isHideSkip: true, isNeedAnswer: true) { type, completion in
+                return OnboardingStepViewModel(title: name.name, details: Constants.City.details, image: Constants.City.image, actionTitle: .empty, isHideSkip: true, isNeedAnswer: true) { [weak self] type, completion in
                     switch type {
                     case .done:
-                        self.preferencesManager.currentCityId = city
+                        self?.preferencesManager.currentCityId = city
                         completion?()
                         
                     case .denied, .skip:
-                        self.routeTo?(.cityList(completion: { city in
+                        self?.routeTo?(.cityList(completion: { city in
                             completion?()
                         }))
                     }
                 }
             } else {
-                return OnboardingStepViewModel(title: Constants.CityList.title, details: Constants.CityList.details, image: Constants.CityList.image, actionTitle: Constants.CityList.action, isHideSkip: true) { _, completion in
-                    self.routeTo?(.cityList(completion: { city in
+                return OnboardingStepViewModel(title: Constants.CityList.title, details: Constants.CityList.details, image: Constants.CityList.image, actionTitle: Constants.CityList.action, isHideSkip: true) { [weak self] _, completion in
+                    self?.routeTo?(.cityList(completion: { city in
                         completion?()
                     }))
                 }
             }
             
         case .auth:
-            return OnboardingStepViewModel(title: Constants.Auth.title, details: Constants.Auth.details, image: Constants.Auth.image, actionTitle: Constants.Auth.action) { _, completion in
-                self.routeTo?(.back)
+            return OnboardingStepViewModel(title: Constants.Auth.title, details: Constants.Auth.details, image: Constants.Auth.image, actionTitle: Constants.Auth.action) { [weak self] _, completion in
+                self?.routeTo?(.back)
             }            
         }
     }
