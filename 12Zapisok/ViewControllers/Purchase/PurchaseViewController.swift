@@ -64,4 +64,8 @@ class PurchaseViewController: UIViewController {
     @IBAction func closeButtonPressed() {
         viewModel?.closeButtonPressed?()
     }
+    
+    @IBAction func restoreButtonPressed() {
+        Logger.info(msg: "Восстановить покупки")
+    }
 }

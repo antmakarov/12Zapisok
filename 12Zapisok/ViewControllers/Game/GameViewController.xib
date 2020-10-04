@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -29,7 +31,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="309"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нижний Новгород" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPd-K3-Pag">
-                            <rect key="frame" x="75.5" y="52" width="263" height="36"/>
+                            <rect key="frame" x="75.5" y="52" width="263.5" height="36"/>
                             <constraints>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="156" id="hcT-x0-kwh"/>
                                 <constraint firstAttribute="height" constant="36" id="ozi-0M-8lm"/>
@@ -72,13 +74,13 @@
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n0Q-AC-kWC" customClass="GameProgresView" customModule="_2_Записок" customModuleProvider="target">
                             <rect key="frame" x="16" y="113" width="382" height="45"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="BlK-pA-1s7"/>
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="qC6-9R-CuI" firstAttribute="leading" secondItem="BAD-u5-2Wo" secondAttribute="leading" id="1IM-y0-la7"/>
                         <constraint firstItem="gAQ-xl-H9u" firstAttribute="top" secondItem="n0Q-AC-kWC" secondAttribute="bottom" id="2Ch-W4-HBy"/>
@@ -100,7 +102,7 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ird-bM-7ui">
                     <rect key="frame" x="0.0" y="269" width="414" height="627"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fCy-ki-AYH">
                     <rect key="frame" x="0.0" y="178" width="414" height="632"/>
@@ -130,23 +132,30 @@
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="68b-Ws-08t">
                     <rect key="frame" x="0.0" y="818" width="414" height="32"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQv-y7-lDa">
-                            <rect key="frame" x="0.0" y="0.0" width="249.5" height="32"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQv-y7-lDa">
+                            <rect key="frame" x="0.0" y="0.0" width="248.5" height="32"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                             <state key="normal" title="Сбросить прогресс">
                                 <color key="titleColor" red="1" green="0.58303052600000005" blue="0.57940999459999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </state>
+                            <connections>
+                                <action selector="resetCityProgress" destination="-1" eventType="touchUpInside" id="V4h-xk-SPv"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qG-I8-qb4">
-                            <rect key="frame" x="249.5" y="0.0" width="164.5" height="32"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qG-I8-qb4">
+                            <rect key="frame" x="248.5" y="0.0" width="165.5" height="32"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                             <state key="normal" title="Открыть все">
                                 <color key="titleColor" red="0.25461253519999999" green="0.33172905450000001" blue="0.56080877780000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </state>
+                            <connections>
+                                <action selector="openAllNotes" destination="-1" eventType="touchUpInside" id="0RC-GY-ZXF"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="y6W-jp-dU3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="BAD-u5-2Wo" firstAttribute="top" secondItem="4Wj-Gg-xXq" secondAttribute="top" id="3X2-GU-3aw"/>
@@ -166,7 +175,6 @@
                 <constraint firstAttribute="bottom" secondItem="Ird-bM-7ui" secondAttribute="bottom" id="prb-ZW-KLK"/>
                 <constraint firstItem="68b-Ws-08t" firstAttribute="leading" secondItem="y6W-jp-dU3" secondAttribute="leading" id="qwg-4z-aKc"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="y6W-jp-dU3"/>
             <point key="canvasLocation" x="784.05797101449286" y="1509.375"/>
         </view>
     </objects>
@@ -174,5 +182,8 @@
         <image name="appBackground" width="375" height="476"/>
         <image name="back" width="128" height="128"/>
         <image name="placeholder" width="128" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

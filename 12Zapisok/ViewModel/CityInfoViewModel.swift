@@ -25,37 +25,66 @@ protocol CityInfoViewModeling {
 }
 
 class CityInfoViewModel {
+    
+    //MARK: Managers
+    private let preferencesManager: PreferencesManager
+    private let databaseStorage: StorageManager
+    
+    //MARK: Private / Public variables
+    private var currentCity: CityInfo?
+    private var imageUrls: [String] = []
     var routeTo: ((CityInfoRoute) -> Void)?
-    let imageUrls = ["A", "B"]
+
+    convenience init() {
+        self.init(preferencesManager: PreferencesManager.shared, databaseStorage: StorageManager.shared)
+    }
+    
+    init(preferencesManager: PreferencesManager, databaseStorage: StorageManager) {
+        self.preferencesManager = preferencesManager
+        self.databaseStorage = databaseStorage
+
+        loadCurrentCity()
+    }
+    
+    private func loadCurrentCity() {
+        if let cityID = preferencesManager.currentCityId {
+            currentCity = databaseStorage.getObjectByID(CityInfo.self, id: cityID)
+        }
+    }
 }
 
 extension CityInfoViewModel: CityInfoViewModeling {
     
     func getName() -> String {
-        return "Нижний Новгород"
+        return currentCity?.name ?? .empty
     }
     
     func getImageUrl(by index: Int) -> String {
-        return imageUrls[index]
+        return currentCity?.imageUrls[index] ?? .empty
     }
     
     func getImageCount() -> Int {
-        return imageUrls.count
+        return currentCity?.imageUrls.count ?? 0
     }
     
     func getDescription() -> String {
-        return "Нижний Новгород (в советское время — Горький) является пятым по численности населения городом России, расположен на берегах Оки при впадении в Волгу. Находится на стыке Поволжья и Центральной России, сочетая величие Кремля и камерность центральных районов с размахом старинной волжской ярмарки и промышленных окраин. Нижний — город на удивление многоликий, где вы найдёте памятники самых разных веков, перемежающиеся захватывающими панорамами с высокого волжского берега. Кроме совершенно разноплановой архитектуры в Нижнем Новгороде не один десяток музеев и активная культурная жизнь, не уступающая другим крупным городам России."
+        return currentCity?.fullDescription ?? .empty
     }
     
+    // TODO: Need some converter for buid/population/code
+    
     func getBuildingYear() -> String {
-        return "1221 г"
+        guard let currentCity = currentCity else { return .empty }
+        return "\(currentCity.baseYear) г"
     }
     
     func getPopulation() -> String {
-        return "1.25 млн"
+        guard let currentCity = currentCity else { return .empty }
+        return "\(currentCity.population) млн"
     }
     
     func getRegionCode() -> String {
-        return "152 RUS"
+        guard let currentCity = currentCity else { return .empty }
+        return "\(currentCity.regionCode) RUS"
     }
 }

@@ -180,6 +180,11 @@
 		8D05BC48252879DC00E08C1A /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D05BC47252879DC00E08C1A /* ErrorView.xib */; };
 		8D05BC4C252879EA00E08C1A /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D05BC4B252879EA00E08C1A /* ErrorView.swift */; };
 		8D05BC5025287CE300E08C1A /* Extensions+UIViewInstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D05BC4F25287CE300E08C1A /* Extensions+UIViewInstant.swift */; };
+		8D05BC6625289C5400E08C1A /* CityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D05BC6525289C5400E08C1A /* CityInfo.swift */; };
+		8D05BC6E252A531F00E08C1A /* CheckPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D05BC6D252A531F00E08C1A /* CheckPlaceView.swift */; };
+		8D05BC74252A532D00E08C1A /* CheckPlaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D05BC73252A532D00E08C1A /* CheckPlaceView.xib */; };
+		8D05BC78252A533A00E08C1A /* ManualInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D05BC77252A533A00E08C1A /* ManualInputView.xib */; };
+		8D05BC7C252A534200E08C1A /* ManualInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D05BC7B252A534200E08C1A /* ManualInputView.swift */; };
 		8D32F34122D3302D00ABC228 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F34022D3302D00ABC228 /* AppDelegate.swift */; };
 		8D32F34322D3302D00ABC228 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F34222D3302D00ABC228 /* HomeViewController.swift */; };
 		8D32F34822D3302F00ABC228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D32F34722D3302F00ABC228 /* Assets.xcassets */; };
@@ -290,6 +295,11 @@
 		8D05BC47252879DC00E08C1A /* ErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
 		8D05BC4B252879EA00E08C1A /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		8D05BC4F25287CE300E08C1A /* Extensions+UIViewInstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewInstant.swift"; sourceTree = "<group>"; };
+		8D05BC6525289C5400E08C1A /* CityInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfo.swift; sourceTree = "<group>"; };
+		8D05BC6D252A531F00E08C1A /* CheckPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPlaceView.swift; sourceTree = "<group>"; };
+		8D05BC73252A532D00E08C1A /* CheckPlaceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckPlaceView.xib; sourceTree = "<group>"; };
+		8D05BC77252A533A00E08C1A /* ManualInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManualInputView.xib; sourceTree = "<group>"; };
+		8D05BC7B252A534200E08C1A /* ManualInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualInputView.swift; sourceTree = "<group>"; };
 		8D32F33D22D3302D00ABC228 /* 12 Записок.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "12 Записок.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D32F34022D3302D00ABC228 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D32F34222D3302D00ABC228 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -629,6 +639,24 @@
 			path = GameProgressView;
 			sourceTree = "<group>";
 		};
+		8D05BC6B252A529E00E08C1A /* CheckPlaceView */ = {
+			isa = PBXGroup;
+			children = (
+				8D05BC6D252A531F00E08C1A /* CheckPlaceView.swift */,
+				8D05BC73252A532D00E08C1A /* CheckPlaceView.xib */,
+			);
+			path = CheckPlaceView;
+			sourceTree = "<group>";
+		};
+		8D05BC6C252A52BA00E08C1A /* ManualInputView */ = {
+			isa = PBXGroup;
+			children = (
+				8D05BC77252A533A00E08C1A /* ManualInputView.xib */,
+				8D05BC7B252A534200E08C1A /* ManualInputView.swift */,
+			);
+			path = ManualInputView;
+			sourceTree = "<group>";
+		};
 		8D32F33422D3302D00ABC228 = {
 			isa = PBXGroup;
 			children = (
@@ -672,6 +700,7 @@
 			isa = PBXGroup;
 			children = (
 				8D32F35222D3398700ABC228 /* City.swift */,
+				8D05BC6525289C5400E08C1A /* CityInfo.swift */,
 				8D32F35622D33CE000ABC228 /* Note.swift */,
 			);
 			path = Model;
@@ -727,6 +756,8 @@
 				8D05BC46252879CB00E08C1A /* ErrorView */,
 				8D05BC612528893000E08C1A /* DistancePointView */,
 				8D05BC622528894400E08C1A /* GameProgressView */,
+				8D05BC6B252A529E00E08C1A /* CheckPlaceView */,
+				8D05BC6C252A52BA00E08C1A /* ManualInputView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -868,6 +899,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77F80DC72421FF97005ED8C0 /* CityInfoViewController.xib in Resources */,
+				8D05BC74252A532D00E08C1A /* CheckPlaceView.xib in Resources */,
 				77F80DBF2421FF70005ED8C0 /* LeaderboardViewController.xib in Resources */,
 				7753C621244CD20F0072A0B5 /* GameRuleCell.xib in Resources */,
 				8D32F34B22D3302F00ABC228 /* LaunchScreen.storyboard in Resources */,
@@ -877,6 +909,7 @@
 				77BDB3A323B3E99300820E5B /* GameNoteViewController.xib in Resources */,
 				8D05BC48252879DC00E08C1A /* ErrorView.xib in Resources */,
 				7790B488241FA6990046EFA5 /* OnboardingViewController.xib in Resources */,
+				8D05BC78252A533A00E08C1A /* ManualInputView.xib in Resources */,
 				7790B48B241FA6FF0046EFA5 /* MapViewController.xib in Resources */,
 				7790B47E241FA6050046EFA5 /* PurchaseViewController.xib in Resources */,
 				7790B472241FA42A0046EFA5 /* RegistrationViewController.xib in Resources */,
@@ -1101,6 +1134,7 @@
 				7753C620244CD20F0072A0B5 /* GameRuleCell.swift in Sources */,
 				8D32F35722D33CE000ABC228 /* Note.swift in Sources */,
 				7706E0A2246529A00021DA1E /* GameProgressView.swift in Sources */,
+				8D05BC7C252A534200E08C1A /* ManualInputView.swift in Sources */,
 				77F80DD824232746005ED8C0 /* CityInfoViewModel.swift in Sources */,
 				77B120E3239CDCE1001B2301 /* OnboardingViewModel.swift in Sources */,
 				8D8EA3D922D75F8D00EA2F01 /* BaseCell.swift in Sources */,
@@ -1124,6 +1158,7 @@
 				77688CD923BA20AE00697408 /* CityHeaderReusableView.swift in Sources */,
 				7790B484241FA66B0046EFA5 /* SettingsViewController.swift in Sources */,
 				77F80DC62421FF97005ED8C0 /* CityInfoViewController.swift in Sources */,
+				8D05BC6E252A531F00E08C1A /* CheckPlaceView.swift in Sources */,
 				77BDB39E23B2B41600820E5B /* CityCollectionCell.swift in Sources */,
 				77F80DC22421FF85005ED8C0 /* StatisticsViewController.swift in Sources */,
 				77B120E7239CF2AC001B2301 /* OnboardingCell.swift in Sources */,
@@ -1131,6 +1166,7 @@
 				77B120D4239C475B001B2301 /* OnboardingViewController.swift in Sources */,
 				77F80DCD2422084D005ED8C0 /* SettingsViewModel.swift in Sources */,
 				77F80DDC242328DE005ED8C0 /* MapCoordinator.swift in Sources */,
+				8D05BC6625289C5400E08C1A /* CityInfo.swift in Sources */,
 				8D32F36022D3588500ABC228 /* NetworkManager.swift in Sources */,
 				8D05BC4C252879EA00E08C1A /* ErrorView.swift in Sources */,
 				77B120D2238DC545001B2301 /* Extensions+UIView.swift in Sources */,

@@ -43,6 +43,14 @@ class GameViewController: BaseViewController {
     @IBAction private func backButtonPressed() {
         viewModel?.routeTo?(.back)
     }
+    
+    @IBAction private func resetCityProgress() {
+        
+    }
+    
+    @IBAction private func openAllNotes() {
+        
+    }
 }
 
 //MARK: UICollectionViewDataSource
@@ -75,24 +83,6 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDelegate
         guard let viewModel = viewModel else {
             fatalError("Not installed View Model")
         }
-        SwiftEntryKit.display(entry: DistancePointView(), using: attribute())
-
-        //viewModel.selectNoteDetails(at: indexPath.row)
-    }
-    
-    func attribute() -> EKAttributes {
-        var attributes = EKAttributes()
-        attributes.statusBar = .light
-        attributes.position = .center
-        attributes.windowLevel = .normal
-        attributes.displayDuration = .infinity
-        attributes.entryInteraction = .absorbTouches
-        attributes.screenInteraction = .absorbTouches
-        attributes.entranceAnimation = .init(translate: .init(duration: 0.7, spring: .init(damping: 0.7, initialVelocity: 0)), scale: .init(from: 0.7, to: 1, duration: 0.4, spring: .init(damping: 1, initialVelocity: 0)))
-        attributes.scroll = .disabled
-        attributes.hapticFeedbackType = .success
-        attributes.screenBackground = .color(color: .init(UIColor.blue))
-        
-        return attributes
+        viewModel.selectNoteDetails(at: indexPath.row)
     }
 }

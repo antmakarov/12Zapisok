@@ -8,8 +8,6 @@
 
 import Foundation
 import RealmSwift
-
-import RealmSwift
 import ObjectMapper
 
 protocol Endpoint {
@@ -23,6 +21,9 @@ class City: Object, Mappable, Endpoint {
     @objc dynamic var imageUrl = ""
     @objc dynamic var cityDescription = ""
     @objc dynamic var location: Location?
+    
+    //@objc dynamic var detailInfo: CityInfo
+
     
     required convenience init?(map: Map) {
         self.init()
