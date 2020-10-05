@@ -88,7 +88,7 @@ class GameNoteViewController: BaseViewController {
     }
     
     @IBAction func showDistance(_ sender: Any) {
-        SwiftEntryKit.display(entry: DistancePointView(), using: EKAttributes())
+        showPopUp(type: .checkDistance)
     }
     
     @IBAction private func closeView(_ sender: Any) {

@@ -8,14 +8,21 @@
 
 import UIKit
 
-class ManualInputView: UIView {
+class ManualInputView: UIView, NibInstance {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
     }
-    */
-
+    
+    init() {
+        super.init(frame: .zero)
+        setup()
+    }
+    
+    private func setup() {
+        instantiateFromNib()
+        heightAnchor.constraint(equalToConstant: 300).isActive = true
+        widthAnchor.constraint(equalToConstant: 300).isActive = true
+    }
 }

@@ -185,6 +185,8 @@
 		8D05BC74252A532D00E08C1A /* CheckPlaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D05BC73252A532D00E08C1A /* CheckPlaceView.xib */; };
 		8D05BC78252A533A00E08C1A /* ManualInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D05BC77252A533A00E08C1A /* ManualInputView.xib */; };
 		8D05BC7C252A534200E08C1A /* ManualInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D05BC7B252A534200E08C1A /* ManualInputView.swift */; };
+		8D05BCA0252BBA6300E08C1A /* Extensions+UIPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D05BC9F252BBA6300E08C1A /* Extensions+UIPopUp.swift */; };
+		8D05BCA9252BBE9B00E08C1A /* EKAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D05BCA8252BBE9B00E08C1A /* EKAttributes.swift */; };
 		8D32F34122D3302D00ABC228 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F34022D3302D00ABC228 /* AppDelegate.swift */; };
 		8D32F34322D3302D00ABC228 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F34222D3302D00ABC228 /* HomeViewController.swift */; };
 		8D32F34822D3302F00ABC228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D32F34722D3302F00ABC228 /* Assets.xcassets */; };
@@ -300,6 +302,8 @@
 		8D05BC73252A532D00E08C1A /* CheckPlaceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckPlaceView.xib; sourceTree = "<group>"; };
 		8D05BC77252A533A00E08C1A /* ManualInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManualInputView.xib; sourceTree = "<group>"; };
 		8D05BC7B252A534200E08C1A /* ManualInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualInputView.swift; sourceTree = "<group>"; };
+		8D05BC9F252BBA6300E08C1A /* Extensions+UIPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIPopUp.swift"; sourceTree = "<group>"; };
+		8D05BCA8252BBE9B00E08C1A /* EKAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EKAttributes.swift; sourceTree = "<group>"; };
 		8D32F33D22D3302D00ABC228 /* 12 Записок.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "12 Записок.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D32F34022D3302D00ABC228 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D32F34222D3302D00ABC228 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -359,6 +363,7 @@
 		7741375723B9F54E00AD8A71 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8D05BCA7252BBE7800E08C1A /* ViewControllerPopUp */,
 				77B120D1238DC545001B2301 /* Extensions+UIView.swift */,
 				8D05BC4F25287CE300E08C1A /* Extensions+UIViewInstant.swift */,
 				7790B45E241EBBC90046EFA5 /* Extensions+UITableView.swift */,
@@ -655,6 +660,15 @@
 				8D05BC7B252A534200E08C1A /* ManualInputView.swift */,
 			);
 			path = ManualInputView;
+			sourceTree = "<group>";
+		};
+		8D05BCA7252BBE7800E08C1A /* ViewControllerPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				8D05BC9F252BBA6300E08C1A /* Extensions+UIPopUp.swift */,
+				8D05BCA8252BBE9B00E08C1A /* EKAttributes.swift */,
+			);
+			path = ViewControllerPopUp;
 			sourceTree = "<group>";
 		};
 		8D32F33422D3302D00ABC228 = {
@@ -1136,6 +1150,7 @@
 				7706E0A2246529A00021DA1E /* GameProgressView.swift in Sources */,
 				8D05BC7C252A534200E08C1A /* ManualInputView.swift in Sources */,
 				77F80DD824232746005ED8C0 /* CityInfoViewModel.swift in Sources */,
+				8D05BCA0252BBA6300E08C1A /* Extensions+UIPopUp.swift in Sources */,
 				77B120E3239CDCE1001B2301 /* OnboardingViewModel.swift in Sources */,
 				8D8EA3D922D75F8D00EA2F01 /* BaseCell.swift in Sources */,
 				77B120C5238C53BC001B2301 /* PreferencesManager.swift in Sources */,
@@ -1181,6 +1196,7 @@
 				77F80DB824216518005ED8C0 /* Coordinator.swift in Sources */,
 				8D8EA3DB22D771DC00EA2F01 /* GameNoteViewController.swift in Sources */,
 				8D32F38322D73E4500ABC228 /* NoteCollectionCell.swift in Sources */,
+				8D05BCA9252BBE9B00E08C1A /* EKAttributes.swift in Sources */,
 				77B120DA239C4CD9001B2301 /* HomeCoordinator.swift in Sources */,
 				77B120DF239C5F8F001B2301 /* CityListViewModel.swift in Sources */,
 				8D32F35322D3398700ABC228 /* City.swift in Sources */,
