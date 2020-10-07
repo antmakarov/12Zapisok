@@ -10,6 +10,8 @@ target '12Zapisok' do
   pod 'RealmSwift'
   pod 'Kingfisher'
   pod 'SwiftEntryKit'
+  pod 'SkyFloatingLabelTextField', '~> 3.0'
+  pod 'SwiftGen'
   
   pod 'YandexMapKit'
   
@@ -26,6 +28,8 @@ target '12Zapisok SwiftUI' do
   pod 'RealmSwift'
   pod 'Kingfisher'
   pod 'SwiftEntryKit'
+  pod 'SkyFloatingLabelTextField', '~> 3.0'
+  pod 'SwiftGen'
   
   pod 'YandexMapKit'
   
