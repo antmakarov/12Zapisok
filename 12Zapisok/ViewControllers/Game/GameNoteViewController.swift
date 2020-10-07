@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftEntryKit
 
 class GameNoteViewController: BaseViewController {
     
@@ -30,8 +29,12 @@ class GameNoteViewController: BaseViewController {
     @IBOutlet private weak var placeLabel: UILabel!
     @IBOutlet private weak var timeFindedLabel: UILabel!
     
-    @IBOutlet private weak var hintsStackView: UIStackView!
+    @IBOutlet private weak var checkNoteButton: UIButton!
+    @IBOutlet private weak var manualInputButton: UIButton!
+    @IBOutlet private weak var onMapButton: UIButton!
+    @IBOutlet private weak var distanceButton: UIButton!
     @IBOutlet private weak var openNoteButton: UIButton!
+    @IBOutlet private weak var hintsStackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +61,15 @@ class GameNoteViewController: BaseViewController {
             timeFindedLabel.text = Constants.openText + viewModel.openTime
             
         case .progress:
+            manualInputButton.setBackground(viewModel.hintManager.getCountOf(hint: .foreverCoordinates) > 0 ? "Rectangle" : nil)
+            
+            
+            viewModel.hintManager.getCountOf(hint: .showPlaceOnMap) > 0 ?              onMapButton.setBackgroundImage(UIImage(named: "Rectangle"), for: .normal) : onMapButton.setBackgroundImage(nil, for: .normal)
+            
+            viewModel.hintManager.getCountOf(hint: .foreverDistance) > 0 ?              distanceButton.setBackgroundImage(UIImage(named: "Rectangle"), for: .normal) : distanceButton.setBackgroundImage(nil, for: .normal)
+            
+            viewModel.hintManager.getCountOf(hint: .openSingleNote) > 0 ?              openNoteButton.setBackgroundImage(UIImage(named: "Rectangle"), for: .normal) : openNoteButton.setBackgroundImage(nil, for: .normal)
+            
             noteImage.image = .progressIcon
             statusHeaderImage.image = .progressState
             
@@ -77,8 +89,13 @@ class GameNoteViewController: BaseViewController {
         }
     }
     
-    @IBAction private func openNote(_ sender: Any) {
-        viewModel?.openNote(completion: { result in
+    private func confiureButton(button: UIButton, hintType: HintType) {
+        guard let hintManager = viewModel?.hintManager else { return }
+        button.setBackground(hintManager.getCountOf(hint: hintType) > 0 ? "Rectangle" : nil)
+    }
+    
+    @IBAction private func checkPlace(_ sender: Any) {
+        viewModel?.checkPlace(completion: { result in
             Logger.info(msg: result)
         })
     }
@@ -87,11 +104,37 @@ class GameNoteViewController: BaseViewController {
         viewModel?.routeTo?(.map)
     }
     
-    @IBAction func showDistance(_ sender: Any) {
-        showPopUp(type: .checkDistance)
-    }
-    
     @IBAction private func closeView(_ sender: Any) {
         viewModel?.routeTo?(.back)
+    }
+    
+    @IBAction private func openNote(_ sender: Any) {
+        showHint(for: .openNote)
+    }
+    
+    @IBAction func showDistance(_ sender: Any) {
+        showHint(for: .checkDistance)
+    }
+    
+    @IBAction func showManualInput(_ sender: Any) {
+        showHint(for: .manualCoordinates)
+    }
+    
+    private func showHint(for popUpType: PopUpType) {
+        showPopUp(type: .hint { type in
+            switch type {
+            case .apply:
+                self.showPopUp(type: popUpType)
+                
+            case .buy:
+                Logger.info(msg: "Tap Buy Hint Button")
+                
+            case .showAd:
+                Logger.info(msg: "Tap Show Ad Button")
+
+            case .close:
+                self.dismissPopUp()
+            }
+        })
     }
 }

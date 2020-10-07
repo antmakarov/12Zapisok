@@ -13,6 +13,8 @@ enum PopUpType {
     case text
     case textWithButton
     case textWithButtons
+    case hint((HintViewHandler) -> Void)
+    case openNote
     case manualCoordinates
     case checkDistance
 }
@@ -29,11 +31,23 @@ extension UIViewController {
         case .textWithButtons:
             SwiftEntryKit.display(entry: ManualInputView(), using: appearAttributes())
             
+        case .hint(let handler):
+            let hintView = HintView()
+            hintView.configure(newTitle: "Test", type: handler)
+            SwiftEntryKit.display(entry: hintView, using: appearAttributes())
+            
+        case .openNote:
+            SwiftEntryKit.display(entry: OpenNoteView(), using: appearAttributes())
+
         case .manualCoordinates:
             SwiftEntryKit.display(entry: ManualInputView(), using: appearAttributes())
             
         case .checkDistance:
-            SwiftEntryKit.display(entry: ManualInputView(), using: appearAttributes())
+            SwiftEntryKit.display(entry: DistanceToPlaceView(), using: appearAttributes())
         }
+    }
+    
+    func dismissPopUp() {
+        SwiftEntryKit.dismiss()
     }
 }

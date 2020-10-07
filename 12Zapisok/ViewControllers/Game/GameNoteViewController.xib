@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameNoteViewController" customModule="_2_Записок" customModuleProvider="target">
             <connections>
                 <outlet property="addressStackView" destination="nKR-aJ-Sgc" id="Yqk-RP-NdV"/>
+                <outlet property="checkNoteButton" destination="N6i-Dz-NbV" id="fCg-eJ-ZoY"/>
                 <outlet property="describLabel" destination="jf2-yp-feD" id="A03-X6-9SV"/>
+                <outlet property="distanceButton" destination="ECA-8f-kH0" id="IL9-DR-Ehs"/>
                 <outlet property="hintsStackView" destination="DhX-0A-jVt" id="9B1-n7-Clc"/>
+                <outlet property="manualInputButton" destination="xie-zS-xO3" id="bv7-JF-NBt"/>
                 <outlet property="noteImage" destination="z86-QI-tD5" id="pzY-Mu-Whz"/>
                 <outlet property="numberNoteLabel" destination="MaO-IN-9rE" id="hec-Wu-0dj"/>
-                <outlet property="openNoteButton" destination="N6i-Dz-NbV" id="5FV-xt-9SZ"/>
+                <outlet property="onMapButton" destination="MrO-FC-0qU" id="X6f-ey-24O"/>
+                <outlet property="openNoteButton" destination="AIs-XC-X96" id="v3n-VH-9TS"/>
                 <outlet property="placeLabel" destination="wQN-jh-leL" id="Bih-5y-ls2"/>
                 <outlet property="statusHeaderImage" destination="uYp-xC-d8d" id="t8O-F2-FVb"/>
                 <outlet property="timeFindedLabel" destination="KVJ-Nc-HEX" id="V91-8c-62x"/>
@@ -47,7 +53,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Записка #4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaO-IN-9rE">
-                            <rect key="frame" x="107.5" y="9.5" width="160.5" height="51"/>
+                            <rect key="frame" x="107" y="9.5" width="161.5" height="51"/>
                             <constraints>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="G5b-Fv-P01"/>
                                 <constraint firstAttribute="height" constant="51" id="hKm-CH-CGh"/>
@@ -57,7 +63,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="uYp-xC-d8d" secondAttribute="bottom" id="6gH-he-K8z"/>
                         <constraint firstItem="MaO-IN-9rE" firstAttribute="centerY" secondItem="uYp-xC-d8d" secondAttribute="centerY" id="8Zt-PS-IHx"/>
@@ -88,16 +94,16 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nKR-aJ-Sgc">
-                    <rect key="frame" x="88.5" y="570.5" width="198.5" height="56.5"/>
+                    <rect key="frame" x="89" y="570.5" width="197.5" height="56.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Большая Покровская, 24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQN-jh-leL">
-                            <rect key="frame" x="0.0" y="0.0" width="198.5" height="20.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="197.5" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Открыта вчера в 21:40" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVJ-Nc-HEX">
-                            <rect key="frame" x="0.0" y="40.5" width="198.5" height="16"/>
+                            <rect key="frame" x="0.0" y="40.5" width="197.5" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -116,7 +122,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DhX-0A-jVt">
                     <rect key="frame" x="8" y="603.5" width="359" height="43.5"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xie-zS-xO3">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xie-zS-xO3">
                             <rect key="frame" x="0.0" y="0.0" width="100" height="43.5"/>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
@@ -129,8 +135,11 @@
                                     <integer key="value" value="8"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="showManualInput:" destination="-1" eventType="touchUpInside" id="b1O-bP-JhZ"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MrO-FC-0qU">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MrO-FC-0qU">
                             <rect key="frame" x="108" y="0.0" width="72.5" height="43.5"/>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
@@ -147,7 +156,7 @@
                                 <action selector="openMap:" destination="-1" eventType="touchUpInside" id="RTh-If-xsy"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECA-8f-kH0">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECA-8f-kH0">
                             <rect key="frame" x="188.5" y="0.0" width="94" height="43.5"/>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
@@ -164,7 +173,7 @@
                                 <action selector="showDistance:" destination="-1" eventType="touchUpInside" id="bLp-kp-y0z"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIs-XC-X96">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIs-XC-X96">
                             <rect key="frame" x="290.5" y="0.0" width="68.5" height="43.5"/>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
@@ -177,6 +186,9 @@
                                     <integer key="value" value="8"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="openNote:" destination="-1" eventType="touchUpInside" id="HXz-He-J1D"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>
@@ -192,10 +204,11 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="openNote:" destination="-1" eventType="touchUpInside" id="Zs3-sS-ofW"/>
+                        <action selector="checkPlace:" destination="-1" eventType="touchUpInside" id="FUf-iu-T1N"/>
                     </connections>
                 </button>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="rbk-Ia-aGw"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="z86-QI-tD5" firstAttribute="width" secondItem="ymy-pH-ASK" secondAttribute="width" multiplier="0.95" id="3gM-D7-KOE"/>
@@ -223,7 +236,6 @@
                 <constraint firstItem="rbk-Ia-aGw" firstAttribute="bottom" secondItem="DhX-0A-jVt" secondAttribute="bottom" constant="20" id="unt-To-RfJ"/>
                 <constraint firstItem="z86-QI-tD5" firstAttribute="height" secondItem="ymy-pH-ASK" secondAttribute="height" multiplier="0.4" id="wAU-EL-LIc"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="rbk-Ia-aGw"/>
             <point key="canvasLocation" x="130.40000000000001" y="89.505247376311857"/>
         </view>
     </objects>
@@ -232,5 +244,8 @@
         <image name="close" width="64" height="64"/>
         <image name="mechet-kul-sharif" width="780" height="519"/>
         <image name="orangeSmallNote" width="18" height="32"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

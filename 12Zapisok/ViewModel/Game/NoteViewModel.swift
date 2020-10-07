@@ -25,8 +25,9 @@ protocol GameNoteViewModeling {
     var openTime: String { get }
     var location: Location? { get }
     var routeTo: ((GameRouter) -> Void)? { get set }
+    var hintManager: HintManaging { get }
     
-    func openNote(completion: @escaping ((Bool) -> Void))
+    func checkPlace(completion: @escaping ((Bool) -> Void))
 }
 
 class GameNoteViewModel {
@@ -36,15 +37,23 @@ class GameNoteViewModel {
     
     private var networkManager: NetworkManaging
     private var locationManager: LocationManaging
+    public var hintManager: HintManaging
     
     convenience init(note: Note) {
-        self.init(note: note, networkManager: NetworkManager.shared, locationManager: LocationManager.shared)
+        self.init(note: note,
+                  networkManager: NetworkManager.shared,
+                  locationManager: LocationManager.shared,
+                  hintManager: HintManager.shared)
     }
     
-    init(note: Note, networkManager: NetworkManaging, locationManager: LocationManaging) {
+    init(note: Note,
+         networkManager: NetworkManaging,
+         locationManager: LocationManaging,
+         hintManager: HintManaging) {
         self.note = note
         self.networkManager = networkManager
         self.locationManager = locationManager
+        self.hintManager = hintManager
     }
     
     private func checkPosition(location: Location?) -> Bool {
@@ -58,7 +67,7 @@ class GameNoteViewModel {
 }
 
 extension GameNoteViewModel: GameNoteViewModeling {
-    func openNote(completion: @escaping ((Bool) -> Void)) {
+    func checkPlace(completion: @escaping ((Bool) -> Void)) {
         if checkPosition(location: note.location) {
             networkManager.openNote(id: note.id) { result in
                 completion(result)

@@ -1,5 +1,5 @@
 //
-//  DistancePointView.swift
+//  DistanceToPlaceView.swift
 //  12Zapisok
 //
 //  Created by Anton Makarov on 11.05.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DistancePointView: UIView, NibInstance {
+class DistanceToPlaceView: UIView, NibInstance {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

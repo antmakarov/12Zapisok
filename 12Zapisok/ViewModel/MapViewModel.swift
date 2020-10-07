@@ -22,16 +22,16 @@ class MapViewModel {
     
     //MARK: Managers
     private let locationManager: LocationManaging
-    private let quantityManager:  QuantityManaging
+    private let quantityManager:  HintManaging
 
     private let preferencesManager = PreferencesManager.shared
     private let storageManager = StorageManager.shared
         
     convenience init() {
-        self.init(locationManager: LocationManager.shared, quantityManager: QuantityManager.shared)
+        self.init(locationManager: LocationManager.shared, quantityManager: HintManager.shared)
     }
     
-    init(locationManager: LocationManaging, quantityManager: QuantityManaging) {
+    init(locationManager: LocationManaging, quantityManager: HintManaging) {
         self.locationManager = locationManager
         self.quantityManager = quantityManager
     }
