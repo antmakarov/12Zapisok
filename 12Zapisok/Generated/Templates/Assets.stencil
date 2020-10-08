@@ -47,7 +47,7 @@
   {% if asset.type == "data" %}
   {{accessModifier}} static let {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = {{dataType}}(name: "{{asset.value}}")
   {% elif asset.type == "image" %}
-  {{accessModifier}} static let {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = {{imageType}}(name: "{{asset.value}}")
+  {{accessModifier}} static let {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = {{imageType}}(name: "{{asset.value}}").image
   {% elif asset.items and ( forceNamespaces == "true" or asset.isNamespaced == "true" ) %}
   {{accessModifier}} enum {{asset.name|swiftIdentifier:"pretty"|escapeReservedKeywords}} {
 

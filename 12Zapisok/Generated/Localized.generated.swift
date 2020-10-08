@@ -9,8 +9,6 @@ import Foundation
 internal enum Localized {
   /// Привет
   internal static let hello = Localized.tr("Localizable", "Hello")
-  /// Привет Мир
-  internal static let helloWorld = Localized.tr("Localizable", "Hello World")
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length nesting type_body_length type_name
 

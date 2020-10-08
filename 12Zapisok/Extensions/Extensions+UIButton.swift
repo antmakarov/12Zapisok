@@ -14,6 +14,10 @@ extension UIButton {
         setTitle(text, for: .normal)
     }
     
+    public func setBackground(_ image: UIImage?, state: UIControl.State = .normal) {
+        setBackgroundImage(image, for: .normal)
+    }
+    
     public func setBackground(_ imageName: String?, state: UIControl.State = .normal) {
         if let imageName = imageName, let image = UIImage(named: imageName) {
             setBackgroundImage(image, for: .normal)

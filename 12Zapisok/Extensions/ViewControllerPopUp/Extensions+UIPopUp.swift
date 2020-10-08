@@ -9,10 +9,10 @@
 import UIKit
 import SwiftEntryKit
 
+typealias ButtonHandler = (() -> Void)
+
 enum PopUpType {
-    case text
-    case textWithButton
-    case textWithButtons
+    case commonPopUp(title: String, description: String? = nil, image: String? = nil, fButton: String? = nil, sButton: String? = nil, fHandler: ButtonHandler? = nil, sHandler: ButtonHandler? = nil)
     case hint((HintViewHandler) -> Void)
     case openNote
     case manualCoordinates
@@ -22,15 +22,11 @@ enum PopUpType {
 extension UIViewController {
     func showPopUp(type: PopUpType) {
         switch type {
-        case .text:
-            SwiftEntryKit.display(entry: ManualInputView(), using: appearAttributes())
-            
-        case .textWithButton:
-            SwiftEntryKit.display(entry: ManualInputView(), using: appearAttributes())
-            
-        case .textWithButtons:
-            SwiftEntryKit.display(entry: ManualInputView(), using: appearAttributes())
-            
+        case let .commonPopUp(title, description, image, fButton, sButton, fHandler, sHandler):
+            let popUp = PopUpView()
+            popUp.configure(title: title, description: description, image: image, firstButtonText: fButton, secondButtonText: sButton, firstButtonHandler: fHandler, secondButtonHandler: sHandler)
+            SwiftEntryKit.display(entry: popUp, using: appearAttributes())
+
         case .hint(let handler):
             let hintView = HintView()
             hintView.configure(newTitle: "Test", type: handler)
