@@ -160,6 +160,7 @@
 		77BDB39E23B2B41600820E5B /* CityCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BDB39C23B2B41500820E5B /* CityCollectionCell.swift */; };
 		77BDB39F23B2B41600820E5B /* CityCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77BDB39D23B2B41500820E5B /* CityCollectionCell.xib */; };
 		77BDB3A323B3E99300820E5B /* GameNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77BDB3A123B3E99300820E5B /* GameNoteViewController.xib */; };
+		77C24FE5252FC14C00E7AB72 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 77C24FE4252FC14C00E7AB72 /* .swiftlint.yml */; };
 		77EDC312252E624E00ABBA05 /* Assets.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDC311252E624E00ABBA05 /* Assets.generated.swift */; };
 		77EDC317252E62A100ABBA05 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 77EDC315252E62A100ABBA05 /* Localizable.strings */; };
 		77EDC31B252E630F00ABBA05 /* Localization.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 77EDC31A252E630F00ABBA05 /* Localization.stencil */; };
@@ -288,6 +289,7 @@
 		77BDB39C23B2B41500820E5B /* CityCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCollectionCell.swift; sourceTree = "<group>"; };
 		77BDB39D23B2B41500820E5B /* CityCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCollectionCell.xib; sourceTree = "<group>"; };
 		77BDB3A123B3E99300820E5B /* GameNoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameNoteViewController.xib; sourceTree = "<group>"; };
+		77C24FE4252FC14C00E7AB72 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		77EDC311252E624E00ABBA05 /* Assets.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.generated.swift; sourceTree = "<group>"; };
 		77EDC316252E62A100ABBA05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		77EDC31A252E630F00ABBA05 /* Localization.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Localization.stencil; sourceTree = "<group>"; };
@@ -745,6 +747,7 @@
 		8D32F33422D3302D00ABC228 = {
 			isa = PBXGroup;
 			children = (
+				77C24FE4252FC14C00E7AB72 /* .swiftlint.yml */,
 				8D32F33F22D3302D00ABC228 /* 12Zapisok */,
 				8D32F33E22D3302D00ABC228 /* Products */,
 				CFD2B2E047277D91D36A6B63 /* Pods */,
@@ -886,6 +889,7 @@
 			buildPhases = (
 				7300C9F9A917508494C0AB47 /* [CP] Check Pods Manifest.lock */,
 				770972D8252E119700BED5C8 /* SwiftGen */,
+				77C24FE1252FBF1F00E7AB72 /* SwiftLint */,
 				77B027D8251B041400BC71F8 /* Sources */,
 				77B0281E251B041400BC71F8 /* Frameworks */,
 				77B02820251B041400BC71F8 /* Resources */,
@@ -907,6 +911,7 @@
 			buildPhases = (
 				893BBD1E4DBE3FBB0DAEFDFC /* [CP] Check Pods Manifest.lock */,
 				770972D2252E0FE800BED5C8 /* SwiftGen */,
+				77C24FDE252FBEB600E7AB72 /* SwiftLint */,
 				8D32F33922D3302D00ABC228 /* Sources */,
 				8D32F33A22D3302D00ABC228 /* Frameworks */,
 				8D32F33B22D3302D00ABC228 /* Resources */,
@@ -1012,6 +1017,7 @@
 				770972B5252DD61200BED5C8 /* OpenNoteView.xib in Resources */,
 				7790B485241FA66B0046EFA5 /* SettingsViewController.xib in Resources */,
 				7790B465241ECEB10046EFA5 /* GameViewController.xib in Resources */,
+				77C24FE5252FC14C00E7AB72 /* .swiftlint.yml in Resources */,
 				7790B46A241FA3CF0046EFA5 /* LoginViewController.xib in Resources */,
 				77254F9E252D0685004F9CF6 /* HintView.xib in Resources */,
 				77BDB39F23B2B41600820E5B /* CityCollectionCell.xib in Resources */,
@@ -1104,6 +1110,42 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "${PODS_ROOT}/SwiftGen/bin/swiftgen\ntouch ${SRCROOT}/swiftgen.yml\n";
+		};
+		77C24FDE252FBEB600E7AB72 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT\"/SwiftLint/swiftlint\n";
+		};
+		77C24FE1252FBF1F00E7AB72 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT\"/SwiftLint/swiftlint\n";
 		};
 		893BBD1E4DBE3FBB0DAEFDFC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
