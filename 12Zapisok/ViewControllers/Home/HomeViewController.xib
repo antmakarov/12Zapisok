@@ -33,7 +33,7 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ncc-MY-RPh">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="522.5"/>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nn" translatesAutoresizingMaskIntoConstraints="NO" id="Fz5-Zf-xHA">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/nn" translatesAutoresizingMaskIntoConstraints="NO" id="Fz5-Zf-xHA">
                     <rect key="frame" x="52" y="145" width="310" height="255.5"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -57,7 +57,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAX-E5-yR8">
                                     <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
                                     <color key="tintColor" red="1" green="0.42647484959999998" blue="0.1181829006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <state key="normal" image="pie-chart"/>
+                                    <state key="normal" image="Icons/AppIcons/pie-chart"/>
                                     <connections>
                                         <action selector="openStatistics:" destination="-1" eventType="touchUpInside" id="9L8-fo-jnW"/>
                                     </connections>
@@ -68,7 +68,7 @@
                                         <constraint firstAttribute="width" constant="36" id="K5d-KO-TJh"/>
                                     </constraints>
                                     <color key="tintColor" red="0.20392156859999999" green="0.2666666667" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <state key="normal" image="achievement"/>
+                                    <state key="normal" image="Icons/AppIcons/achievement"/>
                                     <connections>
                                         <action selector="openLeaderBoard:" destination="-1" eventType="touchUpInside" id="34U-Av-QzQ"/>
                                     </connections>
@@ -76,7 +76,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3b-X4-rB0">
                                     <rect key="frame" x="272" y="0.0" width="36" height="36"/>
                                     <color key="tintColor" red="0.45355463130000001" green="0.45355463130000001" blue="0.45355463130000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <state key="normal" image="settings-2"/>
+                                    <state key="normal" image="Icons/AppIcons/settings-2"/>
                                     <connections>
                                         <action selector="openSettings:" destination="-1" eventType="touchUpInside" id="Ldq-dk-CZB"/>
                                     </connections>
@@ -102,7 +102,7 @@
                         <constraint firstAttribute="width" constant="34" id="q5U-7U-cmy"/>
                     </constraints>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" image="warning"/>
+                    <state key="normal" image="Icons/AppIcons/warning"/>
                     <connections>
                         <action selector="showCityInfo:" destination="-1" eventType="touchUpInside" id="NZ5-xs-IUA"/>
                     </connections>
@@ -123,7 +123,7 @@
                         <constraint firstAttribute="width" constant="34" id="k8U-3a-Gyq"/>
                     </constraints>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" image="placeholder"/>
+                    <state key="normal" image="Icons/AppIcons/placeholder"/>
                     <connections>
                         <action selector="openMap:" destination="-1" eventType="touchUpInside" id="erU-zf-KoL"/>
                     </connections>
@@ -140,14 +140,14 @@
                                         <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k0J-Kf-toj">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="162"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Scooter" translatesAutoresizingMaskIntoConstraints="NO" id="VZy-H9-hOK">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/MenuCirclesColor/Scooter" translatesAutoresizingMaskIntoConstraints="NO" id="VZy-H9-hOK">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="VZy-H9-hOK" secondAttribute="height" multiplier="1:1" id="YDh-N4-eKb"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="route-2" translatesAutoresizingMaskIntoConstraints="NO" id="MGb-P0-Vxt">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/AppIcons/route-2" translatesAutoresizingMaskIntoConstraints="NO" id="MGb-P0-Vxt">
                                                     <rect key="frame" x="-78" y="10" width="256" height="70"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRq-3K-UHQ">
@@ -173,13 +173,13 @@
                                         <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffS-rK-VAg">
                                             <rect key="frame" x="0.0" y="162" width="100" height="162.5"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Celestial" translatesAutoresizingMaskIntoConstraints="NO" id="bAA-uo-ipF">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/MenuCirclesColor/Celestial" translatesAutoresizingMaskIntoConstraints="NO" id="bAA-uo-ipF">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="bAA-uo-ipF" secondAttribute="height" multiplier="1:1" id="WND-Ns-YUf"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="paper" translatesAutoresizingMaskIntoConstraints="NO" id="TV1-lP-YAs">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icons/AppIcons/paper" translatesAutoresizingMaskIntoConstraints="NO" id="TV1-lP-YAs">
                                                     <rect key="frame" x="8" y="8" width="85" height="85"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -210,12 +210,12 @@
                                         <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S08-QM-D6o">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="162"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Orange Coral" translatesAutoresizingMaskIntoConstraints="NO" id="GUm-zH-cqv">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icons/MenuCirclesColor/Orange Coral" translatesAutoresizingMaskIntoConstraints="NO" id="GUm-zH-cqv">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cityscape" translatesAutoresizingMaskIntoConstraints="NO" id="mhc-AW-ELP">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icons/AppIcons/cityscape" translatesAutoresizingMaskIntoConstraints="NO" id="mhc-AW-ELP">
                                                     <rect key="frame" x="8" y="8" width="85" height="85"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -233,11 +233,11 @@
                                         <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qw7-PT-l0d">
                                             <rect key="frame" x="0.0" y="162" width="100" height="162.5"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tonight" translatesAutoresizingMaskIntoConstraints="NO" id="DPn-Fm-fxM">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icons/MenuCirclesColor/Tonight" translatesAutoresizingMaskIntoConstraints="NO" id="DPn-Fm-fxM">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="treasure-2" translatesAutoresizingMaskIntoConstraints="NO" id="f0R-eO-5zk">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icons/AppIcons/treasure-2" translatesAutoresizingMaskIntoConstraints="NO" id="f0R-eO-5zk">
                                                     <rect key="frame" x="6" y="8" width="86" height="84"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -274,7 +274,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fw0-Uf-YWK">
                     <rect key="frame" x="91" y="58" width="232.5" height="67"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="s1A-er-TXI">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="s1A-er-TXI">
                             <rect key="frame" x="0.0" y="0.0" width="50" height="67"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="8Hz-CH-XIk"/>
@@ -332,22 +332,22 @@
         </view>
     </objects>
     <resources>
-        <image name="Celestial" width="247" height="247"/>
-        <image name="Orange Coral" width="247" height="247"/>
-        <image name="Scooter" width="247" height="247"/>
-        <image name="Tonight" width="247" height="247"/>
-        <image name="achievement" width="128" height="128"/>
+        <image name="Icons/AppIcons/achievement" width="128" height="128"/>
+        <image name="Icons/AppIcons/cityscape" width="256" height="256"/>
+        <image name="Icons/AppIcons/paper" width="256" height="256"/>
+        <image name="Icons/AppIcons/pie-chart" width="128" height="128"/>
+        <image name="Icons/AppIcons/placeholder" width="128" height="128"/>
+        <image name="Icons/AppIcons/route-2" width="256" height="256"/>
+        <image name="Icons/AppIcons/settings-2" width="128" height="128"/>
+        <image name="Icons/AppIcons/treasure-2" width="256" height="256"/>
+        <image name="Icons/AppIcons/warning" width="64" height="64"/>
+        <image name="Icons/MenuCirclesColor/Celestial" width="247" height="247"/>
+        <image name="Icons/MenuCirclesColor/Orange Coral" width="247" height="247"/>
+        <image name="Icons/MenuCirclesColor/Scooter" width="247" height="247"/>
+        <image name="Icons/MenuCirclesColor/Tonight" width="247" height="247"/>
+        <image name="Icons/appLogo" width="50" height="49"/>
+        <image name="Icons/nn" width="900" height="552"/>
         <image name="appBackground" width="375" height="476"/>
-        <image name="appLogo" width="50" height="49"/>
-        <image name="cityscape" width="256" height="256"/>
-        <image name="nn" width="900" height="552"/>
-        <image name="paper" width="256" height="256"/>
-        <image name="pie-chart" width="128" height="128"/>
-        <image name="placeholder" width="128" height="128"/>
-        <image name="route-2" width="256" height="256"/>
-        <image name="settings-2" width="128" height="128"/>
-        <image name="treasure-2" width="256" height="256"/>
-        <image name="warning" width="64" height="64"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

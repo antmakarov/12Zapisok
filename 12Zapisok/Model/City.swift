@@ -20,6 +20,7 @@ class City: Object, Mappable, Endpoint {
     @objc dynamic var name = ""
     @objc dynamic var imageUrl = ""
     @objc dynamic var cityDescription = ""
+    @objc dynamic var cityInfo: CityInfo?
     @objc dynamic var location: Location?
     
     //@objc dynamic var detailInfo: CityInfo
@@ -38,6 +39,7 @@ class City: Object, Mappable, Endpoint {
         name            <- map["name"]
         imageUrl        <- map["image_url"]
         cityDescription <- map["description"]
+        cityInfo        <- map["town_info"]
         location        <- map["point"]
     }
     

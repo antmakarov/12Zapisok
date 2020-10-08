@@ -7,6 +7,7 @@ target '12Zapisok' do
 
   pod 'Alamofire'
   pod 'ObjectMapper'
+  pod 'ObjectMapperAdditions/Realm', '~> 6.0'
   pod 'RealmSwift'
   pod 'Kingfisher'
   pod 'SwiftEntryKit'
@@ -25,6 +26,7 @@ target '12Zapisok SwiftUI' do
 
   pod 'Alamofire'
   pod 'ObjectMapper'
+  pod 'ObjectMapperAdditions/Realm', '~> 6.0'
   pod 'RealmSwift'
   pod 'Kingfisher'
   pod 'SwiftEntryKit'

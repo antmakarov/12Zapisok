@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PurchaseViewController" customModule="_2Zapisok" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PurchaseViewController" customModule="_2_Записок" customModuleProvider="target">
             <connections>
                 <outlet property="distanceAllNotesView" destination="4cj-pu-a8I" id="NqW-Jd-lLp"/>
                 <outlet property="distanceSingleNoteView" destination="4Z8-O9-jNk" id="HSB-gD-e2N"/>
@@ -36,7 +38,7 @@
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <inset key="imageEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
-                            <state key="normal" image="close"/>
+                            <state key="normal" image="Icons/AppIcons/close"/>
                             <connections>
                                 <action selector="closeButtonPressed" destination="-1" eventType="touchUpInside" id="D6K-N9-wD1"/>
                             </connections>
@@ -52,7 +54,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="ipc-Wa-Phm" secondAttribute="trailing" id="KQ5-zo-VbX"/>
                         <constraint firstItem="avh-Gu-UrV" firstAttribute="centerY" secondItem="m8A-DT-v2w" secondAttribute="centerY" id="NEW-uw-Hf0"/>
@@ -114,7 +116,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="Ig3-Rj-m7c" secondAttribute="bottom" constant="8" id="1AF-7g-9wN"/>
                         <constraint firstItem="Ig3-Rj-m7c" firstAttribute="leading" secondItem="a8j-0N-Nfy" secondAttribute="trailing" id="1XQ-uC-RhT"/>
@@ -152,7 +154,7 @@
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor"/>
                     <constraints>
                         <constraint firstItem="z5X-kb-i57" firstAttribute="leading" secondItem="4Z8-O9-jNk" secondAttribute="leading" constant="8" id="GVg-lE-3WO"/>
                         <constraint firstAttribute="trailing" secondItem="z5X-kb-i57" secondAttribute="trailing" constant="8" id="J4w-Br-BB0"/>
@@ -186,7 +188,7 @@
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor"/>
                     <constraints>
                         <constraint firstItem="ty9-CM-NCq" firstAttribute="top" secondItem="4cj-pu-a8I" secondAttribute="top" constant="15" id="M2I-Nv-S2j"/>
                         <constraint firstAttribute="trailing" secondItem="ty9-CM-NCq" secondAttribute="trailing" constant="8" id="ifj-1i-E92"/>
@@ -215,7 +217,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" systemColor="systemIndigoColor"/>
                     <constraints>
                         <constraint firstItem="JMN-K5-9cd" firstAttribute="top" secondItem="54o-rw-aRW" secondAttribute="top" id="CV7-0b-xrl"/>
                         <constraint firstItem="JMN-K5-9cd" firstAttribute="leading" secondItem="54o-rw-aRW" secondAttribute="leading" id="GZD-fP-583"/>
@@ -328,7 +330,7 @@
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="s4I-N4-HWm"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhU-4M-Ddw">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhU-4M-Ddw">
                     <rect key="frame" x="16" y="645" width="343" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="giV-f6-5LO"/>
@@ -339,6 +341,7 @@
                     </state>
                 </button>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="4Z8-O9-jNk" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.149925" id="005-ta-k57"/>
@@ -377,7 +380,6 @@
                 <constraint firstItem="4cj-pu-a8I" firstAttribute="trailing" secondItem="3Yh-gB-2PN" secondAttribute="trailing" id="vXF-Lo-bjU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3wV-CY-qku" secondAttribute="trailing" constant="22" id="w2H-PC-2Jr"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="135.19999999999999" y="94.902548725637189"/>
         </view>
         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 ₽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ebn-TC-ZSg">
@@ -390,7 +392,16 @@
         </label>
     </objects>
     <resources>
+        <image name="Icons/AppIcons/close" width="64" height="64"/>
         <image name="appBackground" width="375" height="476"/>
-        <image name="close" width="64" height="64"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

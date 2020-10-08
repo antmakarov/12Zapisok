@@ -18,7 +18,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3cy-uM-VsG">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="255"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="requestLocation" translatesAutoresizingMaskIntoConstraints="NO" id="Mdt-oW-yzN">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/Onboarding/requestLocation" translatesAutoresizingMaskIntoConstraints="NO" id="Mdt-oW-yzN">
                             <rect key="frame" x="137" y="16" width="140" height="140"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="Mdt-oW-yzN" secondAttribute="height" multiplier="1:1" id="Nmz-mS-kA5"/>
@@ -79,7 +79,7 @@
         </collectionReusableView>
     </objects>
     <resources>
-        <image name="requestLocation" width="512" height="512"/>
+        <image name="Icons/Onboarding/requestLocation" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

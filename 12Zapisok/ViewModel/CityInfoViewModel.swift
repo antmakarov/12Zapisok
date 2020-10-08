@@ -48,7 +48,7 @@ class CityInfoViewModel {
     
     private func loadCurrentCity() {
         if let cityID = preferencesManager.currentCityId {
-            currentCity = databaseStorage.getObjectByID(CityInfo.self, id: cityID)
+            currentCity = databaseStorage.getObjectByID(City.self, id: cityID)?.cityInfo
         }
     }
 }

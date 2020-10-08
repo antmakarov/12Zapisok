@@ -9,10 +9,11 @@
 import Foundation
 import RealmSwift
 import ObjectMapper
+import ObjectMapperAdditions
 
-class CityInfo: Object, Mappable, Endpoint {
+class CityInfo: Object, Mappable {
     
-    @objc dynamic var id = ""
+    @objc dynamic var id = UUID().uuidString
     @objc dynamic var name = ""
     @objc dynamic var fullDescription = ""
     @objc dynamic var baseYear = 0
@@ -29,16 +30,11 @@ class CityInfo: Object, Mappable, Endpoint {
     }
     
     func mapping(map: Map) {
-        id              <- map["id"]
         name            <- map["name"]
         fullDescription <- map["full_description"]
         baseYear        <- map["base_year"]
         population      <- map["population"]
         regionCode      <- map["region_code"]
-        imageUrls       <- map["image_urls"]
-    }
-    
-    static func url() -> String {
-        return "/cityInfo"
+        imageUrls       <- (map["image_urls"], RealmTypeCastTransform())
     }
 }

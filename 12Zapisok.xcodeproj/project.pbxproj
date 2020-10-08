@@ -13,7 +13,6 @@
 		770972B5252DD61200BED5C8 /* OpenNoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 770972B4252DD61200BED5C8 /* OpenNoteView.xib */; };
 		770972B9252DD62800BED5C8 /* OpenNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770972B8252DD62800BED5C8 /* OpenNoteView.swift */; };
 		770972F1252E5AFA00BED5C8 /* Assets.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 770972EF252E5AFA00BED5C8 /* Assets.stencil */; };
-		7711C7A1246894BA0022EC45 /* Extensions+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7711C7A0246894BA0022EC45 /* Extensions+UIImage.swift */; };
 		77254F98252D067C004F9CF6 /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77254F97252D067C004F9CF6 /* HintView.swift */; };
 		77254F9E252D0685004F9CF6 /* HintView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77254F9D252D0685004F9CF6 /* HintView.xib */; };
 		7741375623B9EC4100AD8A71 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7741375523B9EC4100AD8A71 /* HomeViewModel.swift */; };
@@ -51,7 +50,6 @@
 		77B027D9251B041400BC71F8 /* PurchaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DCA24220822005ED8C0 /* PurchaseViewModel.swift */; };
 		77B027DA251B041400BC71F8 /* Extensions+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F931832439CF61007BC979 /* Extensions+UIButton.swift */; };
 		77B027DB251B041400BC71F8 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120D5239C4C40001B2301 /* BaseCoordinator.swift */; };
-		77B027DC251B041400BC71F8 /* Extensions+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7711C7A0246894BA0022EC45 /* Extensions+UIImage.swift */; };
 		77B027DD251B041400BC71F8 /* OnboardingStepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120E4239CDE2B001B2301 /* OnboardingStepViewModel.swift */; };
 		77B027DE251B041400BC71F8 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F35822D34B8E00ABC228 /* GameViewModel.swift */; };
 		77B027DF251B041400BC71F8 /* GameRuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7753C61E244CD20F0072A0B5 /* GameRuleCell.swift */; };
@@ -166,6 +164,8 @@
 		77EDC317252E62A100ABBA05 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 77EDC315252E62A100ABBA05 /* Localizable.strings */; };
 		77EDC31B252E630F00ABBA05 /* Localization.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 77EDC31A252E630F00ABBA05 /* Localization.stencil */; };
 		77EDC320252E64B100ABBA05 /* Localized.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDC31F252E64B100ABBA05 /* Localized.generated.swift */; };
+		77EDC330252F7FF900ABBA05 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDC32F252F7FF900ABBA05 /* PopUpView.swift */; };
+		77EDC336252F800400ABBA05 /* PopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77EDC335252F800400ABBA05 /* PopUpView.xib */; };
 		77F80DB424214B44005ED8C0 /* Extensions+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DB324214B44005ED8C0 /* Extensions+String.swift */; };
 		77F80DB624215596005ED8C0 /* GameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DB524215596005ED8C0 /* GameCoordinator.swift */; };
 		77F80DB824216518005ED8C0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DB724216518005ED8C0 /* Coordinator.swift */; };
@@ -231,7 +231,6 @@
 		770972B4252DD61200BED5C8 /* OpenNoteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OpenNoteView.xib; sourceTree = "<group>"; };
 		770972B8252DD62800BED5C8 /* OpenNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenNoteView.swift; sourceTree = "<group>"; };
 		770972EF252E5AFA00BED5C8 /* Assets.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Assets.stencil; sourceTree = "<group>"; };
-		7711C7A0246894BA0022EC45 /* Extensions+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIImage.swift"; sourceTree = "<group>"; };
 		77254F97252D067C004F9CF6 /* HintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintView.swift; sourceTree = "<group>"; };
 		77254F9D252D0685004F9CF6 /* HintView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HintView.xib; sourceTree = "<group>"; };
 		7741375523B9EC4100AD8A71 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -293,6 +292,8 @@
 		77EDC316252E62A100ABBA05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		77EDC31A252E630F00ABBA05 /* Localization.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Localization.stencil; sourceTree = "<group>"; };
 		77EDC31F252E64B100ABBA05 /* Localized.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localized.generated.swift; sourceTree = "<group>"; };
+		77EDC32F252F7FF900ABBA05 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
+		77EDC335252F800400ABBA05 /* PopUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpView.xib; sourceTree = "<group>"; };
 		77F80DB324214B44005ED8C0 /* Extensions+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+String.swift"; sourceTree = "<group>"; };
 		77F80DB524215596005ED8C0 /* GameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCoordinator.swift; sourceTree = "<group>"; };
 		77F80DB724216518005ED8C0 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -426,7 +427,6 @@
 				7790B473241FA44F0046EFA5 /* Extentions+Storyboard.swift */,
 				77F80DB324214B44005ED8C0 /* Extensions+String.swift */,
 				774413BF242A9F2F001FBD83 /* Extensions+UIImageView.swift */,
-				7711C7A0246894BA0022EC45 /* Extensions+UIImage.swift */,
 				77A18F002433756F0027E456 /* Extensions+UIViewController.swift */,
 				77F931832439CF61007BC979 /* Extensions+UIButton.swift */,
 				77F93185243B13E9007BC979 /* Extensions+UIColor.swift */,
@@ -571,6 +571,22 @@
 				77F80DDB242328DE005ED8C0 /* MapCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		77EDC32D252F7AF900ABBA05 /* SuccessBuyView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SuccessBuyView;
+			sourceTree = "<group>";
+		};
+		77EDC32E252F7B2A00ABBA05 /* PopUpView */ = {
+			isa = PBXGroup;
+			children = (
+				77EDC32F252F7FF900ABBA05 /* PopUpView.swift */,
+				77EDC335252F800400ABBA05 /* PopUpView.xib */,
+			);
+			path = PopUpView;
 			sourceTree = "<group>";
 		};
 		77F80DB92421FF2D005ED8C0 /* CityInfo */ = {
@@ -823,9 +839,11 @@
 		8D32F38422D73E4B00ABC228 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				77254F96252D05C4004F9CF6 /* HintView */,
+				77EDC32E252F7B2A00ABBA05 /* PopUpView */,
+				77EDC32D252F7AF900ABBA05 /* SuccessBuyView */,
 				8D8EA3D822D75F8D00EA2F01 /* BaseCell.swift */,
 				8D05BC46252879CB00E08C1A /* ErrorView */,
+				77254F96252D05C4004F9CF6 /* HintView */,
 				8D05BC612528893000E08C1A /* DistanceToPlaceView */,
 				8D05BC622528894400E08C1A /* GameProgressView */,
 				8D05BC6B252A529E00E08C1A /* CheckPlaceView */,
@@ -986,6 +1004,7 @@
 				8D05BC48252879DC00E08C1A /* ErrorView.xib in Resources */,
 				7790B488241FA6990046EFA5 /* OnboardingViewController.xib in Resources */,
 				8D05BC78252A533A00E08C1A /* ManualInputView.xib in Resources */,
+				77EDC336252F800400ABBA05 /* PopUpView.xib in Resources */,
 				7790B48B241FA6FF0046EFA5 /* MapViewController.xib in Resources */,
 				7790B47E241FA6050046EFA5 /* PurchaseViewController.xib in Resources */,
 				7790B472241FA42A0046EFA5 /* RegistrationViewController.xib in Resources */,
@@ -1165,7 +1184,6 @@
 				77B027D9251B041400BC71F8 /* PurchaseViewModel.swift in Sources */,
 				77B027DA251B041400BC71F8 /* Extensions+UIButton.swift in Sources */,
 				77B027DB251B041400BC71F8 /* BaseCoordinator.swift in Sources */,
-				77B027DC251B041400BC71F8 /* Extensions+UIImage.swift in Sources */,
 				77B027DD251B041400BC71F8 /* OnboardingStepViewModel.swift in Sources */,
 				77B027DE251B041400BC71F8 /* GameViewModel.swift in Sources */,
 				77B027DF251B041400BC71F8 /* GameRuleCell.swift in Sources */,
@@ -1245,7 +1263,6 @@
 				77F931842439CF61007BC979 /* Extensions+UIButton.swift in Sources */,
 				77B02846251B0FC800BC71F8 /* main.swift in Sources */,
 				77B120D6239C4C40001B2301 /* BaseCoordinator.swift in Sources */,
-				7711C7A1246894BA0022EC45 /* Extensions+UIImage.swift in Sources */,
 				77B120E5239CDE2B001B2301 /* OnboardingStepViewModel.swift in Sources */,
 				8D32F35922D34B8E00ABC228 /* GameViewModel.swift in Sources */,
 				7753C620244CD20F0072A0B5 /* GameRuleCell.swift in Sources */,
@@ -1254,6 +1271,7 @@
 				8D05BC7C252A534200E08C1A /* ManualInputView.swift in Sources */,
 				77F80DD824232746005ED8C0 /* CityInfoViewModel.swift in Sources */,
 				8D05BCA0252BBA6300E08C1A /* Extensions+UIPopUp.swift in Sources */,
+				77EDC330252F7FF900ABBA05 /* PopUpView.swift in Sources */,
 				77B120E3239CDCE1001B2301 /* OnboardingViewModel.swift in Sources */,
 				8D8EA3D922D75F8D00EA2F01 /* BaseCell.swift in Sources */,
 				77B120C5238C53BC001B2301 /* PreferencesManager.swift in Sources */,

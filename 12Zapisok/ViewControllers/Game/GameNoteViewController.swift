@@ -55,23 +55,19 @@ class GameNoteViewController: BaseViewController {
             addressStackView.isHidden = false
             
             noteImage.setupImage(url: viewModel.imgUrl, placeholder: .app)
-            statusHeaderImage.image = .successState
+            statusHeaderImage.image = Asset.Icons.NoteState.successState
             
             placeLabel.text = viewModel.address
             timeFindedLabel.text = Constants.openText + viewModel.openTime
             
         case .progress:
-            manualInputButton.setBackground(viewModel.hintManager.getCountOf(hint: .foreverCoordinates) > 0 ? "Rectangle" : nil)
+            confiureButton(button: manualInputButton, hintType: .foreverCoordinates)
+            confiureButton(button: onMapButton, hintType: .showPlaceOnMap)
+            confiureButton(button: distanceButton, hintType: .foreverDistance)
+            confiureButton(button: openNoteButton, hintType: .openSingleNote)
             
-            
-            viewModel.hintManager.getCountOf(hint: .showPlaceOnMap) > 0 ?              onMapButton.setBackgroundImage(UIImage(named: "Rectangle"), for: .normal) : onMapButton.setBackgroundImage(nil, for: .normal)
-            
-            viewModel.hintManager.getCountOf(hint: .foreverDistance) > 0 ?              distanceButton.setBackgroundImage(UIImage(named: "Rectangle"), for: .normal) : distanceButton.setBackgroundImage(nil, for: .normal)
-            
-            viewModel.hintManager.getCountOf(hint: .openSingleNote) > 0 ?              openNoteButton.setBackgroundImage(UIImage(named: "Rectangle"), for: .normal) : openNoteButton.setBackgroundImage(nil, for: .normal)
-            
-            noteImage.image = .progressIcon
-            statusHeaderImage.image = .progressState
+            noteImage.image = Asset.Icons.progressIcon
+            statusHeaderImage.image = Asset.Icons.NoteState.progressState
             
             placeLabel.text = Constants.unknownPlace
             timeFindedLabel.text = Constants.asSoonTime
@@ -81,8 +77,8 @@ class GameNoteViewController: BaseViewController {
             openNoteButton.isHidden = true
             addressStackView.isHidden = false
             
-            noteImage.image = .unavailableIcon
-            statusHeaderImage.image = .closeState
+            noteImage.image = Asset.Icons.unavailableIcon
+            statusHeaderImage.image = Asset.Icons.NoteState.closeState
             
             placeLabel.text = Constants.unknownPlace
             timeFindedLabel.text = Constants.asSoonTime
@@ -91,7 +87,7 @@ class GameNoteViewController: BaseViewController {
     
     private func confiureButton(button: UIButton, hintType: HintType) {
         guard let hintManager = viewModel?.hintManager else { return }
-        button.setBackground(hintManager.getCountOf(hint: hintType) > 0 ? "Rectangle" : nil)
+        button.setBackground(hintManager.getCountOf(hint: hintType) > 0 ? Asset.Icons.rectangle : nil)
     }
     
     @IBAction private func checkPlace(_ sender: Any) {

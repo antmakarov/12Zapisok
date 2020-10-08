@@ -13,7 +13,7 @@ enum Operation {
     case remove
 }
 
-enum HintType {
+enum HintType: String {
     case openSingleNote
     case singleNoteDistance
     case foreverDistance
@@ -23,35 +23,54 @@ enum HintType {
 
 protocol HintManaging {
     func getCountOf(hint: HintType) -> Int
+    func updateHint(type: HintType, operation: Operation)
 }
 
 class HintManager {
     
     public static let shared = HintManager()
     
-    var availableHints: [HintType: Int] = [.openSingleNote: 1]
+    private let preferencesManager: PreferencesManager
+
+    convenience init() {
+        self.init(preferencesManager: PreferencesManager.shared)
+    }
+    
+    init(preferencesManager: PreferencesManager) {
+        self.preferencesManager = preferencesManager
+        availableHints = preferencesManager.myCurrentHints
+    }
+    
+    var availableHints: [String: Int] = [:] {
+        didSet {
+            preferencesManager.myCurrentHints = availableHints
+        }
+    }
+    
     var totalHints: Int {
         availableHints.count
     }
     
-    func updateHints(type: HintType, operation: Operation) {
+    func updateHint(type: HintType, operation: Operation) {
+        let typeValue = type.rawValue
+        
         switch operation {
         case .add:
-            availableHints[type]? += 1
+            var curScore = availableHints[typeValue] ?? 0
+            curScore += 1
+            availableHints[typeValue] = curScore
             
         case .remove:
-            availableHints[type]? -= 1
-            if availableHints[type] == 0 {
-                availableHints[type] = nil
+            availableHints[typeValue]? -= 1
+            if availableHints[typeValue] == 0 {
+                availableHints[typeValue] = nil
             }
         }
     }
     
     func getCountOf(hint: HintType) -> Int {
-        return availableHints[hint] ?? 0
+        return availableHints[hint.rawValue] ?? 0
     }
-    
-    
 }
 
 extension HintManager: HintManaging {

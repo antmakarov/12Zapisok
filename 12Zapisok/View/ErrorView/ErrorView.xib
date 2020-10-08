@@ -21,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stop" translatesAutoresizingMaskIntoConstraints="NO" id="E0T-VD-OOj">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/stop" translatesAutoresizingMaskIntoConstraints="NO" id="E0T-VD-OOj">
                     <rect key="frame" x="79" y="275" width="256" height="256"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhH-X0-aPO">
@@ -41,7 +41,7 @@
                                 <constraint firstAttribute="height" constant="50" id="T08-q5-VOd"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <state key="normal" title="Повторить" backgroundImage="Rectangle">
+                            <state key="normal" title="Повторить" backgroundImage="Icons/Rectangle">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <userDefinedRuntimeAttributes>
@@ -60,7 +60,7 @@
                                 <constraint firstAttribute="height" constant="50" id="zdX-2L-tzo"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <state key="normal" title="Назад" backgroundImage="Rectangle">
+                            <state key="normal" title="Назад" backgroundImage="Icons/Rectangle">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <userDefinedRuntimeAttributes>
@@ -96,7 +96,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Rectangle" width="368" height="102"/>
-        <image name="stop" width="256" height="256"/>
+        <image name="Icons/Rectangle" width="368" height="102"/>
+        <image name="Icons/stop" width="256" height="256"/>
     </resources>
 </document>

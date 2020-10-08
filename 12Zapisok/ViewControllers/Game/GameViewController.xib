@@ -48,7 +48,7 @@
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <inset key="imageEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
-                            <state key="normal" image="back"/>
+                            <state key="normal" image="Icons/AppIcons/back"/>
                             <connections>
                                 <action selector="backButtonPressed" destination="-1" eventType="touchUpInside" id="6jX-Bk-w0Y"/>
                             </connections>
@@ -60,7 +60,7 @@
                                 <constraint firstAttribute="height" constant="32" id="8f7-2B-9js"/>
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <state key="normal" image="placeholder"/>
+                            <state key="normal" image="Icons/AppIcons/placeholder"/>
                             <connections>
                                 <action selector="openMap" destination="-1" eventType="touchUpInside" id="XiL-mq-NNy"/>
                             </connections>
@@ -179,9 +179,9 @@
         </view>
     </objects>
     <resources>
+        <image name="Icons/AppIcons/back" width="128" height="128"/>
+        <image name="Icons/AppIcons/placeholder" width="128" height="128"/>
         <image name="appBackground" width="375" height="476"/>
-        <image name="back" width="128" height="128"/>
-        <image name="placeholder" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

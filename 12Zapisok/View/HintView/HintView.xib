@@ -30,7 +30,7 @@
                     <rect key="frame" x="68" y="223" width="180" height="43"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" title="Отмена" backgroundImage="Rectangle">
+                    <state key="normal" title="Отмена" backgroundImage="Icons/Rectangle">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <userDefinedRuntimeAttributes>
@@ -46,7 +46,7 @@
                     <rect key="frame" x="68" y="172" width="180" height="43"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" title="Посмотреть рекламу" backgroundImage="Rectangle">
+                    <state key="normal" title="Посмотреть рекламу" backgroundImage="Icons/Rectangle">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <userDefinedRuntimeAttributes>
@@ -62,7 +62,7 @@
                     <rect key="frame" x="68" y="117" width="180" height="43"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" title="Купить" backgroundImage="Rectangle">
+                    <state key="normal" title="Купить" backgroundImage="Icons/Rectangle">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <userDefinedRuntimeAttributes>
@@ -78,7 +78,7 @@
                     <rect key="frame" x="68" y="66" width="180" height="43"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" title="Использовать" backgroundImage="Rectangle">
+                    <state key="normal" title="Использовать" backgroundImage="Icons/Rectangle">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <userDefinedRuntimeAttributes>
@@ -98,7 +98,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Rectangle" width="368" height="102"/>
+        <image name="Icons/Rectangle" width="368" height="102"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

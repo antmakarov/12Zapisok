@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameRulesViewController" customModule="_2Zapisok" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameRulesViewController" customModule="_2_Записок" customModuleProvider="target">
             <connections>
                 <outlet property="rulesTableView" destination="BKc-GZ-94Z" id="JSh-DY-sf3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -32,7 +34,7 @@
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <inset key="imageEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
-                            <state key="normal" image="close"/>
+                            <state key="normal" image="Icons/AppIcons/close"/>
                             <connections>
                                 <action selector="closeButtonPressed" destination="-1" eventType="touchUpInside" id="cMe-EO-QSM"/>
                             </connections>
@@ -48,7 +50,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="fwu-ob-uCI" firstAttribute="leading" secondItem="l4s-3k-S9I" secondAttribute="leading" constant="16" id="0JD-zB-0Yf"/>
                         <constraint firstItem="BRv-HD-G2u" firstAttribute="centerX" secondItem="ZqC-B9-urE" secondAttribute="centerX" id="0OL-qQ-EKq"/>
@@ -63,12 +65,13 @@
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BKc-GZ-94Z">
                     <rect key="frame" x="20" y="90" width="335" height="577"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Ef6-ar-c6X"/>
                     </connections>
                 </tableView>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="l4s-3k-S9I" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Tje-8v-a3f"/>
@@ -79,12 +82,14 @@
                 <constraint firstItem="BKc-GZ-94Z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="v7I-AQ-mux"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BKc-GZ-94Z" secondAttribute="trailing" constant="20" id="vvi-Fg-6se"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="140.57971014492756" y="97.767857142857139"/>
         </view>
     </objects>
     <resources>
+        <image name="Icons/AppIcons/close" width="64" height="64"/>
         <image name="appBackground" width="375" height="476"/>
-        <image name="close" width="64" height="64"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

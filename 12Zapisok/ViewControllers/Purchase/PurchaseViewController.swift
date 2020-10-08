@@ -8,14 +8,6 @@
 
 import UIKit
 
-private enum PurchaseType {
-    case openSingleNote
-    case distanceSingleNote
-    case distanceAllNotes
-    case showPinNote
-    case enterAddress
-}
-
 class PurchaseViewController: UIViewController {
     
     @IBOutlet weak var openSingleNoteView: UIView!
@@ -42,27 +34,36 @@ class PurchaseViewController: UIViewController {
     
     //MARK: Actions
     @objc private func openSingleNote(_ sender: UITapGestureRecognizer) {
-        print("Buy Open Single Note")
+        prepareForPopUp(hint: .openSingleNote, name: "Открыть одну записку")
     }
     
     @objc private func distanceSingleNote(_ sender: UITapGestureRecognizer) {
-        print("Buy Distance Single Note")
+        prepareForPopUp(hint: .singleNoteDistance, name: "Расстояние до одной записки")
     }
     
     @objc private func distanceAllNotes(_ sender: UITapGestureRecognizer) {
-        print("Buy Distance All Notes")
+        prepareForPopUp(hint: .foreverDistance, name: "До всех записок навсегда")
     }
     
     @objc private func showPinNote(_ sender: UITapGestureRecognizer) {
-        print("Buy Show Pin Note")
+        prepareForPopUp(hint: .showPlaceOnMap, name: "Показать точку на карте")
     }
     
     @objc private func enterAddress(_ sender: UITapGestureRecognizer) {
-        print("Buy Enter Address")
+        prepareForPopUp(hint: .foreverCoordinates, name: "Возможность вводить адрес без посещения")
     }
     
     @IBAction func closeButtonPressed() {
         viewModel?.closeButtonPressed?()
+    }
+    
+    private func prepareForPopUp(hint: HintType, name: String) {
+        showPopUp(type: .commonPopUp(title: name, description: "Вы уверены, что хотите купить эту подсказку", fButton: "Да", sButton: "Нет", fHandler: { [weak self] in
+            self?.viewModel?.buyHint(type: hint)
+            self?.showPopUp(type: .commonPopUp(title: "Поздравляю"))
+        }, sHandler: { [weak self] in
+            self?.dismissPopUp()
+        }))
     }
     
     @IBAction func restoreButtonPressed() {

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WgH-bZ-J5D">
                         <rect key="frame" x="0.0" y="0.0" width="177" height="224"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="successBig" translatesAutoresizingMaskIntoConstraints="NO" id="gwX-fA-U0j">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/NoteBigColor/successBig" translatesAutoresizingMaskIntoConstraints="NO" id="gwX-fA-U0j">
                                 <rect key="frame" x="0.0" y="0.0" width="177" height="224"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
@@ -39,14 +40,14 @@
                                     <constraint firstAttribute="height" constant="1" id="qRs-ns-wfa"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" image="progressIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Kg9-2s-s0c">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" image="Icons/progressIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Kg9-2s-s0c">
                                 <rect key="frame" x="18" y="41" width="141" height="127"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Rtu-Jp-Ajj">
-                                <rect key="frame" x="25.5" y="178" width="126.5" height="32"/>
+                                <rect key="frame" x="25" y="178" width="127" height="32"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="пл. Минина " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Gu3-H2-aJG">
-                                        <rect key="frame" x="18.5" y="0.0" width="89" height="18"/>
+                                        <rect key="frame" x="19" y="0.0" width="89" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="rPf-65-ka2"/>
                                         </constraints>
@@ -55,7 +56,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="открыта: 26.03.2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s15-CQ-wPX">
-                                        <rect key="frame" x="0.0" y="22" width="126.5" height="10"/>
+                                        <rect key="frame" x="0.0" y="22" width="127" height="10"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="bPa-jn-ZyY"/>
                                         </constraints>
@@ -108,7 +109,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="progressIcon" width="232" height="230"/>
-        <image name="successBig" width="216" height="316"/>
+        <image name="Icons/NoteBigColor/successBig" width="216" height="316"/>
+        <image name="Icons/progressIcon" width="232" height="230"/>
     </resources>
 </document>

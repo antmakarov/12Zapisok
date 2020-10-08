@@ -47,6 +47,16 @@ class PreferencesManager {
         get { return userDefaults.integer(forKey: generateKey(#function)) }
     }
 
+    var myCurrentHints: [String: Int] {
+        set {
+            Logger.info(msg: "Set current user hints - \(myCurrentHints)")
+            userDefaults.set(newValue, forKey:  generateKey(#function))
+        }
+        get {
+            return userDefaults.dictionary(forKey: generateKey(#function)) as? [String: Int] ?? [:]
+        }
+    }
+    
     private func generateKey(_ key: String) -> String {
         return (Constants.appName ?? "12Zapisok") + "-" + key
     }

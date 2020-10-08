@@ -33,7 +33,7 @@
                                 <constraint firstAttribute="width" constant="28" id="JWp-ym-8De"/>
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <state key="normal" title="Назад" image="back"/>
+                            <state key="normal" title="Назад" image="Icons/AppIcons/back"/>
                             <connections>
                                 <action selector="closeButtonPressed" destination="-1" eventType="touchUpInside" id="Zdh-50-msm"/>
                             </connections>
@@ -54,7 +54,7 @@
                                 <constraint firstAttribute="width" constant="34" id="voX-sw-raR"/>
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <state key="normal" image="purchaseMap"/>
+                            <state key="normal" image="Icons/AppIcons/purchaseMap"/>
                             <connections>
                                 <action selector="goToPurchase" destination="-1" eventType="touchUpInside" id="oMi-uC-TUY"/>
                             </connections>
@@ -83,7 +83,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gh4-fP-niG">
                                     <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" image="targetMap"/>
+                                    <state key="normal" image="Icons/AppIcons/targetMap"/>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyR-zF-qzu">
                                     <rect key="frame" x="0.0" y="74" width="44" height="44"/>
@@ -92,7 +92,7 @@
                                         <constraint firstAttribute="height" constant="44" id="FQo-cg-GqT"/>
                                         <constraint firstAttribute="width" constant="44" id="eTe-n1-vfm"/>
                                     </constraints>
-                                    <state key="normal" image="myPin"/>
+                                    <state key="normal" image="Icons/AppIcons/myPin"/>
                                     <connections>
                                         <action selector="showMyPosition" destination="-1" eventType="touchUpInside" id="cJ7-DA-8X2"/>
                                     </connections>
@@ -100,7 +100,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5h-bC-fCU">
                                     <rect key="frame" x="0.0" y="148" width="44" height="44"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" image="cityPin"/>
+                                    <state key="normal" image="Icons/AppIcons/cityPin"/>
                                     <connections>
                                         <action selector="showCityCenter" destination="-1" eventType="touchUpInside" id="cwG-6W-41H"/>
                                     </connections>
@@ -143,11 +143,11 @@
         </view>
     </objects>
     <resources>
+        <image name="Icons/AppIcons/back" width="128" height="128"/>
+        <image name="Icons/AppIcons/cityPin" width="128" height="128"/>
+        <image name="Icons/AppIcons/myPin" width="128" height="128"/>
+        <image name="Icons/AppIcons/purchaseMap" width="128" height="128"/>
+        <image name="Icons/AppIcons/targetMap" width="128" height="128"/>
         <image name="appBackground" width="375" height="476"/>
-        <image name="back" width="128" height="128"/>
-        <image name="cityPin" width="128" height="128"/>
-        <image name="myPin" width="128" height="128"/>
-        <image name="purchaseMap" width="128" height="128"/>
-        <image name="targetMap" width="128" height="128"/>
     </resources>
 </document>

@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CityInfoViewController" customModule="_2Zapisok" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CityInfoViewController" customModule="_2_Записок" customModuleProvider="target">
             <connections>
                 <outlet property="cityDescription" destination="CrQ-av-iaP" id="iKB-yy-JwT"/>
                 <outlet property="cityName" destination="Z9i-oB-Cwj" id="y9f-1N-N1u"/>
@@ -45,13 +47,13 @@
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <inset key="imageEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
-                            <state key="normal" image="close"/>
+                            <state key="normal" image="Icons/AppIcons/close"/>
                             <connections>
                                 <action selector="closeButtonPressed" destination="-1" eventType="touchUpInside" id="QpF-3Q-4uc"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="О Городе" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9i-oB-Cwj">
-                            <rect key="frame" x="142.5" y="9.5" width="129" height="51"/>
+                            <rect key="frame" x="142.5" y="9.5" width="129.5" height="51"/>
                             <constraints>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="eOq-UR-W9u"/>
                                 <constraint firstAttribute="height" constant="51" id="jMk-kY-zjB"/>
@@ -67,13 +69,13 @@
                                 <constraint firstAttribute="width" constant="28" id="HXP-kY-Etn"/>
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <state key="normal" image="placeholder"/>
+                            <state key="normal" image="Icons/AppIcons/placeholder"/>
                             <connections>
                                 <action selector="openMap" destination="-1" eventType="touchUpInside" id="2bM-4a-d1R"/>
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="EsH-U8-fg3" firstAttribute="leading" secondItem="ehq-Jp-YhL" secondAttribute="leading" id="0Ol-ZH-hGP"/>
                         <constraint firstItem="Z9i-oB-Cwj" firstAttribute="centerY" secondItem="EsH-U8-fg3" secondAttribute="centerY" id="4VX-RQ-LJ9"/>
@@ -108,7 +110,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xGV-Sq-ouR">
                             <rect key="frame" x="0.0" y="0.0" width="127.5" height="80.5"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buildYear" translatesAutoresizingMaskIntoConstraints="NO" id="vDt-3w-6DN">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/AppIcons/buildYear" translatesAutoresizingMaskIntoConstraints="NO" id="vDt-3w-6DN">
                                     <rect key="frame" x="43.5" y="0.0" width="40.5" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="vDt-3w-6DN" secondAttribute="height" id="v75-8r-JO1"/>
@@ -132,7 +134,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eq7-iT-oz8">
                             <rect key="frame" x="127.5" y="0.0" width="127" height="80.5"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="population" translatesAutoresizingMaskIntoConstraints="NO" id="MxW-c1-Uwr">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/AppIcons/population" translatesAutoresizingMaskIntoConstraints="NO" id="MxW-c1-Uwr">
                                     <rect key="frame" x="43.5" y="0.0" width="40" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="MxW-c1-Uwr" secondAttribute="height" id="Dum-1K-YX0"/>
@@ -156,7 +158,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcC-qN-XGT">
                             <rect key="frame" x="254.5" y="0.0" width="127.5" height="80.5"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="regionCode" translatesAutoresizingMaskIntoConstraints="NO" id="fEx-8v-56Q">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/AppIcons/regionCode" translatesAutoresizingMaskIntoConstraints="NO" id="fEx-8v-56Q">
                                     <rect key="frame" x="43.5" y="0.0" width="40.5" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="fEx-8v-56Q" secondAttribute="height" multiplier="1:1" id="tJA-my-mo0"/>
@@ -188,19 +190,19 @@
                     <rect key="frame" x="0.0" y="475.5" width="414" height="420.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUc-Ol-ekF">
-                            <rect key="frame" x="16" y="12" width="103.5" height="26.5"/>
+                            <rect key="frame" x="16" y="12" width="103" height="26.5"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CrQ-av-iaP">
                             <rect key="frame" x="16" y="42.5" width="382" height="378"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <attributedString key="attributedText">
                                 <fragment>
                                     <string key="content">Нижний Новгород (в советское время — Горький) является пятым по численности населения городом России, расположен на берегах Оки при впадении в Волгу. Находится на стыке Поволжья и Центральной России, сочетая величие Кремля и камерность центральных районов с размахом старинной волжской ярмарки и промышленных окраин. Нижний — город на удивление многоликий, где вы найдёте памятники самых разных веков, перемежающиеся захватывающими панорамами с высокого волжского берега. Кроме совершенно разноплановой архитектуры в Нижнем Новгороде не один десяток музеев и активная культурная жизнь, не уступающая другим крупным городам России.</string>
                                     <attributes>
-                                        <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="NSColor" systemColor="labelColor"/>
                                         <font key="NSFont" metaFont="system" size="18"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="0.5" lineHeightMultiple="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                     </attributes>
@@ -209,7 +211,7 @@
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="CrQ-av-iaP" secondAttribute="bottom" id="Jga-Kq-Vf4"/>
                         <constraint firstItem="CrQ-av-iaP" firstAttribute="top" secondItem="CUc-Ol-ekF" secondAttribute="bottom" constant="4" id="Lea-1Q-BGz"/>
@@ -220,6 +222,7 @@
                     </constraints>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="cRe-r9-nrG" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.3" id="1K4-4N-Q2P"/>
@@ -238,16 +241,21 @@
                 <constraint firstAttribute="bottom" secondItem="zxF-8r-JPA" secondAttribute="bottom" id="vqT-Dh-MQa"/>
                 <constraint firstItem="STO-qg-BUx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="wXd-xE-AH4"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="97.098214285714278"/>
         </view>
     </objects>
     <resources>
+        <image name="Icons/AppIcons/buildYear" width="128" height="128"/>
+        <image name="Icons/AppIcons/close" width="64" height="64"/>
+        <image name="Icons/AppIcons/placeholder" width="128" height="128"/>
+        <image name="Icons/AppIcons/population" width="47" height="47"/>
+        <image name="Icons/AppIcons/regionCode" width="128" height="128"/>
         <image name="appBackground" width="375" height="476"/>
-        <image name="buildYear" width="128" height="128"/>
-        <image name="close" width="64" height="64"/>
-        <image name="placeholder" width="128" height="128"/>
-        <image name="population" width="47" height="47"/>
-        <image name="regionCode" width="128" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
