@@ -15,7 +15,7 @@ enum HintViewHandler {
     case close
 }
 
-class HintView: UIView, NibInstance {
+final class HintView: BaseView {
 
     @IBOutlet private weak var title: UILabel!
     
@@ -28,11 +28,13 @@ class HintView: UIView, NibInstance {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        instantiateFromNib()
         setup()
     }
     
-    init() {
+    override init(frame: CGRect) {
         super.init(frame: .zero)
+        instantiateFromNib()
         setup()
     }
     
@@ -50,11 +52,5 @@ class HintView: UIView, NibInstance {
     
     @IBAction private func close(_ esnder: Any) {
         completionType?(.close)
-    }
-    
-    private func setup() {
-        instantiateFromNib()
-        heightAnchor.constraint(equalToConstant: 300).isActive = true
-        widthAnchor.constraint(equalToConstant: 300).isActive = true
     }
 }

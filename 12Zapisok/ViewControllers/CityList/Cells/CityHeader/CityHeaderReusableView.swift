@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CityHeaderReusableView: UICollectionReusableView {
+final class CityHeaderReusableView: UICollectionReusableView {
 
     private enum Constants {
         static let borderWidth: CGFloat = 3.0

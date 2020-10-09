@@ -5,13 +5,13 @@
 //  Created by Anton Makarov on 03.10.2020.
 //  Copyright © 2020 A.Makarov. All rights reserved.
 //
+// swiftlint:disable operator_usage_whitespace
 
-import Foundation
 import RealmSwift
 import ObjectMapper
 import ObjectMapperAdditions
 
-class CityInfo: Object, Mappable {
+final class CityInfo: Object, Mappable {
     
     @objc dynamic var id = UUID().uuidString
     @objc dynamic var name = ""

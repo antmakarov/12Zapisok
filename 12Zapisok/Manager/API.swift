@@ -6,8 +6,6 @@
 //  Copyright © 2019 A.Makarov. All rights reserved.
 //
 
-import Foundation
-
 public enum Endpoints: String {
     case openNote = "/notes/%d/open"
     case newToken = "/generate_token"

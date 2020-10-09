@@ -13,7 +13,7 @@ enum MapRouter {
     case back
 }
 
-class MapCoordinator: BaseCoordinator {
+final class MapCoordinator: BaseCoordinator {
  
     private let navigationController: UINavigationController
     

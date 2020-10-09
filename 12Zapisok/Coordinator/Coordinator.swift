@@ -8,10 +8,10 @@
 
 import UIKit
 
-protocol Coordinator: class {
+protocol Coordinator: AnyObject {
     
     // All application coordinators
-    var childCoordinators: [Coordinator]  { get set }
+    var childCoordinators: [Coordinator] { get set }
     
     // Start a specific coordinator
     func start()

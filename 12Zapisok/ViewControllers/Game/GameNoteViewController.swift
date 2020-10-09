@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameNoteViewController: BaseViewController {
+final class GameNoteViewController: BaseViewController {
     
     private enum Constants {
         static let noteTitle = "Записка #"
@@ -42,7 +42,9 @@ class GameNoteViewController: BaseViewController {
     }
     
     private func setupUI() {
-        guard let viewModel = viewModel else { return }
+        guard let viewModel = viewModel else {
+            return
+        }
         
         numberNoteLabel.text = Constants.noteTitle + viewModel.id
         titleNoteLabel.text = viewModel.title
@@ -86,14 +88,16 @@ class GameNoteViewController: BaseViewController {
     }
     
     private func confiureButton(button: UIButton, hintType: HintType) {
-        guard let hintManager = viewModel?.hintManager else { return }
+        guard let hintManager = viewModel?.hintManager else {
+            return
+        }
         button.setBackground(hintManager.getCountOf(hint: hintType) > 0 ? Asset.Icons.rectangle : nil)
     }
     
     @IBAction private func checkPlace(_ sender: Any) {
-        viewModel?.checkPlace(completion: { result in
+        viewModel?.checkPlace { result in
             Logger.info(msg: result)
-        })
+        }
     }
     
     @IBAction private func openMap(_ sender: Any) {
@@ -108,11 +112,11 @@ class GameNoteViewController: BaseViewController {
         showHint(for: .openNote)
     }
     
-    @IBAction func showDistance(_ sender: Any) {
+    @IBAction private func showDistance(_ sender: Any) {
         showHint(for: .checkDistance)
     }
     
-    @IBAction func showManualInput(_ sender: Any) {
+    @IBAction private func showManualInput(_ sender: Any) {
         showHint(for: .manualCoordinates)
     }
     

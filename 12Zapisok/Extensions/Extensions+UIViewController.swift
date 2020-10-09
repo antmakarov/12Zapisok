@@ -17,7 +17,7 @@ extension UIViewController {
     
     func modalEffect(action: TransitionAction, _ viewController: UIViewController? = nil, type: CATransitionType = .fade, duration: Double = 0.5) {
         let transition = makeTransition(type: type, duration: duration)
-        view.window!.layer.add(transition, forKey: kCATransition)
+        view.window?.layer.add(transition, forKey: kCATransition)
 
         switch action {
         case .present:

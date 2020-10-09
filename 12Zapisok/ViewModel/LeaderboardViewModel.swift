@@ -6,13 +6,11 @@
 //  Copyright © 2020 A.Makarov. All rights reserved.
 //
 
-import Foundation
-
-protocol LeaderboardViewModeling: class {
+protocol LeaderboardViewModeling: AnyObject {
     var closeButtonPressed: (() -> Void)? { get set }
 }
 
-class LeaderboardViewModel {
+final class LeaderboardViewModel {
     public var closeButtonPressed: (() -> Void)?
 
 }

@@ -1,9 +1,9 @@
 // Generated using SwiftGen, by O.Halligon — https://github.com/SwiftGen/SwiftGen
-
-import Foundation
-
 // swiftlint:disable superfluous_disable_command
 // swiftlint:disable file_length
+// swiftlint:disable foundation_using
+
+import Foundation
 
 // swiftlint:disable explicit_type_interface identifier_name line_length nesting type_body_length type_name
 internal enum Localized {

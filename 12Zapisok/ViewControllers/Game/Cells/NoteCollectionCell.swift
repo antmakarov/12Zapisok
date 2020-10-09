@@ -8,14 +8,14 @@
 
 import UIKit
 
-class NoteCollectionCell: BaseCardCell {
+final class NoteCollectionCell: BaseCardCell {
 
-    @IBOutlet weak var headerLabel: UILabel!
-    @IBOutlet weak var backImageView: UIImageView!
-    @IBOutlet weak var backView: UIView!
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var openTimeLabel: UILabel!
+    @IBOutlet private weak var headerLabel: UILabel!
+    @IBOutlet private weak var backImageView: UIImageView!
+    @IBOutlet private weak var backView: UIView!
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var statusLabel: UILabel!
+    @IBOutlet private weak var openTimeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

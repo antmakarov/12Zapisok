@@ -8,9 +8,10 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController {
+final class HomeViewController: BaseViewController {
     
     private enum Constants {
+        static let cornerRadius: CGFloat = 25.0
         static let shadowOpacity: Float = 0.2
         static let shadowOffset = CGSize(width: 1, height: 1)
         static let shadowRadius: CGFloat = 3
@@ -54,7 +55,7 @@ class HomeViewController: BaseViewController {
     }
     
     private func prepareUI() {
-        middleActionsView.roundCorners(corners: [.topLeft, .topRight], radius: 25)
+        middleActionsView.roundCorners(corners: [.topLeft, .topRight], radius: Constants.cornerRadius)
         menuItemViews.forEach {
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapMenuItem(sender:)))
             $0.addGestureRecognizer(tapGesture)
@@ -69,31 +70,32 @@ class HomeViewController: BaseViewController {
     }
 }
 
-//MARK: Action Handlers
+// MARK: Action Handlers
 
 extension HomeViewController {
     
-    @IBAction func openMap(_ sender: Any) {
+    @IBAction private func openMap(_ sender: Any) {
         viewModel?.routeTo?(.showMap)
     }
     
-    @IBAction func showCityInfo(_ sender: Any) {
+    @IBAction private func showCityInfo(_ sender: Any) {
         viewModel?.routeTo?(.showCityInfo)
     }
     
-    @IBAction func openStatistics(_ sender: Any) {
+    @IBAction private func openStatistics(_ sender: Any) {
         viewModel?.routeTo?(.showStatistics)
     }
     
-    @IBAction func openSettings(_ sender: Any) {
+    @IBAction private func openSettings(_ sender: Any) {
         viewModel?.routeTo?(.showSettings)
     }
     
-    @IBAction func openLeaderBoard(_ sender: Any) {
+    @IBAction private func openLeaderBoard(_ sender: Any) {
         viewModel?.routeTo?(.showLeaders)
     }
     
-    @objc func tapMenuItem(sender: UITapGestureRecognizer) {
+    @objc
+    private func tapMenuItem(sender: UITapGestureRecognizer) {
         guard let tag = sender.view?.tag else {
             Logger.error(msg: "Unable to get the tag")
             return
@@ -117,4 +119,3 @@ extension HomeViewController {
         }
     }
 }
-

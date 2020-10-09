@@ -6,8 +6,6 @@
 //  Copyright © 2019 A.Makarov. All rights reserved.
 //
 
-import Foundation
-
 protocol GameViewModeling {
     func cityName() -> String
     func noteCell(at index: Int) -> NoteCollectionCellViewModel
@@ -19,14 +17,14 @@ protocol GameViewModeling {
     var routeTo: ((GameRouter) -> Void)? { get set }
 }
 
-class GameViewModel {
+final class GameViewModel {
 
-    //MARK: Managers
+    // MARK: Managers
     private let preferencesManager: PreferencesManager
     private let databaseStorage: StorageManager
     private let networkManager: NetworkManaging
     
-    //MARK: Private / Public variables
+    // MARK: Private / Public variables
     private var currentCityName: String?
     private var gameNotes = [Note]()
     private var dataUpdateHandler: (() -> Void)?

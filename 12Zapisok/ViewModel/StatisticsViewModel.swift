@@ -6,13 +6,11 @@
 //  Copyright © 2020 A.Makarov. All rights reserved.
 //
 
-import Foundation
-
-protocol StatisticsViewModeling: class {
+protocol StatisticsViewModeling: AnyObject {
     var closeButtonPressed: (() -> Void)? { get set }
 }
 
-class StatisticsViewModel {
+final class StatisticsViewModel {
     public var closeButtonPressed: (() -> Void)?
 
 }

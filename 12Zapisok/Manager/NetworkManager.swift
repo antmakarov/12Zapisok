@@ -5,6 +5,7 @@
 //  Created by A.Makarov on 08/07/2019.
 //  Copyright © 2019 A.Makarov. All rights reserved.
 //
+// swiftlint:disable all
 
 import Foundation
 import Alamofire
@@ -61,7 +62,7 @@ class NetworkManager: NetworkManaging {
         }
     }
 
-    //MARK: Private methods
+    // MARK: Private methods
     
     public func updateTokenIfNeeded(isForced: Bool) {
         if userPreferences.userToken == nil || isForced {

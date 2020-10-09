@@ -6,7 +6,7 @@
 //  Copyright © 2019 A.Makarov. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreLocation
 
 enum NoteState {
@@ -30,7 +30,11 @@ protocol GameNoteViewModeling {
     func checkPlace(completion: @escaping ((Bool) -> Void))
 }
 
-class GameNoteViewModel {
+final class GameNoteViewModel {
+    
+    private enum Constants {
+        static let necessaryDistance: CGFloat = 100.0
+    }
     
     private let note: Note
     public var routeTo: ((GameRouter) -> Void)?
@@ -58,8 +62,7 @@ class GameNoteViewModel {
     
     private func checkPosition(location: Location?) -> Bool {
         if let location = location {
-            let distance = locationManager.distanceFromCoordinates(location.lat, location.lon)
-            return distance < 100
+            return locationManager.closeToCoordinate(location.getCLLocation(), with: .average)
         }
         
         return false

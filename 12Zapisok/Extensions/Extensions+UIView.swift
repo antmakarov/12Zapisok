@@ -60,7 +60,9 @@ extension UIView {
     }
     
     func constraintToSuperview(left: CGFloat = 0, right: CGFloat = 0, top: CGFloat = 0, bottom: CGFloat = 0) {
-        guard let superview = superview else { return }
+        guard let superview = superview else {
+            return
+        }
         translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             topAnchor.constraint(equalTo: superview.topAnchor, constant: top),

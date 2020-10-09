@@ -6,8 +6,6 @@
 //  Copyright © 2019 A.Makarov. All rights reserved.
 //
 
-import Foundation
-
 protocol CityListViewModeling: CurrentCityProtocol {
     func getNumberOfCities() -> Int
     func cityAt(index: Int) -> City
@@ -20,7 +18,7 @@ protocol CityListViewModeling: CurrentCityProtocol {
     var closeButtonPressed: (() -> Void)? { get set }
 }
 
-class CityListViewModel {
+final class CityListViewModel {
     
     private let preferencesManager: PreferencesManager
     private let databaseStorage: StorageManager
@@ -66,7 +64,7 @@ extension CityListViewModel: CityListViewModeling {
                 Logger.error(msg: error.localizedDescription)
                 self.updateHandler?()
             }
-         }
+        }
     }
     
     public func setUpdateHandler(_ handler: (() -> Void)?) {
@@ -82,7 +80,7 @@ extension CityListViewModel: CityListViewModeling {
     }
     
     public func hasChosenCity() -> Bool {
-        return cities.first { $0.id == preferencesManager.currentCityId } != nil
+        return cities.contains { $0.id == preferencesManager.currentCityId }
     }
     
     public func saveCurrentCity(at index: Int) {

@@ -14,16 +14,15 @@ enum OnboardingAction {
     case skip
 }
 
-class OnboardingViewController: UIViewController, Storyboarded {
+final class OnboardingViewController: UIViewController, Storyboarded {
     
     private enum Constants {
         static let edgeInset: CGFloat = 10.0
-        static let collectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
     }
     
     var viewModel: OnboardingViewModeling?
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +37,7 @@ class OnboardingViewController: UIViewController, Storyboarded {
         let itemHeight = collectionView.frame.height - Constants.edgeInset * 2
         
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = Constants.collectionInset
+        layout.sectionInset = UIEdgeInsets(top: Constants.edgeInset, left: 0, bottom: Constants.edgeInset, right: 0)
         layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
@@ -65,9 +64,9 @@ extension OnboardingViewController: UICollectionViewDataSource, UICollectionView
         }
         
         let cell = collectionView.dequeueReusableCell(with: OnboardingCell.self, for: indexPath)
-        cell.configure(with: viewModel.onboardingItem(type: item), actionCompletion: { 
+        cell.configure(with: viewModel.onboardingItem(type: item)) {
             self.scrollTo(nextStep: indexPath.row + 1)
-        })
+        }
         
         return cell
     }

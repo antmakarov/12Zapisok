@@ -8,13 +8,13 @@
 
 import UIKit
 
-class PurchaseViewController: UIViewController {
+final class PurchaseViewController: UIViewController {
     
-    @IBOutlet weak var openSingleNoteView: UIView!
-    @IBOutlet weak var distanceSingleNoteView: UIView!
-    @IBOutlet weak var distanceAllNotesView: UIView!
-    @IBOutlet weak var showPinNoteView: UIView!
-    @IBOutlet weak var enterAddressView: UIView!
+    @IBOutlet private weak var openSingleNoteView: UIView!
+    @IBOutlet private weak var distanceSingleNoteView: UIView!
+    @IBOutlet private weak var distanceAllNotesView: UIView!
+    @IBOutlet private weak var showPinNoteView: UIView!
+    @IBOutlet private weak var enterAddressView: UIView!
     
     var viewModel: PurchaseViewModeling? 
     
@@ -32,28 +32,33 @@ class PurchaseViewController: UIViewController {
         view.addShadow(color: UIColor.black.withAlphaComponent(0.35))
     }
     
-    //MARK: Actions
-    @objc private func openSingleNote(_ sender: UITapGestureRecognizer) {
+    // MARK: Actions
+    @objc
+    private func openSingleNote(_ sender: UITapGestureRecognizer) {
         prepareForPopUp(hint: .openSingleNote, name: "Открыть одну записку")
     }
     
-    @objc private func distanceSingleNote(_ sender: UITapGestureRecognizer) {
+    @objc
+    private func distanceSingleNote(_ sender: UITapGestureRecognizer) {
         prepareForPopUp(hint: .singleNoteDistance, name: "Расстояние до одной записки")
     }
     
-    @objc private func distanceAllNotes(_ sender: UITapGestureRecognizer) {
+    @objc
+    private func distanceAllNotes(_ sender: UITapGestureRecognizer) {
         prepareForPopUp(hint: .foreverDistance, name: "До всех записок навсегда")
     }
     
-    @objc private func showPinNote(_ sender: UITapGestureRecognizer) {
+    @objc
+    private func showPinNote(_ sender: UITapGestureRecognizer) {
         prepareForPopUp(hint: .showPlaceOnMap, name: "Показать точку на карте")
     }
     
-    @objc private func enterAddress(_ sender: UITapGestureRecognizer) {
+    @objc
+    private func enterAddress(_ sender: UITapGestureRecognizer) {
         prepareForPopUp(hint: .foreverCoordinates, name: "Возможность вводить адрес без посещения")
     }
     
-    @IBAction func closeButtonPressed() {
+    @IBAction private func closeButtonPressed() {
         viewModel?.closeButtonPressed?()
     }
     
@@ -66,7 +71,7 @@ class PurchaseViewController: UIViewController {
         }))
     }
     
-    @IBAction func restoreButtonPressed() {
+    @IBAction private func restoreButtonPressed() {
         Logger.info(msg: "Восстановить покупки")
     }
 }

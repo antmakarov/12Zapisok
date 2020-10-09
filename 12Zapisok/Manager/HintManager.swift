@@ -6,8 +6,6 @@
 //  Copyright © 2020 A.Makarov. All rights reserved.
 //
 
-import Foundation
-
 enum Operation {
     case add
     case remove
@@ -26,7 +24,7 @@ protocol HintManaging {
     func updateHint(type: HintType, operation: Operation)
 }
 
-class HintManager {
+final class HintManager {
     
     public static let shared = HintManager()
     

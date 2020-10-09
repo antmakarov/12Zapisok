@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+final class SettingsViewController: UIViewController {
 
     var viewModel: SettingsViewModeling? {
         didSet {
@@ -21,7 +21,7 @@ class SettingsViewController: UIViewController {
 
     }
     
-    @IBAction func closeButtonPressed() {
+    @IBAction private func closeButtonPressed() {
         viewModel?.closeButtonPressed?()
     }
 }

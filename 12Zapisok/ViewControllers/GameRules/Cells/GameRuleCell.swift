@@ -14,12 +14,12 @@ struct GameRule {
     var color: UIColor
 }
 
-class GameRuleCell: UITableViewCell {
+final class GameRuleCell: UITableViewCell {
     
     private enum Constants {
         static let lineWidth: CGFloat = 2.0
         static let pointOffset: CGFloat = 14.0
-        static let pointSize = CGSize(width: 16, height: 16)
+        static let pointSize: CGFloat = 16.0
         static let pointName = "Point"
     }
     
@@ -35,11 +35,12 @@ class GameRuleCell: UITableViewCell {
     }
     
     func drawPoint() {
-        let xPosition = titleLabel.frame.origin.x - Constants.pointOffset - Constants.pointSize.width
+        let xPosition = titleLabel.frame.origin.x - Constants.pointOffset - Constants.pointSize
         let yPosition = titleLabel.frame.origin.y + titleLabel.frame.height / 4
         let point = CGPoint(x: xPosition, y: yPosition)
 
-        let circlePath = UIBezierPath(ovalIn: CGRect(origin: point, size: Constants.pointSize))
+        let pointSize = CGSize(width: Constants.pointSize, height: Constants.pointSize)
+        let circlePath = UIBezierPath(ovalIn: CGRect(origin: point, size: pointSize))
         let shapeLayer = CAShapeLayer()
         
         shapeLayer.path = circlePath.cgPath
@@ -52,8 +53,9 @@ class GameRuleCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
+        super.prepareForReuse()
         titleLabel.text?.removeAll()
         descriptionLabel.text?.removeAll()
-        layer.sublayers?.removeAll { $0.name == Constants.pointName}
+        layer.sublayers?.removeAll { $0.name == Constants.pointName }
     }
 }

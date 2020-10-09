@@ -9,7 +9,7 @@
 import UIKit
 
 enum HomeRoute {
-    //TODO: Change one name to extended information
+    // TODO: Change one name to extended information
     case showGame(cityName: String)
     case showPurchase
     case showRules
@@ -21,7 +21,7 @@ enum HomeRoute {
     case showCityInfo
 }
 
-class HomeCoordinator: BaseCoordinator {
+final class HomeCoordinator: BaseCoordinator {
     
     private var navigationController: UINavigationController
     private let rootViewModel = HomeViewModel()
@@ -44,7 +44,7 @@ class HomeCoordinator: BaseCoordinator {
         navigationController.present(viewController, animated: true, completion: nil)
     }
     
-    //TODO: Replace this to some BuilderViewController
+    // TODO: Replace this to some BuilderViewController
     private func manageRoute(_ route: HomeRoute) {
         switch route {
         case .showGame(let cityName):
@@ -79,7 +79,7 @@ class HomeCoordinator: BaseCoordinator {
             let vc = CityListViewController()
             let vm = CityListViewModel(isOnboarding: false)
             vm.closeButtonPressed = { [weak self] in
-                //TODO: Change to listener binding
+                // TODO: Change to listener binding
                 self?.rootViewModel.updateCityHandler?()
                 self?.navigationController.dismiss(animated: true)
             }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CityImageCell: UICollectionViewCell {
+final class CityImageCell: UICollectionViewCell {
     
     private enum Constants {
         static let shadowOpacity: Float = 0.1
@@ -33,6 +33,7 @@ class CityImageCell: UICollectionViewCell {
     }
     
     override func prepareForReuse() {
+        super.prepareForReuse()
         imageView.image = nil
     }
 }

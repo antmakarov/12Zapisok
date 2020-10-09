@@ -33,7 +33,6 @@ opt_in_rules: # some rules are only opt-in
 - overridden_super_call
 - override_in_extension
 - pattern_matching_keywords
-- prefixed_toplevel_constant
 - private_outlet
 - private_action
 - prohibited_super_call
@@ -104,7 +103,7 @@ custom_rules:
     name: "Image initialization"
     regex: 'UIImage\(named:[^)]+\)'
     message: "Use R.image.name() or typealiaas of this instead"
-    severity: error
+    severity: warning
     
   open_iboutlets:
     included: ".*.swift"
@@ -151,12 +150,6 @@ custom_rules:
     regex: '[ a-zA-Z0-9]*(?:let|var) [ a-zA-Z0-9]*: ([a-zA-Z0-9]*)[ ]*= \1\('
     message: "Type Definition Not Needed"
     severity: error
-    
-  comments_capitalized_ignore_possible_code:
-    name: "Capitalize First Word In Comment"
-    regex: '(\w??// +(?!swiftlint)[a-z]+)'
-    message: "The first word of a comment should be capitalized"
-    severity: error
   
   final_class:
     included: ".*.swift"
@@ -180,7 +173,3 @@ custom_rules:
   foundation_using:
     regex: 'import Foundation'
     message: "Do you really need for Foundation ???"
-
-  required_init:
-    regex: 'required init\?\(coder: NSCoder\)'
-    message: "Use NL class instead"

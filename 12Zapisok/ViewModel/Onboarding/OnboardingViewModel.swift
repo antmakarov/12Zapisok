@@ -5,6 +5,7 @@
 //  Created by Anton Makarov on 08.12.2019.
 //  Copyright © 2019 A.Makarov. All rights reserved.
 //
+// swiftlint:disable all
 
 import Foundation
 import CoreLocation
@@ -60,13 +61,13 @@ class OnboardingViewModel {
         }
     }
     
-    //MARK: Managers
+    // MARK: Managers
     private let locationManager: LocationManaging
     private let networkManager: NetworkManaging
     private let preferencesManager: PreferencesManager
     private let databaseStorage = StorageManager.shared
 
-    //MARK: Private / Public variables
+    // MARK: Private / Public variables
     private var onboardingSteps: [OnboardingStepViewModeling] = []
     private var cityName: Int?
     private var cities = [City]()

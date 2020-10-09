@@ -13,11 +13,18 @@ enum CollectionDisplay {
     case list
 }
 
-class GridCollectionViewFlowLayout: UICollectionViewFlowLayout {
+final class GridCollectionViewFlowLayout: UICollectionViewFlowLayout {
 
+    private enum Constants {
+        static let cellSpacing: CGFloat = 20
+        static let baseInset: CGFloat = 20.0
+        static let bottomInset: CGFloat = 20.0
+
+        static let righLeftInsets: CGFloat = 40 // (20 * 2)
+        static let listItemHeight: CGFloat = 150.0
+    }
+    
     var display: CollectionDisplay = .grid(columns: 3)
-    private var cellSpacing: CGFloat = 20
-    private let righLeftInsets: CGFloat = 20 * 2
     
     convenience init(display: CollectionDisplay) {
         self.init()
@@ -27,14 +34,15 @@ class GridCollectionViewFlowLayout: UICollectionViewFlowLayout {
     }
     
     func setupLayout() {
-        minimumInteritemSpacing = cellSpacing
-        minimumLineSpacing = cellSpacing
+        minimumInteritemSpacing = Constants.cellSpacing
+        minimumLineSpacing = Constants.cellSpacing
         
         scrollDirection = .vertical
-        sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 10, right: 20)
-
         itemSize = CGSize(width: itemWidth(), height: itemHeight())
-        print(itemSize)
+        sectionInset = UIEdgeInsets(top: Constants.baseInset,
+                                    left: Constants.baseInset,
+                                    bottom: Constants.bottomInset,
+                                    right: Constants.baseInset)
     }
     
     func itemWidth() -> CGFloat {
@@ -43,10 +51,10 @@ class GridCollectionViewFlowLayout: UICollectionViewFlowLayout {
         
         switch display {
         case .grid (let columns):
-            return (width - (columns - 1) * cellSpacing - righLeftInsets) / columns
+            return (width - (columns - 1) * Constants.cellSpacing - Constants.righLeftInsets) / columns
             
         case .list:
-            return (width - righLeftInsets)
+            return (width - Constants.righLeftInsets)
         }
     }
     
@@ -56,7 +64,7 @@ class GridCollectionViewFlowLayout: UICollectionViewFlowLayout {
             return UIScreen.main.bounds.height * 0.25
             
         case .list:
-            return 150
+            return Constants.listItemHeight
         }
     }
     

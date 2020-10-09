@@ -14,7 +14,7 @@ enum OnboardingRoute {
     case back
 }
 
-class OnboardingCoordinator: BaseCoordinator {
+final class OnboardingCoordinator: BaseCoordinator {
         
     private var navigationController: UINavigationController
 

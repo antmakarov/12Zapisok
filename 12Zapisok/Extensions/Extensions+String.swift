@@ -6,8 +6,6 @@
 //  Copyright © 2020 A.Makarov. All rights reserved.
 //
 
-import Foundation
-
 extension String {
     
     public static let empty = ""

@@ -9,7 +9,11 @@
 import UIKit
 import SwiftEntryKit
 
-class GameViewController: BaseViewController {
+final class GameViewController: BaseViewController {
+    
+    private enum Constants {
+        static let cornerRadius: CGFloat = 16.0
+    }
     
     @IBOutlet private weak var cityNameLabel: UILabel!
     @IBOutlet private weak var headerNotesView: UIView!
@@ -33,7 +37,7 @@ class GameViewController: BaseViewController {
         
         cityNameLabel.text = viewModel?.cityName()
         gameProgressView.fillStack(opensCount: viewModel?.numberOfOpensNotes() ?? 0)
-        backgroundWhiteView.roundCorners(corners: [.topLeft, .topRight], radius: 16.0)
+        backgroundWhiteView.roundCorners(corners: [.topLeft, .topRight], radius: Constants.cornerRadius)
     }
     
     @IBAction private func openMap() {
@@ -53,7 +57,7 @@ class GameViewController: BaseViewController {
     }
 }
 
-//MARK: UICollectionViewDataSource
+// MARK: UICollectionViewDataSource
 
 extension GameViewController: UICollectionViewDataSource {
     
@@ -75,7 +79,7 @@ extension GameViewController: UICollectionViewDataSource {
     }
 }
 
-//MARK: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
+// MARK: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
 
 extension GameViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     

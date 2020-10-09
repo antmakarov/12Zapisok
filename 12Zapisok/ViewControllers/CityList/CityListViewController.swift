@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CityListViewController: BaseViewController {
+final class CityListViewController: BaseViewController {
 
     private enum Constants {
         static let changeTitle = "Сменить город"
@@ -42,7 +42,7 @@ class CityListViewController: BaseViewController {
         setupUI()
     }
     
-    @IBAction func backButtonPressed() {
+    @IBAction private func backButtonPressed() {
         viewModel?.closeButtonPressed?()
     }
     

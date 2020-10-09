@@ -25,6 +25,7 @@
 		7753C620244CD20F0072A0B5 /* GameRuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7753C61E244CD20F0072A0B5 /* GameRuleCell.swift */; };
 		7753C621244CD20F0072A0B5 /* GameRuleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7753C61F244CD20F0072A0B5 /* GameRuleCell.xib */; };
 		77688CD923BA20AE00697408 /* CityHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77688CD723BA20AE00697408 /* CityHeaderReusableView.swift */; };
+		778CDA9225306324007CC33D /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778CDA9125306324007CC33D /* BaseView.swift */; };
 		7790B453241CF5CA0046EFA5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790B452241CF5CA0046EFA5 /* BaseViewController.swift */; };
 		7790B458241E9A500046EFA5 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B457241E9A500046EFA5 /* HomeViewController.xib */; };
 		7790B45B241EA0B60046EFA5 /* CityListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B45A241EA0B60046EFA5 /* CityListViewController.xib */; };
@@ -246,6 +247,7 @@
 		7753C61E244CD20F0072A0B5 /* GameRuleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRuleCell.swift; sourceTree = "<group>"; };
 		7753C61F244CD20F0072A0B5 /* GameRuleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameRuleCell.xib; sourceTree = "<group>"; };
 		77688CD723BA20AE00697408 /* CityHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityHeaderReusableView.swift; sourceTree = "<group>"; };
+		778CDA9125306324007CC33D /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		7790B452241CF5CA0046EFA5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		7790B457241E9A500046EFA5 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		7790B45A241EA0B60046EFA5 /* CityListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityListViewController.xib; sourceTree = "<group>"; };
@@ -842,9 +844,10 @@
 		8D32F38422D73E4B00ABC228 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				778CDA9125306324007CC33D /* BaseView.swift */,
+				8D8EA3D822D75F8D00EA2F01 /* BaseCell.swift */,
 				77EDC32E252F7B2A00ABBA05 /* PopUpView */,
 				77EDC32D252F7AF900ABBA05 /* SuccessBuyView */,
-				8D8EA3D822D75F8D00EA2F01 /* BaseCell.swift */,
 				8D05BC46252879CB00E08C1A /* ErrorView */,
 				77254F96252D05C4004F9CF6 /* HintView */,
 				8D05BC612528893000E08C1A /* DistanceToPlaceView */,
@@ -1320,6 +1323,7 @@
 				8D32F36922D49DD600ABC228 /* CityListViewController.swift in Sources */,
 				774413C0242A9F2F001FBD83 /* Extensions+UIImageView.swift in Sources */,
 				7790B478241FA5E10046EFA5 /* GameRulesViewController.swift in Sources */,
+				778CDA9225306324007CC33D /* BaseView.swift in Sources */,
 				77F80DD324220A5A005ED8C0 /* MapViewModel.swift in Sources */,
 				8D05BC5025287CE300E08C1A /* Extensions+UIViewInstant.swift in Sources */,
 				8D32F34322D3302D00ABC228 /* HomeViewController.swift in Sources */,

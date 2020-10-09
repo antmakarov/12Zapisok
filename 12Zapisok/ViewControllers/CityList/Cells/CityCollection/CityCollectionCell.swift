@@ -5,6 +5,7 @@
 //  Created by Anton Makarov on 25.12.2019.
 //  Copyright © 2019 A.Makarov. All rights reserved.
 //
+// swiftlint:disable final_class
 
 import UIKit
 
@@ -17,10 +18,10 @@ class CityCollectionCell: UICollectionViewCell {
         static let shadowColor: UIColor = .black
     }
     
-    @IBOutlet weak var cityImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var progressLabel: UILabel!
-    @IBOutlet weak var mainVIew: UIView!
+    @IBOutlet private weak var cityImageView: UIImageView!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var progressLabel: UILabel!
+    @IBOutlet private weak var mainVIew: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

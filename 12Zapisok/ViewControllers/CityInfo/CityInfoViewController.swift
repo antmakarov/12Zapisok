@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CityInfoViewController: UIViewController {
+final class CityInfoViewController: UIViewController {
     
     private enum Constants {
         static let shadowRadius: CGFloat = 4.0
@@ -49,11 +49,11 @@ class CityInfoViewController: UIViewController {
         descriptionBlockView.addShadow(radius: Constants.shadowRadius, color: Constants.shadowColor)
     }
     
-    @IBAction func openMap() {
+    @IBAction private func openMap() {
         viewModel?.routeTo?(.map)
     }
     
-    @IBAction func closeButtonPressed() {
+    @IBAction private func closeButtonPressed() {
         viewModel?.routeTo?(.back)
     }
 }

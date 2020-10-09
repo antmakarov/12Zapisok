@@ -6,8 +6,6 @@
 //  Copyright © 2019 A.Makarov. All rights reserved.
 //
 
-import Foundation
-
 protocol OnboardingStepViewModeling {
     func title() -> String
     func details() -> String
@@ -18,7 +16,7 @@ protocol OnboardingStepViewModeling {
     func performAction(action: OnboardingAction, actionCompletion: (() -> Void)?)
 }
 
-class OnboardingStepViewModel {
+final class OnboardingStepViewModel {
     
     private let stepTitle: String
     private let stepDetails: String

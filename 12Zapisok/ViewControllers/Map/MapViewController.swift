@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController {
+final class MapViewController: UIViewController {
     
     var viewModel: MapViewModeling?
     
@@ -24,7 +24,7 @@ class MapViewController: UIViewController {
         if let cityID = PreferencesManager.shared.currentCityId {
             let currentCity = StorageManager.shared.getObjectByID(City.self, id: cityID)
             let loc = currentCity?.location
-            let initialLocation = CLLocation(latitude: loc!.lat, longitude: loc!.lon)
+            let initialLocation = CLLocation(latitude: loc?.lat ?? 0, longitude: loc?.lon ?? 0)
             centerMapOnLocation(location: initialLocation)
         }
     }
@@ -36,7 +36,7 @@ class MapViewController: UIViewController {
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
-    @IBAction func showMyPosition() {
+    @IBAction private func showMyPosition() {
         if let viewModel = viewModel {
             viewModel.myPosition { location in
                 if let location = location {
@@ -46,17 +46,17 @@ class MapViewController: UIViewController {
         }
     }
     
-    @IBAction func showCityCenter() {
+    @IBAction private func showCityCenter() {
         if let viewModel = viewModel {
             centerMapOnLocation(location: viewModel.cityCenter())
         }
     }
     
-    @IBAction func closeButtonPressed() {
+    @IBAction private func closeButtonPressed() {
         viewModel?.routeTo?(.back)
     }
     
-    @IBAction func goToPurchase() {
+    @IBAction private func goToPurchase() {
         viewModel?.routeTo?(.purchase)
     }
 }

@@ -8,11 +8,11 @@
 
 import UIKit
 
-class OnboardingCell: UICollectionViewCell {
+final class OnboardingCell: UICollectionViewCell {
     
     private enum Constants {
         static let buttonRadius: CGFloat = 12.0
-        static let shadowOffset: CGSize = CGSize(width: 2, height: 2)
+        static let shadowOffset = CGSize(width: 2, height: 2)
         static let shadowRadius: CGFloat = 5.0
         static let shadowOpacity: Float = 0.18
         
@@ -20,18 +20,19 @@ class OnboardingCell: UICollectionViewCell {
         static let noTitle = "Нет"
     }
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var cellImage: UIImageView!
-    @IBOutlet weak var detailsLabel: UILabel!
-    @IBOutlet weak var actionButton: UIButton!
-    @IBOutlet weak var deniedButton: UIButton!
-    @IBOutlet weak var skipButton: UIButton!
-    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var cellImage: UIImageView!
+    @IBOutlet private weak var detailsLabel: UILabel!
+    @IBOutlet private weak var actionButton: UIButton!
+    @IBOutlet private weak var deniedButton: UIButton!
+    @IBOutlet private weak var skipButton: UIButton!
+    @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
     
     private var viewModel: OnboardingStepViewModeling?
     private var actionCompletion: (() -> Void)?
     
     override func awakeFromNib() {
+        super.awakeFromNib()
         prepareButton(actionButton)
         prepareButton(deniedButton, isHidden: true)
     }
@@ -78,7 +79,7 @@ class OnboardingCell: UICollectionViewCell {
         viewModel?.performAction(action: .denied, actionCompletion: actionCompletion)
     }
     
-    @IBAction func skipAction(_ sender: Any) {
+    @IBAction private func skipAction(_ sender: Any) {
         viewModel?.performAction(action: .skip, actionCompletion: actionCompletion)
     }
 }

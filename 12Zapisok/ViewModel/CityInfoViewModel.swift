@@ -6,8 +6,6 @@
 //  Copyright © 2020 A.Makarov. All rights reserved.
 //
 
-import Foundation
-
 enum CityInfoRoute {
     case map
     case back
@@ -24,13 +22,13 @@ protocol CityInfoViewModeling {
     func getRegionCode() -> String
 }
 
-class CityInfoViewModel {
+final class CityInfoViewModel {
     
-    //MARK: Managers
+    // MARK: Managers
     private let preferencesManager: PreferencesManager
     private let databaseStorage: StorageManager
     
-    //MARK: Private / Public variables
+    // MARK: Private / Public variables
     private var currentCity: CityInfo?
     private var imageUrls: [String] = []
     var routeTo: ((CityInfoRoute) -> Void)?
@@ -74,17 +72,23 @@ extension CityInfoViewModel: CityInfoViewModeling {
     // TODO: Need some converter for buid/population/code
     
     func getBuildingYear() -> String {
-        guard let currentCity = currentCity else { return .empty }
+        guard let currentCity = currentCity else {
+            return .empty
+        }
         return "\(currentCity.baseYear) г"
     }
     
     func getPopulation() -> String {
-        guard let currentCity = currentCity else { return .empty }
+        guard let currentCity = currentCity else {
+            return .empty
+        }
         return "\(currentCity.population) млн"
     }
     
     func getRegionCode() -> String {
-        guard let currentCity = currentCity else { return .empty }
+        guard let currentCity = currentCity else {
+            return .empty
+        }
         return "\(currentCity.regionCode) RUS"
     }
 }

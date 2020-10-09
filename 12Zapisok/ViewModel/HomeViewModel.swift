@@ -6,8 +6,6 @@
 //  Copyright © 2019 A.Makarov. All rights reserved.
 //
 
-import Foundation
-
 protocol CurrentCityProtocol {
     func getCurrentCityName() -> String
     func getCurrentCityImage() -> String
@@ -19,14 +17,14 @@ protocol HomeViewModeling: CurrentCityProtocol {
     var updateCityHandler: (() -> Void)? { get set }
 }
 
-class HomeViewModel {
+final class HomeViewModel {
 
-    //MARK: Managers
+    // MARK: Managers
     private let preferencesManager: PreferencesManager
     private let databaseStorage: StorageManager
     private let networkManager: NetworkManaging
     
-    //MARK: Private / Public variables
+    // MARK: Private / Public variables
     private var currentCity: City?
     
     public var updateCityHandler: (() -> Void)?
@@ -51,7 +49,7 @@ class HomeViewModel {
     private func loadCurrentCity() {
         if let cityID = preferencesManager.currentCityId {
             currentCity = databaseStorage.getObjectByID(City.self, id: cityID)
-        }
+         }
     }
 }
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameRulesViewController: BaseViewController {
+final class GameRulesViewController: BaseViewController {
 
     @IBOutlet private weak var rulesTableView: UITableView!
     
@@ -19,7 +19,7 @@ class GameRulesViewController: BaseViewController {
         rulesTableView.register(cellType: GameRuleCell.self)
     }
     
-    @IBAction func closeButtonPressed() {
+    @IBAction private func closeButtonPressed() {
         viewModel?.closeButtonPressed?()
     }
 }

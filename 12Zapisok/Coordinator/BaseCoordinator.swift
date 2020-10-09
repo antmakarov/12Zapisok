@@ -8,20 +8,20 @@
 
 import UIKit
 
-//MARK: Base Root Coordinator
+// MARK: Base Root Coordinator
 
 public class BaseCoordinator: Coordinator {
 
     internal var childCoordinators: [Coordinator] = []
     var finishFlow: (() -> Void)?
 
-    //MARK: Public override methods
+    // MARK: Public override methods
     
     public func start() {
         preconditionFailure("This method needs to be overriden by concrete subclass.")
     }
     
-    //MARK: Final methods
+    // MARK: Final methods
 
     final func addChildCoordinator(_ coordinator: Coordinator) {
         childCoordinators.append(coordinator)
@@ -32,7 +32,7 @@ public class BaseCoordinator: Coordinator {
     }
 
     final func removeAllChildCoordinatorsWith<T>(type: T.Type) {
-        childCoordinators = childCoordinators.filter { $0 is T  == false }
+        childCoordinators = childCoordinators.filter { $0 is T == false }
     }
 
     final func removeAllChildCoordinators() {
@@ -40,7 +40,7 @@ public class BaseCoordinator: Coordinator {
     }
 }
 
-//MARK: BaseCoordinator Equatable
+// MARK: BaseCoordinator Equatable
 
 extension BaseCoordinator: Equatable {
     public static func == (lhs: BaseCoordinator, rhs: BaseCoordinator) -> Bool {

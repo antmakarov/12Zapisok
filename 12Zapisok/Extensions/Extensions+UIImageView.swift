@@ -14,9 +14,14 @@ enum ImagePlaceholder {
     
     var image: UIImage {
         switch self {
-        case .app: return Asset.Icons.appPlaceholder
-        case .city: return Asset.Icons.cityPlaceholder
-        case .note: return Asset.Icons.appPlaceholder
+        case .app:
+            return Asset.Icons.appPlaceholder
+
+        case .city:
+            return Asset.Icons.cityPlaceholder
+            
+        case .note:
+            return Asset.Icons.appPlaceholder
         }
     }
 }
@@ -37,4 +42,3 @@ extension UIImageView {
         }
     }
 }
-

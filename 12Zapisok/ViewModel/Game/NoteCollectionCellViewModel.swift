@@ -6,8 +6,6 @@
 //  Copyright © 2019 A.Makarov. All rights reserved.
 //
 
-import Foundation
-
 protocol NoteCollectionCellViewModeling {
     var id: Int { get }
     var title: String { get }
@@ -16,7 +14,7 @@ protocol NoteCollectionCellViewModeling {
     var state: NoteState { get }
 }
 
-class NoteCollectionCellViewModel: NoteCollectionCellViewModeling {
+final class NoteCollectionCellViewModel: NoteCollectionCellViewModeling {
    
     var id: Int
     var title: String
@@ -41,4 +39,3 @@ class NoteCollectionCellViewModel: NoteCollectionCellViewModeling {
         }
     }
 }
-

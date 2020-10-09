@@ -38,9 +38,9 @@ class ErrorView: UIView, NibInstance {
     // MARK: Configurate
     
     public func configure(needRepeateButton: Bool = true,
-                   needBackButton: Bool = true,
-                   title: String? = Constants.defaultTitle,
-                   image: String = .empty) {
+                          needBackButton: Bool = true,
+                          title: String? = Constants.defaultTitle,
+                          image: String = .empty) {
         repeateButton.isHidden = !needRepeateButton
         backButton.isHidden = !needBackButton
         titleLabel.text = title

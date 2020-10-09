@@ -5,6 +5,7 @@
 //  Created by Anton Makarov on 06.04.2020.
 //  Copyright © 2020 A.Makarov. All rights reserved.
 //
+// swiftlint:disable numbers_smell
 
 import UIKit
 

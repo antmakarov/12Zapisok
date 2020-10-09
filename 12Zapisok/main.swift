@@ -8,6 +8,6 @@
 
 import UIKit
 
-let appDelegateClass = AppTarget.appDelegate
+let appDelegateClass: AnyClass = AppTarget.appDelegate
 
 UIApplicationMain(CommandLine.argc, CommandLine.unsafeArgv, nil, NSStringFromClass(appDelegateClass))

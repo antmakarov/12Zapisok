@@ -6,13 +6,11 @@
 //  Copyright © 2020 A.Makarov. All rights reserved.
 //
 
-import Foundation
-
-protocol SettingsViewModeling: class {
+protocol SettingsViewModeling: AnyObject {
     var closeButtonPressed: (() -> Void)? { get set }
 }
 
-class SettingsViewModel {
+final class SettingsViewModel {
     public var closeButtonPressed: (() -> Void)?
 
 }

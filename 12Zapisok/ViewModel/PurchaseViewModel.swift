@@ -6,15 +6,13 @@
 //  Copyright © 2020 A.Makarov. All rights reserved.
 //
 
-import Foundation
-
-protocol PurchaseViewModeling: class {
+protocol PurchaseViewModeling: AnyObject {
     func buyHint(type: HintType)
 
     var closeButtonPressed: (() -> Void)? { get set }
 }
 
-class PurchaseViewModel {
+final class PurchaseViewModel {
     
     public var closeButtonPressed: (() -> Void)?
 

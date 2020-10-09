@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LeaderboardViewController: UIViewController {
+final class LeaderboardViewController: UIViewController {
 
     var viewModel: LeaderboardViewModeling? {
         didSet {
@@ -21,7 +21,7 @@ class LeaderboardViewController: UIViewController {
 
     }
     
-    @IBAction func closeButtonPressed() {
+    @IBAction private func closeButtonPressed() {
         viewModel?.closeButtonPressed?()
     }
 }

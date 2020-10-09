@@ -5,11 +5,12 @@
 //  Created by Anton Makarov on 25.11.2019.
 //  Copyright © 2019 A.Makarov. All rights reserved.
 //
+// swiftlint:disable all
 
 import Foundation
 
 enum LogLevel {
-    case DEBUG, INFO, ERROR, NETWORK, MARK;
+    case DEBUG, INFO, ERROR, NETWORK, MARK
     
     fileprivate func emotionLevel() -> String {
         var emotion = ""
@@ -30,7 +31,7 @@ enum LogLevel {
     }
 }
 
-class Logger {
+enum Logger {
     static func debug(msg: Any, _ line: Int = #line, _ fileName: String = #file, _ funcName: String = #function, type: LogLevel = .DEBUG) {
         
         var fullLogMessage = type.emotionLevel()

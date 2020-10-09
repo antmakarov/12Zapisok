@@ -8,21 +8,17 @@
 
 import UIKit
 
-class DistanceToPlaceView: UIView, NibInstance {
+class DistanceToPlaceView: BaseView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setup()
-    }
-    
-    init() {
-        super.init(frame: .zero)
-        setup()
-    }
-    
-    private func setup() {
         instantiateFromNib()
-        heightAnchor.constraint(equalToConstant: 300).isActive = true
-        widthAnchor.constraint(equalToConstant: 300).isActive = true
+        setup()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: .zero)
+        instantiateFromNib()
+        setup()
     }
 }

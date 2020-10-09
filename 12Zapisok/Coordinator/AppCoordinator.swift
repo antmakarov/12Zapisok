@@ -8,9 +8,9 @@
 
 import UIKit
 
-//MARK: Launch Instructor
+// MARK: Launch Instructor
 
-fileprivate enum ApplicationFlow {
+private enum ApplicationFlow {
     case main
     case onboarding
     
@@ -19,9 +19,9 @@ fileprivate enum ApplicationFlow {
     }
 }
 
-//MARK: Start apllication flow coordinator
+// MARK: Start apllication flow coordinator
 
-class AppCoordinator: BaseCoordinator {
+final class AppCoordinator: BaseCoordinator {
     
     // MARK: Properties, Managers
     
@@ -63,7 +63,9 @@ class AppCoordinator: BaseCoordinator {
     private func runOnboardingFlow() {
         let coordinator = OnboardingCoordinator(navigationController: rootViewController)
         coordinator.finishFlow = { [weak self] in
-            guard let strongSelf = self else { return }
+            guard let strongSelf = self else {
+                return
+            }
             strongSelf.removeChildCoordinator(coordinator)
             strongSelf.runHomeFlow()
         }

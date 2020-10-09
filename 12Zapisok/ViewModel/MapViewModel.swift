@@ -6,23 +6,22 @@
 //  Copyright © 2020 A.Makarov. All rights reserved.
 //
 
-import Foundation
 import CoreLocation
 
-protocol MapViewModeling: class {
+protocol MapViewModeling: AnyObject {
     var routeTo: ((MapRouter) -> Void)? { get set }
     
     func myPosition(completion: @escaping (CLLocation?) -> Void)
     func cityCenter() -> CLLocation
 }
 
-class MapViewModel {
+final class MapViewModel {
     
     public var routeTo: ((MapRouter) -> Void)?
     
-    //MARK: Managers
+    // MARK: Managers
     private let locationManager: LocationManaging
-    private let quantityManager:  HintManaging
+    private let quantityManager: HintManaging
 
     private let preferencesManager = PreferencesManager.shared
     private let storageManager = StorageManager.shared
@@ -40,9 +39,9 @@ class MapViewModel {
 extension MapViewModel: MapViewModeling {
   
     public func myPosition(completion: @escaping (CLLocation?) -> Void) {
-        locationManager.requestCurrentLocation(completion: { ponit in
+        locationManager.requestCurrentLocation { ponit in
             completion(ponit?.coordinate)
-        })
+        }
     }
     
     public func cityCenter() -> CLLocation {

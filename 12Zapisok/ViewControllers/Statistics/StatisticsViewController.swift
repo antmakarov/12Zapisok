@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StatisticsViewController: UIViewController {
+final class StatisticsViewController: UIViewController {
 
     var viewModel: StatisticsViewModeling? {
         didSet {
@@ -21,7 +21,7 @@ class StatisticsViewController: UIViewController {
 
     }
     
-    @IBAction func closeButtonPressed() {
+    @IBAction private func closeButtonPressed() {
         viewModel?.closeButtonPressed?()
     }
 }

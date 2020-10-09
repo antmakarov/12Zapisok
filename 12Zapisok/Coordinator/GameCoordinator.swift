@@ -14,7 +14,7 @@ enum GameRouter {
     case back
 }
 
-class GameCoordinator: BaseCoordinator {
+final class GameCoordinator: BaseCoordinator {
     
     private let navigationController: UINavigationController
     private var cityName: String

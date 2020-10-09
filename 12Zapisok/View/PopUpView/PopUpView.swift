@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PopUpView: UIView, NibInstance {
+class PopUpView: BaseView {
 
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
@@ -42,11 +42,13 @@ class PopUpView: UIView, NibInstance {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        instantiateFromNib()
         setup()
     }
     
-    init() {
+    override init(frame: CGRect) {
         super.init(frame: .zero)
+        instantiateFromNib()
         setup()
     }
     
@@ -56,11 +58,5 @@ class PopUpView: UIView, NibInstance {
     
     @IBAction private func secondButtonTap(_ esnder: Any) {
         secondButtonHandler?()
-    }
-    
-    private func setup() {
-        instantiateFromNib()
-        heightAnchor.constraint(equalToConstant: 300).isActive = true
-        widthAnchor.constraint(equalToConstant: 300).isActive = true
     }
 }

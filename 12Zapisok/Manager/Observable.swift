@@ -6,11 +6,9 @@
 //  Copyright © 2020 A.Makarov. All rights reserved.
 //
 
-import Foundation
-
 public typealias ObserverSubscriptionToken = Int
 
-class Observable<T> {
+final class Observable<T> {
     
     typealias CompletionHandler = ((T) -> Void)
     

@@ -5,16 +5,17 @@
 //  Created by A.Makarov on 08/07/2019.
 //  Copyright © 2019 A.Makarov. All rights reserved.
 //
+// swiftlint:disable operator_usage_whitespace
 
-import Foundation
 import RealmSwift
 import ObjectMapper
+import CoreLocation
 
 protocol Endpoint {
     static func url() -> String
 }
 
-class City: Object, Mappable, Endpoint {
+final class City: Object, Mappable, Endpoint {
     
     @objc dynamic var id = 0
     @objc dynamic var name = ""
@@ -22,9 +23,6 @@ class City: Object, Mappable, Endpoint {
     @objc dynamic var cityDescription = ""
     @objc dynamic var cityInfo: CityInfo?
     @objc dynamic var location: Location?
-    
-    //@objc dynamic var detailInfo: CityInfo
-
     
     required convenience init?(map: Map) {
         self.init()
@@ -48,7 +46,7 @@ class City: Object, Mappable, Endpoint {
     }
 }
 
-class Location: Object, Mappable {
+final class Location: Object, Mappable {
 
     @objc dynamic var lat = 0.0
     @objc dynamic var lon = 0.0
@@ -60,5 +58,9 @@ class Location: Object, Mappable {
     func mapping(map: Map) {
         lat <- map["lat"]
         lon <- map["lon"]
+    }
+    
+    func getCLLocation() -> CLLocation {
+        return CLLocation(latitude: lat, longitude: lon)
     }
 }
