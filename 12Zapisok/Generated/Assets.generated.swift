@@ -78,6 +78,7 @@ internal enum Asset {
     }
     internal static let appLogo = ImageAsset(name: "Icons/appLogo").image
     internal static let appPlaceholder = ImageAsset(name: "Icons/appPlaceholder").image
+    internal static let chick = ImageAsset(name: "Icons/chick").image
     internal static let cityPlaceholder = ImageAsset(name: "Icons/cityPlaceholder").image
     internal static let mechetKulSharif = ImageAsset(name: "Icons/mechet-kul-sharif").image
     internal static let nn = ImageAsset(name: "Icons/nn").image

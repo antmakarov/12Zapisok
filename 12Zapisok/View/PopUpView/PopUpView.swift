@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PopUpView: BaseView {
+final class PopUpView: BaseView {
 
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!

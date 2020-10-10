@@ -14,6 +14,7 @@ import RealmSwift
 
 protocol NetworkManaging {
     func getCityList(completion: @escaping ((Result<[City], Error>) -> ()))
+    func getGameStats(completion: @escaping ((Result<GameStatistics, Error>) -> ()))
     func getNoteList(parameters: Parameters, completion: @escaping ((Result<[Note], Error>) -> ()))
     func openNote(id: Int, completion: @escaping ((Bool) -> ()))
     func updateTokenIfNeeded(isForced: Bool)
@@ -42,6 +43,10 @@ class NetworkManager: NetworkManaging {
 
     public func getNoteList(parameters: Parameters, completion: @escaping ((Result<[Note], Error>) -> ())) {
         fetchArrayOf(type: Note.self, parameters) { completion($0) }
+    }
+    
+    func getGameStats(completion: @escaping ((Result<GameStatistics, Error>) -> ())) {
+        fetchObject(type: GameStatistics.self, completion: completion)
     }
     
     public func openNote(id: Int, completion: @escaping ((Bool) -> ())) {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DistanceToPlaceView: BaseView {
+final class DistanceToPlaceView: BaseView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

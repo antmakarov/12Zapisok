@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OpenNoteView: UIView {
+final class OpenNoteView: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.

@@ -218,6 +218,14 @@
 		8D32F38322D73E4500ABC228 /* NoteCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F38222D73E4500ABC228 /* NoteCollectionCell.swift */; };
 		8D8EA3D922D75F8D00EA2F01 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8EA3D822D75F8D00EA2F01 /* BaseCell.swift */; };
 		8D8EA3DB22D771DC00EA2F01 /* GameNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8EA3DA22D771DC00EA2F01 /* GameNoteViewController.swift */; };
+		8DD4CA672531F060001765FF /* StatisticsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD4CA652531F060001765FF /* StatisticsCell.swift */; };
+		8DD4CA682531F060001765FF /* StatisticsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD4CA662531F060001765FF /* StatisticsCell.xib */; };
+		8DD4CA6F25320E70001765FF /* StatisticsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD4CA6D25320E70001765FF /* StatisticsHeaderCell.swift */; };
+		8DD4CA7025320E70001765FF /* StatisticsHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD4CA6E25320E70001765FF /* StatisticsHeaderCell.xib */; };
+		8DD4CA742532121B001765FF /* BaseTableShadowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD4CA732532121B001765FF /* BaseTableShadowCell.swift */; };
+		8DD4CA7B25321353001765FF /* StatisticsLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD4CA7925321353001765FF /* StatisticsLabelCell.swift */; };
+		8DD4CA7C25321353001765FF /* StatisticsLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD4CA7A25321353001765FF /* StatisticsLabelCell.xib */; };
+		8DD4CA80253218A5001765FF /* GameStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD4CA7F253218A5001765FF /* GameStatistics.swift */; };
 		9CFB55331642CDF8C7C4A49B /* Pods_12Zapisok_SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D144605E118515255BD38 /* Pods_12Zapisok_SwiftUI.framework */; };
 		A3EE442304D2DC80E8688FAF /* Pods_12Zapisok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526AD8A7641C95E0C7D7C7D6 /* Pods_12Zapisok.framework */; };
 /* End PBXBuildFile section */
@@ -349,6 +357,14 @@
 		8D32F38222D73E4500ABC228 /* NoteCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionCell.swift; sourceTree = "<group>"; };
 		8D8EA3D822D75F8D00EA2F01 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		8D8EA3DA22D771DC00EA2F01 /* GameNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNoteViewController.swift; sourceTree = "<group>"; };
+		8DD4CA652531F060001765FF /* StatisticsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCell.swift; sourceTree = "<group>"; };
+		8DD4CA662531F060001765FF /* StatisticsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticsCell.xib; sourceTree = "<group>"; };
+		8DD4CA6D25320E70001765FF /* StatisticsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsHeaderCell.swift; sourceTree = "<group>"; };
+		8DD4CA6E25320E70001765FF /* StatisticsHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticsHeaderCell.xib; sourceTree = "<group>"; };
+		8DD4CA732532121B001765FF /* BaseTableShadowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableShadowCell.swift; sourceTree = "<group>"; };
+		8DD4CA7925321353001765FF /* StatisticsLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsLabelCell.swift; sourceTree = "<group>"; };
+		8DD4CA7A25321353001765FF /* StatisticsLabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticsLabelCell.xib; sourceTree = "<group>"; };
+		8DD4CA7F253218A5001765FF /* GameStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatistics.swift; sourceTree = "<group>"; };
 		951D144605E118515255BD38 /* Pods_12Zapisok_SwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_12Zapisok_SwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -606,6 +622,7 @@
 		77F80DBA2421FF3E005ED8C0 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
+				8DD4CA642531F045001765FF /* Cells */,
 				77F80DC02421FF85005ED8C0 /* StatisticsViewController.swift */,
 				77F80DC12421FF85005ED8C0 /* StatisticsViewController.xib */,
 			);
@@ -794,6 +811,7 @@
 				8D32F35222D3398700ABC228 /* City.swift */,
 				8D05BC6525289C5400E08C1A /* CityInfo.swift */,
 				8D32F35622D33CE000ABC228 /* Note.swift */,
+				8DD4CA7F253218A5001765FF /* GameStatistics.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -846,6 +864,7 @@
 			children = (
 				778CDA9125306324007CC33D /* BaseView.swift */,
 				8D8EA3D822D75F8D00EA2F01 /* BaseCell.swift */,
+				8DD4CA732532121B001765FF /* BaseTableShadowCell.swift */,
 				77EDC32E252F7B2A00ABBA05 /* PopUpView */,
 				77EDC32D252F7AF900ABBA05 /* SuccessBuyView */,
 				8D05BC46252879CB00E08C1A /* ErrorView */,
@@ -870,6 +889,19 @@
 				8D32F37422D7241E00ABC228 /* CustomCollectionViewFlowLayout.swift */,
 			);
 			path = Game;
+			sourceTree = "<group>";
+		};
+		8DD4CA642531F045001765FF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8DD4CA652531F060001765FF /* StatisticsCell.swift */,
+				8DD4CA662531F060001765FF /* StatisticsCell.xib */,
+				8DD4CA6D25320E70001765FF /* StatisticsHeaderCell.swift */,
+				8DD4CA6E25320E70001765FF /* StatisticsHeaderCell.xib */,
+				8DD4CA7925321353001765FF /* StatisticsLabelCell.swift */,
+				8DD4CA7A25321353001765FF /* StatisticsLabelCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		CFD2B2E047277D91D36A6B63 /* Pods */ = {
@@ -1009,6 +1041,7 @@
 				8D32F38122D73E1400ABC228 /* NoteCollectionCell.xib in Resources */,
 				8D32F34822D3302F00ABC228 /* Assets.xcassets in Resources */,
 				77BDB3A323B3E99300820E5B /* GameNoteViewController.xib in Resources */,
+				8DD4CA7025320E70001765FF /* StatisticsHeaderCell.xib in Resources */,
 				8D05BC48252879DC00E08C1A /* ErrorView.xib in Resources */,
 				7790B488241FA6990046EFA5 /* OnboardingViewController.xib in Resources */,
 				8D05BC78252A533A00E08C1A /* ManualInputView.xib in Resources */,
@@ -1023,7 +1056,9 @@
 				77C24FE5252FC14C00E7AB72 /* .swiftlint.yml in Resources */,
 				7790B46A241FA3CF0046EFA5 /* LoginViewController.xib in Resources */,
 				77254F9E252D0685004F9CF6 /* HintView.xib in Resources */,
+				8DD4CA682531F060001765FF /* StatisticsCell.xib in Resources */,
 				77BDB39F23B2B41600820E5B /* CityCollectionCell.xib in Resources */,
+				8DD4CA7C25321353001765FF /* StatisticsLabelCell.xib in Resources */,
 				770972F1252E5AFA00BED5C8 /* Assets.stencil in Resources */,
 				7790B458241E9A500046EFA5 /* HomeViewController.xib in Resources */,
 				7790B48D241FAC370046EFA5 /* OnboardingCell.xib in Resources */,
@@ -1325,6 +1360,7 @@
 				7790B478241FA5E10046EFA5 /* GameRulesViewController.swift in Sources */,
 				778CDA9225306324007CC33D /* BaseView.swift in Sources */,
 				77F80DD324220A5A005ED8C0 /* MapViewModel.swift in Sources */,
+				8DD4CA6F25320E70001765FF /* StatisticsHeaderCell.swift in Sources */,
 				8D05BC5025287CE300E08C1A /* Extensions+UIViewInstant.swift in Sources */,
 				8D32F34322D3302D00ABC228 /* HomeViewController.swift in Sources */,
 				77254F98252D067C004F9CF6 /* HintView.swift in Sources */,
@@ -1350,6 +1386,7 @@
 				77F80DCD2422084D005ED8C0 /* SettingsViewModel.swift in Sources */,
 				77F80DDC242328DE005ED8C0 /* MapCoordinator.swift in Sources */,
 				8D05BC6625289C5400E08C1A /* CityInfo.swift in Sources */,
+				8DD4CA672531F060001765FF /* StatisticsCell.swift in Sources */,
 				8D32F36022D3588500ABC228 /* NetworkManager.swift in Sources */,
 				8D05BC4C252879EA00E08C1A /* ErrorView.swift in Sources */,
 				77B120D2238DC545001B2301 /* Extensions+UIView.swift in Sources */,
@@ -1358,7 +1395,10 @@
 				8D32F37522D7241E00ABC228 /* CustomCollectionViewFlowLayout.swift in Sources */,
 				77F80DB624215596005ED8C0 /* GameCoordinator.swift in Sources */,
 				8D32F36D22D71E6400ABC228 /* MapViewController.swift in Sources */,
+				8DD4CA742532121B001765FF /* BaseTableShadowCell.swift in Sources */,
+				8DD4CA7B25321353001765FF /* StatisticsLabelCell.swift in Sources */,
 				77F80DBE2421FF70005ED8C0 /* LeaderboardViewController.swift in Sources */,
+				8DD4CA80253218A5001765FF /* GameStatistics.swift in Sources */,
 				77EDC320252E64B100ABBA05 /* Localized.generated.swift in Sources */,
 				7790B474241FA44F0046EFA5 /* Extentions+Storyboard.swift in Sources */,
 				8D32F34122D3302D00ABC228 /* AppDelegate.swift in Sources */,
