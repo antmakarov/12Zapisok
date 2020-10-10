@@ -21,8 +21,12 @@ final class StatisticsHeaderCell: BaseTableShadowCell {
         roundedWithShadow(backView: sheetView)
     }
     
-    func configure() {
+    func configure(_ total: Int, _ notes: Int, _ attemps: Int) {
+        totalScore.text = "\(total)"
+        openNotes.text = "\(notes)"
+        totalAttempts.text = "\(attemps)"
         
+        // TODO: Based on stats
+        levelName.text = "Начальный"
     }
-    
 }

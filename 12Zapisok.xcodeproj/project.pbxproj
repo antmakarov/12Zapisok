@@ -26,6 +26,8 @@
 		7753C621244CD20F0072A0B5 /* GameRuleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7753C61F244CD20F0072A0B5 /* GameRuleCell.xib */; };
 		77688CD923BA20AE00697408 /* CityHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77688CD723BA20AE00697408 /* CityHeaderReusableView.swift */; };
 		778CDA9225306324007CC33D /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778CDA9125306324007CC33D /* BaseView.swift */; };
+		778CDAA425324AF3007CC33D /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778CDAA325324AF3007CC33D /* EmptyView.swift */; };
+		778CDAA825324B03007CC33D /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 778CDAA725324B03007CC33D /* EmptyView.xib */; };
 		7790B453241CF5CA0046EFA5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790B452241CF5CA0046EFA5 /* BaseViewController.swift */; };
 		7790B458241E9A500046EFA5 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B457241E9A500046EFA5 /* HomeViewController.xib */; };
 		7790B45B241EA0B60046EFA5 /* CityListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7790B45A241EA0B60046EFA5 /* CityListViewController.xib */; };
@@ -256,6 +258,8 @@
 		7753C61F244CD20F0072A0B5 /* GameRuleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameRuleCell.xib; sourceTree = "<group>"; };
 		77688CD723BA20AE00697408 /* CityHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityHeaderReusableView.swift; sourceTree = "<group>"; };
 		778CDA9125306324007CC33D /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		778CDAA325324AF3007CC33D /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		778CDAA725324B03007CC33D /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		7790B452241CF5CA0046EFA5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		7790B457241E9A500046EFA5 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		7790B45A241EA0B60046EFA5 /* CityListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityListViewController.xib; sourceTree = "<group>"; };
@@ -453,6 +457,15 @@
 				77B02849251B16FB00BC71F8 /* AppTarget.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		778CDAAB25324B08007CC33D /* EmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				778CDAA325324AF3007CC33D /* EmptyView.swift */,
+				778CDAA725324B03007CC33D /* EmptyView.xib */,
+			);
+			path = EmptyView;
 			sourceTree = "<group>";
 		};
 		7790B456241E9A2E0046EFA5 /* Home */ = {
@@ -874,6 +887,7 @@
 				8D05BC6B252A529E00E08C1A /* CheckPlaceView */,
 				8D05BC6C252A52BA00E08C1A /* ManualInputView */,
 				770972BA252DD62E00BED5C8 /* OpenNoteView */,
+				778CDAAB25324B08007CC33D /* EmptyView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1037,6 +1051,7 @@
 				7753C621244CD20F0072A0B5 /* GameRuleCell.xib in Resources */,
 				8D32F34B22D3302F00ABC228 /* LaunchScreen.storyboard in Resources */,
 				77F80DC32421FF85005ED8C0 /* StatisticsViewController.xib in Resources */,
+				778CDAA825324B03007CC33D /* EmptyView.xib in Resources */,
 				77EDC31B252E630F00ABBA05 /* Localization.stencil in Resources */,
 				8D32F38122D73E1400ABC228 /* NoteCollectionCell.xib in Resources */,
 				8D32F34822D3302F00ABC228 /* Assets.xcassets in Resources */,
@@ -1407,6 +1422,7 @@
 				8D8EA3DB22D771DC00EA2F01 /* GameNoteViewController.swift in Sources */,
 				8D32F38322D73E4500ABC228 /* NoteCollectionCell.swift in Sources */,
 				770972B9252DD62800BED5C8 /* OpenNoteView.swift in Sources */,
+				778CDAA425324AF3007CC33D /* EmptyView.swift in Sources */,
 				8D05BCA9252BBE9B00E08C1A /* EKAttributes.swift in Sources */,
 				77B120DA239C4CD9001B2301 /* HomeCoordinator.swift in Sources */,
 				77B120DF239C5F8F001B2301 /* CityListViewModel.swift in Sources */,

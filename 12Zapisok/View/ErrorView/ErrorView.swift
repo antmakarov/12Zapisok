@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ErrorView: UIView, NibInstance {
+final class ErrorView: UIView, NibInstance {
 
     private enum Constants {
         static let defaultTitle = "Кажется, что-то пошло не так..."

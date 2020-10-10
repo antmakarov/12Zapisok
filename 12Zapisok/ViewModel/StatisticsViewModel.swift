@@ -6,13 +6,18 @@
 //  Copyright © 2020 A.Makarov. All rights reserved.
 //
 
+enum StatisticsRoute {
+    case game
+    case back
+}
+
 protocol StatisticsViewModeling: AnyObject {
     func sectionsCount() -> Int
     func getSection(at index: Int) -> StatisticsSections
     func setUpdateHandler(_ handler: (() -> Void)?)
     func fetchStatistics()
     
-    var closeButtonPressed: (() -> Void)? { get set }
+    var routeTo: ((StatisticsRoute) -> Void)? { get set }
 }
 
 final class StatisticsViewModel {
@@ -20,11 +25,11 @@ final class StatisticsViewModel {
     private let databaseStorage: StorageManager
     private let networkManager: NetworkManaging
     
-    public var closeButtonPressed: (() -> Void)?
     private var updateHandler: (() -> Void)?
-
     private var sections: [StatisticsSections] = []
     
+    var routeTo: ((StatisticsRoute) -> Void)?
+
     convenience init() {
         self.init(databaseStorage: StorageManager.shared,
                   networkManager: NetworkManager.shared)
@@ -48,11 +53,14 @@ extension StatisticsViewModel: StatisticsViewModeling {
         
         networkManager.getGameStats { [weak self] result in
             switch result {
-            case .success:
-                self?.sections.append(.header)
-                self?.sections.append(.title)
-                self?.sections.append(.city)
-                self?.sections.append(.city)
+            case let .success(response):
+                if response.citiesStats?.isEmpty == false {
+                    self?.sections.append(.header(total: response.totalScore,
+                                                  notes: response.openNotes,
+                                                  attemps: response.totalAttempts) )
+                    self?.sections.append(.title)
+                    response.citiesStats?.forEach { self?.sections.append(.city(stats: $0)) }
+                }
                 self?.updateHandler?()
                 
             case .error(let error):

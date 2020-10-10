@@ -22,8 +22,9 @@ final class StatisticsCell: BaseTableShadowCell {
         roundedWithShadow(backView: sheetView)
     }
     
-    func configure() {
-        
+    func configure(_ stats: CityStatistics) {
+        cityName.text = stats.name
+        cityScore.text = "\(stats.countAttempts)"
+        cityStatistics.text = "\(stats.countAttempts)"
     }
-    
 }

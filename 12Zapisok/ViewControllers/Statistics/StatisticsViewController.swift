@@ -9,18 +9,24 @@
 import UIKit
 
 enum StatisticsSections {
-    case header
+    case header(total: Int, notes: Int, attemps: Int)
     case title
-    case city
+    case city(stats: CityStatistics)
 }
 
 final class StatisticsViewController: UIViewController {
 
-    @IBOutlet private weak var tableView: UITableView!
+    private enum Constants {
+        static let emptyTitle = "Кажется, что вы еще не начинали играть"
+    }
     
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var emptyView: EmptyView!
+
     var viewModel: StatisticsViewModeling? {
         didSet {
             viewModel?.setUpdateHandler { [weak self] in
+                self?.emptyView.isHidden = self?.viewModel?.sectionsCount() != 0
                 self?.tableView.reloadData()
             }
         }
@@ -28,13 +34,21 @@ final class StatisticsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupUI()
+    }
+    
+    private func setupUI() {
+        emptyView.configure(title: Constants.emptyTitle) { [weak self] in
+            self?.viewModel?.routeTo?(.game)
+        }
         tableView.register(cellType: StatisticsHeaderCell.self)
         tableView.register(cellType: StatisticsLabelCell.self)
         tableView.register(cellType: StatisticsCell.self)
     }
     
     @IBAction private func closeButtonPressed() {
-        viewModel?.closeButtonPressed?()
+        viewModel?.routeTo?(.back)
     }
 }
 
@@ -50,17 +64,17 @@ extension StatisticsViewController: UITableViewDataSource, UITableViewDelegate {
         
         var cell: UITableViewCell
         switch viewModel.getSection(at: indexPath.row) {
-        case .header:
+        case let .header(total, notes, attemps):
             let newCell = tableView.dequeueReusableCell(with: StatisticsHeaderCell.self, for: indexPath)
-            newCell.configure()
+            newCell.configure(total, notes, attemps)
             cell = newCell
             
         case .title:
             cell = tableView.dequeueReusableCell(with: StatisticsLabelCell.self, for: indexPath)
 
-        case .city:
+        case let .city(stats):
             let newCell = tableView.dequeueReusableCell(with: StatisticsCell.self, for: indexPath)
-            newCell.configure()
+            newCell.configure(stats)
             cell = newCell
         }
         

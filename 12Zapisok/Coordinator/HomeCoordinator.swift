@@ -107,8 +107,16 @@ final class HomeCoordinator: BaseCoordinator {
         case .showStatistics:
             let vc = StatisticsViewController()
             let vm = StatisticsViewModel()
-            vm.closeButtonPressed = { [weak self] in
-                self?.navigationController.dismiss(animated: true)
+            vm.routeTo = { [weak self] route in
+                switch route {
+                case .game:
+                    self?.navigationController.dismiss(animated: true) {
+                        self?.manageRoute(.showGame(cityName: ""))
+                    }
+                    
+                case .back:
+                    self?.navigationController.dismiss(animated: true)
+                }
             }
             vc.viewModel = vm
             presentModally(vc)
