@@ -6,7 +6,6 @@
 //  Copyright © 2019 A.Makarov. All rights reserved.
 //
 
-import Foundation
 import CoreLocation
 
 public struct MapPoint {
@@ -31,9 +30,10 @@ protocol LocationManaging {
     
     func distanceFromCoordinates(_ latitude: Double, _ longitude: Double) -> Double
     func distanceFromPoint(_ point: CLLocation) -> Double
+    func closeToCoordinate(_ coordinate: CLLocation, with type: Remoteness) -> Bool
 }
 
-class LocationManager: NSObject {
+final class LocationManager: NSObject {
     
     public static let shared = LocationManager()
     
@@ -47,15 +47,20 @@ class LocationManager: NSObject {
         locationManager.delegate = self
     }
     
-    func startLocation() {
+    private func startLocation() {
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.startUpdatingLocation()
+    }
+    
+    private func isLocationEnabled() -> Bool {
+        return CLLocationManager.authorizationStatus() ==  .authorizedWhenInUse ||
+            CLLocationManager.authorizationStatus() == .authorizedAlways
     }
 }
 
 extension LocationManager: LocationManaging {
     func requestAuthorization(completion: @escaping (Bool) -> Void) {
-        if (CLLocationManager.authorizationStatus() == .notDetermined) {
+        if CLLocationManager.authorizationStatus() == .notDetermined {
             completionAuth = completion
             locationManager.requestWhenInUseAuthorization()
         } else {
@@ -81,9 +86,8 @@ extension LocationManager: LocationManaging {
         return distanceInMeters
     }
     
-    func isLocationEnabled() -> Bool {
-        return CLLocationManager.authorizationStatus() ==  .authorizedWhenInUse ||
-            CLLocationManager.authorizationStatus() == .authorizedAlways
+    public func closeToCoordinate(_ coordinate: CLLocation, with type: Remoteness) -> Bool {
+        return distanceFromPoint(coordinate) <= type.distanceInMeters()
     }
 }
 
@@ -102,5 +106,19 @@ extension LocationManager: CLLocationManagerDelegate {
             location = CLLocation(latitude: lastCoordinate.latitude, longitude: lastCoordinate.longitude)
         }
         completionLocation?(MapPoint(coordinate: locations.last?.coordinate))
+    }
+}
+
+// MARK: Utility
+
+enum Remoteness: Double {
+    
+    case close = 50
+    case average = 100
+    case far = 500
+    case veryFar = 1000
+    
+    func distanceInMeters() -> Double {
+        return rawValue
     }
 }

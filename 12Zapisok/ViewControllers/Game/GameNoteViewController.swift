@@ -95,8 +95,17 @@ final class GameNoteViewController: BaseViewController {
     }
     
     @IBAction private func checkPlace(_ sender: Any) {
-        viewModel?.checkPlace { result in
-            Logger.info(msg: result)
+        viewModel?.checkPlace { [weak self] in
+            if $0 {
+                self?.showPopUp(type: .commonPopUp(title: "Поздравляем", description: "Очередная записка за Вашими плечами", fButton: "Продолжить") { [weak self] in
+                    self?.dismissPopUp()
+                    self?.setupUI()
+                })
+            } else {
+                self?.showPopUp(type: .commonPopUp(title: "Увы", description: "Но уже близко", fButton: "Продолжить") { [weak self] in
+                    self?.dismissPopUp()
+                })
+            }
         }
     }
     

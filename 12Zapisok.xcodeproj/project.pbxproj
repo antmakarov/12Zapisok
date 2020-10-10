@@ -89,7 +89,7 @@
 		77B02800251B041400BC71F8 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DDB242328DE005ED8C0 /* MapCoordinator.swift */; };
 		77B02801251B041400BC71F8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F35F22D3588500ABC228 /* NetworkManager.swift */; };
 		77B02802251B041400BC71F8 /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B120D1238DC545001B2301 /* Extensions+UIView.swift */; };
-		77B02803251B041400BC71F8 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F37E22D73C5E00ABC228 /* NoteViewModel.swift */; };
+		77B02803251B041400BC71F8 /* GameNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F37E22D73C5E00ABC228 /* GameNoteViewModel.swift */; };
 		77B02804251B041400BC71F8 /* CustomCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F37422D7241E00ABC228 /* CustomCollectionViewFlowLayout.swift */; };
 		77B02805251B041400BC71F8 /* GameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DB524215596005ED8C0 /* GameCoordinator.swift */; };
 		77B02806251B041400BC71F8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F36C22D71E6300ABC228 /* MapViewController.swift */; };
@@ -213,7 +213,7 @@
 		8D32F36D22D71E6400ABC228 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F36C22D71E6300ABC228 /* MapViewController.swift */; };
 		8D32F37522D7241E00ABC228 /* CustomCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F37422D7241E00ABC228 /* CustomCollectionViewFlowLayout.swift */; };
 		8D32F37922D7394500ABC228 /* NoteCollectionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F37822D7394500ABC228 /* NoteCollectionCellViewModel.swift */; };
-		8D32F37F22D73C5E00ABC228 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F37E22D73C5E00ABC228 /* NoteViewModel.swift */; };
+		8D32F37F22D73C5E00ABC228 /* GameNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F37E22D73C5E00ABC228 /* GameNoteViewModel.swift */; };
 		8D32F38122D73E1400ABC228 /* NoteCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D32F38022D73E1400ABC228 /* NoteCollectionCell.xib */; };
 		8D32F38322D73E4500ABC228 /* NoteCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F38222D73E4500ABC228 /* NoteCollectionCell.swift */; };
 		8D8EA3D922D75F8D00EA2F01 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8EA3D822D75F8D00EA2F01 /* BaseCell.swift */; };
@@ -344,7 +344,7 @@
 		8D32F36C22D71E6300ABC228 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8D32F37422D7241E00ABC228 /* CustomCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		8D32F37822D7394500ABC228 /* NoteCollectionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionCellViewModel.swift; sourceTree = "<group>"; };
-		8D32F37E22D73C5E00ABC228 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
+		8D32F37E22D73C5E00ABC228 /* GameNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNoteViewModel.swift; sourceTree = "<group>"; };
 		8D32F38022D73E1400ABC228 /* NoteCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCollectionCell.xib; sourceTree = "<group>"; };
 		8D32F38222D73E4500ABC228 /* NoteCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionCell.swift; sourceTree = "<group>"; };
 		8D8EA3D822D75F8D00EA2F01 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
@@ -802,8 +802,8 @@
 			isa = PBXGroup;
 			children = (
 				8D32F35822D34B8E00ABC228 /* GameViewModel.swift */,
+				8D32F37E22D73C5E00ABC228 /* GameNoteViewModel.swift */,
 				8D32F37822D7394500ABC228 /* NoteCollectionCellViewModel.swift */,
-				8D32F37E22D73C5E00ABC228 /* NoteViewModel.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -1270,7 +1270,7 @@
 				77B02801251B041400BC71F8 /* NetworkManager.swift in Sources */,
 				77B02848251B159200BC71F8 /* AppDelegate.swift in Sources */,
 				77B02802251B041400BC71F8 /* Extensions+UIView.swift in Sources */,
-				77B02803251B041400BC71F8 /* NoteViewModel.swift in Sources */,
+				77B02803251B041400BC71F8 /* GameNoteViewModel.swift in Sources */,
 				77B02804251B041400BC71F8 /* CustomCollectionViewFlowLayout.swift in Sources */,
 				77B02805251B041400BC71F8 /* GameCoordinator.swift in Sources */,
 				77B02844251B0E2100BC71F8 /* SwiftUIAppDelegate.swift in Sources */,
@@ -1353,7 +1353,7 @@
 				8D32F36022D3588500ABC228 /* NetworkManager.swift in Sources */,
 				8D05BC4C252879EA00E08C1A /* ErrorView.swift in Sources */,
 				77B120D2238DC545001B2301 /* Extensions+UIView.swift in Sources */,
-				8D32F37F22D73C5E00ABC228 /* NoteViewModel.swift in Sources */,
+				8D32F37F22D73C5E00ABC228 /* GameNoteViewModel.swift in Sources */,
 				77EDC312252E624E00ABBA05 /* Assets.generated.swift in Sources */,
 				8D32F37522D7241E00ABC228 /* CustomCollectionViewFlowLayout.swift in Sources */,
 				77F80DB624215596005ED8C0 /* GameCoordinator.swift in Sources */,

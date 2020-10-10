@@ -56,7 +56,7 @@ class NetworkManager: NetworkManaging {
                 completion(status!)
             
             case .failure(let error):
-                Logger.error(msg: "Unable to get user token - \(error)")
+                Logger.error(msg: "Unable to open note - \(error)")
                 completion(false)
             }
         }

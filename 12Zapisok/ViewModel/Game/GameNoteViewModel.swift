@@ -32,10 +32,6 @@ protocol GameNoteViewModeling {
 
 final class GameNoteViewModel {
     
-    private enum Constants {
-        static let necessaryDistance: CGFloat = 100.0
-    }
-    
     private let note: Note
     public var routeTo: ((GameRouter) -> Void)?
     
@@ -71,10 +67,9 @@ final class GameNoteViewModel {
 
 extension GameNoteViewModel: GameNoteViewModeling {
     func checkPlace(completion: @escaping ((Bool) -> Void)) {
-        if checkPosition(location: note.location) {
-            networkManager.openNote(id: note.id) { result in
-                completion(result)
-            }
+        if let location = note.location,
+           locationManager.closeToCoordinate(location.getCLLocation(), with: .average) {
+            networkManager.openNote(id: note.id, completion: completion)
         } else {
             completion(false)
         }
