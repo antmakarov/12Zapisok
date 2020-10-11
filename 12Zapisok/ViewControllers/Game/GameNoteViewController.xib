@@ -15,6 +15,8 @@
                 <outlet property="checkNoteButton" destination="N6i-Dz-NbV" id="fCg-eJ-ZoY"/>
                 <outlet property="describLabel" destination="jf2-yp-feD" id="A03-X6-9SV"/>
                 <outlet property="distanceButton" destination="ECA-8f-kH0" id="IL9-DR-Ehs"/>
+                <outlet property="hintLabel" destination="I3V-OU-Zhn" id="xJY-DL-2Bc"/>
+                <outlet property="hintStatusLabel" destination="iuK-rZ-k7y" id="d0j-sP-f9G"/>
                 <outlet property="hintsStackView" destination="DhX-0A-jVt" id="9B1-n7-Clc"/>
                 <outlet property="manualInputButton" destination="xie-zS-xO3" id="bv7-JF-NBt"/>
                 <outlet property="noteImage" destination="z86-QI-tD5" id="pzY-Mu-Whz"/>
@@ -76,8 +78,8 @@
                         <constraint firstAttribute="height" constant="70" id="t1x-4m-bUm"/>
                     </constraints>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/mechet-kul-sharif" translatesAutoresizingMaskIntoConstraints="NO" id="z86-QI-tD5">
-                    <rect key="frame" x="9.5" y="82" width="356" height="267"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/AppIcons/compass" translatesAutoresizingMaskIntoConstraints="NO" id="z86-QI-tD5">
+                    <rect key="frame" x="37.5" y="94" width="300" height="200"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                             <integer key="value" value="12"/>
@@ -85,11 +87,11 @@
                     </userDefinedRuntimeAttributes>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzj-Cy-Zbi">
-                    <rect key="frame" x="16" y="361" width="343" height="34"/>
+                    <rect key="frame" x="16" y="318" width="343" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="hGp-kZ-rE7"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                     <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -110,90 +112,8 @@
                         </label>
                     </subviews>
                 </stackView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jf2-yp-feD">
-                    <rect key="frame" x="9.5" y="401" width="356" height="60"/>
-                    <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="sPW-dP-e9w"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DhX-0A-jVt">
-                    <rect key="frame" x="8" y="603.5" width="359" height="43.5"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xie-zS-xO3">
-                            <rect key="frame" x="0.0" y="0.0" width="100" height="43.5"/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                            <inset key="contentEdgeInsets" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
-                            <state key="normal" title="Ручной ввод">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="8"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="showManualInput:" destination="-1" eventType="touchUpInside" id="b1O-bP-JhZ"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MrO-FC-0qU">
-                            <rect key="frame" x="108" y="0.0" width="72.5" height="43.5"/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                            <inset key="contentEdgeInsets" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
-                            <state key="normal" title="На карте">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="8"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="openMap:" destination="-1" eventType="touchUpInside" id="RTh-If-xsy"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECA-8f-kH0">
-                            <rect key="frame" x="188.5" y="0.0" width="94" height="43.5"/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                            <inset key="contentEdgeInsets" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
-                            <state key="normal" title="Расстояние">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="8"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="showDistance:" destination="-1" eventType="touchUpInside" id="bLp-kp-y0z"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIs-XC-X96">
-                            <rect key="frame" x="290.5" y="0.0" width="68.5" height="43.5"/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
-                            <inset key="contentEdgeInsets" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
-                            <state key="normal" title="Открыть">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="8"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="openNote:" destination="-1" eventType="touchUpInside" id="HXz-He-J1D"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                </stackView>
                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6i-Dz-NbV">
-                    <rect key="frame" x="8" y="544.5" width="359" height="43"/>
+                    <rect key="frame" x="8" y="449" width="359" height="43.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Проверить место" backgroundImage="Icons/Rectangle">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -207,43 +127,162 @@
                         <action selector="checkPlace:" destination="-1" eventType="touchUpInside" id="FUf-iu-T1N"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jf2-yp-feD">
+                    <rect key="frame" x="37.5" y="364" width="300" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="sPW-dP-e9w"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DhX-0A-jVt">
+                    <rect key="frame" x="8" y="524.5" width="359" height="108"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rFI-Cz-AzC">
+                            <rect key="frame" x="0.0" y="0.0" width="177.5" height="108"/>
+                            <subviews>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xie-zS-xO3">
+                                    <rect key="frame" x="0.0" y="0.0" width="177.5" height="50"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="RkR-0i-ijM"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                    <inset key="contentEdgeInsets" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
+                                    <state key="normal" title="Ручной ввод">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="8"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="showManualInput:" destination="-1" eventType="touchUpInside" id="b1O-bP-JhZ"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MrO-FC-0qU">
+                                    <rect key="frame" x="0.0" y="58" width="177.5" height="50"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="Acw-Wg-dnd"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                    <inset key="contentEdgeInsets" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
+                                    <state key="normal" title="На карте">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="8"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="openMap:" destination="-1" eventType="touchUpInside" id="RTh-If-xsy"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fOq-eT-Paq">
+                            <rect key="frame" x="185.5" y="0.0" width="173.5" height="108"/>
+                            <subviews>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECA-8f-kH0">
+                                    <rect key="frame" x="0.0" y="0.0" width="173.5" height="50"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="JP8-gO-fB3"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                    <inset key="contentEdgeInsets" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
+                                    <state key="normal" title="Расстояние">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="8"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="showDistance:" destination="-1" eventType="touchUpInside" id="bLp-kp-y0z"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIs-XC-X96">
+                                    <rect key="frame" x="0.0" y="58" width="173.5" height="50"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="kGg-Ay-cBl"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                    <inset key="contentEdgeInsets" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
+                                    <state key="normal" title="Открыть">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="8"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="openNote:" destination="-1" eventType="touchUpInside" id="HXz-He-J1D"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Воспользуйтесь подсказками" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3V-OU-Zhn">
+                    <rect key="frame" x="99.5" y="640.5" width="176" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пока все еще холодно" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iuK-rZ-k7y">
+                    <rect key="frame" x="121" y="494.5" width="133" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.2974772155" green="0.45048010350000001" blue="0.73126500839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="rbk-Ia-aGw"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="z86-QI-tD5" firstAttribute="width" secondItem="ymy-pH-ASK" secondAttribute="width" multiplier="0.95" id="3gM-D7-KOE"/>
+                <constraint firstItem="z86-QI-tD5" firstAttribute="width" secondItem="ymy-pH-ASK" secondAttribute="width" multiplier="0.8" id="3gM-D7-KOE"/>
                 <constraint firstItem="N6i-Dz-NbV" firstAttribute="leading" secondItem="DhX-0A-jVt" secondAttribute="leading" id="6R8-Qp-zYs"/>
                 <constraint firstItem="nKR-aJ-Sgc" firstAttribute="centerX" secondItem="rbk-Ia-aGw" secondAttribute="centerX" id="6kv-zW-zYj"/>
                 <constraint firstItem="rbk-Ia-aGw" firstAttribute="bottom" secondItem="nKR-aJ-Sgc" secondAttribute="bottom" constant="40" id="7aH-BU-pZQ"/>
                 <constraint firstItem="N6i-Dz-NbV" firstAttribute="trailing" secondItem="DhX-0A-jVt" secondAttribute="trailing" id="Gsu-ri-0B2"/>
                 <constraint firstItem="rbk-Ia-aGw" firstAttribute="trailing" secondItem="DhX-0A-jVt" secondAttribute="trailing" constant="8" id="HQc-Ub-UmC"/>
                 <constraint firstAttribute="trailing" secondItem="0IX-s2-kF8" secondAttribute="trailing" id="HnF-SN-OiE"/>
-                <constraint firstItem="z86-QI-tD5" firstAttribute="top" secondItem="0IX-s2-kF8" secondAttribute="bottom" constant="12" id="KH2-8r-u2p"/>
-                <constraint firstItem="jf2-yp-feD" firstAttribute="top" secondItem="Uzj-Cy-Zbi" secondAttribute="bottom" constant="6" id="MGw-Du-LiP"/>
-                <constraint firstItem="DhX-0A-jVt" firstAttribute="height" secondItem="ymy-pH-ASK" secondAttribute="height" multiplier="0.065" id="Msn-Jp-o5X"/>
+                <constraint firstItem="z86-QI-tD5" firstAttribute="top" secondItem="0IX-s2-kF8" secondAttribute="bottom" constant="24" id="KH2-8r-u2p"/>
+                <constraint firstItem="jf2-yp-feD" firstAttribute="top" secondItem="Uzj-Cy-Zbi" secondAttribute="bottom" constant="12" id="MGw-Du-LiP"/>
                 <constraint firstItem="0IX-s2-kF8" firstAttribute="top" secondItem="ymy-pH-ASK" secondAttribute="top" id="Nqu-t4-jhD"/>
                 <constraint firstItem="jf2-yp-feD" firstAttribute="leading" secondItem="z86-QI-tD5" secondAttribute="leading" id="O6D-9n-Zok"/>
                 <constraint firstItem="Uzj-Cy-Zbi" firstAttribute="leading" secondItem="rbk-Ia-aGw" secondAttribute="leading" constant="16" id="RGv-tK-C3W"/>
                 <constraint firstItem="jf2-yp-feD" firstAttribute="trailing" secondItem="z86-QI-tD5" secondAttribute="trailing" id="U6H-Ia-Vca"/>
                 <constraint firstItem="z86-QI-tD5" firstAttribute="centerX" secondItem="rbk-Ia-aGw" secondAttribute="centerX" id="Uxg-Mq-9wc"/>
-                <constraint firstItem="Uzj-Cy-Zbi" firstAttribute="top" secondItem="z86-QI-tD5" secondAttribute="bottom" constant="12" id="ag2-Cy-dvV"/>
+                <constraint firstItem="iuK-rZ-k7y" firstAttribute="top" secondItem="N6i-Dz-NbV" secondAttribute="bottom" constant="2" id="Y2Z-bQ-cOt"/>
+                <constraint firstItem="iuK-rZ-k7y" firstAttribute="centerX" secondItem="N6i-Dz-NbV" secondAttribute="centerX" id="ZOn-JF-mNg"/>
+                <constraint firstItem="Uzj-Cy-Zbi" firstAttribute="top" secondItem="z86-QI-tD5" secondAttribute="bottom" constant="24" id="ag2-Cy-dvV"/>
                 <constraint firstItem="N6i-Dz-NbV" firstAttribute="centerX" secondItem="DhX-0A-jVt" secondAttribute="centerX" id="bJU-Bb-04t"/>
                 <constraint firstItem="DhX-0A-jVt" firstAttribute="leading" secondItem="rbk-Ia-aGw" secondAttribute="leading" constant="8" id="edA-pg-K1d"/>
                 <constraint firstItem="0IX-s2-kF8" firstAttribute="leading" secondItem="ymy-pH-ASK" secondAttribute="leading" id="jnR-zf-Vac"/>
                 <constraint firstItem="rbk-Ia-aGw" firstAttribute="trailing" secondItem="Uzj-Cy-Zbi" secondAttribute="trailing" constant="16" id="n6S-mS-bKi"/>
-                <constraint firstItem="DhX-0A-jVt" firstAttribute="top" secondItem="N6i-Dz-NbV" secondAttribute="bottom" constant="16" id="rha-ht-cfV"/>
+                <constraint firstItem="rbk-Ia-aGw" firstAttribute="bottom" secondItem="I3V-OU-Zhn" secondAttribute="bottom" constant="12" id="rE0-E5-qBl"/>
+                <constraint firstItem="DhX-0A-jVt" firstAttribute="top" secondItem="N6i-Dz-NbV" secondAttribute="bottom" constant="32" id="rha-ht-cfV"/>
                 <constraint firstItem="N6i-Dz-NbV" firstAttribute="height" secondItem="ymy-pH-ASK" secondAttribute="height" multiplier="0.065" id="t42-ar-frx"/>
-                <constraint firstItem="rbk-Ia-aGw" firstAttribute="bottom" secondItem="DhX-0A-jVt" secondAttribute="bottom" constant="20" id="unt-To-RfJ"/>
-                <constraint firstItem="z86-QI-tD5" firstAttribute="height" secondItem="ymy-pH-ASK" secondAttribute="height" multiplier="0.4" id="wAU-EL-LIc"/>
+                <constraint firstItem="I3V-OU-Zhn" firstAttribute="top" secondItem="DhX-0A-jVt" secondAttribute="bottom" constant="8" id="ugD-3Q-NaB"/>
+                <constraint firstItem="z86-QI-tD5" firstAttribute="height" secondItem="ymy-pH-ASK" secondAttribute="height" multiplier="0.3" id="wAU-EL-LIc"/>
+                <constraint firstItem="I3V-OU-Zhn" firstAttribute="centerX" secondItem="rbk-Ia-aGw" secondAttribute="centerX" id="xKt-YP-Uzi"/>
             </constraints>
             <point key="canvasLocation" x="130.40000000000001" y="89.505247376311857"/>
         </view>
     </objects>
     <resources>
         <image name="Icons/AppIcons/close" width="64" height="64"/>
+        <image name="Icons/AppIcons/compass" width="256" height="256"/>
         <image name="Icons/Rectangle" width="368" height="102"/>
         <image name="Icons/SmallNote/orangeSmallNote" width="18" height="32"/>
-        <image name="Icons/mechet-kul-sharif" width="780" height="519"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

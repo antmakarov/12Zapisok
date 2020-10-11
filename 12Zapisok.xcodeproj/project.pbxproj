@@ -164,6 +164,7 @@
 		77BDB39F23B2B41600820E5B /* CityCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77BDB39D23B2B41500820E5B /* CityCollectionCell.xib */; };
 		77BDB3A323B3E99300820E5B /* GameNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77BDB3A123B3E99300820E5B /* GameNoteViewController.xib */; };
 		77C24FE5252FC14C00E7AB72 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 77C24FE4252FC14C00E7AB72 /* .swiftlint.yml */; };
+		77D682AF2532FE5D0087C982 /* GameLeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D682AE2532FE5D0087C982 /* GameLeaders.swift */; };
 		77EDC312252E624E00ABBA05 /* Assets.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDC311252E624E00ABBA05 /* Assets.generated.swift */; };
 		77EDC317252E62A100ABBA05 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 77EDC315252E62A100ABBA05 /* Localizable.strings */; };
 		77EDC31B252E630F00ABBA05 /* Localization.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 77EDC31A252E630F00ABBA05 /* Localization.stencil */; };
@@ -304,6 +305,7 @@
 		77BDB39D23B2B41500820E5B /* CityCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCollectionCell.xib; sourceTree = "<group>"; };
 		77BDB3A123B3E99300820E5B /* GameNoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameNoteViewController.xib; sourceTree = "<group>"; };
 		77C24FE4252FC14C00E7AB72 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		77D682AE2532FE5D0087C982 /* GameLeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLeaders.swift; sourceTree = "<group>"; };
 		77EDC311252E624E00ABBA05 /* Assets.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.generated.swift; sourceTree = "<group>"; };
 		77EDC316252E62A100ABBA05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		77EDC31A252E630F00ABBA05 /* Localization.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Localization.stencil; sourceTree = "<group>"; };
@@ -825,6 +827,7 @@
 				8D05BC6525289C5400E08C1A /* CityInfo.swift */,
 				8D32F35622D33CE000ABC228 /* Note.swift */,
 				8DD4CA7F253218A5001765FF /* GameStatistics.swift */,
+				77D682AE2532FE5D0087C982 /* GameLeaders.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1438,6 +1441,7 @@
 				77B120E9239CF561001B2301 /* AppCoordinator.swift in Sources */,
 				775370C02458E0DE006EFF3E /* HintManager.swift in Sources */,
 				77F93186243B13E9007BC979 /* Extensions+UIColor.swift in Sources */,
+				77D682AF2532FE5D0087C982 /* GameLeaders.swift in Sources */,
 				77F80DB424214B44005ED8C0 /* Extensions+String.swift in Sources */,
 				8D32F37922D7394500ABC228 /* NoteCollectionCellViewModel.swift in Sources */,
 				8D32F36722D366B000ABC228 /* API.swift in Sources */,

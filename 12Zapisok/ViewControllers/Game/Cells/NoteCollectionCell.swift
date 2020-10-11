@@ -40,7 +40,7 @@ final class NoteCollectionCell: BaseCardCell {
         case .progress:
             imageView.rounded(cornerRadius: 8)
             imageView.image = Asset.Icons.progressIcon
-            backImageView.image = Asset.Icons.NoteBigColor.successBig
+            backImageView.image = Asset.Icons.NoteBigColor.progressBig
             statusLabel.text = viewModel.title
             openTimeLabel.text = "В текущих поисках"
             

@@ -30,6 +30,7 @@ internal enum Asset {
       internal static let cityPin = ImageAsset(name: "Icons/AppIcons/cityPin").image
       internal static let cityscape = ImageAsset(name: "Icons/AppIcons/cityscape").image
       internal static let close = ImageAsset(name: "Icons/AppIcons/close").image
+      internal static let compass = ImageAsset(name: "Icons/AppIcons/compass").image
       internal static let emptyStatistics = ImageAsset(name: "Icons/AppIcons/emptyStatistics").image
       internal static let inProgressPlaceholder = ImageAsset(name: "Icons/AppIcons/inProgressPlaceholder").image
       internal static let myPin = ImageAsset(name: "Icons/AppIcons/myPin").image

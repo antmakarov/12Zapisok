@@ -67,12 +67,12 @@ final class GameNoteViewModel {
 
 extension GameNoteViewModel: GameNoteViewModeling {
     func checkPlace(completion: @escaping ((Bool) -> Void)) {
-        //if let location = note.location,
-        //   locationManager.closeToCoordinate(location.getCLLocation(), with: .average) {
+        if let location = note.location,
+           locationManager.closeToCoordinate(location.getCLLocation(), with: .average) {
             networkManager.openNote(id: note.id, completion: completion)
-        //} else {
-        //    completion(false)
-        //}
+        } else {
+            completion(false)
+        }
     }
     
     var title: String {

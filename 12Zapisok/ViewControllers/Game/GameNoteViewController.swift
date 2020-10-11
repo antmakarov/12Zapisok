@@ -28,13 +28,17 @@ final class GameNoteViewController: BaseViewController {
     @IBOutlet private weak var addressStackView: UIStackView!
     @IBOutlet private weak var placeLabel: UILabel!
     @IBOutlet private weak var timeFindedLabel: UILabel!
-    
+    @IBOutlet private weak var hintLabel: UILabel!
+    @IBOutlet private weak var hintStatusLabel: UILabel!
+
     @IBOutlet private weak var checkNoteButton: UIButton!
     @IBOutlet private weak var manualInputButton: UIButton!
     @IBOutlet private weak var onMapButton: UIButton!
     @IBOutlet private weak var distanceButton: UIButton!
     @IBOutlet private weak var openNoteButton: UIButton!
     @IBOutlet private weak var hintsStackView: UIStackView!
+
+    private var hintButtons: [UIButton: HintType] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +59,9 @@ final class GameNoteViewController: BaseViewController {
             hintsStackView.isHidden = true
             openNoteButton.isHidden = true
             addressStackView.isHidden = false
+            checkNoteButton.isHidden = true
+            hintLabel.isHidden = true
+            hintStatusLabel.isHidden = true
             
             noteImage.setupImage(url: viewModel.imgUrl, placeholder: .app)
             statusHeaderImage.image = Asset.Icons.NoteState.successState
@@ -68,16 +75,20 @@ final class GameNoteViewController: BaseViewController {
             confiureButton(button: distanceButton, hintType: .foreverDistance)
             confiureButton(button: openNoteButton, hintType: .openSingleNote)
             
-            noteImage.image = Asset.Icons.progressIcon
+            noteImage.image = Asset.Icons.AppIcons.compass
             statusHeaderImage.image = Asset.Icons.NoteState.progressState
             
             placeLabel.text = Constants.unknownPlace
             timeFindedLabel.text = Constants.asSoonTime
+            hintStatusLabel.text = "Пока все еще холодно"
             
         case .close:
             hintsStackView.isHidden = true
             openNoteButton.isHidden = true
             addressStackView.isHidden = false
+            checkNoteButton.isHidden = true
+            hintLabel.isHidden = true
+            hintStatusLabel.isHidden = true
             
             noteImage.image = Asset.Icons.unavailableIcon
             statusHeaderImage.image = Asset.Icons.NoteState.closeState
@@ -88,10 +99,9 @@ final class GameNoteViewController: BaseViewController {
     }
     
     private func confiureButton(button: UIButton, hintType: HintType) {
-        guard let hintManager = viewModel?.hintManager else {
-            return
-        }
-        button.setBackground(hintManager.getCountOf(hint: hintType) > 0 ? Asset.Icons.rectangle : nil)
+        let hintCount = viewModel?.hintManager.getCountOf(hint: hintType) ?? 0
+        hintButtons[button] = hintType
+        button.setBackground(hintCount > 0 ? Asset.Icons.rectangle : nil)
     }
     
     @IBAction private func checkPlace(_ sender: Any) {
@@ -118,15 +128,30 @@ final class GameNoteViewController: BaseViewController {
     }
     
     @IBAction private func openNote(_ sender: Any) {
-        showHint(for: .openNote)
+        checkHintAvailable(for: sender, popUp: .openNote)
     }
     
     @IBAction private func showDistance(_ sender: Any) {
-        showHint(for: .checkDistance)
+        checkHintAvailable(for: sender, popUp: .checkDistance)
     }
     
     @IBAction private func showManualInput(_ sender: Any) {
-        showHint(for: .manualCoordinates)
+        checkHintAvailable(for: sender, popUp: .manualCoordinates)
+    }
+    
+    private func checkHintAvailable(for button: Any, popUp: PopUpType) {
+        if let button = button as? UIButton, let hint = hintButtons[button],
+           let count = viewModel?.hintManager.getCountOf(hint: hint) {
+            if count < 1 {
+                showHint(for: popUp)
+            } else {
+                showPopUp(type: .commonPopUp(title: "Использовать подсказку?", description: "У вас осталась \(count) подсказка этого типа", fButton: "Да", sButton: "Передумал", fHandler: { [weak self] in
+                    self?.showPopUp(type: popUp)
+                }, sHandler: { [weak self] in
+                    self?.dismissPopUp()
+                }))
+            }
+        }
     }
     
     private func showHint(for popUpType: PopUpType) {

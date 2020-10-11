@@ -47,10 +47,6 @@ extension StatisticsViewModel: StatisticsViewModeling {
     
     public func fetchStatistics() {
         
-//        if let stats = databaseStorage.getObjects(GameStatistics.self) {
-//            return
-//        }
-        
         networkManager.getGameStats { [weak self] result in
             switch result {
             case let .success(response):
