@@ -99,67 +99,66 @@ final class GameNoteViewController: BaseViewController {
     }
     
     private func confiureButton(button: UIButton, hintType: HintType) {
-        let hintCount = viewModel?.hintManager.getCountOf(hint: hintType) ?? 0
+        let hintCount = viewModel?.getCountOfHints(type: hintType) ?? 0
         hintButtons[button] = hintType
         button.setBackground(hintCount > 0 ? Asset.Icons.rectangle : nil)
     }
     
     @IBAction private func checkPlace(_ sender: Any) {
-        viewModel?.checkPlace { [weak self] in
-            if $0 {
-                self?.showPopUp(type: .commonPopUp(title: "Поздравляем", description: "Очередная записка за Вашими плечами", fButton: "Продолжить") { [weak self] in
-                    self?.dismissPopUp()
-                    self?.setupUI()
-                })
-            } else {
-                self?.showPopUp(type: .commonPopUp(title: "Увы", description: "Но уже близко", fButton: "Продолжить") { [weak self] in
-                    self?.dismissPopUp()
-                })
-            }
-        }
+        checkForOpenPlace()
     }
     
-    @IBAction private func openMap(_ sender: Any) {
-        viewModel?.routeTo?(.map)
+    @IBAction private func openMap(_ sender: UIButton) {
+        preparingHintPopUp(for: sender)
+
+    }
+    
+    @IBAction private func openNote(_ sender: UIButton) {
+        preparingHintPopUp(for: sender, popUp: .openNote)
+    }
+
+    @IBAction private func showDistance(_ sender: UIButton) {
+        preparingHintPopUp(for: sender, popUp: .checkDistance)
+    }
+    
+    @IBAction private func showManualInput(_ sender: UIButton) {
+        preparingHintPopUp(for: sender, popUp: .manualCoordinates)
     }
     
     @IBAction private func closeView(_ sender: Any) {
         viewModel?.routeTo?(.back)
     }
     
-    @IBAction private func openNote(_ sender: Any) {
-        checkHintAvailable(for: sender, popUp: .openNote)
+    private func showConfirmPopUp(count: Int, completion: @escaping (() -> Void)) {
+        showPopUp(type: .commonPopUp(title: "Использовать подсказку?", description: "У вас осталась \(count) подсказка этого типа", fButton: "Да", sButton: "Передумал", fHandler: {
+            completion()
+        }, sHandler: { [weak self] in
+            self?.dismissPopUp()
+        }))
     }
-    
-    @IBAction private func showDistance(_ sender: Any) {
-        checkHintAvailable(for: sender, popUp: .checkDistance)
-    }
-    
-    @IBAction private func showManualInput(_ sender: Any) {
-        checkHintAvailable(for: sender, popUp: .manualCoordinates)
-    }
-    
-    private func checkHintAvailable(for button: Any, popUp: PopUpType) {
-        if let button = button as? UIButton, let hint = hintButtons[button],
-           let count = viewModel?.hintManager.getCountOf(hint: hint) {
+
+    private func preparingHintPopUp(for button: UIButton, popUp: PopUpType? = nil) {
+        if let hint = hintButtons[button], let count = viewModel?.getCountOfHints(type: hint) {
             if count < 1 {
-                showHint(for: popUp)
+                showBuyHint()
             } else {
-                showPopUp(type: .commonPopUp(title: "Использовать подсказку?", description: "У вас осталась \(count) подсказка этого типа", fButton: "Да", sButton: "Передумал", fHandler: { [weak self] in
-                    self?.showPopUp(type: popUp)
-                }, sHandler: { [weak self] in
-                    self?.dismissPopUp()
-                }))
+                showConfirmPopUp(count: count) { [weak self] in
+                    if hint == .showPlaceOnMap {
+                        self?.dismissPopUp()
+                        self?.viewModel?.routeTo?(.map)
+                    } else {
+                        if let popUp = popUp {
+                            self?.showPopUp(type: popUp)
+                        }
+                    }
+                }
             }
         }
     }
     
-    private func showHint(for popUpType: PopUpType) {
-        showPopUp(type: .hint { type in
+    private func showBuyHint() {
+        showPopUp(type: .buyHint { type in
             switch type {
-            case .apply:
-                self.showPopUp(type: popUpType)
-                
             case .buy:
                 Logger.info(msg: "Tap Buy Hint Button")
                 
@@ -171,4 +170,26 @@ final class GameNoteViewController: BaseViewController {
             }
         })
     }
+    
+    private func checkForOpenPlace() {
+        viewModel?.completeNote { [weak self] response in
+            switch response {
+            case let .success(status):
+                if status {
+                    self?.showPopUp(type: .commonPopUp(title: "Поздравляем", description: "Очередная записка за Вашими плечами", fButton: "Продолжить") { [weak self] in
+                        self?.dismissPopUp()
+                        self?.setupUI()
+                    })
+                } else {
+                    self?.showPopUp(type: .commonPopUp(title: "Увы", description: "Но уже близко", fButton: "Продолжить") { [weak self] in
+                        self?.dismissPopUp()
+                    })
+                }
+            case .error:
+                Logger.error(msg: "Баннер с ошибкой")
+            }
+            
+        }
+    }
+    
 }

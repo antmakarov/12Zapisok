@@ -53,8 +53,6 @@ final class GameViewModel {
             switch result {
             case .success(let notes):
                 self?.gameNotes = notes
-                self?.gameNotes[0].statistics = Statistics()
-                self?.gameNotes[0].statistics?.isOpen = true
                 self?.dataUpdateHandler?()
             
             case .error(let error):

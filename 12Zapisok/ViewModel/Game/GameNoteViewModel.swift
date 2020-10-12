@@ -25,9 +25,9 @@ protocol GameNoteViewModeling {
     var openTime: String { get }
     var location: Location? { get }
     var routeTo: ((GameRouter) -> Void)? { get set }
-    var hintManager: HintManaging { get }
     
-    func checkPlace(completion: @escaping ((Bool) -> Void))
+    func completeNote(completion: @escaping (((Result<Bool, Error>)) -> Void))
+    func getCountOfHints(type: HintType) -> Int
 }
 
 final class GameNoteViewModel {
@@ -37,7 +37,7 @@ final class GameNoteViewModel {
     
     private var networkManager: NetworkManaging
     private var locationManager: LocationManaging
-    public var hintManager: HintManaging
+    private var hintManager: HintManaging
     
     convenience init(note: Note) {
         self.init(note: note,
@@ -66,13 +66,17 @@ final class GameNoteViewModel {
 }
 
 extension GameNoteViewModel: GameNoteViewModeling {
-    func checkPlace(completion: @escaping ((Bool) -> Void)) {
+    func completeNote(completion: @escaping (((Result<Bool, Error>)) -> Void)) {
         if let location = note.location,
            locationManager.closeToCoordinate(location.getCLLocation(), with: .average) {
-            networkManager.openNote(id: note.id, completion: completion)
+            networkManager.completeNote(id: note.id, completion: completion)
         } else {
-            completion(false)
+            completion(.success(false))
         }
+    }
+    
+    func getCountOfHints(type: HintType) -> Int {
+        return hintManager.getCountOf(hint: type)
     }
     
     var title: String {

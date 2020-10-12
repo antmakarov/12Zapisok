@@ -13,8 +13,8 @@
 		770972B5252DD61200BED5C8 /* OpenNoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 770972B4252DD61200BED5C8 /* OpenNoteView.xib */; };
 		770972B9252DD62800BED5C8 /* OpenNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770972B8252DD62800BED5C8 /* OpenNoteView.swift */; };
 		770972F1252E5AFA00BED5C8 /* Assets.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 770972EF252E5AFA00BED5C8 /* Assets.stencil */; };
-		77254F98252D067C004F9CF6 /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77254F97252D067C004F9CF6 /* HintView.swift */; };
-		77254F9E252D0685004F9CF6 /* HintView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77254F9D252D0685004F9CF6 /* HintView.xib */; };
+		77254F98252D067C004F9CF6 /* BuyHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77254F97252D067C004F9CF6 /* BuyHintView.swift */; };
+		77254F9E252D0685004F9CF6 /* BuyHintView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77254F9D252D0685004F9CF6 /* BuyHintView.xib */; };
 		7741375623B9EC4100AD8A71 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7741375523B9EC4100AD8A71 /* HomeViewModel.swift */; };
 		77419FA82469EDF100DA205E /* DistanceToPlaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77419FA72469EDF100DA205E /* DistanceToPlaceView.xib */; };
 		77419FAA2469EDFB00DA205E /* DistanceToPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77419FA92469EDFB00DA205E /* DistanceToPlaceView.swift */; };
@@ -244,8 +244,8 @@
 		770972B4252DD61200BED5C8 /* OpenNoteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OpenNoteView.xib; sourceTree = "<group>"; };
 		770972B8252DD62800BED5C8 /* OpenNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenNoteView.swift; sourceTree = "<group>"; };
 		770972EF252E5AFA00BED5C8 /* Assets.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Assets.stencil; sourceTree = "<group>"; };
-		77254F97252D067C004F9CF6 /* HintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintView.swift; sourceTree = "<group>"; };
-		77254F9D252D0685004F9CF6 /* HintView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HintView.xib; sourceTree = "<group>"; };
+		77254F97252D067C004F9CF6 /* BuyHintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyHintView.swift; sourceTree = "<group>"; };
+		77254F9D252D0685004F9CF6 /* BuyHintView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyHintView.xib; sourceTree = "<group>"; };
 		7741375523B9EC4100AD8A71 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		77419FA72469EDF100DA205E /* DistanceToPlaceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DistanceToPlaceView.xib; sourceTree = "<group>"; };
 		77419FA92469EDFB00DA205E /* DistanceToPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceToPlaceView.swift; sourceTree = "<group>"; };
@@ -436,8 +436,8 @@
 		77254F96252D05C4004F9CF6 /* HintView */ = {
 			isa = PBXGroup;
 			children = (
-				77254F97252D067C004F9CF6 /* HintView.swift */,
-				77254F9D252D0685004F9CF6 /* HintView.xib */,
+				77254F97252D067C004F9CF6 /* BuyHintView.swift */,
+				77254F9D252D0685004F9CF6 /* BuyHintView.xib */,
 			);
 			path = HintView;
 			sourceTree = "<group>";
@@ -1073,7 +1073,7 @@
 				7790B465241ECEB10046EFA5 /* GameViewController.xib in Resources */,
 				77C24FE5252FC14C00E7AB72 /* .swiftlint.yml in Resources */,
 				7790B46A241FA3CF0046EFA5 /* LoginViewController.xib in Resources */,
-				77254F9E252D0685004F9CF6 /* HintView.xib in Resources */,
+				77254F9E252D0685004F9CF6 /* BuyHintView.xib in Resources */,
 				8DD4CA682531F060001765FF /* StatisticsCell.xib in Resources */,
 				77BDB39F23B2B41600820E5B /* CityCollectionCell.xib in Resources */,
 				8DD4CA7C25321353001765FF /* StatisticsLabelCell.xib in Resources */,
@@ -1381,7 +1381,7 @@
 				8DD4CA6F25320E70001765FF /* StatisticsHeaderCell.swift in Sources */,
 				8D05BC5025287CE300E08C1A /* Extensions+UIViewInstant.swift in Sources */,
 				8D32F34322D3302D00ABC228 /* HomeViewController.swift in Sources */,
-				77254F98252D067C004F9CF6 /* HintView.swift in Sources */,
+				77254F98252D067C004F9CF6 /* BuyHintView.swift in Sources */,
 				77F80DC924220319005ED8C0 /* GameRulesViewModel.swift in Sources */,
 				775370BD2458CD39006EFF3E /* CityImageCell.swift in Sources */,
 				7790B461241EBBE60046EFA5 /* Extensions+UICollectionView.swift in Sources */,

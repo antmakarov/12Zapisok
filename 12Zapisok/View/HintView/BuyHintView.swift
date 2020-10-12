@@ -1,5 +1,5 @@
 //
-//  HintView.swift
+//  BuyHintView.swift
 //  12Zapisok
 //
 //  Created by Anton Makarov on 06.10.2020.
@@ -9,37 +9,35 @@
 import UIKit
 
 enum HintViewHandler {
-    case apply
     case buy
     case showAd
     case close
 }
 
-final class HintView: BaseView {
+final class BuyHintView: BaseView {
 
+    private enum Constants {
+        static let viewHeight: CGFloat = 340.0
+    }
+    
     @IBOutlet private weak var title: UILabel!
     
     private var completionType: ((HintViewHandler) -> Void)?
 
-    func configure(newTitle: String, type: ((HintViewHandler) -> Void)?) {
-        title.text = newTitle
+    func configure(type: ((HintViewHandler) -> Void)?) {
         completionType = type
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         instantiateFromNib()
-        setup()
+        setup(height: Constants.viewHeight)
     }
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
         instantiateFromNib()
-        setup()
-    }
-    
-    @IBAction private func applyHint(_ esnder: Any) {
-        completionType?(.apply)
+        setup(height: Constants.viewHeight)
     }
     
     @IBAction private func buyHint(_ esnder: Any) {

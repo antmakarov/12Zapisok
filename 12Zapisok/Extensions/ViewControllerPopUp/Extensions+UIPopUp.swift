@@ -13,7 +13,8 @@ typealias ButtonHandler = (() -> Void)
 
 enum PopUpType {
     case commonPopUp(title: String, description: String? = nil, image: String? = nil, fButton: String? = nil, sButton: String? = nil, fHandler: ButtonHandler? = nil, sHandler: ButtonHandler? = nil)
-    case hint((HintViewHandler) -> Void)
+    case buyHint((HintViewHandler) -> Void)
+    
     case openNote
     case manualCoordinates
     case checkDistance
@@ -27,10 +28,10 @@ extension UIViewController {
             popUp.configure(title: title, description: description, image: image, firstButtonText: fButton, secondButtonText: sButton, firstButtonHandler: fHandler, secondButtonHandler: sHandler)
             SwiftEntryKit.display(entry: popUp, using: appearAttributes())
 
-        case .hint(let handler):
-            let hintView = HintView()
-            hintView.configure(newTitle: "Test", type: handler)
-            SwiftEntryKit.display(entry: hintView, using: appearAttributes())
+        case .buyHint(let handler):
+            let buyHintView = BuyHintView()
+            buyHintView.configure(type: handler)
+            SwiftEntryKit.display(entry: buyHintView, using: appearAttributes())
             
         case .openNote:
             SwiftEntryKit.display(entry: OpenNoteView(), using: appearAttributes())

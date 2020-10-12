@@ -16,7 +16,7 @@ protocol NetworkManaging {
     func getCityList(completion: @escaping ((Result<[City], Error>) -> ()))
     func getGameStats(completion: @escaping ((Result<GameStatistics, Error>) -> ()))
     func getNoteList(parameters: Parameters, completion: @escaping ((Result<[Note], Error>) -> ()))
-    func openNote(id: Int, completion: @escaping ((Bool) -> ()))
+    func completeNote(id: Int, completion: @escaping ((Result<Bool, Error>) -> ()))
     func updateTokenIfNeeded(isForced: Bool)
 }
 
@@ -45,29 +45,14 @@ class NetworkManager: NetworkManaging {
         fetchArrayOf(type: Note.self, parameters) { completion($0) }
     }
     
-    func getGameStats(completion: @escaping ((Result<GameStatistics, Error>) -> ())) {
+    public func getGameStats(completion: @escaping ((Result<GameStatistics, Error>) -> ())) {
         fetchObject(type: GameStatistics.self, completion: completion)
     }
     
-    public func openNote(id: Int, completion: @escaping ((Bool) -> ())) {
-        let url = baseUrl + String(format: Endpoints.openNote.rawValue, id)
-        AF.request(url, method: .post, encoding: JSONEncoding.default, headers: configureHeaders())
-        .validate(statusCode: 200..<300)
-        .responseJSON { response in
-            switch response.result {
-            case .success(let result):
-                let response = result as! NSDictionary
-                let status = response.object(forKey: "success") as? Bool
-                completion(status!)
-            
-            case .failure(let error):
-                Logger.error(msg: "Unable to open note - \(error)")
-                completion(false)
-            }
-        }
+    public func completeNote(id: Int, completion: @escaping ((Result<Bool, Error>) -> ())) {
+        let url = String(format: Endpoints.completeNote.rawValue, id)
+        postObject(endpoint: url, completion: completion)
     }
-
-    // MARK: Private methods
     
     public func updateTokenIfNeeded(isForced: Bool) {
         if userPreferences.userToken == nil || isForced {
@@ -76,6 +61,26 @@ class NetworkManager: NetworkManaging {
             }
         } else {
             Logger.info(msg: "App Token: " + (userPreferences.userToken ?? .empty))
+        }
+    }
+
+    // MARK: Private methods
+
+    private func postObject(endpoint: String, completion: @escaping ((Result<Bool, Error>)) -> ()) {
+        let url = baseUrl + endpoint
+        AF.request(url, method: .post, encoding: JSONEncoding.default, headers: configureHeaders())
+        .validate(statusCode: 200..<300)
+        .responseJSON { response in
+            switch response.result {
+            case .success(let result):
+                let response = result as! NSDictionary
+                let status = response.object(forKey: "success") as? Bool
+                completion(.success(status ?? false))
+            
+            case .failure(let error):
+                Logger.error(msg: "Unable to post - \(error)")
+                completion(.error(error))
+            }
         }
     }
 
