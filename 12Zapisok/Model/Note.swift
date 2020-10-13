@@ -53,6 +53,12 @@ final class Statistics: Object, Mappable {
     @objc dynamic var isOpen: Bool = false
     @objc dynamic var isComplete: Bool = false
     
+    convenience init(isOpen: Bool, isComplete: Bool = false) {
+        self.init()
+        self.isOpen = isOpen
+        self.isComplete = isComplete
+    }
+    
     required convenience init?(map: Map) {
         self.init()
     }

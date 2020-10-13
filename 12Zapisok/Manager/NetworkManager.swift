@@ -16,6 +16,7 @@ protocol NetworkManaging {
     func getCityList(completion: @escaping ((Result<[City], Error>) -> ()))
     func getGameStats(completion: @escaping ((Result<GameStatistics, Error>) -> ()))
     func getNoteList(parameters: Parameters, completion: @escaping ((Result<[Note], Error>) -> ()))
+    func openNote(id: Int, completion: @escaping ((Result<Bool, Error>) -> ()))
     func completeNote(id: Int, completion: @escaping ((Result<Bool, Error>) -> ()))
     func updateTokenIfNeeded(isForced: Bool)
 }
@@ -47,6 +48,11 @@ class NetworkManager: NetworkManaging {
     
     public func getGameStats(completion: @escaping ((Result<GameStatistics, Error>) -> ())) {
         fetchObject(type: GameStatistics.self, completion: completion)
+    }
+    
+    public func openNote(id: Int, completion: @escaping ((Result<Bool, Error>) -> ())) {
+        let url = String(format: Endpoints.openNote.rawValue, id)
+        postObject(endpoint: url, completion: completion)
     }
     
     public func completeNote(id: Int, completion: @escaping ((Result<Bool, Error>) -> ())) {

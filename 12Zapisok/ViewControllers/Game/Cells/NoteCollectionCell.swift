@@ -30,7 +30,7 @@ final class NoteCollectionCell: BaseCardCell {
         case .open:
             imageView.rounded(cornerRadius: 8)
             imageView.setupImage(url: viewModel.imgUrl, placeholder: .note)
-            backImageView.image = Asset.Icons.NoteBigColor.successBig
+            backImageView.image = Asset.Icons.NoteBigColor.successBig.image
             statusLabel.text = viewModel.title
             openTimeLabel.text = viewModel.openTime
             
@@ -39,8 +39,8 @@ final class NoteCollectionCell: BaseCardCell {
             
         case .progress:
             imageView.rounded(cornerRadius: 8)
-            imageView.image = Asset.Icons.progressIcon
-            backImageView.image = Asset.Icons.NoteBigColor.progressBig
+            imageView.image = Asset.Icons.progressIcon.image
+            backImageView.image = Asset.Icons.NoteBigColor.progressBig.image
             statusLabel.text = viewModel.title
             openTimeLabel.text = "В текущих поисках"
             
@@ -49,8 +49,8 @@ final class NoteCollectionCell: BaseCardCell {
 
         case .close:
             imageView.rounded(cornerRadius: 8)
-            imageView.image = Asset.Icons.unavailableIcon
-            backImageView.image = Asset.Icons.NoteBigColor.unavailableBig
+            imageView.image = Asset.Icons.unavailableIcon.image
+            backImageView.image = Asset.Icons.NoteBigColor.unavailableBig.image
             openTimeLabel.isHidden = true
             statusLabel.text = "Недоступна"
             statusLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)

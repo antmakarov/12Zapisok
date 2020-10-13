@@ -64,7 +64,7 @@ final class GameNoteViewController: BaseViewController {
             hintStatusLabel.isHidden = true
             
             noteImage.setupImage(url: viewModel.imgUrl, placeholder: .app)
-            statusHeaderImage.image = Asset.Icons.NoteState.successState
+            statusHeaderImage.image = Asset.Icons.NoteState.successState.image
             
             placeLabel.text = viewModel.address
             timeFindedLabel.text = Constants.openText + viewModel.openTime
@@ -75,8 +75,8 @@ final class GameNoteViewController: BaseViewController {
             confiureButton(button: distanceButton, hintType: .foreverDistance)
             confiureButton(button: openNoteButton, hintType: .openSingleNote)
             
-            noteImage.image = Asset.Icons.AppIcons.compass
-            statusHeaderImage.image = Asset.Icons.NoteState.progressState
+            noteImage.image = Asset.Icons.AppIcons.compass.image
+            statusHeaderImage.image = Asset.Icons.NoteState.progressState.image
             
             placeLabel.text = Constants.unknownPlace
             timeFindedLabel.text = Constants.asSoonTime
@@ -90,8 +90,8 @@ final class GameNoteViewController: BaseViewController {
             hintLabel.isHidden = true
             hintStatusLabel.isHidden = true
             
-            noteImage.image = Asset.Icons.unavailableIcon
-            statusHeaderImage.image = Asset.Icons.NoteState.closeState
+            noteImage.image = Asset.Icons.unavailableIcon.image
+            statusHeaderImage.image = Asset.Icons.NoteState.closeState.image
             
             placeLabel.text = Constants.unknownPlace
             timeFindedLabel.text = Constants.asSoonTime
@@ -101,7 +101,7 @@ final class GameNoteViewController: BaseViewController {
     private func confiureButton(button: UIButton, hintType: HintType) {
         let hintCount = viewModel?.getCountOfHints(type: hintType) ?? 0
         hintButtons[button] = hintType
-        button.setBackground(hintCount > 0 ? Asset.Icons.rectangle : nil)
+        button.setBackground(hintCount > 0 ? Asset.Icons.rectangle.image : nil)
     }
     
     @IBAction private func checkPlace(_ sender: Any) {

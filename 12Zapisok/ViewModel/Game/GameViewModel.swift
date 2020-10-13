@@ -68,6 +68,10 @@ extension GameViewModel: GameViewModeling {
             switch result {
             case .success(let notes):
                 self?.gameNotes = notes
+                if let note = notes.first, note.statistics == nil {
+                    self?.gameNotes.first?.statistics = Statistics(isOpen: true)
+                    self?.networkManager.openNote(id: note.id) { _ in }
+                }
                 self?.dataUpdateHandler?()
             
             case .error(let error):

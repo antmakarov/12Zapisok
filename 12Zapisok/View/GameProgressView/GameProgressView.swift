@@ -35,11 +35,11 @@ class GameProgresView: UIView {
             stateView.backgroundColor = .clear
             
             if opensCount < index {
-                stateView.image = Asset.Icons.SmallNote.graySmallNote
+                stateView.image = Asset.Icons.SmallNote.graySmallNote.image
             } else if opensCount == index {
-                stateView.image = Asset.Icons.SmallNote.orangeSmallNote
+                stateView.image = Asset.Icons.SmallNote.orangeSmallNote.image
             } else {
-                stateView.image = Asset.Icons.SmallNote.greenSmallNote
+                stateView.image = Asset.Icons.SmallNote.greenSmallNote.image
             }
             
             stateView.contentMode = .scaleAspectFit
