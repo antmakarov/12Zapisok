@@ -38,19 +38,23 @@ final class GameNoteViewModel {
     private var networkManager: NetworkManaging
     private var locationManager: LocationManaging
     private var hintManager: HintManaging
+    private var dataUpdater: Observable<Int>
     
-    convenience init(note: Note) {
+    convenience init(note: Note, observer: Observable<Int>) {
         self.init(note: note,
+                  observer: observer,
                   networkManager: NetworkManager.shared,
                   locationManager: LocationManager.shared,
                   hintManager: HintManager.shared)
     }
     
     init(note: Note,
+         observer: Observable<Int>,
          networkManager: NetworkManaging,
          locationManager: LocationManaging,
          hintManager: HintManaging) {
         self.note = note
+        self.dataUpdater = observer
         self.networkManager = networkManager
         self.locationManager = locationManager
         self.hintManager = hintManager
@@ -70,6 +74,7 @@ extension GameNoteViewModel: GameNoteViewModeling {
         if let location = note.location,
            locationManager.closeToCoordinate(location.getCLLocation(), with: .average) {
             networkManager.completeNote(id: note.id, completion: completion)
+            dataUpdater.value = note.id
         } else {
             completion(.success(false))
         }

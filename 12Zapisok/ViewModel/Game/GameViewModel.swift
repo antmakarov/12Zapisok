@@ -13,7 +13,8 @@ protocol GameViewModeling {
     func numberOfNotes() -> Int
     func numberOfOpensNotes() -> Int
     func setUpdateHandler(_ handler: (() -> Void)?)
-    
+    func loadNotes()
+
     var routeTo: ((GameRouter) -> Void)? { get set }
 }
 
@@ -28,7 +29,8 @@ final class GameViewModel {
     private var currentCityName: String?
     private var gameNotes = [Note]()
     private var dataUpdateHandler: (() -> Void)?
-    
+    private var dataUpdater = Observable(value: 0)
+
     public var routeTo: ((GameRouter) -> Void)?
 
     convenience init(cityName: String?) {
@@ -40,10 +42,23 @@ final class GameViewModel {
         self.databaseStorage = databaseStorage
         self.networkManager = networkManager
         currentCityName = cityName
+        
+        dataUpdater.addObserver { [weak self] noteId in
+            if let index = self?.gameNotes.firstIndex(where: { $0.id == noteId }) {
+                self?.gameNotes[index].statistics?.isComplete = true
+                self?.gameNotes[index + 1].statistics?.isOpen = true
+                self?.dataUpdateHandler?()
+            } else {
+                self?.loadNotes()
+            }
+        }
+        
         loadNotes()
     }
-        
-    private func loadNotes() {
+}
+
+extension GameViewModel: GameViewModeling {
+    public func loadNotes() {
         guard let cityID = preferencesManager.currentCityId else {
             Logger.error(msg: "Unable to get id of current city")
             return
@@ -65,9 +80,7 @@ final class GameViewModel {
             }
         }
     }
-}
 
-extension GameViewModel: GameViewModeling {
     public func cityName() -> String {
         return currentCityName ?? .empty
     }
@@ -77,7 +90,7 @@ extension GameViewModel: GameViewModeling {
     }
     
     public func selectNoteDetails(at index: Int) {
-        let selectedViewModel = GameNoteViewModel(note: gameNotes[index])
+        let selectedViewModel = GameNoteViewModel(note: gameNotes[index], observer: dataUpdater)
         routeTo?(.note(viewModel: selectedViewModel))
     }
     

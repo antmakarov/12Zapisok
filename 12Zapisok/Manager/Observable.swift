@@ -24,6 +24,7 @@ final class Observable<T> {
         self.value = value
     }
     
+    @discardableResult
     func addObserver(completion: @escaping CompletionHandler) -> ObserverSubscriptionToken {
         let key = (observers.keys.max() ?? 0) + 1
         observers[key] = completion
