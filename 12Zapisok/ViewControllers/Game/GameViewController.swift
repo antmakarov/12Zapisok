@@ -14,13 +14,17 @@ final class GameViewController: BaseViewController {
     private enum Constants {
         static let cornerRadius: CGFloat = 16.0
     }
-    
+
+    // MARK: Outlets
+
     @IBOutlet private weak var cityNameLabel: UILabel!
     @IBOutlet private weak var headerNotesView: UIView!
     @IBOutlet private weak var notesCollectionView: UICollectionView!
     @IBOutlet private weak var backgroundWhiteView: UIView!
     @IBOutlet private weak var gameProgressView: GameProgresView!
     
+    // MARK: Private / Public variables
+
     var viewModel: GameViewModeling? {
         didSet {
             viewModel?.setUpdateHandler { [weak self] in
@@ -28,6 +32,8 @@ final class GameViewController: BaseViewController {
             }
         }
     }
+    
+    // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +45,8 @@ final class GameViewController: BaseViewController {
         gameProgressView.fillStack(opensCount: viewModel?.numberOfOpensNotes() ?? 0)
         backgroundWhiteView.roundCorners(corners: [.topLeft, .topRight], radius: Constants.cornerRadius)
     }
+    
+    // MARK: Actions
     
     @IBAction private func openMap() {
         viewModel?.routeTo?(.map)

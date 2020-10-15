@@ -17,7 +17,7 @@ final class GameNoteViewController: BaseViewController {
         static let asSoonTime = "Найди как можно скорее"
     }
     
-    var viewModel: GameNoteViewModeling?
+    // MARK: Outlets
     
     @IBOutlet private weak var numberNoteLabel: UILabel!
     @IBOutlet private weak var titleNoteLabel: UILabel!
@@ -30,20 +30,28 @@ final class GameNoteViewController: BaseViewController {
     @IBOutlet private weak var timeFindedLabel: UILabel!
     @IBOutlet private weak var hintLabel: UILabel!
     @IBOutlet private weak var hintStatusLabel: UILabel!
-
+    
     @IBOutlet private weak var checkNoteButton: UIButton!
     @IBOutlet private weak var manualInputButton: UIButton!
     @IBOutlet private weak var onMapButton: UIButton!
     @IBOutlet private weak var distanceButton: UIButton!
     @IBOutlet private weak var openNoteButton: UIButton!
     @IBOutlet private weak var hintsStackView: UIStackView!
+    
+    // MARK: Private / Public variables
 
+    var viewModel: GameNoteViewModeling?
+    
     private var hintButtons: [UIButton: HintType] = [:]
+    
+    // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
+    
+    // MARK: Setup UI
     
     private func setupUI() {
         guard let viewModel = viewModel else {
@@ -104,19 +112,20 @@ final class GameNoteViewController: BaseViewController {
         button.setBackground(hintCount > 0 ? Asset.Icons.rectangle.image : nil)
     }
     
+    // MARK: Actions
+    
     @IBAction private func checkPlace(_ sender: Any) {
         checkForOpenPlace()
     }
     
     @IBAction private func openMap(_ sender: UIButton) {
         preparingHintPopUp(for: sender)
-
     }
     
     @IBAction private func openNote(_ sender: UIButton) {
         preparingHintPopUp(for: sender, popUp: .openNote)
     }
-
+    
     @IBAction private func showDistance(_ sender: UIButton) {
         preparingHintPopUp(for: sender, popUp: .checkDistance)
     }
@@ -129,6 +138,8 @@ final class GameNoteViewController: BaseViewController {
         viewModel?.routeTo?(.back)
     }
     
+    // MARK: PopUp Handling
+    
     private func showConfirmPopUp(count: Int, completion: @escaping (() -> Void)) {
         showPopUp(type: .commonPopUp(title: "Использовать подсказку?", description: "У вас осталась \(count) подсказка этого типа", fButton: "Да", sButton: "Передумал", fHandler: {
             completion()
@@ -136,7 +147,7 @@ final class GameNoteViewController: BaseViewController {
             self?.dismissPopUp()
         }))
     }
-
+    
     private func preparingHintPopUp(for button: UIButton, popUp: PopUpType? = nil) {
         if let hint = hintButtons[button], let count = viewModel?.getCountOfHints(type: hint) {
             if count < 1 {
@@ -164,7 +175,7 @@ final class GameNoteViewController: BaseViewController {
                 
             case .showAd:
                 Logger.info(msg: "Tap Show Ad Button")
-
+                
             case .close:
                 self.dismissPopUp()
             }
@@ -188,8 +199,6 @@ final class GameNoteViewController: BaseViewController {
             case .error:
                 Logger.error(msg: "Баннер с ошибкой")
             }
-            
         }
     }
-    
 }

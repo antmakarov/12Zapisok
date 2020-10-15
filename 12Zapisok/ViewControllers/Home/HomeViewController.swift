@@ -18,11 +18,15 @@ final class HomeViewController: BaseViewController {
         static let shadowColor = UIColor.black.cgColor
     }
     
+    // MARK: Outlets
+    
     @IBOutlet private weak var cityNameLabel: UILabel!
     @IBOutlet private weak var cityImage: UIImageView!
     @IBOutlet private weak var middleActionsView: UIView!
     @IBOutlet private var circleMenuImages: [UIImageView]!
     @IBOutlet private var menuItemViews: [UIView]!
+    
+    // MARK: Private / Public variables
     
     public var viewModel: HomeViewModeling? {
         didSet {
@@ -31,6 +35,8 @@ final class HomeViewController: BaseViewController {
             }
         }
     }
+    
+    // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +47,8 @@ final class HomeViewController: BaseViewController {
         super.viewWillAppear(animated)
         updateUI()
     }
+    
+    // MARK: Setup UI
     
     private func updateUI() {
         guard let viewModel = viewModel else {

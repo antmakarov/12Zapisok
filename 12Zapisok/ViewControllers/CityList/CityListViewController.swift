@@ -9,7 +9,7 @@
 import UIKit
 
 final class CityListViewController: BaseViewController {
-
+    
     private enum Constants {
         static let changeTitle = "Сменить город"
         static let chooseTitle = "Выбрать город"
@@ -20,10 +20,14 @@ final class CityListViewController: BaseViewController {
         static let collectionSmallHeaderHeight: CGFloat = 210.0
     }
     
+    // MARK: Outlets
+    
     @IBOutlet private weak var citiesCollectionView: UICollectionView!
     @IBOutlet private weak var backButton: UIButton!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var errorView: ErrorView!
+    
+    // MARK: Private / Public variables
     
     var chooseCompletion: ((City) -> Void)?
     var viewModel: CityListViewModeling? {
@@ -35,6 +39,8 @@ final class CityListViewController: BaseViewController {
         }
     }
     
+    // MARK: Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         citiesCollectionView.register(reusableViewType: CityHeaderReusableView.self)
@@ -42,9 +48,7 @@ final class CityListViewController: BaseViewController {
         setupUI()
     }
     
-    @IBAction private func backButtonPressed() {
-        viewModel?.closeButtonPressed?()
-    }
+    // MARK: Setup UI
     
     private func setupUI() {
         errorView.configureHandler { [weak self] in
@@ -52,7 +56,7 @@ final class CityListViewController: BaseViewController {
         } back: { [weak self] in
             self?.viewModel?.closeButtonPressed?()
         }
-
+        
         if let viewModel = viewModel {
             if viewModel.isOnboarding {
                 backButton.isHidden = true
@@ -62,6 +66,12 @@ final class CityListViewController: BaseViewController {
                 titleLabel.text = Constants.changeTitle
             }
         }
+    }
+    
+    // MARK: Actions
+    
+    @IBAction private func backButtonPressed() {
+        viewModel?.closeButtonPressed?()
     }
 }
 
@@ -95,7 +105,7 @@ extension CityListViewController: UICollectionViewDataSource {
         
         switch kind {
         case UICollectionView.elementKindSectionHeader:
-
+            
             let headerView = collectionView.dequeueReusableView(with: CityHeaderReusableView.self, for: indexPath)
             headerView.configure(name: viewModel.getCurrentCityName(), imageUrl: viewModel.getCurrentCityImage())
             return headerView
@@ -109,18 +119,18 @@ extension CityListViewController: UICollectionViewDataSource {
 // MARK: UICollectionViewDataSource
 
 extension CityListViewController: UICollectionViewDelegate {
-   
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-           guard let viewModel = viewModel else {
-               return
-           }
-           
-           let selectedCity = viewModel.cityAt(index: indexPath.row)
-           viewModel.saveCurrentCity(at: indexPath.row)
-           chooseCompletion?(selectedCity)
-           
-           viewModel.closeButtonPressed?()
-       }
+        guard let viewModel = viewModel else {
+            return
+        }
+        
+        let selectedCity = viewModel.cityAt(index: indexPath.row)
+        viewModel.saveCurrentCity(at: indexPath.row)
+        chooseCompletion?(selectedCity)
+        
+        viewModel.closeButtonPressed?()
+    }
 }
 
 // MARK: UICollectionViewDelegateFlowLayout

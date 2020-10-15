@@ -20,9 +20,15 @@ final class OnboardingViewController: UIViewController, Storyboarded {
         static let edgeInset: CGFloat = 10.0
     }
     
-    var viewModel: OnboardingViewModeling?
+    // MARK: Outlets
     
     @IBOutlet private weak var collectionView: UICollectionView!
+    
+    // MARK: Private / Public variables
+    
+    var viewModel: OnboardingViewModeling?
+    
+    // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +36,8 @@ final class OnboardingViewController: UIViewController, Storyboarded {
         setupCollectionLayout()
         collectionView.register(cellType: OnboardingCell.self)
     }
+    
+    // MARK: Setup UI
     
     private func setupCollectionLayout() {
         
@@ -52,7 +60,9 @@ final class OnboardingViewController: UIViewController, Storyboarded {
     }
 }
 
-extension OnboardingViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+// MARK: UICollectionViewDataSource
+
+extension OnboardingViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel?.onboardingItems() ?? 0
     }
