@@ -28,6 +28,7 @@ protocol GameNoteViewModeling {
     
     func completeNote(completion: @escaping (((Result<Bool, Error>)) -> Void))
     func getCountOfHints(type: HintType) -> Int
+    func getDistanceStatus() -> String
 }
 
 final class GameNoteViewModel {
@@ -62,7 +63,7 @@ final class GameNoteViewModel {
     
     private func checkPosition(location: Location?) -> Bool {
         if let location = location {
-            return locationManager.closeToCoordinate(location.getCLLocation(), with: .average)
+            return locationManager.closeToCoordinate(location.cll(), with: .average)
         }
         
         return false
@@ -72,7 +73,7 @@ final class GameNoteViewModel {
 extension GameNoteViewModel: GameNoteViewModeling {
     func completeNote(completion: @escaping (((Result<Bool, Error>)) -> Void)) {
         if let location = note.location,
-           locationManager.closeToCoordinate(location.getCLLocation(), with: .average) {
+           locationManager.closeToCoordinate(location.cll(), with: .average) {
             networkManager.completeNote(id: note.id, completion: completion)
             dataUpdater.value = note.id
         } else {
@@ -82,6 +83,13 @@ extension GameNoteViewModel: GameNoteViewModeling {
     
     func getCountOfHints(type: HintType) -> Int {
         return hintManager.getCountOf(hint: type)
+    }
+    
+    func getDistanceStatus() -> String {
+        if let location = note.location {
+            return Remoteness(distance: locationManager.distanceFromPoint(location.cll())).closestStatus()
+        }
+        return .empty
     }
     
     var title: String {

@@ -22,10 +22,10 @@
                         <rect key="frame" x="16" y="16" width="376" height="136"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="yAQ-Fa-erG">
-                                <rect key="frame" x="8" y="15.5" width="179" height="105.5"/>
+                                <rect key="frame" x="8" y="15.5" width="180" height="105.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3VG-e1-8Jg">
-                                        <rect key="frame" x="0.0" y="0.0" width="179" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="20.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Набрано очков: ">
                                                 <attributes>
@@ -46,12 +46,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mR7-7n-m2k">
-                                        <rect key="frame" x="0.0" y="42.5" width="179" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="42.5" width="180" height="20.5"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="Открыто записок: ">
+                                            <fragment content="Найдено записок: ">
                                                 <attributes>
                                                     <color key="NSColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <font key="NSFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="14">
@@ -59,15 +60,16 @@
                                                     <color key="NSColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <font key="NSFont" metaFont="systemBold" size="17"/>
                                                     <font key="NSOriginalFont" metaFont="systemBold" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGe-cg-hvV">
-                                        <rect key="frame" x="0.0" y="85" width="179" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="85" width="180" height="20.5"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="Сделало попыток: ">
+                                            <fragment content="Сделано попыток: ">
                                                 <attributes>
                                                     <color key="NSColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <font key="NSFont" metaFont="system" size="17"/>
@@ -125,8 +127,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="completedNotes" destination="mR7-7n-m2k" id="4r2-Wf-kaj"/>
                 <outlet property="levelName" destination="qok-pj-hky" id="bu2-V0-IhH"/>
-                <outlet property="openNotes" destination="mR7-7n-m2k" id="yGl-rF-hOQ"/>
                 <outlet property="sheetView" destination="hm5-VS-tD6" id="8CF-vh-ewy"/>
                 <outlet property="totalAttempts" destination="sGe-cg-hvV" id="hDw-TS-MVf"/>
                 <outlet property="totalScore" destination="3VG-e1-8Jg" id="Uwv-wI-k7b"/>

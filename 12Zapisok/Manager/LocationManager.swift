@@ -111,14 +111,29 @@ extension LocationManager: CLLocationManagerDelegate {
 
 // MARK: Utility
 
-enum Remoteness: Double {
+enum Remoteness: Double, CaseIterable {
     
     case close = 50
     case average = 100
     case far = 500
     case veryFar = 1000
     
+    init(distance: Double) {
+        self = Remoteness.allCases.first(where: { $0.rawValue >= distance }) ?? .veryFar
+    }
+    
     func distanceInMeters() -> Double {
         return rawValue
+    }
+    
+    func closestStatus() -> String {
+        switch self {
+        case .close:
+            return "Жарко, очень рядом"
+        case .average:
+            return "Теплее, уже ближе"
+        case .far, .veryFar:
+            return "Холодно, бррр.."
+        }
     }
 }

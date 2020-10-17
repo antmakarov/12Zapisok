@@ -8,10 +8,13 @@
 
 import UIKit
 
+extension NSAttributedString.Key {
+    
+}
 final class StatisticsHeaderCell: BaseTableShadowCell {
 
     @IBOutlet private weak var totalScore: UILabel!
-    @IBOutlet private weak var openNotes: UILabel!
+    @IBOutlet private weak var completedNotes: UILabel!
     @IBOutlet private weak var totalAttempts: UILabel!
     @IBOutlet private weak var levelName: UILabel!
     @IBOutlet private weak var sheetView: UIView!
@@ -22,11 +25,17 @@ final class StatisticsHeaderCell: BaseTableShadowCell {
     }
     
     func configure(_ total: Int, _ notes: Int, _ attemps: Int) {
-        totalScore.text = "\(total)"
-        openNotes.text = "\(notes)"
-        totalAttempts.text = "\(attemps)"
+        totalScore.attributedText = prepareLabels("Набрано очков: ", value: total)
+        completedNotes.attributedText = prepareLabels("Найдено записок: ", value: notes)
+        totalAttempts.attributedText = prepareLabels("Сделано попыток: ", value: attemps)
         
         // TODO: Based on stats
         levelName.text = "Начальный"
+    }
+    
+    private func prepareLabels(_ text: String, value: Int) -> NSAttributedString {
+        return text.applyAttributes(.regular(size: 15),
+            subString: "\(value)",
+            subAttributes: .bold(size: 17))
     }
 }

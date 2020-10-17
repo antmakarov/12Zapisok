@@ -29,7 +29,7 @@ final class CityInfoViewModel {
     private let databaseStorage: StorageManager
     
     // MARK: Private / Public variables
-    private var currentCity: CityInfo?
+    private var currentCity: City?
     private var imageUrls: [String] = []
     var routeTo: ((CityInfoRoute) -> Void)?
 
@@ -46,7 +46,7 @@ final class CityInfoViewModel {
     
     private func loadCurrentCity() {
         if let cityID = preferencesManager.currentCityId {
-            currentCity = databaseStorage.getObjectByID(City.self, id: cityID)?.cityInfo
+            currentCity = databaseStorage.getObjectByID(City.self, id: cityID)
         }
     }
 }
@@ -58,35 +58,35 @@ extension CityInfoViewModel: CityInfoViewModeling {
     }
     
     func getImageUrl(by index: Int) -> String {
-        return currentCity?.imageUrls[index] ?? .empty
+        return currentCity?.cityInfo?.imageUrls[index] ?? .empty
     }
     
     func getImageCount() -> Int {
-        return currentCity?.imageUrls.count ?? 0
+        return currentCity?.cityInfo?.imageUrls.count ?? 0
     }
     
     func getDescription() -> String {
-        return currentCity?.fullDescription ?? .empty
+        return currentCity?.cityDescription ?? .empty
     }
     
     // TODO: Need some converter for buid/population/code
     
     func getBuildingYear() -> String {
-        guard let currentCity = currentCity else {
+        guard let currentCity = currentCity?.cityInfo else {
             return .empty
         }
         return "\(currentCity.baseYear) г"
     }
     
     func getPopulation() -> String {
-        guard let currentCity = currentCity else {
+        guard let currentCity = currentCity?.cityInfo else {
             return .empty
         }
         return "\(currentCity.population) млн"
     }
     
     func getRegionCode() -> String {
-        guard let currentCity = currentCity else {
+        guard let currentCity = currentCity?.cityInfo else {
             return .empty
         }
         return "\(currentCity.regionCode) RUS"

@@ -88,7 +88,7 @@ final class GameNoteViewController: BaseViewController {
             
             placeLabel.text = Constants.unknownPlace
             timeFindedLabel.text = Constants.asSoonTime
-            hintStatusLabel.text = "Пока все еще холодно"
+            hintStatusLabel.text = viewModel.getDistanceStatus() // "Пока все еще холодно"
             
         case .close:
             hintsStackView.isHidden = true

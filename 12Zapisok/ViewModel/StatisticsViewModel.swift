@@ -55,7 +55,10 @@ extension StatisticsViewModel: StatisticsViewModeling {
                                                   notes: response.openNotes,
                                                   attemps: response.totalAttempts) )
                     self?.sections.append(.title)
-                    response.citiesStats?.forEach { self?.sections.append(.city(stats: $0)) }
+                    
+                    response.citiesStats?.forEach {
+                        self?.sections.append(.city(stats: $0))
+                    }
                 }
                 self?.updateHandler?()
                 

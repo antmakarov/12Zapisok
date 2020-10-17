@@ -24,7 +24,7 @@ final class StatisticsCell: BaseTableShadowCell {
     
     func configure(_ stats: CityStatistics) {
         cityName.text = stats.name
-        cityScore.text = "\(stats.countAttempts)"
-        cityStatistics.text = "\(stats.countAttempts)"
+        cityScore.text = "\(stats.totalAttempts)"
+        cityStatistics.text = "Найлено 12 записок / \(stats.countAttempts) попыток"
     }
 }

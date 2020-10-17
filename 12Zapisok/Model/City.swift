@@ -60,7 +60,7 @@ final class Location: Object, Mappable {
         lon <- map["lon"]
     }
     
-    func getCLLocation() -> CLLocation {
+    func cll() -> CLLocation {
         return CLLocation(latitude: lat, longitude: lon)
     }
 }
