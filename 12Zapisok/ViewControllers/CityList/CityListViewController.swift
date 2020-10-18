@@ -11,8 +11,8 @@ import UIKit
 final class CityListViewController: BaseViewController {
     
     private enum Constants {
-        static let changeTitle = "Сменить город"
-        static let chooseTitle = "Выбрать город"
+        static let changeTitle = Localized.changeCity
+        static let chooseTitle = Localized.chooseCity
         
         static let cellHeight: CGFloat = 190.0
         static let cellSpacing: CGFloat = 30.0

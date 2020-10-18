@@ -13,9 +13,6 @@ final class CityHeaderReusableView: UICollectionReusableView {
     private enum Constants {
         static let borderWidth: CGFloat = 3.0
         static let borderColor: UIColor = .mauve
-        static let notChoosenCity: String = "Город не выбран"
-        static let chooseCity: String = "Выберите один из городов для начала игры"
-        static let currentCity: String = "текущий выбранный город"
     }
     
     @IBOutlet private weak var cityImage: UIImageView!
@@ -33,10 +30,10 @@ final class CityHeaderReusableView: UICollectionReusableView {
     public func configure(name: String, imageUrl: String) {
         if name.isEmpty {
             cityName.isHidden = true
-            descriptionLabel.text = Constants.chooseCity
+            descriptionLabel.text = Localized.chooseCityDescription
         } else {
             cityName.text = name
-            descriptionLabel.text = Constants.currentCity
+            descriptionLabel.text = Localized.currentCity
             cityImage.addBorder(width: Constants.borderWidth, color: Constants.borderColor)
         }
         

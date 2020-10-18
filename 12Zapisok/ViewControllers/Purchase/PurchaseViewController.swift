@@ -35,27 +35,27 @@ final class PurchaseViewController: UIViewController {
     // MARK: Actions
     @objc
     private func openSingleNote(_ sender: UITapGestureRecognizer) {
-        prepareForPopUp(hint: .openSingleNote, name: "Открыть одну записку")
+        prepareForPopUp(hint: .openSingleNote, name: Localized.hintOpenOne)
     }
     
     @objc
     private func distanceSingleNote(_ sender: UITapGestureRecognizer) {
-        prepareForPopUp(hint: .singleNoteDistance, name: "Расстояние до одной записки")
+        prepareForPopUp(hint: .singleNoteDistance, name: Localized.hintDistanceToOne)
     }
     
     @objc
     private func distanceAllNotes(_ sender: UITapGestureRecognizer) {
-        prepareForPopUp(hint: .foreverDistance, name: "До всех записок навсегда")
+        prepareForPopUp(hint: .foreverDistance, name: Localized.hintDistanceToAll)
     }
     
     @objc
     private func showPinNote(_ sender: UITapGestureRecognizer) {
-        prepareForPopUp(hint: .showPlaceOnMap, name: "Показать точку на карте")
+        prepareForPopUp(hint: .showPlaceOnMap, name: Localized.hintShowMapPin)
     }
     
     @objc
     private func enterAddress(_ sender: UITapGestureRecognizer) {
-        prepareForPopUp(hint: .foreverCoordinates, name: "Возможность вводить адрес без посещения")
+        prepareForPopUp(hint: .foreverCoordinates, name: Localized.hintManualInput)
     }
     
     @IBAction private func closeButtonPressed() {
@@ -63,15 +63,15 @@ final class PurchaseViewController: UIViewController {
     }
     
     private func prepareForPopUp(hint: HintType, name: String) {
-        showPopUp(type: .commonPopUp(title: name, description: "Вы уверены, что хотите купить эту подсказку", fButton: "Да", sButton: "Нет", fHandler: { [weak self] in
+        showPopUp(type: .commonPopUp(title: name, description: Localized.hintSureToBuy, fButton: Localized.yes, sButton: Localized.no, fHandler: { [weak self] in
             self?.viewModel?.buyHint(type: hint)
-            self?.showPopUp(type: .commonPopUp(title: "Поздравляю"))
+            self?.showPopUp(type: .commonPopUp(title: Localized.congrats))
         }, sHandler: { [weak self] in
             self?.dismissPopUp()
         }))
     }
     
     @IBAction private func restoreButtonPressed() {
-        Logger.info(msg: "Восстановить покупки")
+        Logger.info(msg: Localized.hintRestoreAll)
     }
 }

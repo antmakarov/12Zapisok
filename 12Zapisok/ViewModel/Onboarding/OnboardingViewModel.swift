@@ -28,35 +28,35 @@ class OnboardingViewModel {
     
     private enum Constants {
         enum Details {
-            static let title = "Вернитесь в детство"
-            static let details = "Сыграйте в увлекательную игру, где Вам предстоит собрать 12 записок спрятанных в Вашем городе"
-            static let action = "Далее"
+            static let title = Localized.onboardingGoChildhood
+            static let details = Localized.onboardingGoChildhoodDsc
+            static let action = Localized.next
             static let image = Asset.Icons.Onboarding.childhood.name
         }
         
         enum Location {
-            static let title = "Доступ к геолокации"
-            static let details = "Позволит точнее определить Ваше местоположение и облегчит игру"
-            static let action = "Разрешить"
+            static let title = Localized.onboardingAccessGeoDsc
+            static let details = Localized.onboardingAccessGeoDsc
+            static let action = Localized.allow
             static let image = Asset.Icons.Onboarding.requestLocation.name
         }
         
         enum City {
-            static let details = "Правильно ли мы определили Ваш город?"
+            static let details = Localized.onboardingRightCity
             static let image = Asset.Icons.Onboarding.guessCity.name
         }
         
         enum CityList {
-            static let title = "Выберете Ваш город"
-            static let details = "Мы заметили, что Вы запретили геолокацию, в этом случае выберите город из списка для начала игры"
-            static let action = "Выбрать город"
+            static let title = Localized.onboardingChooseCity
+            static let details = Localized.onboardingAccessGeoDenied
+            static let action = Localized.chooseCity
             static let image = Asset.Icons.Onboarding.cityList.name
         }
         
         enum Auth {
-            static let title = "Ведите прогресс"
-            static let details = "Авторизируйтесь для сохранения прогресса и участия в общем рейтиге игроков"
-            static let action = "Войти"
+            static let title = Localized.onboardingLeadProgress
+            static let details = Localized.onboardingAuthDsc
+            static let action = Localized.onboardingAuth
             static let image = Asset.Icons.Onboarding.auth.name
         }
     }

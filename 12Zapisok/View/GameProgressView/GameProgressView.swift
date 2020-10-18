@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameProgresView: UIView {
+final class GameProgresView: UIView {
     
     private let notesStack: UIStackView = {
         let stack = UIStackView()

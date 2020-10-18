@@ -11,10 +11,9 @@ import UIKit
 final class GameNoteViewController: BaseViewController {
     
     private enum Constants {
-        static let noteTitle = "Записка #"
-        static let openText = "Открыта "
-        static let unknownPlace = "Место неизвестно"
-        static let asSoonTime = "Найди как можно скорее"
+        static let openText = Localized.open
+        static let unknownPlace = Localized.locationUnknown
+        static let asSoonTime = Localized.findAsSoon
     }
     
     // MARK: Outlets
@@ -58,7 +57,7 @@ final class GameNoteViewController: BaseViewController {
             return
         }
         
-        numberNoteLabel.text = Constants.noteTitle + viewModel.id
+        numberNoteLabel.text = Localized.noteNumber(String(viewModel.id))
         titleNoteLabel.text = viewModel.title
         describLabel.text = viewModel.description
         
@@ -141,7 +140,7 @@ final class GameNoteViewController: BaseViewController {
     // MARK: PopUp Handling
     
     private func showConfirmPopUp(count: Int, completion: @escaping (() -> Void)) {
-        showPopUp(type: .commonPopUp(title: "Использовать подсказку?", description: "У вас осталась \(count) подсказка этого типа", fButton: "Да", sButton: "Передумал", fHandler: {
+        showPopUp(type: .commonPopUp(title: Localized.hintUse, description: "У вас осталась \(count) подсказка этого типа", fButton: Localized.yes, sButton: Localized.changeMind, fHandler: {
             completion()
         }, sHandler: { [weak self] in
             self?.dismissPopUp()
@@ -187,12 +186,12 @@ final class GameNoteViewController: BaseViewController {
             switch response {
             case let .success(status):
                 if status {
-                    self?.showPopUp(type: .commonPopUp(title: "Поздравляем", description: "Очередная записка за Вашими плечами", fButton: "Продолжить") { [weak self] in
+                    self?.showPopUp(type: .commonPopUp(title: Localized.congrats, description: Localized.hintOpen, fButton: Localized.continue) { [weak self] in
                         self?.dismissPopUp()
                         self?.setupUI()
                     })
                 } else {
-                    self?.showPopUp(type: .commonPopUp(title: "Увы", description: "Но уже близко", fButton: "Продолжить") { [weak self] in
+                    self?.showPopUp(type: .commonPopUp(title: Localized.sorry, description: Localized.hintAlreadyClose, fButton: Localized.continue) { [weak self] in
                         self?.dismissPopUp()
                     })
                 }

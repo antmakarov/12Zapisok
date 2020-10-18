@@ -15,10 +15,6 @@ enum StatisticsSections {
 }
 
 final class StatisticsViewController: UIViewController {
-
-    private enum Constants {
-        static let emptyTitle = "Кажется, что вы еще не начинали играть"
-    }
     
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var emptyView: EmptyView!
@@ -39,7 +35,7 @@ final class StatisticsViewController: UIViewController {
     }
     
     private func setupUI() {
-        emptyView.configure(title: Constants.emptyTitle) { [weak self] in
+        emptyView.configure(title: Localized.notStartedGame) { [weak self] in
             self?.viewModel?.routeTo?(.game)
         }
         tableView.register(cellType: StatisticsHeaderCell.self)

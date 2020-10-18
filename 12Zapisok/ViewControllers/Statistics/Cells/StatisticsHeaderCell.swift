@@ -25,12 +25,12 @@ final class StatisticsHeaderCell: BaseTableShadowCell {
     }
     
     func configure(_ total: Int, _ notes: Int, _ attemps: Int) {
-        totalScore.attributedText = prepareLabels("Набрано очков: ", value: total)
-        completedNotes.attributedText = prepareLabels("Найдено записок: ", value: notes)
-        totalAttempts.attributedText = prepareLabels("Сделано попыток: ", value: attemps)
+        totalScore.attributedText = prepareLabels(Localized.totalScores, value: total)
+        completedNotes.attributedText = prepareLabels(Localized.totalNotes, value: notes)
+        totalAttempts.attributedText = prepareLabels(Localized.totalAttempts, value: attemps)
         
         // TODO: Based on stats
-        levelName.text = "Начальный"
+        levelName.text = Localized.levelBeginner
     }
     
     private func prepareLabels(_ text: String, value: Int) -> NSAttributedString {

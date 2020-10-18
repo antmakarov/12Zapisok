@@ -24,7 +24,7 @@ final class NoteCollectionCell: BaseCardCell {
     
     func configure(viewModel: NoteCollectionCellViewModeling) {
         
-        headerLabel.text = "Записка #\(viewModel.id)"
+        headerLabel.text = Localized.noteNumber(String(viewModel.id))
         
         switch viewModel.state {
         case .open:
@@ -42,7 +42,7 @@ final class NoteCollectionCell: BaseCardCell {
             imageView.image = Asset.Icons.progressIcon.image
             backImageView.image = Asset.Icons.NoteBigColor.progressBig.image
             statusLabel.text = viewModel.title
-            openTimeLabel.text = "В текущих поисках"
+            openTimeLabel.text = Localized.inCurrentSearch
             
             statusLabel.textColor = .white
             openTimeLabel.textColor = .white
@@ -52,7 +52,7 @@ final class NoteCollectionCell: BaseCardCell {
             imageView.image = Asset.Icons.unavailableIcon.image
             backImageView.image = Asset.Icons.NoteBigColor.unavailableBig.image
             openTimeLabel.isHidden = true
-            statusLabel.text = "Недоступна"
+            statusLabel.text = Localized.notAvailable
             statusLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
             headerLabel.textColor = UIColor(hex: 0x252626)
             statusLabel.textColor = UIColor(hex: 0x252626)

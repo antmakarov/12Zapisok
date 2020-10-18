@@ -11,7 +11,7 @@ import UIKit
 final class EmptyView: UIView, NibInstance {
 
     private enum Constants {
-        static let defaultTitle = "Кажется, что-то пошло не так..."
+        static let defaultTitle = Localized.somethingWrong
     }
     
     // MARK: Properties

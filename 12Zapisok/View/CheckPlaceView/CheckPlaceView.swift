@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CheckPlaceView: UIView {
+final class CheckPlaceView: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.

@@ -15,9 +15,6 @@ final class OnboardingCell: UICollectionViewCell {
         static let shadowOffset = CGSize(width: 2, height: 2)
         static let shadowRadius: CGFloat = 5.0
         static let shadowOpacity: Float = 0.18
-        
-        static let yesTitle = "Да"
-        static let noTitle = "Нет"
     }
     
     @IBOutlet private weak var titleLabel: UILabel!
@@ -53,8 +50,8 @@ final class OnboardingCell: UICollectionViewCell {
 
         if viewModel.isNeedAnswerButtons() {
             deniedButton.isHidden = false
-            actionButton.setTitle(Constants.yesTitle)
-            deniedButton.setTitle(Constants.noTitle)
+            actionButton.setTitle(Localized.yes)
+            deniedButton.setTitle(Localized.no)
         } else {
             actionButton.setTitle(viewModel.actionTitle(), for: .normal)
         }

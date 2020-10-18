@@ -119,7 +119,7 @@ enum Remoteness: Double, CaseIterable {
     case veryFar = 1000
     
     init(distance: Double) {
-        self = Remoteness.allCases.first(where: { $0.rawValue >= distance }) ?? .veryFar
+        self = Remoteness.allCases.first { $0.rawValue >= distance } ?? .veryFar
     }
     
     func distanceInMeters() -> Double {
@@ -129,11 +129,13 @@ enum Remoteness: Double, CaseIterable {
     func closestStatus() -> String {
         switch self {
         case .close:
-            return "Жарко, очень рядом"
+            return Localized.locStatusClose
+            
         case .average:
-            return "Теплее, уже ближе"
+            return Localized.locStatusAverage
+            
         case .far, .veryFar:
-            return "Холодно, бррр.."
+            return Localized.locStatusFar
         }
     }
 }
