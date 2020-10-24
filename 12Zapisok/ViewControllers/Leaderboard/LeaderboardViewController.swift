@@ -15,9 +15,25 @@ final class LeaderboardViewController: UIViewController {
 
     var viewModel: LeaderboardViewModeling? {
         didSet {
-            viewModel?.setUpdateHandler { [weak self] in
-                self?.emptyView.isHidden = self?.viewModel?.usersCount() != 0
-                self?.tableView.reloadData()
+            viewModel?.isLoading.addObserver { [weak self] in
+                self?.emptyView.isHidden = $0
+                self?.toggleLoader($0)
+            }
+            
+            viewModel?.responseStatus.addObserver { [weak self] status in
+                switch status {
+                case .success:
+                    self?.tableView.reloadData()
+                    self?.emptyView.isHidden = true
+                    
+                case .error, .networkError:
+                    self?.emptyView.isHidden = false
+                    self?.emptyView.updateView(type: .error)
+                    
+                case .empty:
+                    self?.emptyView.isHidden = false
+                    self?.emptyView.updateView(type: .empty)
+                }
             }
         }
     }
@@ -26,14 +42,17 @@ final class LeaderboardViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
+        viewModel?.fetchLeaders()
     }
     
     private func setupUI() {
-        emptyView.configure(title: Localized.notStartedGame,
-                            action: Button(title: "Начать") { [weak self] in
-                                self?.viewModel?.routeTo?(.game)
-                            }
-        )
+        emptyView.configureWith(type: .leaderboard,
+                                repeate: Button(title: "Повторить") { [weak self] in
+                                    self?.viewModel?.fetchLeaders()
+                                },
+                                action: Button(title: "Начать") { [weak self] in
+                                    self?.viewModel?.routeTo?(.game)
+                                })
     }
     
     @IBAction private func closeButtonPressed() {

@@ -72,3 +72,60 @@ extension UIView {
         ])
     }
 }
+
+// MARK: NVActivityIndicatorView
+
+import NVActivityIndicatorView
+
+private var activityIndicatorView: NVActivityIndicatorView?
+
+extension UIViewController {
+    private var loaderView: NVActivityIndicatorView! {
+        get {
+            return objc_getAssociatedObject(self, &activityIndicatorView) as? NVActivityIndicatorView
+        }
+        set(newValue) {
+            objc_setAssociatedObject(self, &activityIndicatorView, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+        }
+    }
+    
+    func toggleLoader(_ isOn: Bool) {
+        if isOn {
+            if loaderView == nil {
+                let size: CGFloat = 70.0
+                let xPos = (UIScreen.main.bounds.size.width / 2 - size / 2)
+                let yPos = (UIScreen.main.bounds.size.height / 2 - size / 2)
+                let frame = CGRect(x: xPos, y: yPos, width: size, height: size)
+                loaderView = NVActivityIndicatorView(frame: frame,
+                                                     type: .ballClipRotateMultiple,
+                                                     color: .appColor)
+            }
+            
+            self.lockView(self.view)
+            
+            if loaderView.isAnimating == false {
+                loaderView.startAnimating()
+            }
+            
+            if self.navigationController == nil {
+                self.view.addSubview(loaderView)
+            } else {
+                self.navigationController?.view.addSubview(loaderView)
+            }
+        } else {
+            if loaderView != nil {
+                self.unlockView(self.view)
+                loaderView.stopAnimating()
+                loaderView.removeFromSuperview()
+            }
+        }
+    }
+    
+    func lockView(_ view: UIView) {
+        view.isUserInteractionEnabled = false
+    }
+    
+    func unlockView(_ view: UIView) {
+        view.isUserInteractionEnabled = true
+    }
+}

@@ -22,11 +22,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/stop" translatesAutoresizingMaskIntoConstraints="NO" id="E0T-VD-OOj">
-                    <rect key="frame" x="79" y="275" width="256" height="256"/>
+                    <rect key="frame" x="79" y="76" width="256" height="256"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhH-X0-aPO">
-                    <rect key="frame" x="398" y="555" width="0.0" height="18"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhH-X0-aPO">
+                    <rect key="frame" x="414" y="555" width="0.0" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -74,9 +73,9 @@
                         </button>
                     </subviews>
                 </stackView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кажется, что-то пошло не так..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yx3-9C-sUZ">
-                    <rect key="frame" x="81.5" y="547" width="251.5" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кажется, что-то пошло не так..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yx3-9C-sUZ">
+                    <rect key="frame" x="16" y="441.5" width="382" height="23"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -86,11 +85,13 @@
             <constraints>
                 <constraint firstItem="1Pd-9y-x6P" firstAttribute="bottom" secondItem="xbU-wC-VCt" secondAttribute="bottom" constant="24" id="6Sm-IF-TlM"/>
                 <constraint firstItem="xbU-wC-VCt" firstAttribute="leading" secondItem="1Pd-9y-x6P" secondAttribute="leading" constant="24" id="Duc-47-3jU"/>
-                <constraint firstItem="E0T-VD-OOj" firstAttribute="centerY" secondItem="1Pd-9y-x6P" secondAttribute="centerY" constant="-50" id="PXa-Kf-CIP"/>
-                <constraint firstItem="yx3-9C-sUZ" firstAttribute="top" secondItem="E0T-VD-OOj" secondAttribute="bottom" constant="16" id="S4V-Hb-dwv"/>
+                <constraint firstItem="E0T-VD-OOj" firstAttribute="top" secondItem="1Pd-9y-x6P" secondAttribute="top" constant="32" id="ZGy-mw-lz4"/>
+                <constraint firstItem="yx3-9C-sUZ" firstAttribute="leading" secondItem="1Pd-9y-x6P" secondAttribute="leading" constant="16" id="ZqT-gH-fND"/>
                 <constraint firstItem="1Pd-9y-x6P" firstAttribute="trailing" secondItem="xbU-wC-VCt" secondAttribute="trailing" constant="24" id="aDh-zc-XTX"/>
+                <constraint firstItem="yx3-9C-sUZ" firstAttribute="centerY" secondItem="1Pd-9y-x6P" secondAttribute="centerY" id="aOa-2N-Ncn"/>
                 <constraint firstItem="yx3-9C-sUZ" firstAttribute="centerX" secondItem="1Pd-9y-x6P" secondAttribute="centerX" id="gTF-tk-mND"/>
                 <constraint firstItem="E0T-VD-OOj" firstAttribute="centerX" secondItem="1Pd-9y-x6P" secondAttribute="centerX" id="jq1-Ch-x8Z"/>
+                <constraint firstItem="rhH-X0-aPO" firstAttribute="leading" secondItem="yx3-9C-sUZ" secondAttribute="trailing" constant="16" id="rCb-il-FgK"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="94.419642857142847"/>
         </view>

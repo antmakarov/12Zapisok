@@ -21,9 +21,25 @@ final class StatisticsViewController: UIViewController {
 
     var viewModel: StatisticsViewModeling? {
         didSet {
-            viewModel?.setUpdateHandler { [weak self] in
-                self?.emptyView.isHidden = self?.viewModel?.sectionsCount() != 0
-                self?.tableView.reloadData()
+            viewModel?.isLoading.addObserver { [weak self] in
+                self?.emptyView.isHidden = $0
+                self?.toggleLoader($0)
+            }
+            
+            viewModel?.responseStatus.addObserver { [weak self] status in
+                switch status {
+                case .success:
+                    self?.tableView.reloadData()
+                    self?.emptyView.isHidden = true
+                    
+                case .error, .networkError:
+                    self?.emptyView.isHidden = false
+                    self?.emptyView.updateView(type: .error)
+                    
+                case .empty:
+                    self?.emptyView.isHidden = false
+                    self?.emptyView.updateView(type: .empty)
+                }
             }
         }
     }
@@ -32,14 +48,17 @@ final class StatisticsViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
+        viewModel?.fetchStatistics()
     }
     
     private func setupUI() {
-        emptyView.configure(title: Localized.notStartedGame,
-                            action: Button(title: "Начать") { [weak self] in
-                                self?.viewModel?.routeTo?(.game)
-                            }
-        )
+        emptyView.configureWith(type: .statistics,
+                                repeate: Button(title: "Повторить") { [weak self] in
+                                    self?.viewModel?.fetchStatistics()
+                                },
+                                action: Button(title: "Начать") { [weak self] in
+                                    self?.viewModel?.routeTo?(.game)
+                                })
         
         tableView.register(cellType: StatisticsHeaderCell.self)
         tableView.register(cellType: StatisticsLabelCell.self)

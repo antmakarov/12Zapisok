@@ -17,6 +17,7 @@ def import_pods
   # UI
   pod 'SwiftEntryKit'
   pod 'SkyFloatingLabelTextField', '~> 3.0'
+  pod 'NVActivityIndicatorView'
   
   # Tools
   pod 'SwiftGen'

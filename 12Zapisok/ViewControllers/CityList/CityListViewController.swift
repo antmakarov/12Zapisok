@@ -51,11 +51,11 @@ final class CityListViewController: BaseViewController {
     // MARK: Setup UI
     
     private func setupUI() {
-        emptyView.configure(repeate: Button(title: "Повторить загрузку") { [weak self] in
-            self?.viewModel?.fetchCities()
-        }, action: Button(title: "Вернуться назад") { [weak self] in
-            self?.viewModel?.closeButtonPressed?()
-        })
+        emptyView.configureWith(type: .cityList,
+                                repeate: Button(title: "Повторить загрузку") { [weak self] in
+                                    self?.viewModel?.fetchCities() },
+                                action: Button(title: "Вернуться назад") { [weak self] in
+                                    self?.viewModel?.closeButtonPressed?() })
         
         if let viewModel = viewModel {
             if viewModel.isOnboarding {

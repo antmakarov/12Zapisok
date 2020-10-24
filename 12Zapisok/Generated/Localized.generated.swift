@@ -65,7 +65,7 @@ internal enum Localized {
   internal static let no = Localized.tr("Localizable", "NO")
   /// Недоступна
   internal static let notAvailable = Localized.tr("Localizable", "NOT_AVAILABLE")
-  /// Кажется, что вы еще не начинали играть
+  /// Кажется, что вы еще не начинали играть \n\nВперед!
   internal static let notStartedGame = Localized.tr("Localizable", "NOT_STARTED_GAME")
   /// Записка #%@
   internal static func noteNumber(_ p1: String) -> String {
@@ -113,6 +113,8 @@ internal enum Localized {
   internal static let somethingWrong = Localized.tr("Localizable", "SOMETHING_WRONG")
   /// Увы
   internal static let sorry = Localized.tr("Localizable", "SORRY")
+  /// Кажется, здесь пока пусто
+  internal static let stillEmpty = Localized.tr("Localizable", "STILL_EMPTY")
   /// Сделано попыток: 
   internal static let totalAttempts = Localized.tr("Localizable", "TOTAL_ATTEMPTS")
   /// Найдено записок: 

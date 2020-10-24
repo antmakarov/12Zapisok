@@ -6,12 +6,16 @@
 //  Copyright © 2020 A.Makarov. All rights reserved.
 //
 
+import Foundation
+
 protocol LeaderboardViewModeling: AnyObject {
     func usersCount() -> Int
     func getUser(at index: Int) -> String
-    func setUpdateHandler(_ handler: (() -> Void)?)
     func fetchLeaders()
-        
+     
+    var responseStatus: Observable<ResponseStatus> { get }
+    var isLoading: Observable<Bool> { get }
+    
     var routeTo: ((StatisticsRoute) -> Void)? { get set }
 }
 
@@ -21,9 +25,10 @@ final class LeaderboardViewModel {
     private let networkManager: NetworkManaging
 
     private var leaders: [GameLeader] = []
-    private var updateHandler: (() -> Void)?
     
     public var routeTo: ((StatisticsRoute) -> Void)?
+    public var responseStatus = Observable<ResponseStatus>(value: .empty)
+    public var isLoading = Observable<Bool>(value: false)
 
     convenience init() {
         self.init(databaseStorage: StorageManager.shared,
@@ -33,8 +38,6 @@ final class LeaderboardViewModel {
     init(databaseStorage: StorageManager, networkManager: NetworkManaging) {
         self.databaseStorage = databaseStorage
         self.networkManager = networkManager
-        
-        fetchLeaders()
     }
 }
 
@@ -47,21 +50,23 @@ extension LeaderboardViewModel: LeaderboardViewModeling {
         return leaders[index].id
     }
     
-    func setUpdateHandler(_ handler: (() -> Void)?) {
-        updateHandler = handler
-    }
-    
     func fetchLeaders() {
-        networkManager.getGameLeaders { response in
-            switch response {
-            case let .success(result):
-                Logger.debug(msg: result)
+        isLoading.value = true
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.networkManager.getGameLeaders { [weak self] response in
+                self?.isLoading.value = false
                 
-            case let .error(error):
-                Logger.error(msg: error)
+                switch response {
+                case let .success(result):
+                    self?.responseStatus.value = result.isEmpty ? .empty : .success
+                    Logger.debug(msg: result)
+
+                case let .error(error):
+                    self?.responseStatus.value = .error
+                    Logger.error(msg: error)
+                }
             }
-            
-            self.updateHandler?()
         }
     }
 }

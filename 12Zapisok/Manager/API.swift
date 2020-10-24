@@ -17,6 +17,13 @@ enum Result<Value, Error: Swift.Error> {
     case error(Error)
 }
 
+enum ResponseStatus {
+    case error
+    case networkError
+    case empty
+    case success
+}
+
 enum NetworkError: Error {
     case badURL
     case parsingError
