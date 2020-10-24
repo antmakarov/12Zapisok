@@ -7,9 +7,9 @@ def import_pods
   
   # Network, Storage, Mapping
   pod 'Alamofire'
-  pod 'RealmSwift'
-  pod 'ObjectMapper'
-  pod 'ObjectMapperAdditions/Realm', '~> 6.0'
+  pod 'RealmSwift', '4.3.2'
+  pod 'ObjectMapper', '3.5.2'
+  pod 'ObjectMapperAdditions/Realm', '~> 7.0'
   
   # Image Cache
   pod 'Kingfisher'

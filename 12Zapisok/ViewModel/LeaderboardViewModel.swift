@@ -12,7 +12,7 @@ protocol LeaderboardViewModeling: AnyObject {
     func setUpdateHandler(_ handler: (() -> Void)?)
     func fetchLeaders()
         
-    var closeButtonPressed: (() -> Void)? { get set }
+    var routeTo: ((StatisticsRoute) -> Void)? { get set }
 }
 
 final class LeaderboardViewModel {
@@ -20,11 +20,11 @@ final class LeaderboardViewModel {
     private let databaseStorage: StorageManager
     private let networkManager: NetworkManaging
 
-    private var leaders: [GameLeaders] = []
+    private var leaders: [GameLeader] = []
     private var updateHandler: (() -> Void)?
     
-    public var closeButtonPressed: (() -> Void)?
-    
+    public var routeTo: ((StatisticsRoute) -> Void)?
+
     convenience init() {
         self.init(databaseStorage: StorageManager.shared,
                   networkManager: NetworkManager.shared)
@@ -40,11 +40,11 @@ final class LeaderboardViewModel {
 
 extension LeaderboardViewModel: LeaderboardViewModeling {
     func usersCount() -> Int {
-        return 5 //leaders.count
+        return leaders.count
     }
     
     func getUser(at index: Int) -> String {
-        return "Test" // leaders[index].id
+        return leaders[index].id
     }
     
     func setUpdateHandler(_ handler: (() -> Void)?) {
@@ -52,6 +52,16 @@ extension LeaderboardViewModel: LeaderboardViewModeling {
     }
     
     func fetchLeaders() {
-        
+        networkManager.getGameLeaders { response in
+            switch response {
+            case let .success(result):
+                Logger.debug(msg: result)
+                
+            case let .error(error):
+                Logger.error(msg: error)
+            }
+            
+            self.updateHandler?()
+        }
     }
 }

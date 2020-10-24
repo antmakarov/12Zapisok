@@ -13,7 +13,7 @@
             <connections>
                 <outlet property="backButton" destination="XgY-Sr-PB9" id="jaQ-dc-sAZ"/>
                 <outlet property="citiesCollectionView" destination="iax-XB-pqm" id="vv9-oW-5Bl"/>
-                <outlet property="errorView" destination="b1b-I7-7Zj" id="uQ4-Gj-U35"/>
+                <outlet property="emptyView" destination="b1b-I7-7Zj" id="3Ls-as-VwN"/>
                 <outlet property="titleLabel" destination="H0M-BH-8z2" id="xnK-Ev-U7V"/>
                 <outlet property="view" destination="icp-xM-CgH" id="Iuz-6h-6r2"/>
             </connections>
@@ -77,7 +77,7 @@
                         <outlet property="delegate" destination="-1" id="02F-Tu-1LX"/>
                     </connections>
                 </collectionView>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1b-I7-7Zj" customClass="ErrorView" customModule="_2_Записок" customModuleProvider="target">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1b-I7-7Zj" customClass="EmptyView" customModule="_2_Записок" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="114" width="414" height="748"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>

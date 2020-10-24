@@ -64,12 +64,17 @@ extension GameViewModel: GameViewModeling {
             return
         }
     
+        if let gameNotes = databaseStorage.getObjects(Note.self) {
+            self.gameNotes = gameNotes
+            dataUpdateHandler?()
+        }
+        
         networkManager.getNoteList(parameters: ["town_id": cityID]) { [weak self] result in
             switch result {
             case .success(let notes):
                 self?.gameNotes = notes
                 if let note = notes.first, note.statistics == nil {
-                    self?.gameNotes.first?.statistics = Statistics(isOpen: true)
+                    self?.gameNotes.first?.statistics = NoteStatistics(isOpen: true)
                     self?.networkManager.openNote(id: note.id) { _ in }
                 }
                 self?.dataUpdateHandler?()

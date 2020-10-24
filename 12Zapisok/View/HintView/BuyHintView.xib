@@ -83,7 +83,7 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="w72-BE-eB6"/>
                                     </constraints>
-                                    <state key="normal" title="Отмена" backgroundImage="Icons/Rectangle">
+                                    <state key="normal" title="Отмена" backgroundImage="Icons/NoteState/CloseState">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <userDefinedRuntimeAttributes>
@@ -131,6 +131,7 @@
     </objects>
     <resources>
         <image name="Icons/MenuCirclesColor/Tonight" width="247" height="247"/>
+        <image name="Icons/NoteState/CloseState" width="375" height="80"/>
         <image name="Icons/Rectangle" width="368" height="102"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -35,9 +35,12 @@ final class StatisticsViewController: UIViewController {
     }
     
     private func setupUI() {
-        emptyView.configure(title: Localized.notStartedGame) { [weak self] in
-            self?.viewModel?.routeTo?(.game)
-        }
+        emptyView.configure(title: Localized.notStartedGame,
+                            action: Button(title: "Начать") { [weak self] in
+                                self?.viewModel?.routeTo?(.game)
+                            }
+        )
+        
         tableView.register(cellType: StatisticsHeaderCell.self)
         tableView.register(cellType: StatisticsLabelCell.self)
         tableView.register(cellType: StatisticsCell.self)

@@ -15,17 +15,29 @@ final class LeaderboardViewController: UIViewController {
 
     var viewModel: LeaderboardViewModeling? {
         didSet {
-
+            viewModel?.setUpdateHandler { [weak self] in
+                self?.emptyView.isHidden = self?.viewModel?.usersCount() != 0
+                self?.tableView.reloadData()
+            }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setupUI()
+    }
+    
+    private func setupUI() {
+        emptyView.configure(title: Localized.notStartedGame,
+                            action: Button(title: "Начать") { [weak self] in
+                                self?.viewModel?.routeTo?(.game)
+                            }
+        )
     }
     
     @IBAction private func closeButtonPressed() {
-        viewModel?.closeButtonPressed?()
+        viewModel?.routeTo?(.back)
     }
 }
 

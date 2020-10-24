@@ -25,8 +25,8 @@ final class GameNoteViewController: BaseViewController {
     
     @IBOutlet private weak var noteImage: UIImageView!
     @IBOutlet private weak var addressStackView: UIStackView!
-    @IBOutlet private weak var placeLabel: UILabel!
-    @IBOutlet private weak var timeFindedLabel: UILabel!
+    @IBOutlet private weak var addressLabel: UILabel!
+    @IBOutlet private weak var timeLabel: UILabel!
     @IBOutlet private weak var hintLabel: UILabel!
     @IBOutlet private weak var hintStatusLabel: UILabel!
     
@@ -73,8 +73,8 @@ final class GameNoteViewController: BaseViewController {
             noteImage.setupImage(url: viewModel.imgUrl, placeholder: .app)
             statusHeaderImage.image = Asset.Icons.NoteState.successState.image
             
-            placeLabel.text = viewModel.address
-            timeFindedLabel.text = Constants.openText + viewModel.openTime
+            addressLabel.text = viewModel.address
+            timeLabel.text = Constants.openText + viewModel.openTime
             
         case .progress:
             confiureButton(button: manualInputButton, hintType: .foreverCoordinates)
@@ -85,8 +85,8 @@ final class GameNoteViewController: BaseViewController {
             noteImage.image = Asset.Icons.AppIcons.compass.image
             statusHeaderImage.image = Asset.Icons.NoteState.progressState.image
             
-            placeLabel.text = Constants.unknownPlace
-            timeFindedLabel.text = Constants.asSoonTime
+            addressLabel.text = Constants.unknownPlace
+            timeLabel.text = Constants.asSoonTime
             hintStatusLabel.text = viewModel.getDistanceStatus() // "Пока все еще холодно"
             
         case .close:
@@ -100,8 +100,8 @@ final class GameNoteViewController: BaseViewController {
             noteImage.image = Asset.Icons.unavailableIcon.image
             statusHeaderImage.image = Asset.Icons.NoteState.closeState.image
             
-            placeLabel.text = Constants.unknownPlace
-            timeFindedLabel.text = Constants.asSoonTime
+            addressLabel.text = Constants.unknownPlace
+            timeLabel.text = Constants.asSoonTime
         }
     }
     

@@ -101,11 +101,11 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ird-bM-7ui">
-                    <rect key="frame" x="0.0" y="269" width="414" height="627"/>
+                    <rect key="frame" x="0.0" y="179" width="414" height="717"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fCy-ki-AYH">
-                    <rect key="frame" x="0.0" y="178" width="414" height="632"/>
+                    <rect key="frame" x="0.0" y="187" width="414" height="663"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YGf-9y-wMR">
                         <size key="itemSize" width="178" height="175"/>
@@ -129,51 +129,22 @@
                         <outlet property="delegate" destination="-1" id="Kbt-dZ-BW2"/>
                     </connections>
                 </collectionView>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="68b-Ws-08t">
-                    <rect key="frame" x="0.0" y="818" width="414" height="32"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQv-y7-lDa">
-                            <rect key="frame" x="0.0" y="0.0" width="248.5" height="32"/>
-                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                            <state key="normal" title="Сбросить прогресс">
-                                <color key="titleColor" red="1" green="0.58303052600000005" blue="0.57940999459999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </state>
-                            <connections>
-                                <action selector="resetCityProgress" destination="-1" eventType="touchUpInside" id="V4h-xk-SPv"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qG-I8-qb4">
-                            <rect key="frame" x="248.5" y="0.0" width="165.5" height="32"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                            <state key="normal" title="Открыть все">
-                                <color key="titleColor" red="0.25461253519999999" green="0.33172905450000001" blue="0.56080877780000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </state>
-                            <connections>
-                                <action selector="openAllNotes" destination="-1" eventType="touchUpInside" id="0RC-GY-ZXF"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="y6W-jp-dU3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="BAD-u5-2Wo" firstAttribute="top" secondItem="4Wj-Gg-xXq" secondAttribute="top" id="3X2-GU-3aw"/>
-                <constraint firstItem="68b-Ws-08t" firstAttribute="centerX" secondItem="fCy-ki-AYH" secondAttribute="centerX" id="3r7-1O-OnZ"/>
                 <constraint firstItem="BAD-u5-2Wo" firstAttribute="height" secondItem="4Wj-Gg-xXq" secondAttribute="height" multiplier="0.344828" id="FFh-h4-og7"/>
+                <constraint firstItem="y6W-jp-dU3" firstAttribute="bottom" secondItem="fCy-ki-AYH" secondAttribute="bottom" constant="12" id="NM5-4y-fnU"/>
                 <constraint firstItem="BAD-u5-2Wo" firstAttribute="leading" secondItem="y6W-jp-dU3" secondAttribute="leading" id="SeS-dI-mTa"/>
                 <constraint firstAttribute="trailing" secondItem="Ird-bM-7ui" secondAttribute="trailing" id="Tem-cE-MnD"/>
                 <constraint firstItem="fCy-ki-AYH" firstAttribute="trailing" secondItem="4Wj-Gg-xXq" secondAttribute="trailing" id="VIK-PT-ISU"/>
-                <constraint firstItem="68b-Ws-08t" firstAttribute="top" secondItem="fCy-ki-AYH" secondAttribute="bottom" constant="8" id="Zyo-gP-K9K"/>
-                <constraint firstItem="y6W-jp-dU3" firstAttribute="bottom" secondItem="68b-Ws-08t" secondAttribute="bottom" constant="12" id="cnI-Hc-rkp"/>
-                <constraint firstItem="Ird-bM-7ui" firstAttribute="height" secondItem="4Wj-Gg-xXq" secondAttribute="height" multiplier="0.7" id="dKq-b1-wbK"/>
+                <constraint firstItem="fCy-ki-AYH" firstAttribute="top" secondItem="Ird-bM-7ui" secondAttribute="top" constant="8" id="d3Z-pv-1gL"/>
                 <constraint firstItem="Ird-bM-7ui" firstAttribute="leading" secondItem="4Wj-Gg-xXq" secondAttribute="leading" id="dvz-WL-Fel"/>
                 <constraint firstAttribute="trailing" secondItem="BAD-u5-2Wo" secondAttribute="trailing" id="erH-va-Xu4"/>
-                <constraint firstItem="y6W-jp-dU3" firstAttribute="trailing" secondItem="68b-Ws-08t" secondAttribute="trailing" id="kJM-uT-1lF"/>
-                <constraint firstItem="fCy-ki-AYH" firstAttribute="top" secondItem="n0Q-AC-kWC" secondAttribute="bottom" constant="20" id="oi3-qc-ceS"/>
                 <constraint firstItem="fCy-ki-AYH" firstAttribute="leading" secondItem="y6W-jp-dU3" secondAttribute="leading" id="pWH-ah-dX5"/>
                 <constraint firstAttribute="bottom" secondItem="Ird-bM-7ui" secondAttribute="bottom" id="prb-ZW-KLK"/>
-                <constraint firstItem="68b-Ws-08t" firstAttribute="leading" secondItem="y6W-jp-dU3" secondAttribute="leading" id="qwg-4z-aKc"/>
+                <constraint firstItem="Ird-bM-7ui" firstAttribute="top" secondItem="gAQ-xl-H9u" secondAttribute="bottom" constant="20" id="u5G-Fg-biO"/>
             </constraints>
             <point key="canvasLocation" x="784.05797101449286" y="1509.375"/>
         </view>

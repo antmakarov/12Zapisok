@@ -117,7 +117,7 @@ extension GameNoteViewModel: GameNoteViewModeling {
     }
     
     var address: String {
-        return "ул. Максима Горького, 43" //TODO: Add real address
+        return note.address
     }
     
     var openTime: String {

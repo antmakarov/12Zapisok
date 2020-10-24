@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class CityInfoViewController: UIViewController {
+final class CityInfoViewController: UIViewController, UIGestureRecognizerDelegate {
     
     private enum Constants {
         static let shadowRadius: CGFloat = 4.0
@@ -25,6 +25,8 @@ final class CityInfoViewController: UIViewController {
     @IBOutlet private weak var regionCodeLabel: UILabel!
     @IBOutlet private weak var cityDescription: UITextView!
     
+    @IBOutlet private weak var swipeBottomConstraint: NSLayoutConstraint!
+    
     var viewModel: CityInfoViewModeling?
     
     override func viewDidLoad() {
@@ -37,6 +39,16 @@ final class CityInfoViewController: UIViewController {
             return
         }
         
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(descriptionSwipeUp))
+        swipeUp.direction = .up
+        let swipeUp2 = UISwipeGestureRecognizer(target: self, action: #selector(descriptionSwipeDown))
+        swipeUp2.direction = .down
+        swipeUp.delegate = self
+        swipeUp2.delegate = self
+
+        cityDescription.addGestureRecognizer(swipeUp)
+        cityDescription.addGestureRecognizer(swipeUp2)
+
         cityName.text = viewModel.getName()
         yearLabel.text = viewModel.getBuildingYear()
         populationLabel.text = viewModel.getPopulation()
@@ -55,6 +67,28 @@ final class CityInfoViewController: UIViewController {
     
     @IBAction private func closeButtonPressed() {
         viewModel?.routeTo?(.back)
+    }
+    
+    @objc
+    private func descriptionSwipeUp(_ sender: UISwipeGestureRecognizer) {
+        swipeBottomConstraint.constant = -200
+        isModalInPresentation = true
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc
+    private func descriptionSwipeDown(_ sender: UISwipeGestureRecognizer) {
+        swipeBottomConstraint.constant = 5
+        isModalInPresentation = false
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        true
     }
 }
 

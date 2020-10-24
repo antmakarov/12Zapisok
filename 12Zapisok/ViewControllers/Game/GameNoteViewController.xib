@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameNoteViewController" customModule="_2_Записок" customModuleProvider="target">
             <connections>
+                <outlet property="addressLabel" destination="wQN-jh-leL" id="e5q-zc-e9t"/>
                 <outlet property="addressStackView" destination="nKR-aJ-Sgc" id="Yqk-RP-NdV"/>
                 <outlet property="checkNoteButton" destination="N6i-Dz-NbV" id="fCg-eJ-ZoY"/>
                 <outlet property="describLabel" destination="jf2-yp-feD" id="A03-X6-9SV"/>
@@ -23,9 +24,8 @@
                 <outlet property="numberNoteLabel" destination="MaO-IN-9rE" id="hec-Wu-0dj"/>
                 <outlet property="onMapButton" destination="MrO-FC-0qU" id="X6f-ey-24O"/>
                 <outlet property="openNoteButton" destination="AIs-XC-X96" id="v3n-VH-9TS"/>
-                <outlet property="placeLabel" destination="wQN-jh-leL" id="Bih-5y-ls2"/>
                 <outlet property="statusHeaderImage" destination="uYp-xC-d8d" id="t8O-F2-FVb"/>
-                <outlet property="timeFindedLabel" destination="KVJ-Nc-HEX" id="V91-8c-62x"/>
+                <outlet property="timeLabel" destination="KVJ-Nc-HEX" id="ccd-hP-LrX"/>
                 <outlet property="titleNoteLabel" destination="Uzj-Cy-Zbi" id="2Yk-oC-1Ck"/>
                 <outlet property="view" destination="ymy-pH-ASK" id="11W-RU-HHm"/>
             </connections>

@@ -25,7 +25,7 @@ final class CityListViewController: BaseViewController {
     @IBOutlet private weak var citiesCollectionView: UICollectionView!
     @IBOutlet private weak var backButton: UIButton!
     @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var errorView: ErrorView!
+    @IBOutlet private weak var emptyView: EmptyView!
     
     // MARK: Private / Public variables
     
@@ -34,7 +34,7 @@ final class CityListViewController: BaseViewController {
         didSet {
             viewModel?.setUpdateHandler {
                 self.citiesCollectionView.reloadData()
-                self.errorView.isHidden = self.viewModel?.getNumberOfCities() != 0
+                self.emptyView.isHidden = self.viewModel?.getNumberOfCities() != 0
             }
         }
     }
@@ -51,11 +51,11 @@ final class CityListViewController: BaseViewController {
     // MARK: Setup UI
     
     private func setupUI() {
-        errorView.configureHandler { [weak self] in
+        emptyView.configure(repeate: Button(title: "Повторить загрузку") { [weak self] in
             self?.viewModel?.fetchCities()
-        } back: { [weak self] in
+        }, action: Button(title: "Вернуться назад") { [weak self] in
             self?.viewModel?.closeButtonPressed?()
-        }
+        })
         
         if let viewModel = viewModel {
             if viewModel.isOnboarding {

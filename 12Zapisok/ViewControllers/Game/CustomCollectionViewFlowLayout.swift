@@ -39,7 +39,7 @@ final class GridCollectionViewFlowLayout: UICollectionViewFlowLayout {
         
         scrollDirection = .vertical
         itemSize = CGSize(width: itemWidth(), height: itemHeight())
-        sectionInset = UIEdgeInsets(top: Constants.baseInset,
+        sectionInset = UIEdgeInsets(top: Constants.baseInset / 2,
                                     left: Constants.baseInset,
                                     bottom: Constants.bottomInset,
                                     right: Constants.baseInset)

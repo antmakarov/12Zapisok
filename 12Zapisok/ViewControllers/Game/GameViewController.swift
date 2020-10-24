@@ -39,6 +39,8 @@ final class GameViewController: BaseViewController {
         super.viewDidLoad()
 
         notesCollectionView.collectionViewLayout = GridCollectionViewFlowLayout(display: .grid(columns: 2))
+        
+        notesCollectionView.register(reusableViewType: GameFooterView.self, ofKind: UICollectionView.elementKindSectionFooter)
         notesCollectionView.register(cellType: NoteCollectionCell.self) 
         
         cityNameLabel.text = viewModel?.cityName()
@@ -69,6 +71,10 @@ final class GameViewController: BaseViewController {
 
 extension GameViewController: UICollectionViewDataSource {
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return viewModel?.numberOfNotes() != 0 ? 1 : 0
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel?.numberOfNotes() ?? 0
     }
@@ -85,6 +91,22 @@ extension GameViewController: UICollectionViewDataSource {
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let viewModel = viewModel else {
+            fatalError("Not installed View Model")
+        }
+        
+        switch kind {
+        case UICollectionView.elementKindSectionFooter:
+            
+            let headerView = collectionView.dequeueReusableView(with: GameFooterView.self, for: indexPath, ofKind: UICollectionView.elementKindSectionFooter)
+            return headerView
+            
+        default:
+            assert(false, "Invalid element type")
+        }
+    }
 }
 
 // MARK: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
@@ -96,5 +118,9 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDelegate
             fatalError("Not installed View Model")
         }
         viewModel.selectNoteDetails(at: indexPath.row)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 50.0)
     }
 }

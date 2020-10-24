@@ -60,12 +60,12 @@ extension StatisticsViewModel: StatisticsViewModeling {
                         self?.sections.append(.city(stats: $0))
                     }
                 }
-                self?.updateHandler?()
                 
             case .error(let error):
                 Logger.error(msg: error.localizedDescription)
-                self?.updateHandler?()
             }
+            
+            self?.updateHandler?()
         }
     }
     

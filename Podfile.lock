@@ -1,12 +1,12 @@
 PODS:
-  - Alamofire (5.0.4)
-  - Kingfisher (5.13.2):
-    - Kingfisher/Core (= 5.13.2)
-  - Kingfisher/Core (5.13.2)
+  - Alamofire (5.2.2)
+  - Kingfisher (5.15.5):
+    - Kingfisher/Core (= 5.15.5)
+  - Kingfisher/Core (5.15.5)
   - ObjectMapper (3.5.2)
-  - ObjectMapperAdditions/Core (6.0.2):
+  - ObjectMapperAdditions/Core (7.0.0):
     - ObjectMapper
-  - ObjectMapperAdditions/Realm (6.0.2):
+  - ObjectMapperAdditions/Realm (7.0.0):
     - ObjectMapper
     - ObjectMapperAdditions/Core
     - RealmSwift
@@ -17,9 +17,9 @@ PODS:
   - RealmSwift (4.3.2):
     - Realm (= 4.3.2)
   - SkyFloatingLabelTextField (3.8.0)
-  - SwiftEntryKit (1.2.3):
+  - SwiftEntryKit (1.2.6):
     - QuickLayout (= 3.0.0)
-  - SwiftGen (6.1.0)
+  - SwiftGen (6.4.0)
   - SwiftLint (0.40.3)
   - YandexMapKit (3.5.0):
     - YandexRuntime (= 3.5.0)
@@ -28,9 +28,9 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - Kingfisher
-  - ObjectMapper
-  - ObjectMapperAdditions/Realm (~> 6.0)
-  - RealmSwift
+  - ObjectMapper (= 3.5.2)
+  - ObjectMapperAdditions/Realm (~> 7.0)
+  - RealmSwift (= 4.3.2)
   - SkyFloatingLabelTextField (~> 3.0)
   - SwiftEntryKit
   - SwiftGen
@@ -54,20 +54,20 @@ SPEC REPOS:
     - YandexRuntime
 
 SPEC CHECKSUMS:
-  Alamofire: 0fe5fd24b4298dc377a6550da7d5f1b30e286fcb
-  Kingfisher: d342c8354c10c3d85a27d6d4c42c41285924b898
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  Kingfisher: e3ec347a5ab8817b7585ef46923a2d2b9a7d8fbe
   ObjectMapper: b53ae947d370bf89423e86be7d4e2d2b2a8d3f40
-  ObjectMapperAdditions: 923fa7cdc45a7937e08fea8c715d18fc3604b122
+  ObjectMapperAdditions: 90599007c533d46f6b4c05dca6931a9c0060424a
   QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
   Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
   RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
   SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
-  SwiftEntryKit: 340713c2e4a6662c5149629990bf1088bf5f0389
-  SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
+  SwiftEntryKit: 96a2fa90b2631bbbfac50d18449e9ca3d0635f13
+  SwiftGen: 67860cc7c3cfc2ed25b9b74cfd55495fc89f9108
   SwiftLint: dfd554ff0dff17288ee574814ccdd5cea85d76f7
   YandexMapKit: ecd4b78de34a35df63d066ac299e6fd0fe46d1ba
   YandexRuntime: 2d55244d06267106cf9b00c25a1e63f72a73b6fd
 
-PODFILE CHECKSUM: f5d80d956f3a99616f5bad8b50b65e46d322f2a8
+PODFILE CHECKSUM: 8fd4066aab3d14604fab16d2caff27be323d3194
 
 COCOAPODS: 1.7.3

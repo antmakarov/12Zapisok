@@ -17,6 +17,7 @@
                 <outlet property="imageCollectionView" destination="cRe-r9-nrG" id="5qP-LW-8fq"/>
                 <outlet property="populationLabel" destination="LWZ-4o-PIx" id="vhg-2N-YQR"/>
                 <outlet property="regionCodeLabel" destination="33l-3g-5jf" id="XqW-6A-7tx"/>
+                <outlet property="swipeBottomConstraint" destination="HCL-0y-WSI" id="DeD-5K-ry2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="yearLabel" destination="q7g-e0-Rg5" id="Ld6-LE-xwG"/>
             </connections>
@@ -195,8 +196,8 @@
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CrQ-av-iaP">
-                            <rect key="frame" x="16" y="42.5" width="382" height="378"/>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CrQ-av-iaP">
+                            <rect key="frame" x="16" y="43" width="382" height="322"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <attributedString key="attributedText">
                                 <fragment>
@@ -210,10 +211,20 @@
                             </attributedString>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
+                        <view alpha="0.55000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eS9-zC-IPF">
+                            <rect key="frame" x="186" y="8" width="43" height="4"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="4"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="CrQ-av-iaP" secondAttribute="bottom" id="Jga-Kq-Vf4"/>
+                        <constraint firstAttribute="bottom" secondItem="CrQ-av-iaP" secondAttribute="bottom" constant="30" id="Jga-Kq-Vf4"/>
                         <constraint firstItem="CrQ-av-iaP" firstAttribute="top" secondItem="CUc-Ol-ekF" secondAttribute="bottom" constant="4" id="Lea-1Q-BGz"/>
                         <constraint firstItem="CUc-Ol-ekF" firstAttribute="leading" secondItem="zxF-8r-JPA" secondAttribute="leading" constant="16" id="WkI-HS-Ay8"/>
                         <constraint firstItem="CUc-Ol-ekF" firstAttribute="top" secondItem="zxF-8r-JPA" secondAttribute="top" constant="12" id="hDG-EY-zQL"/>
@@ -224,6 +235,7 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="cRe-r9-nrG" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.3" id="1K4-4N-Q2P"/>
                 <constraint firstItem="ehq-Jp-YhL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="CN6-L4-2fg"/>
