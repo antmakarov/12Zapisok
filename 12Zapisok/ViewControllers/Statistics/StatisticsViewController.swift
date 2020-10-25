@@ -53,10 +53,10 @@ final class StatisticsViewController: UIViewController {
     
     private func setupUI() {
         emptyView.configureWith(type: .statistics,
-                                repeate: Button(title: "Повторить") { [weak self] in
+                                repeate: Button(title: Localized.repeate) { [weak self] in
                                     self?.viewModel?.fetchStatistics()
                                 },
-                                action: Button(title: "Начать") { [weak self] in
+                                action: Button(title: Localized.startGame) { [weak self] in
                                     self?.viewModel?.routeTo?(.game)
                                 })
         

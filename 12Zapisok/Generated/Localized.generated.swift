@@ -25,6 +25,22 @@ internal enum Localized {
   internal static let `continue` = Localized.tr("Localizable", "CONTINUE")
   /// текущий выбранный город
   internal static let currentCity = Localized.tr("Localizable", "CURRENT_CITY")
+  /// Очень жаль, но возникли проблемы с загрузкой городов для игры, попробуйте еще раз
+  internal static let emptyCityError = Localized.tr("Localizable", "EMPTY_CITY_ERROR")
+  /// Хм, города должны были отобразиться.. попробуйте позже
+  internal static let emptyCityMain = Localized.tr("Localizable", "EMPTY_CITY_MAIN")
+  /// Похоже, что у нас проблемы с загрузкой, попробуем еще раз?
+  internal static let emptyGameError = Localized.tr("Localizable", "EMPTY_GAME_ERROR")
+  /// Извините, похоже есть проблема с загрузкой записок
+  internal static let emptyGameMain = Localized.tr("Localizable", "EMPTY_GAME_MAIN")
+  /// Похоже, что у нас проблемы с загрузкой, попробуем еще раз?
+  internal static let emptyLeadError = Localized.tr("Localizable", "EMPTY_LEAD_ERROR")
+  /// Кажется, в этом городе еще никто ничего не искал \n\nБудьте первым!
+  internal static let emptyLeadMain = Localized.tr("Localizable", "EMPTY_LEAD_MAIN")
+  /// Упс, статистика где-то потерялась, попробуем еще раз?
+  internal static let emptyStatsError = Localized.tr("Localizable", "EMPTY_STATS_ERROR")
+  /// Кажется, что вы еще не начинали играть \n\nВперед!
+  internal static let emptyStatsMain = Localized.tr("Localizable", "EMPTY_STATS_MAIN")
   /// Найди как можно скорее
   internal static let findAsSoon = Localized.tr("Localizable", "FIND_AS_SOON")
   /// Но уже близко
@@ -93,6 +109,8 @@ internal enum Localized {
   internal static let onboardingRightCity = Localized.tr("Localizable", "ONBOARDING_RIGHT_CITY")
   /// Открыта 
   internal static let `open` = Localized.tr("Localizable", "OPEN")
+  /// Повторить
+  internal static let repeate = Localized.tr("Localizable", "REPEATE")
   /// И напоследок
   internal static let rulesLast = Localized.tr("Localizable", "RULES_LAST")
   /// Играть можно: на природе, в офисе, в музее и кафе, по городу, дома.
@@ -113,6 +131,8 @@ internal enum Localized {
   internal static let somethingWrong = Localized.tr("Localizable", "SOMETHING_WRONG")
   /// Увы
   internal static let sorry = Localized.tr("Localizable", "SORRY")
+  /// Начать игру
+  internal static let startGame = Localized.tr("Localizable", "START_GAME")
   /// Кажется, здесь пока пусто
   internal static let stillEmpty = Localized.tr("Localizable", "STILL_EMPTY")
   /// Сделано попыток: 

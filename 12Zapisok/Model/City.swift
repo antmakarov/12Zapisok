@@ -15,6 +15,8 @@ protocol Endpoint {
     static func url() -> String
 }
 
+typealias CityListCompletion = ((Result<[City], Error>) -> ())
+
 final class City: Object, Mappable, Endpoint {
     
     @objc dynamic var id = 0

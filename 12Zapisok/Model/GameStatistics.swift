@@ -11,6 +11,8 @@ import RealmSwift
 import ObjectMapper
 import ObjectMapperAdditions
 
+typealias GameStatisticsCompletion = ((Result<GameStatistics, Error>) -> ())
+
 final class GameStatistics: Object, Mappable, Endpoint {
     
     @objc dynamic var id = UUID().uuidString

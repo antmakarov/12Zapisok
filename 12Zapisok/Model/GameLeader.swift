@@ -11,6 +11,8 @@ import RealmSwift
 import ObjectMapper
 import ObjectMapperAdditions
 
+typealias LeaderboardCompletion = ((Result<[GameLeader], Error>) -> ())
+
 final class GameLeader: Object, Mappable, Endpoint {
     
     @objc dynamic var id = UUID().uuidString

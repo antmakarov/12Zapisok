@@ -68,14 +68,26 @@ final class GameNoteViewModel {
         
         return false
     }
+    
+    private func increaseAttemps() {
+        networkManager.setNoteAttemps(id: note.id, attemps: 1) { [weak self] response in
+            if case .success = response {
+                self?.note.statistics?.attempts += 1
+            }
+        }
+    }
 }
 
 extension GameNoteViewModel: GameNoteViewModeling {
     func completeNote(completion: @escaping (((Result<Bool, Error>)) -> Void)) {
-        if let location = note.location,
-           locationManager.closeToCoordinate(location.cll(), with: .average) {
-            networkManager.completeNote(id: note.id, completion: completion)
-            dataUpdater.value = note.id
+        if let location = note.location {
+            increaseAttemps()
+            if Int.random(in: 0...4) == 2 { //locationManager.closeToCoordinate(location.cll(), with: .average) {
+                networkManager.completeNote(id: note.id, completion: completion)
+                dataUpdater.value = note.id
+            } else {
+                completion(.success(false))
+            }
         } else {
             completion(.success(false))
         }
@@ -121,7 +133,7 @@ extension GameNoteViewModel: GameNoteViewModeling {
     }
     
     var openTime: String {
-        return "вчера в 21:42" //TODO: Add real time
+        return note.statistics?.timeCompleted ?? .empty
     }
     
     var id: String {

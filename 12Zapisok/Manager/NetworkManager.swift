@@ -7,18 +7,22 @@
 //
 // swiftlint:disable all
 
-import Foundation
 import Alamofire
 import ObjectMapper
 import RealmSwift
 
+typealias SuccessCompletion = ((Result<Bool, Error>) -> ())
+
 protocol NetworkManaging {
-    func getCityList(completion: @escaping ((Result<[City], Error>) -> ()))
-    func getGameStats(completion: @escaping ((Result<GameStatistics, Error>) -> ()))
-    func getGameLeaders(completion: @escaping ((Result<[GameLeader], Error>) -> ()))
-    func getNoteList(parameters: Parameters, completion: @escaping ((Result<[Note], Error>) -> ()))
-    func openNote(id: Int, completion: @escaping ((Result<Bool, Error>) -> ()))
-    func completeNote(id: Int, completion: @escaping ((Result<Bool, Error>) -> ()))
+    func getCityList(completion: @escaping CityListCompletion)
+    func getGameStats(completion: @escaping GameStatisticsCompletion)
+    func getGameLeaders(completion: @escaping LeaderboardCompletion)
+    func getNoteList(parameters: Parameters, completion: @escaping NoteListCompletion)
+    
+    func openNote(id: Int, completion: @escaping SuccessCompletion)
+    func completeNote(id: Int, completion: @escaping SuccessCompletion)
+    func setNoteAttemps(id: Int, attemps: Int, completion: @escaping SuccessCompletion)
+    
     func updateTokenIfNeeded(isForced: Bool)
 }
 
@@ -39,31 +43,40 @@ class NetworkManager: NetworkManaging {
         userPreferences = PreferencesManager.shared
     }
     
-    public func getCityList(completion: @escaping ((Result<[City], Error>) -> ())) {
+    // MARK: Public
+
+    public func getCityList(completion: @escaping CityListCompletion) {
         fetchArrayOf(type: City.self, completion: completion)
     }
 
-    public func getNoteList(parameters: Parameters, completion: @escaping ((Result<[Note], Error>) -> ())) {
+    public func getNoteList(parameters: Parameters, completion: @escaping NoteListCompletion) {
         fetchArrayOf(type: Note.self, parameters, completion: completion)
     }
     
-    public func getGameLeaders(completion: @escaping ((Result<[GameLeader], Error>) -> ())) {
+    public func getGameLeaders(completion: @escaping LeaderboardCompletion) {
         fetchArrayOf(type: GameLeader.self, completion: completion)
     }
     
-    public func getGameStats(completion: @escaping ((Result<GameStatistics, Error>) -> ())) {
+    public func getGameStats(completion: @escaping GameStatisticsCompletion) {
         fetchObject(type: GameStatistics.self, completion: completion)
     }
     
-    public func openNote(id: Int, completion: @escaping ((Result<Bool, Error>) -> ())) {
+    public func openNote(id: Int, completion: @escaping SuccessCompletion) {
         let url = String(format: Endpoints.openNote.rawValue, id)
         postObject(endpoint: url, completion: completion)
     }
     
-    public func completeNote(id: Int, completion: @escaping ((Result<Bool, Error>) -> ())) {
+    public func completeNote(id: Int, completion: @escaping SuccessCompletion) {
         let url = String(format: Endpoints.completeNote.rawValue, id)
         postObject(endpoint: url, completion: completion)
     }
+    
+    public func setNoteAttemps(id: Int, attemps: Int, completion: @escaping SuccessCompletion) {
+        let params = ["attempts": attemps]
+        let url = String(format: Endpoints.attempsNote.rawValue, id)
+        postObject(endpoint: url, parameters: params, completion: completion)
+    }
+    
     
     public func updateTokenIfNeeded(isForced: Bool) {
         if userPreferences.userToken == nil || isForced {
@@ -75,11 +88,11 @@ class NetworkManager: NetworkManaging {
         }
     }
 
-    // MARK: Private methods
+    // MARK: Private POST
 
-    private func postObject(endpoint: String, completion: @escaping ((Result<Bool, Error>)) -> ()) {
+    private func postObject(endpoint: String, parameters: Parameters? = nil, completion: @escaping ((Result<Bool, Error>)) -> ()) {
         let url = baseUrl + endpoint
-        AF.request(url, method: .post, encoding: JSONEncoding.default, headers: configureHeaders())
+        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: configureHeaders())
         .validate(statusCode: 200..<300)
         .responseJSON { response in
             switch response.result {
@@ -94,6 +107,8 @@ class NetworkManager: NetworkManaging {
             }
         }
     }
+
+    // MARK: Private GET
 
     private func fetchObject<T: Object>(type: T.Type, completion: @escaping ((Result<T, Error>)) -> ())  where T:Mappable, T:Endpoint {
         

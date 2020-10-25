@@ -9,6 +9,7 @@
 public enum Endpoints: String {
     case openNote = "/notes/%d/open"
     case completeNote = "/notes/%d/complete"
+    case attempsNote = "/notes/%d/attempts"
     case newToken = "/generate_token"
 }
 

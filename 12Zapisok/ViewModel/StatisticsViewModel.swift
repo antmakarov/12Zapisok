@@ -26,15 +26,21 @@ protocol StatisticsViewModeling: AnyObject {
 
 final class StatisticsViewModel {
     
+    // MARK: Private
+
     private let databaseStorage: StorageManager
     private let networkManager: NetworkManaging
     
     private var sections: [StatisticsSections] = []
     
-    var routeTo: ((StatisticsRoute) -> Void)?
-    public var responseStatus = Observable<ResponseStatus>(value: .empty)
-    public var isLoading = Observable<Bool>(value: false)
+    // MARK: Public
+
+    public var routeTo: ((StatisticsRoute) -> Void)?
+    public var responseStatus = Observable(ResponseStatus.empty)
+    public var isLoading = Observable(false)
     
+    // MARK: Lifecycle
+
     convenience init() {
         self.init(databaseStorage: StorageManager.shared,
                   networkManager: NetworkManager.shared)
@@ -45,6 +51,8 @@ final class StatisticsViewModel {
         self.networkManager = networkManager        
     }
 }
+
+// MARK: StatisticsViewModeling
 
 extension StatisticsViewModel: StatisticsViewModeling {
     

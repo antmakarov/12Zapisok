@@ -29,7 +29,7 @@ final class GameViewModel {
     private var currentCityName: String?
     private var gameNotes = [Note]()
     private var dataUpdateHandler: (() -> Void)?
-    private var dataUpdater = Observable(value: 0)
+    private var dataUpdater = Observable(0)
 
     public var routeTo: ((GameRouter) -> Void)?
 

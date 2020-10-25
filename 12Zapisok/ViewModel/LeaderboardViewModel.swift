@@ -21,14 +21,20 @@ protocol LeaderboardViewModeling: AnyObject {
 
 final class LeaderboardViewModel {
     
+    // MARK: Private
+    
     private let databaseStorage: StorageManager
     private let networkManager: NetworkManaging
 
     private var leaders: [GameLeader] = []
     
+    // MARK: Public
+    
     public var routeTo: ((StatisticsRoute) -> Void)?
-    public var responseStatus = Observable<ResponseStatus>(value: .empty)
-    public var isLoading = Observable<Bool>(value: false)
+    public var responseStatus = Observable<ResponseStatus>(.empty)
+    public var isLoading = Observable<Bool>(false)
+
+    // MARK: Lifecycle
 
     convenience init() {
         self.init(databaseStorage: StorageManager.shared,
@@ -41,16 +47,18 @@ final class LeaderboardViewModel {
     }
 }
 
+// MARK: LeaderboardViewModeling
+
 extension LeaderboardViewModel: LeaderboardViewModeling {
-    func usersCount() -> Int {
+    public func usersCount() -> Int {
         return leaders.count
     }
     
-    func getUser(at index: Int) -> String {
+    public func getUser(at index: Int) -> String {
         return leaders[index].id
     }
     
-    func fetchLeaders() {
+    public func fetchLeaders() {
         isLoading.value = true
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {

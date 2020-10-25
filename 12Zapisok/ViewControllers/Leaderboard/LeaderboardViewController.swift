@@ -47,10 +47,10 @@ final class LeaderboardViewController: UIViewController {
     
     private func setupUI() {
         emptyView.configureWith(type: .leaderboard,
-                                repeate: Button(title: "Повторить") { [weak self] in
+                                repeate: Button(title: Localized.repeate) { [weak self] in
                                     self?.viewModel?.fetchLeaders()
                                 },
-                                action: Button(title: "Начать") { [weak self] in
+                                action: Button(title: Localized.startGame) { [weak self] in
                                     self?.viewModel?.routeTo?(.game)
                                 })
     }

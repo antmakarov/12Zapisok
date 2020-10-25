@@ -11,6 +11,8 @@ import RealmSwift
 import ObjectMapper
 import CoreLocation
 
+typealias NoteListCompletion = ((Result<[Note], Error>) -> ())
+
 final class Note: Object, Mappable, Endpoint {
     
     @objc dynamic var id = 0
