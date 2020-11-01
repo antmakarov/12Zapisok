@@ -4,8 +4,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -24,7 +24,7 @@
                 <outlet property="numberNoteLabel" destination="MaO-IN-9rE" id="hec-Wu-0dj"/>
                 <outlet property="onMapButton" destination="MrO-FC-0qU" id="X6f-ey-24O"/>
                 <outlet property="openNoteButton" destination="AIs-XC-X96" id="v3n-VH-9TS"/>
-                <outlet property="statusHeaderImage" destination="uYp-xC-d8d" id="t8O-F2-FVb"/>
+                <outlet property="statusHeaderView" destination="0IX-s2-kF8" id="pWQ-QP-dGj"/>
                 <outlet property="timeLabel" destination="KVJ-Nc-HEX" id="ccd-hP-LrX"/>
                 <outlet property="titleNoteLabel" destination="Uzj-Cy-Zbi" id="2Yk-oC-1Ck"/>
                 <outlet property="view" destination="ymy-pH-ASK" id="11W-RU-HHm"/>
@@ -36,13 +36,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0IX-s2-kF8">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/SmallNote/orangeSmallNote" translatesAutoresizingMaskIntoConstraints="NO" id="uYp-xC-d8d">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
-                        </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fmk-h2-sR2">
-                            <rect key="frame" x="16" y="21" width="28" height="28"/>
+                            <rect key="frame" x="16" y="18.5" width="28" height="28"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="Fmk-h2-sR2" secondAttribute="height" multiplier="1:1" id="ZKU-sa-1K9"/>
                                 <constraint firstAttribute="width" constant="28" id="oZn-DG-cBL"/>
@@ -55,7 +52,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Записка #4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaO-IN-9rE">
-                            <rect key="frame" x="107" y="9.5" width="161.5" height="51"/>
+                            <rect key="frame" x="107" y="7" width="161.5" height="51"/>
                             <constraints>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="G5b-Fv-P01"/>
                                 <constraint firstAttribute="height" constant="51" id="hKm-CH-CGh"/>
@@ -65,21 +62,18 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" name="Colors/appOrange"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="uYp-xC-d8d" secondAttribute="bottom" id="6gH-he-K8z"/>
-                        <constraint firstItem="MaO-IN-9rE" firstAttribute="centerY" secondItem="uYp-xC-d8d" secondAttribute="centerY" id="8Zt-PS-IHx"/>
-                        <constraint firstItem="MaO-IN-9rE" firstAttribute="centerX" secondItem="uYp-xC-d8d" secondAttribute="centerX" id="BUb-DB-nBC"/>
-                        <constraint firstAttribute="trailing" secondItem="uYp-xC-d8d" secondAttribute="trailing" id="boe-0k-kVA"/>
+                        <constraint firstItem="MaO-IN-9rE" firstAttribute="centerY" secondItem="0IX-s2-kF8" secondAttribute="centerY" id="0db-cI-bw4"/>
+                        <constraint firstItem="Fmk-h2-sR2" firstAttribute="centerY" secondItem="0IX-s2-kF8" secondAttribute="centerY" id="21b-eA-nnD"/>
                         <constraint firstItem="Fmk-h2-sR2" firstAttribute="leading" secondItem="0IX-s2-kF8" secondAttribute="leading" constant="16" id="dNl-fx-zFs"/>
-                        <constraint firstItem="uYp-xC-d8d" firstAttribute="top" secondItem="0IX-s2-kF8" secondAttribute="top" id="iLc-pk-6Rv"/>
-                        <constraint firstItem="uYp-xC-d8d" firstAttribute="leading" secondItem="0IX-s2-kF8" secondAttribute="leading" id="lex-r1-WRW"/>
+                        <constraint firstItem="MaO-IN-9rE" firstAttribute="centerX" secondItem="0IX-s2-kF8" secondAttribute="centerX" id="pB3-u8-LqI"/>
                         <constraint firstItem="Fmk-h2-sR2" firstAttribute="centerY" secondItem="MaO-IN-9rE" secondAttribute="centerY" id="qf3-h6-58z"/>
-                        <constraint firstAttribute="height" constant="70" id="t1x-4m-bUm"/>
+                        <constraint firstAttribute="height" constant="65" id="t1x-4m-bUm"/>
                     </constraints>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/AppIcons/compass" translatesAutoresizingMaskIntoConstraints="NO" id="z86-QI-tD5">
-                    <rect key="frame" x="37.5" y="94" width="300" height="200"/>
+                    <rect key="frame" x="37.5" y="89" width="300" height="200"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                             <integer key="value" value="12"/>
@@ -87,7 +81,7 @@
                     </userDefinedRuntimeAttributes>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzj-Cy-Zbi">
-                    <rect key="frame" x="16" y="318" width="343" height="34"/>
+                    <rect key="frame" x="16" y="313" width="343" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="hGp-kZ-rE7"/>
                     </constraints>
@@ -114,8 +108,9 @@
                 </stackView>
                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6i-Dz-NbV">
                     <rect key="frame" x="8" y="449" width="359" height="43.5"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" title="Проверить место" backgroundImage="Icons/Rectangle">
+                    <color key="backgroundColor" name="Colors/appMain"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                    <state key="normal" title="Проверить место">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <userDefinedRuntimeAttributes>
@@ -128,7 +123,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jf2-yp-feD">
-                    <rect key="frame" x="37.5" y="364" width="300" height="60"/>
+                    <rect key="frame" x="37.5" y="359" width="300" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="sPW-dP-e9w"/>
                     </constraints>
@@ -140,15 +135,15 @@
                     <rect key="frame" x="8" y="524.5" width="359" height="108"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rFI-Cz-AzC">
-                            <rect key="frame" x="0.0" y="0.0" width="177.5" height="108"/>
+                            <rect key="frame" x="0.0" y="0.0" width="178.5" height="108"/>
                             <subviews>
                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xie-zS-xO3">
-                                    <rect key="frame" x="0.0" y="0.0" width="177.5" height="50"/>
-                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="178.5" height="50"/>
+                                    <color key="backgroundColor" name="Colors/appGray"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="RkR-0i-ijM"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                     <inset key="contentEdgeInsets" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
                                     <state key="normal" title="Ручной ввод">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -163,12 +158,12 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MrO-FC-0qU">
-                                    <rect key="frame" x="0.0" y="58" width="177.5" height="50"/>
-                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <rect key="frame" x="0.0" y="58" width="178.5" height="50"/>
+                                    <color key="backgroundColor" name="Colors/appGray"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="Acw-Wg-dnd"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                     <inset key="contentEdgeInsets" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
                                     <state key="normal" title="На карте">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -185,15 +180,15 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fOq-eT-Paq">
-                            <rect key="frame" x="185.5" y="0.0" width="173.5" height="108"/>
+                            <rect key="frame" x="186.5" y="0.0" width="172.5" height="108"/>
                             <subviews>
                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECA-8f-kH0">
-                                    <rect key="frame" x="0.0" y="0.0" width="173.5" height="50"/>
-                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="172.5" height="50"/>
+                                    <color key="backgroundColor" name="Colors/appGray"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="JP8-gO-fB3"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                     <inset key="contentEdgeInsets" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
                                     <state key="normal" title="Расстояние">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -208,12 +203,12 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIs-XC-X96">
-                                    <rect key="frame" x="0.0" y="58" width="173.5" height="50"/>
-                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <rect key="frame" x="0.0" y="58" width="172.5" height="50"/>
+                                    <color key="backgroundColor" name="Colors/appGray"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="kGg-Ay-cBl"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                     <inset key="contentEdgeInsets" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
                                     <state key="normal" title="Открыть">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -240,7 +235,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пока все еще холодно" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iuK-rZ-k7y">
                     <rect key="frame" x="121" y="494.5" width="133" height="14.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <color key="textColor" red="0.2974772155" green="0.45048010350000001" blue="0.73126500839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" name="Colors/appMainDark"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -281,10 +276,17 @@
     <resources>
         <image name="Icons/AppIcons/close" width="64" height="64"/>
         <image name="Icons/AppIcons/compass" width="256" height="256"/>
-        <image name="Icons/Rectangle" width="368" height="102"/>
-        <image name="Icons/SmallNote/orangeSmallNote" width="18" height="32"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="Colors/appGray">
+            <color red="0.68199998140335083" green="0.71799999475479126" blue="0.74500000476837158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Colors/appMain">
+            <color red="0.40799999237060547" green="0.38400000333786011" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Colors/appMainDark">
+            <color red="0.44299998879432678" green="0.43900001049041748" blue="0.58799999952316284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Colors/appOrange">
+            <color red="0.99599999189376831" green="0.70599997043609619" blue="0.48199999332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

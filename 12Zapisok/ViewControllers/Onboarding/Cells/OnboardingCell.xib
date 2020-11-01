@@ -4,6 +4,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,32 +20,32 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3z-wU-eDz">
-                        <rect key="frame" x="32" y="446" width="345" height="21.5"/>
+                        <rect key="frame" x="32" y="370.5" width="345" height="21.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.80163741440000003" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Woh-0N-2hz">
-                        <rect key="frame" x="117.5" y="603" width="174" height="30"/>
+                        <rect key="frame" x="117.5" y="616" width="174" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="h6D-Wi-C9V"/>
                             <constraint firstAttribute="width" constant="174" id="ta8-iz-zms"/>
                         </constraints>
                         <state key="normal" title="Пропустить">
-                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="titleColor" systemColor="systemGray2Color"/>
                         </state>
                         <connections>
                             <action selector="skipAction:" destination="i3U-IQ-LNW" eventType="touchUpInside" id="DGD-5K-M8J"/>
                         </connections>
                     </button>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/Onboarding_3-2-512" translatesAutoresizingMaskIntoConstraints="NO" id="Cxl-C8-6Cj">
-                        <rect key="frame" x="41" y="32" width="327" height="302"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/MenuCirclesColor/Tonight" translatesAutoresizingMaskIntoConstraints="NO" id="Cxl-C8-6Cj">
+                        <rect key="frame" x="82" y="32" width="245" height="226.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Cxl-C8-6Cj" secondAttribute="height" multiplier="129:119" id="oYi-kr-Vnj"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="SmJ-aO-ClQ">
-                        <rect key="frame" x="41" y="374" width="327" height="40"/>
+                        <rect key="frame" x="41" y="298.5" width="327" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="zOI-vG-n8a"/>
                         </constraints>
@@ -52,20 +54,23 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="si9-bg-5oB">
-                        <rect key="frame" x="194.5" y="418" width="20" height="20"/>
+                        <rect key="frame" x="194.5" y="342.5" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="I8S-yO-Nkk"/>
                             <constraint firstAttribute="width" constant="20" id="f1w-m9-tgN"/>
                         </constraints>
                     </activityIndicatorView>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="5bO-KA-nTQ">
-                        <rect key="frame" x="20" y="524" width="369" height="50"/>
+                        <rect key="frame" x="20" y="542" width="369" height="50"/>
                         <subviews>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmX-fk-2Zu">
                                 <rect key="frame" x="0.0" y="0.0" width="177" height="50"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Дальше" backgroundImage="Icons/Rectangle">
+                                <color key="backgroundColor" name="Colors/appMain"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="iAq-NN-xFP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <state key="normal" title="Дальше">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -74,9 +79,12 @@
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CkU-iH-bfK">
                                 <rect key="frame" x="192" y="0.0" width="177" height="50"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Нет" backgroundImage="Icons/RedRec">
+                                <color key="backgroundColor" name="Colors/appGray"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ezL-JE-0IB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <state key="normal" title="Нет">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -92,14 +100,14 @@
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="Woh-0N-2hz" firstAttribute="top" secondItem="5bO-KA-nTQ" secondAttribute="bottom" constant="29" id="1uz-Nl-xKP"/>
                     <constraint firstItem="si9-bg-5oB" firstAttribute="centerX" secondItem="SmJ-aO-ClQ" secondAttribute="centerX" id="2B4-jS-P7i"/>
                     <constraint firstAttribute="trailing" secondItem="5bO-KA-nTQ" secondAttribute="trailing" constant="20" id="31I-8C-r6H"/>
                     <constraint firstItem="SmJ-aO-ClQ" firstAttribute="centerX" secondItem="Nrq-e9-GRA" secondAttribute="centerX" id="Acf-HE-a3E"/>
                     <constraint firstAttribute="trailing" secondItem="E3z-wU-eDz" secondAttribute="trailing" constant="32" id="BHc-YC-vuy"/>
                     <constraint firstItem="SmJ-aO-ClQ" firstAttribute="top" secondItem="Cxl-C8-6Cj" secondAttribute="bottom" constant="40" id="DLI-kc-h9w"/>
                     <constraint firstItem="Cxl-C8-6Cj" firstAttribute="top" secondItem="Nrq-e9-GRA" secondAttribute="top" constant="32" id="GuB-f2-wZc"/>
-                    <constraint firstItem="Cxl-C8-6Cj" firstAttribute="width" secondItem="Nrq-e9-GRA" secondAttribute="width" multiplier="0.8" id="HKC-Xj-H3z"/>
+                    <constraint firstItem="Cxl-C8-6Cj" firstAttribute="width" secondItem="Nrq-e9-GRA" secondAttribute="width" multiplier="0.6" id="HKC-Xj-H3z"/>
+                    <constraint firstItem="Woh-0N-2hz" firstAttribute="top" secondItem="5bO-KA-nTQ" secondAttribute="bottom" constant="24" id="JGt-9j-U6I"/>
                     <constraint firstItem="Cxl-C8-6Cj" firstAttribute="centerX" secondItem="Nrq-e9-GRA" secondAttribute="centerX" id="LVP-qa-ZQF"/>
                     <constraint firstItem="si9-bg-5oB" firstAttribute="top" secondItem="SmJ-aO-ClQ" secondAttribute="bottom" constant="4" id="SBy-XI-4Ar"/>
                     <constraint firstItem="Woh-0N-2hz" firstAttribute="centerX" secondItem="Nrq-e9-GRA" secondAttribute="centerX" id="ash-84-whD"/>
@@ -107,7 +115,7 @@
                     <constraint firstItem="5bO-KA-nTQ" firstAttribute="leading" secondItem="Nrq-e9-GRA" secondAttribute="leading" constant="20" id="kZb-cu-UAV"/>
                     <constraint firstItem="E3z-wU-eDz" firstAttribute="leading" secondItem="Nrq-e9-GRA" secondAttribute="leading" constant="32" id="l9K-MP-Zgv"/>
                     <constraint firstItem="SmJ-aO-ClQ" firstAttribute="width" secondItem="Nrq-e9-GRA" secondAttribute="width" multiplier="0.8" id="n6W-pA-uPB"/>
-                    <constraint firstAttribute="bottom" secondItem="Woh-0N-2hz" secondAttribute="bottom" constant="25" id="uS3-7l-MLG"/>
+                    <constraint firstAttribute="bottom" secondItem="Woh-0N-2hz" secondAttribute="bottom" constant="12" id="uS3-7l-MLG"/>
                 </constraints>
             </collectionViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -125,8 +133,15 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="Icons/Onboarding_3-2-512" width="512" height="512"/>
-        <image name="Icons/Rectangle" width="368" height="102"/>
-        <image name="Icons/RedRec" width="305" height="147"/>
+        <image name="Icons/MenuCirclesColor/Tonight" width="247" height="247"/>
+        <namedColor name="Colors/appGray">
+            <color red="0.68199998140335083" green="0.71799999475479126" blue="0.74500000476837158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Colors/appMain">
+            <color red="0.40799999237060547" green="0.38400000333786011" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

@@ -33,11 +33,14 @@ final class OnboardingViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupCollectionLayout()
         collectionView.register(cellType: OnboardingCell.self)
     }
     
     // MARK: Setup UI
+    
+    override func viewDidLayoutSubviews() {
+        setupCollectionLayout()
+    }
     
     private func setupCollectionLayout() {
         

@@ -23,6 +23,7 @@ final class HomeViewController: BaseViewController {
     @IBOutlet private weak var cityNameLabel: UILabel!
     @IBOutlet private weak var cityImage: UIImageView!
     @IBOutlet private weak var middleActionsView: UIView!
+    @IBOutlet private weak var statsBarHeight: NSLayoutConstraint!
     @IBOutlet private var circleMenuImages: [UIImageView]!
     @IBOutlet private var menuItemViews: [UIView]!
     
@@ -63,6 +64,12 @@ final class HomeViewController: BaseViewController {
     }
     
     private func prepareUI() {
+        if UIDevice().screenType == .iPhoneSE {
+            statsBarHeight.constant = 40.0
+        } else if UIDevice().screenType == .iPhone6_7_8 {
+            statsBarHeight.constant = 45.0
+        }
+        
         middleActionsView.roundCorners(corners: [.topLeft, .topRight], radius: Constants.cornerRadius)
         menuItemViews.forEach {
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapMenuItem(sender:)))

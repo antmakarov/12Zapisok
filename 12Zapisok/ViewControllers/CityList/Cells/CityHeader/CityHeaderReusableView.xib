@@ -35,16 +35,16 @@
                             </constraints>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="re2-PX-ihC">
-                            <rect key="frame" x="53.5" y="178" width="307.5" height="63"/>
+                            <rect key="frame" x="16" y="178" width="382" height="63"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нижний Новгород" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faJ-wh-9Sb">
-                                    <rect key="frame" x="0.0" y="0.0" width="307.5" height="39"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нижний Новгород" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="faJ-wh-9Sb">
+                                    <rect key="frame" x="37.5" y="0.0" width="307.5" height="39"/>
                                     <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
                                     <color key="textColor" name="Colors/appMain"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="текущий выбранный город" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77C-cx-x22">
-                                    <rect key="frame" x="77" y="47" width="153" height="16"/>
+                                    <rect key="frame" x="114.5" y="47" width="153" height="16"/>
                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                     <color key="textColor" systemColor="systemGrayColor"/>
                                     <nil key="highlightedColor"/>
@@ -56,10 +56,12 @@
                     <constraints>
                         <constraint firstItem="Mdt-oW-yzN" firstAttribute="centerX" secondItem="3cy-uM-VsG" secondAttribute="centerX" id="D34-6K-5lJ"/>
                         <constraint firstItem="re2-PX-ihC" firstAttribute="top" secondItem="1iR-3d-FGj" secondAttribute="bottom" constant="8" id="Hyk-VM-xue"/>
+                        <constraint firstItem="re2-PX-ihC" firstAttribute="leading" secondItem="3cy-uM-VsG" secondAttribute="leading" constant="16" id="RHf-oS-ZFY"/>
                         <constraint firstItem="1iR-3d-FGj" firstAttribute="top" secondItem="Mdt-oW-yzN" secondAttribute="bottom" constant="12" id="TYZ-BV-bGu"/>
                         <constraint firstItem="Mdt-oW-yzN" firstAttribute="top" secondItem="3cy-uM-VsG" secondAttribute="top" constant="16" id="Zfs-IH-ohl"/>
                         <constraint firstItem="1iR-3d-FGj" firstAttribute="centerX" secondItem="Mdt-oW-yzN" secondAttribute="centerX" id="cEE-f1-72P"/>
                         <constraint firstItem="re2-PX-ihC" firstAttribute="centerX" secondItem="Mdt-oW-yzN" secondAttribute="centerX" id="em9-Uv-Wtq"/>
+                        <constraint firstAttribute="trailing" secondItem="re2-PX-ihC" secondAttribute="trailing" constant="16" id="uNr-ml-ga3"/>
                     </constraints>
                 </view>
             </subviews>

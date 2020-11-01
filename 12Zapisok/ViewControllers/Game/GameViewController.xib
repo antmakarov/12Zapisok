@@ -33,10 +33,9 @@
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" id="cos-fn-zvU"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нижний Новгород" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPd-K3-Pag">
-                            <rect key="frame" x="75.5" y="52" width="263.5" height="36"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нижний Новгород" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BPd-K3-Pag">
+                            <rect key="frame" x="64" y="52" width="286" height="36"/>
                             <constraints>
-                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="156" id="hcT-x0-kwh"/>
                                 <constraint firstAttribute="height" constant="36" id="ozi-0M-8lm"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
@@ -81,8 +80,10 @@
                         <constraint firstItem="qC6-9R-CuI" firstAttribute="leading" secondItem="BAD-u5-2Wo" secondAttribute="leading" id="1IM-y0-la7"/>
                         <constraint firstAttribute="bottom" secondItem="n0Q-AC-kWC" secondAttribute="bottom" constant="26" id="3tl-5A-Ho2"/>
                         <constraint firstItem="BPd-K3-Pag" firstAttribute="top" secondItem="BAD-u5-2Wo" secondAttribute="top" constant="52" id="B7g-ea-Uh1"/>
+                        <constraint firstItem="7H7-qZ-hhY" firstAttribute="leading" secondItem="BPd-K3-Pag" secondAttribute="trailing" constant="16" id="Hl4-6W-P6p"/>
                         <constraint firstItem="lDW-0G-B7z" firstAttribute="leading" secondItem="BAD-u5-2Wo" secondAttribute="leading" constant="16" id="NLR-eb-S20"/>
                         <constraint firstItem="7H7-qZ-hhY" firstAttribute="centerY" secondItem="BPd-K3-Pag" secondAttribute="centerY" id="T7u-ga-ywE"/>
+                        <constraint firstItem="BPd-K3-Pag" firstAttribute="leading" secondItem="lDW-0G-B7z" secondAttribute="trailing" constant="16" id="Tsl-dM-wtX"/>
                         <constraint firstItem="n0Q-AC-kWC" firstAttribute="leading" secondItem="BAD-u5-2Wo" secondAttribute="leading" constant="16" id="WW3-Ss-WqA"/>
                         <constraint firstAttribute="trailing" secondItem="n0Q-AC-kWC" secondAttribute="trailing" constant="16" id="b64-q1-2fc"/>
                         <constraint firstItem="lDW-0G-B7z" firstAttribute="centerY" secondItem="BPd-K3-Pag" secondAttribute="centerY" id="c7W-f4-ugx"/>

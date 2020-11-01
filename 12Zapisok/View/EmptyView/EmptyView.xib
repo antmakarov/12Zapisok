@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,34 +19,37 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="QRo-Up-o88">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="458"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/stop" translatesAutoresizingMaskIntoConstraints="NO" id="E0T-VD-OOj">
-                    <rect key="frame" x="79" y="76" width="256" height="256"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/stop" translatesAutoresizingMaskIntoConstraints="NO" id="E0T-VD-OOj">
+                    <rect key="frame" x="80" y="32" width="160" height="160.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="E0T-VD-OOj" secondAttribute="height" multiplier="1:1" id="drw-G6-oZi"/>
+                    </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhH-X0-aPO">
-                    <rect key="frame" x="414" y="555" width="0.0" height="18"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кажется, что-то пошло не так... Кажется, что-то пошло не так... Кажется, что-то пошло не так..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yx3-9C-sUZ">
+                    <rect key="frame" x="32" y="212.5" width="256" height="95.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="xbU-wC-VCt">
-                    <rect key="frame" x="24" y="724" width="366" height="114"/>
+                    <rect key="frame" x="24" y="320" width="272" height="114"/>
                     <subviews>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgK-KN-FTD">
-                            <rect key="frame" x="0.0" y="0.0" width="366" height="50"/>
-                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <rect key="frame" x="0.0" y="0.0" width="272" height="50"/>
+                            <color key="backgroundColor" name="Colors/appMain"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="T08-q5-VOd"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <state key="normal" title="Повторить" backgroundImage="Icons/Rectangle">
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                            <state key="normal" title="Повторить">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="12"/>
+                                    <integer key="value" value="8"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
@@ -53,18 +57,18 @@
                             </connections>
                         </button>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpz-dv-uXL">
-                            <rect key="frame" x="0.0" y="64" width="366" height="50"/>
-                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <rect key="frame" x="0.0" y="64" width="272" height="50"/>
+                            <color key="backgroundColor" name="Colors/appMain"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="zdX-2L-tzo"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <state key="normal" title="Действие" backgroundImage="Icons/Rectangle">
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                            <state key="normal" title="Действие">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="12"/>
+                                    <integer key="value" value="8"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
@@ -73,31 +77,30 @@
                         </button>
                     </subviews>
                 </stackView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кажется, что-то пошло не так..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yx3-9C-sUZ">
-                    <rect key="frame" x="16" y="441.5" width="382" height="23"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="1Pd-9y-x6P"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="1Pd-9y-x6P" firstAttribute="bottom" secondItem="xbU-wC-VCt" secondAttribute="bottom" constant="24" id="6Sm-IF-TlM"/>
+                <constraint firstItem="1Pd-9y-x6P" firstAttribute="trailing" secondItem="yx3-9C-sUZ" secondAttribute="trailing" constant="32" id="8gc-Qu-sDH"/>
+                <constraint firstItem="yx3-9C-sUZ" firstAttribute="top" secondItem="E0T-VD-OOj" secondAttribute="bottom" constant="20" id="BWr-Fg-sIV"/>
                 <constraint firstItem="xbU-wC-VCt" firstAttribute="leading" secondItem="1Pd-9y-x6P" secondAttribute="leading" constant="24" id="Duc-47-3jU"/>
+                <constraint firstItem="E0T-VD-OOj" firstAttribute="height" secondItem="QRo-Up-o88" secondAttribute="height" multiplier="0.35" id="QsI-Yw-DZs"/>
                 <constraint firstItem="E0T-VD-OOj" firstAttribute="top" secondItem="1Pd-9y-x6P" secondAttribute="top" constant="32" id="ZGy-mw-lz4"/>
-                <constraint firstItem="yx3-9C-sUZ" firstAttribute="leading" secondItem="1Pd-9y-x6P" secondAttribute="leading" constant="16" id="ZqT-gH-fND"/>
+                <constraint firstItem="yx3-9C-sUZ" firstAttribute="leading" secondItem="1Pd-9y-x6P" secondAttribute="leading" constant="32" id="ZqT-gH-fND"/>
                 <constraint firstItem="1Pd-9y-x6P" firstAttribute="trailing" secondItem="xbU-wC-VCt" secondAttribute="trailing" constant="24" id="aDh-zc-XTX"/>
-                <constraint firstItem="yx3-9C-sUZ" firstAttribute="centerY" secondItem="1Pd-9y-x6P" secondAttribute="centerY" id="aOa-2N-Ncn"/>
+                <constraint firstItem="yx3-9C-sUZ" firstAttribute="centerY" secondItem="1Pd-9y-x6P" secondAttribute="centerY" priority="500" id="aOa-2N-Ncn"/>
                 <constraint firstItem="yx3-9C-sUZ" firstAttribute="centerX" secondItem="1Pd-9y-x6P" secondAttribute="centerX" id="gTF-tk-mND"/>
                 <constraint firstItem="E0T-VD-OOj" firstAttribute="centerX" secondItem="1Pd-9y-x6P" secondAttribute="centerX" id="jq1-Ch-x8Z"/>
-                <constraint firstItem="rhH-X0-aPO" firstAttribute="leading" secondItem="yx3-9C-sUZ" secondAttribute="trailing" constant="16" id="rCb-il-FgK"/>
             </constraints>
-            <point key="canvasLocation" x="137.68115942028987" y="94.419642857142847"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="141.59999999999999" y="51.724137931034484"/>
         </view>
     </objects>
     <resources>
-        <image name="Icons/Rectangle" width="368" height="102"/>
         <image name="Icons/stop" width="256" height="256"/>
+        <namedColor name="Colors/appMain">
+            <color red="0.40799999237060547" green="0.38400000333786011" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

@@ -24,13 +24,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Bdb-4e-c1k">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="114"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="104"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lmq-qV-r50">
-                    <rect key="frame" x="0.0" y="44" width="414" height="70"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="60"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XgY-Sr-PB9">
-                            <rect key="frame" x="16" y="21" width="28" height="28"/>
+                            <rect key="frame" x="16" y="16" width="28" height="28"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="XgY-Sr-PB9" secondAttribute="height" multiplier="1:1" id="4d9-dy-0by"/>
                                 <constraint firstAttribute="width" constant="28" id="kUc-XO-oJa"/>
@@ -43,7 +43,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Смена города" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="H0M-BH-8z2">
-                            <rect key="frame" x="108" y="10" width="198" height="50"/>
+                            <rect key="frame" x="108" y="5" width="198" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="sWq-rO-kb4"/>
                             </constraints>
@@ -57,13 +57,13 @@
                     <constraints>
                         <constraint firstItem="H0M-BH-8z2" firstAttribute="centerX" secondItem="yM0-Mv-Ogn" secondAttribute="centerX" id="83h-Dn-hla"/>
                         <constraint firstItem="XgY-Sr-PB9" firstAttribute="centerY" secondItem="H0M-BH-8z2" secondAttribute="centerY" id="ODM-7o-hTA"/>
-                        <constraint firstAttribute="height" constant="70" id="Zgc-3e-koW"/>
+                        <constraint firstAttribute="height" constant="60" id="Zgc-3e-koW"/>
                         <constraint firstItem="H0M-BH-8z2" firstAttribute="centerY" secondItem="yM0-Mv-Ogn" secondAttribute="centerY" id="eBS-8c-nsP"/>
                         <constraint firstItem="XgY-Sr-PB9" firstAttribute="leading" secondItem="lmq-qV-r50" secondAttribute="leading" constant="16" id="ilW-es-Kkb"/>
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="iax-XB-pqm">
-                    <rect key="frame" x="0.0" y="114" width="414" height="782"/>
+                    <rect key="frame" x="0.0" y="104" width="414" height="792"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6gl-aB-sOJ">
                         <size key="itemSize" width="50" height="50"/>
@@ -78,7 +78,7 @@
                     </connections>
                 </collectionView>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1b-I7-7Zj" customClass="EmptyView" customModule="_2_Записок" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="114" width="414" height="748"/>
+                    <rect key="frame" x="0.0" y="104" width="414" height="758"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
             </subviews>

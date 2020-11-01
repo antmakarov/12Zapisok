@@ -53,11 +53,6 @@ internal enum Asset {
       internal static let scooter = ImageAsset(name: "Icons/MenuCirclesColor/Scooter")
       internal static let tonight = ImageAsset(name: "Icons/MenuCirclesColor/Tonight")
     }
-    internal enum NoteBigColor {
-      internal static let progressBig = ImageAsset(name: "Icons/NoteBigColor/progressBig")
-      internal static let successBig = ImageAsset(name: "Icons/NoteBigColor/successBig")
-      internal static let unavailableBig = ImageAsset(name: "Icons/NoteBigColor/unavailableBig")
-    }
     internal enum Onboarding {
       internal static let auth = ImageAsset(name: "Icons/Onboarding/auth")
       internal static let childhood = ImageAsset(name: "Icons/Onboarding/childhood")
@@ -65,17 +60,12 @@ internal enum Asset {
       internal static let guessCity = ImageAsset(name: "Icons/Onboarding/guessCity")
       internal static let requestLocation = ImageAsset(name: "Icons/Onboarding/requestLocation")
     }
-    internal static let onboarding32512 = ImageAsset(name: "Icons/Onboarding_3-2-512")
-    internal static let rectangle = ImageAsset(name: "Icons/Rectangle")
-    internal static let redRec = ImageAsset(name: "Icons/RedRec")
     internal static let appLogo = ImageAsset(name: "Icons/appLogo")
     internal static let appPlaceholder = ImageAsset(name: "Icons/appPlaceholder")
     internal static let check = ImageAsset(name: "Icons/check")
     internal static let chick = ImageAsset(name: "Icons/chick")
     internal static let cityPlaceholder = ImageAsset(name: "Icons/cityPlaceholder")
     internal static let leaderboard = ImageAsset(name: "Icons/leaderboard")
-    internal static let mechetKulSharif = ImageAsset(name: "Icons/mechet-kul-sharif")
-    internal static let nn = ImageAsset(name: "Icons/nn")
     internal static let progress = ImageAsset(name: "Icons/progress")
     internal static let progressIcon = ImageAsset(name: "Icons/progressIcon")
     internal static let question = ImageAsset(name: "Icons/question")

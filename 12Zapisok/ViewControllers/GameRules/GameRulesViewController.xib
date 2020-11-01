@@ -21,13 +21,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4s-3k-S9I">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ZqC-B9-urE">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwu-ob-uCI">
-                            <rect key="frame" x="16" y="21" width="28" height="28"/>
+                            <rect key="frame" x="16" y="16" width="28" height="28"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="fwu-ob-uCI" secondAttribute="height" multiplier="1:1" id="L0c-n7-0RK"/>
                                 <constraint firstAttribute="width" constant="28" id="tEf-5u-WJz"/>
@@ -40,7 +40,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Правила" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRv-HD-G2u">
-                            <rect key="frame" x="125.5" y="9.5" width="124" height="51"/>
+                            <rect key="frame" x="125.5" y="4.5" width="124" height="51"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="51" id="Edb-V4-s13"/>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="WXy-2E-DMh"/>
@@ -54,7 +54,7 @@
                     <constraints>
                         <constraint firstItem="fwu-ob-uCI" firstAttribute="leading" secondItem="l4s-3k-S9I" secondAttribute="leading" constant="16" id="0JD-zB-0Yf"/>
                         <constraint firstItem="BRv-HD-G2u" firstAttribute="centerX" secondItem="ZqC-B9-urE" secondAttribute="centerX" id="0OL-qQ-EKq"/>
-                        <constraint firstAttribute="height" constant="70" id="3dD-R8-ylh"/>
+                        <constraint firstAttribute="height" constant="60" id="3dD-R8-ylh"/>
                         <constraint firstAttribute="bottom" secondItem="ZqC-B9-urE" secondAttribute="bottom" id="Eid-vL-L9X"/>
                         <constraint firstItem="fwu-ob-uCI" firstAttribute="centerY" secondItem="BRv-HD-G2u" secondAttribute="centerY" id="KZi-ud-eGZ"/>
                         <constraint firstAttribute="trailing" secondItem="ZqC-B9-urE" secondAttribute="trailing" id="Nzf-sd-mdE"/>
@@ -64,7 +64,7 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BKc-GZ-94Z">
-                    <rect key="frame" x="16" y="90" width="343" height="577"/>
+                    <rect key="frame" x="16" y="80" width="343" height="587"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Ef6-ar-c6X"/>

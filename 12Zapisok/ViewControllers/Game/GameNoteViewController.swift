@@ -25,7 +25,7 @@ final class GameNoteViewController: BaseViewController {
     @IBOutlet private weak var numberNoteLabel: UILabel!
     @IBOutlet private weak var titleNoteLabel: UILabel!
     @IBOutlet private weak var describLabel: UILabel!
-    @IBOutlet private weak var statusHeaderImage: UIImageView!
+    @IBOutlet private weak var statusHeaderView: UIView!
     
     @IBOutlet private weak var noteImage: UIImageView!
     @IBOutlet private weak var addressStackView: UIStackView!
@@ -75,7 +75,7 @@ final class GameNoteViewController: BaseViewController {
             hintStatusLabel.isHidden = true
             
             noteImage.setupImage(url: viewModel.imgUrl, placeholder: .app)
-            statusHeaderImage.backgroundColor = .AppMainDark
+            statusHeaderView.backgroundColor = .AppMainDark
             
             addressLabel.text = viewModel.address
             timeLabel.text = Constants.openText + viewModel.openTime
@@ -87,7 +87,7 @@ final class GameNoteViewController: BaseViewController {
             confiureButton(button: openNoteButton, hintType: .openSingleNote)
             
             noteImage.image = Asset.Icons.AppIcons.compass.image
-            statusHeaderImage.backgroundColor = .AppOrange
+            statusHeaderView.backgroundColor = .AppOrange
 
             addressLabel.text = Constants.unknownPlace
             timeLabel.text = Constants.asSoonTime
@@ -102,7 +102,7 @@ final class GameNoteViewController: BaseViewController {
             hintStatusLabel.isHidden = true
             
             noteImage.image = Asset.Icons.unavailableIcon.image
-            statusHeaderImage.backgroundColor = .AppGray
+            statusHeaderView.backgroundColor = .AppGray
 
             addressLabel.text = Constants.unknownPlace
             timeLabel.text = Constants.asSoonTime
@@ -112,7 +112,7 @@ final class GameNoteViewController: BaseViewController {
     private func confiureButton(button: UIButton, hintType: HintType) {
         let hintCount = viewModel?.getCountOfHints(type: hintType) ?? 0
         hintButtons[button] = hintType
-        button.setBackground(hintCount > 0 ? Asset.Icons.rectangle.image : nil)
+        button.backgroundColor = hintCount > 0 ? .AppMain : .AppGray
     }
     
     // MARK: Actions

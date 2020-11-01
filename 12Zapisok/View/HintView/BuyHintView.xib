@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,21 +17,21 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="Jup-ps-AgX">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="340"/>
+            <rect key="frame" x="0.0" y="0.0" width="300" height="353"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zuO-HX-hjS">
-                    <rect key="frame" x="0.0" y="32" width="300" height="308"/>
+                    <rect key="frame" x="0.0" y="32" width="300" height="321"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/MenuCirclesColor/Tonight" translatesAutoresizingMaskIntoConstraints="NO" id="7eV-a5-O3U">
-                            <rect key="frame" x="118" y="-32" width="64" height="64"/>
+                            <rect key="frame" x="108" y="-32" width="84" height="84"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="64" id="Btt-aY-ZGD"/>
-                                <constraint firstAttribute="width" constant="64" id="QTx-gp-6Rw"/>
+                                <constraint firstAttribute="height" constant="84" id="Btt-aY-ZGD"/>
+                                <constraint firstAttribute="width" secondItem="7eV-a5-O3U" secondAttribute="height" id="sIc-4Y-N9O"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нет доступных подсказок этого типа" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmy-fp-iey">
-                            <rect key="frame" x="24" y="56" width="252" height="41"/>
+                            <rect key="frame" x="24" y="76" width="252" height="41"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="LSs-J5-cGj"/>
                             </constraints>
@@ -39,15 +40,16 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UzM-zW-7EE">
-                            <rect key="frame" x="16" y="121" width="268" height="170"/>
+                            <rect key="frame" x="16" y="141" width="268" height="170"/>
                             <subviews>
                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqx-EP-Mzi">
                                     <rect key="frame" x="0.0" y="0.0" width="268" height="50"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" name="Colors/appMain"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="MNb-gq-CKq"/>
                                     </constraints>
-                                    <state key="normal" title="Купить" backgroundImage="Icons/Rectangle">
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                    <state key="normal" title="Купить">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <userDefinedRuntimeAttributes>
@@ -61,11 +63,12 @@
                                 </button>
                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hul-bx-R2W">
                                     <rect key="frame" x="0.0" y="60" width="268" height="50"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" name="Colors/appMain"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="orn-GR-td1"/>
                                     </constraints>
-                                    <state key="normal" title="Посмотреть рекламу" backgroundImage="Icons/Rectangle">
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                    <state key="normal" title="Посмотреть рекламу">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <userDefinedRuntimeAttributes>
@@ -79,11 +82,12 @@
                                 </button>
                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcu-Cc-gYW">
                                     <rect key="frame" x="0.0" y="120" width="268" height="50"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" name="Colors/appGray"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="w72-BE-eB6"/>
                                     </constraints>
-                                    <state key="normal" title="Отмена" backgroundImage="Icons/NoteState/CloseState">
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                    <state key="normal" title="Отмена">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <userDefinedRuntimeAttributes>
@@ -96,6 +100,14 @@
                                     </connections>
                                 </button>
                             </subviews>
+                            <constraints>
+                                <constraint firstItem="Hul-bx-R2W" firstAttribute="leading" secondItem="UzM-zW-7EE" secondAttribute="leading" id="GyQ-Id-CnH"/>
+                                <constraint firstAttribute="trailing" secondItem="nqx-EP-Mzi" secondAttribute="trailing" id="gx1-42-9eP"/>
+                                <constraint firstItem="gcu-Cc-gYW" firstAttribute="leading" secondItem="UzM-zW-7EE" secondAttribute="leading" id="iSj-7y-brt"/>
+                                <constraint firstAttribute="trailing" secondItem="gcu-Cc-gYW" secondAttribute="trailing" id="kme-ri-TKg"/>
+                                <constraint firstItem="nqx-EP-Mzi" firstAttribute="leading" secondItem="UzM-zW-7EE" secondAttribute="leading" id="o6t-w0-dhl"/>
+                                <constraint firstAttribute="trailing" secondItem="Hul-bx-R2W" secondAttribute="trailing" id="prb-HV-qHA"/>
+                            </constraints>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -126,13 +138,17 @@
                 <constraint firstItem="zuO-HX-hjS" firstAttribute="top" secondItem="Jup-ps-AgX" secondAttribute="top" constant="32" id="h0c-na-4h8"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="188" y="69"/>
+            <point key="canvasLocation" x="186.95652173913044" y="73.325892857142847"/>
         </view>
     </objects>
     <resources>
         <image name="Icons/MenuCirclesColor/Tonight" width="247" height="247"/>
-        <image name="Icons/NoteState/CloseState" width="375" height="80"/>
-        <image name="Icons/Rectangle" width="368" height="102"/>
+        <namedColor name="Colors/appGray">
+            <color red="0.68199998140335083" green="0.71799999475479126" blue="0.74500000476837158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Colors/appMain">
+            <color red="0.40799999237060547" green="0.38400000333786011" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

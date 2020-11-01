@@ -35,7 +35,7 @@ class OnboardingViewModel {
         }
         
         enum Location {
-            static let title = Localized.onboardingAccessGeoDsc
+            static let title = Localized.onboardingAccessGeo
             static let details = Localized.onboardingAccessGeoDsc
             static let action = Localized.allow
             static let image = Asset.Icons.Onboarding.requestLocation.name

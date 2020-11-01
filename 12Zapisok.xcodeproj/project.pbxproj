@@ -165,6 +165,7 @@
 		77BDB3A323B3E99300820E5B /* GameNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77BDB3A123B3E99300820E5B /* GameNoteViewController.xib */; };
 		77C24FE5252FC14C00E7AB72 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 77C24FE4252FC14C00E7AB72 /* .swiftlint.yml */; };
 		77D682AF2532FE5D0087C982 /* GameLeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D682AE2532FE5D0087C982 /* GameLeader.swift */; };
+		77DE67ED254EF66700C96297 /* Extension+UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DE67EC254EF66500C96297 /* Extension+UIDevice.swift */; };
 		77EDC312252E624E00ABBA05 /* Assets.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDC311252E624E00ABBA05 /* Assets.generated.swift */; };
 		77EDC317252E62A100ABBA05 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 77EDC315252E62A100ABBA05 /* Localizable.strings */; };
 		77EDC31B252E630F00ABBA05 /* Localization.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 77EDC31A252E630F00ABBA05 /* Localization.stencil */; };
@@ -303,6 +304,7 @@
 		77BDB3A123B3E99300820E5B /* GameNoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameNoteViewController.xib; sourceTree = "<group>"; };
 		77C24FE4252FC14C00E7AB72 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		77D682AE2532FE5D0087C982 /* GameLeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLeader.swift; sourceTree = "<group>"; };
+		77DE67EC254EF66500C96297 /* Extension+UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIDevice.swift"; sourceTree = "<group>"; };
 		77EDC311252E624E00ABBA05 /* Assets.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.generated.swift; sourceTree = "<group>"; };
 		77EDC316252E62A100ABBA05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		77EDC31A252E630F00ABBA05 /* Localization.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Localization.stencil; sourceTree = "<group>"; };
@@ -472,6 +474,7 @@
 				77A18F002433756F0027E456 /* Extensions+UIViewController.swift */,
 				77F931832439CF61007BC979 /* Extensions+UIButton.swift */,
 				77F93185243B13E9007BC979 /* Extensions+UIColor.swift */,
+				77DE67EC254EF66500C96297 /* Extension+UIDevice.swift */,
 				77B02849251B16FB00BC71F8 /* AppTarget.swift */,
 			);
 			path = Extensions;
@@ -1407,6 +1410,7 @@
 				7741375623B9EC4100AD8A71 /* HomeViewModel.swift in Sources */,
 				8D32F36B22D71E5A00ABC228 /* GameViewController.swift in Sources */,
 				7706E0A024594EBE0021DA1E /* Observable.swift in Sources */,
+				77DE67ED254EF66700C96297 /* Extension+UIDevice.swift in Sources */,
 				77688CD923BA20AE00697408 /* CityHeaderReusableView.swift in Sources */,
 				7790B484241FA66B0046EFA5 /* SettingsViewController.swift in Sources */,
 				77F80DC62421FF97005ED8C0 /* CityInfoViewController.swift in Sources */,
