@@ -58,11 +58,6 @@ internal enum Asset {
       internal static let successBig = ImageAsset(name: "Icons/NoteBigColor/successBig")
       internal static let unavailableBig = ImageAsset(name: "Icons/NoteBigColor/unavailableBig")
     }
-    internal enum NoteState {
-      internal static let closeState = ImageAsset(name: "Icons/NoteState/CloseState")
-      internal static let progressState = ImageAsset(name: "Icons/NoteState/ProgressState")
-      internal static let successState = ImageAsset(name: "Icons/NoteState/SuccessState")
-    }
     internal enum Onboarding {
       internal static let auth = ImageAsset(name: "Icons/Onboarding/auth")
       internal static let childhood = ImageAsset(name: "Icons/Onboarding/childhood")
@@ -73,19 +68,17 @@ internal enum Asset {
     internal static let onboarding32512 = ImageAsset(name: "Icons/Onboarding_3-2-512")
     internal static let rectangle = ImageAsset(name: "Icons/Rectangle")
     internal static let redRec = ImageAsset(name: "Icons/RedRec")
-    internal enum SmallNote {
-      internal static let graySmallNote = ImageAsset(name: "Icons/SmallNote/graySmallNote")
-      internal static let greenSmallNote = ImageAsset(name: "Icons/SmallNote/greenSmallNote")
-      internal static let orangeSmallNote = ImageAsset(name: "Icons/SmallNote/orangeSmallNote")
-    }
     internal static let appLogo = ImageAsset(name: "Icons/appLogo")
     internal static let appPlaceholder = ImageAsset(name: "Icons/appPlaceholder")
+    internal static let check = ImageAsset(name: "Icons/check")
     internal static let chick = ImageAsset(name: "Icons/chick")
     internal static let cityPlaceholder = ImageAsset(name: "Icons/cityPlaceholder")
     internal static let leaderboard = ImageAsset(name: "Icons/leaderboard")
     internal static let mechetKulSharif = ImageAsset(name: "Icons/mechet-kul-sharif")
     internal static let nn = ImageAsset(name: "Icons/nn")
+    internal static let progress = ImageAsset(name: "Icons/progress")
     internal static let progressIcon = ImageAsset(name: "Icons/progressIcon")
+    internal static let question = ImageAsset(name: "Icons/question")
     internal static let stop = ImageAsset(name: "Icons/stop")
     internal static let unavailableIcon = ImageAsset(name: "Icons/unavailableIcon")
   }
@@ -97,8 +90,20 @@ internal enum Asset {
 // MARK: Color Assets Extension
 
 public extension UIColor {
-  @nonobjc class var AppColor: UIColor {
-    return ColorAsset(name: "Colors/AppColor").color
+  @nonobjc class var AppGray: UIColor {
+    return ColorAsset(name: "Colors/appGray").color
+  }
+  @nonobjc class var AppMain: UIColor {
+    return ColorAsset(name: "Colors/appMain").color
+  }
+  @nonobjc class var AppMainDark: UIColor {
+    return ColorAsset(name: "Colors/appMainDark").color
+  }
+  @nonobjc class var AppMainLight: UIColor {
+    return ColorAsset(name: "Colors/appMainLight").color
+  }
+  @nonobjc class var AppOrange: UIColor {
+    return ColorAsset(name: "Colors/appOrange").color
   }
 }
 

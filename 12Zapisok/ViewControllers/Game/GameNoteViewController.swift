@@ -14,8 +14,12 @@ final class GameNoteViewController: BaseViewController {
         static let openText = Localized.open
         static let unknownPlace = Localized.locationUnknown
         static let asSoonTime = Localized.findAsSoon
+        
+        static let shadowOpacity: Float = 0.1
+        static let shadowOffset = CGSize(width: 0, height: 1)
+        static let shadowRadius: CGFloat = 3
+        static let shadowColor: UIColor = .black
     }
-    
     // MARK: Outlets
     
     @IBOutlet private weak var numberNoteLabel: UILabel!
@@ -71,7 +75,7 @@ final class GameNoteViewController: BaseViewController {
             hintStatusLabel.isHidden = true
             
             noteImage.setupImage(url: viewModel.imgUrl, placeholder: .app)
-            statusHeaderImage.image = Asset.Icons.NoteState.successState.image
+            statusHeaderImage.backgroundColor = .AppMainDark
             
             addressLabel.text = viewModel.address
             timeLabel.text = Constants.openText + viewModel.openTime
@@ -83,8 +87,8 @@ final class GameNoteViewController: BaseViewController {
             confiureButton(button: openNoteButton, hintType: .openSingleNote)
             
             noteImage.image = Asset.Icons.AppIcons.compass.image
-            statusHeaderImage.image = Asset.Icons.NoteState.progressState.image
-            
+            statusHeaderImage.backgroundColor = .AppOrange
+
             addressLabel.text = Constants.unknownPlace
             timeLabel.text = Constants.asSoonTime
             hintStatusLabel.text = viewModel.getDistanceStatus() // "Пока все еще холодно"
@@ -98,8 +102,8 @@ final class GameNoteViewController: BaseViewController {
             hintStatusLabel.isHidden = true
             
             noteImage.image = Asset.Icons.unavailableIcon.image
-            statusHeaderImage.image = Asset.Icons.NoteState.closeState.image
-            
+            statusHeaderImage.backgroundColor = .AppGray
+
             addressLabel.text = Constants.unknownPlace
             timeLabel.text = Constants.asSoonTime
         }

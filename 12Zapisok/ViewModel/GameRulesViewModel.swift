@@ -20,7 +20,7 @@ class GameRulesViewModel {
     public var closeButtonPressed: (() -> Void)?
     
     let rules = [GameRule(title: Localized.rulesMain, description: Localized.rulesMainDsc, color: .appColor),
-                 GameRule(title: Localized.rulesOne, description: Localized.rulesOneDsc, color: .orangeColor),
+                 GameRule(title: Localized.rulesOne, description: Localized.rulesOneDsc, color: .AppOrange),
                  GameRule(title: Localized.rulesMore, description: Localized.rulesMoreDsc, color: .greenColor),
                  GameRule(title: Localized.rulesLast, description: Localized.rulesLastDsc, color: .appColor)
     ]

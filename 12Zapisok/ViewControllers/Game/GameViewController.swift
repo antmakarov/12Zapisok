@@ -28,7 +28,12 @@ final class GameViewController: BaseViewController {
     var viewModel: GameViewModeling? {
         didSet {
             viewModel?.setUpdateHandler { [weak self] in
+                self?.gameProgressView.fillStack(opensCount: self?.viewModel?.numberOfOpensNotes() ?? 0)
                 self?.notesCollectionView.reloadData()
+            }
+            
+            viewModel?.isLoading.addObserver { [weak self] in
+                self?.toggleLoader($0)
             }
         }
     }
@@ -38,13 +43,14 @@ final class GameViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        viewModel?.loadNotes()
         notesCollectionView.collectionViewLayout = GridCollectionViewFlowLayout(display: .grid(columns: 2))
         
         notesCollectionView.register(reusableViewType: GameFooterView.self, ofKind: UICollectionView.elementKindSectionFooter)
         notesCollectionView.register(cellType: NoteCollectionCell.self) 
         
         cityNameLabel.text = viewModel?.cityName()
-        gameProgressView.fillStack(opensCount: viewModel?.numberOfOpensNotes() ?? 0)
+       // gameProgressView.fillStack(opensCount: viewModel?.numberOfOpensNotes() ?? 0)
         backgroundWhiteView.roundCorners(corners: [.topLeft, .topRight], radius: Constants.cornerRadius)
     }
     

@@ -11,11 +11,9 @@ import UIKit
 final class NoteCollectionCell: BaseCardCell {
 
     @IBOutlet private weak var headerLabel: UILabel!
-    @IBOutlet private weak var backImageView: UIImageView!
     @IBOutlet private weak var backView: UIView!
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var statusLabel: UILabel!
-    @IBOutlet private weak var openTimeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,33 +23,28 @@ final class NoteCollectionCell: BaseCardCell {
     func configure(viewModel: NoteCollectionCellViewModeling) {
         
         headerLabel.text = Localized.noteNumber(String(viewModel.id))
+        imageView.addBorder(width: 1, color: .white)
         
         switch viewModel.state {
         case .open:
             imageView.rounded(cornerRadius: 8)
             imageView.setupImage(url: viewModel.imgUrl, placeholder: .note)
-            backImageView.image = Asset.Icons.NoteBigColor.successBig.image
+            backView.backgroundColor = .AppMainDark
             statusLabel.text = viewModel.title
-            openTimeLabel.text = viewModel.openTime
             
             statusLabel.textColor = .white
-            openTimeLabel.textColor = .white
             
         case .progress:
             imageView.rounded(cornerRadius: 8)
             imageView.image = Asset.Icons.progressIcon.image
-            backImageView.image = Asset.Icons.NoteBigColor.progressBig.image
+            backView.backgroundColor = .AppOrange
             statusLabel.text = viewModel.title
-            openTimeLabel.text = Localized.inCurrentSearch
-            
             statusLabel.textColor = .white
-            openTimeLabel.textColor = .white
 
         case .close:
             imageView.rounded(cornerRadius: 8)
             imageView.image = Asset.Icons.unavailableIcon.image
-            backImageView.image = Asset.Icons.NoteBigColor.unavailableBig.image
-            openTimeLabel.isHidden = true
+            backView.backgroundColor = .AppGray
             statusLabel.text = Localized.notAvailable
             statusLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
             headerLabel.textColor = UIColor(hex: 0x252626)

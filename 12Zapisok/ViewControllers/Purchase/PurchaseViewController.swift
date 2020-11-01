@@ -29,7 +29,7 @@ final class PurchaseViewController: UIViewController {
     
     private func configure(_ view: UIView, selector: Selector) {
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: selector))
-        view.addShadow(color: UIColor.black.withAlphaComponent(0.35))
+        view.addShadow(color: UIColor.black.withAlphaComponent(0.25))
     }
     
     // MARK: Actions

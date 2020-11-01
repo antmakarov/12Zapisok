@@ -16,6 +16,7 @@ protocol GameViewModeling {
     func loadNotes()
 
     var routeTo: ((GameRouter) -> Void)? { get set }
+    var isLoading: Observable<Bool> { get }
 }
 
 final class GameViewModel {
@@ -32,6 +33,7 @@ final class GameViewModel {
     private var dataUpdater = Observable(0)
 
     public var routeTo: ((GameRouter) -> Void)?
+    public var isLoading = Observable<Bool>(false)
 
     convenience init(cityName: String?) {
         self.init(cityName: cityName, preferencesManager: PreferencesManager.shared, databaseStorage: StorageManager.shared, networkManager: NetworkManager.shared)
@@ -51,9 +53,7 @@ final class GameViewModel {
             } else {
                 self?.loadNotes()
             }
-        }
-        
-        loadNotes()
+        }        
     }
 }
 
@@ -64,12 +64,15 @@ extension GameViewModel: GameViewModeling {
             return
         }
     
+        isLoading.value = true
         if let gameNotes = databaseStorage.getObjects(Note.self) {
             self.gameNotes = gameNotes
             dataUpdateHandler?()
         }
         
         networkManager.getNoteList(parameters: ["town_id": cityID]) { [weak self] result in
+            self?.isLoading.value = false
+            
             switch result {
             case .success(let notes):
                 self?.gameNotes = notes
