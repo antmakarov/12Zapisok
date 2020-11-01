@@ -36,10 +36,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0IX-s2-kF8">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fmk-h2-sR2">
-                            <rect key="frame" x="16" y="18.5" width="28" height="28"/>
+                            <rect key="frame" x="16" y="18" width="28" height="28"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="Fmk-h2-sR2" secondAttribute="height" multiplier="1:1" id="ZKU-sa-1K9"/>
                                 <constraint firstAttribute="width" constant="28" id="oZn-DG-cBL"/>
@@ -52,7 +52,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Записка #4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaO-IN-9rE">
-                            <rect key="frame" x="107" y="7" width="161.5" height="51"/>
+                            <rect key="frame" x="107" y="6.5" width="161.5" height="51"/>
                             <constraints>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="G5b-Fv-P01"/>
                                 <constraint firstAttribute="height" constant="51" id="hKm-CH-CGh"/>
@@ -69,11 +69,11 @@
                         <constraint firstItem="Fmk-h2-sR2" firstAttribute="leading" secondItem="0IX-s2-kF8" secondAttribute="leading" constant="16" id="dNl-fx-zFs"/>
                         <constraint firstItem="MaO-IN-9rE" firstAttribute="centerX" secondItem="0IX-s2-kF8" secondAttribute="centerX" id="pB3-u8-LqI"/>
                         <constraint firstItem="Fmk-h2-sR2" firstAttribute="centerY" secondItem="MaO-IN-9rE" secondAttribute="centerY" id="qf3-h6-58z"/>
-                        <constraint firstAttribute="height" constant="65" id="t1x-4m-bUm"/>
+                        <constraint firstAttribute="height" constant="64" id="t1x-4m-bUm"/>
                     </constraints>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/AppIcons/compass" translatesAutoresizingMaskIntoConstraints="NO" id="z86-QI-tD5">
-                    <rect key="frame" x="37.5" y="89" width="300" height="200"/>
+                    <rect key="frame" x="37.5" y="88" width="300" height="200"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                             <integer key="value" value="12"/>
@@ -81,7 +81,7 @@
                     </userDefinedRuntimeAttributes>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzj-Cy-Zbi">
-                    <rect key="frame" x="16" y="313" width="343" height="34"/>
+                    <rect key="frame" x="16" y="312" width="343" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="hGp-kZ-rE7"/>
                     </constraints>
@@ -123,7 +123,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jf2-yp-feD">
-                    <rect key="frame" x="37.5" y="359" width="300" height="60"/>
+                    <rect key="frame" x="37.5" y="358" width="300" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="sPW-dP-e9w"/>
                     </constraints>

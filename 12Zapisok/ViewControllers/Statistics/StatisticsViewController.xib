@@ -22,13 +22,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="32l-nt-N5T">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appBackground" translatesAutoresizingMaskIntoConstraints="NO" id="4G7-oQ-tQY">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fro-l4-VXb">
-                            <rect key="frame" x="16" y="21" width="28" height="28"/>
+                            <rect key="frame" x="16" y="18" width="28" height="28"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="28" id="PIf-yl-Dbg"/>
                                 <constraint firstAttribute="width" secondItem="fro-l4-VXb" secondAttribute="height" multiplier="1:1" id="Xxa-Mk-Ex3"/>
@@ -41,7 +41,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Статистика" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bs1-3Z-SPH">
-                            <rect key="frame" x="126" y="9.5" width="162" height="51"/>
+                            <rect key="frame" x="126" y="6.5" width="162" height="51"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="51" id="XWB-FF-xM2"/>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="u0U-H8-QKT"/>
@@ -54,7 +54,7 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="fro-l4-VXb" firstAttribute="leading" secondItem="32l-nt-N5T" secondAttribute="leading" constant="16" id="5I5-7h-0Pj"/>
-                        <constraint firstAttribute="height" constant="70" id="BuD-7i-Xs9"/>
+                        <constraint firstAttribute="height" constant="64" id="BuD-7i-Xs9"/>
                         <constraint firstItem="fro-l4-VXb" firstAttribute="centerY" secondItem="Bs1-3Z-SPH" secondAttribute="centerY" id="Ifn-Jc-L1g"/>
                         <constraint firstItem="4G7-oQ-tQY" firstAttribute="leading" secondItem="32l-nt-N5T" secondAttribute="leading" id="Wtq-EJ-Qg2"/>
                         <constraint firstAttribute="trailing" secondItem="4G7-oQ-tQY" secondAttribute="trailing" id="XeJ-15-TVx"/>
@@ -65,7 +65,7 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1HE-es-qHt">
-                    <rect key="frame" x="0.0" y="70" width="414" height="792"/>
+                    <rect key="frame" x="0.0" y="64" width="414" height="798"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="cKR-Oz-CyZ"/>
@@ -73,7 +73,7 @@
                     </connections>
                 </tableView>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rFb-LJ-6lq" customClass="EmptyView" customModule="_2_Записок" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="70" width="414" height="792"/>
+                    <rect key="frame" x="0.0" y="64" width="414" height="798"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
             </subviews>

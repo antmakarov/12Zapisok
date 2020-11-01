@@ -26,13 +26,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELi-NW-KEM">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ipc-Wa-Phm">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avh-Gu-UrV">
-                            <rect key="frame" x="16" y="16" width="28" height="28"/>
+                            <rect key="frame" x="16" y="18" width="28" height="28"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="avh-Gu-UrV" secondAttribute="height" multiplier="1:1" id="3gB-lp-SQM"/>
                                 <constraint firstAttribute="width" constant="28" id="lgK-Vf-isP"/>
@@ -45,7 +45,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Покупки" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8A-DT-v2w">
-                            <rect key="frame" x="98" y="4.5" width="124" height="51"/>
+                            <rect key="frame" x="98" y="6.5" width="124" height="51"/>
                             <constraints>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="B2l-ax-jDe"/>
                                 <constraint firstAttribute="height" constant="51" id="Hcq-FO-tHI"/>
@@ -63,13 +63,13 @@
                         <constraint firstItem="m8A-DT-v2w" firstAttribute="centerX" secondItem="ipc-Wa-Phm" secondAttribute="centerX" id="VWn-D6-2aQ"/>
                         <constraint firstItem="ipc-Wa-Phm" firstAttribute="top" secondItem="ELi-NW-KEM" secondAttribute="top" id="W5J-d3-F9v"/>
                         <constraint firstAttribute="bottom" secondItem="ipc-Wa-Phm" secondAttribute="bottom" id="d8d-Wo-yM8"/>
-                        <constraint firstAttribute="height" constant="60" id="dW5-PY-G8Z"/>
+                        <constraint firstAttribute="height" constant="64" id="dW5-PY-G8Z"/>
                         <constraint firstItem="ipc-Wa-Phm" firstAttribute="leading" secondItem="ELi-NW-KEM" secondAttribute="leading" id="gup-ct-Qpf"/>
                         <constraint firstItem="m8A-DT-v2w" firstAttribute="centerY" secondItem="ipc-Wa-Phm" secondAttribute="centerY" id="rzD-L0-rk5"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Yh-gB-2PN">
-                    <rect key="frame" x="16" y="118" width="288" height="64"/>
+                    <rect key="frame" x="16" y="122" width="288" height="64"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 ₽" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIq-Iq-zjF">
                             <rect key="frame" x="0.0" y="0.0" width="136" height="64"/>
@@ -102,7 +102,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XDv-3X-MHZ">
-                    <rect key="frame" x="16" y="353" width="288" height="47"/>
+                    <rect key="frame" x="16" y="357" width="288" height="47"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Показать точку на карте" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ig3-Rj-m7c">
                             <rect key="frame" x="136" y="8" width="144" height="31"/>
@@ -135,7 +135,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Z8-O9-jNk">
-                    <rect key="frame" x="16" y="250" width="133" height="85"/>
+                    <rect key="frame" x="16" y="254" width="133" height="85"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="z5X-kb-i57">
                             <rect key="frame" x="8" y="16" width="117" height="63"/>
@@ -169,7 +169,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4cj-pu-a8I">
-                    <rect key="frame" x="171" y="250" width="133" height="85"/>
+                    <rect key="frame" x="171" y="254" width="133" height="85"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ty9-CM-NCq">
                             <rect key="frame" x="8" y="15" width="117" height="64"/>
@@ -203,7 +203,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54o-rw-aRW">
-                    <rect key="frame" x="16" y="468" width="288" height="63.5"/>
+                    <rect key="frame" x="16" y="472" width="288" height="63.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="250 ₽" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMN-K5-9cd">
                             <rect key="frame" x="0.0" y="0.0" width="136" height="63.5"/>
@@ -236,7 +236,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wV-CY-qku">
-                    <rect key="frame" x="16" y="76" width="288" height="30"/>
+                    <rect key="frame" x="16" y="80" width="288" height="30"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пропуск заданий" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3U-aK-fKy">
                             <rect key="frame" x="0.0" y="0.0" width="288" height="24"/>
@@ -268,7 +268,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hjs-4v-KcW">
-                    <rect key="frame" x="16" y="208" width="288" height="30"/>
+                    <rect key="frame" x="16" y="212" width="288" height="30"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Как добраться?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyd-Za-EGe">
                             <rect key="frame" x="0.0" y="0.0" width="288" height="24"/>
@@ -300,7 +300,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HfU-ND-LEH">
-                    <rect key="frame" x="16" y="426" width="288" height="30"/>
+                    <rect key="frame" x="16" y="430" width="288" height="30"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ввод координат или адреса" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="fAM-eJ-JxT">
                             <rect key="frame" x="0.0" y="0.0" width="288" height="24"/>

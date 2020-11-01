@@ -28,13 +28,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ehq-Jp-YhL">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appBackground" translatesAutoresizingMaskIntoConstraints="NO" id="EsH-U8-fg3">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lk0-od-93a">
-                            <rect key="frame" x="16" y="17" width="26" height="26"/>
+                            <rect key="frame" x="16" y="19" width="26" height="26"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="Lk0-od-93a" secondAttribute="height" multiplier="1:1" id="6E5-7j-irF"/>
                                 <constraint firstAttribute="width" constant="26" id="K4b-Nx-GRV"/>
@@ -47,7 +47,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="О Городе" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Z9i-oB-Cwj">
-                            <rect key="frame" x="58" y="4.5" width="298" height="51"/>
+                            <rect key="frame" x="58" y="6.5" width="298" height="51"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="51" id="jMk-kY-zjB"/>
                             </constraints>
@@ -56,7 +56,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppy-kF-wfz">
-                            <rect key="frame" x="372" y="17" width="26" height="26"/>
+                            <rect key="frame" x="372" y="19" width="26" height="26"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="Ppy-kF-wfz" secondAttribute="height" multiplier="1:1" id="Cns-PE-ZsX"/>
                                 <constraint firstAttribute="width" constant="26" id="HXP-kY-Etn"/>
@@ -79,13 +79,13 @@
                         <constraint firstItem="Lk0-od-93a" firstAttribute="centerY" secondItem="Z9i-oB-Cwj" secondAttribute="centerY" id="8b0-IX-8Fh"/>
                         <constraint firstAttribute="bottom" secondItem="EsH-U8-fg3" secondAttribute="bottom" id="9lM-bV-wej"/>
                         <constraint firstAttribute="trailing" secondItem="Ppy-kF-wfz" secondAttribute="trailing" constant="16" id="Bb0-Ws-jD2"/>
-                        <constraint firstAttribute="height" constant="60" id="M7U-9n-7MC"/>
+                        <constraint firstAttribute="height" constant="64" id="M7U-9n-7MC"/>
                         <constraint firstItem="Ppy-kF-wfz" firstAttribute="centerY" secondItem="Z9i-oB-Cwj" secondAttribute="centerY" id="YIp-iT-6qj"/>
                         <constraint firstItem="Lk0-od-93a" firstAttribute="leading" secondItem="ehq-Jp-YhL" secondAttribute="leading" constant="16" id="uT5-fV-0zP"/>
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="cRe-r9-nrG">
-                    <rect key="frame" x="0.0" y="76" width="414" height="269"/>
+                    <rect key="frame" x="0.0" y="80" width="414" height="269"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Q4L-AV-9eL">
                         <size key="itemSize" width="50" height="50"/>
@@ -99,7 +99,7 @@
                     </connections>
                 </collectionView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="STO-qg-BUx">
-                    <rect key="frame" x="16" y="361" width="382" height="80.5"/>
+                    <rect key="frame" x="16" y="365" width="382" height="80.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xGV-Sq-ouR">
                             <rect key="frame" x="0.0" y="0.0" width="127.5" height="80.5"/>
@@ -181,7 +181,7 @@
                     </constraints>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zxF-8r-JPA">
-                    <rect key="frame" x="0.0" y="457.5" width="414" height="438.5"/>
+                    <rect key="frame" x="0.0" y="461.5" width="414" height="434.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUc-Ol-ekF">
                             <rect key="frame" x="16" y="12" width="103" height="26.5"/>
@@ -190,7 +190,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CrQ-av-iaP">
-                            <rect key="frame" x="16" y="42.5" width="382" height="380"/>
+                            <rect key="frame" x="16" y="42.5" width="382" height="376"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <attributedString key="attributedText">
                                 <fragment>

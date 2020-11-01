@@ -22,13 +22,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m1z-Qc-BFN">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appBackground" translatesAutoresizingMaskIntoConstraints="NO" id="wpt-U8-zqK">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXb-DA-4GD">
-                            <rect key="frame" x="16" y="21" width="28" height="28"/>
+                            <rect key="frame" x="16" y="18" width="28" height="28"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="pXb-DA-4GD" secondAttribute="height" id="PgY-PV-7Bg"/>
                                 <constraint firstAttribute="width" constant="28" id="tBu-kL-mia"/>
@@ -41,7 +41,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Лидеры" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oC8-ZH-QFp">
-                            <rect key="frame" x="125.5" y="9.5" width="124" height="51"/>
+                            <rect key="frame" x="125.5" y="6.5" width="124" height="51"/>
                             <constraints>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="ABb-w7-lUg"/>
                                 <constraint firstAttribute="height" constant="51" id="PS4-2e-zK5"/>
@@ -58,14 +58,14 @@
                         <constraint firstAttribute="trailing" secondItem="wpt-U8-zqK" secondAttribute="trailing" id="T9C-bP-HOo"/>
                         <constraint firstItem="wpt-U8-zqK" firstAttribute="top" secondItem="m1z-Qc-BFN" secondAttribute="top" id="UOV-Al-OfF"/>
                         <constraint firstItem="oC8-ZH-QFp" firstAttribute="centerY" secondItem="wpt-U8-zqK" secondAttribute="centerY" id="Vxd-hD-bqK"/>
-                        <constraint firstAttribute="height" constant="70" id="dhB-WA-Dva"/>
+                        <constraint firstAttribute="height" constant="64" id="dhB-WA-Dva"/>
                         <constraint firstItem="pXb-DA-4GD" firstAttribute="centerY" secondItem="oC8-ZH-QFp" secondAttribute="centerY" id="htm-XP-Nl2"/>
                         <constraint firstItem="pXb-DA-4GD" firstAttribute="leading" secondItem="m1z-Qc-BFN" secondAttribute="leading" constant="16" id="nyf-2C-VbX"/>
                         <constraint firstItem="oC8-ZH-QFp" firstAttribute="centerX" secondItem="wpt-U8-zqK" secondAttribute="centerX" id="sqP-y0-BqK"/>
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="793-MN-q73">
-                    <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="PQs-DK-WHW"/>
@@ -73,7 +73,7 @@
                     </connections>
                 </tableView>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AQ6-mq-GVM" customClass="EmptyView" customModule="_2_Записок" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
             </subviews>

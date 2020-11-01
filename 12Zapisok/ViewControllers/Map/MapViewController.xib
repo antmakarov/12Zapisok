@@ -23,13 +23,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Zza-dJ-WcG">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="104"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQQ-Bt-5BB">
-                    <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="64"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ln4-wX-KVz">
-                            <rect key="frame" x="16" y="16" width="28" height="28"/>
+                            <rect key="frame" x="16" y="18" width="28" height="28"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="Ln4-wX-KVz" secondAttribute="height" id="Ir6-15-iqV"/>
                                 <constraint firstAttribute="width" constant="28" id="JWp-ym-8De"/>
@@ -41,7 +41,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Карта" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32y-SY-t3Q">
-                            <rect key="frame" x="165" y="5" width="84.5" height="50"/>
+                            <rect key="frame" x="165" y="7" width="84.5" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="fDQ-Q4-FeJ"/>
                             </constraints>
@@ -50,7 +50,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wl-I5-OsW">
-                            <rect key="frame" x="364" y="13" width="34" height="34"/>
+                            <rect key="frame" x="364" y="15" width="34" height="34"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="2wl-I5-OsW" secondAttribute="height" id="BAW-Sp-X8e"/>
                                 <constraint firstAttribute="width" constant="34" id="voX-sw-raR"/>
@@ -68,13 +68,13 @@
                         <constraint firstItem="32y-SY-t3Q" firstAttribute="centerY" secondItem="dQQ-Bt-5BB" secondAttribute="centerY" id="EwT-OG-oaN"/>
                         <constraint firstAttribute="trailing" secondItem="2wl-I5-OsW" secondAttribute="trailing" constant="16" id="YSj-nG-TBM"/>
                         <constraint firstItem="2wl-I5-OsW" firstAttribute="centerY" secondItem="32y-SY-t3Q" secondAttribute="centerY" id="eoA-eY-QX6"/>
-                        <constraint firstAttribute="height" constant="60" id="fdT-F3-GyQ"/>
+                        <constraint firstAttribute="height" constant="64" id="fdT-F3-GyQ"/>
                         <constraint firstItem="Ln4-wX-KVz" firstAttribute="leading" secondItem="dQQ-Bt-5BB" secondAttribute="leading" constant="16" id="h7N-yG-2ak"/>
                         <constraint firstItem="Ln4-wX-KVz" firstAttribute="centerY" secondItem="32y-SY-t3Q" secondAttribute="centerY" id="zO6-Pi-Kmp"/>
                     </constraints>
                 </view>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lH0-Z4-Dye">
-                    <rect key="frame" x="0.0" y="104" width="414" height="792"/>
+                    <rect key="frame" x="0.0" y="108" width="414" height="788"/>
                 </mapView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CeI-tl-PNv">
                     <rect key="frame" x="0.0" y="601" width="414" height="261"/>

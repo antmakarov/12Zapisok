@@ -20,13 +20,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbM-sl-u8h">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appBackground" translatesAutoresizingMaskIntoConstraints="NO" id="iEc-CZ-2WN">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVi-qX-5vM">
-                            <rect key="frame" x="16" y="21" width="28" height="28"/>
+                            <rect key="frame" x="16" y="18" width="28" height="28"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="28" id="SSG-xS-Oh5"/>
                                 <constraint firstAttribute="width" secondItem="dVi-qX-5vM" secondAttribute="height" multiplier="1:1" id="lY5-ug-UZ3"/>
@@ -39,7 +39,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Настройки" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCh-4t-usZ">
-                            <rect key="frame" x="111" y="9.5" width="153.5" height="51"/>
+                            <rect key="frame" x="111" y="6.5" width="153.5" height="51"/>
                             <constraints>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="iQ7-xU-ISe"/>
                                 <constraint firstAttribute="height" constant="51" id="t33-ms-1s5"/>
@@ -51,7 +51,7 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="70" id="0F1-8O-kH3"/>
+                        <constraint firstAttribute="height" constant="64" id="0F1-8O-kH3"/>
                         <constraint firstItem="RCh-4t-usZ" firstAttribute="centerX" secondItem="iEc-CZ-2WN" secondAttribute="centerX" id="Cxf-KM-SMo"/>
                         <constraint firstAttribute="trailing" secondItem="iEc-CZ-2WN" secondAttribute="trailing" id="Nzd-Fh-jJH"/>
                         <constraint firstItem="dVi-qX-5vM" firstAttribute="leading" secondItem="lbM-sl-u8h" secondAttribute="leading" constant="16" id="V40-6x-Jyb"/>
