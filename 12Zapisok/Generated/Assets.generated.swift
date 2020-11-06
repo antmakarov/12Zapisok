@@ -83,6 +83,9 @@ public extension UIColor {
   @nonobjc class var AppGray: UIColor {
     return ColorAsset(name: "Colors/appGray").color
   }
+  @nonobjc class var AppGrayLight: UIColor {
+    return ColorAsset(name: "Colors/appGrayLight").color
+  }
   @nonobjc class var AppMain: UIColor {
     return ColorAsset(name: "Colors/appMain").color
   }

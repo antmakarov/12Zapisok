@@ -85,6 +85,10 @@ final class GameProgresView: UIView {
     
     public func fillStack(opensCount: Int) {
     
+        notesStack.subviews.forEach {
+            $0.removeFromSuperview()
+        }
+        
         for index in 0..<12 {
             let stateView = ProgressDotView()
             stateView.dotView.backgroundColor = .AppMainLight

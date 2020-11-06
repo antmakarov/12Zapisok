@@ -79,7 +79,7 @@
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="1Pd-9y-x6P"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" name="Colors/appGrayLight"/>
             <constraints>
                 <constraint firstItem="1Pd-9y-x6P" firstAttribute="bottom" secondItem="xbU-wC-VCt" secondAttribute="bottom" constant="24" id="6Sm-IF-TlM"/>
                 <constraint firstItem="1Pd-9y-x6P" firstAttribute="trailing" secondItem="yx3-9C-sUZ" secondAttribute="trailing" constant="32" id="8gc-Qu-sDH"/>
@@ -99,6 +99,9 @@
     </objects>
     <resources>
         <image name="Icons/stop" width="256" height="256"/>
+        <namedColor name="Colors/appGrayLight">
+            <color red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Colors/appMain">
             <color red="0.40799999237060547" green="0.38400000333786011" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

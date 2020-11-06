@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,10 +26,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BAD-u5-2Wo">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="161"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="167"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appBackground" translatesAutoresizingMaskIntoConstraints="NO" id="qC6-9R-CuI">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="161"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="167"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" id="cos-fn-zvU"/>
                             </constraints>
@@ -78,7 +79,7 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="qC6-9R-CuI" firstAttribute="leading" secondItem="BAD-u5-2Wo" secondAttribute="leading" id="1IM-y0-la7"/>
-                        <constraint firstAttribute="bottom" secondItem="n0Q-AC-kWC" secondAttribute="bottom" constant="26" id="3tl-5A-Ho2"/>
+                        <constraint firstAttribute="bottom" secondItem="n0Q-AC-kWC" secondAttribute="bottom" constant="32" id="3tl-5A-Ho2"/>
                         <constraint firstItem="BPd-K3-Pag" firstAttribute="top" secondItem="BAD-u5-2Wo" secondAttribute="top" constant="52" id="B7g-ea-Uh1"/>
                         <constraint firstItem="7H7-qZ-hhY" firstAttribute="leading" secondItem="BPd-K3-Pag" secondAttribute="trailing" constant="16" id="Hl4-6W-P6p"/>
                         <constraint firstItem="lDW-0G-B7z" firstAttribute="leading" secondItem="BAD-u5-2Wo" secondAttribute="leading" constant="16" id="NLR-eb-S20"/>
@@ -96,12 +97,12 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ird-bM-7ui">
-                    <rect key="frame" x="0.0" y="151" width="414" height="745"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <rect key="frame" x="0.0" y="152" width="414" height="744"/>
+                    <color key="backgroundColor" name="Colors/appGrayLight"/>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fCy-ki-AYH">
-                    <rect key="frame" x="0.0" y="159" width="414" height="691"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <rect key="frame" x="0.0" y="160" width="414" height="690"/>
+                    <color key="backgroundColor" name="Colors/appGrayLight"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YGf-9y-wMR">
                         <size key="itemSize" width="178" height="175"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -138,7 +139,7 @@
                 <constraint firstAttribute="trailing" secondItem="BAD-u5-2Wo" secondAttribute="trailing" id="erH-va-Xu4"/>
                 <constraint firstAttribute="bottom" secondItem="Ird-bM-7ui" secondAttribute="bottom" id="hWs-zB-ZrA"/>
                 <constraint firstItem="fCy-ki-AYH" firstAttribute="leading" secondItem="y6W-jp-dU3" secondAttribute="leading" id="pWH-ah-dX5"/>
-                <constraint firstItem="Ird-bM-7ui" firstAttribute="top" secondItem="BAD-u5-2Wo" secondAttribute="bottom" constant="-10" id="yfZ-DO-dNP"/>
+                <constraint firstItem="Ird-bM-7ui" firstAttribute="top" secondItem="BAD-u5-2Wo" secondAttribute="bottom" constant="-15" id="yfZ-DO-dNP"/>
             </constraints>
             <point key="canvasLocation" x="784.05797101449286" y="1509.375"/>
         </view>
@@ -147,6 +148,9 @@
         <image name="Icons/AppIcons/back" width="128" height="128"/>
         <image name="Icons/AppIcons/placeholder" width="128" height="128"/>
         <image name="appBackground" width="375" height="476"/>
+        <namedColor name="Colors/appGrayLight">
+            <color red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

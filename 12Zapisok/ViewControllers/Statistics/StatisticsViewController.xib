@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -50,23 +51,39 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9o6-MJ-yVs">
+                            <rect key="frame" x="366" y="16" width="32" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="32" id="f0C-P6-bNP"/>
+                                <constraint firstAttribute="width" secondItem="9o6-MJ-yVs" secondAttribute="height" multiplier="1:1" id="jpp-Bd-oRe"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                            <state key="normal" image="Icons/AppIcons/warning"/>
+                            <connections>
+                                <action selector="aboutPointButtonPressed:" destination="-1" eventType="touchUpInside" id="R3Q-BG-mLB"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="fro-l4-VXb" firstAttribute="leading" secondItem="32l-nt-N5T" secondAttribute="leading" constant="16" id="5I5-7h-0Pj"/>
                         <constraint firstAttribute="height" constant="64" id="BuD-7i-Xs9"/>
+                        <constraint firstItem="9o6-MJ-yVs" firstAttribute="width" secondItem="9o6-MJ-yVs" secondAttribute="height" multiplier="1:1" id="FFm-ht-19U"/>
                         <constraint firstItem="fro-l4-VXb" firstAttribute="centerY" secondItem="Bs1-3Z-SPH" secondAttribute="centerY" id="Ifn-Jc-L1g"/>
                         <constraint firstItem="4G7-oQ-tQY" firstAttribute="leading" secondItem="32l-nt-N5T" secondAttribute="leading" id="Wtq-EJ-Qg2"/>
                         <constraint firstAttribute="trailing" secondItem="4G7-oQ-tQY" secondAttribute="trailing" id="XeJ-15-TVx"/>
+                        <constraint firstItem="9o6-MJ-yVs" firstAttribute="centerY" secondItem="fro-l4-VXb" secondAttribute="centerY" id="XhC-5F-dBs"/>
                         <constraint firstAttribute="bottom" secondItem="4G7-oQ-tQY" secondAttribute="bottom" id="ciO-fO-CFP"/>
                         <constraint firstItem="Bs1-3Z-SPH" firstAttribute="centerY" secondItem="4G7-oQ-tQY" secondAttribute="centerY" id="s3F-vP-6Ee"/>
                         <constraint firstItem="4G7-oQ-tQY" firstAttribute="top" secondItem="32l-nt-N5T" secondAttribute="top" id="tpT-C4-4fc"/>
                         <constraint firstItem="Bs1-3Z-SPH" firstAttribute="centerX" secondItem="4G7-oQ-tQY" secondAttribute="centerX" id="xDe-xZ-gKl"/>
+                        <constraint firstAttribute="trailing" secondItem="9o6-MJ-yVs" secondAttribute="trailing" constant="16" id="xi2-nY-B5S"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1HE-es-qHt">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1HE-es-qHt">
                     <rect key="frame" x="0.0" y="64" width="414" height="798"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" name="Colors/appGrayLight"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="cKR-Oz-CyZ"/>
                         <outlet property="delegate" destination="-1" id="fQ6-Ae-lqY"/>
@@ -78,7 +95,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" name="Colors/appGrayLight"/>
             <constraints>
                 <constraint firstItem="32l-nt-N5T" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2bs-4J-Bk3"/>
                 <constraint firstItem="1HE-es-qHt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="7Ht-Vr-yLf"/>
@@ -97,7 +114,11 @@
     </objects>
     <resources>
         <image name="Icons/AppIcons/close" width="64" height="64"/>
+        <image name="Icons/AppIcons/warning" width="64" height="64"/>
         <image name="appBackground" width="375" height="476"/>
+        <namedColor name="Colors/appGrayLight">
+            <color red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

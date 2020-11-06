@@ -343,7 +343,7 @@
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" name="Colors/appGrayLight"/>
             <constraints>
                 <constraint firstItem="4Z8-O9-jNk" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.149925" id="005-ta-k57"/>
                 <constraint firstItem="ELi-NW-KEM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0TU-Q5-r3y"/>
@@ -395,6 +395,9 @@
     <resources>
         <image name="Icons/AppIcons/close" width="64" height="64"/>
         <image name="appBackground" width="375" height="476"/>
+        <namedColor name="Colors/appGrayLight">
+            <color red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Colors/appMain">
             <color red="0.40799999237060547" green="0.38400000333786011" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

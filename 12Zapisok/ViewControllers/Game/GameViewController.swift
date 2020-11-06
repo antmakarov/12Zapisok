@@ -50,7 +50,7 @@ final class GameViewController: BaseViewController {
         notesCollectionView.register(cellType: NoteCollectionCell.self) 
         
         cityNameLabel.text = viewModel?.cityName()
-       // gameProgressView.fillStack(opensCount: viewModel?.numberOfOpensNotes() ?? 0)
+        gameProgressView.fillStack(opensCount: viewModel?.numberOfOpensNotes() ?? 0)
         backgroundWhiteView.roundCorners(corners: [.topLeft, .topRight], radius: Constants.cornerRadius)
     }
     

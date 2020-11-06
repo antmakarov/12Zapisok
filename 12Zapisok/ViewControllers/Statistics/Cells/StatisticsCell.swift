@@ -23,6 +23,9 @@ final class StatisticsCell: BaseTableShadowCell {
     }
     
     func configure(_ stats: CityStatistics) {
+        let url = StorageManager.shared.getObjectByID(City.self, id: stats.id)?.imageUrl
+        cityImage.setupImage(url: url, placeholder: .city)
+        
         cityName.text = stats.name
         cityScore.text = "\(stats.totalAttempts)"
         cityStatistics.text = "Найлено 12 записок / \(stats.countAttempts) попыток"

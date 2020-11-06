@@ -30,7 +30,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/mechet-kul-sharif" translatesAutoresizingMaskIntoConstraints="NO" id="bDw-yH-wZY">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/AppIcons/cityscape" translatesAutoresizingMaskIntoConstraints="NO" id="bDw-yH-wZY">
                                 <rect key="frame" x="0.0" y="0.0" width="173" height="155"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -69,7 +69,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="Icons/mechet-kul-sharif" width="780" height="519"/>
+        <image name="Icons/AppIcons/cityscape" width="256" height="256"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

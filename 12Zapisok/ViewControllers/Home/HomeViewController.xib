@@ -47,7 +47,7 @@
                         <action selector="openMap:" destination="-1" eventType="touchUpInside" id="erU-zf-KoL"/>
                     </connections>
                 </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/nn" translatesAutoresizingMaskIntoConstraints="NO" id="Fz5-Zf-xHA">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/cityPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="Fz5-Zf-xHA">
                     <rect key="frame" x="52" y="145" width="310" height="255.5"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -337,7 +337,7 @@
         <image name="Icons/MenuCirclesColor/Scooter" width="247" height="247"/>
         <image name="Icons/MenuCirclesColor/Tonight" width="247" height="247"/>
         <image name="Icons/appLogo" width="50" height="49"/>
-        <image name="Icons/nn" width="900" height="552"/>
+        <image name="Icons/cityPlaceholder" width="1024" height="1024"/>
         <image name="appBackground" width="375" height="476"/>
         <namedColor name="Colors/appMain">
             <color red="0.40799999237060547" green="0.38400000333786011" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

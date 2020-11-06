@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -65,14 +66,14 @@
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BKc-GZ-94Z">
                     <rect key="frame" x="16" y="84" width="343" height="583"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" name="Colors/appGrayLight"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Ef6-ar-c6X"/>
                     </connections>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" name="Colors/appGrayLight"/>
             <constraints>
                 <constraint firstItem="l4s-3k-S9I" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Tje-8v-a3f"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="l4s-3k-S9I" secondAttribute="trailing" id="Xgd-BV-GZF"/>
@@ -88,6 +89,9 @@
     <resources>
         <image name="Icons/AppIcons/close" width="64" height="64"/>
         <image name="appBackground" width="375" height="476"/>
+        <namedColor name="Colors/appGrayLight">
+            <color red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

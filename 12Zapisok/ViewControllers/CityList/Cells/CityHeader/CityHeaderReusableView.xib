@@ -52,7 +52,7 @@
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" name="Colors/appGrayLight"/>
                     <constraints>
                         <constraint firstItem="Mdt-oW-yzN" firstAttribute="centerX" secondItem="3cy-uM-VsG" secondAttribute="centerX" id="D34-6K-5lJ"/>
                         <constraint firstItem="re2-PX-ihC" firstAttribute="top" secondItem="1iR-3d-FGj" secondAttribute="bottom" constant="8" id="Hyk-VM-xue"/>
@@ -83,12 +83,12 @@
     </objects>
     <resources>
         <image name="Icons/Onboarding/requestLocation" width="512" height="512"/>
+        <namedColor name="Colors/appGrayLight">
+            <color red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Colors/appMain">
             <color red="0.40799999237060547" green="0.38400000333786011" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -11,10 +11,10 @@ import UIKit
 class BaseTableShadowCell: UITableViewCell {
 
     private enum Constants {
-        static let shadowOpacity: Float = 0.2
-        static let shadowOffset = CGSize(width: 1, height: 1)
-        static let shadowRadius: CGFloat = 3
-        static let shadowColor: UIColor = .black
+        static let shadowOpacity: Float = 1.0
+        static let shadowOffset = CGSize(width: 0, height: 1)
+        static let shadowRadius: CGFloat = 4
+        static let shadowColor = UIColor.black.withAlphaComponent(0.1)
         static let cornerRadius: CGFloat = 6.0
     }
     

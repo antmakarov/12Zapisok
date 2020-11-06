@@ -65,6 +65,10 @@ final class StatisticsViewController: UIViewController {
         tableView.register(cellType: StatisticsCell.self)
     }
     
+    @IBAction private func aboutPointButtonPressed(_ sender: Any) {
+        Logger.mark()
+    }
+    
     @IBAction private func closeButtonPressed() {
         viewModel?.routeTo?(.back)
     }
@@ -84,7 +88,9 @@ extension StatisticsViewController: UITableViewDataSource, UITableViewDelegate {
         switch viewModel.getSection(at: indexPath.row) {
         case let .header(total, notes, attemps):
             let newCell = tableView.dequeueReusableCell(with: StatisticsHeaderCell.self, for: indexPath)
-            newCell.configure(total, notes, attemps)
+            newCell.configure(total, notes, attemps) {
+                Logger.mark()
+            }
             cell = newCell
             
         case .title:

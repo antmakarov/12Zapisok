@@ -44,7 +44,7 @@ final class GameRuleCell: UITableViewCell {
         let shapeLayer = CAShapeLayer()
         
         shapeLayer.path = circlePath.cgPath
-        shapeLayer.fillColor = UIColor.white.cgColor
+        shapeLayer.fillColor = UIColor.AppGrayLight.cgColor
         shapeLayer.strokeColor = titleLabel.textColor.cgColor
         shapeLayer.lineWidth = Constants.lineWidth
         shapeLayer.name = Constants.pointName
