@@ -618,13 +618,6 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		77EDC32D252F7AF900ABBA05 /* SuccessBuyView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SuccessBuyView;
-			sourceTree = "<group>";
-		};
 		77EDC32E252F7B2A00ABBA05 /* PopUpView */ = {
 			isa = PBXGroup;
 			children = (
@@ -893,7 +886,6 @@
 				8D8EA3D822D75F8D00EA2F01 /* BaseCell.swift */,
 				8DD4CA732532121B001765FF /* BaseTableShadowCell.swift */,
 				77EDC32E252F7B2A00ABBA05 /* PopUpView */,
-				77EDC32D252F7AF900ABBA05 /* SuccessBuyView */,
 				8D05BC46252879CB00E08C1A /* EmptyView */,
 				77254F96252D05C4004F9CF6 /* HintView */,
 				8D05BC612528893000E08C1A /* DistanceToPlaceView */,

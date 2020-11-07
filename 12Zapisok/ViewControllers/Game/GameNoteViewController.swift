@@ -75,6 +75,7 @@ final class GameNoteViewController: BaseViewController {
             hintStatusLabel.isHidden = true
             
             noteImage.setupImage(url: viewModel.imgUrl, placeholder: .app)
+            noteImage.rounded(cornerRadius: 8.0)
             statusHeaderView.backgroundColor = .AppMainDark
             
             addressLabel.text = viewModel.address
@@ -110,9 +111,10 @@ final class GameNoteViewController: BaseViewController {
     }
     
     private func confiureButton(button: UIButton, hintType: HintType) {
+        let isAlreadyHintOpen = viewModel?.isAlreadyHintOpen(type: hintType) ?? false
         let hintCount = viewModel?.getCountOfHints(type: hintType) ?? 0
         hintButtons[button] = hintType
-        button.backgroundColor = hintCount > 0 ? .AppMain : .AppGray
+        button.backgroundColor = (hintCount > 0 || isAlreadyHintOpen) ? .AppMain : .AppGray
     }
     
     // MARK: Actions
@@ -152,17 +154,31 @@ final class GameNoteViewController: BaseViewController {
     }
     
     private func preparingHintPopUp(for button: UIButton, popUp: PopUpType? = nil) {
-        if let hint = hintButtons[button], let count = viewModel?.getCountOfHints(type: hint) {
-            if count < 1 {
+        if let hint = hintButtons[button] {
+            let isAlreadyHintOpen = viewModel?.isAlreadyHintOpen(type: hint) ?? false
+            let hintCount = viewModel?.getCountOfHints(type: hint) ?? 0
+            if hintCount == 0 && isAlreadyHintOpen == false {
                 showBuyHint()
             } else {
-                showConfirmPopUp(count: count) { [weak self] in
-                    if hint == .showPlaceOnMap {
-                        self?.dismissPopUp()
-                        self?.viewModel?.routeTo?(.map)
-                    } else {
-                        if let popUp = popUp {
-                            self?.showPopUp(type: popUp)
+                if isAlreadyHintOpen {
+                    if let popUp = popUp {
+                        showPopUp(type: popUp)
+                    }
+                } else {
+                    showConfirmPopUp(count: hintCount) { [weak self] in
+                        self?.viewModel?.openHint(type: hint)
+                        if hint == .showPlaceOnMap {
+                            self?.dismissPopUp()
+                            self?.viewModel?.routeTo?(.map)
+                        } else if hint == .openSingleNote {
+                            self?.viewModel?.completeNote { _ in
+                                self?.dismissPopUp()
+                                self?.setupUI()
+                            }
+                        } else {
+                            if let popUp = popUp {
+                                self?.showPopUp(type: popUp)
+                            }
                         }
                     }
                 }
@@ -186,7 +202,7 @@ final class GameNoteViewController: BaseViewController {
     }
     
     private func checkForOpenPlace() {
-        viewModel?.completeNote { [weak self] response in
+        viewModel?.completeNoteWithCheck { [weak self] response in
             switch response {
             case let .success(status):
                 if status {

@@ -21,6 +21,8 @@ enum HintType: String {
 
 protocol HintManaging {
     func getCountOf(hint: HintType) -> Int
+    func availableHintFor(note: Int, with type: HintType) -> Bool
+    func updateHint(type: HintType, operation: Operation, for note: Int)
     func updateHint(type: HintType, operation: Operation)
 }
 
@@ -37,6 +39,13 @@ final class HintManager {
     init(preferencesManager: PreferencesManager) {
         self.preferencesManager = preferencesManager
         availableHints = preferencesManager.myCurrentHints
+        hintNotes = preferencesManager.hintsForNote
+    }
+    
+    var hintNotes: [String: [HintType]] = [:] {
+        didSet {
+            preferencesManager.hintsForNote = hintNotes
+        }
     }
     
     var availableHints: [String: Int] = [:] {
@@ -47,6 +56,21 @@ final class HintManager {
     
     var totalHints: Int {
         availableHints.count
+    }
+    
+    func availableHintFor(note: Int, with type: HintType) -> Bool {
+        return hintNotes[String(note)]?.contains(type) ?? false
+    }
+    
+    func updateHint(type: HintType, operation: Operation, for note: Int) {
+        if type == .showPlaceOnMap ||
+            type == .singleNoteDistance ||
+            type == .foreverCoordinates {
+            var curHints = hintNotes[String(note)] ?? []
+            curHints.append(type)
+            hintNotes[String(note)] = [type]
+        }
+        updateHint(type: type, operation: operation)
     }
     
     func updateHint(type: HintType, operation: Operation) {

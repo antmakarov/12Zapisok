@@ -15,10 +15,11 @@ class BaseView: UIView, NibInstance {
         static let viewWidth: CGFloat = 300.0
     }
     
-    func setup(height: CGFloat = Constants.viewHeight) {
+    func setup(height: CGFloat = Constants.viewHeight,
+               width: CGFloat = Constants.viewWidth) {
         NSLayoutConstraint.activate([
             heightAnchor.constraint(equalToConstant: height),
-            widthAnchor.constraint(equalToConstant: height)
+            widthAnchor.constraint(equalToConstant: width)
         ])
     }
 }

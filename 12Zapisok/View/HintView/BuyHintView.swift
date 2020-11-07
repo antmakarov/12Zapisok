@@ -17,7 +17,8 @@ enum HintViewHandler {
 final class BuyHintView: BaseView {
 
     private enum Constants {
-        static let viewHeight: CGFloat = 340.0
+        static let viewHeight: CGFloat = 353.0
+        static let viewWidth: CGFloat = 280
     }
     
     @IBOutlet private weak var title: UILabel!
@@ -31,13 +32,13 @@ final class BuyHintView: BaseView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         instantiateFromNib()
-        setup(height: Constants.viewHeight)
+        setup(height: Constants.viewHeight, width: Constants.viewWidth)
     }
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
         instantiateFromNib()
-        setup(height: Constants.viewHeight)
+        setup(height: Constants.viewHeight, width: Constants.viewWidth)
     }
     
     @IBAction private func buyHint(_ esnder: Any) {

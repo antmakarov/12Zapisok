@@ -48,7 +48,7 @@ final class GameViewModel {
         dataUpdater.addObserver { [weak self] noteId in
             if let index = self?.gameNotes.firstIndex(where: { $0.id == noteId }) {
                 self?.gameNotes[index].statistics?.isComplete = true
-                // set stats
+                self?.gameNotes[index + 1].statistics = NoteStatistics()
                 self?.gameNotes[index + 1].statistics?.isOpen = true
                 self?.dataUpdateHandler?()
             } else {

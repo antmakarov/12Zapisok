@@ -62,6 +62,25 @@ final class PreferencesManager {
         }
     }
     
+    var hintsForNote: [String: [HintType]] {
+        get {
+            var hintsForNote: [String: [HintType]] = [:]
+            let hints = userDefaults.dictionary(forKey: generateKey(#function)) as? [String: [String]]
+            hints?.forEach {
+                hintsForNote[$0.key] = $0.value.map { HintType(rawValue: $0)! }
+            }
+            return hintsForNote
+        }
+        set {
+            Logger.info(msg: "Set hints for note - \(hintsForNote)")
+            var hintsForNote: [String: [String]] = [:]
+            for hint in newValue {
+                hintsForNote[hint.key] = hint.value.map { String($0.rawValue) }
+            }
+            userDefaults.set(hintsForNote, forKey: generateKey(#function))
+        }
+    }
+    
     private func generateKey(_ key: String) -> String {
         return (Constants.appName ?? "12Zapisok") + "-" + key
     }

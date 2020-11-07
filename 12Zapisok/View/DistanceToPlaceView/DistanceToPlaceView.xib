@@ -12,14 +12,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DistanceToPlaceView" customModule="_2_Записок" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="Sa0-w1-a2f">
-            <rect key="frame" x="0.0" y="0.0" width="449" height="227"/>
+            <rect key="frame" x="0.0" y="0.0" width="419" height="216"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfC-u2-sCO">
-                    <rect key="frame" x="0.0" y="0.0" width="449" height="227"/>
+                    <rect key="frame" x="0.0" y="0.0" width="419" height="216"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дистанция до точки: 299 метров" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FA7-L2-aPm">
-                            <rect key="frame" x="93.5" y="103.5" width="262.5" height="20.5"/>
+                            <rect key="frame" x="78.5" y="98" width="262.5" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -41,7 +41,7 @@
                 <constraint firstAttribute="bottom" secondItem="qfC-u2-sCO" secondAttribute="bottom" id="ybz-K5-glC"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="165.94202898550725" y="-134.26339285714286"/>
+            <point key="canvasLocation" x="144.20289855072465" y="-137.94642857142856"/>
         </view>
     </objects>
     <resources>

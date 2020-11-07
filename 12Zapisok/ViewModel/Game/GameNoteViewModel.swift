@@ -27,7 +27,10 @@ protocol GameNoteViewModeling {
     var routeTo: ((GameRouter) -> Void)? { get set }
     
     func completeNote(completion: @escaping (((Result<Bool, Error>)) -> Void))
+    func completeNoteWithCheck(completion: @escaping (((Result<Bool, Error>)) -> Void))
+    func openHint(type: HintType)
     func getCountOfHints(type: HintType) -> Int
+    func isAlreadyHintOpen(type: HintType) -> Bool
     func getDistanceStatus() -> String
 }
 
@@ -79,7 +82,7 @@ final class GameNoteViewModel {
 }
 
 extension GameNoteViewModel: GameNoteViewModeling {
-    func completeNote(completion: @escaping (((Result<Bool, Error>)) -> Void)) {
+    func completeNoteWithCheck(completion: @escaping (((Result<Bool, Error>)) -> Void)) {
         if let location = note.location {
             increaseAttemps()
             if Int.random(in: 0...4) == 2 { //locationManager.closeToCoordinate(location.cll(), with: .average) {
@@ -93,8 +96,21 @@ extension GameNoteViewModel: GameNoteViewModeling {
         }
     }
     
+    func completeNote(completion: @escaping (((Result<Bool, Error>)) -> Void)) {
+        networkManager.completeNote(id: note.id, completion: completion)
+        dataUpdater.value = note.id
+    }
+    
     func getCountOfHints(type: HintType) -> Int {
         return hintManager.getCountOf(hint: type)
+    }
+    
+    func openHint(type: HintType) {
+        hintManager.updateHint(type: type, operation: .remove, for: note.id)
+    }
+    
+    func isAlreadyHintOpen(type: HintType) -> Bool {
+        return hintManager.availableHintFor(note: note.id, with: type)
     }
     
     func getDistanceStatus() -> String {
