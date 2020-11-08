@@ -14,6 +14,13 @@
 		770972F1252E5AFA00BED5C8 /* Assets.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 770972EF252E5AFA00BED5C8 /* Assets.stencil */; };
 		77254F98252D067C004F9CF6 /* BuyHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77254F97252D067C004F9CF6 /* BuyHintView.swift */; };
 		77254F9E252D0685004F9CF6 /* BuyHintView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77254F9D252D0685004F9CF6 /* BuyHintView.xib */; };
+		772FA6EB2557DB060098BBF9 /* MapClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772FA6EA2557DB050098BBF9 /* MapClusterView.swift */; };
+		772FA6EF2557DB300098BBF9 /* MapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772FA6EE2557DB300098BBF9 /* MapAnnotationView.swift */; };
+		772FA6F32557E2ED0098BBF9 /* Extensions+MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772FA6F22557E2ED0098BBF9 /* Extensions+MKMapView.swift */; };
+		772FA6F92557E7530098BBF9 /* MapPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772FA6F82557E7530098BBF9 /* MapPinView.swift */; };
+		772FA6FD2557E79A0098BBF9 /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772FA6FC2557E79A0098BBF9 /* TriangleView.swift */; };
+		772FA7032557E7E20098BBF9 /* MapPinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 772FA7022557E7E20098BBF9 /* MapPinView.xib */; };
+		7738480D2558794E00C6135A /* MapPinAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7738480C2558794E00C6135A /* MapPinAnnotation.swift */; };
 		773C93B7253E33DE00E33241 /* GameFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773C93B5253E33DE00E33241 /* GameFooterView.swift */; };
 		773C93B8253E33DE00E33241 /* GameFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 773C93B6253E33DE00E33241 /* GameFooterView.xib */; };
 		7741375623B9EC4100AD8A71 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7741375523B9EC4100AD8A71 /* HomeViewModel.swift */; };
@@ -165,7 +172,7 @@
 		77BDB3A323B3E99300820E5B /* GameNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77BDB3A123B3E99300820E5B /* GameNoteViewController.xib */; };
 		77C24FE5252FC14C00E7AB72 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 77C24FE4252FC14C00E7AB72 /* .swiftlint.yml */; };
 		77D682AF2532FE5D0087C982 /* GameLeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D682AE2532FE5D0087C982 /* GameLeader.swift */; };
-		77DE67ED254EF66700C96297 /* Extension+UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DE67EC254EF66500C96297 /* Extension+UIDevice.swift */; };
+		77DE67ED254EF66700C96297 /* Extensions+UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DE67EC254EF66500C96297 /* Extensions+UIDevice.swift */; };
 		77EDC312252E624E00ABBA05 /* Assets.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDC311252E624E00ABBA05 /* Assets.generated.swift */; };
 		77EDC317252E62A100ABBA05 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 77EDC315252E62A100ABBA05 /* Localizable.strings */; };
 		77EDC31B252E630F00ABBA05 /* Localization.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 77EDC31A252E630F00ABBA05 /* Localization.stencil */; };
@@ -243,6 +250,13 @@
 		770972EF252E5AFA00BED5C8 /* Assets.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Assets.stencil; sourceTree = "<group>"; };
 		77254F97252D067C004F9CF6 /* BuyHintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyHintView.swift; sourceTree = "<group>"; };
 		77254F9D252D0685004F9CF6 /* BuyHintView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyHintView.xib; sourceTree = "<group>"; };
+		772FA6EA2557DB050098BBF9 /* MapClusterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapClusterView.swift; sourceTree = "<group>"; };
+		772FA6EE2557DB300098BBF9 /* MapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotationView.swift; sourceTree = "<group>"; };
+		772FA6F22557E2ED0098BBF9 /* Extensions+MKMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+MKMapView.swift"; sourceTree = "<group>"; };
+		772FA6F82557E7530098BBF9 /* MapPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPinView.swift; sourceTree = "<group>"; };
+		772FA6FC2557E79A0098BBF9 /* TriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
+		772FA7022557E7E20098BBF9 /* MapPinView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapPinView.xib; sourceTree = "<group>"; };
+		7738480C2558794E00C6135A /* MapPinAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPinAnnotation.swift; sourceTree = "<group>"; };
 		773C93B5253E33DE00E33241 /* GameFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFooterView.swift; sourceTree = "<group>"; };
 		773C93B6253E33DE00E33241 /* GameFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameFooterView.xib; sourceTree = "<group>"; };
 		7741375523B9EC4100AD8A71 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -304,7 +318,7 @@
 		77BDB3A123B3E99300820E5B /* GameNoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameNoteViewController.xib; sourceTree = "<group>"; };
 		77C24FE4252FC14C00E7AB72 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		77D682AE2532FE5D0087C982 /* GameLeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLeader.swift; sourceTree = "<group>"; };
-		77DE67EC254EF66500C96297 /* Extension+UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIDevice.swift"; sourceTree = "<group>"; };
+		77DE67EC254EF66500C96297 /* Extensions+UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIDevice.swift"; sourceTree = "<group>"; };
 		77EDC311252E624E00ABBA05 /* Assets.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.generated.swift; sourceTree = "<group>"; };
 		77EDC316252E62A100ABBA05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		77EDC31A252E630F00ABBA05 /* Localization.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Localization.stencil; sourceTree = "<group>"; };
@@ -442,6 +456,26 @@
 			path = HintView;
 			sourceTree = "<group>";
 		};
+		772FA7002557E7B60098BBF9 /* MapPinView */ = {
+			isa = PBXGroup;
+			children = (
+				772FA6F82557E7530098BBF9 /* MapPinView.swift */,
+				772FA7022557E7E20098BBF9 /* MapPinView.xib */,
+				772FA6FC2557E79A0098BBF9 /* TriangleView.swift */,
+				7738480C2558794E00C6135A /* MapPinAnnotation.swift */,
+			);
+			path = MapPinView;
+			sourceTree = "<group>";
+		};
+		772FA7012557E7C30098BBF9 /* MapAnnotations */ = {
+			isa = PBXGroup;
+			children = (
+				772FA6EE2557DB300098BBF9 /* MapAnnotationView.swift */,
+				772FA6EA2557DB050098BBF9 /* MapClusterView.swift */,
+			);
+			path = MapAnnotations;
+			sourceTree = "<group>";
+		};
 		773C93B3253E338900E33241 /* NoteCollectionCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,7 +508,8 @@
 				77A18F002433756F0027E456 /* Extensions+UIViewController.swift */,
 				77F931832439CF61007BC979 /* Extensions+UIButton.swift */,
 				77F93185243B13E9007BC979 /* Extensions+UIColor.swift */,
-				77DE67EC254EF66500C96297 /* Extension+UIDevice.swift */,
+				77DE67EC254EF66500C96297 /* Extensions+UIDevice.swift */,
+				772FA6F22557E2ED0098BBF9 /* Extensions+MKMapView.swift */,
 				77B02849251B16FB00BC71F8 /* AppTarget.swift */,
 			);
 			path = Extensions;
@@ -567,6 +602,8 @@
 		7790B489241FA6E80046EFA5 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				772FA7012557E7C30098BBF9 /* MapAnnotations */,
+				772FA7002557E7B60098BBF9 /* MapPinView */,
 				8D32F36C22D71E6300ABC228 /* MapViewController.swift */,
 				7790B48A241FA6FF0046EFA5 /* MapViewController.xib */,
 			);
@@ -1057,6 +1094,7 @@
 				77F80DC72421FF97005ED8C0 /* CityInfoViewController.xib in Resources */,
 				8D05BC74252A532D00E08C1A /* CheckPlaceView.xib in Resources */,
 				77F80DBF2421FF70005ED8C0 /* LeaderboardViewController.xib in Resources */,
+				772FA7032557E7E20098BBF9 /* MapPinView.xib in Resources */,
 				7753C621244CD20F0072A0B5 /* GameRuleCell.xib in Resources */,
 				8D32F34B22D3302F00ABC228 /* LaunchScreen.storyboard in Resources */,
 				77F80DC32421FF85005ED8C0 /* StatisticsViewController.xib in Resources */,
@@ -1392,6 +1430,7 @@
 				8D05BC5025287CE300E08C1A /* Extensions+UIViewInstant.swift in Sources */,
 				8D32F34322D3302D00ABC228 /* HomeViewController.swift in Sources */,
 				77254F98252D067C004F9CF6 /* BuyHintView.swift in Sources */,
+				772FA6F32557E2ED0098BBF9 /* Extensions+MKMapView.swift in Sources */,
 				77F80DC924220319005ED8C0 /* GameRulesViewModel.swift in Sources */,
 				775370BD2458CD39006EFF3E /* CityImageCell.swift in Sources */,
 				7790B461241EBBE60046EFA5 /* Extensions+UICollectionView.swift in Sources */,
@@ -1402,7 +1441,7 @@
 				7741375623B9EC4100AD8A71 /* HomeViewModel.swift in Sources */,
 				8D32F36B22D71E5A00ABC228 /* GameViewController.swift in Sources */,
 				7706E0A024594EBE0021DA1E /* Observable.swift in Sources */,
-				77DE67ED254EF66700C96297 /* Extension+UIDevice.swift in Sources */,
+				77DE67ED254EF66700C96297 /* Extensions+UIDevice.swift in Sources */,
 				77688CD923BA20AE00697408 /* CityHeaderReusableView.swift in Sources */,
 				7790B484241FA66B0046EFA5 /* SettingsViewController.swift in Sources */,
 				77F80DC62421FF97005ED8C0 /* CityInfoViewController.swift in Sources */,
@@ -1420,6 +1459,7 @@
 				8D05BC4C252879EA00E08C1A /* EmptyView.swift in Sources */,
 				77B120D2238DC545001B2301 /* Extensions+UIView.swift in Sources */,
 				8D32F37F22D73C5E00ABC228 /* GameNoteViewModel.swift in Sources */,
+				772FA6F92557E7530098BBF9 /* MapPinView.swift in Sources */,
 				77EDC312252E624E00ABBA05 /* Assets.generated.swift in Sources */,
 				8D32F37522D7241E00ABC228 /* CustomCollectionViewFlowLayout.swift in Sources */,
 				77F80DB624215596005ED8C0 /* GameCoordinator.swift in Sources */,
@@ -1445,18 +1485,22 @@
 				8D32F36222D3589000ABC228 /* StorageManager.swift in Sources */,
 				77B120CC238C606B001B2301 /* LocationManager.swift in Sources */,
 				77A18F012433756F0027E456 /* Extensions+UIViewController.swift in Sources */,
+				7738480D2558794E00C6135A /* MapPinAnnotation.swift in Sources */,
 				7790B469241FA3CF0046EFA5 /* LoginViewController.swift in Sources */,
 				77B0284C251B173C00BC71F8 /* SwiftUIAppDelegate.swift in Sources */,
 				7790B471241FA42A0046EFA5 /* RegistrationViewController.swift in Sources */,
+				772FA6EF2557DB300098BBF9 /* MapAnnotationView.swift in Sources */,
 				77419FAA2469EDFB00DA205E /* DistanceToPlaceView.swift in Sources */,
 				77B120E9239CF561001B2301 /* AppCoordinator.swift in Sources */,
 				773C93B7253E33DE00E33241 /* GameFooterView.swift in Sources */,
 				775370C02458E0DE006EFF3E /* HintManager.swift in Sources */,
 				77F93186243B13E9007BC979 /* Extensions+UIColor.swift in Sources */,
+				772FA6EB2557DB060098BBF9 /* MapClusterView.swift in Sources */,
 				77D682AF2532FE5D0087C982 /* GameLeader.swift in Sources */,
 				77F80DB424214B44005ED8C0 /* Extensions+String.swift in Sources */,
 				8D32F37922D7394500ABC228 /* NoteCollectionCellViewModel.swift in Sources */,
 				8D32F36722D366B000ABC228 /* API.swift in Sources */,
+				772FA6FD2557E79A0098BBF9 /* TriangleView.swift in Sources */,
 				77B120E1239CDA3B001B2301 /* OnboardingCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

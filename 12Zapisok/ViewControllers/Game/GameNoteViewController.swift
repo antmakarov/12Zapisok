@@ -161,7 +161,10 @@ final class GameNoteViewController: BaseViewController {
                 showBuyHint()
             } else {
                 if isAlreadyHintOpen {
-                    if let popUp = popUp {
+                    if hint == .showPlaceOnMap {
+                        dismissPopUp()
+                        viewModel?.routeTo?(.map)
+                    } else if let popUp = popUp {
                         showPopUp(type: popUp)
                     }
                 } else {

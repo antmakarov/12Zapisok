@@ -1,5 +1,5 @@
 //
-//  Extension+UIDevice.swift
+//  Extensions+UIDevice.swift
 //  12Zapisok
 //
 //  Created by Anton Makarov on 01.11.2020.

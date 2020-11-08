@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 enum NSAttributedStyle {
     case regular(size: CGFloat)

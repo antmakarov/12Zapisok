@@ -57,7 +57,7 @@ extension CityListViewModel: CityListViewModeling {
             switch result {
             case .success(let cities):
                 self.cities = cities
-                self.cities.forEach { try? self.databaseStorage.storeObject($0) }
+                try? self.databaseStorage.storeObjects(cities)
                 self.updateHandler?()
                 
             case .error(let error):

@@ -94,8 +94,8 @@ class OnboardingViewModel {
                 
             case .success(let cities):
                 self?.cities = cities
-                self?.cities.forEach { try? self?.databaseStorage.storeObject($0) }
-                
+                try? self?.databaseStorage.storeObjects(cities)
+
             case .error(let error):
                 Logger.error(msg: error.localizedDescription)
             }

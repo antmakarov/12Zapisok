@@ -75,9 +75,12 @@
                 </view>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lH0-Z4-Dye">
                     <rect key="frame" x="0.0" y="108" width="414" height="788"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="ZFf-ic-Ipy"/>
+                    </connections>
                 </mapView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CeI-tl-PNv">
-                    <rect key="frame" x="0.0" y="601" width="414" height="261"/>
+                    <rect key="frame" x="0.0" y="635" width="414" height="261"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Стрелка" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCx-41-PUY">
                             <rect key="frame" x="16" y="121.5" width="382" height="26.5"/>
@@ -219,7 +222,7 @@
                 <constraint firstItem="Zza-dJ-WcG" firstAttribute="top" secondItem="Co1-B3-flm" secondAttribute="top" id="7TE-LI-LXU"/>
                 <constraint firstItem="dQQ-Bt-5BB" firstAttribute="top" secondItem="lF6-Tg-s5i" secondAttribute="top" id="AH1-YG-nHb"/>
                 <constraint firstItem="CeI-tl-PNv" firstAttribute="trailing" secondItem="lF6-Tg-s5i" secondAttribute="trailing" id="AnI-vu-zlQ"/>
-                <constraint firstItem="lF6-Tg-s5i" firstAttribute="bottom" secondItem="CeI-tl-PNv" secondAttribute="bottom" id="Nbc-FL-bh7"/>
+                <constraint firstAttribute="bottom" secondItem="CeI-tl-PNv" secondAttribute="bottom" id="Nbc-FL-bh7"/>
                 <constraint firstItem="Zza-dJ-WcG" firstAttribute="trailing" secondItem="lF6-Tg-s5i" secondAttribute="trailing" id="OTZ-pw-r0X"/>
                 <constraint firstAttribute="bottom" secondItem="lH0-Z4-Dye" secondAttribute="bottom" id="Stn-G2-nqQ"/>
                 <constraint firstItem="lH0-Z4-Dye" firstAttribute="top" secondItem="dQQ-Bt-5BB" secondAttribute="bottom" id="Y1M-lM-kcH"/>

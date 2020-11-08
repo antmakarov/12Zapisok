@@ -7,12 +7,14 @@
 //
 
 import CoreLocation
+import Kingfisher
 
 protocol MapViewModeling: AnyObject {
     var routeTo: ((MapRouter) -> Void)? { get set }
     
     func myPosition(completion: @escaping (CLLocation?) -> Void)
     func cityCenter() -> CLLocation
+    func fillPinNotes() -> [MapAnnotationModeling]
 }
 
 final class MapViewModel {
@@ -50,5 +52,21 @@ extension MapViewModel: MapViewModeling {
         }
         
         return locationManager.currentPosition
+    }
+    
+    public func fillPinNotes() -> [MapAnnotationModeling] {
+        let notes = storageManager.getObjects(Note.self)
+        var pins: [MapAnnotationModeling] = []
+        
+        notes?.forEach { note in
+            if let location = note.location {
+                let coordinate = CLLocationCoordinate2D(latitude: location.lat,
+                                                        longitude: location.lon)
+                let pp = MapPinAnnotation(coordinate: coordinate, id: String(note.id), pinUrl: note.imageUrl)
+                pins.append(pp)
+            }
+        }
+        
+        return pins
     }
 }

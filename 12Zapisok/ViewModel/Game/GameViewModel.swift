@@ -77,6 +77,7 @@ extension GameViewModel: GameViewModeling {
             switch result {
             case .success(let notes):
                 self?.gameNotes = notes
+                try? self?.databaseStorage.storeObjects(notes)
                 if let note = notes.first, note.statistics == nil {
                     self?.gameNotes.first?.statistics = NoteStatistics(isOpen: true)
                     self?.networkManager.openNote(id: note.id) { _ in }

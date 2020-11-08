@@ -19,6 +19,9 @@ final class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mapView.register(MapAnnotationView.self, forAnnotationViewWithReuseIdentifier: MapAnnotationView.className)
+        mapView.register(MapClusterView.self, forAnnotationViewWithReuseIdentifier: MapClusterView.className)
+        
         noteButton.isHidden = true
         
         if let cityID = PreferencesManager.shared.currentCityId {
@@ -27,8 +30,10 @@ final class MapViewController: UIViewController {
             let initialLocation = CLLocation(latitude: loc?.lat ?? 0, longitude: loc?.lon ?? 0)
             centerMapOnLocation(location: initialLocation)
         }
+        
+        mapView.addAnnotations(viewModel?.fillPinNotes() ?? [])
     }
-    
+        
     func centerMapOnLocation(location: CLLocation) {
         let regionRadius: CLLocationDistance = 1000
         let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
@@ -59,4 +64,24 @@ final class MapViewController: UIViewController {
     @IBAction private func goToPurchase() {
         viewModel?.routeTo?(.purchase)
     }
+}
+
+extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if let annotation = annotation as? MapAnnotationModeling {
+            let view = mapView.dequeue(MapAnnotationView.self, annotation: annotation)
+            view.clusteringIdentifier = MapAnnotationView.className
+            view.configure(pinUrl: annotation.pinUrl, number: Int(annotation.id) ?? 0)
+            return view
+        } else if let cluster = annotation as? MKClusterAnnotation {
+            return mapView.dequeue(MapClusterView.self, annotation: cluster)
+        } else {
+            return nil
+        }
+    }
+}
+
+public protocol MapAnnotationModeling: MKAnnotation {
+    var id: String { get set }
+    var pinUrl: String? { get set }
 }
