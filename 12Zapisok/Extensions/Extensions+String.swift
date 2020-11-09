@@ -43,3 +43,26 @@ extension String {
         return mutableAttributedString
     }
 }
+
+// MARK: Download image from url
+
+extension String {
+    
+    func downloadImage(completion: @escaping (UIImage?) -> Void) {
+        guard let url = URL(string: self) else {
+            completion(nil)
+            return
+        }
+        let resource = ImageResource(downloadURL: url)
+        
+        KingfisherManager.shared.retrieveImage(with: resource, options: nil, progressBlock: nil) { result in
+            switch result {
+            case .success(let value):
+                completion(value.image)
+
+            case .failure:
+                completion(nil)
+            }
+        }
+    }
+}

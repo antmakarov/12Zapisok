@@ -8,7 +8,7 @@
 
 import MapKit
 
-public class MapAnnotationView: MKAnnotationView {
+final class MapAnnotationView: MKAnnotationView {
         
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
@@ -26,9 +26,9 @@ public class MapAnnotationView: MKAnnotationView {
         displayPriority = .defaultHigh
     }
     
-    func configure(pinUrl: String?, number: Int) {
+    func configure(_ marker: UIImage?, number: Int) {
         let pin = MapPinView()
-        pin.configure(pinUrl, noteId: number)
+        pin.configure(marker, noteId: number)
         image = pin.asImage()
     }
 }

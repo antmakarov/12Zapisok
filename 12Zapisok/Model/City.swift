@@ -65,4 +65,12 @@ final class Location: Object, Mappable {
     func cll() -> CLLocation {
         return CLLocation(latitude: lat, longitude: lon)
     }
+    
+    func cllCoordinate() -> CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: lat, longitude: lon)
+    }
+    
+    func isNullLocation() -> Bool {
+        return lat == 0 || lon == 0
+    }
 }

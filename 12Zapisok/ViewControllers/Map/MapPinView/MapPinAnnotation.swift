@@ -9,14 +9,19 @@
 import UIKit
 import MapKit
 
-public class MapPinAnnotation: NSObject, MapAnnotationModeling {
+protocol MapAnnotationModeling: MKAnnotation {
+    var id: Int { get set }
+    var marker: UIImage? { get set }
+}
+
+final class MapPinAnnotation: NSObject, MapAnnotationModeling {
     public var coordinate: CLLocationCoordinate2D
-    public var id: String
-    public var pinUrl: String?
+    public var id: Int
+    public var marker: UIImage?
     
-    init(coordinate: CLLocationCoordinate2D, id: String, pinUrl: String?) {
+    init(coordinate: CLLocationCoordinate2D, id: Int, marker: UIImage?) {
         self.coordinate = coordinate
         self.id = id
-        self.pinUrl = pinUrl
+        self.marker = marker
     }
 }

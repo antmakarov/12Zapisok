@@ -14,7 +14,7 @@ protocol MapViewModeling: AnyObject {
     
     func myPosition(completion: @escaping (CLLocation?) -> Void)
     func cityCenter() -> CLLocation
-    func fillPinNotes() -> [MapAnnotationModeling]
+    func fillPinNotes(completion: @escaping ([MapAnnotationModeling]) -> Void)
 }
 
 final class MapViewModel {
@@ -54,19 +54,29 @@ extension MapViewModel: MapViewModeling {
         return locationManager.currentPosition
     }
     
-    public func fillPinNotes() -> [MapAnnotationModeling] {
-        let notes = storageManager.getObjects(Note.self)
-        var pins: [MapAnnotationModeling] = []
+    public func fillPinNotes(completion: @escaping ([MapAnnotationModeling]) -> Void) {
+        guard let notes = storageManager.getObjects(Note.self) else {
+            return
+        }
         
-        notes?.forEach { note in
-            if let location = note.location {
-                let coordinate = CLLocationCoordinate2D(latitude: location.lat,
-                                                        longitude: location.lon)
-                let pp = MapPinAnnotation(coordinate: coordinate, id: String(note.id), pinUrl: note.imageUrl)
-                pins.append(pp)
+        var pins: [MapAnnotationModeling] = []
+        let group = DispatchGroup()
+        
+        for (index, note) in notes.enumerated() {
+            group.enter()
+            if let location = note.location, !location.isNullLocation() {
+                note.imageUrl.downloadImage { image in
+                    let pin = MapPinAnnotation(coordinate: location.cllCoordinate(),
+                                               id: index + 1,
+                                               marker: image)
+                    pins.append(pin)
+                    group.leave()
+                }
             }
         }
         
-        return pins
+        group.notify(queue: .main) {
+            completion(pins)
+        }
     }
 }

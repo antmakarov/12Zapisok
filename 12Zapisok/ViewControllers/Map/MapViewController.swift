@@ -31,7 +31,9 @@ final class MapViewController: UIViewController {
             centerMapOnLocation(location: initialLocation)
         }
         
-        mapView.addAnnotations(viewModel?.fillPinNotes() ?? [])
+        viewModel?.fillPinNotes { [weak self] pins in
+            self?.mapView.addAnnotations(pins)
+        }
     }
         
     func centerMapOnLocation(location: CLLocation) {
@@ -71,7 +73,7 @@ extension MapViewController: MKMapViewDelegate {
         if let annotation = annotation as? MapAnnotationModeling {
             let view = mapView.dequeue(MapAnnotationView.self, annotation: annotation)
             view.clusteringIdentifier = MapAnnotationView.className
-            view.configure(pinUrl: annotation.pinUrl, number: Int(annotation.id) ?? 0)
+            view.configure(annotation.marker, number: annotation.id)
             return view
         } else if let cluster = annotation as? MKClusterAnnotation {
             return mapView.dequeue(MapClusterView.self, annotation: cluster)
@@ -79,9 +81,4 @@ extension MapViewController: MKMapViewDelegate {
             return nil
         }
     }
-}
-
-public protocol MapAnnotationModeling: MKAnnotation {
-    var id: String { get set }
-    var pinUrl: String? { get set }
 }

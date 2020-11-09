@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MapPinView: UIView, NibInstance {
+final class MapPinView: UIView, NibInstance {
     
     private enum Constants {
         static let borderWidth: CGFloat = 1.0
@@ -55,17 +55,17 @@ class MapPinView: UIView, NibInstance {
         addGestureRecognizer(gesture)
     }
     
-    public func configure(_ pinUrl: String? = nil, noteId: Int) {
+    public func configure(_ marker: UIImage? = nil, noteId: Int) {
         frame = CGRect(x: 0, y: 0, width: 64, height: 64)
         setNeedsLayout()
         layoutIfNeeded()
 
-        pinImage.setupImage(url: pinUrl)
+        pinImage.image = marker
         noteLabel.text = "Записка #\(noteId)"
     }
     
     @objc
     private func selectMarket(sender: UITapGestureRecognizer) {
-        print("Tap Pin")
+        Logger.info(msg: "Tap Pin")
     }
 }
