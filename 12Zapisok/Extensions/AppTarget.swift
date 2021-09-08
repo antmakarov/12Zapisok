@@ -34,7 +34,7 @@ struct AppTarget {
             return AppDelegate.self
             
         case .swiftUI:
-            return SwiftUIAppDelegate.self
+            return AppDelegate.self // SwiftUIAppDelegate.self
         }
     }
 }
