@@ -70,6 +70,6 @@ enum TypeFetcher {
 enum APIError: Error {
     case nonHTTPResponse
     case responseError(code: Int)
-    case decodeError
+    case decode(error: Error)
     case other
 }

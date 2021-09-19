@@ -27,10 +27,10 @@ final class GameViewController: BaseViewController {
 
     var viewModel: GameViewModeling? {
         didSet {
-            viewModel?.setUpdateHandler { [weak self] in
-                self?.gameProgressView.fillStack(opensCount: self?.viewModel?.numberOfOpensNotes() ?? 0)
-                self?.notesCollectionView.reloadData()
-            }
+//            viewModel?.setUpdateHandler { [weak self] in
+//                self?.gameProgressView.fillStack(opensCount: self?.viewModel?.numberOfOpensNotes() ?? 0)
+//                self?.notesCollectionView.reloadData()
+//            }
             
             viewModel?.isLoading.addObserver { [weak self] in
                 self?.toggleLoader($0)

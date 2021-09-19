@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import Combine
 
 protocol LeaderboardViewModeling: AnyObject {
     func usersCount() -> Int
     func getUser(at index: Int) -> String
     func fetchLeaders()
-     
+
     //var responseStatus: Observable<ResponseStatus> { get }
     var isLoading: Observable<Bool> { get }
     
@@ -27,7 +28,8 @@ final class LeaderboardViewModel {
     private let networkManager: NetworkManaging
 
     private var leaders: [GameLeader] = []
-    
+    private var subscription = Set<AnyCancellable>()
+
     // MARK: Public
     
     public var routeTo: ((StatisticsRoute) -> Void)?
@@ -60,21 +62,22 @@ extension LeaderboardViewModel: LeaderboardViewModeling {
     
     public func fetchLeaders() {
         isLoading.value = true
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-//            self.networkManager.getGameLeaders { [weak self] response in
-//                self?.isLoading.value = false
-//                
-//                switch response {
-//                case let .success(result):
-//                    self?.responseStatus.value = result.isEmpty ? .empty : .success
-//                    Logger.debug(msg: result)
-//
-//                case let .error(error):
-//                    self?.responseStatus.value = .error
-//                    Logger.error(msg: error)
-//                }
-//            }
-//        }
+
+        networkManager.getGameLeaders()
+            .delay(for: 0.5, scheduler: RunLoop.main)
+            .sink { completion in
+                switch completion {
+                case let .failure(error):
+                    Logger.error(msg: error)
+
+                case .finished:
+                    self.isLoading.value = false
+                    Logger.mark()
+                }
+
+            } receiveValue: { value in
+                //self?.responseStatus.value = value.isEmpty ? .empty : .success
+            }
+            .store(in: &self.subscription)
     }
 }

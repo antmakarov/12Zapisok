@@ -36,10 +36,10 @@ final class CityListViewController: BaseViewController {
 
     var viewModel: CityListViewModeling? {
         didSet {
-            viewModel?.setUpdateHandler {
-                self.citiesCollectionView.reloadData()
-                self.emptyView.isHidden = self.viewModel?.getNumberOfCities() != 0
-            }
+//            viewModel?.setUpdateHandler {
+//                self.citiesCollectionView.reloadData()
+//                self.emptyView.isHidden = self.viewModel?.getNumberOfCities() != 0
+//            }
         }
     }
     

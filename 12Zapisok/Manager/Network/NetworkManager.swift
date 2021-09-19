@@ -82,7 +82,7 @@ final class NetworkManager {
     private func handlerror(error: Error) -> APIError {
         switch error {
         case is DecodingError:
-            return .decodeError
+            return .decode(error: error)
 
         case let apiError as APIError:
             return apiError

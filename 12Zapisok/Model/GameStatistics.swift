@@ -11,9 +11,9 @@ struct GameStatistics: Codable {
     var totalScore: Int
     var openNotes: Int
     var totalAttempts: Int
-    var citiesStats: [CityStatistics]?
+    var citiesStats: [CityStatistics]
 
-    enum CondingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case totalScore = "total_score"
         case openNotes = "open_notes"
         case totalAttempts = "total_attempts"
@@ -27,7 +27,7 @@ struct CityStatistics: Codable {
     var countAttempts: Int
     var totalAttempts: Int
 
-    enum CondingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case name
         case countAttempts = "count_attempts"
         case totalAttempts = "total_attempts"

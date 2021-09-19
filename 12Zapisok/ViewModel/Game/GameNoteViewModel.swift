@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Combine
 import CoreLocation
 
 enum NoteState {
@@ -43,7 +44,8 @@ final class GameNoteViewModel {
     private var locationManager: LocationManaging
     private var hintManager: HintManaging
     private var dataUpdater: Observable<Int>
-    
+    private var subscription = Set<AnyCancellable>()
+
     convenience init(note: Note, observer: Observable<Int>) {
         self.init(note: note,
                   observer: observer,
@@ -73,11 +75,15 @@ final class GameNoteViewModel {
     }
     
     private func increaseAttemps() {
-//        networkManager.setNoteAttemps(id: note.id, attemps: 1) { [weak self] response in
-//            if case .success = response {
-//                self?.note.statistics?.attempts += 1
-//            }
-//        }
+        networkManager.setNoteAttemps(id: note.id, attemps: 1)
+            .sink { completion in
+
+            } receiveValue: { value in
+                if value {
+                    //self?.note.statistics?.attempts += 1
+                }
+            }
+            .store(in: &subscription)
     }
 }
 

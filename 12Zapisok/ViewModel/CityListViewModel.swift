@@ -7,10 +7,12 @@
 //
 // swiftlint:disable force_cast
 
+import Combine
+import CoreData
+
 protocol CityListViewModeling: CurrentCityProtocol {
     func getNumberOfCities() -> Int
     func cityAt(index: Int) -> City
-    func setUpdateHandler(_ handler: (() -> Void)?)
     func saveCurrentCity(at index: Int)
     func hasChosenCity() -> Bool
     func fetchCities()
@@ -19,10 +21,6 @@ protocol CityListViewModeling: CurrentCityProtocol {
     var isOnboarding: Bool { get }
     var closeButtonPressed: (() -> Void)? { get set }
 }
-
-import Combine
-import UIKit
-import CoreData
 
 final class CityListViewModel {
     
@@ -59,11 +57,7 @@ final class CityListViewModel {
 extension CityListViewModel: CityListViewModeling {
 
     func fetchPresistantData() {
-        do {
-            self.cities = databaseStorage.fetchObjects(entityClass: City.self)
-        } catch let error as NSError {
-            Logger.error(msg: "Could not fetch City. \(error), \(error.userInfo)")
-        }
+        self.cities = databaseStorage.fetchObjects(entityClass: City.self)
     }
 
     public func fetchCities() {
@@ -83,10 +77,6 @@ extension CityListViewModel: CityListViewModeling {
                 self.updateHandler?()
             }
             .store(in: &subscription)
-    }
-    
-    public func setUpdateHandler(_ handler: (() -> Void)?) {
-        updateHandler = handler
     }
     
     public func getNumberOfCities() -> Int {

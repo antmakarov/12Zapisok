@@ -6,6 +6,8 @@
 //  Copyright © 2019 A.Makarov. All rights reserved.
 //
 
+import Combine
+
 protocol CurrentCityProtocol {
     func getCurrentCityName() -> String
     func getCurrentCityImage() -> String
@@ -26,7 +28,8 @@ final class HomeViewModel {
     
     // MARK: Private / Public variables
     private var currentCity: City?
-    
+    private var subscription = Set<AnyCancellable>()
+
     public var updateCityHandler: (() -> Void)?
     public var routeTo: ((HomeRoute) -> Void)?
 
@@ -43,7 +46,8 @@ final class HomeViewModel {
         configureBinding()
     }
 
-    // MARK: - 
+    // MARK: - Configure
+
     private func configureBinding() {
         preferencesManager.updateCityIdHandler = { [weak self] id in
             self?.currentCity = self?.databaseStorage.fetchObjectById(entityClass: City.self, id: id)

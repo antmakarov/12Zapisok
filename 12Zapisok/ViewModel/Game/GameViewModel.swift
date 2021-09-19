@@ -14,7 +14,6 @@ protocol GameViewModeling {
     func selectNoteDetails(at index: Int)
     func numberOfNotes() -> Int
     func numberOfOpensNotes() -> Int
-    func setUpdateHandler(_ handler: (() -> Void)?)
     func loadNotes()
 
     var routeTo: ((GameRouter) -> Void)? { get set }
@@ -141,9 +140,5 @@ extension GameViewModel: GameViewModeling {
     
     public func numberOfOpensNotes() -> Int {
         return gameNotes.compactMap { $0.statistics }.filter { $0.isCompleted }.count
-    }
-    
-    public func setUpdateHandler(_ handler: (() -> Void)?) {
-        dataUpdateHandler = handler
     }
 }

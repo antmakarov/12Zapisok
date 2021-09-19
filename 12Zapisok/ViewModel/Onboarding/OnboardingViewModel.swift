@@ -18,7 +18,7 @@ enum OnbordingItem: Int, CaseIterable {
     case auth
 }
 
-protocol OnboardingViewModeling: class {
+protocol OnboardingViewModeling: AnyObject {
     func onboardingItem(type: OnbordingItem) -> OnboardingStepViewModeling
     func onboardingItems() -> Int
     
