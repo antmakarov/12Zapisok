@@ -40,5 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         Logger.mark()
+        CoreDataManager.shared.saveContext()
     }
 }

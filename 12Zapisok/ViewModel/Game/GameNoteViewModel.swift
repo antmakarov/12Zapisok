@@ -66,18 +66,18 @@ final class GameNoteViewModel {
     
     private func checkPosition(location: Location?) -> Bool {
         if let location = location {
-            return locationManager.closeToCoordinate(location.cll(), with: .average)
+            return locationManager.closeToCoordinate(location.location, with: .average)
         }
         
         return false
     }
     
     private func increaseAttemps() {
-        networkManager.setNoteAttemps(id: note.id, attemps: 1) { [weak self] response in
-            if case .success = response {
-                self?.note.statistics?.attempts += 1
-            }
-        }
+//        networkManager.setNoteAttemps(id: note.id, attemps: 1) { [weak self] response in
+//            if case .success = response {
+//                self?.note.statistics?.attempts += 1
+//            }
+//        }
     }
 }
 
@@ -86,7 +86,7 @@ extension GameNoteViewModel: GameNoteViewModeling {
         if let location = note.location {
             increaseAttemps()
             if Int.random(in: 0...4) == 2 { //locationManager.closeToCoordinate(location.cll(), with: .average) {
-                networkManager.completeNote(id: note.id, completion: completion)
+                //networkManager.completeNote(id: note.id, completion: completion)
                 dataUpdater.value = note.id
             } else {
                 completion(.success(false))
@@ -97,7 +97,7 @@ extension GameNoteViewModel: GameNoteViewModeling {
     }
     
     func completeNote(completion: @escaping (((Result<Bool, Error>)) -> Void)) {
-        networkManager.completeNote(id: note.id, completion: completion)
+       // networkManager.completeNote(id: note.id, completion: completion)
         dataUpdater.value = note.id
     }
     
@@ -115,7 +115,7 @@ extension GameNoteViewModel: GameNoteViewModeling {
     
     func getDistanceStatus() -> String {
         if let location = note.location {
-            return Remoteness(distance: locationManager.distanceFromPoint(location.cll())).closestStatus()
+            return Remoteness(distance: locationManager.distanceFromPoint(location.location)).closestStatus()
         }
         return .empty
     }
@@ -125,7 +125,7 @@ extension GameNoteViewModel: GameNoteViewModeling {
     }
     
     var description: String {
-        return note.noteDescription
+        return note.description
     }
     
     var imgUrl: String {
@@ -141,7 +141,7 @@ extension GameNoteViewModel: GameNoteViewModeling {
             return .close
         }
         
-        return statistics.isComplete ? .open : .progress
+        return statistics.isCompleted ? .open : .progress
     }
     
     var address: String {

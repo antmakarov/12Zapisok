@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Combine
 
 final class CityListViewController: BaseViewController {
     
@@ -30,6 +31,9 @@ final class CityListViewController: BaseViewController {
     // MARK: Private / Public variables
     
     var chooseCompletion: ((City) -> Void)?
+
+    //@ObservedObject var viewModel2: CityListViewModeling
+
     var viewModel: CityListViewModeling? {
         didSet {
             viewModel?.setUpdateHandler {

@@ -93,8 +93,8 @@ extension HomeViewController {
         viewModel?.routeTo?(.showMap)
     }
     
-    @IBAction private func showCityInfo(_ sender: Any) {
-        viewModel?.routeTo?(.showCityInfo)
+    @IBAction private func showCityDetails(_ sender: Any) {
+        viewModel?.routeTo?(.showCityDetails)
     }
     
     @IBAction private func openStatistics(_ sender: Any) {

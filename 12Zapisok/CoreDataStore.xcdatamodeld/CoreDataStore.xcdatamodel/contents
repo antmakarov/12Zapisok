@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="City" representedClassName=".City" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="details" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CityDetails"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location"/>
+    </entity>
+    <entity name="CityDetails" representedClassName=".CityDetails" syncable="YES">
+        <attribute name="baseYear" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="details" optional="YES" attributeType="String"/>
+        <attribute name="images" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="[String]"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="population" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="regionCode" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Location" representedClassName=".Location" syncable="YES">
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Note" representedClassName=".Note" syncable="YES">
+        <attribute name="address" attributeType="String"/>
+        <attribute name="category" attributeType="String"/>
+        <attribute name="cityID" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="details" attributeType="String"/>
+        <attribute name="hint" attributeType="String"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="imageUrl" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location"/>
+        <relationship name="statistics" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NoteStatistics"/>
+    </entity>
+    <entity name="NoteStatistics" representedClassName=".NoteStatistics" syncable="YES">
+        <attribute name="attempts" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isCompleted" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isOpen" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="timeCompleted" optional="YES" attributeType="String"/>
+        <attribute name="timeOpen" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="City" positionX="-27" positionY="18" width="128" height="104"/>
+        <element name="CityDetails" positionX="18" positionY="72" width="128" height="119"/>
+        <element name="Location" positionX="54" positionY="99" width="128" height="59"/>
+        <element name="Note" positionX="18" positionY="90" width="128" height="179"/>
+        <element name="NoteStatistics" positionX="27" positionY="99" width="128" height="104"/>
+    </elements>
+</model>

@@ -18,7 +18,7 @@ protocol StatisticsViewModeling: AnyObject {
     func getSection(at index: Int) -> StatisticsSections
     func fetchStatistics()
     
-    var responseStatus: Observable<ResponseStatus> { get }
+    //var responseStatus: Observable<ResponseStatus> { get }
     var isLoading: Observable<Bool> { get }
 
     var routeTo: ((StatisticsRoute) -> Void)? { get set }
@@ -28,7 +28,7 @@ final class StatisticsViewModel {
     
     // MARK: Private
 
-    private let databaseStorage: StorageManager
+    private let databaseStorage: CoreDataManager
     private let networkManager: NetworkManaging
     
     private var sections: [StatisticsSections] = []
@@ -36,17 +36,17 @@ final class StatisticsViewModel {
     // MARK: Public
 
     public var routeTo: ((StatisticsRoute) -> Void)?
-    public var responseStatus = Observable(ResponseStatus.empty)
+    //public var responseStatus = Observable(ResponseStatus.empty)
     public var isLoading = Observable(false)
     
     // MARK: Lifecycle
 
     convenience init() {
-        self.init(databaseStorage: StorageManager.shared,
+        self.init(databaseStorage: CoreDataManager.shared,
                   networkManager: NetworkManager.shared)
     }
     
-    init(databaseStorage: StorageManager, networkManager: NetworkManaging) {
+    init(databaseStorage: CoreDataManager, networkManager: NetworkManaging) {
         self.databaseStorage = databaseStorage
         self.networkManager = networkManager        
     }
@@ -59,30 +59,30 @@ extension StatisticsViewModel: StatisticsViewModeling {
     public func fetchStatistics() {
         isLoading.value = true
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.networkManager.getGameStats { [weak self] result in
-                self?.isLoading.value = false
-
-                switch result {
-                case let .success(response):
-                    if response.citiesStats?.isEmpty == false {
-                        self?.sections.append(.header(total: response.totalScore,
-                                                      notes: response.openNotes,
-                                                      attemps: response.totalAttempts) )
-                        self?.sections.append(.title)
-                        
-                        response.citiesStats?.forEach {
-                            self?.sections.append(.city(stats: $0))
-                        }
-                    }
-                    self?.responseStatus.value = response.citiesStats?.isEmpty == true ? .empty : .success
-                    
-                case let .error(error):
-                    self?.responseStatus.value = .error
-                    Logger.error(msg: error)
-                }
-            }
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//            self.networkManager.getGameStats { [weak self] result in
+//                self?.isLoading.value = false
+//
+//                switch result {
+//                case let .success(response):
+//                    if response.citiesStats?.isEmpty == false {
+//                        self?.sections.append(.header(total: response.totalScore,
+//                                                      notes: response.openNotes,
+//                                                      attemps: response.totalAttempts) )
+//                        self?.sections.append(.title)
+//                        
+//                        response.citiesStats?.forEach {
+//                            self?.sections.append(.city(stats: $0))
+//                        }
+//                    }
+//                    self?.responseStatus.value = response.citiesStats?.isEmpty == true ? .empty : .success
+//                    
+//                case let .error(error):
+//                    self?.responseStatus.value = .error
+//                    Logger.error(msg: error)
+//                }
+//            }
+//        }
     }
     
     public func sectionsCount() -> Int {

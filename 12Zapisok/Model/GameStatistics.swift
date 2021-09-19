@@ -5,57 +5,31 @@
 //  Created by Anton Makarov on 10.10.2020.
 //  Copyright © 2020 A.Makarov. All rights reserved.
 //
-// swiftlint:disable operator_usage_whitespace
 
-import RealmSwift
-import ObjectMapper
-import ObjectMapperAdditions
+struct GameStatistics: Codable {
 
-typealias GameStatisticsCompletion = ((Result<GameStatistics, Error>) -> ())
-
-final class GameStatistics: Object, Mappable, Endpoint {
-    
-    @objc dynamic var id = UUID().uuidString
-    @objc dynamic var totalScore = 0
-    @objc dynamic var openNotes = 0
-    @objc dynamic var totalAttempts = 0
+    var totalScore: Int
+    var openNotes: Int
+    var totalAttempts: Int
     var citiesStats: [CityStatistics]?
-    
-    required convenience init?(map: Map) {
-        self.init()
-    }
-    
-    override static func primaryKey() -> String? {
-        return "id"
-    }
-    
-    func mapping(map: Map) {
-        totalScore      <- map["total_score"]
-        openNotes       <- map["open_notes"]
-        totalAttempts   <- map["total_attempts"]
-        citiesStats     <- map["towns_statistics"]
-    }
-    
-    static func url() -> String {
-        return "/statistics"
+
+    enum CondingKeys: String, CodingKey {
+        case totalScore = "total_score"
+        case openNotes = "open_notes"
+        case totalAttempts = "total_attempts"
+        case citiesStats = "towns_statistics"
     }
 }
 
-final class CityStatistics: Object, Mappable {
+struct CityStatistics: Codable {
 
-    @objc dynamic var id = 0
-    @objc dynamic var name = ""
-    @objc dynamic var countAttempts = 0
-    @objc dynamic var totalAttempts = 0
-    
-    required convenience init?(map: Map) {
-        self.init()
-    }
-    
-    func mapping(map: Map) {
-        id              <- map["id"]
-        name            <- map["name"]
-        countAttempts   <- map["count_attempts"]
-        totalAttempts   <- map["total_attempts"]
+    var name: String
+    var countAttempts: Int
+    var totalAttempts: Int
+
+    enum CondingKeys: String, CodingKey {
+        case name
+        case countAttempts = "count_attempts"
+        case totalAttempts = "total_attempts"
     }
 }

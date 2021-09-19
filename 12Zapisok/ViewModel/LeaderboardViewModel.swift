@@ -13,7 +13,7 @@ protocol LeaderboardViewModeling: AnyObject {
     func getUser(at index: Int) -> String
     func fetchLeaders()
      
-    var responseStatus: Observable<ResponseStatus> { get }
+    //var responseStatus: Observable<ResponseStatus> { get }
     var isLoading: Observable<Bool> { get }
     
     var routeTo: ((StatisticsRoute) -> Void)? { get set }
@@ -23,7 +23,7 @@ final class LeaderboardViewModel {
     
     // MARK: Private
     
-    private let databaseStorage: StorageManager
+    private let databaseStorage: CoreDataManager
     private let networkManager: NetworkManaging
 
     private var leaders: [GameLeader] = []
@@ -31,17 +31,17 @@ final class LeaderboardViewModel {
     // MARK: Public
     
     public var routeTo: ((StatisticsRoute) -> Void)?
-    public var responseStatus = Observable<ResponseStatus>(.empty)
+    //public var responseStatus = Observable<ResponseStatus>(.empty)
     public var isLoading = Observable<Bool>(false)
 
     // MARK: Lifecycle
 
     convenience init() {
-        self.init(databaseStorage: StorageManager.shared,
+        self.init(databaseStorage: CoreDataManager.shared,
                   networkManager: NetworkManager.shared)
     }
     
-    init(databaseStorage: StorageManager, networkManager: NetworkManaging) {
+    init(databaseStorage: CoreDataManager, networkManager: NetworkManaging) {
         self.databaseStorage = databaseStorage
         self.networkManager = networkManager
     }
@@ -55,26 +55,26 @@ extension LeaderboardViewModel: LeaderboardViewModeling {
     }
     
     public func getUser(at index: Int) -> String {
-        return leaders[index].id
+        return "" //leaders[index].id
     }
     
     public func fetchLeaders() {
         isLoading.value = true
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.networkManager.getGameLeaders { [weak self] response in
-                self?.isLoading.value = false
-                
-                switch response {
-                case let .success(result):
-                    self?.responseStatus.value = result.isEmpty ? .empty : .success
-                    Logger.debug(msg: result)
-
-                case let .error(error):
-                    self?.responseStatus.value = .error
-                    Logger.error(msg: error)
-                }
-            }
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//            self.networkManager.getGameLeaders { [weak self] response in
+//                self?.isLoading.value = false
+//                
+//                switch response {
+//                case let .success(result):
+//                    self?.responseStatus.value = result.isEmpty ? .empty : .success
+//                    Logger.debug(msg: result)
+//
+//                case let .error(error):
+//                    self?.responseStatus.value = .error
+//                    Logger.error(msg: error)
+//                }
+//            }
+//        }
     }
 }

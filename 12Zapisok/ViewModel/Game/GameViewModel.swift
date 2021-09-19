@@ -6,6 +6,8 @@
 //  Copyright © 2019 A.Makarov. All rights reserved.
 //
 
+import Combine
+
 protocol GameViewModeling {
     func cityName() -> String
     func noteCell(at index: Int) -> NoteCollectionCellViewModel
@@ -23,7 +25,7 @@ final class GameViewModel {
 
     // MARK: Managers
     private let preferencesManager: PreferencesManager
-    private let databaseStorage: StorageManager
+    private let databaseStorage: CoreDataManager
     private let networkManager: NetworkManaging
     
     // MARK: Private / Public variables
@@ -31,15 +33,16 @@ final class GameViewModel {
     private var gameNotes = [Note]()
     private var dataUpdateHandler: (() -> Void)?
     private var dataUpdater = Observable(0)
+    private var subscription = Set<AnyCancellable>()
 
     public var routeTo: ((GameRouter) -> Void)?
     public var isLoading = Observable<Bool>(false)
 
     convenience init(cityName: String?) {
-        self.init(cityName: cityName, preferencesManager: PreferencesManager.shared, databaseStorage: StorageManager.shared, networkManager: NetworkManager.shared)
+        self.init(cityName: cityName, preferencesManager: PreferencesManager.shared, databaseStorage: CoreDataManager.shared, networkManager: NetworkManager.shared)
     }
     
-    init(cityName: String?, preferencesManager: PreferencesManager, databaseStorage: StorageManager, networkManager: NetworkManaging) {
+    init(cityName: String?, preferencesManager: PreferencesManager, databaseStorage: CoreDataManager, networkManager: NetworkManaging) {
         self.preferencesManager = preferencesManager
         self.databaseStorage = databaseStorage
         self.networkManager = networkManager
@@ -47,8 +50,8 @@ final class GameViewModel {
         
         dataUpdater.addObserver { [weak self] noteId in
             if let index = self?.gameNotes.firstIndex(where: { $0.id == noteId }) {
-                self?.gameNotes[index].statistics?.isComplete = true
-                self?.gameNotes[index + 1].statistics = NoteStatistics()
+                //self?.gameNotes[index].statistic?.isComplete = true
+                //self?.gameNotes[index + 1].statistic = NoteStatistics(from: <#Decoder#>)
                 self?.gameNotes[index + 1].statistics?.isOpen = true
                 self?.dataUpdateHandler?()
             } else {
@@ -66,33 +69,57 @@ extension GameViewModel: GameViewModeling {
         }
     
         isLoading.value = true
-        if let gameNotes = databaseStorage.getObjects(Note.self) {
+
+        let gameNotes = databaseStorage.fetchObjects(entityClass: Note.self)
+        if !gameNotes.isEmpty {
             self.gameNotes = gameNotes
             dataUpdateHandler?()
         }
         
-        networkManager.getNoteList(parameters: ["town_id": cityID]) { [weak self] result in
-            self?.isLoading.value = false
-            
-            switch result {
-            case .success(let notes):
-                self?.gameNotes = notes
-                try? self?.databaseStorage.storeObjects(notes)
-                if let note = notes.first, note.statistics == nil {
-                    self?.gameNotes.first?.statistics = NoteStatistics(isOpen: true)
-                    self?.networkManager.openNote(id: note.id) { _ in }
+        networkManager.getNoteList(parameters: ["town_id": cityID])
+            .sink { resultCompletion in
+                switch resultCompletion {
+                case .failure(let error):
+                    Logger.error(msg: error)
+
+                case .finished:
+                    Logger.mark()
                 }
-                self?.dataUpdateHandler?()
-            
-            case .error(let error):
-                Logger.error(msg: error.localizedDescription)
-                if let notes = self?.databaseStorage.getObjects(Note.self) {
-                    Logger.error(msg: "Loaded from Realm Storage")
-                    self?.gameNotes = notes
-                    self?.dataUpdateHandler?()
+            } receiveValue: { resultArr in
+                Logger.info(msg: resultArr)
+                self.databaseStorage.saveContext()
+                let gameNotes = self.databaseStorage.fetchObjects(entityClass: Note.self)
+                if !gameNotes.isEmpty {
+                    self.gameNotes = gameNotes
+                    self.dataUpdateHandler?()
                 }
+                //self.fetchPresistantData()
+               // self.updateHandler?()
             }
-        }
+            .store(in: &subscription)
+
+//        { [weak self] result in
+//            self?.isLoading.value = false
+//
+//            switch result {
+//            case .success(let notes):
+//                self?.gameNotes = notes
+//                try? self?.databaseStorage.storeObjects(notes)
+//                if let note = notes.first, note.statistics == nil {
+//                    self?.gameNotes.first?.statistics = NoteStatistics(isOpen: true)
+//                    self?.networkManager.openNote(id: note.id) { _ in }
+//                }
+//                self?.dataUpdateHandler?()
+//
+//            case .error(let error):
+//                Logger.error(msg: error.localizedDescription)
+//                if let notes = self?.databaseStorage.getObjects(Note.self) {
+//                    Logger.error(msg: "Loaded from Realm Storage")
+//                    self?.gameNotes = notes
+//                    self?.dataUpdateHandler?()
+//                }
+//            }
+//        }
     }
 
     public func cityName() -> String {
@@ -113,7 +140,7 @@ extension GameViewModel: GameViewModeling {
     }
     
     public func numberOfOpensNotes() -> Int {
-        return gameNotes.compactMap { $0.statistics }.filter { $0.isComplete }.count
+        return gameNotes.compactMap { $0.statistics }.filter { $0.isCompleted }.count
     }
     
     public func setUpdateHandler(_ handler: (() -> Void)?) {

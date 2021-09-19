@@ -21,7 +21,7 @@ final class HomeViewModel {
 
     // MARK: Managers
     private let preferencesManager: PreferencesManager
-    private let databaseStorage: StorageManager
+    private let databaseStorage: CoreDataManager
     private let networkManager: NetworkManaging
     
     // MARK: Private / Public variables
@@ -31,24 +31,28 @@ final class HomeViewModel {
     public var routeTo: ((HomeRoute) -> Void)?
 
     convenience init() {
-        self.init(preferencesManager: PreferencesManager.shared, databaseStorage: StorageManager.shared, networkManager: NetworkManager.shared)
+        self.init(preferencesManager: PreferencesManager.shared, databaseStorage: CoreDataManager.shared, networkManager: NetworkManager.shared)
     }
     
-    init(preferencesManager: PreferencesManager, databaseStorage: StorageManager, networkManager: NetworkManaging) {
+    init(preferencesManager: PreferencesManager, databaseStorage: CoreDataManager, networkManager: NetworkManaging) {
         self.preferencesManager = preferencesManager
         self.databaseStorage = databaseStorage
         self.networkManager = networkManager
 
-        loadCurrentCity()
-        
+        configureHomeData()
+        configureBinding()
+    }
+
+    // MARK: - 
+    private func configureBinding() {
         preferencesManager.updateCityIdHandler = { [weak self] id in
-            self?.currentCity = self?.databaseStorage.getObjectByID(City.self, id: id)
+            self?.currentCity = self?.databaseStorage.fetchObjectById(entityClass: City.self, id: id)
         }
     }
-    
-    private func loadCurrentCity() {
+
+    private func configureHomeData() {
         if let cityID = preferencesManager.currentCityId {
-            currentCity = databaseStorage.getObjectByID(City.self, id: cityID)
+            currentCity = databaseStorage.fetchObjectById(entityClass: City.self, id: cityID)
          }
     }
 }

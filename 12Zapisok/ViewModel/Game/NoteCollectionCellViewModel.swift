@@ -26,16 +26,17 @@ final class NoteCollectionCellViewModel: NoteCollectionCellViewModeling {
         id = note.id
         title = note.name
         imgUrl = note.imageUrl
-        
-        if let statistics = note.statistics {
-            if statistics.isComplete {
-                openTime = "Открыта сегодня в 11:45" //TODO: Replace to real data
-                state = .open
-            } else {
-                state = .progress
-            }
-        } else {
-            state = .close
-        }
+
+//        if let statistics = note.statistics {
+//            if statistics.isComplete {
+//                openTime = "Открыта сегодня в 11:45" //TODO: Replace to real data
+//                state = .open
+//            } else {
+//                state = .progress
+//            }
+//        } else {
+//            state = .close
+//        }
+        state = .close
     }
 }

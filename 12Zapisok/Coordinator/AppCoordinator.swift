@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Combine
 
 // MARK: Launch Instructor
 
@@ -28,6 +29,7 @@ final class AppCoordinator: BaseCoordinator {
     private let window: UIWindow?
     private let networkManager: NetworkManaging
     private let userPreferences: PreferencesManager
+    private var subscription = Set<AnyCancellable>()
 
     private lazy var rootViewController: UINavigationController = {
         let nc = UINavigationController()
@@ -47,8 +49,9 @@ final class AppCoordinator: BaseCoordinator {
     }
     
     override func start() {
-        networkManager.updateTokenIfNeeded(isForced: false)
-        
+
+        prepareToken()
+
         switch ApplicationFlow(userPreferences.isSuccessAuth) {
         case .onboarding:
             runOnboardingFlow()
@@ -78,5 +81,19 @@ final class AppCoordinator: BaseCoordinator {
         let coordinator = HomeCoordinator(navigationController: rootViewController)
         addChildCoordinator(coordinator)
         coordinator.start()
+    }
+
+    private func prepareToken() {
+        if userPreferences.userToken == nil {
+            networkManager.updateTokenIfNeeded()
+                .sink { completion in
+                    Logger.info(msg: "UdateTokenIfNeeded completion")
+                } receiveValue: { value in
+                    Logger.info(msg: value)
+                    self.userPreferences.userToken = value.token
+                }.store(in: &subscription)
+        } else {
+            Logger.info(msg: "App Token: " + (userPreferences.userToken ?? .empty))
+        }
     }
 }

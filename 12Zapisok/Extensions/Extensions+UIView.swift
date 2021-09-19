@@ -10,6 +10,12 @@ import UIKit
 
 // MARK: Class Name Identifier
 
+extension NSObject {
+    var className: String {
+        return NSStringFromClass(type(of: self))
+    }
+}
+
 public protocol ClassName {
     static var className: String { get }
 }
@@ -22,6 +28,7 @@ public extension ClassName {
 
 extension UIViewController: ClassName { }
 extension UIView: ClassName { }
+//extension NSObject: ClassName { }
 
 // MARK: Custom UI
 

@@ -91,7 +91,7 @@
 		77F80DBF2421FF70005ED8C0 /* LeaderboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F80DBD2421FF70005ED8C0 /* LeaderboardViewController.xib */; };
 		77F80DC22421FF85005ED8C0 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DC02421FF85005ED8C0 /* StatisticsViewController.swift */; };
 		77F80DC32421FF85005ED8C0 /* StatisticsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F80DC12421FF85005ED8C0 /* StatisticsViewController.xib */; };
-		77F80DC62421FF97005ED8C0 /* CityInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DC42421FF97005ED8C0 /* CityInfoViewController.swift */; };
+		77F80DC62421FF97005ED8C0 /* CityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DC42421FF97005ED8C0 /* CityDetailsViewController.swift */; };
 		77F80DC72421FF97005ED8C0 /* CityInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F80DC52421FF97005ED8C0 /* CityInfoViewController.xib */; };
 		77F80DC924220319005ED8C0 /* GameRulesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DC824220318005ED8C0 /* GameRulesViewModel.swift */; };
 		77F80DCB24220822005ED8C0 /* PurchaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DCA24220822005ED8C0 /* PurchaseViewModel.swift */; };
@@ -99,14 +99,14 @@
 		77F80DCF24220873005ED8C0 /* LeaderboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DCE24220873005ED8C0 /* LeaderboardViewModel.swift */; };
 		77F80DD124220890005ED8C0 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DD024220890005ED8C0 /* StatisticsViewModel.swift */; };
 		77F80DD324220A5A005ED8C0 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DD224220A5A005ED8C0 /* MapViewModel.swift */; };
-		77F80DD824232746005ED8C0 /* CityInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DD724232746005ED8C0 /* CityInfoViewModel.swift */; };
+		77F80DD824232746005ED8C0 /* CityDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DD724232746005ED8C0 /* CityDetailsViewModel.swift */; };
 		77F80DDC242328DE005ED8C0 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F80DDB242328DE005ED8C0 /* MapCoordinator.swift */; };
 		77F931842439CF61007BC979 /* Extensions+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F931832439CF61007BC979 /* Extensions+UIButton.swift */; };
 		77F93186243B13E9007BC979 /* Extensions+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F93185243B13E9007BC979 /* Extensions+UIColor.swift */; };
 		8D05BC48252879DC00E08C1A /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D05BC47252879DC00E08C1A /* EmptyView.xib */; };
 		8D05BC4C252879EA00E08C1A /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D05BC4B252879EA00E08C1A /* EmptyView.swift */; };
 		8D05BC5025287CE300E08C1A /* Extensions+UIViewInstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D05BC4F25287CE300E08C1A /* Extensions+UIViewInstant.swift */; };
-		8D05BC6625289C5400E08C1A /* CityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D05BC6525289C5400E08C1A /* CityInfo.swift */; };
+		8D05BC6625289C5400E08C1A /* CityDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D05BC6525289C5400E08C1A /* CityDetails.swift */; };
 		8D05BC6E252A531F00E08C1A /* CheckPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D05BC6D252A531F00E08C1A /* CheckPlaceView.swift */; };
 		8D05BC74252A532D00E08C1A /* CheckPlaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D05BC73252A532D00E08C1A /* CheckPlaceView.xib */; };
 		8D05BC78252A533A00E08C1A /* ManualInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D05BC77252A533A00E08C1A /* ManualInputView.xib */; };
@@ -121,8 +121,7 @@
 		8D32F35722D33CE000ABC228 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F35622D33CE000ABC228 /* Note.swift */; };
 		8D32F35922D34B8E00ABC228 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F35822D34B8E00ABC228 /* GameViewModel.swift */; };
 		8D32F36022D3588500ABC228 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F35F22D3588500ABC228 /* NetworkManager.swift */; };
-		8D32F36222D3589000ABC228 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F36122D3589000ABC228 /* StorageManager.swift */; };
-		8D32F36722D366B000ABC228 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F36622D366B000ABC228 /* API.swift */; };
+		8D32F36722D366B000ABC228 /* NetworkHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F36622D366B000ABC228 /* NetworkHelpers.swift */; };
 		8D32F36922D49DD600ABC228 /* CityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F36822D49DD500ABC228 /* CityListViewController.swift */; };
 		8D32F36B22D71E5A00ABC228 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F36A22D71E5A00ABC228 /* GameViewController.swift */; };
 		8D32F36D22D71E6400ABC228 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F36C22D71E6300ABC228 /* MapViewController.swift */; };
@@ -131,6 +130,9 @@
 		8D32F37F22D73C5E00ABC228 /* GameNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F37E22D73C5E00ABC228 /* GameNoteViewModel.swift */; };
 		8D32F38122D73E1400ABC228 /* NoteCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D32F38022D73E1400ABC228 /* NoteCollectionCell.xib */; };
 		8D32F38322D73E4500ABC228 /* NoteCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32F38222D73E4500ABC228 /* NoteCollectionCell.swift */; };
+		8D4651EF26EB9C86007A877D /* CoreDataStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D4651ED26EB9C86007A877D /* CoreDataStore.xcdatamodeld */; };
+		8D4651FE26EF8733007A877D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4651FD26EF8733007A877D /* CoreDataManager.swift */; };
+		8D46520026EF935E007A877D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4651FF26EF935E007A877D /* Location.swift */; };
 		8D8EA3D922D75F8D00EA2F01 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8EA3D822D75F8D00EA2F01 /* BaseCell.swift */; };
 		8D8EA3DB22D771DC00EA2F01 /* GameNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8EA3DA22D771DC00EA2F01 /* GameNoteViewController.swift */; };
 		8DD4CA672531F060001765FF /* StatisticsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD4CA652531F060001765FF /* StatisticsCell.swift */; };
@@ -141,6 +143,9 @@
 		8DD4CA7B25321353001765FF /* StatisticsLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD4CA7925321353001765FF /* StatisticsLabelCell.swift */; };
 		8DD4CA7C25321353001765FF /* StatisticsLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD4CA7A25321353001765FF /* StatisticsLabelCell.xib */; };
 		8DD4CA80253218A5001765FF /* GameStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD4CA7F253218A5001765FF /* GameStatistics.swift */; };
+		8DFD909226F217BA00E84933 /* Extensions+Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFD909126F217BA00E84933 /* Extensions+Decoder.swift */; };
+		8DFD909426F21D1200E84933 /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFD909326F21D1200E84933 /* CoreDataError.swift */; };
+		8DFD909826F24CA200E84933 /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFD909726F24CA200E84933 /* AuthToken.swift */; };
 		B2F128E0D737F6E2297E4E49 /* Pods_12Zapisok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD617944BC980A71E154923 /* Pods_12Zapisok.framework */; };
 /* End PBXBuildFile section */
 
@@ -231,7 +236,7 @@
 		77F80DBD2421FF70005ED8C0 /* LeaderboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaderboardViewController.xib; sourceTree = "<group>"; };
 		77F80DC02421FF85005ED8C0 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		77F80DC12421FF85005ED8C0 /* StatisticsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticsViewController.xib; sourceTree = "<group>"; };
-		77F80DC42421FF97005ED8C0 /* CityInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfoViewController.swift; sourceTree = "<group>"; };
+		77F80DC42421FF97005ED8C0 /* CityDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailsViewController.swift; sourceTree = "<group>"; };
 		77F80DC52421FF97005ED8C0 /* CityInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityInfoViewController.xib; sourceTree = "<group>"; };
 		77F80DC824220318005ED8C0 /* GameRulesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRulesViewModel.swift; sourceTree = "<group>"; };
 		77F80DCA24220822005ED8C0 /* PurchaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewModel.swift; sourceTree = "<group>"; };
@@ -239,7 +244,7 @@
 		77F80DCE24220873005ED8C0 /* LeaderboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewModel.swift; sourceTree = "<group>"; };
 		77F80DD024220890005ED8C0 /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
 		77F80DD224220A5A005ED8C0 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
-		77F80DD724232746005ED8C0 /* CityInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfoViewModel.swift; sourceTree = "<group>"; };
+		77F80DD724232746005ED8C0 /* CityDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailsViewModel.swift; sourceTree = "<group>"; };
 		77F80DDB242328DE005ED8C0 /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
 		77F931832439CF61007BC979 /* Extensions+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIButton.swift"; sourceTree = "<group>"; };
 		77F93185243B13E9007BC979 /* Extensions+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIColor.swift"; sourceTree = "<group>"; };
@@ -247,7 +252,7 @@
 		8D05BC47252879DC00E08C1A /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		8D05BC4B252879EA00E08C1A /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		8D05BC4F25287CE300E08C1A /* Extensions+UIViewInstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewInstant.swift"; sourceTree = "<group>"; };
-		8D05BC6525289C5400E08C1A /* CityInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfo.swift; sourceTree = "<group>"; };
+		8D05BC6525289C5400E08C1A /* CityDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetails.swift; sourceTree = "<group>"; };
 		8D05BC6D252A531F00E08C1A /* CheckPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPlaceView.swift; sourceTree = "<group>"; };
 		8D05BC73252A532D00E08C1A /* CheckPlaceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckPlaceView.xib; sourceTree = "<group>"; };
 		8D05BC77252A533A00E08C1A /* ManualInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManualInputView.xib; sourceTree = "<group>"; };
@@ -264,8 +269,7 @@
 		8D32F35622D33CE000ABC228 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		8D32F35822D34B8E00ABC228 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		8D32F35F22D3588500ABC228 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		8D32F36122D3589000ABC228 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
-		8D32F36622D366B000ABC228 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		8D32F36622D366B000ABC228 /* NetworkHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelpers.swift; sourceTree = "<group>"; };
 		8D32F36822D49DD500ABC228 /* CityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListViewController.swift; sourceTree = "<group>"; };
 		8D32F36A22D71E5A00ABC228 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		8D32F36C22D71E6300ABC228 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -274,6 +278,9 @@
 		8D32F37E22D73C5E00ABC228 /* GameNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNoteViewModel.swift; sourceTree = "<group>"; };
 		8D32F38022D73E1400ABC228 /* NoteCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCollectionCell.xib; sourceTree = "<group>"; };
 		8D32F38222D73E4500ABC228 /* NoteCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionCell.swift; sourceTree = "<group>"; };
+		8D4651EE26EB9C86007A877D /* CoreDataStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataStore.xcdatamodel; sourceTree = "<group>"; };
+		8D4651FD26EF8733007A877D /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		8D4651FF26EF935E007A877D /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		8D8EA3D822D75F8D00EA2F01 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		8D8EA3DA22D771DC00EA2F01 /* GameNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNoteViewController.swift; sourceTree = "<group>"; };
 		8DD4CA652531F060001765FF /* StatisticsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCell.swift; sourceTree = "<group>"; };
@@ -284,6 +291,9 @@
 		8DD4CA7925321353001765FF /* StatisticsLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsLabelCell.swift; sourceTree = "<group>"; };
 		8DD4CA7A25321353001765FF /* StatisticsLabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticsLabelCell.xib; sourceTree = "<group>"; };
 		8DD4CA7F253218A5001765FF /* GameStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatistics.swift; sourceTree = "<group>"; };
+		8DFD909126F217BA00E84933 /* Extensions+Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Decoder.swift"; sourceTree = "<group>"; };
+		8DFD909326F21D1200E84933 /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
+		8DFD909726F24CA200E84933 /* AuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthToken.swift; sourceTree = "<group>"; };
 		9E0D83DDC2851353D41BF010 /* Pods-12Zapisok SwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-12Zapisok SwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-12Zapisok SwiftUI/Pods-12Zapisok SwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
 		B6198134D91AB62964AB3F1A /* Pods-12Zapisok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-12Zapisok.debug.xcconfig"; path = "Target Support Files/Pods-12Zapisok/Pods-12Zapisok.debug.xcconfig"; sourceTree = "<group>"; };
 		E56F190E9E5A9983E04EA8A2 /* Pods-12Zapisok SwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-12Zapisok SwiftUI.release.xcconfig"; path = "Target Support Files/Pods-12Zapisok SwiftUI/Pods-12Zapisok SwiftUI.release.xcconfig"; sourceTree = "<group>"; };
@@ -402,6 +412,7 @@
 				77DE67EC254EF66500C96297 /* Extensions+UIDevice.swift */,
 				772FA6F22557E2ED0098BBF9 /* Extensions+MKMapView.swift */,
 				77B02849251B16FB00BC71F8 /* AppTarget.swift */,
+				8DFD909126F217BA00E84933 /* Extensions+Decoder.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -548,7 +559,7 @@
 			isa = PBXGroup;
 			children = (
 				8D05BC5E2528888700E08C1A /* Cells */,
-				77F80DC42421FF97005ED8C0 /* CityInfoViewController.swift */,
+				77F80DC42421FF97005ED8C0 /* CityDetailsViewController.swift */,
 				77F80DC52421FF97005ED8C0 /* CityInfoViewController.xib */,
 			);
 			path = CityInfo;
@@ -734,6 +745,7 @@
 				8D32F34922D3302F00ABC228 /* LaunchScreen.storyboard */,
 				8D32F34C22D3302F00ABC228 /* Info.plist */,
 				77EDC315252E62A100ABBA05 /* Localizable.strings */,
+				8D4651ED26EB9C86007A877D /* CoreDataStore.xcdatamodeld */,
 			);
 			path = 12Zapisok;
 			sourceTree = "<group>";
@@ -742,11 +754,13 @@
 			isa = PBXGroup;
 			children = (
 				8D32F35222D3398700ABC228 /* City.swift */,
-				8D05BC6525289C5400E08C1A /* CityInfo.swift */,
+				8D05BC6525289C5400E08C1A /* CityDetails.swift */,
+				8D4651FF26EF935E007A877D /* Location.swift */,
 				8D32F35622D33CE000ABC228 /* Note.swift */,
 				7786E37B254488770008C691 /* NoteStatistics.swift */,
 				8DD4CA7F253218A5001765FF /* GameStatistics.swift */,
 				77D682AE2532FE5D0087C982 /* GameLeader.swift */,
+				8DFD909726F24CA200E84933 /* AuthToken.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -767,7 +781,7 @@
 				77F80DD624223FAB005ED8C0 /* Onboarding */,
 				8D32F35D22D3576D00ABC228 /* Game */,
 				7741375523B9EC4100AD8A71 /* HomeViewModel.swift */,
-				77F80DD724232746005ED8C0 /* CityInfoViewModel.swift */,
+				77F80DD724232746005ED8C0 /* CityDetailsViewModel.swift */,
 				77B120DE239C5F8F001B2301 /* CityListViewModel.swift */,
 				77F80DD224220A5A005ED8C0 /* MapViewModel.swift */,
 				77F80DC824220318005ED8C0 /* GameRulesViewModel.swift */,
@@ -782,9 +796,8 @@
 		8D32F36322D3594600ABC228 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				8D32F35F22D3588500ABC228 /* NetworkManager.swift */,
-				8D32F36122D3589000ABC228 /* StorageManager.swift */,
-				8D32F36622D366B000ABC228 /* API.swift */,
+				8DFD909626F21D3800E84933 /* Network */,
+				8DFD909526F21D2400E84933 /* CoreData */,
 				77B120C4238C53BC001B2301 /* PreferencesManager.swift */,
 				77B120C6238C547E001B2301 /* Logger.swift */,
 				77B120CB238C606B001B2301 /* LocationManager.swift */,
@@ -836,6 +849,24 @@
 				8DD4CA7A25321353001765FF /* StatisticsLabelCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		8DFD909526F21D2400E84933 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				8D4651FD26EF8733007A877D /* CoreDataManager.swift */,
+				8DFD909326F21D1200E84933 /* CoreDataError.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		8DFD909626F21D3800E84933 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8D32F35F22D3588500ABC228 /* NetworkManager.swift */,
+				8D32F36622D366B000ABC228 /* NetworkHelpers.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		FE1FDA8A466C6BDD82F4FA67 /* Pods */ = {
@@ -1043,27 +1074,17 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-12Zapisok/Pods-12Zapisok-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapperAdditions/ObjectMapperAdditions.framework",
 				"${BUILT_PRODUCTS_DIR}/QuickLayout/QuickLayout.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftEntryKit/SwiftEntryKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapperAdditions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QuickLayout.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftEntryKit.framework",
 			);
@@ -1089,7 +1110,7 @@
 				8D32F35722D33CE000ABC228 /* Note.swift in Sources */,
 				7706E0A2246529A00021DA1E /* GameProgressView.swift in Sources */,
 				8D05BC7C252A534200E08C1A /* ManualInputView.swift in Sources */,
-				77F80DD824232746005ED8C0 /* CityInfoViewModel.swift in Sources */,
+				77F80DD824232746005ED8C0 /* CityDetailsViewModel.swift in Sources */,
 				8D05BCA0252BBA6300E08C1A /* Extensions+UIPopUp.swift in Sources */,
 				77EDC330252F7FF900ABBA05 /* PopUpView.swift in Sources */,
 				77B120E3239CDCE1001B2301 /* OnboardingViewModel.swift in Sources */,
@@ -1118,7 +1139,9 @@
 				77DE67ED254EF66700C96297 /* Extensions+UIDevice.swift in Sources */,
 				77688CD923BA20AE00697408 /* CityHeaderReusableView.swift in Sources */,
 				7790B484241FA66B0046EFA5 /* SettingsViewController.swift in Sources */,
-				77F80DC62421FF97005ED8C0 /* CityInfoViewController.swift in Sources */,
+				8D4651FE26EF8733007A877D /* CoreDataManager.swift in Sources */,
+				77F80DC62421FF97005ED8C0 /* CityDetailsViewController.swift in Sources */,
+				8DFD909826F24CA200E84933 /* AuthToken.swift in Sources */,
 				8D05BC6E252A531F00E08C1A /* CheckPlaceView.swift in Sources */,
 				77BDB39E23B2B41600820E5B /* CityCollectionCell.swift in Sources */,
 				77F80DC22421FF85005ED8C0 /* StatisticsViewController.swift in Sources */,
@@ -1127,7 +1150,7 @@
 				77B120D4239C475B001B2301 /* OnboardingViewController.swift in Sources */,
 				77F80DCD2422084D005ED8C0 /* SettingsViewModel.swift in Sources */,
 				77F80DDC242328DE005ED8C0 /* MapCoordinator.swift in Sources */,
-				8D05BC6625289C5400E08C1A /* CityInfo.swift in Sources */,
+				8D05BC6625289C5400E08C1A /* CityDetails.swift in Sources */,
 				8DD4CA672531F060001765FF /* StatisticsCell.swift in Sources */,
 				8D32F36022D3588500ABC228 /* NetworkManager.swift in Sources */,
 				8D05BC4C252879EA00E08C1A /* EmptyView.swift in Sources */,
@@ -1148,6 +1171,8 @@
 				8D32F34122D3302D00ABC228 /* AppDelegate.swift in Sources */,
 				77B0284A251B16FB00BC71F8 /* AppTarget.swift in Sources */,
 				77F80DB824216518005ED8C0 /* Coordinator.swift in Sources */,
+				8D4651EF26EB9C86007A877D /* CoreDataStore.xcdatamodeld in Sources */,
+				8DFD909426F21D1200E84933 /* CoreDataError.swift in Sources */,
 				8D8EA3DB22D771DC00EA2F01 /* GameNoteViewController.swift in Sources */,
 				8D32F38322D73E4500ABC228 /* NoteCollectionCell.swift in Sources */,
 				770972B9252DD62800BED5C8 /* OpenNoteView.swift in Sources */,
@@ -1156,8 +1181,8 @@
 				77B120DF239C5F8F001B2301 /* CityListViewModel.swift in Sources */,
 				8D32F35322D3398700ABC228 /* City.swift in Sources */,
 				77F80DCF24220873005ED8C0 /* LeaderboardViewModel.swift in Sources */,
-				8D32F36222D3589000ABC228 /* StorageManager.swift in Sources */,
 				77B120CC238C606B001B2301 /* LocationManager.swift in Sources */,
+				8D46520026EF935E007A877D /* Location.swift in Sources */,
 				77A18F012433756F0027E456 /* Extensions+UIViewController.swift in Sources */,
 				7738480D2558794E00C6135A /* MapPinAnnotation.swift in Sources */,
 				7790B469241FA3CF0046EFA5 /* LoginViewController.swift in Sources */,
@@ -1166,13 +1191,14 @@
 				77419FAA2469EDFB00DA205E /* DistanceToPlaceView.swift in Sources */,
 				77B120E9239CF561001B2301 /* AppCoordinator.swift in Sources */,
 				773C93B7253E33DE00E33241 /* GameFooterView.swift in Sources */,
+				8DFD909226F217BA00E84933 /* Extensions+Decoder.swift in Sources */,
 				775370C02458E0DE006EFF3E /* HintManager.swift in Sources */,
 				77F93186243B13E9007BC979 /* Extensions+UIColor.swift in Sources */,
 				772FA6EB2557DB060098BBF9 /* MapClusterView.swift in Sources */,
 				77D682AF2532FE5D0087C982 /* GameLeader.swift in Sources */,
 				77F80DB424214B44005ED8C0 /* Extensions+String.swift in Sources */,
 				8D32F37922D7394500ABC228 /* NoteCollectionCellViewModel.swift in Sources */,
-				8D32F36722D366B000ABC228 /* API.swift in Sources */,
+				8D32F36722D366B000ABC228 /* NetworkHelpers.swift in Sources */,
 				772FA6FD2557E79A0098BBF9 /* TriangleView.swift in Sources */,
 				77B120E1239CDA3B001B2301 /* OnboardingCoordinator.swift in Sources */,
 			);
@@ -1373,6 +1399,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8D4651ED26EB9C86007A877D /* CoreDataStore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8D4651EE26EB9C86007A877D /* CoreDataStore.xcdatamodel */,
+			);
+			currentVersion = 8D4651EE26EB9C86007A877D /* CoreDataStore.xcdatamodel */;
+			path = CoreDataStore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8D32F33522D3302D00ABC228 /* Project object */;
 }

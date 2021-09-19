@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 enum OnboardingRoute {
     case auth

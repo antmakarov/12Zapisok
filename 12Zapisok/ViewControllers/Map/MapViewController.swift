@@ -25,10 +25,10 @@ final class MapViewController: UIViewController {
         noteButton.isHidden = true
         
         if let cityID = PreferencesManager.shared.currentCityId {
-            let currentCity = StorageManager.shared.getObjectByID(City.self, id: cityID)
-            let loc = currentCity?.location
-            let initialLocation = CLLocation(latitude: loc?.lat ?? 0, longitude: loc?.lon ?? 0)
-            centerMapOnLocation(location: initialLocation)
+            //let currentCity = StorageManager.shared.getObjectByID(City.self, id: cityID)
+            //let loc = currentCity?.location
+            //let initialLocation = CLLocation(latitude: loc?.lat ?? 0, longitude: loc?.lon ?? 0)
+            //centerMapOnLocation(location: initialLocation)
         }
         
         viewModel?.fillPinNotes { [weak self] pins in

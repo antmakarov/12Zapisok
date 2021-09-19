@@ -25,22 +25,22 @@ final class StatisticsViewController: UIViewController {
                 self?.emptyView.isHidden = $0
                 self?.toggleLoader($0)
             }
-            
-            viewModel?.responseStatus.addObserver { [weak self] status in
-                switch status {
-                case .success:
-                    self?.tableView.reloadData()
-                    self?.emptyView.isHidden = true
-                    
-                case .error, .networkError:
-                    self?.emptyView.isHidden = false
-                    self?.emptyView.updateView(type: .error)
-                    
-                case .empty:
-                    self?.emptyView.isHidden = false
-                    self?.emptyView.updateView(type: .empty)
-                }
-            }
+//            
+//            viewModel?.responseStatus.addObserver { [weak self] status in
+//                switch status {
+//                case .success:
+//                    self?.tableView.reloadData()
+//                    self?.emptyView.isHidden = true
+//                    
+//                case .error, .networkError:
+//                    self?.emptyView.isHidden = false
+//                    self?.emptyView.updateView(type: .error)
+//                    
+//                case .empty:
+//                    self?.emptyView.isHidden = false
+//                    self?.emptyView.updateView(type: .empty)
+//                }
+//            }
         }
     }
     

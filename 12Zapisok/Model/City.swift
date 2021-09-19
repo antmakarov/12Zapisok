@@ -5,72 +5,56 @@
 //  Created by A.Makarov on 08/07/2019.
 //  Copyright © 2019 A.Makarov. All rights reserved.
 //
-// swiftlint:disable operator_usage_whitespace
 
-import RealmSwift
-import ObjectMapper
-import CoreLocation
+import CoreData
 
-protocol Endpoint {
-    static func url() -> String
-}
+final class City: NSManagedObject, Codable, Identifiable {
 
-typealias CityListCompletion = ((Result<[City], Error>) -> ())
+    // MARK: - Core Data Properties
 
-final class City: Object, Mappable, Endpoint {
-    
-    @objc dynamic var id = 0
-    @objc dynamic var name = ""
-    @objc dynamic var imageUrl = ""
-    @objc dynamic var cityDescription = ""
-    @objc dynamic var cityInfo: CityInfo?
-    @objc dynamic var location: Location?
-    
-    required convenience init?(map: Map) {
-        self.init()
-    }
-    
-    override static func primaryKey() -> String? {
-        return "id"
-    }
-    
-    func mapping(map: Map) {
-        id              <- map["id"]
-        name            <- map["name"]
-        imageUrl        <- map["image_url"]
-        cityDescription <- map["description"]
-        cityInfo        <- map["town_info"]
-        location        <- map["point"]
-    }
-    
-    static func url() -> String {
-        return "/towns"
-    }
-}
+    @NSManaged var id: Int
+    @NSManaged var name: String
+    @NSManaged var imageUrl: String
+    @NSManaged var details: CityDetails?
+    @NSManaged var location: Location?
 
-final class Location: Object, Mappable {
+    // MARK: - Codable Init
 
-    @objc dynamic var lat = 0.0
-    @objc dynamic var lon = 0.0
-    
-    required convenience init?(map: Map) {
-        self.init()
+    public required convenience init(from decoder: Decoder) throws {
+        guard let context = decoder.managedObjectContext else {
+            fatalError(CoreDataError.noContext.error)
+        }
+        
+        self.init(context: context)
+        do {
+            let values = try decoder.container(keyedBy: CodingKeys.self)
+            id = try values.decode(Int.self, forKey: .id)
+            name = try values.decode(String.self, forKey: .name)
+            imageUrl = try values.decode(String.self, forKey: .imageUrl)
+            details = try values.decodeIfPresent(CityDetails.self, forKey: .details)
+            location = try values.decodeIfPresent(Location.self, forKey: .location)
+        } catch {
+            Logger.error(msg: error)
+        }
     }
     
-    func mapping(map: Map) {
-        lat <- map["lat"]
-        lon <- map["lon"]
+    public func encode(to encoder: Encoder) throws {
+        do {
+            var container = encoder.container(keyedBy: CodingKeys.self)
+            try container.encode(id, forKey: .id)
+            try container.encode(name, forKey: .name)
+            try container.encode(imageUrl, forKey: .imageUrl)
+            try container.encode(details, forKey: .details)
+            try container.encode(location, forKey: .location)
+        } catch {
+            Logger.error(msg: error)
+        }
     }
-    
-    func cll() -> CLLocation {
-        return CLLocation(latitude: lat, longitude: lon)
-    }
-    
-    func cllCoordinate() -> CLLocationCoordinate2D {
-        return CLLocationCoordinate2D(latitude: lat, longitude: lon)
-    }
-    
-    func isNullLocation() -> Bool {
-        return lat == 0 || lon == 0
+
+    enum CodingKeys: String, CodingKey {
+        case id, name, description
+        case details = "town_info"
+        case location = "point"
+        case imageUrl = "image_url"
     }
 }

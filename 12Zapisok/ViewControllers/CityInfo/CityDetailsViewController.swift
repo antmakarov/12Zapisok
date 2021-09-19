@@ -1,5 +1,5 @@
 //
-//  CityInfoViewController.swift
+//  CityDetailsViewController.swift
 //  12Zapisok
 //
 //  Created by Anton Makarov on 18.03.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class CityInfoViewController: UIViewController, UIGestureRecognizerDelegate {
+final class CityDetailsViewController: UIViewController, UIGestureRecognizerDelegate {
     
     private enum Constants {
         static let shadowRadius: CGFloat = 4.0
@@ -27,7 +27,7 @@ final class CityInfoViewController: UIViewController, UIGestureRecognizerDelegat
     
     @IBOutlet private weak var swipeBottomConstraint: NSLayoutConstraint!
     
-    var viewModel: CityInfoViewModeling?
+    var viewModel: CityDetailsViewModeling?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,7 +92,7 @@ final class CityInfoViewController: UIViewController, UIGestureRecognizerDelegat
     }
 }
 
-extension CityInfoViewController: UICollectionViewDataSource {
+extension CityDetailsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let viewModel = viewModel else {
             fatalError("Not installed View Model")
@@ -112,7 +112,7 @@ extension CityInfoViewController: UICollectionViewDataSource {
     }
 }
 
-extension CityInfoViewController: UICollectionViewDelegateFlowLayout {
+extension CityDetailsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width * Constants.cellWidthRatio
         return CGSize(width: width, height: collectionView.frame.height)

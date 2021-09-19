@@ -1,24 +1,11 @@
 PODS:
-  - Alamofire (5.2.2)
   - Kingfisher (5.15.5):
     - Kingfisher/Core (= 5.15.5)
   - Kingfisher/Core (5.15.5)
   - NVActivityIndicatorView (5.1.0):
     - NVActivityIndicatorView/Base (= 5.1.0)
   - NVActivityIndicatorView/Base (5.1.0)
-  - ObjectMapper (3.5.2)
-  - ObjectMapperAdditions/Core (7.0.0):
-    - ObjectMapper
-  - ObjectMapperAdditions/Realm (7.0.0):
-    - ObjectMapper
-    - ObjectMapperAdditions/Core
-    - RealmSwift
   - QuickLayout (3.0.0)
-  - Realm (4.3.2):
-    - Realm/Headers (= 4.3.2)
-  - Realm/Headers (4.3.2)
-  - RealmSwift (4.3.2):
-    - Realm (= 4.3.2)
   - SkyFloatingLabelTextField (3.8.0)
   - SwiftEntryKit (1.2.6):
     - QuickLayout (= 3.0.0)
@@ -29,12 +16,8 @@ PODS:
   - YandexRuntime (3.5.0)
 
 DEPENDENCIES:
-  - Alamofire
   - Kingfisher
   - NVActivityIndicatorView
-  - ObjectMapper (= 3.5.2)
-  - ObjectMapperAdditions/Realm (~> 7.0)
-  - RealmSwift (= 4.3.2)
   - SkyFloatingLabelTextField (~> 3.0)
   - SwiftEntryKit
   - SwiftGen
@@ -43,14 +26,9 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - Alamofire
     - Kingfisher
     - NVActivityIndicatorView
-    - ObjectMapper
-    - ObjectMapperAdditions
     - QuickLayout
-    - Realm
-    - RealmSwift
     - SkyFloatingLabelTextField
     - SwiftEntryKit
     - SwiftGen
@@ -59,14 +37,9 @@ SPEC REPOS:
     - YandexRuntime
 
 SPEC CHECKSUMS:
-  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   Kingfisher: e3ec347a5ab8817b7585ef46923a2d2b9a7d8fbe
   NVActivityIndicatorView: 09e48a157e6fc8369636477f9c9aa2f6090993c3
-  ObjectMapper: b53ae947d370bf89423e86be7d4e2d2b2a8d3f40
-  ObjectMapperAdditions: 90599007c533d46f6b4c05dca6931a9c0060424a
   QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
-  Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
-  RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
   SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
   SwiftEntryKit: 96a2fa90b2631bbbfac50d18449e9ca3d0635f13
   SwiftGen: 67860cc7c3cfc2ed25b9b74cfd55495fc89f9108
@@ -74,6 +47,6 @@ SPEC CHECKSUMS:
   YandexMapKit: ecd4b78de34a35df63d066ac299e6fd0fe46d1ba
   YandexRuntime: 2d55244d06267106cf9b00c25a1e63f72a73b6fd
 
-PODFILE CHECKSUM: ff28b2ed93b14040ec1bd2bfbdf4b7079bf5eedf
+PODFILE CHECKSUM: adbbeb1ea0d95eada3149581b482c5ddd0073cf1
 
 COCOAPODS: 1.10.1

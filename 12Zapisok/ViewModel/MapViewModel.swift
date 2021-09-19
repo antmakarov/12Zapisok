@@ -26,7 +26,7 @@ final class MapViewModel {
     private let quantityManager: HintManaging
 
     private let preferencesManager = PreferencesManager.shared
-    private let storageManager = StorageManager.shared
+    private let storageManager = CoreDataManager.shared
         
     convenience init() {
         self.init(locationManager: LocationManager.shared, quantityManager: HintManager.shared)
@@ -47,26 +47,25 @@ extension MapViewModel: MapViewModeling {
     }
     
     public func cityCenter() -> CLLocation {
-        if let cityID = preferencesManager.currentCityId, let currentLocation = storageManager.getObjectByID(City.self, id: cityID)?.location {
-            return CLLocation(latitude: currentLocation.lat, longitude: currentLocation.lon)
+        if let cityID = preferencesManager.currentCityId,
+           let currentLocation = storageManager.fetchObjectById(entityClass: City.self, id: cityID)?.location {
+            return CLLocation(latitude: currentLocation.latitude,
+                              longitude: currentLocation.longitude)
         }
         
         return locationManager.currentPosition
     }
     
     public func fillPinNotes(completion: @escaping ([MapAnnotationModeling]) -> Void) {
-        guard let notes = storageManager.getObjects(Note.self) else {
-            return
-        }
-        
+        let notes = storageManager.fetchObjects(entityClass: Note.self)
         var pins: [MapAnnotationModeling] = []
         let group = DispatchGroup()
         
         for (index, note) in notes.enumerated() {
             group.enter()
-            if let location = note.location, !location.isNullLocation() {
+            if let location = note.location, !location.isNullLocation {
                 note.imageUrl.downloadImage { image in
-                    let pin = MapPinAnnotation(coordinate: location.cllCoordinate(),
+                    let pin = MapPinAnnotation(coordinate: location.coordinate2D,
                                                id: index + 1,
                                                marker: image)
                     pins.append(pin)

@@ -5,6 +5,7 @@
 //  Created by Anton Makarov on 08.12.2019.
 //  Copyright © 2019 A.Makarov. All rights reserved.
 //
+// swiftlint:disable force_cast
 
 protocol CityListViewModeling: CurrentCityProtocol {
     func getNumberOfCities() -> Int
@@ -13,15 +14,20 @@ protocol CityListViewModeling: CurrentCityProtocol {
     func saveCurrentCity(at index: Int)
     func hasChosenCity() -> Bool
     func fetchCities()
+    var namePublisher: Published<[City]>.Publisher { get }
 
     var isOnboarding: Bool { get }
     var closeButtonPressed: (() -> Void)? { get set }
 }
 
+import Combine
+import UIKit
+import CoreData
+
 final class CityListViewModel {
     
     private let preferencesManager: PreferencesManager
-    private let databaseStorage: StorageManager
+    private let databaseStorage: CoreDataManager
     private let networkManager: NetworkManaging
     
     private var cities = [City]()
@@ -29,12 +35,18 @@ final class CityListViewModel {
     
     public var isOnboarding: Bool
     public var closeButtonPressed: (() -> Void)?
-    
+
+    @Published var cities2 = [City]()
+    var namePublisher: Published<[City]>.Publisher { $cities2 }
+
+    private var networkManager2 = NetworkManager()
+    private var subscription = Set<AnyCancellable>()
+
     convenience init(isOnboarding: Bool) {
-        self.init(isOnboarding: isOnboarding, preferencesManager: PreferencesManager.shared, databaseStorage: StorageManager.shared, networkManager: NetworkManager.shared)
+        self.init(isOnboarding: isOnboarding, preferencesManager: PreferencesManager.shared, databaseStorage: CoreDataManager.shared, networkManager: NetworkManager.shared)
     }
-    
-    init(isOnboarding: Bool, preferencesManager: PreferencesManager, databaseStorage: StorageManager, networkManager: NetworkManaging) {
+
+    init(isOnboarding: Bool, preferencesManager: PreferencesManager, databaseStorage: CoreDataManager, networkManager: NetworkManaging) {
         self.preferencesManager = preferencesManager
         self.databaseStorage = databaseStorage
         self.networkManager = networkManager
@@ -45,26 +57,32 @@ final class CityListViewModel {
 }
 
 extension CityListViewModel: CityListViewModeling {
-    
-    public func fetchCities() {
-        
-        if let cities = databaseStorage.getObjects(City.self) {
-            self.cities = cities
-            return
+
+    func fetchPresistantData() {
+        do {
+            self.cities = databaseStorage.fetchObjects(entityClass: City.self)
+        } catch let error as NSError {
+            Logger.error(msg: "Could not fetch City. \(error), \(error.userInfo)")
         }
-        
-        networkManager.getCityList { result in
-            switch result {
-            case .success(let cities):
-                self.cities = cities
-                try? self.databaseStorage.storeObjects(cities)
-                self.updateHandler?()
-                
-            case .error(let error):
-                Logger.error(msg: error.localizedDescription)
+    }
+
+    public func fetchCities() {
+        networkManager2.getCityList()
+            .sink { resultCompletion in
+                switch resultCompletion {
+                case .failure(let error):
+                    Logger.error(msg: error)
+
+                case .finished:
+                    Logger.mark()
+                }
+            } receiveValue: { resultArr in
+                Logger.info(msg: resultArr)
+                self.databaseStorage.saveContext()
+                self.fetchPresistantData()
                 self.updateHandler?()
             }
-        }
+            .store(in: &subscription)
     }
     
     public func setUpdateHandler(_ handler: (() -> Void)?) {

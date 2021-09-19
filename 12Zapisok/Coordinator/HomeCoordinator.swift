@@ -18,7 +18,7 @@ enum HomeRoute {
     case showLeaders
     case showStatistics
     case showMap
-    case showCityInfo
+    case showCityDetails
 }
 
 final class HomeCoordinator: BaseCoordinator {
@@ -129,9 +129,9 @@ final class HomeCoordinator: BaseCoordinator {
             vc.viewModel = vm
             presentModally(vc)
             
-        case .showCityInfo:
-            let vc = CityInfoViewController()
-            let vm = CityInfoViewModel()
+        case .showCityDetails:
+            let vc = CityDetailsViewController()
+            let vm = CityDetailsViewModel()
             vm.routeTo = { [weak self] route in
                 switch route {
                 case .map:

@@ -9,6 +9,7 @@
 
 import Foundation
 import CoreLocation
+import Combine
 
 enum OnbordingItem: Int, CaseIterable {
     case details
@@ -65,13 +66,14 @@ class OnboardingViewModel {
     private let locationManager: LocationManaging
     private let networkManager: NetworkManaging
     private let preferencesManager: PreferencesManager
-    private let databaseStorage = StorageManager.shared
+    private let databaseStorage = CoreDataManager.shared
 
     // MARK: Private / Public variables
     private var onboardingSteps: [OnboardingStepViewModeling] = []
     private var cityName: Int?
     private var cities = [City]()
-    
+    var subscription = Set<AnyCancellable>()
+
     public var routeTo: ((OnboardingRoute) -> Void)?
     
     convenience init() {
@@ -89,24 +91,21 @@ class OnboardingViewModel {
     }
     
     private func loadCities() {
-        networkManager.getCityList { [weak self] result in
-            switch result {
+        networkManager.getCityList()
+            .sink { compl in
                 
-            case .success(let cities):
-                self?.cities = cities
-                try? self?.databaseStorage.storeObjects(cities)
-
-            case .error(let error):
-                Logger.error(msg: error.localizedDescription)
+            } receiveValue: { value in
+                self.cities = value
+                //try? self?.databaseStorage.storeObjects(cities)
             }
-        }
+            .store(in: &subscription)
     }
     
     private func calculateNearCity(coordinates: MapPoint?) -> Int? {
         
         let avaibleCities = cities.filter({ city in
             if let location = city.location {
-                return locationManager.distanceFromCoordinates(location.lat, location.lon) != 0
+                return locationManager.distanceFromCoordinates(location.latitude, location.longitude) != 0
             }
             return false
         })
@@ -115,7 +114,7 @@ class OnboardingViewModel {
             guard let loc1 = $0.location, let loc2 = $1.location else {
                 return false
             }
-            return locationManager.distanceFromCoordinates(loc1.lat, loc1.lon) < locationManager.distanceFromCoordinates(loc2.lat, loc2.lon)
+            return locationManager.distanceFromCoordinates(loc1.latitude, loc1.longitude) < locationManager.distanceFromCoordinates(loc2.latitude, loc2.longitude)
         })
             
         return sortedPlaces.first?.id
