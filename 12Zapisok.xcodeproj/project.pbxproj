@@ -135,6 +135,7 @@
 		8D46520026EF935E007A877D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4651FF26EF935E007A877D /* Location.swift */; };
 		8D8EA3D922D75F8D00EA2F01 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8EA3D822D75F8D00EA2F01 /* BaseCell.swift */; };
 		8D8EA3DB22D771DC00EA2F01 /* GameNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8EA3DA22D771DC00EA2F01 /* GameNoteViewController.swift */; };
+		8D92B8F426FA264200689923 /* OnboardingViewModelHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D92B8F326FA264200689923 /* OnboardingViewModelHelpers.swift */; };
 		8DD4CA672531F060001765FF /* StatisticsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD4CA652531F060001765FF /* StatisticsCell.swift */; };
 		8DD4CA682531F060001765FF /* StatisticsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD4CA662531F060001765FF /* StatisticsCell.xib */; };
 		8DD4CA6F25320E70001765FF /* StatisticsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD4CA6D25320E70001765FF /* StatisticsHeaderCell.swift */; };
@@ -283,6 +284,7 @@
 		8D4651FF26EF935E007A877D /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		8D8EA3D822D75F8D00EA2F01 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		8D8EA3DA22D771DC00EA2F01 /* GameNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNoteViewController.swift; sourceTree = "<group>"; };
+		8D92B8F326FA264200689923 /* OnboardingViewModelHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModelHelpers.swift; sourceTree = "<group>"; };
 		8DD4CA652531F060001765FF /* StatisticsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCell.swift; sourceTree = "<group>"; };
 		8DD4CA662531F060001765FF /* StatisticsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticsCell.xib; sourceTree = "<group>"; };
 		8DD4CA6D25320E70001765FF /* StatisticsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsHeaderCell.swift; sourceTree = "<group>"; };
@@ -588,6 +590,7 @@
 			isa = PBXGroup;
 			children = (
 				77B120E2239CDCE1001B2301 /* OnboardingViewModel.swift */,
+				8D92B8F326FA264200689923 /* OnboardingViewModelHelpers.swift */,
 				77B120E4239CDE2B001B2301 /* OnboardingStepViewModel.swift */,
 			);
 			path = Onboarding;
@@ -1116,6 +1119,7 @@
 				77B120E3239CDCE1001B2301 /* OnboardingViewModel.swift in Sources */,
 				8D8EA3D922D75F8D00EA2F01 /* BaseCell.swift in Sources */,
 				77B120C5238C53BC001B2301 /* PreferencesManager.swift in Sources */,
+				8D92B8F426FA264200689923 /* OnboardingViewModelHelpers.swift in Sources */,
 				8D32F36922D49DD600ABC228 /* CityListViewController.swift in Sources */,
 				774413C0242A9F2F001FBD83 /* Extensions+UIImageView.swift in Sources */,
 				7790B478241FA5E10046EFA5 /* GameRulesViewController.swift in Sources */,

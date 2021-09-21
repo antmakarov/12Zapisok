@@ -9,6 +9,11 @@
 import Foundation
 import Combine
 
+enum ScreenErrorType {
+    case empty
+    case error
+}
+
 enum StatisticsRoute {
     case game
     case back
@@ -19,8 +24,9 @@ protocol StatisticsViewModeling: AnyObject {
     func getSection(at index: Int) -> StatisticsSections
     func fetchStatistics()
     
-    //var responseStatus: Observable<ResponseStatus> { get }
     var isLoading: Observable<Bool> { get }
+    var screenError: Observable<ScreenErrorType?> { get }
+    var successUpdate: Observable<Bool> { get }
 
     var routeTo: ((StatisticsRoute) -> Void)? { get set }
 }
@@ -39,7 +45,9 @@ final class StatisticsViewModel {
 
     public var routeTo: ((StatisticsRoute) -> Void)?
     public var isLoading = Observable(false)
-    
+    public var successUpdate = Observable(false)
+    public var screenError = Observable<ScreenErrorType?>(nil)
+
     // MARK: Lifecycle
 
     convenience init() {
@@ -59,13 +67,12 @@ extension StatisticsViewModel: StatisticsViewModeling {
     
     public func fetchStatistics() {
         isLoading.value = true
-        //.debounce(for: 0.8, scheduler: RunLoop.main)
-
-        self.networkManager.getGameStats()
-            .delay(for: 0.5, scheduler: RunLoop.main)
+        networkManager.getGameStats()
+            .delay(for: 1, scheduler: RunLoop.main)
             .sink { completion in
                 switch completion {
                 case let .failure(error):
+                    self.screenError.value = .error
                     Logger.error(msg: error)
 
                 case .finished:
@@ -74,7 +81,10 @@ extension StatisticsViewModel: StatisticsViewModeling {
                 }
 
             } receiveValue: { value in
+                self.screenError.value = nil
+
                 if value.citiesStats.isEmpty == false {
+                    self.screenError.value = nil
                     self.sections.append(.header(total: value.totalScore,
                                                  notes: value.openNotes,
                                                  attemps: value.totalAttempts) )
@@ -83,12 +93,19 @@ extension StatisticsViewModel: StatisticsViewModeling {
                     value.citiesStats.forEach {
                         self.sections.append(.city(stats: $0))
                     }
+                    self.successUpdate.value = true
+                } else {
+                    self.screenError.value = .empty
                 }
                 //self.responseStatus.value = value.citiesStats?.isEmpty == true ? .empty : .success
             }
             .store(in: &self.subscription)
     }
-    
+
+    private func processError(_ error: Error) {
+
+    }
+
     public func sectionsCount() -> Int {
         return sections.count
     }

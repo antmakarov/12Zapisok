@@ -45,7 +45,7 @@ final class MapViewController: UIViewController {
     
     @IBAction private func showMyPosition() {
         if let viewModel = viewModel {
-            viewModel.myPosition { location in
+            viewModel.requestForUserLocation { location in
                 if let location = location {
                     self.centerMapOnLocation(location: location)
                 }

@@ -19,12 +19,7 @@ final class StatisticsViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var emptyView: EmptyView!
 
-    var viewModel: StatisticsViewModeling? {
-        didSet {
-            viewModel?.isLoading.addObserver { [weak self] in
-                self?.emptyView.isHidden = $0
-                self?.toggleLoader($0)
-            }
+    var viewModel: StatisticsViewModeling?
 //            
 //            viewModel?.responseStatus.addObserver { [weak self] status in
 //                switch status {
@@ -41,17 +36,44 @@ final class StatisticsViewController: UIViewController {
 //                    self?.emptyView.updateView(type: .empty)
 //                }
 //            }
-        }
-    }
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
+        configureUI()
+        bindViewModel()
         viewModel?.fetchStatistics()
     }
-    
-    private func setupUI() {
+
+    private func bindViewModel() {
+        viewModel?.isLoading.addObserver { [weak self] in
+            self?.toggleLoader($0)
+        }
+
+        viewModel?.successUpdate.addObserver { [weak self] _ in
+            self?.emptyView.isHidden = true
+            self?.tableView.reloadData()
+        }
+
+        viewModel?.screenError.addObserver { [weak self] type in
+            self?.emptyView.isHidden = type == nil
+
+            switch type {
+            case .error:
+                self?.emptyView.updateView(type: .error)
+
+            case .empty:
+                self?.emptyView.updateView(type: .empty)
+
+            case .none:
+                break
+            }
+        }
+    }
+
+    private func configureUI() {
         emptyView.configureWith(type: .statistics,
                                 repeate: Button(title: Localized.repeate) { [weak self] in
                                     self?.viewModel?.fetchStatistics()

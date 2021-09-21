@@ -30,6 +30,12 @@ final class Location: NSManagedObject, Codable {
         latitude == 0 || longitude == 0
     }
 
+    convenience init(coordinate: CLLocationCoordinate2D?) {
+        self.init()
+        latitude = coordinate?.latitude ?? 0
+        longitude = coordinate?.longitude ?? 0
+    }
+
     // MARK: - Codable Init
 
     required convenience init(from decoder: Decoder) throws {

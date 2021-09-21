@@ -67,17 +67,17 @@ final class OnboardingViewController: UIViewController, Storyboarded {
 
 extension OnboardingViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel?.onboardingItems() ?? 0
+        return viewModel?.onboardingItemsCount() ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let viewModel = viewModel, let item = OnbordingItem(rawValue: indexPath.row) else {
+        guard let viewModel = viewModel else {
             fatalError("No ViewModel for Onboarding")
         }
         
         let cell = collectionView.dequeueReusableCell(with: OnboardingCell.self, for: indexPath)
-        cell.configure(with: viewModel.onboardingItem(type: item)) {
+        cell.configure(with: viewModel.onboardingItem(at: indexPath.row)) {
             self.scrollTo(nextStep: indexPath.row + 1)
         }
         

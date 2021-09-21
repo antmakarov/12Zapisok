@@ -26,7 +26,13 @@ final class OnboardingStepViewModel {
     private let isNeedAnswer: Bool
     private let action: (OnboardingAction, (() -> Void)?) -> Void
 
-    init(title: String, details: String, image: String, actionTitle: String, isHideSkip: Bool = false, isNeedAnswer: Bool = false, action: (@escaping (OnboardingAction, (() -> Void)?) -> Void)) {
+    init(title: String,
+         details: String,
+         image: String,
+         actionTitle: String,
+         isHideSkip: Bool = false,
+         isNeedAnswer: Bool = false,
+         action: (@escaping (OnboardingAction, (() -> Void)?) -> Void)) {
         stepTitle = title
         stepDetails = details
         stepImage = image
@@ -37,32 +43,34 @@ final class OnboardingStepViewModel {
     }
 }
 
+// MARK: - OnboardingStepViewModeling Public Methods
+
 extension OnboardingStepViewModel: OnboardingStepViewModeling {
-    func title() -> String {
+    public func title() -> String {
         return stepTitle
     }
     
-    func details() -> String {
+    public func details() -> String {
         return stepDetails
     }
     
-    func image() -> String {
+    public func image() -> String {
         return stepImage
     }
     
-    func actionTitle() -> String {
+    public func actionTitle() -> String {
         return stepActionTitle
     }
     
-    func isHideSkipButton() -> Bool {
+    public func isHideSkipButton() -> Bool {
         return isHideSkip
     }
     
-    func isNeedAnswerButtons() -> Bool {
+    public func isNeedAnswerButtons() -> Bool {
         return isNeedAnswer
     }
     
-    func performAction(action: OnboardingAction, actionCompletion: (() -> Void)?) {
+    public func performAction(action: OnboardingAction, actionCompletion: (() -> Void)?) {
         self.action(action, actionCompletion)
     }
 }

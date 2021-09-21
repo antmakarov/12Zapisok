@@ -121,7 +121,7 @@ extension GameNoteViewModel: GameNoteViewModeling {
     
     func getDistanceStatus() -> String {
         if let location = note.location {
-            return Remoteness(distance: locationManager.distanceFromPoint(location.location)).closestStatus()
+            return Remoteness(distance: locationManager.distanceFrom(location.location)).closestStatus()
         }
         return .empty
     }

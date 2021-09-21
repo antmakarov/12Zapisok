@@ -11,9 +11,9 @@ import Kingfisher
 
 protocol MapViewModeling: AnyObject {
     var routeTo: ((MapRouter) -> Void)? { get set }
-    
-    func myPosition(completion: @escaping (CLLocation?) -> Void)
+
     func cityCenter() -> CLLocation
+    func requestForUserLocation(completion: @escaping (CLLocation?) -> Void)
     func fillPinNotes(completion: @escaping ([MapAnnotationModeling]) -> Void)
 }
 
@@ -40,9 +40,9 @@ final class MapViewModel {
 
 extension MapViewModel: MapViewModeling {
   
-    public func myPosition(completion: @escaping (CLLocation?) -> Void) {
+    public func requestForUserLocation(completion: @escaping (CLLocation?) -> Void) {
         locationManager.requestCurrentLocation { ponit in
-            completion(ponit?.coordinate)
+            completion(ponit?.location)
         }
     }
     
