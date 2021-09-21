@@ -72,15 +72,19 @@ class OnboardingViewModel {
     private var onboardingSteps: [OnboardingStepViewModeling] = []
     private var cityName: Int?
     private var cities = [City]()
-    var subscription = Set<AnyCancellable>()
+    private var subscription = Set<AnyCancellable>()
 
     public var routeTo: ((OnboardingRoute) -> Void)?
     
     convenience init() {
-        self.init(locationManager: LocationManager.shared, networkManager: NetworkManager.shared, preferencesManager: PreferencesManager.shared)
+        self.init(locationManager: LocationManager.shared,
+                  networkManager: NetworkManager.shared,
+                  preferencesManager: PreferencesManager.shared)
     }
     
-    init(locationManager: LocationManaging, networkManager: NetworkManaging, preferencesManager: PreferencesManager) {
+    init(locationManager: LocationManaging,
+         networkManager: NetworkManaging,
+         preferencesManager: PreferencesManager) {
         self.locationManager = locationManager
         self.networkManager = networkManager
         self.preferencesManager = preferencesManager
@@ -92,23 +96,22 @@ class OnboardingViewModel {
     
     private func loadCities() {
         networkManager.getCityList()
-            .sink { compl in
-                
-            } receiveValue: { value in
-                self.cities = value
-                //try? self?.databaseStorage.storeObjects(cities)
-            }
+            .sink(receiveCompletion: { _ in },
+                  receiveValue: { value in
+                    self.cities = value
+                    self.databaseStorage.saveContext()
+                  })
             .store(in: &subscription)
     }
     
     private func calculateNearCity(coordinates: MapPoint?) -> Int? {
         
-        let avaibleCities = cities.filter({ city in
+        let avaibleCities = cities.filter { city in
             if let location = city.location {
                 return locationManager.distanceFromCoordinates(location.latitude, location.longitude) != 0
             }
             return false
-        })
+        }
         
         let sortedPlaces = avaibleCities.sorted(by: {
             guard let loc1 = $0.location, let loc2 = $1.location else {

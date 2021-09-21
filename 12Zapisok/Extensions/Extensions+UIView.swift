@@ -28,7 +28,6 @@ public extension ClassName {
 
 extension UIViewController: ClassName { }
 extension UIView: ClassName { }
-//extension NSObject: ClassName { }
 
 // MARK: Custom UI
 

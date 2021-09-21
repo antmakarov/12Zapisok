@@ -31,35 +31,41 @@ final class CityListViewController: BaseViewController {
     // MARK: Private / Public variables
     
     var chooseCompletion: ((City) -> Void)?
+    var viewModel: CityListViewModeling?
 
-    //@ObservedObject var viewModel2: CityListViewModeling
-
-    var viewModel: CityListViewModeling? {
-        didSet {
-//            viewModel?.setUpdateHandler {
-//                self.citiesCollectionView.reloadData()
-//                self.emptyView.isHidden = self.viewModel?.getNumberOfCities() != 0
-//            }
-        }
-    }
-    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         citiesCollectionView.register(reusableViewType: CityHeaderReusableView.self)
         citiesCollectionView.register(cellType: CityCollectionCell.self)
+
+        setupBinding()
         setupUI()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel?.fetchCities()
+    }
     
-    // MARK: Setup UI
-    
+    // MARK: Setup Binding / UI
+
+    private func setupBinding() {
+        viewModel?.updateHandler = { [weak self] in
+            self?.citiesCollectionView.reloadData()
+            self?.emptyView.isHidden = self?.viewModel?.getNumberOfCities() != 0
+        }
+    }
+
     private func setupUI() {
         emptyView.configureWith(type: .cityList,
                                 repeate: Button(title: "Повторить загрузку") { [weak self] in
-                                    self?.viewModel?.fetchCities() },
+                                    self?.viewModel?.fetchCities()
+                                },
                                 action: Button(title: "Вернуться назад") { [weak self] in
-                                    self?.viewModel?.closeButtonPressed?() })
+                                    self?.viewModel?.closeButtonPressed?()
+                                })
         
         if let viewModel = viewModel {
             if viewModel.isOnboarding {
@@ -109,7 +115,6 @@ extension CityListViewController: UICollectionViewDataSource {
         
         switch kind {
         case UICollectionView.elementKindSectionHeader:
-            
             let headerView = collectionView.dequeueReusableView(with: CityHeaderReusableView.self, for: indexPath)
             headerView.configure(name: viewModel.getCurrentCityName(), imageUrl: viewModel.getCurrentCityImage())
             return headerView

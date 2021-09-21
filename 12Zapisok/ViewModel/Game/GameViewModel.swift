@@ -81,6 +81,10 @@ extension GameViewModel: GameViewModeling {
                 case .failure(let error):
                     Logger.error(msg: error)
 
+                    let notes = self.databaseStorage.fetchObjects(entityClass: Note.self)
+                    self.gameNotes = notes
+                    self.dataUpdateHandler?()
+
                 case .finished:
                     Logger.mark()
                 }
@@ -96,29 +100,6 @@ extension GameViewModel: GameViewModeling {
                // self.updateHandler?()
             }
             .store(in: &subscription)
-
-//        { [weak self] result in
-//            self?.isLoading.value = false
-//
-//            switch result {
-//            case .success(let notes):
-//                self?.gameNotes = notes
-//                try? self?.databaseStorage.storeObjects(notes)
-//                if let note = notes.first, note.statistics == nil {
-//                    self?.gameNotes.first?.statistics = NoteStatistics(isOpen: true)
-//                    self?.networkManager.openNote(id: note.id) { _ in }
-//                }
-//                self?.dataUpdateHandler?()
-//
-//            case .error(let error):
-//                Logger.error(msg: error.localizedDescription)
-//                if let notes = self?.databaseStorage.getObjects(Note.self) {
-//                    Logger.error(msg: "Loaded from Realm Storage")
-//                    self?.gameNotes = notes
-//                    self?.dataUpdateHandler?()
-//                }
-//            }
-//        }
     }
 
     public func cityName() -> String {

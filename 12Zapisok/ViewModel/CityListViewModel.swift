@@ -16,9 +16,9 @@ protocol CityListViewModeling: CurrentCityProtocol {
     func saveCurrentCity(at index: Int)
     func hasChosenCity() -> Bool
     func fetchCities()
-    var namePublisher: Published<[City]>.Publisher { get }
 
     var isOnboarding: Bool { get }
+    var updateHandler: (() -> Void)? { get set }
     var closeButtonPressed: (() -> Void)? { get set }
 }
 
@@ -29,16 +29,11 @@ final class CityListViewModel {
     private let networkManager: NetworkManaging
     
     private var cities = [City]()
-    private var updateHandler: (() -> Void)?
-    
+    private var subscription = Set<AnyCancellable>()
+
     public var isOnboarding: Bool
     public var closeButtonPressed: (() -> Void)?
-
-    @Published var cities2 = [City]()
-    var namePublisher: Published<[City]>.Publisher { $cities2 }
-
-    private var networkManager2 = NetworkManager()
-    private var subscription = Set<AnyCancellable>()
+    public var updateHandler: (() -> Void)?
 
     convenience init(isOnboarding: Bool) {
         self.init(isOnboarding: isOnboarding, preferencesManager: PreferencesManager.shared, databaseStorage: CoreDataManager.shared, networkManager: NetworkManager.shared)
@@ -49,19 +44,13 @@ final class CityListViewModel {
         self.databaseStorage = databaseStorage
         self.networkManager = networkManager
         self.isOnboarding = isOnboarding
-        
-        fetchCities()
     }
 }
 
 extension CityListViewModel: CityListViewModeling {
 
-    func fetchPresistantData() {
-        self.cities = databaseStorage.fetchObjects(entityClass: City.self)
-    }
-
     public func fetchCities() {
-        networkManager2.getCityList()
+        networkManager.getCityList()
             .sink { resultCompletion in
                 switch resultCompletion {
                 case .failure(let error):
@@ -70,10 +59,9 @@ extension CityListViewModel: CityListViewModeling {
                 case .finished:
                     Logger.mark()
                 }
-            } receiveValue: { resultArr in
-                Logger.info(msg: resultArr)
+            } receiveValue: { value in
                 self.databaseStorage.saveContext()
-                self.fetchPresistantData()
+                self.cities = value
                 self.updateHandler?()
             }
             .store(in: &subscription)
