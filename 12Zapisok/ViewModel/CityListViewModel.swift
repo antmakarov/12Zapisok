@@ -36,10 +36,16 @@ final class CityListViewModel {
     public var updateHandler: (() -> Void)?
 
     convenience init(isOnboarding: Bool) {
-        self.init(isOnboarding: isOnboarding, preferencesManager: PreferencesManager.shared, databaseStorage: CoreDataManager.shared, networkManager: NetworkManager.shared)
+        self.init(isOnboarding: isOnboarding,
+                  preferencesManager: PreferencesManager.shared,
+                  databaseStorage: CoreDataManager.shared,
+                  networkManager: NetworkManager.shared)
     }
 
-    init(isOnboarding: Bool, preferencesManager: PreferencesManager, databaseStorage: CoreDataManager, networkManager: NetworkManaging) {
+    init(isOnboarding: Bool,
+         preferencesManager: PreferencesManager,
+         databaseStorage: CoreDataManager,
+         networkManager: NetworkManaging) {
         self.preferencesManager = preferencesManager
         self.databaseStorage = databaseStorage
         self.networkManager = networkManager

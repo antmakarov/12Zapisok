@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 enum HomeRoute {
     // TODO: Change one name to extended information
@@ -96,7 +97,6 @@ final class HomeCoordinator: BaseCoordinator {
             presentModally(vc)
             
         case .showLeaders:
-            let vc = LeaderboardViewController()
             let vm = LeaderboardViewModel()
             vm.routeTo = { [weak self] route in
                 switch route {
@@ -109,7 +109,7 @@ final class HomeCoordinator: BaseCoordinator {
                     self?.navigationController.dismiss(animated: true)
                 }
             }
-            vc.viewModel = vm
+            let vc = UIHostingController(rootView: LeaderboardView(viewModel: vm))
             presentModally(vc)
             
         case .showStatistics:

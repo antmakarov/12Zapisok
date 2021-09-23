@@ -20,24 +20,6 @@ final class StatisticsViewController: UIViewController {
     @IBOutlet private weak var emptyView: EmptyView!
 
     var viewModel: StatisticsViewModeling?
-//            
-//            viewModel?.responseStatus.addObserver { [weak self] status in
-//                switch status {
-//                case .success:
-//                    self?.tableView.reloadData()
-//                    self?.emptyView.isHidden = true
-//                    
-//                case .error, .networkError:
-//                    self?.emptyView.isHidden = false
-//                    self?.emptyView.updateView(type: .error)
-//                    
-//                case .empty:
-//                    self?.emptyView.isHidden = false
-//                    self?.emptyView.updateView(type: .empty)
-//                }
-//            }
-
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,23 +34,19 @@ final class StatisticsViewController: UIViewController {
             self?.toggleLoader($0)
         }
 
-        viewModel?.successUpdate.addObserver { [weak self] _ in
-            self?.emptyView.isHidden = true
-            self?.tableView.reloadData()
-        }
-
-        viewModel?.screenError.addObserver { [weak self] type in
-            self?.emptyView.isHidden = type == nil
-
+        viewModel?.dataType.addObserver { [weak self] type in
             switch type {
+            case .success:
+                self?.emptyView.isHidden = true
+                self?.tableView.reloadData()
+
             case .error:
+                self?.emptyView.isHidden = false
                 self?.emptyView.updateView(type: .error)
 
             case .empty:
+                self?.emptyView.isHidden = false
                 self?.emptyView.updateView(type: .empty)
-
-            case .none:
-                break
             }
         }
     }

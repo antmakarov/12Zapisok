@@ -9,7 +9,8 @@
 import Foundation
 import Combine
 
-enum ScreenErrorType {
+enum ResponseDataType {
+    case success
     case empty
     case error
 }
@@ -25,8 +26,7 @@ protocol StatisticsViewModeling: AnyObject {
     func fetchStatistics()
     
     var isLoading: Observable<Bool> { get }
-    var screenError: Observable<ScreenErrorType?> { get }
-    var successUpdate: Observable<Bool> { get }
+    var dataType: Observable<ResponseDataType> { get }
 
     var routeTo: ((StatisticsRoute) -> Void)? { get set }
 }
@@ -45,8 +45,7 @@ final class StatisticsViewModel {
 
     public var routeTo: ((StatisticsRoute) -> Void)?
     public var isLoading = Observable(false)
-    public var successUpdate = Observable(false)
-    public var screenError = Observable<ScreenErrorType?>(nil)
+    public var dataType = Observable<ResponseDataType>(.empty)
 
     // MARK: Lifecycle
 
@@ -72,38 +71,32 @@ extension StatisticsViewModel: StatisticsViewModeling {
             .sink { completion in
                 switch completion {
                 case let .failure(error):
-                    self.screenError.value = .error
                     Logger.error(msg: error)
+                    self.dataType.value = .error
+                    fallthrough
 
                 case .finished:
                     self.isLoading.value = false
-                    Logger.mark()
                 }
-
             } receiveValue: { value in
-                self.screenError.value = nil
+                if !value.citiesStatistics.isEmpty {
 
-                if value.citiesStats.isEmpty == false {
-                    self.screenError.value = nil
+                    // MARK: Fill data source
                     self.sections.append(.header(total: value.totalScore,
                                                  notes: value.openNotes,
                                                  attemps: value.totalAttempts) )
                     self.sections.append(.title)
 
-                    value.citiesStats.forEach {
+                    value.citiesStatistics.forEach {
                         self.sections.append(.city(stats: $0))
                     }
-                    self.successUpdate.value = true
+
+                    self.dataType.value = .success
                 } else {
-                    self.screenError.value = .empty
+                    self.dataType.value = .empty
                 }
-                //self.responseStatus.value = value.citiesStats?.isEmpty == true ? .empty : .success
             }
             .store(in: &self.subscription)
-    }
-
-    private func processError(_ error: Error) {
-
     }
 
     public func sectionsCount() -> Int {

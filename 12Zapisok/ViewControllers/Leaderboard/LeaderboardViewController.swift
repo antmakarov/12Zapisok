@@ -13,39 +13,39 @@ final class LeaderboardViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var emptyView: EmptyView!
 
-    var viewModel: LeaderboardViewModeling? {
-        didSet {
-            viewModel?.isLoading.addObserver { [weak self] in
-                self?.emptyView.isHidden = $0
-                self?.toggleLoader($0)
-            }
-            
-//            viewModel?.responseStatus.addObserver { [weak self] status in
-//                switch status {
-//                case .success:
-//                    self?.tableView.reloadData()
-//                    self?.emptyView.isHidden = true
-//                    
-//                case .error, .networkError:
-//                    self?.emptyView.isHidden = false
-//                    self?.emptyView.updateView(type: .error)
-//                    
-//                case .empty:
-//                    self?.emptyView.isHidden = false
-//                    self?.emptyView.updateView(type: .empty)
-//                }
-//            }
-        }
-    }
+    var viewModel: LeaderboardViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
+        configureUI()
+        bindViewModel()
         viewModel?.fetchLeaders()
     }
-    
-    private func setupUI() {
+
+    private func bindViewModel() {
+        viewModel?.isLoading.addObserver { [weak self] in
+            self?.toggleLoader($0)
+        }
+
+        viewModel?.dataType.addObserver { [weak self] type in
+            switch type {
+            case .success:
+                self?.emptyView.isHidden = true
+                self?.tableView.reloadData()
+
+            case .error:
+                self?.emptyView.isHidden = false
+                self?.emptyView.updateView(type: .error)
+
+            case .empty:
+                self?.emptyView.isHidden = false
+                self?.emptyView.updateView(type: .empty)
+            }
+        }
+    }
+
+    private func configureUI() {
         emptyView.configureWith(type: .leaderboard,
                                 repeate: Button(title: Localized.repeate) { [weak self] in
                                     self?.viewModel?.fetchLeaders()

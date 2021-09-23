@@ -11,13 +11,13 @@ struct GameStatistics: Codable {
     var totalScore: Int
     var openNotes: Int
     var totalAttempts: Int
-    var citiesStats: [CityStatistics]
+    var citiesStatistics: [CityStatistics]
 
     enum CodingKeys: String, CodingKey {
         case totalScore = "total_score"
         case openNotes = "open_notes"
         case totalAttempts = "total_attempts"
-        case citiesStats = "towns_statistics"
+        case citiesStatistics = "towns_statistics"
     }
 }
 

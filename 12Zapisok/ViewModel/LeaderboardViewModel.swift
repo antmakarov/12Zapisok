@@ -9,14 +9,14 @@
 import Foundation
 import Combine
 
-protocol LeaderboardViewModeling: AnyObject {
+protocol LeaderboardViewModeling: ObservableObject {
     func usersCount() -> Int
     func getUser(at index: Int) -> String
     func fetchLeaders()
 
-    //var responseStatus: Observable<ResponseStatus> { get }
     var isLoading: Observable<Bool> { get }
-    
+    var dataType: Observable<ResponseDataType> { get }
+
     var routeTo: ((StatisticsRoute) -> Void)? { get set }
 }
 
@@ -33,8 +33,8 @@ final class LeaderboardViewModel {
     // MARK: Public
     
     public var routeTo: ((StatisticsRoute) -> Void)?
-    //public var responseStatus = Observable<ResponseStatus>(.empty)
     public var isLoading = Observable<Bool>(false)
+    public var dataType = Observable<ResponseDataType>(.empty)
 
     // MARK: Lifecycle
 
@@ -57,26 +57,29 @@ extension LeaderboardViewModel: LeaderboardViewModeling {
     }
     
     public func getUser(at index: Int) -> String {
-        return "" //leaders[index].id
+        return "" //leaders[index].userId
     }
     
     public func fetchLeaders() {
         isLoading.value = true
-
         networkManager.getGameLeaders()
-            .delay(for: 0.5, scheduler: RunLoop.main)
+            .delay(for: 1, scheduler: RunLoop.main)
             .sink { completion in
                 switch completion {
                 case let .failure(error):
                     Logger.error(msg: error)
+                    self.dataType.value = .error
+                    fallthrough
 
                 case .finished:
                     self.isLoading.value = false
-                    Logger.mark()
                 }
-
             } receiveValue: { value in
-                //self?.responseStatus.value = value.isEmpty ? .empty : .success
+                if !value.isEmpty {
+                    self.dataType.value = .success
+                } else {
+                    self.dataType.value = .empty
+                }
             }
             .store(in: &self.subscription)
     }

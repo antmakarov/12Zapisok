@@ -9,7 +9,7 @@
 
 import Foundation
 
-protocol GameRulesViewModeling: class {
+protocol GameRulesViewModeling: AnyObject {
     var closeButtonPressed: (() -> Void)? { get set }
     
     func rulesCount() -> Int

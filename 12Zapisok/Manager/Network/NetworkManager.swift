@@ -12,7 +12,7 @@ import Foundation
 typealias CityListPublisher = AnyPublisher<[City], APIError>
 typealias NotesPublisher = AnyPublisher<[Note], APIError>
 typealias GameStatisticsPublisher = AnyPublisher<GameStatistics, APIError>
-typealias LeaderboardPublisher = AnyPublisher<GameLeader, APIError>
+typealias LeaderboardPublisher = AnyPublisher<[GameLeader], APIError>
 typealias ResponsePublisher = AnyPublisher<Bool, APIError>
 typealias AuthTokenPublisher = AnyPublisher<AuthToken, APIError>
 
