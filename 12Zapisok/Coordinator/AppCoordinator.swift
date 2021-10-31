@@ -86,7 +86,7 @@ final class AppCoordinator: BaseCoordinator {
     private func prepareToken() {
         if userPreferences.userToken == nil {
             networkManager.updateTokenIfNeeded()
-                .sink { completion in
+                .sink { _ in
                     Logger.info(msg: "UdateTokenIfNeeded completion")
                 } receiveValue: { value in
                     Logger.info(msg: value)

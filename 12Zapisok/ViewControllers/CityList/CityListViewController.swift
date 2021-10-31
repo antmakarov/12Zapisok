@@ -31,7 +31,7 @@ final class CityListViewController: BaseViewController {
     // MARK: Private / Public variables
     
     var chooseCompletion: ((City) -> Void)?
-    var viewModel: CityListViewModeling?
+    var viewModel: CityListViewModel?
 
     // MARK: Lifecycle
     
@@ -54,7 +54,7 @@ final class CityListViewController: BaseViewController {
     private func setupBinding() {
         viewModel?.updateHandler = { [weak self] in
             self?.citiesCollectionView.reloadData()
-            self?.emptyView.isHidden = self?.viewModel?.getNumberOfCities() != 0
+            self?.emptyView.isHidden = self?.viewModel?.citiesSU.count != 0
         }
     }
 
@@ -94,7 +94,7 @@ extension CityListViewController: UICollectionViewDataSource {
             fatalError("Not installed View Model")
         }
         
-        return viewModel.getNumberOfCities()
+        return viewModel.citiesSU.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -102,7 +102,7 @@ extension CityListViewController: UICollectionViewDataSource {
             fatalError("Not installed View Model")
         }
         
-        let city = viewModel.cityAt(index: indexPath.row)
+        let city = viewModel.citiesSU[indexPath.row]
         let cell = collectionView.dequeueReusableCell(with: CityCollectionCell.self, for: indexPath)
         cell.configure(name: city.name, url: city.imageUrl, score: Int.random(in: 1...13))
         return cell
@@ -134,7 +134,7 @@ extension CityListViewController: UICollectionViewDelegate {
             return
         }
         
-        let selectedCity = viewModel.cityAt(index: indexPath.row)
+        let selectedCity = viewModel.citiesSU[indexPath.row]
         viewModel.saveCurrentCity(at: indexPath.row)
         chooseCompletion?(selectedCity)
         

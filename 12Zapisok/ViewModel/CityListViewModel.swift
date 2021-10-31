@@ -10,14 +10,13 @@
 import Combine
 import CoreData
 
-protocol CityListViewModeling: CurrentCityProtocol {
-    func getNumberOfCities() -> Int
-    func cityAt(index: Int) -> City
+protocol CityListViewModeling: CurrentCityProtocol, ObservableObject {
     func saveCurrentCity(at index: Int)
     func hasChosenCity() -> Bool
     func fetchCities()
 
     var isOnboarding: Bool { get }
+    var citiesSU: [City] { get }
     var updateHandler: (() -> Void)? { get set }
     var closeButtonPressed: (() -> Void)? { get set }
 }
@@ -27,13 +26,14 @@ final class CityListViewModel {
     private let preferencesManager: PreferencesManager
     private let databaseStorage: CoreDataManager
     private let networkManager: NetworkManaging
-    
-    private var cities = [City]()
+
     private var subscription = Set<AnyCancellable>()
 
     public var isOnboarding: Bool
     public var closeButtonPressed: (() -> Void)?
     public var updateHandler: (() -> Void)?
+
+    @Published var citiesSU = [City]()
 
     convenience init(isOnboarding: Bool) {
         self.init(isOnboarding: isOnboarding,
@@ -67,22 +67,14 @@ extension CityListViewModel: CityListViewModeling {
                 }
             } receiveValue: { value in
                 self.databaseStorage.saveContext()
-                self.cities = value
-                self.updateHandler?()
+                self.citiesSU = value
             }
             .store(in: &subscription)
     }
-    
-    public func getNumberOfCities() -> Int {
-        return cities.count
-    }
-    
-    public func cityAt(index: Int) -> City {
-        return cities[index]
-    }
+
     
     public func hasChosenCity() -> Bool {
-        return cities.contains { $0.id == preferencesManager.currentCityId }
+        return citiesSU.contains { $0.id == preferencesManager.currentCityId }
     }
     
     public func saveCurrentCity(at index: Int) {
@@ -91,10 +83,10 @@ extension CityListViewModel: CityListViewModeling {
     }
     
     public func getCurrentCityName() -> String {
-        return cities.first { $0.id == preferencesManager.currentCityId }?.name ?? .empty
+        return citiesSU.first { $0.id == preferencesManager.currentCityId }?.name ?? .empty
     }
     
     public func getCurrentCityImage() -> String {
-        return cities.first { $0.id == preferencesManager.currentCityId }?.imageUrl ?? .empty
+        return citiesSU.first { $0.id == preferencesManager.currentCityId }?.imageUrl ?? .empty
     }
 }

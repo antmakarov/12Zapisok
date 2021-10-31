@@ -137,6 +137,9 @@
 		8D8EA3DB22D771DC00EA2F01 /* GameNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8EA3DA22D771DC00EA2F01 /* GameNoteViewController.swift */; };
 		8D92B8F426FA264200689923 /* OnboardingViewModelHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D92B8F326FA264200689923 /* OnboardingViewModelHelpers.swift */; };
 		8D92B8F826FA74AD00689923 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D92B8F726FA74AD00689923 /* LeaderboardView.swift */; };
+		8DD2188A26FC6BE300854546 /* CityListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD2188826FC6BE300854546 /* CityListHeaderView.swift */; };
+		8DD2188B26FC6BE300854546 /* CityListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD2188926FC6BE300854546 /* CityListItemView.swift */; };
+		8DD2188D26FC6BFC00854546 /* CityListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD2188C26FC6BFC00854546 /* CityListView.swift */; };
 		8DD4CA672531F060001765FF /* StatisticsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD4CA652531F060001765FF /* StatisticsCell.swift */; };
 		8DD4CA682531F060001765FF /* StatisticsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD4CA662531F060001765FF /* StatisticsCell.xib */; };
 		8DD4CA6F25320E70001765FF /* StatisticsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD4CA6D25320E70001765FF /* StatisticsHeaderCell.swift */; };
@@ -287,6 +290,9 @@
 		8D8EA3DA22D771DC00EA2F01 /* GameNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNoteViewController.swift; sourceTree = "<group>"; };
 		8D92B8F326FA264200689923 /* OnboardingViewModelHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModelHelpers.swift; sourceTree = "<group>"; };
 		8D92B8F726FA74AD00689923 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
+		8DD2188826FC6BE300854546 /* CityListHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityListHeaderView.swift; sourceTree = "<group>"; };
+		8DD2188926FC6BE300854546 /* CityListItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityListItemView.swift; sourceTree = "<group>"; };
+		8DD2188C26FC6BFC00854546 /* CityListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityListView.swift; sourceTree = "<group>"; };
 		8DD4CA652531F060001765FF /* StatisticsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCell.swift; sourceTree = "<group>"; };
 		8DD4CA662531F060001765FF /* StatisticsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticsCell.xib; sourceTree = "<group>"; };
 		8DD4CA6D25320E70001765FF /* StatisticsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsHeaderCell.swift; sourceTree = "<group>"; };
@@ -433,6 +439,7 @@
 		7790B459241EA09D0046EFA5 /* CityList */ = {
 			isa = PBXGroup;
 			children = (
+				8DD2188726FC6BC700854546 /* SwiftUI */,
 				8D05BC56252887DE00E08C1A /* Cells */,
 				8D32F36822D49DD500ABC228 /* CityListViewController.swift */,
 				7790B45A241EA0B60046EFA5 /* CityListViewController.xib */,
@@ -844,6 +851,16 @@
 			path = Game;
 			sourceTree = "<group>";
 		};
+		8DD2188726FC6BC700854546 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				8DD2188C26FC6BFC00854546 /* CityListView.swift */,
+				8DD2188826FC6BE300854546 /* CityListHeaderView.swift */,
+				8DD2188926FC6BE300854546 /* CityListItemView.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
 		8DD4CA642531F045001765FF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -1126,6 +1143,7 @@
 				8D32F36922D49DD600ABC228 /* CityListViewController.swift in Sources */,
 				774413C0242A9F2F001FBD83 /* Extensions+UIImageView.swift in Sources */,
 				7790B478241FA5E10046EFA5 /* GameRulesViewController.swift in Sources */,
+				8DD2188A26FC6BE300854546 /* CityListHeaderView.swift in Sources */,
 				778CDA9225306324007CC33D /* BaseView.swift in Sources */,
 				77F80DD324220A5A005ED8C0 /* MapViewModel.swift in Sources */,
 				8DD4CA6F25320E70001765FF /* StatisticsHeaderCell.swift in Sources */,
@@ -1161,6 +1179,7 @@
 				8DD4CA672531F060001765FF /* StatisticsCell.swift in Sources */,
 				8D32F36022D3588500ABC228 /* NetworkManager.swift in Sources */,
 				8D05BC4C252879EA00E08C1A /* EmptyView.swift in Sources */,
+				8DD2188D26FC6BFC00854546 /* CityListView.swift in Sources */,
 				77B120D2238DC545001B2301 /* Extensions+UIView.swift in Sources */,
 				8D32F37F22D73C5E00ABC228 /* GameNoteViewModel.swift in Sources */,
 				772FA6F92557E7530098BBF9 /* MapPinView.swift in Sources */,
@@ -1177,6 +1196,7 @@
 				7790B474241FA44F0046EFA5 /* Extentions+Storyboard.swift in Sources */,
 				8D32F34122D3302D00ABC228 /* AppDelegate.swift in Sources */,
 				77B0284A251B16FB00BC71F8 /* AppTarget.swift in Sources */,
+				8DD2188B26FC6BE300854546 /* CityListItemView.swift in Sources */,
 				77F80DB824216518005ED8C0 /* Coordinator.swift in Sources */,
 				8D4651EF26EB9C86007A877D /* CoreDataStore.xcdatamodeld in Sources */,
 				8DFD909426F21D1200E84933 /* CoreDataError.swift in Sources */,
@@ -1359,7 +1379,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RA8RP8Z7ML;
 				INFOPLIST_FILE = 12Zapisok/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = A.Makarov.12Zapisok;
 				PRODUCT_NAME = "12 Записок";
@@ -1376,7 +1396,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RA8RP8Z7ML;
 				INFOPLIST_FILE = 12Zapisok/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = A.Makarov.12Zapisok;
 				PRODUCT_NAME = "12 Записок";

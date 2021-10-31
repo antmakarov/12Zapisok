@@ -77,14 +77,13 @@ final class HomeCoordinator: BaseCoordinator {
             presentModally(vc)
             
         case .showCityList:
-            let vc = CityListViewController()
             let vm = CityListViewModel(isOnboarding: false)
             vm.closeButtonPressed = { [weak self] in
                 // TODO: Change to listener binding
                 self?.rootViewModel.updateCityHandler?()
                 self?.navigationController.dismiss(animated: true)
             }
-            vc.viewModel = vm
+            let vc = UIHostingController(rootView: CityListView(viewModel: vm))
             presentModally(vc)
 
         case .showSettings:

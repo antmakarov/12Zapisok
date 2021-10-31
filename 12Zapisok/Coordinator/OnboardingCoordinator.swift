@@ -40,13 +40,13 @@ final class OnboardingCoordinator: BaseCoordinator {
             navigationController.pushViewController(vc, animated: true)
             
         case .cityList(let completion):
-            let vc = CityListViewController()
             let vm = CityListViewModel(isOnboarding: true)
-            vc.viewModel = vm
+            let vc = UIHostingController(rootView: CityListView(viewModel: vm)) //Controller()
+
             vm.closeButtonPressed = { [weak self] in
                 self?.navigationController.popViewController(animated: true)
             }
-            vc.chooseCompletion = completion
+           // vc.chooseCompletion = completion
             navigationController.pushViewController(vc, animated: true)
             
         case .back:
